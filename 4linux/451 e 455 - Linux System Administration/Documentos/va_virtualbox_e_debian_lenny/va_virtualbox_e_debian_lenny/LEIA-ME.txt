@@ -1,0 +1,11 @@
+O objetivo dessa video-aula é ensinar como instalar e gerenciar uma máquina virtual 
+com o sistema operacional Debian GNU/Linux versão 5 (Lenny).
+
+O modulo 1 explica como instalar o Virtual Box.
+O modulo 2 explica como instalar o Debian Lenny no Virtual Box.
+O modulo 3 explica como assistir a aula no chat e testar o que está aprendendo na maquina virtual.
+
+Abra a pasta do modulo e clique no arquivo html para assistir a video-aula.
+E necessario o player do Flash. Caso voce nao o tenha, instale, baixando-o no site www.adobe.com.br.
+
+Bons estudos!

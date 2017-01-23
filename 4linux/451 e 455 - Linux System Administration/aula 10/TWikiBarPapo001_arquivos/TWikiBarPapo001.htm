@@ -1,0 +1,1709 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="pt-br" xmlns="http://www.w3.org/1999/xhtml" lang="pt-br"><head>
+
+
+<title>.:TWikiBarPapo001 &gt; TWikiBar &gt; Aqui temos um _livro livre_ e
+ completo sobre _Shell_:.</title>
+<link rel="shortcut icon" 
+href="http://wiki.softwarelivre.org/pub/TWikiBar/FreeSkinImagens/favicon.ico"
+ type="image/x-icon">
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta name="Keywords" content="brasil, software, livre, liberdade, 
+copyleft, gnu, linux, grupo, bash, shell, Julio, Cezar, Neves, venda, 
+aluguel, casa, Arraial, do, Cabo">
+<meta name="Description" content="Os sedentos do " saber="" livre="" 
+são="" muito="" benvindos.="">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta name="author" content="Julio Cezar Neves">
+<!-- base href="http://wiki.softwarelivre.org/TWikiBar/TWikiBarPapo001" -->
+</head><body>\
+<style type="text/css" media="all">
+
+/* elementos HTML básicos */
+
+html body {
+  line-height:1.55em;
+  font-family: "Bitstream Vera Sans", "Lucida Grande", verdana, lucida, helvetica, sans-serif;
+  background-color: #f8f8f8;
+  margin:0;
+  padding:0;
+  font-size:x-small;
+  voice-family:"\"}\""; 
+  voice-family:inherit;
+  font-size:small;
+}
+
+html>body {
+  font-size:small;   
+}
+
+/* be kind to netscape 4 that doesn't understand inheritance */
+body, p, li, ul, ol, dl, dt, dd, acronym, h1, h2, h3, h4, h5, h6 {
+   background-color:transparent;
+}
+p {
+   margin:1em 0 0 0;
+}
+table {
+   border-collapse: separate;
+   background-color: #000000;
+}
+
+table.destaque {
+   border-collapse: separate;
+   background-color: #ffffcc !important;
+}
+
+#SearchResultsTable table,
+#SearchResultsTable tr,
+#SearchResultsTable td{
+   background-color: #ffffff !important;
+}
+
+strong, b {
+   font-weight:bold;
+}
+hr {
+   color:#9E9E70;
+   background-color:#9E9E70;
+   height:1px;
+   border:none;
+}
+pre, code, tt {
+   font-size:100%;
+   line-height:1.4em;
+   color:#7A4707;
+}
+pre {
+   margin-top:1em;
+   margin-bottom:1em;
+}
+
+/* Text */
+
+h1, h2, h3, h4, h5, h6 {
+   font-family:"Lucida Grande", helvetica, lucida, verdana, sans-serif;
+   line-height:104%;
+   padding:0;
+   margin:1em 0 0.1em 0;
+}
+h1 {
+   font-size:210%;
+   color:#e24628;
+   margin:0 0 0.1em 0;
+}
+h2 {
+   font-size:145%;
+   display:block;
+   background-color:#F3EDE7;
+   color:#900;
+   padding:0.2em 0.7em;
+   margin:1em 0.7em 0.15em 0.7em;
+   height:auto;
+}
+h3 { font-size:140%; color:#900;}
+h4 { font-size:125%; color:#900;}
+h5 { font-size:110%; color:#900;}
+h6 { font-size:95%; color:#900;}
+
+/* Links */
+
+:link:focus,
+:visited:focus,
+:link,
+:visited,
+:link:active,
+:visited:active {
+   text-decoration:none;
+   color:#1e5bbd;
+   background-color:transparent;
+}
+:link:hover,
+:visited:hover {
+   text-decoration:underline;
+   background-color:#b4d5ff;
+   color:#1559B3;
+}
+a:link img,
+a:visited img,
+a:hover img,
+a:active img {
+   background-color:transparent;
+}
+th a:link,
+th a:visited {
+   font-weight:bold;
+}
+
+/* ----------------------------------------
+   Referências à Menu de Contexto
+   Fonte: http://br.mozdev.org/thunderbird/vocesabia/?privacidade 
+          http://br.mozdev.org/images/html/br.css
+---------------------------------------- */
+
+kbd {
+  padding: 0px 1px 0px 1px !important;
+  border-width: 1px 2px 2px 1px !important;
+  border-style: solid !important;
+  background: #faf6f6  !important;
+  color: #000  !important;
+  border-color:  #edd #baa #baa #eed  !important;
+}
+
+/* ----------------------------------------
+   Estilo para tooltip em links
+   Fonte: http://loadaveragezero.com/vnav/labs/CSS/tooltips.php
+---------------------------------------- */
+
+span.tool {
+  position: relative;   /* this is key */
+  cursor: help;
+}
+ 
+span.tool span.tip {
+  display: none;        /* so is this */
+}
+
+/* tooltip will display on :hover event */
+
+span.tool:hover span.tip {
+  display: block;
+  z-index: 100;
+  position: absolute;
+  top: 2.5em;
+  left: 0;
+  width: auto;
+  line-height: 1.2em;
+  padding: 3px 7px 4px 6px;
+  border: 1px solid #336;
+  background-color: #f7f7ee;
+  font-size: 12px;
+  font-weight: normal;
+  color: #000;
+  text-align: left;
+}
+
+#content span.tool:after {
+  padding-left: 2px;            /* eye candy */
+  content: url(http://wiki.softwarelivre.org/pub/TWiki/TWikiDocGraphics/bubble.gif);
+}
+
+/* ----------------------------------------
+   Estilo para caixa div de código code-box 
+   Fonte: http://loadaveragezero.com/vnav/labs/CSS/code.php
+---------------------------------------- */
+
+.code-box {
+  font-family: 'Lucida Console', 'Bitstream Vera Sans Mono', 'Courier New', Monaco, Courier, monospace;
+  width: 100%;
+  border: 1px dashed #aaa8a8;
+  padding: 0.5em 0 0.3em 0.5em;
+  color: #000;
+  overflow: auto;
+  background: #fff url(http://wiki.softwarelivre.org/pub/TWiki/TWikiDocGraphics/hand.gif) no-repeat top right;
+}
+
+/* ----------------------------------------
+   Estilos das Divisões
+---------------------------------------- */
+
+.geral {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.cabecalho { }
+
+.padraogoverno {
+  border:1px solid #FFCC00;
+  background-color: #FFCC00;
+  text-align: center;
+}
+
+.padraocabecalho {
+  border:1px solid #669966; /* verde pálido */
+/*  text-align: center; */
+  background: #FFF url(http://wiki.softwarelivre.org/pub/TWikiBar/FreeSkinImagens/6aEdicao.PNG) right top no-repeat;
+  color: #FFF;
+  min-height: 105px; /* tamanho da logo */
+}
+
+.corpo {
+  position: relative;
+  top:0;
+  left:0;
+}
+
+.lateral {
+  position: absolute;
+  background-color: #FFFAFF; /* rosa claríssimo */
+
+  width: 12.5em; /* 0.5em à mais do menuL */
+
+  z-index:1; /* forçar estar acima dos demais */
+}
+
+.barranavegacao {
+  background-color: #CDCE9C;
+}
+
+.topico {
+  position: relative;
+  padding-left:1em;
+  padding-bottom:1em;
+  margin-left: 13.1em; /* deslocado 1em à direita do menuL */
+  min-height: 20em;
+
+/*  overflow: auto; */
+
+  border:1px solid #000;
+  background-color: #FFF;
+}
+
+.localizacao {
+  margin-left: 13.1em; /* deslocado 1em à direita do menuL */
+  padding-left:1em;
+
+  border:1px solid #E6E6E6; /* cinza claro */
+  background-color: #E6E6E6;
+}
+
+.edicao {
+  margin-left: 13.1em; /* deslocado 1em à direita do menuL */
+  padding-left:1em;
+
+  border:1px solid #EEF6FF;
+  background-color: #EEF6FF; /* azul claríssimo */
+}
+
+.rodape {
+  margin-left: 13.1em; /* deslocado 1em à direita do menuL */
+  padding-left:1em;
+
+  text-align: center;
+
+  border:1px solid #FFFAFF;
+  background-color: #FFFAFF; /* rosa claríssimo */
+}
+
+/* ----------------------------------------
+   Barra de Navegacao através de listas.
+   http://www.maujor.com/tutorial/cssmenu.php
+---------------------------------------- */
+#menuH ul {
+  border:none;
+  margin: 0;
+  padding: 0;
+  text-align:left;
+}
+
+#menuH ul li {
+  list-style: none;
+  margin: 0;
+  display: inline;
+}
+
+#menuH ul li a {
+  height:1px; /* IE5.0 bug */
+/*  padding: 3px 1px; */
+  margin:0;
+/*  border: 1px solid #f00; */
+/*  background: #999; */
+  text-decoration: none;
+}
+
+#menuH ul li a:link, #menuH ul li a:visited {
+/*  color: #fff; */
+}
+
+#menuH ul li a:hover {
+/*  background: #ccc; */
+  color: #F00;
+/* border-color: #000; */
+}
+
+/* ----------------------------------------
+   Menu Construído através de listas. Baseado em:
+   http://www.maujor.com/tutorial/tecmenu.php e
+   http://www.tanfa.co.uk/css/examples/css-dropdown-menus.asp
+---------------------------------------- */
+
+/* Tamanho, Fonte, Cor, Borda do MenuL */
+#menuL {
+  width: 12em;
+  background: #999;
+  font-size: 11px/16px;
+  font-weight: bold;
+}
+
+/* Caixa do Menu OL */
+#menuL ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Caixa dos Itens do Menu UL - Fica dentro da caixa OL */
+#menuL ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Titulo do Menu OL - ordenado */
+#menuL ol li {
+  color: #fff;
+  background: #000;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+/* Items dentro do Menu OL */
+#menuL ol li li {
+  color: #fff;
+  background: #000;
+  text-transform: none;
+  text-align: left;
+}
+
+/* Links dos Menus */
+#menuL ol li li a {
+  display: block;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #ccc #888 #555 #bbb;
+  margin: 0;
+  padding: 2px 3px;
+}
+
+/* Itens do Menu OL - Links */
+#menuL a {
+  color: #000;
+  background: #efefef;
+  text-decoration: none;
+}
+
+/* Itens do Menu OL - Links com o mouse em cima */
+#menuL a:hover {
+  color: #a00;
+  background: #fff;
+}
+
+/* Posicionamento dos Itens - "Mágica" */
+#menuL li {
+  position: relative;
+}
+
+#menuL ol ul ul {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  width: 100%;
+}
+
+/* Magia CSS */
+div#menuL ol ul ul,
+div#menuL ol ul ul ul,
+div#menuL ol ul li:hover ul ul,
+div#menuL ol ul ul li:hover ul ul
+{display: none;}
+
+/* Magia CSS */
+div#menuL ol ul li:hover ul,
+div#menuL ol ul ul li:hover ul,
+div#menuL ol ul ul ul li:hover ul
+{display: block;}
+
+/* Corrige o espaço deixado pelos parágrafos */
+div#menuL p {display:inline;}
+</style>
+
+<!-- Internet Explorer CSS Fixes -->
+<!--[if IE]>
+  <style type="text/css" media="screen">
+    body {  behavior: url(http://wiki.softwarelivre.org/pub/TWikiBar/FreeSkinCSS/csshover.htc); font-size: 100%;} 
+    #menuL ol li { float: left; width: 100%; }
+    #menuL ol li a { height: 1%; }
+  </style>
+<![endif]-->
+
+
+
+<div class="geral">
+<div class="cabecalho">
+	 <div class="padraocabecalho">		
+<h3><a name="Aqui_temos_um_livro_livre_e_comp"></a> Aqui temos um <em>livro
+ livre</em> e completo sobre <em>Shell</em> </h3>
+<h4><a name="Os_sedentos_do_saber_livre_s_o_m"></a> Os sedentos do 
+"saber livre" são muito benvindos. </h4>
+<!-- <span class="foswikiNewLink">SiteSearch<a href="/bin/edit/TWikiBar/SiteSearch?topicparent=TWikiBar.TWikiBarPapo001" rel="nofollow" title="Criar este tópico">?</a></span> Google -->
+<form method="get" action="http://www.google.com/search" target="_blank">
+<input name="ie" value="UTF-8" type="hidden">
+<input name="oe" value="UTF-8" type="hidden">
+<input name="q" size="10" maxlength="255" type="text">
+<input name="btnG" value="Procure comando no Botequim" type="submit">
+<input name="domains" value="wiki.softwarelivre.org" type="hidden">
+<input name="sitesearch" 
+value="twiki.softwarelivre.org/bin/view/TWikiBar" checked="checked" 
+type="hidden">
+</form>
+<!-- <span class="foswikiNewLink">SiteSearch<a href="/bin/edit/TWikiBar/SiteSearch?topicparent=TWikiBar.TWikiBarPapo001" rel="nofollow" title="Criar este tópico">?</a></span> Google -->
+<p>
+	 </p></div>
+	 <div class="barranavegacao">		<div id="menuH"> <ul>
+<li> [ 12 Apr 2010 - 22:01 ] <strong>Links Amigos</strong> 
+</li> <li> <a style="" target="_blank" 
+href="http://br-linux.org/linux/?q=node/2037" title="Linux Levado à 
+Sério (Abrirá em nova Aba)">BR-Linux</a>
+</li> <li> <a style="" target="_blank" 
+href="http://www.vivaolinux.com.br/" title="Viva o Linux (Abrirá em nova
+ Aba)">Viva o Linux</a>
+</li> <li> <a style="" target="_blank" 
+href="http://www.dicas-l.unicamp.br/" title="Dicas-L - Rubens (Abrirá em
+ nova Aba)">Dicas-L</a>
+</li> <li> <a style="" target="_blank" 
+href="http://www.aurelio.net/shell" title="Por que programar tem que ser
+ divertido (Abrirá em nova Aba)">Aurelio</a>
+</li> <li> <a style="" target="_blank" href="http://www.thobias.org/" 
+title=" Thobias login (Abrirá em nova Aba)">Thobias</a>
+</li></ul> 
+</div>
+	 </div>
+  </div>
+  <div class="lateral">	 
+<div id="menuL"> <ol>
+<li> TWiki Básico <ul>
+<li> <a style="" href="http://wiki.softwarelivre.org/TWikiBar/WebHome" 
+class="foswikiCurrentWebHomeLink" title="Ir para a Página Inicial dessa 
+Área!"><img src="TWikiBarPapo001_arquivos/home.gif" alt="HOME" 
+width="16" height="16"> Página Inicial</a>
+</li> <li> <a style="" 
+href="http://wiki.softwarelivre.org/TWikiBar/WebChanges" title="Mostrar 
+as páginas (tópicos) alterados mais recentemente!"><img 
+src="TWikiBarPapo001_arquivos/recentchanges.gif" alt="INDEX" width="16" 
+height="16"> Últimas Alterações</a>
+</li> <li> <a style="" 
+href="http://wiki.softwarelivre.org/TWikiBar/WebIndex" title="Indice 
+Analítico!"><img src="TWikiBarPapo001_arquivos/index.gif" alt="INDEX" 
+width="16" height="16"> Índice</a>
+</li> <li> <a style="" 
+href="http://wiki.softwarelivre.org/TWikiBar/WebSearch" title="Permite 
+que você procure um texto qualquer em todos os tópicos. Se desejar pode 
+utilizar expressões regulares também!"><img 
+src="TWikiBarPapo001_arquivos/searchtopic.gif" alt="SEARCH" width="16" 
+height="16"> Procura</a>
+</li> <li> <a style="" 
+href="http://wiki.softwarelivre.org/TWikiBar/WebStatistics" title="Umas 
+estatísticas geradas pelo próprio TWiki via crontab."><img 
+src="TWikiBarPapo001_arquivos/statistics.gif" alt="STATISTICS" 
+width="16" height="16"> Estatísticas de Uso</a>
+</li> <li> <a style="" 
+href="http://wiki.softwarelivre.org/TWikiBar/WebNotify" title="Permite 
+que você seja informado se alguma página for alterada."><img 
+src="TWikiBarPapo001_arquivos/notify.gif" alt="NOTIFY" width="16" 
+height="16"> Aviso de Atualização</a>
+</li> <li> <a style="" 
+href="http://wiki.softwarelivre.org/TWikiBar/WebMap" title="Mostra um 
+Mapa do Site Gerado Automagicamente.">Mapa do Site</a>
+</li></ul> 
+</li> <li> TWiki Avançado <ul>
+<li> <strong><a style="" 
+href="http://wiki.softwarelivre.org/System/UserRegistration" title="Se 
+você quer contribuir com este site.">Registre-se</a></strong>
+</li> <li> <a style="" 
+href="http://wiki.softwarelivre.org/TWikiBar/WebPreferences" 
+title="Configurações Gerais desta Área.">Configurações Gerais</a>
+</li> <li> <a style="" 
+href="http://wiki.softwarelivre.org/Main/TWikiBarGroup" title="Entre em 
+Contato Conosco">Quem Somos</a>
+</li> <li> <a style="" 
+href="http://wiki.softwarelivre.org/System/TextFormattingRules" 
+title="Dicas de Formatação">Regras de Formatação</a>
+</li> <li> <a style="" 
+href="http://wiki.softwarelivre.org/System/DocumentGraphics" 
+title="Dicas Gráficas">Biblioteca Gráfica</a>
+</li> <li> <a style="" 
+href="http://wiki.softwarelivre.org/System/SmiliesPlugin" title="Use os 
+Smiles Simples.">Carinhas Gráficas</a>
+</li></ul> 
+</li> <li> <a 
+href="http://wiki.softwarelivre.org/TWikiBar/ProjetoGrafico">Projeto 
+Gráfico</a> <ul>
+<li> <a style="" 
+href="http://wiki.softwarelivre.org/TWikiBar/FreeSkinPreTopic" title="O 
+que vem ANTES do Tópico">Pré Tópico</a>
+</li> <li> <a style="" 
+href="http://wiki.softwarelivre.org/TWikiBar/FreeSkinPosTopic" title="O 
+que vem DEPOIS do Tópico">Pós Tópico</a>
+</li> <li> <a style="" 
+href="http://wiki.softwarelivre.org/TWikiBar/FreeSkinMenu" title="Este 
+próprio menu">Menu Lateral</a>
+</li> <li> <a style="" 
+href="http://wiki.softwarelivre.org/TWikiBar/FreeSkinBarraNavegacao" 
+title="Links Interessantes e Recomendados">Menu de Navegação</a>
+</li> <li> <a style="" 
+href="http://wiki.softwarelivre.org/TWikiBar/FreeSkinCSS" 
+title="Definições do CSS utilizado">CSS Utilizado</a>
+</li> <li> <a style="" 
+href="http://wiki.softwarelivre.org/TWikiBar/FreeSkinControlesEdicao" 
+title="Controles de Edição, Anexar, etc">Botões Especiais</a>
+</li> <li> <a style="" 
+href="http://wiki.softwarelivre.org/TWikiBar/FreeSkinVoceEstaAqui" 
+title="Indicador de Onde Estamos dentro da Web">Indica Onde Estamos</a>
+</li> <li> <a style="" 
+href="http://wiki.softwarelivre.org/TWikiBar/FreeSkinPadraoCabecalho" 
+title="Definição do Cabeçalho Padronizado">Cabeçalho Padrão</a>
+</li> <li> <a style="" 
+href="http://wiki.softwarelivre.org/TWikiBar/FreeSkinCopyRight" 
+title="Informações de Copy Right/Left">Copy Right/Left</a>
+</li></ul> 
+</li></ol> 
+</div>
+  </div>
+  <div class="corpo">
+	 <div class="localizacao">		Você está aqui: <a 
+href="http://wiki.softwarelivre.org/TWikiBar/WebHome" 
+class="foswikiCurrentWebHomeLink">TWikiBar</a>  &gt; <a 
+href="http://wiki.softwarelivre.org/TWikiBar/BatePapos">BatePapos</a> 
+&gt; <a href="http://wiki.softwarelivre.org/TWikiBar/TWikiBarPapo001" 
+class="foswikiCurrentTopicLink">TWikiBarPapo001</a>
+	 </div>
+	 <div class="edicao">		Controles: <a style="" 
+href="http://wiki.softwarelivre.org/bin/edit/TWikiBar/TWikiBarPapo001?nocache=Apr13010127&amp;skin=pattern"
+ target="_top" title="Editar este tópico"><img 
+src="TWikiBarPapo001_arquivos/edittopic.gif" alt="EDITAR" width="16" 
+height="16"></a>
+<a style="" 
+href="http://wiki.softwarelivre.org/bin/attach/TWikiBar/TWikiBarPapo001?skin=pattern"
+ target="_top" title="Anexar Imagens ou Arquivos"><img 
+src="TWikiBarPapo001_arquivos/attachfile.gif" alt="ANEXAR" width="16" 
+height="16"></a>
+<a style="" 
+href="http://wiki.softwarelivre.org/TWikiBar/TWikiBarPapo001?raw=on&amp;skin=pattern"
+ target="_top" title="Visualizar o Código Fonte"><img 
+src="TWikiBarPapo001_arquivos/cachetopic.gif" alt="MAIS" width="16" 
+height="16"></a>
+<a style="" 
+href="http://wiki.softwarelivre.org/bin/oops/TWikiBar/TWikiBarPapo001?template=oopsmore&amp;param1=39&amp;param2=39&amp;skin=pattern"
+ target="_top" title="Renomear, Mover, Apagar, etc..."><img 
+src="TWikiBarPapo001_arquivos/tip.gif" alt="MAIS" width="16" height="16"></a>
+<a style="" 
+href="http://wiki.softwarelivre.org/bin/rdiff/TWikiBar/TWikiBarPapo001?skin=pattern"
+ target="_top" title="Ver Todas Alterações"><img 
+src="TWikiBarPapo001_arquivos/recentchanges.gif" alt="ALTERACOES" 
+width="16" height="16"></a>
+<a style="" 
+href="http://wiki.softwarelivre.org/TWikiBar/TWikiBarPapo001?skin=freeprint"
+ target="_top" title="Preparar para Impressão"><img 
+src="TWikiBarPapo001_arquivos/printtopic.gif" alt="IMPRIMIR" width="16" 
+height="16"></a>
+- Última Atualização: [21 Mar 2010 - V.39]
+	 </div>
+	 <div class="topico"><h1><a name="Papo_de_Botequim_Parte_I"></a>  Papo 
+de Botequim - Parte I </h1>
+<p>
+</p><p>
+<a name="foswikiTOC"></a></p><div class="foswikiToc"> <ul>
+<li> <a href="#Di_logo_entreouvido_entre_um_Lin"> Diálogo entreouvido 
+entre um Linuxer e em empurrador de mouse:</a>
+</li> <li> <a href="#O_Ambiente_Linux"> O Ambiente Linux</a>
+</li> <li> <a href="#O_Ambiente_Shell"> O Ambiente Shell</a> <ul>
+<li> <a href="#Uma_Rapidinha_nos_Principais_Sab"> Uma Rapidinha nos 
+Principais Sabores de Shell</a> <ul>
+<li> <a href="#Bourne_Shell_sh"> Bourne Shell (sh)</a>
+</li> <li> <a href="#Korn_Shell_ksh"> Korn Shell (ksh)</a>
+</li> <li> <a href="#Boune_Again_Shell_bash"> Boune Again Shell (bash)</a>
+</li> <li> <a href="#C_Shell_csh"> C Shell (csh)</a>
+</li></ul> 
+</li> <li> <a href="#Explicando_o_funcionamento_do_Sh"> Explicando o 
+funcionamento do Shell</a> <ul>
+<li> <a href="#Exame_da_Linha_de_Comandos"> Exame da Linha de Comandos</a>
+ <ul>
+<li> <a href="#Atribui_o"> Atribuição</a>
+</li> <li> <a href="#Comando"> Comando</a> <ul>
+<li> <a href="#Resolu_o_de_Redirecionamentos"> Resolução de 
+Redirecionamentos</a>
+</li> <li> <a href="#Substitui_o_de_Vari_veis"> Substituição de 
+Variáveis</a>
+</li> <li> <a href="#Substitui_o_de_Meta_Caracteres"> Substituição de 
+Meta Caracteres</a>
+</li> <li> <a href="#Passa_Linha_de_Comando_para_o_ke"> Passa Linha de 
+Comando para o kernel</a>
+</li></ul> 
+</li></ul> 
+</li></ul> 
+</li> <li> <a href="#Decifrando_a_Pedra_da_Roseta"> Decifrando a Pedra 
+da Roseta</a> <ul>
+<li> <a href="#Caracteres_para_remo_o_do_signif"> Caracteres para 
+remoção do significado</a> <ul>
+<li> <a href="#Ap_strofo_ou_plic"> Apóstrofo ou plic (')</a>
+</li> <li> <a href="#Contrabarra_ou_Barra_Invertida"> Contrabarra ou 
+Barra Invertida (\)</a>
+</li> <li> <a href="#Aspas"> Aspas (")</a>
+</li></ul> 
+</li> <li> <a href="#Caracteres_de_redirecionamento"> Caracteres de 
+redirecionamento</a> <ul>
+<li> <a href="#Redirecionamento_da_Sa_da_Padr_o"> Redirecionamento da 
+Saída Padrão</a>
+</li> <li> <a href="#Redirecionamento_da_Sa_da_de_Err"> Redirecionamento
+ da Saída de Erro Padrão</a>
+</li> <li> <a href="#Redirecionamento_da_Entrada_Padr"> Redirecionamento
+ da Entrada Padrão</a>
+</li> <li> <a href="#Here_Document">Here Document</a>
+</li> <li> <a href="#Redirecionamento_de_Comandos"> Redirecionamento de 
+Comandos</a>
+</li></ul> 
+</li> <li> <a href="#Caracteres_de_Ambiente"> Caracteres de Ambiente</a>
+</li></ul> 
+</li></ul> 
+</li></ul> 
+</div>
+<p>
+</p><p>
+</p><h2><a name="Di_logo_entreouvido_entre_um_Lin"></a> Diálogo 
+entreouvido entre um Linuxer e em empurrador de mouse: </h2>
+<p>
+&nbsp;&nbsp;&nbsp;&nbsp;- Quem é o <em>Bash</em>?
+</p><p>
+&nbsp;&nbsp;&nbsp;&nbsp;- O <em>Bash</em> é o filho mais novo da família
+ <em>Shell</em>.
+</p><p>
+&nbsp;&nbsp;&nbsp;&nbsp;- Pô cara! Estás a fim de me deixar maluco? Eu 
+tinha uma dúvida e você me deixa com duas!
+</p><p>
+&nbsp;&nbsp;&nbsp;&nbsp;- Não, maluco você já é há muito tempo. Desde 
+que se decidiu a usar aquele sistema operacional que você tem que dar 
+dez <em>boots</em> por dia e não tem domínio nenhum sobre o que esta 
+acontecendo no seu computador. Mas deixa isso prá lá, vou te explicar o 
+que é <em>Shell</em> e os componentes de sua família e ao final da 
+explanação você dirá: "Meu Deus do <em>Shell</em>! Porque eu não optei 
+pelo <em>Linux</em> antes?".
+</p><p>
+</p><h2><a name="O_Ambiente_Linux"></a> O Ambiente Linux </h2>
+<p>
+Para você entender o que é e como funciona o <em>Shell</em>, primeiro 
+vou te mostrar como funciona o ambiente em camadas do <em>Linux</em>. Dê
+ uma olhada no gráfico abaixo:
+</p><p>
+</p><center><img src="TWikiBarPapo001_arquivos/grafico.png" alt="Visão 
+do shell em relação do Kernel do Linux"></center>
+<p>
+Neste gráfico dá para ver que a camada de <strong><em>hardware</em></strong>
+ é a mais profunda e é formada pelos componentes físicos do seu 
+computador. Envolvendo esta, vem a camada do <strong><em>kernel</em></strong>
+ que é o cerne do <em>Linux</em>, seu núcleo, e é quem bota o <em>hardware</em>
+ para funcionar, fazendo seu gerenciamento e controle. Os <strong>programas</strong>
+ e <strong>comandos</strong> que envolvem o <em>kernel</em>, dele se 
+utilizam para realizar as tarefas aplicativas para que foram 
+desenvolvidos. Fechando tudo isso vem o <strong><em>Shell</em></strong> 
+que leva este nome porque em inglês, <em>Shell</em> significa concha, 
+carapaça, isto é, fica entre o usuário e o sistema operacional, de forma
+ que tudo que interage com o sistema operacional, tem que passar pelo 
+seu crivo.
+</p><p>
+</p><h2><a name="O_Ambiente_Shell"></a> O Ambiente <em>Shell</em> </h2>
+<p>
+Bom já que para chegar ao núcleo do <em>Linux</em>, no seu <em>kernel</em>
+ que é o que interessa a todo aplicativo, é necessária a filtragem do <em>Shell</em>,
+ vamos entender como ele funciona de forma a tirar o máximo proveito das
+ inúmeras facilidades que ele nos oferece.
+</p><p>
+O <em>Linux</em> por definição é um sistema <strong>multiusuário</strong>
+ - não podemos nunca esquecer disto &#8211; e para permitir o acesso de 
+determinados usuários e barrar a entrada de outros, existe um arquivo 
+chamado <code>/etc/passwd</code> que além fornecer dados para esta 
+função de "leão-de-chácara" do <em>Linux</em>, também provê informações 
+para o <em>login</em> daqueles que passaram por esta primeira barreira. O
+ último campo de seus registros informa ao sistema qual <em>Shell</em> a
+ pessoa vai receber ao se "logar" (ARGH!!!).
+</p><p>
+</p><div style="min-height: 121px; margin: 1em; padding: 1em; border: 
+1px dashed red; background-color: rgb(255, 255, 204);"><img 
+style="float: left; padding: 0px 8px 0px 0px;" 
+src="TWikiBarPapo001_arquivos/pinguim_dica.gif" alt="Pinguim com placa 
+de dica" align="left">
+Quando eu disse que o último campo do <code>/etc/passwd</code> informa 
+ao sistema qual é o <em>Shell</em> que o usuário vai receber ao se 
+"logar", é para ser interpretado ao pé-da-letra, isto é, se neste campo 
+do seu registro estiver <code>prog</code>, a pessoa ao acessar o sistema
+ receberá a tela de execução do programa <code>prog</code> e ao terminar
+ a sua execução ganhará imediatamente um logout. Imagine o quanto se 
+pode incrementar a segurança com este simples artifício.
+</div>
+<p>
+Lembra que eu te falei de <em>Shell</em>, família, irmão? Pois é, vamos 
+começar a entender isto: o <em>Shell</em>, que se vale da imagem de uma 
+concha envolvendo o sistema operacional propriamente dito, é o nome 
+genérico para tratar os filhos desta idéia que, ao longo dos anos de 
+existência do sistema operacional <em>Unix</em> foram aparecendo. 
+Atualmente existem diversos sabores de <em>Shell</em>, dentre estes eu 
+destaco o <strong>sh</strong> (Bourne Shell), o <strong>ksh</strong> 
+(Korn Shell), <strong>bash</strong> (Bourne Again Shell) e o <strong>csh</strong>
+ (C Shell).
+</p><p>
+</p><h3><a name="Uma_Rapidinha_nos_Principais_Sab"></a> Uma Rapidinha 
+nos Principais Sabores de <em>Shell</em> </h3>
+<p>
+</p><h4><a name="Bourne_Shell_sh"></a> Bourne Shell (sh) </h4>
+<p>
+Desenvolvido por Stephen Bourne da Bell Labs (da AT&amp;T onde também 
+foi desenvolvido o <em>Unix</em>), este foi durante muitos anos o <em>Shell
+ default</em> do sistema operacional <em>Unix</em>. É também chamado de <em>Standard
+ Shell</em> por ter sido durante vários anos o único e até hoje é o mais
+ utilizado até porque ele foi portado para todos os ambientes <em>Unix</em>
+ e distros <em>Linux</em>.
+</p><p>
+</p><h4><a name="Korn_Shell_ksh"></a> Korn Shell (ksh) </h4>
+<p>
+Desenvolvido por David Korn, também da <em>Bell Labs</em>, é um superset
+ do sh, isto é, possui todas as facilidades do sh e a elas agregou 
+muitas outras. A compatibilidade total com o sh vem trazendo muitos 
+usuários e programadores de <em>Shell</em> para este ambiente.
+</p><p>
+</p><h4><a name="Boune_Again_Shell_bash"></a> Boune Again Shell (bash) </h4>
+<p>
+Este é o <em>Shell</em> mais moderno e cujo número de adeptos mais 
+cresce em todo o mundo, seja por ser o <em>Shell default</em> do <em>Linux</em>,
+ seu sistema operacional hospedeiro, seja por sua grande diversidade de 
+comandos, que incorpora inclusive diversos instruções características do
+ C Shell.
+</p><p>
+</p><h4><a name="C_Shell_csh"></a> C Shell (csh) </h4>
+<p>
+Desenvolvido por Bill Joy da Berkley University é o <em>Shell</em> mais 
+utilizado em ambientes <em>*BSD</em> e <em>Xenix</em>. A estruturação de
+ seus comandos é bem similar à da linguagem C. Seu grande pecado foi 
+ignorar a compatibilidade com o sh, partindo por um caminho próprio.
+</p><p>
+Além destes <em>Shells</em> existem outros, mas irei falar contigo 
+somente sobre os três primeiros, tratando-os genericamente por <em>Shell</em>
+ e assinalando as especificidades de cada um que porventura hajam.
+</p><p>
+</p><h3><a name="Explicando_o_funcionamento_do_Sh"></a> Explicando o 
+funcionamento do <em>Shell</em> </h3>
+<p>
+O <em>Shell</em> é o primeiro programa que você ganha ao se "logar" no <em>Linux</em>.
+ É ele que vai resolver um monte de coisas de forma a não onerar o <em>kernel</em>
+ com tarefas repetitivas, aliviando-o para tratar assuntos mais nobres. 
+Como cada usuário possui o seu próprio <em>Shell</em> interpondo-se 
+entre ele e o <em>Linux</em>, é o <em>Shell</em> quem interpreta os 
+comandos que são teclados e examina as suas sintaxes, passando-os 
+esmiuçados para execução.
+</p><p>
+&nbsp;&nbsp;&nbsp;&nbsp;- Êpa! Esse negócio de interpreta comando não 
+tem nada a haver com interpretador não, né?
+</p><p>
+&nbsp;&nbsp;&nbsp;&nbsp;- Tem sim, na verdade o <em>Shell</em> é um 
+interpretador (ou será intérprete) que traz consigo uma poderosa 
+linguagem com comandos de alto nível, que permite construção de <em>loops</em>
+ (laços), de tomadas de decisão e de armazenamento de valores em 
+variáveis, como vou te mostrar.
+</p><p>
+Vou te explicar as principais tarefas que o <em>Shell</em> cumpre, na 
+sua ordem de execução. Preste atenção nesta ordem porque ela é 
+fundamental para o entendimento do resto do nosso bate papo.
+</p><p>
+</p><h4><a name="Exame_da_Linha_de_Comandos"></a> Exame da Linha de 
+Comandos </h4>
+<p>
+Neste exame o <em>Shell</em> identifica os caracteres especiais 
+(reservados) que têm significado para interpretação da linha, logo após 
+verifica se a linha passada é uma atribuição ou um comando.
+</p><p>
+</p><h5><a name="Atribui_o"></a> Atribuição </h5>
+<p>
+Se o <em>Shell</em> encontra dois campos separados por um sinal de igual
+ (<code>=</code>) <strong>sem espaços em branco entre eles</strong>, 
+identifica esta seqüência como uma atribuição.
+</p><p>
+Exemplos
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);"> $ ls linux
+ <font color="#ffffff">linux</font>
+</div>
+<p>
+Neste exemplo o <em>Shell</em> identificou o <code>ls</code> como um 
+programa e o <em>linux</em> como um parâmetro passado para o programa <code>ls</code>.
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);"> $ valor=1000
+</div>
+<p>
+Neste caso, por não haver espaços em branco (já dá para notar que o 
+branco é um dos caracteres reservados) o <em>Shell</em> identificou uma 
+atribuição e colocou <code>1000</code> na variável <code>valor</code>.
+</p><p>
+</p><div style="min-height: 121px; margin: 1em; padding: 1em; border: 
+1px dashed red; background-color: rgb(255, 255, 204);"><img 
+style="float: left; padding: 0px 8px 0px 0px;" 
+src="TWikiBarPapo001_arquivos/pinguim_dica.gif" alt="Pinguim com placa 
+de dica" align="left">
+<strong>Jamais Faça:</strong>
+<p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);"> $ valor = 1000
+ <font color="#ffffff">bash: valor: not found</font>
+</div>
+<p>
+Neste caso, o <em>Bash</em> achou a palavra valor isolada por brancos e 
+julgou que você estivesse mandando executar um programa chamado valor, 
+para o qual estaria passando dois parâmetros: <code>=</code> e <code>1000</code>.
+</p></div>
+<p>
+</p><h5><a name="Comando"></a> Comando </h5>
+<p>
+Quando uma linha é digitada no <em>prompt</em> do <em>Linux</em>, ela é 
+dividida em pedaços separados por espaço em branco: o primeiro pedaço é o
+ nome do programa que terá sua existência pesquisada; identifica em 
+seguida, nesta ordem, opções/parâmetros, redirecionamentos e variáveis.
+</p><p>
+Quando o programa identificado existe, o <em>Shell</em> verifica as 
+permissões dos arquivos envolvidos (inclusive o próprio programa), dando
+ um erro caso você não esteja credenciado a executar esta tarefa.
+</p><p>
+</p><h6><a name="Resolu_o_de_Redirecionamentos"></a> Resolução de 
+Redirecionamentos </h6>
+<p>
+Após identificar os componentes da linha que você teclou, o <em>Shell</em>
+ parte para a resolução de redirecionamentos.
+O <em>Shell</em> tem incorporado ao seu elenco de vantagens o que 
+chamamos de redirecionamento, que pode ser de entrada (<code>stdin</code>),
+ de saída (<code>stdout</code>) ou dos erros (<code>stderr</code>), 
+conforme vou te explicar a seguir.
+</p><p>
+</p><h6><a name="Substitui_o_de_Vari_veis"></a> Substituição de 
+Variáveis </h6>
+<p>
+Neste ponto, o <em>Shell</em> verifica se as eventuais variáveis 
+(parâmetros começados por <code>$</code>), encontradas no escopo do 
+comando, estão definidas e as substitui por seus valores atuais.
+</p><p>
+</p><h6><a name="Substitui_o_de_Meta_Caracteres"></a> Substituição de 
+Meta Caracteres </h6>
+<p>
+Se algum metacaractere (<code>*</code>, <code>?</code> ou <code>[]</code>)
+ foi encontrado na linha de comando, neste ponto ele será substituído 
+por seus possíveis valores.
+Supondo que o único arquivo no seu diretório corrente começado pela 
+letra <code>n</code> seja um diretório chamado <code>nomegrandeprachuchu</code>,
+ se você fizer:
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);"> $ cd n*
+</div>
+<p>
+Como até aqui quem esta trabalhando a sua linha é o <em>Shell</em> e o 
+comando (programa) <code>cd</code> ainda não foi executado, o <em>Shell</em>
+ transforma o <code>n*</code> em <code>nomegrandeprachuchu</code> e o 
+comando <code>cd</code> será executado com sucesso.
+</p><p>
+</p><h6><a name="Passa_Linha_de_Comando_para_o_ke"></a> Passa Linha de 
+Comando para o kernel </h6>
+<p>
+Completadas as tarefas anteriores, o <em>Shell</em> monta a linha de 
+comandos, já com todas as substituições feitas, chama o <em>kernel</em> 
+para executá-la em um novo <em>Shell</em> (<em>Shell</em> filho), 
+ganhando um número de processo (PID ou <em><kbd>P</kbd>rocess <kbd>ID</kbd>entification</em>)
+ e permanece inativo, tirando uma soneca, durante a execução do 
+programa. Uma vez encerrado este processo (juntamente com o <em>Shell</em>
+ filho), recebe novamente o controle e, exibindo um <em>prompt</em>, 
+mostra que está pronto para executar outros comandos.
+</p><p>
+</p><h3><a name="Decifrando_a_Pedra_da_Roseta"></a> Decifrando a Pedra 
+da Roseta </h3>
+<p>
+Para tirar aquela sensação que você tem quando vê um <em>script Shell</em>,
+ que mais parece uma sopa de letrinhas ou um hieróglifo vou lhe mostrar 
+os principais caracteres especiais para que você saia por ai como o <strong><em>Jean-François
+ Champollion</em></strong>  decifrando a Pedra da Roseta (dê uma <a 
+href="http://www.google.com.br/search?num=100&amp;hl=pt-BR&amp;q=%22Jean-Fran%C3%A7ois+Champollion%22&amp;btnG=Pesquisar&amp;meta=cr%3DcountryBR"
+ target="_blank">"googlada"</a> para descobrir quem é este cara, acho 
+que vale a pena).
+</p><p>
+</p><h4><a name="Caracteres_para_remo_o_do_signif"></a> Caracteres para 
+remoção do significado </h4>
+<p>
+É isso mesmo, quando não desejamos que o <em>Shell</em> interprete um 
+caractere especial, devemos "escondê-lo" dele. Isso pode ser feito de 
+três formas distintas:
+</p><p>
+</p><h5><a name="Ap_strofo_ou_plic"></a> Apóstrofo ou plic (<code>'</code>)
+ </h5>
+<p>
+Quando o <em>Shell</em> vê uma cadeia de caracteres entre apóstrofos (<code>'</code>),
+ ele tira os apóstrofos da cadeia e não interpreta seu conteúdo.
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);"> $ ls linux*
+ <font color="#ffffff">linuxmagazine</font>
+ $ ls 'linux*'
+ <font color="#ffffff">bash: linux* no such file or directory</font>
+</div>
+<p>
+No primeiro caso o <em>Shell</em> "expandiu" o asterisco e descobriu o 
+arquivo <code>linuxmagazine</code> para listar. No segundo, os 
+apóstrofos inibiram a interpretação do <em>Shell</em> e veio a resposta 
+que não existe o arquivo <code>linux*</code>.
+</p><p>
+</p><h5><a name="Contrabarra_ou_Barra_Invertida"></a> Contrabarra ou 
+Barra Invertida (\) </h5>
+<p>
+Idêntico aos apóstrofos exceto que a barra invertida inibe a 
+interpretação somente do caractere que a segue.
+</p><p>
+Suponha que você acidentalmente tenha criado um arquivo chamado <code>*</code>
+ (asterisco) &#8211; que alguns sabores de <em>Unix</em> permitem - e deseja 
+removê-lo. Se você fizesse:
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);"> $ rm *
+</div>
+<p>
+Você estaria fazendo a maior encrenca, pois o <code>rm</code> removeria 
+todos os arquivos do diretório corrente. A melhor forma de fazer o 
+pretendido é:
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);"> $ rm \*
+</div>
+<p>
+Desta forma, o <em>Shell</em> não interpretaria o asterisco, e em 
+consequência não faria a sua expansão.
+</p><p>
+Faça a seguinte experiência científica:
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);"> $ cd /etc
+ $ echo '*'
+ $ echo \*
+ $ echo *
+</div> 
+<p>
+Viu a diferença? Então não precisa explicar mais.
+</p><p>
+</p><h5><a name="Aspas"></a> Aspas (<code>"</code>) </h5>
+<p>
+Exatamente igual ao apóstrofo exceto que, se a cadeia entre aspas 
+contiver um cifrão (<code>$</code>), uma crase (<code>`</code>), ou uma 
+barra invertida (<code>\</code>), estes caracteres serão interpretados 
+pelo <em>Shell</em>.
+</p><p>
+Não precisa se estressar, eu não te dei exemplos do uso das aspas por 
+que você ainda não conhece o cifrão (<code>$</code>) nem a crase (<code>`</code>).
+ Daqui para frente veremos com muita constância o uso destes caracteres 
+especiais, o mais importante é entender o significado de cada um.
+</p><p>
+</p><h4><a name="Caracteres_de_redirecionamento"></a> Caracteres de 
+redirecionamento </h4>
+<p>
+A maioria dos comandos tem uma entrada, uma saída e pode gerar erros. 
+Esta entrada é chamada Entrada Padrão ou <code>stdin</code> e seu <em>default</em>
+ é o teclado do terminal. Analogamente, a saída do comando é chamada 
+Saída Padrão ou <code>stdout</code> e seu <em>default</em> é a tela do 
+terminal. Para a tela também são enviadas por <em>default</em> as 
+mensagens de erro oriundas do comando que neste caso é a chamada Saída 
+de Erro Padrão ou <code>stderr</code>. Veremos agora como alterar este 
+estado de coisas.
+</p><p>
+Vamos fazer um programa gago. Para isto faça:
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);"> $ cat
+</div>
+<p>
+O <code>cat</code> é uma instrução que lista o conteúdo do arquivo 
+especificado para a Saída Padrão (<code>stdout</code>). Caso a entrada 
+não seja definida, ele espera os dados da <code>stdin</code>. Ora como 
+eu não especifiquei a entrada, ele está esperando-a pelo teclado 
+(Entrada Padrão) e como também não citei a saída, o que eu teclar irá 
+para a tela (Saída Padrão) fazendo desta forma, como eu havia proposto 
+um programa gago. Experimente!
+</p><p>
+</p><h5><a name="Redirecionamento_da_Sa_da_Padr_o"></a> Redirecionamento
+ da Saída Padrão </h5>
+<p>
+Para especificarmos a saída de um programa usamos o <code>&gt;</code> 
+(maior que) ou o <code>&gt;&gt;</code> (maior, maior) seguido do nome do
+ arquivo para o qual se deseja mandar a saída.
+</p><p>
+Vamos transformar o programa gago em um editor de textos (que pretensão 
+heim!). <img src="TWikiBarPapo001_arquivos/smile.gif" alt="smile" 
+title="smile" border="0">
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);"> $ cat &gt; Arq
+</div>
+<p>
+O <code>cat</code> continua sem ter a entrada especificada, portanto 
+está aguardando que os dados sejam teclados, porém a sua saída está 
+sendo desviada para o arquivo <code>Arq</code>. Assim sendo, tudo que 
+esta sendo teclado esta indo para dentro de <code>Arq</code>, de forma 
+que fizemos o editor de textos mais curto e ruim do planeta.
+</p><p>
+Se eu fizer novamente:
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);"> $ cat &gt; Arq
+</div>
+<p>
+Os dados contidos em <code>Arq</code> serão perdidos, já que antes do 
+redirecionamento o <em>Shell</em> criará um <code>Arq</code> vazio. Para
+ colocar mais informações no final do arquivo eu deveria ter feito:
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);"> $ cat &gt;&gt; Arq
+</div>
+<p>
+</p><div style="min-height: 105px; margin: 1em; padding: 1em; border: 
+1px dashed red; background-color: rgb(255, 255, 204);"><img 
+style="float: left; padding: 0px 8px 0px 0px;" 
+src="TWikiBarPapo001_arquivos/pinguim_atencao.gif" alt="Pinguim com 
+placa de atenção">
+Como já havia lhe dito, o <em>Shell</em> resolve a linha e depois manda o
+ comando para a execução. Assim, se você redirecionar a saída de um 
+arquivo para ele próprio, primeiramente o <em>Shell</em> "esvazia" este 
+arquivo e depois manda o comando para execução, desta forma você acabou 
+de perder o conteúdo do seu querido arquivo.
+</div>
+<p>
+Com isso dá para notar que o <code>&gt;&gt;</code> (maior maior) serve 
+para inserir texto no final do arquivo.
+</p><p>
+</p><h5><a name="Redirecionamento_da_Sa_da_de_Err"></a> Redirecionamento
+ da Saída de Erro Padrão </h5>
+<p>
+Assim como o <em>default</em> do <em>Shell</em> é receber os dados do 
+teclado e mandar as saídas para a tela, os erros também serão enviados 
+para a tela se você não especificar para onde deverão ser enviados. Para
+ redirecionar os erros use <code>2&gt; SaidaDeErro</code>. Note que 
+entre o número <code>2</code> e o sinal de maior (<code>&gt;</code>) não
+ existe espaço em branco.
+</p><p>
+</p><div style="min-height: 105px; margin: 1em; padding: 1em; border: 
+1px dashed red; background-color: rgb(255, 255, 204);"><img 
+style="float: left; padding: 0px 8px 0px 0px;" 
+src="TWikiBarPapo001_arquivos/pinguim_atencao.gif" alt="Pinguim com 
+placa de atenção">
+Preste atenção! Não confunda <code>&gt;&gt;</code> com <code>2&gt;</code>.
+ O primeiro anexa dados ao final de um arquivo, e o segundo redireciona a
+ Saída de Erro Padrão (<code>stderr</code>) para um arquivo que está 
+sendo designado. <strong>Isso é importante!</strong>
+</div>
+<p>
+Suponha que durante a execução de um <em>script</em> você pode, ou não 
+(dependendo do rumo tomado pela execução do programa), ter criado um 
+arquivo chamado <code>/tmp/seraqueexiste$$</code>. Para não ficar 
+sujeira no seu disco, ao final do <em>script</em> você colocaria uma 
+linha:
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);"> $ rm /tmp/seraqueexiste$$
+</div>
+<p>
+Caso o arquivo não existisse seria enviado para a tela uma mensagem de 
+erro. Para que isso não aconteça deve-se fazer:
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);"> $ rm /tmp/seraqueexiste$$ 
+2&gt; /dev/null
+</div>
+<p>
+Sobre o exemplo que acabamos de ver tenho duas dicas a dar:
+</p><p>
+</p><div style="min-height: 121px; margin: 1em; padding: 1em; border: 
+1px dashed red; background-color: rgb(255, 255, 204);"><img 
+style="float: left; padding: 0px 8px 0px 0px;" 
+src="TWikiBarPapo001_arquivos/pinguim_dica.gif" alt="Pinguim com placa 
+de dica" align="left">
+<strong>Dica # 1</strong>
+<p>
+O <code>$$</code> contém o PID, isto é, o número do seu processo. Como o
+ <em>Linux</em> é multiusuário, é bom anexar sempre o <code>$$</code> ao
+ nome dos dos arquivos que serão usados por várias pessoas para não 
+haver problema de propriedade, isto é, caso você batizasse o seu arquivo
+ simplesmente como <code>seraqueexiste</code>, o primeiro que o usasse 
+(criando-o então) seria o seu dono e todos os outros ganhariam um erro 
+quando tentassem gravar algo nele.
+</p></div>
+<p>
+Para que você teste a Saída de Erro Padrão direto no <em>prompt</em> do 
+seu <em>Shell</em>, vou dar mais um exemplo. Faça:
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);"> $ ls naoexiste
+ <font color="#ffffff">bash: naoexiste no such file or directory</font>
+ $ ls naoexiste 2&gt; arquivodeerros
+ $
+ $ cat arquivodeerros
+ <font color="#ffffff">bash: naoexiste no such file or directory</font>
+</div>
+<p>
+Neste exemplo, vimos que quando fizemos um <code>ls</code> em <code>naoexiste</code>,
+ ganhamos uma mensagem de erro. Após, redirecionarmos a Saída de Erro 
+Padrão para <code>arquivodeerros</code> e executarmos o mesmo comando, 
+recebemos somente o <em>prompt</em> na tela. Quando listamos o conteúdo 
+do arquivo para o qual foi redirecionada a Saída de Erro Padrão, vimos 
+que a mensagem de erro tinha sido armazenada nele. Faça este teste ai.
+</p><p>
+</p><div style="min-height: 121px; margin: 1em; padding: 1em; border: 
+1px dashed red; background-color: rgb(255, 255, 204);"><img 
+style="float: left; padding: 0px 8px 0px 0px;" 
+src="TWikiBarPapo001_arquivos/pinguim_dica.gif" alt="Pinguim com placa 
+de dica" align="left">
+<strong>Dica # 2</strong>
+<p>
+&nbsp;&nbsp;&nbsp;&nbsp;- Quem é esse tal de <code>/dev/null</code>?
+</p><p>
+&nbsp;&nbsp;&nbsp;&nbsp;- Em <em>Unix</em> existe um arquivo fantasma. 
+Chama-se <code>/dev/null</code>. Tudo que é mandado para este arquivo 
+some. Assemelha-se a um Buraco Negro. No caso do exemplo, como não me 
+interessava guardar a possível mensagem de erro oriunda do comando <code>rm</code>,
+ redirecionei-a para este arquivo.
+</p></div>
+<p>
+É interessante notar que estes caracteres de redirecionamento são 
+cumulativos, isto é, se no exemplo anterior fizéssemos:
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);"> $ ls naoexiste 2&gt;&gt; 
+arquivodeerros
+</div>
+<p>
+a mensagem de erro oriunda do <code>ls</code> seria anexada ao final de <code>arquivodeerros</code>.
+</p><p>
+</p><h5><a name="Redirecionamento_da_Entrada_Padr"></a> Redirecionamento
+ da Entrada Padrão </h5>
+<p>
+Para fazermos o redirecionamento da Entrada Padrão usamos o <code>&lt;</code>
+ (menor que). 
+</p><p>
+&nbsp;&nbsp;&nbsp;&nbsp;- E prá que serve isso? - você vai me perguntar.
+</p><p>
+&nbsp;&nbsp;&nbsp;&nbsp;- Deixa eu te dar um exemplo que você vai 
+entender rapidinho.
+</p><p>
+Suponha que você queira mandar um <code>mail</code> para o seu chefe. 
+Para o chefe nós caprichamos, né?  então ao invés de sair redigindo o <code>mail</code>
+ direto no <em>prompt</em> da tela de forma a tornar impossível a 
+correção de uma frase anterior onde, sem querer, escreveu um "nós vai", 
+você edita um arquivo com o conteúdo da mensagem e após umas quinze 
+verificações sem constatar nenhum erro, decide enviá-lo e para tal faz:
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);"> $ mail chefe &lt; 
+arquivocommailparaochefe
+</div>
+<p>
+O teu chefe então receberá o conteúdo do <code>arquivocommailparaochefe</code>.
+</p><p>
+</p><h5><a name="Here_Document"></a> Here Document </h5>
+<p>
+Um outro tipo de redirecionamento muito louco que o <em>Shell</em> te 
+permite é o chamado <strong><em>here document</em></strong>. Ele é 
+representado por <code>&lt;&lt;</code> (menor menor) e serve para 
+indicar ao <em>Shell</em> que o escopo de um comando começa na linha 
+seguinte e termina quando encontra uma linha cujo conteúdo seja 
+unicamente o label que segue o sinal <code>&lt;&lt;</code>.
+</p><p>
+Veja o fragmento de <em>script</em> a seguir, com uma rotina de <code>ftp</code>:
+</p><p>
+</p><pre>    ftp -ivn hostremoto &lt;&lt; fimftp
+        user $Usuário $Senha
+        binary
+        get arquivoremoto
+    fimftp
+</pre>
+<p>
+Neste pedacinho de programa temos um monte de detalhes interessantes: </p><ol>
+<li> As opções que usei para o <code>ftp</code> (<code>-ivn</code>) 
+servem para ele ir listando tudo que está acontecendo (<code>&#8212;v</code> 
+de verbose), para não perguntar se você tem certeza de que deseja 
+transmitir cada arquivo (<code>&#8212;i</code> de interactive), e finalmente a
+ opção <code>&#8212;n</code> serve para dizer ao <code>ftp</code> para ele não
+ solicitar o usuário e sua senha, pois esses serão informados pela 
+instrução específica (<code>user</code>);
+</li> <li> Quando eu usei o <code>&lt;&lt; fimftp</code>, estava dizendo
+ o seguinte para o intérprete:<br> - Olhe aqui <em>Shell</em>, não se 
+meta em nada a partir daqui até encontrar o label <code>fimftp</code>. 
+Você não entenderia nada, já que são instruções específicas do comando <code>ftp</code>
+ e você não entende nada de <code>ftp</code>.<br> Se fosse só isso seria
+ simples, mas pelo próprio exemplo dá para ver que existem duas 
+variáveis (<code>$Usuário</code> e <code>$Senha</code>), que o <em>Shell</em>
+ vai resolver antes do redirecionamento. Mas a grande vantagem desse 
+tipo de construção é que ela permite que comandos também sejam 
+interpretados dentro do escopo do <em>here document</em>, o que também 
+contraria o que acabei de dizer. Logo a seguir explico como esse negócio
+ funciona. Agora ainda não dá, está faltando ferramenta.
+</li> <li> O comando <code>user</code> é do repertório de instruções do <code>ftp</code>
+ e serve para passar o usuário e a senha que haviam sido lidos em uma 
+rotina anterior a esse fragmento de código e colocados respectivamente 
+nas duas variáveis: <code>$Usuário</code> e <code>$Senha</code>.
+</li> <li> O <code>binary</code> é outra instrução do <code>ftp</code>, 
+que serve para indicar que a transferência de <code>arquivoremoto</code>
+ será feita em modo binário, isto é, o conteúdo do arquivo não será 
+interpretado para saber se está em ASCII, EBCDIC, ...
+</li> <li> O <code>get arquivoremoto</code> diz ao <code>ftp</code> para
+ pegar esse arquivo em <code>hostremoto</code> e trazê-lo para o nosso 
+host local. Se fosse para mandar o arquivo, usaríamos o comando <code>put</code>.
+</li></ol> 
+<p>
+</p><div style="min-height: 105px; margin: 1em; padding: 1em; border: 
+1px dashed red; background-color: rgb(255, 255, 204);"><img 
+style="float: left; padding: 0px 8px 0px 0px;" 
+src="TWikiBarPapo001_arquivos/pinguim_atencao.gif" alt="Pinguim com 
+placa de atenção">
+Um erro muito freqüente no uso de <code>labels</code> (como o <code>fimftp</code>
+ do exemplo anterior) é causado pela presença de espaços em branco antes
+ ou após o mesmo. Fique muito atento quanto a isso, por que este tipo de
+ erro costuma dar uma boa surra no programador, até que seja detectado. 
+Lembre-se: um <code>label</code> que se preze tem que ter uma linha 
+inteira só para ele.
+</div>
+<p>
+&nbsp;&nbsp;&nbsp;&nbsp;- Está bem, está bem! Eu sei que dei uma viajada
+ e entrei pelos comandos do <code>ftp</code>, fugindo ao nosso assunto 
+que é <em>Shell</em>, mas como é sempre bom aprender e é raro as pessoas
+ estarem disponíveis para ensinar...
+</p><p>
+</p><h5><a name="Redirecionamento_de_Comandos"></a> Redirecionamento de 
+Comandos </h5>
+<p>
+Os redirecionamentos que falamos até aqui sempre se referiam a arquivos,
+ isto é mandavam para arquivo, recebiam de arquivo, simulavam arquivo 
+local, ... O que veremos a partir de agora redireciona a saída de um 
+comando para a entrada de outro. É utilíssimo e quebra os maiores 
+galhos. Seu nome é <em>pipe</em> (que em inglês significa tubo, já que 
+ele encana a saída de um comando para a entrada de outro) e sua 
+representação é uma barra vertical (<code>|</code>).
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);"> $ ls | wc -l
+ <font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;21</font>
+</div>
+<p>
+O comando <code>ls</code> passou a lista de arquivos para o comando <code>wc</code>,
+ que quando está com a opção <code>&#8211;l</code> conta a quantidade de linha
+ que recebeu. Desta forma, podemos afirmar categoricamente que no meu 
+diretório existiam 21 arquivos.
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);"> $ cat /etc/passwd |sort | lp
+</div>
+<p>
+Esta linha de comandos manda a listagem do arquivo <code>/etc/passwd</code>
+ para a entrada do comando <code>sort</code>. Este a classifica e 
+manda-a para o <code>lp</code> que é o gerenciador do <em>spool</em> de 
+impressão.
+</p><p>
+</p><h4><a name="Caracteres_de_Ambiente"></a> Caracteres de Ambiente </h4>
+<p>
+Quando quer priorizar uma expressão você coloca-a entre parênteses não 
+é? Pois é, por causa da aritmética é normal pensarmos deste jeito. Mas 
+em <em>Shell</em> o que prioriza mesmo são as crases (<code>`</code>) e 
+não os parênteses. Vou dar exemplos de uso das crases para você entender
+ melhor.
+</p><p>
+Eu quero saber quantos usuários estão "logados" no computador que eu 
+administro. Eu posso fazer:
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);"> $ who | wc -l
+ <font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;8</font>
+</div>
+<p>
+O comando <code>who</code> passa a lista de usuários conectados para o 
+comando <code>wc &#8211;l</code> que conta quantas linhas recebeu e lista a 
+resposta na tela. Pois bem, mas ao invés de ter um oito solto na tela, o
+ que eu quero é que ele esteja no meio de uma frase.
+</p><p>
+Ora para mandar frases para a tela eu uso o comando <code>echo</code>, 
+então vamos ver como é que fica:
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);"> $ echo "Existem who | wc -l 
+usuários conectados"
+ <font color="#ffffff">Existem who | wc -l usuários conectados</font>
+</div>
+<p>
+Hi! Olha só, não funcionou! É mesmo, não funcionou e não foi por causa 
+das aspas que eu coloquei, mas sim por que eu teria que ter executado o <code>who
+ | wc -l</code> antes do <code>echo</code>. Para resolver este problema,
+ tenho que priorizar esta segunda parte do comando com o uso de crases, 
+fazendo assim:
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);"> $ echo "Existem `who | wc -l`
+ usuários conectados"
+ <font color="#ffffff">Existem     8 usuários conectados</font>
+</div>
+<p>
+Para eliminar esse monte de brancos antes do <code>8</code> que o <code>wc
+ -l</code> produziu, basta tirar as aspas. Assim:
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);"> $ echo Existem `who | wc -l` 
+usuários conectados
+ <font color="#ffffff">Existem 8 usuários conectados</font>
+</div>
+<p>
+Como eu disse antes, as aspas protegem tudo que esta dentro dos seus 
+limites, da interpretação do <em>Shell</em>. Como para o <em>Shell</em> 
+basta um espaço em branco como separador, o monte de espaços será 
+trocado por um único após a retirada das aspas.
+</p><p>
+Antes de falar sobre o uso dos parênteses deixa eu mandar uma rapidinha 
+sobre o uso de ponto-e-vírgula (<code>;</code>). Quando estiver no <em>Shell</em>,
+ você deve sempre dar um comando em cada linha. Para agrupar comandos em
+ uma mesma linha teremos que separá-los por ponto-e-vírgula. Então:
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);"> $ pwd ; cd /etc; pwd; cd -; 
+pwd
+ <font color="#ffffff">/home/meudir
+ /etc/
+ /home/meudir</font>
+</div>
+<p>
+Neste exemplo, listei o nome do diretório corrente com o comando <code>pwd</code>,
+ mudei para o diretório <code>/etc</code>, novamente listei o nome do 
+diretório e finalmente voltei para o diretório onde estava anteriormente
+ (<code>cd -</code>), listando seu nome. Repare que coloquei o 
+ponto-e-vírgula (<code>;</code>) de todas as formas possíveis para 
+mostrar que não importa se existe espaços em branco antes ou após este 
+caractere.
+</p><p>
+Finalmente vamos ver o caso dos parênteses. Veja só o caso a seguir, bem
+ parecido com o exemplo anterior:
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);"> $ (pwd ; cd /etc ; pwd;)<font
+ color="#ffffff">
+ /home/meudir
+ /etc/</font>
+ $ pwd<font color="#ffffff">
+ /home/meudir</font>
+</div>
+<p>
+&nbsp;&nbsp;&nbsp;&nbsp;- Quequeiiisso minha gente? Eu estava no <code>/home/meudir</code>,
+ mudei para o <code>/etc</code>, constatei que estava neste diretório 
+com o <code>pwd</code> seguinte e quando o agrupamento de comandos 
+terminou, eu vi que continuava no <code>/home/meudir</code>, como se eu 
+nunca houvesse saído de lá!
+</p><p>
+&nbsp;&nbsp;&nbsp;&nbsp;- Ih! Será que é tem coisa de mágico aí?
+</p><p>
+&nbsp;&nbsp;&nbsp;&nbsp;- Tá me estranhando, rapaz? Não é nada disso! O 
+interessante do uso de parênteses é que ele invoca um novo <em>Shell</em>
+ para executar os comandos que estão no seu interior. Desta forma, 
+realmente fomos para o diretório <code>/etc</code>, porém quando todos 
+os comandos dentro dos parênteses foram executados, o novo <em>Shell</em>
+ que estava no diretório <code>/etc</code> morreu e voltamos ao <em>Shell</em>
+ anterior cujo diretório corrente era <code>/home/meudir</code>. Faça 
+outros testes usando <code>cd</code>, e <code>ls</code> para você firmar
+ o conceito.
+</p><p>
+Agora que já conhecemos estes conceitos veja só este exemplo a seguir:
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);"> $ mail suporte &lt;&lt; FIM
+ &gt; Ola suporte, hoje as &#8216;date "+%H:%M"&#8216;
+ &gt; ocorreu novamente aquele problema
+ &gt; que eu havia reportado por 
+ &gt; telefone. Conforme seu pedido 
+ &gt; ai vai uma listagem dos arquivos 
+ &gt; do diretorio:
+ &gt; &#8216;ls -l&#8216;
+ &gt; Abracos a todos.
+ &gt; FIM
+</div>
+<p>
+Finalmente agora temos conhecimento para mostrar o que havíamos 
+conversado sobre <strong><em>here document</em></strong>. Os comandos 
+entre crases (<code>`</code>) serão priorizados e portanto o <em>Shell</em>
+ os executará antes da instrução <code>mail</code>. Quando o suporte 
+receber o <em>e-mail</em>, verá que os comandos <code>date</code> e <code>ls</code>
+ foram executados imediatamente antes do comando <code>mail</code>, 
+recebendo então uma fotografia do ambiente no momento em que a 
+correspondência foi enviada.
+</p><p>
+O <em>prompt</em> primário <em>default</em> do <em>Shell</em>, como 
+vimos, é o cifrão (<code>$</code>), porém o <em>Shell</em> usa o 
+conceito de <em>prompt</em> secundário, ou de continuação de comando, 
+que é enviado para a tela quando há uma quebra de linha e a instrução 
+não terminou. Esse <em>prompt</em>, é representado por um sinal de maior
+ (<code>&gt;</code>), que vemos precedendo a partir da 2ª linha do 
+exemplo.
+</p><p>
+Para finalizar e bagunçar tudo, devo dizer que existe uma construção 
+mais moderna que vem sendo utilizada como forma de priorização de 
+execução de comandos, tal qual as crases (<code>`</code>). São as 
+construções do tipo <code>$(cmd)</code>, onde <code>cmd</code> é um (ou 
+vários) comando que será(ão) executado(s) com prioridade em seu 
+contexto.
+</p><p>
+Assim sendo, o uso de crases (<code>`</code>) ou construções do tipo <code>$(cmd)</code>
+ servem para o mesmo fim, porém para quem trabalha com sistemas 
+operacionais de diversos fornecedores (multiplataforma), aconselho o uso
+ das crases, já que o <code>$(cmd)</code> não foi portado para todos os 
+sabores de <em>Shell</em>. Aqui dentro do Botequim, usarei ambas as 
+formas, indistintamente.
+</p><p>
+Vejamos novamente o exemplo dado para as crases sob esta nova ótica:
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);"> $ echo Existem $(who | wc -l)
+ usuários conectados
+ <font color="#ffffff">Existem 8 usuários conectados</font>
+</div>
+<p>
+Veja só este caso:
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);"> $ Arqs=ls
+ $ echo $Arqs
+ <font color="#ffffff">ls</font>
+</div>
+<p>
+Neste exemplo eu fiz uma atribuição (<code>=</code>) e executei uma 
+instrução. O que eu queria era que a variável <code>$Arqs</code>, 
+recebesse a saída do comando <code>ls</code>. Como as instruções de um <em>script</em>
+ são interpretadas de cima para baixo e da esquerda para a direita, a 
+atribuição foi feita antes da execução do <code>ls</code>. Para fazer o 
+que desejamos é necessário que eu priorize a execução deste comando em 
+detrimento da atribuição e isto pode ser feito de qualquer uma das 
+maneiras a seguir:
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);"> $ Arqs=`ls`
+</div>
+<p>
+ou:
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);"> $ Arqs=$(ls)
+</div>
+<p>
+Para encerrar este assunto vamos ver só mais um exemplo. Digamos que eu 
+queira colocar dentro da variável <code>$Arqs</code> a listagem longa (<code>ls
+ -l</code>) de todos os arquivos começados por <code>arq</code> e 
+seguidos de um único caractere (<code>?</code>). Eu deveria fazer:
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);"> $ Arqs=$(ls -l arq?)
+</div>
+<p>
+ou:
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);"> $ Arqs=`ls -l arq?`
+</div>
+<p>
+Mas veja:
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);"> $ echo $Arqs
+ <font color="#ffffff">-rw-r--r-- 1 jneves jneves 19 May 24 19:41 arq1 
+-rw-r--r-- 1 jneves jneves 23 May 24 19:43 arq2 -rw-r--r-- 1 jneves 
+jneves 1866 Jan 22 2003 arql</font>
+</div>
+<p>
+&nbsp;&nbsp;&nbsp;&nbsp;- Pô, saiu tudo embolado!
+</p><p>
+&nbsp;&nbsp;&nbsp;&nbsp;- Pois é cara, como eu já te disse, se você 
+deixar o <em>Shell</em> &#8220;ver&#8221; os espaços em branco, sempre que houver 
+diversos espaços juntos, eles serão trocados por apenas um. Para que a 
+listagem saia bonitinha, é necessário proteger a variável da 
+interpretação do <em>Shell</em>, assim:
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);"> $ echo "$Arqs"
+ <font color="#ffffff">-rw-r--r--    1 jneves   jneves         19 May 24
+ 19:41 arq1
+ -rw-r--r--    1 jneves   jneves         23 May 24 19:43 arq2
+ -rw-r--r--    1 jneves   jneves       1866 Jan 22  2003 arql</font>
+</div>
+<p>
+&nbsp;&nbsp;&nbsp;&nbsp;- Olhe, amigo, vá treinando esses exemplos, 
+porque, quando nos encontrarmos novamente, vou lhe explicar uma série de
+ instruções típicas de programação <em>Shell</em>. Tchau! Ahh! Só mais 
+uma coisinha que eu ia esquecendo de lhe dizer. Em <em>Shell</em>, o 
+"jogo da velha" (<code>#</code>) é usado quando desejamos fazer um 
+comentário.
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);"> $ exit # pede a conta ao 
+garcon <img src="TWikiBarPapo001_arquivos/frown.gif" alt="frown" 
+title="frown" border="0">
+</div>
+<p>
+Vou aproveitar também para mandar o meu jabá: diga para os amigos que 
+quem estiver afim de fazer um curso porreta de programação em <em>Shell</em>
+ que mande um e-mail para a nossa <a 
+href="mailto:contato@clavis.com.br?Subject=Curso%20de%20Shell%20com%20Julio%20Neves">gerencia
+ de treinamento</a> para informar-se. 
+</p><p>
+Qualquer dúvida ou falta de companhia para um chope ou até para falar 
+mal dos políticos é só mandar um e-mail para <a 
+href="mailto:julioneves@openoffice.org?Subject=D%C3%BAvidas%20Papo%20de%20Botequim">mim</a>.
+ 
+</p><p>
+Valeu!
+	 </p></div><!-- fecha div topico -->
+	 <div class="rodape">		<br>  <a 
+href="http://creativecommons.org/licenses/by-nc-sa/2.0/br/" 
+target="_blank"><img 
+src="TWikiBarPapo001_arquivos/Logo_CC-by-nc-sa_pequeno.png" alt="Licença
+ Creative Commons - Atribuição e Não Comercial" title="Licença Creative 
+Commons - Atribuição e Não Comercial (pequeno)" border="0"></a> (CC) 
+2010 Pelos <a href="http://wiki.softwarelivre.org/Main/TWikiBarGroup">Frequentadores
+ do Bar do Júlio Neves</a>.<br> 
+Todo o conteúdo desta página pode ser utilizado segundo os termos da <a 
+href="http://creativecommons.org/licenses/by-nc-sa/2.0/br/">Creative 
+Commons License</a>: Atribuição-UsoNãoComercial-PermanênciaDaLicença.
+	 </div>
+  </div><!-- fecha div corpo -->
+</div><!-- fecha div geral -->
+</body></html>

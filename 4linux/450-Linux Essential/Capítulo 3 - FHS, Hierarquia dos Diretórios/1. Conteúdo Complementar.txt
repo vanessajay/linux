@@ -1,0 +1,5 @@
+Estruturas de Diretórios:
+http://pt.wikipedia.org/wiki/Filesystem_Hierarchy_Standard
+
+Filesystem Hierarchy Standard
+http://www.pathname.com/fhs/

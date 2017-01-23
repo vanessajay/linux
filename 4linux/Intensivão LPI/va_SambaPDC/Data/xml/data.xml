@@ -1,0 +1,41 @@
+<aula>
+   
+<video title="Apresentação">O objetivo dessa vídeo-aula é ensinar como configurar uma rede mista composta pelos sistemas operacionais Linux e Windows XP. Isto é feito com o Samba. Nessa vídeo-aula você aprenderá a configurar o servidor Linux com Samba seguindo um roteiro que está em anexo no pacote desta vídeo-aula. Para ingressar a máquina com o Windows XP no domínio você verá como fazer isto na vídeo-aula.</video>
+
+<video title="Cenário">A rede mista que mostrarei como modelo é composta por dois computadores. Um é o servidor com o Linux e outro o cliente com o Windows XP. As duas máquinas usarão IP fixo. O hostname da máquina com Linux será "servidor" e da máquina Windows "ntecliente", mas os nomes ficam ao seu critério desde que você edite o arquivo smb.conf que foi dentro do pacote da vídeo-aula. Antes de continuar a vídeo-aula, abra o roteiro em pdf que veio junto com o pacote e aplique os passos na máquina com o Linux e depois retorne para ver como ingressar a máquina cliente no domínio do servidor.</video>
+
+<video title="Configurando a rede no Windows XP">Clique no menu "Iniciar" e depois em "Painel de controle".</video>
+
+<video title="Configurando a rede no Windows XP">Clique em "Conexões de rede"</video>
+
+<video title="Configurando a rede no Windows XP">Clique com o botão direito do mouse em cima do ícone que representa sua placa de rede e clique em "Propriedades".</video>
+
+<video title="Configurando a rede no Windows XP">Selecione "Protocolo TCP/IP" e clique em "Propriedades".</video>
+
+<video title="Configurando a rede no Windows XP">Coloque as configurações conforme a imagem. IP: 192.168.0.2, Máscara de sub-rede: 255.255.255.0, Gateway padrão: 192.168.0.1 e clique em "OK".</video>
+
+<video title="Inserindo a máquina Windows no domínio">Clique com o botão direito do mouse no ícone "Meu computador" e depois clique em "Propriedades".</video>
+
+<video title="Inserindo a máquina Windows no domínio">Clique na aba "Nome do computador".</video>
+
+<video title="Inserindo a máquina Windows no domínio">Em "Descrição do computador" coloque ntecliente. Depois clique em "Alterar...".</video>
+
+<video title="Inserindo a máquina Windows no domínio">Em "Nome do computador" coloque NTECLIENTE e selecione Domínio, coloque "MEC" e clique em "OK".</video>
+
+<video title="Inserindo a máquina Windows no domínio">Para ingressar a máquina cliente no domínio do servidor você precisará se autenticar. Digite root em "Nome de usuário" e a senha dele em "Senha" e clique em "OK".</video>
+
+<video title="Inserindo a máquina Windows no domínio">Se ocorreu tudo bem, essa janela aparecerá para você com uma mensagem de boas-vindas ao domínio. Se a tentativa não foi bem sucedida verifique os passos que você fez no roteiro para verificar se você errou algo. Se não solucionar mesmo assim, leia o arquivo ajuda.pdf que veio no pacote da vídeo-aula. Reinice a máquina Windows para que as configurações sejam validadas.</video>
+
+<video title="Inserindo a máquina Windows no domínio">Logue-se com um usuaŕio criado no domínio. Por exemplo: maria e selecione o domínio conforme a imagem e clique em "OK".</video>
+
+<video title="Acessando compartilhamentos">Vá na área de trabalho e clique em "Meu computador". Veja as "Unidades de rede" que foram configuradas no servidor para serem montadas aqui.</video>
+
+<video title="Ambiente de rede">Acesse o ambiente de Rede para ver o ícone da rede MEC. Clique no ícone.</video>
+
+<video title="Ambiente de rede">Veja o ícone "Servidor Samba NTE". Clique nele.</video>
+
+<video title="Ambiente de rede">Veja o diretório home de maria, o diretório público e a impressora compartilhados.</video>
+
+<video title="Checando acessos no servidor">No servidor, abra um terminal como root e digite o comando smbstatus para obter o status da rede Samba.</video>
+
+</aula>

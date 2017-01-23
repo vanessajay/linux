@@ -1,0 +1,347 @@
+﻿<aula>
+   
+<video title="Acessando o lynx">Nesta vídeo aula realizaremos a configuração e compilação do kernel utilizado em sistemas GNU/Linux. Efetuaremos o download do código fonte da última versão do linux, a partir de sua página web oficial. Para isso, utilizaremos o browser em modo texto, chamado lynx e acessaremos o seguinte endereço: http://www.kernel.org.</video>
+    
+<video title="Acessando a página do kernel"><![CDATA[Agora, na página do kernel, vamos realizar o download da última versão do kernel, que no momento da elaboração desta vídeo aula é a 2.6.20 revisão 1. Posicionando o cursor na letra "F", de "fetch" e, pressionando a tecla <ENTER>,
+no seu teclado, o download será iniciado.]]></video>
+   
+<video title="Iniciando o download do kernel">Ao pressionar a tecla <ENTER>, na barra azul no rodapé da página, surgirá a mensagem perguntando qual ação deve ser tomada para o arquivo tipo bzip2. As opções são: pressionar a letra <D>, para efetuar o download, ou a letra <C>, para cancelar a ação. Como desejamos realizar o download, basta pressionar a letra <D>.
+</video>
+  
+<video title="Aguardando o download">Repare novamente na barra azul que o download foi iniciado. Dependendo da velocidade da sua conexão com a internet, esse download poderá demorar um bom tempo. Afinal, o código fonte do Linux comprimido com bzip2 é de aproximadamente 42MB. Aguarde o download ser concluído e passe para o próximo slide.</video>
+  
+<video title="Salvando em disco">Quando o download for concluído, será apresentada uma tela informativa com o nome do arquivo baixado, o nome sugerido para gravação e a opção para salvá-lo em disco. Posicionando o cursor em "Save to disk" e pressionando a tecla <ENTER>, o
+arquivo será salvo em nossa máquina.</video>
+
+<video title="Escolhendo o nome do arquivo">Após termos escolhido armazenar o arquivo em disco, na barra azul surgirá o nome que desejamos dar ao arquivo. Vamos aceitar a sugestão e apenas ressionar a tecla <ENTER>.</video>
+
+<video title="Saindo do lynx">Agora que concluímos o download e já gravamos o arquivo em disco, podemos sair do aplicativo "lynx" pressionando a tecla <q> e confirmando a ação com a tecla <y>.
+</video>
+
+<video title="Verificando que o arquivo chegou">De volta ao terminal, vamos localizar o arquivo que acabamos de salvar. Para isso, executaremos o comando:
+
+$ ls -lh ~/linux*
+
+Assim, verificamos que o arquivo foi gravado e que possui 42MB.</video>
+
+<video title="Entrando como root">Para que possamos prosseguir no processo de configuração e compilação do nosso futuro novo kernel, precisamos de acesso como usuário root. Para isso, vamos trocar de usuário com o comando:
+
+$ su -
+
+e informando a senha do root. Podemos verificar que a troca foi bem sucedida
+utilizando o comando:
+
+# whoami</video>
+
+<video title="Descompactando o código fonte">Agora que já temos as permissões necessárias, vamos extrair o código fonte do Linux no diretório apropriado: /usr/src. Para isso usemos o comando "tar".
+
+# tar xjf linux-2.6.20.1.tar.bz2 -C /usr/src
+</video>
+
+<video title="Instalando aplicativos necessários">Neste ponto, estamos quase prontos para começar a configuração do kernel. Entretanto, para que possamos utilizar a interface de configuração do kernel e posteriormente compilá-los, precisamos instalar os pacotes necessários, que no Debian são: gcc, autoconf, libncurses5, libncurses5-dev, ncurses-base, ncurses-bin e ncurses-term. Para isso, utilizamos o comando "aptitude" da seguinte forma:
+
+# aptitude install gcc autoconf libncurses5 libncurses5-dev ncurses-base ncurses-bin ncurses-term
+</video>
+
+<video title="Entrando no diretório do código fonte">Após a conclusão da extração do arquivo e instalação dos pacotes necessários, vamos ao diretório /usr/src/linux-2.6.20.1, utilizando o comando "cd".
+
+# cd /usr/src/linux-2.6.20.1
+
+Visualizando o conteúdo desse diretório podemos notar pelo menos um arquivo, cuja leitura é altamente sugerida, o README.</video>
+
+<video title="Editando a Makefile">Entretanto, um estágio muito importante do processo de compilação de um kernel é a adição de uma EXTRAVERSION na Makefile do kernel. Para modificá-la, vamos editar o arquivo chamado Makefile, localizado no diretório raiz do código fonte do kernel, utilizando um editor de texto puro, como o vi.
+
+# vi Makefile</video>
+
+<video title="Alterando a EXTRAVERSION">Na quarta linha da Makefile está a definição da variável chamada EXTRAVERSION. O valor que está sendo atribuído a ela é .1. Vamos adicionar a seguinte string: -20070301c1. Essa string é o caracter hífen, seguido da data no formato, ano,
+mês e dia, seguido de c1, o que corresponde a "compilação 1". Ou seja, a primeira compilação desse kernel, nesse dia. Após esta adição, salve o arquivo e saia dele.</video>
+
+<video title="Verificando o nome do kernel instalado">Para ver a importância de adicionar uma EXTRAVERSION vamos ilustrar com o meu próprio sistema. Vamos utilizar o comando:
+
+# uname -r
+
+que no meu caso retornou 2.6.18-r3-20070227c3, no qual 20070227c3, indica que a última compilação que realizei em minha máquina foi no dia 27 de fevereiro de 2007 e, nesse dia, realizei três compilações distintas.</video>
+
+<video title="Listando o /lib/modules">A implicação mais importante dessa alteração é quanto à organização dos diretórios de módulos no diretório /lib/modules. Ao utilizarmos uma EXTRAVERSION, a instalação dos módulos será efetuada em um diretório exclusivo da compilação referente à extraversion. Caso contrário, a árvore de módulos será sempre reescrita e "lixos" de compilações anteriores permanecerão. Utilizando minha máquina como exemplo, posso listar os diretórios dentro do /lib/modules, utilizando o comando:
+
+# ls /lib/modules
+
+Neste caso, podemos ver diversos diretórios de módulos referentes às diversas compilações que já foram efetuadas. Em especial, a estrutura que está sendo utilizada neste momento: 2.6.18-r3-20070227c3.</video>
+
+<video title="Executando make menuconfig">Finalmente, estamos prontos para iniciar a configuração do nosso novo kernel, como você já deve ter lido no arquivo README, basta utilizarmos o comando:
+
+# make menuconfig
+
+Esse comando iniciará a interface de configuração do nosso kernel.</video>
+
+<video title="Conhecendo a interface de configuração do kernel">Bem vindo à tela principal de configuração do kernel! Nesta tela há três informações que devemos nos atentar:
+
+i) na parte superior, há a definição das convenções adotadas na interface de configuração, como por exemplo a definição de que tudo que está entre sinais de maior e menor pode ser compilado como módulo;
+
+ii) na parte central, há todos os sub-menus de opções de compilação, incluindo aqueles para carregar configurações a partir de um arquivo externo e sair da interface de configuração;
+
+iii) na parte inferior, há um menu horizontal contento três botões, <select>, <exit> e <help>. Esse último, sem dúvida, é o mais utilizado. :)
+
+Vamos acessar o primeiro sub-menu: "Code maturity level options"
+</video>
+
+<video title="Code maturity level options">Nesta seção, escolhemos se desejamos que nos sejam apresentadas opções de componentes do kernel que ainda estão incompletas ou em desenvolvimento.
+
+Quando estamos compilando um kernel para um servidor é recomendado que selecionemos apenas códigos estáveis. Sendo assim, vamos retirar essa funcionalidade.
+
+Após concluir, volte ao menu principal utilizando o botão <EXIT>.
+</video>
+
+<video title="General setup">No menu principal, vamos para o segundo sub-menu: "General setup".
+
+Dentro dele, são apresentadas algumas funcionalidades como: suporte ao swap, e algumas a respeito da forma como os processos se comunicam, o chamado IPC - Inter Process Communication.
+
+Neste sub-menu, o mais importante é manter o suporte ao swap. Vamos olhar o help dele. Posicione o cursor em "Support for paging anonymous memory (swap)" e pressione a tecla <h> para ler o help desse ítem.</video>
+
+<video title="Support for paging of ... (swap)">Veja que nesta tela de "help" há uma breve descrição a respeito do que é o swap e uma sugestão a respeito da escolha a ser efetuada. A sugestão é que: se você estiver em dúvida do que fazer nesta opção, diga sim! Ou, como está escrito no "help", "If unsure say Yes".
+
+Para realizar uma compilação detalhada e altamente personalizada do kernel, é necessário ler TODAS as telas de ajuda de TODAS as opções que nos são apresentadas e, de posse dessa informação, determinar se a funcionalidade é requerida ou não!
+
+Nesta vídeo aula, não chegaremos a esse ponto de detalhamento, mas isso não impede que você, ao término dela, seja capaz de tentar uma compilação mais minuciosa.
+
+Volte ao menu principal. Aperte o botão <EXIT> para sair da tela de "help" e, pressionando-o novamente, para voltar ao menu principal.</video>
+
+<video title="Menu principal">De volta ao menu principal, vamos para o próximo ítem: "Loadable Module Support". Posicione o cursor nessa opção e tecle <ENTER>.
+</video>
+
+<video title="Loadable module support">Esse sub-menu fornece a capacidade de compilar componentes do kernel, como módulos, que poderão ser carregados posteriormente, à medida que forem necessários.
+
+Se a sua intenção não é compilar um kernel totalmente enxuto, mas apenas adicionar alguma funcionalidade que não veio selecionada por padrão, mantenha o suporte à módulos.
+
+Se a sua intenção for compilar um kernel realmente específico e enxuto, mantenha essa funcionalidade até você ter certeza que não há mais nenhuma funcionalidade compilada como módulo sendo utilizada. Em geral uma iniciativa dessas requer, pelo menos, umas três ou quatro compilações até que se obtenha o kernel que poderíamos chamar de ideal.
+
+No caso, podemos adicionar a funcionalidade: "Automatic kernel module loading", que carrega módulos à medida que se fazem necessários no sistema. Volte ao menu anterior: <EXIT>
+</video>
+
+<video title="Menu principal">De volta ao menu principal, entre no sub-menu: "Block Layer".</video>
+
+<video title="Block layer">Neste menu, escolheremos o algoritmo de acesso ao disco, ou seja, o "IO Scheduler".
+
+Para isso entraremos em mais um sub-menu, chamado "IO Schedulers".</video>
+
+<video title="IO Schedulers">Neste sub-menu encontraremos os três "IO Schedulers" disponíveis no Linux. O Antecipatory trabalha bem na maioria dos casos, exceto com bancos de dados; o Deadline em geral é tão bom quanto o antecipatório e tem desempenho melhor com bancos de dados; o CFQ é mais voltado para desktops. A escolha do IO Scheduler depende do tipo de serviço que você irá utilizar na máquina. Aqui, assumiremos que estamos compilando um kernel para servidor e, por este motivo, uzaremos o Deadline. Mantenha suporte apenas ao Deadline e volte ao menu anterior.
+</video>
+
+<video title="Menu principal">De volta ao menu principal, selecione o sub-menu: "Processor type and features"</video>
+
+<video title="Processor type and features">Neste sub-menu, selecionaremos as opções referentes ao nosso processador, como a arquitetura, tipo e funcionalidades que possui.
+
+Para que possamos colher esse tipo de informação, abra outro terminal e olhe o conteúdo do arquivo em /proc, chamado, cpuinfo, utilizando o comando:
+
+# cat /proc/cpuinfo
+</video>
+
+<video title="cat /proc/cpuinfo">No caso da máquina que estou utilizando, podemos ver que é um AMD Turion 64 X2, o que significa que é um "dual core". Este fato pode ser constatado vendo o campo: "processor", no qual visualizamos o número 1. Como a contagem de processadores começa em 0, confirmamos que temos dois núcleos. Dessa forma, teremos que habilitar a funcionalidade SMP - Simetric Multi Processing. Outro ítem importante é o: "flags", que nos mostra quais funcionalidades o nosso processador dispõe.
+
+Voltando à interface de configuração do kernel, vamos fazer os ajustes necessários.</video>
+
+<video title="Selecionando o tipo do processador">Certamente o tipo da sub-arquitetura do nosso processador é "PC-Compatible". Em "Processor Family", altere para "AMD-Opteron/Athlon64", que corresponde ao Turion 64.
+
+Repare que MTRR - "Memory Type Range Register" é uma flag que encontramos em nosso processador e, por este motivo, a manteremos selecionada.
+
+Em "Symmetric multi-processing support", manteremos o suporte SMP, mas retiraremos o suporte ao "Hyperthreading", uma vez que esta tecnologia é Intel e nosso processador é AMD. Se o seu processador for Intel e possuir suporte ao "Hyperthreading", mantenha o suporte a essa funcionalidade.
+
+Como estamos compilando um kernel para um servidor, em "Preemption Model", selecione "No Forced Preemption", mais adequado para servidores.
+
+Repare também, que ACPI, MCE, dentre outros, são flags que estão presentes em nosso processador e, por esse motivo, manteremos o suporte.
+
+Nesse sub-menu são apenas essas as alterações. Volte ao menu principal.</video>
+
+<video title="Power Management support">Entre no sub-menu: "Power management options".
+
+Neste sub-menu estão as opções referentes a economia de energia. Neste momento não é necessário realizar nenhuma alteração, pois as seleções padrão já são adequadas. Por exemplo, o APM não está selecionado por ser uma especificação antiga.
+
+De volta o menu principal, entre no sub-menu: "Bus options".</video>
+
+<video title="Bus options">Esta seção fornece opção de quais barramentos estão disponíveis na máquina. Para verificarmos quais são eles, podemos analisar a saída do comando:
+
+# lspci
+
+mostrado na próxima tela.</video>
+
+<video title="lspci">A saída do comando lspci mostra as informações de todos os barramentos PCI e dos dispositivos a eles conectados.
+
+Podemos observar que, no caso desta máquina, o barramento PCI está presente e que outros barramentos, como PCI Express, ISA, MCA e NatSemi, não estão. Sendo assim, deixamos como "built in" o suporte ao barramento PCI e retiramos o suporte aos outros, citados acima.
+
+Quanto ao suporte para PCMCIA/CardBus, deixaremos como "built in" apenas se estivermos compilando esse kernel para um hardware que possua essa tecnologia presente, geralmente, em notebooks. Caso contrário, podemos retirá-lo por completo.
+
+O suporte ao "PCI HotPlug" só deve ser deixado se o hardware suportar essa funcionalidade.
+
+Voltando ao menu principal, entre no sub-menu: "Executable file formats".</video>
+
+<video title="Executable file formats">Nesta seção determinaremos a quais tipos de executáveis teremos suporte. Para que os executáveis nativos dos sistemas GNU/Linux possam ser utilizados
+normalmente, devemos colocar o suporte a "ELF binaries".
+
+Outra opção interessante de ser mantida, como "built in", é o suporte aos chamados "MISC binaries". Veja, no "help" dessa funcionalidade, que ela provê suporte à linguagens interpretadas como Java e Python.
+
+Volte ao menu principal e vamos ver as configurações de rede, no sub-menu: "Networking".
+</video>
+
+<video title="Networking">Neste sub-menu, retiraremos o suporte às tecnologias de: Rádio Amador (Amateur Radio support), Infra-vermelho (IrDA), Bluetooth e IEEE 802.11. Entretanto, se você tiver algum hardware que utilize essa tecnologia, adicione suporte como "Built in".
+
+No sub-ítem "Networking options", você encontrará opções referentes à protocolos de rede. Entre nesse menu e vamos analisá-lo.</video>
+
+<video title="Network options">Nesta sub-seção, sugiro que não altere nada a menos que você realmente saiba o que está fazendo. Entretanto, há uma opção que é necessária, caso desejemos utilizar um firewall nesta máquina. Localize a opção "Network packet filtering framework (Netfilter)" e adicione suporte como "built in".
+
+Volte ao menu principal tomando cuidado, pois devemos voltar dois níveis. No menu principal, entre no sub-menu: "Device Drivers", que é uma das partes mais trabalhosas da configuração do Linux.</video>
+
+<video title="Device Drivers">A sub-seção "Device Drivers" é composta de diversas outras sub-seções. Falaremos brevemente a respeito de cada uma delas, entretanto, sugerimos que você
+analise o conteúdo de cada uma delas, cuidadosamente, lendo os "helps", caso queira um kernel altamente especializado e enxuto.
+
+Nas duas primeiras sub-seções: "Generic Driver Options" e "Connector", sugerimos que não altere nada, utilize o padrão do próprio kernel.
+
+No caso das tecnologias: "Memory Technology Devices (MTD)" e suporte à porta paralela ("Parallel port support"), retire o suporte a menos que você tenha certeza que vai utilizá-las.
+
+No caso de suporte à tecnologia "Plug And Play", vamos entrar em seu sub-menu.</video>
+
+<video title="Plug and Play">Adicione suporte ao "Plug and Play" como "built in". Dessa forma, hardwares que suportem configuração de IRQs via software, poderão utilizar-se dessa funcionalidade.
+
+Volte ao menu anterior: "Device Drivers".
+
+% slide039 - Device Drivers
+
+Os próximos dois sub-menus: "Block devices" e "Misc devices" já vêm com configurações adequadas, não há necessidade de alterá-los.
+
+Entre na seção: "ATA/ATAPI/MFM/RLL support" e vamos ver o que podemos melhorar nela.</video>
+
+<video title="ATA/ATAPI/MFM/RLL support">Nesta seção, é necessário que encontremos o ítem que adiciona suporte à controladora IDE presente nesta máquina. Veja novamente o comando: "lspci" e determine qual é a controladora IDE da máquina na qual você está compilando esse kernel. No caso da minha máquina, a controladora IDE é uma ATI, como vemos na linha "IDE interface" da saída do comando "lspci". No meu caso:
+
+IDE interface: ATI Technologies Inc Standard Dual Channel PCI IDE Controller
+
+Após o ítem: "Enable DMA only for disks", vem a relação de controladoras IDE suportadas pelo kernel. Procure a que fornece suporte à sua controladora e adicione-a como "built in". Após encontrá-la, pode retirar o suporte a todas as outras.
+
+Volte ao menu anterior: "Device Drivers" e entre na sub-seção: "Serial ATA and Parallel ATA support".</video>
+
+<video title="Serial ATA and Parallel ATA support">Caso sua máquina utilize a tecnologia SERIAL ATA (SATA) ou ATA PARALELO (PATA), procure qual ítem fornece suporte à sua controladora. Para determinar qual é a sua controladora, utilize o comando "lspci" novamente.
+
+Se a sua máquina não utiliza nenhuma dessas tecnologias, pode retirar o suporte a elas apenas removendo o suporte ao primeiro ítem: "ATA device support", como é o meu caso.
+
+Volte ao menu "Device Drivers" e entre em: "Multi-device support (RAID and LVM)".</video>
+
+<video title="Multi-device support (RAID and LVM)">Caso você vá utilizar RAID e/ou LVM em sua máquina, adicione suporte a essas funcionalidades. Caso não vá utilizá-las, pode retirar o suporte a elas, suprimindo o suporte ao primeiro ítem: "Multiple devices driver support".
+
+Como utilizarei essas funcionalidades em minha máquina, deixarei o suporte ao RAID nível 1 e ao "Device mapper support", o qual fornece suporte ao LVM.
+
+Volte ao menu anterior: "Device Drivers".</video>
+
+<video title="Device Drivers">Como não vamos utilizar as tecnologias: "Fusion MPT device support", Firewire (IEEE 1394) e I2O, entre nesses sub-menus e retire o suporte à elas.
+
+Entre em: "Network device support".</video>
+
+<video title="Network device support">Antes de prosseguirmos, devemos determinar quais são as interfaces de rede presentes em nossa máquina.
+
+# "lspci |grep -i eth"
+
+determinei que há apenas uma interface de rede presente; uma Realtek, RTL-8139. Essa placa é de 100Mbits, sendo assim, vamos entrar na seção: "Ethernet (10 or 100Mbit)", mas antes disso, podemos entrar nas seções: "Ethernet (1000 Mbit)" e "Ethernet (10000 Mbit)" e retirar o suporte à todos os dispositivos nelas presentes.
+
+Caso você possua alguma placa de Wireless, deve entrar na seção: "Wireless LAN (non-hamradio)", adicionar suporte à essa tecnologia e, caso sua placa seja suportada no kernel, adicioná-la como "built in". 
+
+Outras funcionalidades nesta seção podem ser desabilitadas.
+
+Entre na seção: "Ethernet (10 or 100Mbit)"</video>
+
+<video title="Ethernet (10 or 100Mbit)">Como a placa de rede disponível em meu sistema é uma Realtek, retirarei o suporte à quaisquer outras e deixarei, como "built in", apenas o suporte ao ítem: "RealTek RTL-8129/8130/8139 PCI Fast Ethernet Adapter support".
+
+Podemos voltar ao menu anterior: "Device Drivers", dois níveis atrás!</video>
+
+<video title="Device Drivers">As próximas funcionalidades, "ISDN subsystem" e "Telephony Support", podem ser retiradas, a menos que você saiba que vá utilizá-las.
+
+Quanto a "Character devices", não há necessidade de efetuar nenhuma alteração, entretanto, podemos retirar o suporte às tecnologias: I2C, SPI, "Dallas's 1-wire", "Hardware Monitoring" e "Multimedia devices". Novamente, a menos que você saiba que vai utilizá-las!
+
+Vamos agora selecionar as opções de vídeo em: "Graphics support".</video>
+
+<video title="Graphics support">Utilizando novamente o comando "lspci |grep VGA", determinamos qual é a nossa placa de vídeo, que no meu caso é uma ATI Radeon Xpress 1100 IGP.
+
+Ativando o suporte ao frame buffer em: "Support for frame buffer devices", opções de placas de vídeo aparecerão. Selecione na lista o suporte à sua placa de rede como "built in".
+
+No meu caso: "ATI Radeon display support".
+
+Volte ao menu anterior, "Device Drivers", e entre em: "Sound".</video>
+
+<video title="Sound">Pensando em um servidor, não há nenhum motivo para manter o suporte à uma placa de áudio. Sendo assim, podemos retirar a funcionalidade: "Sound card support"; entretanto, caso você queira manter o suporte ao áudio (desktop), desabilite a opção: "Open Sound System" e, dentro de "Advanced Linux Sound Architecture", selecione a sua placa de som.
+
+Volte ao menu anterior: "Device Drivers" </video>
+
+<video title="Device Drivers">Após a configuração das opções do sistema de som, restam alguns ítens que não mexeremos pois, por padrão, vêm com configurações adequadas. Apenas verifique que, a partir de "MMC/SD Card", todas as funcionalidades estão desabilitadas.
+
+Volte ao menu principal.</video>
+
+<video title="File systems">Esta é uma seção de extrema importância. Nela, escolhemos quais file systems utilizaremos em nosso sistema. A princípio, se a idéia for utilizar apenas file system do tipo EXT3, selecionaremos apenas as opções a ele relacionadas e não adicionaremos suporte às outras.
+
+Se o sistema em questão for utilizar sistemas de quotas, adicione o suporte a esta opção.
+
+Caso você deseje utilizar o NFS, file system de rede, entre em "Network File System", e ative as opções.
+
+Volte ao menu principal e entre na seção: "Kernel hacking".</video>
+
+<video title="Kernel hacking">Nesta seção, podemos desabilitar todas as opções, pois elas destinam-se aqueles que desejam realizar testes relacionados ao kernel.
+
+Volte ao menu principal e entre em: "Security options".</video>
+
+<video title="Security options">Nesta seção, não precisamos ativar nenhuma funcionalidade. Se você estiver configurando um kernel específico, para uma máquina com necessidades de segurança específicas, talvez seja interessante olhar esta seção com mais cuidado.
+
+Volte a menu principal e entre em: "Cryptographic options".</video>
+
+<video title="Cryptographic options">Nesta seção você selecionará os algoritmos de criptografia que serão utilizados pelo sistema e seus aplicativos. Os algoritmos que selecionei são os mais comuns de serem utilizados. Se você necessitar de algum outro, basta colocá-lo como
+"built in".
+
+Volte ao menu inicial e entre em: "Library routines".</video>
+
+<video title="Library routines">A princípio podemos desabilitar essas funcionalidades, a menos que saibamos que a utilizaremos.
+
+Volte ao menu inicial!</video>
+
+<video title="Menu inicial">Agora que, finalmente, terminamos a configuração do nosso kernel, vamos utilizar o botão <EXIT> e sair da interface de configuração.</video>
+
+<video title="Salvando as Configurações">Ao pressionarmos o botão para sair, uma mensagem perguntando se desejamos salvar as configurações e sair nos será apresentada. Confirme que deseja salvar e sair, pressionando o botão <YES>.</video>
+
+<video title="Compilando o Kernel">Vamos iniciar a compilação do nosso novo kernel, utilizando o comando "make".
+
+Essa compilação pode levar de alguns minutos até algumas horas. Depende de quão limpo o kernel está, da quantidade de memória RAM disponível, do tipo de processador, da velocidade de acesso a disco, dentre outras.</video>
+
+<video title="Término da Compilação">Quando a compilação for terminada, o controle do prompt será devolvido a você! Veja as últimas linhas da compilação e verifique que não ocorreu nenhum erro. Você pode identificar erros se aparecer alguma linha do tipo:
+
+make [2]: Error ....
+
+Se não for esse o caso, estamos prontos para instalar os novos módulos, recém compilados e a nova imagem do kernel.</video>
+
+<video title="Instalando os módulos">Para instalar os módulos recém compilados, basta utilizarmos o comando:
+
+# make modules_install
+
+e, para verificarmos que o novo diretório com os módulos foi criado, vamos listar o /lib/modules
+
+# ls /lib/modules/2.6.20.1-20070301c1/
+
+Se o for mostrado o conteúdo do diretório, significa que a instalação foi concluída com sucesso.</video>
+
+<video title="Copiando a imagem do kernel">Fique tranqüilo, estamos quase chegando no fim! Vamos copiar a nova imagem do kernel, localizada em /usr/src/linux-2.6.20.1/arch/i386/boot, para o diretório boot, utilizando o comando cp:
+
+# cp /usr/src/linux-2.6.20.1/arch/i386/boot/bzImage /boot/kernel-2.6.20.1-20070301c1</video>
+
+<video title="Entrando nas configurações do GRUB">Pronto, nosso kernel já está instalado! Só falta configurarmos o boot loader e rebootar a máquina!
+
+Vamos editar o arquivo "menu.lst", que configura o menu do GRUB, nosso boot loader! Para isso, vamos utilizar o seguinte comando:
+
+# vim /boot/grub/menu.lst</video>
+
+<video title="Editando o GRUB">A este arquivo, vamos adicionar, junto às linhas similares, as seguintes instruções:
+
+title  Kernel 2.6.20.1-20070301c1
+root (hd0,1)
+kernel /kernel-2.6.20.1-20070301c1 root=/dev/hda3
+
+Note que já existiam linhas parecidas com essas nesse arquivo. Faça com que a linha "root" esteja igual às outras e que o parâmetro "root", da linha do kernel, também esteja apontando para o mesmo lugar que as outras.
+
+Pronto, reboote a máquina e escolha o novo kernel. Se tudo ocorreu bem, o seu sistema irá inicializar normalmente. Logo após você deve poder verificar que o seu novo kernel é o que está no controle, utilizando o comando:
+
+# uname -a
+
+Bom divertimento! :)</video>
+
+</aula>

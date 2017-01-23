@@ -1,0 +1,1030 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head>
+
+
+<style type="text/css">
+body {background-color:#ddeeff; color:black;   
+      margin:2em; text-align:justify;}         
+a {text-decoration:none;}
+a:hover {color:red;}
+a:visited {color:purple;}
+dl {margin:1em;}    
+h1 {text-align:center; background-color:blue;  
+    color:white; padding:8px;}                 
+h2 {padding-top:20px;}
+hr {border-style:none;}
+code {background-color:lightblue;}             
+table {border-style:solid; border-color:black;}
+th {background-color:lightblue; padding:1em;}  
+td {border-style:none; background-color:white;}
+pre {border-style:solid; border-width:1px 1px; 
+     background-color:lightblue; padding:8px;  
+     border-color:black;}                      
+</style>
+<meta name="generator" content="http://txt2tags.sf.net">
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>tar - dicas, scripts e exemplos de linha de comando.</title>
+</head><body bgcolor="white" text="black">
+<p align="center"></p><center><h1>tar - dicas, scripts e exemplos de 
+linha de comando.</h1>
+<font size="4">
+<i>Atualizado em: 20/12/2007</i><br>
+</font></center>
+
+<p></p>
+<hr noshade="noshade" size="1">
+<p></p>
+  <ul>
+  <li><a href="#toc1">Sobre este documento</a>
+  </li><li><a href="#toc2">tar na interface gráfica - Konqueror - 
+gerenciador de arquivos do KDE</a>
+  </li><li><a href="#toc3">tar + gzip - Resumo de linhas de comando</a>
+  </li><li><a href="#toc4">pesquisar dentro do tar.gz, selecionar 
+arquivo</a>
+  </li><li><a href="#toc5">Restaurar instalação, voltar arquivos</a>
+  </li><li><a href="#toc6">Incluir data de criação no nome de 
+arquivo.tar.gz</a>
+  </li><li><a href="#toc7">backup por usuário - tar por diretório de 
+usuário</a>
+  </li><li><a href="#toc8">tar + data + find - seleção por data de 
+arquivo</a>
+  </li><li><a href="#toc9">tar + ssh - salvar em maquina remota</a>
+  </li><li><a href="#toc10">tar com seleção/exclusão de arquivos e/ou 
+diretórios</a>
+    <ul>
+    <li><a href="#toc11">tar de diretórios /home</a>
+    </li></ul>
+  </li><li><a href="#toc12">Multi volume, dividir arquivo</a>
+  </li><li><a href="#toc13">Outros exemplos de linha de comando</a> <b>[NOVO!]</b>
+  </li><li><a href="#toc14">log do tar</a>
+  </li><li><a href="#toc15">indicações</a>
+  </li></ul>
+
+<p></p>
+<hr noshade="noshade" size="1">
+<p></p>
+<a name="toc1"></a>
+<h1>Sobre este documento</h1>
+<p>
+Original em formato texto com marcações para txt2tags, conversão em HTML
+ e atualização do site via script.
+</p>
+<p>
+Linhas de comando e scripts utilizando tar.
+</p>
+<a name="toc2"></a>
+<h1>tar na interface gráfica - Konqueror - gerenciador de arquivos do 
+KDE</h1>
+<p>
+Em linha de comando e scripts tem mais versatilidade, mais rápido, 
+funciona em qualquer ambiente e outras vantagens, também pode ser mais 
+difícil para quem não tem habilidades em trabalhar na linha de comando.
+</p>
+<p>
+Tem que prefere o modo texto e tem quem prefere o ambiente gráfico, 
+mesmo que precisa de vários cliques e demora um pouco mais do que uma 
+simples linha de comando, navegar em ambiente gráfico é muito fácil e 
+intuitivo, também pode criar scripts e executar a partir de atalho no 
+desktop ou agendar.
+</p>
+<p>
+Criar arquivo .tar.gz via konqueror
+</p>
+<p>
+Clique com botão auxiliar sobre o arquivo ou diretório que deseja 
+empacotar, as opções mudam conforme a instalação, procure em "ações", 
+"empacotar" ou termos semelhantes.
+</p>
+<p>
+Descompactar arquivo .tar.gz  via konqueror.
+</p>
+<p>
+Mesmo que tenha utilizado script ou linha de comando na criação do 
+.tar.gz, pode descompactar via konqueror, basta um clique com botão 
+auxiliar sobre o arquivo, selecione -&gt; "ações" -&gt; "extrair 
+para..." vai abrir o utilitário Ark, continue navegando nas opções e 
+escolha onde deseja salvar e Ok, 
+</p>
+<p>
+Consultar e navegar dentro do arquivo compactado.
+</p>
+<p>
+Konqueror -&gt; Duplo clique no arquivo .tar.gz, nesta mesma janela do 
+konqueror será criado um diretório com o mesmo nome do original de onde 
+criou o .tar.gz, por exemplo, se utilizou um ponto de montagem em 
+/mnt/alguma-coisa na criação do .tar.gz, nesta janela do konqueror vai 
+aparecer um diretório mnt, vá navegando dentro dos diretórios até 
+encontrar o arquivo que deseja, quando achar o arquivo 
+desejado, pode arrastar para outro diretório, abrir e etc...
+</p>
+<p>
+Exemplo, navegar no arquivo cl10-hda3.tar.gz que é um backup de uma 
+instalação onde foi utilizado o ponto de montagem /mnt/hd2, quando 
+navegar neste arquivo, na URL do konqueror aparece algo assim:  
+tar:/root/cl10-hda3.tar.gz/mnt/hd2/etc isto é feito em arquivos 
+temporários, existem somente nas janelas do konqueror enquanto em uso, 
+não fica disponível para acesso via linha de comando, mesmo que indique 
+um ponto de montagem ele não será afetado. 
+</p>
+<p>
+Via Gnome também pode usar o Konqueror ou o File Roller
+</p>
+<a name="toc3"></a>
+<h1>tar + gzip - Resumo de linhas de comando</h1>
+<p>
+Formato para criar novo arquivo (empacotar e compactar)
+</p>
+<pre>  tar -zcvf arqdestino.tar.gz arqorigem
+       ||||    |                |_arquivo, diretório ou multiplas opções.
+       ||||    |_arquivo destino, arquivão com todos arquivos e/ou diretórios.
+       ||||
+       ||||_salvar no arquivo indicado, quando omitido procura pela unidade de fita DAT.
+       |||__Verbose - exibir mensagens no console
+       ||___criar novo arquivo de armazenamento
+       |____chama gzip - compactar com gzip
+</pre>
+<p></p>
+<p>
+Formato para extrair arquivos, desempacotar e descompactar 
+</p>
+<pre>  tar -zxvf arquivo.tar.gz -C /tmp
+       ||||    |            |  |_caminho destino para salvar arquivos extraidos.
+       ||||    |            |_criar diretório destino, quando omitido salva a partir do diretório corrente.
+       ||||    |_arquivo empacotado pelo tar, arquivão contendo arquivos e/ou diretórios.
+       ||||
+       ||||_extrair do arquivo indicado, quando omitido procura pela unidade de fita DAT.
+       |||__Verbose - exibir mensagens no console
+       ||___extrair arquivos 
+       |____chama gzip - descompactar com gzip
+</pre>
+<p></p>
+<p>
+Alguns exemplos de linha de comando.
+</p>
+<p>
+Empacotar arquivos do diretório corrente, sem compactar e sem mensagens 
+no console (sem paramentos zv).
+</p>
+<p>
+tar cf todostxt.tar *.txt
+</p>
+<p>
+Neste formato não exibe mensagens, pega somente os .txt do diretório 
+corrente, não pega sub-diretórios
+</p>
+<p>
+Empacotar diretórios se seus sub-diretórios, exemplo para tudo que 
+estiver abaixo de /home/zago e sem compactar use:
+</p>
+<p>
+<code>tar cvf arquivo.tar /home/zago</code>
+</p>
+<p>
+Empacotar e compactar
+</p>
+<p>
+<code>tar cvfz arquivo.tar.gz /home/zago</code>
+</p>
+<p>
+No exemplo acima foi informado o caminho completo a partir do raiz, 
+(/home/zago), quando desempacotar vai salvar o caminho completo e criar 
+os sub-diretórios a partir do diretório que executar o comando, ou no 
+mesmo local de origem quando indicou o caminho completo no empacotamente
+ e para extrair indique a partir do raiz( -C / ).
+</p>
+<p>
+Desempacotar <code>tar xvf arquivo.tar`</code>
+</p>
+<p>
+Descompactar e desempacotar, omitindo o destino cria sub-diretorio a 
+partir do diretório local; 
+</p>
+<pre>  tar xvfz arquivo.tgz
+  
+  tar xvfz arquivo.tar.gz
+  
+  com -C / salva a paritr do raiz.
+  tar -zxvf arquivo.tar.gz -C /
+  
+  com -C /caminho salva a partir do diretório indicado, exemplo para /tmp
+  tar -zxvf arquivo.tar.gz -C /tmp
+</pre>
+<p></p>
+<p>
+Para não salvar o caminho completo, execute a linha de comando de 
+criação do arquivão tar em diretório acima do que deseja empacotar, 
+exemplos para empacotar os diretórios /home/zago e /home/zago/guiaz, sem
+ incluir o caminho completo.
+</p>
+<pre>  cd /home/
+  tar -zcvf homezago.tar.gz zago
+  
+  cd /home/zago/
+  tar -zcvf zagoguiaz.tar.gz guiaz 
+</pre>
+<p>
+Neste exemplo acima não guarda o caminho completo de origem, na extração
+ dos arquivos cria somente o sub-dirtório a partir do diretório local ou
+ abaixo do caminho indicado (-C /caminho).
+</p>
+<p>
+Incluir data de criação no nome do arquivo
+</p>
+<pre>  cd /home/zago
+  tar -zcvf guiaz-`date +%d%m%y`.tar.gz  /home/zago/guiaz
+  
+  Com exclusão de dois sub-diretórios (apostilas e drivers)
+  cd /home/zago
+  tar -zcvf Linux-BR-FAQ-`date +%d.%b.%Y`.tar.gz --exclude /home/zago/guiaz/apostilas --exclude /home/zago/guiaz/drivers guiaz
+  
+</pre>
+<p></p>
+<p>
+Usando multi-volume,  do man do tar
+</p>
+<pre>         -L, --tape-length N
+                muda a fita após gravar N*1024 bytes
+  
+         -M, --multi-volume
+                cria/lista/extrai arquivos multivolumes
+</pre>
+<p></p>
+<a name="toc4"></a>
+<h1>pesquisar dentro do tar.gz, selecionar arquivo</h1>
+<p>
+tar -tzf arquivo.tar.gz    "t" para ver  o conteúdo.
+</p>
+<p>
+tar -tzf dirzago.tar.gz  
+</p>
+<p>
+Quando a lista for grande desvie o resultado da pesquisa para um arquivo
+ texto:
+</p>
+<p>
+<code>tar -tzf dirzago.tar.gz &gt;&gt; /home/zago/teste</code>
+</p>
+<p>
+depois visualize o resultado editando /home/zago/teste com seu  editor 
+preferido.
+</p>
+<p>
+ou com pausa em cada página:
+</p>
+<p>
+<code>tar -tzf dirzago.tar.gz | more</code>
+</p>
+<p>
+Porcurar arquivo especifico, exemplo de procura por comandos.txt dentro 
+de um .tar.gz
+</p>
+<pre>  tar -tvzf nome-do-arq.tar.gz | grep nome-que-procuro
+  
+  tar -tvzf homezago-30nov2005.tar.gz | grep comandos.txt
+  
+  [zago@servsamba zago]$ tar -tvzf homezago-30nov2005.tar.gz | grep comandos.txt
+  -rwxrwxrwx zago/zago     60965 2005-08-31 19:09:13 home/zago/guiaz/comandos.txt
+</pre>
+<p>
+Extrair somente um arquivo do .tar.gz, precisa informar o caminho e nome
+ do arquivo, quando não souber, use a opção acima para descobrir, 
+exemplo para retirar de dentro do .tar.gz somente o arquivo acima 
+(comandos.txt), execute;
+</p>
+<pre>  tar -zxvf homezago-30nov2005.tar.gz home/zago/guiaz/comandos.txt
+  
+  [zago@servsamba zago]$ tar -zxvf homezago-30nov2005.tar.gz home/zago/guiaz/comandos.txt
+  home/zago/guiaz/comandos.txt
+  
+  [zago@servsamba zago]$ ls -la home/zago/guiaz/comandos.txt
+  -rwxrwxr-x  1 zago zago 60965 2005-08-31 19:09 home/zago/guiaz/comandos.txt
+</pre>
+<p></p>
+<p>
+tar -xzf arquivo.tar.gz    "x" para extrair os arquivos. 
+</p>
+<a name="toc5"></a>
+<h1>Restaurar instalação, voltar arquivos</h1>
+<p>
+Indicar outro diretório, restaurar em local diferente da copia. 
+</p>
+<p>
+use  -C, --directory DIR   mudar para o diretório DIR ex.:
+</p>
+<pre>  tar xf /home/backup/arq.tar  -C /home/zago/doc/arq.doc
+  
+  tar zxvf /home/zago/arquivo.tar.gz  -C /tmp
+</pre>
+<p></p>
+<p>
+Restaurar a partir da raiz "/", dentro do diretório onde está a copia, 
+execute:
+</p>
+<p>
+<code>tar -zxvf arquivo.tar.gz -C /</code>
+</p>
+<p>
+Este comando é útil para recuperar instalação completa de HD, 
+descompacta o arquivo.tar.gz e salva no mesmo ponto de montagem 
+utilizado na criação do mesmo, portanto requer a indicação do caminho 
+completo na criação do .tar.gz e na restauração precisa montar a 
+partição no mesmo ponto de montagem que utilizou para criar o .tar.gz, 
+caso não tenha o ponto de montagem ou permissão para gravação, retornará
+ erro ou criará diretórios a partir do raiz, portando não salva na 
+partição correta.
+</p>
+<p>
+Para descobrir qual o caminho (ponto de montagem) utilizado na criação 
+do arquivo de backup .tar.gz, execute;
+</p>
+<p>
+<code>tar -ztvf arquivo.tar.gz | head -5</code>
+</p>
+<p>
+Este comando não salva nada em disco, somente exibe as 5 primeiras 
+linhas 
+no console, exemplo;
+</p>
+<pre>  drwxr--r-- root/root         0 1969-12-31 21:00:00 mnt/win/
+  drwxr--r-- root/root         0 2005-08-21 03:13:20 mnt/win/win98/
+</pre>
+<p>
+como pode ver, neste exemplo o ponto de montagem é /mnt/win
+</p>
+<a name="toc6"></a>
+<h1>Incluir data de criação no nome de arquivo.tar.gz</h1>
+<p>
+Incluir a data atual no nome do arquivo tar, alguns exemplos de comando e
+ resultados.
+</p>
+<p>
+Nestes exemplos cria um tar do diretório /home/zago/guiaz, cria arquivo 
+tar com nome Linux-BR-FAQ-mais-data-de-criacao.tar.gz, veja  os comandos
+ com o resultado
+</p>
+<pre>  tar -zcvf Linux-BR-FAQ-`date +%d.%b.%Y`.tar.gz /home/zago/guiaz
+  Linux-BR-FAQ-08.Ago.2004.tar.gz
+  
+  tar -zcvf Linux-BR-FAQ-`date +%d%m%y`.tar.gz /home/zago/guiaz
+  Linux-BR-FAQ-080804.tar.gz
+</pre>
+<p>
+Incluir também a hora e minutos, não utilize ":" como separador porque é
+ um simbolo não válido em nome de arquivos, exemplos:
+</p>
+<pre>  tar -zcvf Linux-BR-FAQ-`date +%d.%b.%Y-%H-%M`.tar.gz /home/zago/guiaz
+  Linux-BR-FAQ-08.Ago.2004-17-14.tar.gz
+</pre>
+<p></p>
+<p>
+Consulte o manual, <code>man date</code>
+</p>
+<p>
+Tem outras opções de datas e formatos, tais como; incluir a hora no 
+formato de 12 horas, com ou sem o zero a esquerda e muito mais, incluir o
+ nome do dia da semana, veja o formato desejado e substitua nos exemplos
+ acima.
+</p>
+<p>
+Muito útil para nomear arquivos em backup, evita que o novo arquivo 
+sobrepõe o já existente, facilita a organização e identificação dos 
+arquivos.
+</p>
+<p>
+Este formato de nomear arquivos podem ser utilizados por qualquer outro 
+utilitário ou comando.
+</p>
+<p>
+Observe que "date" e as variáveis estão dentro crase  ` ` , para obter 
+uma crase, pressione a tecla da crase e depois a barra de espaço, ou 
+prefira copiar e colar e de outro local.
+</p>
+<a name="toc7"></a>
+<h1>backup por usuário - tar por diretório de usuário</h1>
+<p>
+Como root para ter acesso ao diretório dos outros users
+</p>
+<p>
+Lembre de fazer uma cópia completa do home do usuário antes de 
+removê-lo.
+</p>
+<p>
+No nosso exemplo teremos um diretório /home/copias onde será gravado o 
+arquivo de cópia com o nome do usuário mais a data de criação.por 
+exemplo backup do usuário zago que está em /home/zago executamos a 
+linha:
+</p>
+<pre>  tar -zcvf /home/copias/zago-`date +%d%m%y`.tar.gz /home/zago
+</pre>
+<p>
+no final da execução tenho em /home/copias um arquivo 
+zagodatadehoje.tar.gz com tudo que tem em /home/zago.
+</p>
+<p>
+Exemplo com exclusão de arquivos desta cópia, crie o arquivo com a lista
+ de exclusão, como exemplo  /etc/copianao, formato de linha de comando 
+para excluir esta listagem do backup.
+</p>
+<pre>  tar -zcvf /home/copias/zago-`date +%d%m%y`.tar.gz /home/zago --exclude-from=/var/copianao
+</pre>
+<p></p>
+<p>
+Mais detalhes sobre seleção no tar, veja neste documento o tópico "tar 
+com seleção/exclusão"
+</p>
+<p>
+tar + find para seleção de arquivos por usuário
+</p>
+<pre>  tar  -cvf arquivo.tar `find  . -user zago -print`
+</pre>
+<p>
+Compactando:
+</p>
+<pre>  tar  -cvzf arquivo.tar.gz `find  . -user zago -print`
+</pre>
+<p>
+Esta combinação é útil mas prefiro usar o caminho completo em scripts.
+</p>
+<a name="toc8"></a>
+<h1>tar + data + find - seleção por data de arquivo</h1>
+<p>
+Incluir a data de criação no nome do arquivo, nomeie o arquivo neste 
+formato;
+</p>
+<pre>  tar -zcvf /home/copias/arquivo-`date +%d%m%y`.tar.gz /home/zago
+</pre>
+<p>
+o sinal que aparece em arquivo-`date +%d%m%y`.tar.gz é crase ou 
+backquote (`), cuidado para não confundir com apas simples ou  quote 
+(').
+</p>
+<p>
+Tem um espaço entre "date +", com y minúsculo o ano tem dois dígitos com
+ Y maiúsculo tem os quatro dígitos.
+</p>
+<p>
+Pesquisar com find em  /tmp/guiaz para criar guiaz.tar.gz contendo todos
+ arquivos .txt.
+</p>
+<pre>  find /tmp/guiaz -name "*.txt" | xargs tar -zcvf guiaz.tar.gz 
+</pre>
+<p></p>
+<p>
+Alguns exemplos de uso combinando find por data com tar, fique atendo ao
+ caminho, tanto para salvar como de procura, nestes exemplos o caminho 
+destino do .tar.gz é omitido, portanto salva no diretório corrente, os 
+demais caminhos para find e tar são informados, neste caso indicado 
+arquivos ou diretórios de procura, sempre faça testes em ambiente de 
+testes, crie diretórios de testes...
+</p>
+<pre>  
+  Empacotar somente os .dbf alterados nas ultimas 24 horas.
+  
+  find /home/sistema/bcodados/*.dbf -mtime 0 | tar zcvf dadosdbf-`date +%Y%m%d`.tar.gz -T -
+  
+  Empacontar todos .dbf com exclusão de um arquivo, coloque ele etre aspas, exemplo de exclusão de locmod.dbf, faz backup de todos .dbf  do caminho indicado, com excessão do arquivo locmod.dbf, quando indica os arquivos não desce nos sub-diretórios, no exemplo abaixo pega somente arquivos dentro de bcodados 
+  
+  tar -zcvf  /backup/dadosdbf-`date +%Y%m%d`.tar.gz /home/sistema/bcodados/*.dbf --exclude="locmod.dbf"
+  
+  O mesmo exemplo acima com uso do find para selecionar somente os .dbf modificados nas ultimas 24 horas, excluindo do backup o arquivo locmod.dbf,  ele não entra no backup mesmo que alterado nas ultimas 24 horas.
+  
+  find /home/sistema/bcodados/*.dbf -mtime 0 | tar zcvf dadosdbf-`date +%Y%m%d`.tar.gz -T - --exclude="/home/sistema/bcodados/locmod.dbf"
+  
+  Backup do diretório bcodados e seus sub-diretórios, com exclusão de arquivos *.cdx, *.ntx e locmod.dbf, neste exemplo pega também sub-diretórios de bcodados/
+  
+  tar -zcvf  /backup/dadosdbf-`date +%Y%m%d`.tar.gz /home/sistema/bcodados/ --exclude=*.cdx --exclude=*.ntx --exclude="locmod.dbf"
+  
+  
+  
+  
+  Exemplo de script para criar arquivo no formato aquivo+ano+mes+dia do sistema (`date +%Y%m%d`), nomear arquivos neste formato dadosdbf-20070613.tar.gz
+  No final envia por scp para outra maquina e apaga o arquivo na maquina local,  exemplo em modo interativo, precisa digitar a senha. Tem outros meios de automatizar esta transferencia, troque o uso de scp por ssh sem senha, mount, ftp, e-mail ou outro modo 
+</pre>
+<p>
+find /home/samba/bcodados/*.dbf | tar zcvf dadosdbf-`date 
++%Y%m%d`.tar.gz -T - --exclude="/home/samba/bcodados/locmod.dbf"
+scp  dadosdbf-`date +%Y%m%d`.tar.gz zago@192.168.1.2:~/
+rm -rf sdbf-`date +%Y%m%d`.tar.gz
+</p>
+<pre>  Cuidado com  a virada do dia, script que inicia antes e termina depois da meia noite,  nestes casos crie a variável no inicio do script contendo a data, trabalhe com ela do inicio ao fim  para evitar erros no nome do arquivo 
+  
+  Exemplo para criar variável com nome de arquivo mais data.
+  
+</pre>
+<p>
+MARQUIVO=`date +'guiaz-%d-%b-%Y.tar.gz'`
+tar -zcvf $MARQUIVO /home/zago/guiaz
+</p>
+<p>
+ls
+guiaz-08-Ago-2004.tar.gz
+</p>
+<pre>  
+  
+  Outros exemplos
+  
+  find /home/zago/guiaz -mtime -1 -type f -print | tar zcvf meusarq.tar.gz -T -
+  
+  tar -zcvf meusarq.tar.gz `find . -user zago -print`
+  
+  tar -zcvf meusarq.tar.gz `find /home/zago/docs -user zago -print` 
+</pre>
+<p></p>
+<dl>
+<dt>Script com exemplo de exclusão de arquivos.</dt><dd>
+</dd><dt>Script Shell de Backup Incremental</dt><dd>
+</dd><dt><a 
+href="http://www.dicas-l.com.br/cantinhodoshell/print/cantinhodoshell_20070130.html">http://www.dicas-l.com.br/cantinhodoshell/print/cantinhodoshell_20070130.html</a></dt><dd>
+</dd></dl>
+
+<a name="toc9"></a>
+<h1>tar + ssh - salvar em maquina remota</h1>
+<p>
+Exemplos de uso do comando <code>tar</code> com <code>ssh</code>, 
+compactar arquivo local e salvar em outra maquina, em uma linha de 
+comando ou script, prático para salvar copia remota ou quando não tem 
+espaço livre na maquina local.
+</p>
+<pre>  tar -zcvf hzrede.tar.gz  /home/zago/rede  | scp hzrede.tar.gz zago@192.168.1.53:~/
+  
+  Incluindo a data no nome do arquivo; 
+  tar -zcvf hzrede-`date +%d%m%y`.tar.gz  /home/zago/rede  | scp hzrede-`date +%d%m%y`.tar.gz zago@192.168.1.53:~/
+</pre>
+<p></p>
+<p>
+Use o mesmo nome de arquivo em tar e scp.
+</p>
+<p>
+Outros formatos de data consulte o tópico tar+data
+</p>
+<dl>
+<dt>Dicas, tutoriais e FAQ sobre ssh;</dt><dd>
+</dd><dt><a href="http://www.zago.eti.br/ssh/ssh.html">http://www.zago.eti.br/ssh/ssh.html</a></dt><dd>
+</dd></dl>
+
+<a name="toc10"></a>
+<h1>tar com seleção/exclusão de arquivos e/ou diretórios</h1>
+<p>
+Excluir um sub-diretório, exemplo para compactar o diretorio /home/zago 
+menos o subdiretorio /home/zago/tmp
+</p>
+<pre>  tar zcvf zagosemtmp.tar.gz --exclude /home/zago/tmp /home/zago
+</pre>
+<p></p>
+<p>
+Exemplo de uma rotina de backup de uma lista de diretórios menos alguns 
+alguns arquivos ou tipo de arquivo.
+</p>
+<p>
+Criar arquivo tar dos diretórios listados em um arquivo, exceto os 
+arquivos listados em outro arquivo, são dois arquivos, um com a lista do
+ diretórios do backup, outro com a lista dos arquivos excluidos, 
+arquivos que estão dentro dos diretórios de backup que não serão 
+copiados.
+</p>
+<p>
+Crie um arquivo copiasim contendo os diretórios que QUER COPIAR, exemplo
+ de um copiasim
+</p>
+<pre>  /home/zago/guiaz/
+  /home/zago/evolution/
+  /home/zago/genealogia/
+  /home/zago/doc/
+  /etc/
+</pre>
+<p></p>
+<p>
+Crie um arquivo copianao contendo a lista de arquivos ou terminações que
+ NÃO QUER COPIAR,  exemplo de um copianao
+</p>
+<pre>  *.txt~
+  *.html~
+  *.tmp
+  *.$*
+  *.~*
+  *.bak
+  *.swp
+  SWAP
+  swap
+  ~*.*
+  core*.*
+</pre>
+<p></p>
+<p>
+Salve em um diretório qualquer, neste exemplo utilizei /var, na linha de
+ comando do tar precisa indicar o caminho e nome do arquivo.
+</p>
+<p>
+Exemplo de linha de comando utilizando os exemplos acima:
+</p>
+<p>
+<code>tar -zcvf /home/copias/dirzago-`date +%d%m%y`.tar.gz -T 
+/var/copiasim   --exclude-from=/var/copianao</code>
+</p>
+<p>
+ou se preferir:
+</p>
+<pre>  tar -zcvf /home/copias/dirzago-`date +%d%m%y`.tar.gz \
+  -T /var/copiasim \
+   --exclude-from=/var/copianao
+</pre>
+<p></p>
+<p>
+explicando:
+</p>
+<p>
+tar -zcvf /home/copias/dirzago-`date +%d%m%y`.tar.gz
+</p>
+<p>
+Salva o arquivo em /home/copias com o nome dirzago-datadecriação.tar.gz
+</p>
+<p>
+-T /var/copiasim 
+</p>
+<p>
+Arquivo de inclusão, contendo a lista de diretórios e arquivos do 
+backup.
+</p>
+<p>
+ --exclude-from=/var/copianao
+</p>
+<p>
+Arquivo de exclusão, contendo a lista de arquivos ou diretórios 
+excluidos do backup, são arquivos e diretórios que estão dentro dos 
+diretórios listados em copiasim mas não serão copiados, como exemplo na 
+listagem, estão os temporários.
+</p>
+<p>
+Resultado final, arquivo  dirzago-datadecriação.tar.gz  em /home/copias,
+ contendo os diretórios listados em  copiasim menos o que está listado 
+no arquivo copianao.
+</p>
+<p>
+Pode incluir varias linhas de comando em script, em  lugar de criar um 
+arquivão de tudo, pode dividir em linhas de comando para criar tar por 
+usuários, grupos e etc...,
+</p>
+<p>
+Parte de um script utilizando montagem NFS da maquina com IP 
+192.168.1.200, diversos exemplos de uso do tar.
+</p>
+<pre>  #!/bin/bash
+  mount -tnfs 192.168.1.200:/home/copia /mnt/copia
+  tar -zcvf /mnt/copia/alunos-`date +%d%m%y`.tar.gz  -T /var/alunos  --exclude-from=/var/copianao
+  tar -zcvf /mnt/copia/zago-`date +%d%m%y`.tar.gz  /home/zago/*  --exclude-from=/var/copianao
+  tar -zcvf /mnt/copia/turmas-`date +%d%m%y`.tar.gz  /home/turm*  --exclude-from=/var/copianao
+  # CORTADO ALGUMAS LINHAS PARA DIMINUIR O TAMANHO DESTE TEXTO.
+  # as linhas abaixo não funcionam
+  # tar -zcvf /mnt/copia/doc-`date +%d%m%y`.tar.gz -T `find /home/ -name \*.d*`   --exclude-from=/var/copianao
+  # erro: bash: /bin/tar: Lista de argumentos muito longa
+  # tar -zcvf /mnt/copia/Doc-`date +%d%m%y`.tar.gz -T `find /home/ -name \*.D*`   --exclude-from=/var/copianao
+  # erro: bash: /bin/tar: Lista de argumentos muito longa
+  # tar -zcvf /mnt/copia/Doc-`date +%d%m%y`.tar.gz -T `find /home/alunos -name *.D*`   --exclude-from=/var/copianao
+  #tar -zcvf /mnt/copia/Doc-`date +%d%m%y`.tar.gz -T `find /home/alunos -name *.D*` 
+  # esta pegando os arquivos .DLL e dat
+  # tar -zcvf /mnt/copia/Doc-`date +%d%m%y`.tar.gz -T `find /home/alunos -name \*.DOC` 
+  # tar -zcvf /mnt/copia/Doc-`date +%d%m%y`.tar.gz  /home/*.D*  --exclude-from=/var/copianao
+  # erro tar: /home/*.D*: Cannot stat: Arquivo ou diretório não encontrado
+  umount /mnt/copia
+</pre>
+<p></p>
+<p>
+Explicando:
+</p>
+<p>
+Máquina na rede com IP 192.168.1.200 exportando por NFS o diretório 
+/home/copia, outra maquina desta rede executa o script acima, a primeira
+ linha monta este diretório.
+</p>
+<p>
+A segunda linha compacta o que tem listado em /var/alunos, exceto o 
+listado /var/copianao, salva no arquivo com nome de 
+alunos-datadecriação.tar.gz  
+</p>
+<p>
+Na terceira linha faz backup do diretório /home/zago menos o listado em 
+/var/copianao
+</p>
+<p>
+Na quarta linha faz backup de todos os diretórios que iniciam com turm, 
+ tenho um diretório para cada turmaxxx e nesta linha faço um backup de 
+todas.
+</p>
+<p>
+A partir da quinta linha não está funcionando, preciso testar com find, 
+fazer backup somente de arquivos .doc, .xls, .bmp e .txt .gdb e .dbf que
+ estão no /home , conforme relação no arquivo /var/doc, as duas maneiras
+ não funcionou, qualquer dia faço novos testes.
+</p>
+<p>
+por ultimo a desmontagem do que foi montado na primeira linha; umount 
+/mnt/copia
+</p>
+<a name="toc11"></a>
+<h2>tar de diretórios /home</h2>
+<p>
+Script para fazer backup de todos os diretórios /home conforme listagem e
+ por último criar um tar de todo o /home exceto os diretórios listados 
+em arquivo.
+</p>
+<p>
+A linha de comando abaixo cria um arquivo com todos os diretório de 
+/home, use seu editor preferido para ajustar ou excluir eventuais 
+sub-diretórios, a primeira linha funciona no SUSE 10.1 e a segunda no 
+CL10,  o resultado pode ser diferente em sua instalação, deve ter um 
+diretório por linha neste formato.
+</p>
+<pre>  /home/contabil
+  /home/netlogon
+  /home/vendas
+  /home/zago
+</pre>
+<p></p>
+<p>
+ls -ld /home/* | awk '{print $9}' &gt; /tmp/dirhome.txt
+</p>
+<p>
+ls -ld /home/* | awk '{print $8}' &gt; /tmp/dirhome.txt
+</p>
+<p>
+Exemplo de script para modificar e adaptar conforme sua instalação.
+</p>
+<p>
+cat tarhome
+</p>
+<pre>  #!/bin/bash
+  while read LINHA ; do
+    # seus comandos aqui, exemplo para testar e remover as barras
+    # echo $LINHA
+    MDIR=`echo $LINHA | sed "s|/||g"`
+    MVAR2=`echo $MDIR`-`date +%d.%b.%Y`
+    tar czvf $MVAR2.tar.gz $LINHA
+  done &lt; /tmp/dirhome.txt
+  tar -zcvf /home/outros-`date +%d%m%y`.tar.gz /home --exclude-from=/tmp/dirhome.txt
+  tar -zcvf dirtemp-`date +%d%m%y`.tar.gz /tmp 
+</pre>
+<p></p>
+<p>
+No diretório onde executou ou indicar para salvar os arquivos, deverá 
+criar arquivos neste formato.
+</p>
+<pre>  homevendas-12.Jul.2006.tar.gz
+  homezago-12.Jul.2006.tar.gz
+</pre>
+<p></p>
+<a name="toc12"></a>
+<h1>Multi volume, dividir arquivo</h1>
+<p>
+Gravar CD ou DVD tem suas limitações de tamanho, arquivos grandes que 
+excedem a capacidade da mídia, precisa dividir em pedaços conforme a 
+capacidade da mídia, tem diversas soluções para resolver este problema.
+</p>
+<p>
+Na minha opinião o melhor é montar script de forma a criar os .tar.gz 
+dentro do limite da mídia, compactar por tipo de arquivo, diretório, 
+usuário ou outra forma que facilite na restauração, procure neste 
+documento as opções com listagem em arquivo, exclusão de arquivos e 
+diretórios e etc... Procure fazer de forma que na recuperação de um 
+arquivo não force o uso de um grande conjunto de CD/DVD, um arquivão 
+dividido em vários CD/DVD corre risco maior, danificando um CD pode 
+comprometer todos, estude a melhor forma de backup, como restaurar e 
+identificar arquivos de maneira mais rápida e segura. O que parece fácil
+ agora pode se tornar um problemão depois.
+</p>
+<p>
+Multi-volume do tar, no (man tar) tem esta informação.
+</p>
+<pre>  -M, --multi-volume
+         cria/lista/extrai arquivos multivolumes
+</pre>
+<p></p>
+<p>
+Não consegui compactar com multi-volume, usar -z e -M na mesma linha de 
+comando, depois de dezenas de tentativas desisti desta opção, tem as 
+alternativas de compactar e dividir com split, compactar para depois 
+dividir com -M, não achei produtivo fazer em duas etapas, embora seja 
+uma solução segura e prática quando automatizada via scripts. Resolvi o 
+problema do cliente com troca do gravador de CD por um gravador de DVD.
+</p>
+<p>
+Para eventual uso futuro, pretendo testar com DVDR/W para gravar em DVD 
+da mesma forma que grava em disquete (floppy), nem sei se isto é 
+possível. Coloquei aqui esta copia parcial do script, removi as partes 
+de testes e alterei o nome da empresa por uma ISO de DVD do SUSE, criar 
+tar em partes de 700MB para gravar em CD, o exemplo a seguir fica mais 
+fácil e pratico trabalhar com split, aqui tem a finalidade de mostrar o 
+uso de multi-volume com tar, ajuste a seu modo e se preferir inclua as 
+opções de passar por parametros; tamanho, nome das partes e diretório de
+ backup.
+</p>
+<p>
+du /home/zago/SUSE-Linux-10.1-GM-DVD-i386.iso
+</p>
+<p>
+3665416 SUSE-Linux-10.1-GM-DVD-i386.iso
+</p>
+<p>
+Pegar tamanho total de arquivo ou diretório
+</p>
+<p>
+MTOTAL=$(du /home/zago/SUSE-Linux-10.1-GM-DVD-i386.iso | awk '{print 
+$1}')
+</p>
+<p>
+echo $MTOTAL
+</p>
+<p>
+3665416
+</p>
+<p>
+Definir tamanho das partes
+</p>
+<p>
+MPARTE=700000
+</p>
+<p>
+descobrir quantos volumes deve criar.
+</p>
+<p>
+MQTDEARQ=`echo "$MTOTAL/$MPARTE" | bc`
+</p>
+<p>
+MQTDEARQ=`expr $MQTDEARQ + 1`
+</p>
+<p>
+Montar variável nomeando as partes do arquivo.
+</p>
+<pre>  for i in $(seq 1 $MQTDEARQ)
+  do
+  MVAR=$MVAR$(printf " -f parte-0$i")
+  done
+</pre>
+<p></p>
+<p>
+Tem que nomear as partes e indicar -f de file para cada uma, exemplo de 
+como deve ficar o comando tar para dividir em 6 partes, a quantidade de 
+partes depende do resultado do tamanho total pelo de cada parte, some 
+mais uma parte porque o "bc" retorna inteiro, portanto precisa de mais 
+uma parte para eventual resto da divisão, não tem problema criar este 
+arquivo a mais, se não for necessário ele será ignorado.
+</p>
+<p>
+Pode fazer via script ou montar a linha de comando na não, o script que 
+vem logo a seguir serve para monta esta linha de comando.
+</p>
+<pre>  tar -c -M -L 700000 -f parte-01.tar -f part-02.tar -f part-03.tar -f part-04.tar -f part-05.tar -f part-06.tar /home/zago/SUSE-Linux-10.1-GM-DVD-i386.iso
+</pre>
+<p>
+Montando o script para criar a linha de comando de arquivos 
+multi-volumes.
+</p>
+<p>
+cat multivol.sh
+</p>
+<pre>  #!/bin/bash
+  MTOTAL=$(du /home/zago/SUSE-Linux-10.1-GM-DVD-i386.iso | awk '{print $1}')
+  MPARTE=700000
+  MQTDEARQ=`echo "$MTOTAL/$MPARTE" | bc`
+  MQTDEARQ=`expr $MQTDEARQ + 1`
+  for i in $(seq 1 $MQTDEARQ)
+  do
+  MPARTES=$MPARTES$(printf " -f parte-0$i.tar")
+  done
+  tar -c -M -L $MPARTE $MPARTES /home/zago/SUSE-Linux-10.1-GM-DVD-i386.iso
+</pre>
+<p></p>
+<p>
+Este script acima cria no diretório corrente os arquivos com tamanho e 
+nomes especificados nas variáveis iniciais, parte-01.tar,  part-02.tar 
+...., pode fazer via script ou montar a linha de comando na mão.
+</p>
+<p>
+Gravar estas partes em CD/DVD,  precisa criar a ISO e queimar a mídia.
+</p>
+<p>
+Restaurar a partir de arquivos multi-volumes, não tentei recuperar 
+direto do CD, o melhor é copiar todos os CD para um diretório local e 
+executar outro script, pode pegar o numero total de arquivos no 
+diretório como referencia do total de partes no script abaixo para criar
+ os nomes das partes, depois de concluindo o tar ignora o restante.
+</p>
+<p>
+cat mtarrestore.sh
+</p>
+<pre>  #!/bin/bash
+  MQTDEARQ=`ls | wc -l`
+  for i in $(seq 1 $MQTDEARQ)
+  do
+  MPARTES=$MPARTES$(printf " -f parte-0$i.tar")
+  done
+  echo $MPARTES
+  tar -x -M $MPARTES
+</pre>
+<p></p>
+<p>
+Onde $MPARTES contém as partes do tar, -f parte-01.tar -f parte-02.tar 
+...., pode fazer via script ou montar a linha de comando na mão, aliás, o
+ script serve para montar a linha de comando com a variável contendo 
+todos os nomes das partes precedidadas de -f.
+</p>
+<p>
+Split
+</p>
+<p>
+Split divide o arquivo conforme tamanho solicitado, crie o tar 
+normalmente, crie o arquivão .tar e depois aplique o split para dividir o
+ arquivo em pedaços do tamanho desejado que pode ser a capacidade de um 
+disquete, CD ou DVD, estes pedaços pode criar ISO e gravar CD DVD, para 
+recuperar precisa juntar os pedaços com cat para depois aplicar o tar no
+ desempacotamento, acho esta forma mais trabalhosa mas é uma solução 
+segura também.
+</p>
+<dl>
+<dt>Veja tutorial e FAQ especifico sobre Split</dt><dd>
+</dd><dt><a href="http://www.zago.eti.br/split.tt">http://www.zago.eti.br/split.tt</a></dt><dd>
+</dd></dl>
+
+<a name="toc13"></a>
+<h1>Outros exemplos de linha de comando</h1>
+<pre>  tar -c /dir_ou_arq_origiem |gzip &gt; /arq_destino/arq-`date +%d%m%y`.tar.gz
+</pre>
+<p>
+Criar um arquivo compactado do diretorio /home/zago e gravar em 
+/mnt/copia com o nome zago-datadecriação.tar.gz.
+</p>
+<pre>  tar -c /home/zago |gzip &gt; /mnt/copia/zago-`date +%d%m%y`.tar.gz
+</pre>
+<p>
+o sinal que aparece em arq-`date +%d%m%y`.tar.gz é crase ou backquote 
+(`)
+cuidado para não confundir com aspas simples ou  quote ('). 
+</p>
+<p>
+Tem um espaço entre "date +", com y minúsculo o ano tem dois dígitos com
+ Y maiúsculo tem os quatro dígitos.
+</p>
+<a name="toc14"></a>
+<h1>log do tar</h1>
+<p>
+tar não registra eventos em arquivo de log, pode redirecionar a saido do
+ console para arquivo.
+</p>
+<pre>         -v, --verbose
+                mostra a lista dos arquivos processados
+</pre>
+<p>
+Em scripts não precisa do (v), caso queira salvar as mensagens em 
+arquivo, acrescente no final da linha de comando do tar "&gt;&gt; 
+logtar.txt", sem as aspas, assim fica gravado no arquivo logtar.txt, 
+redireciona as mensagens do console para este arquivo, depois é só 
+analisar com um editor de texto, formato da linha de comando ou em 
+script
+</p>
+<pre>  tar zcvf ssh`date +%d%m%y`.tar.gz  /home/zago/guiaz/ssh &gt;&gt; logtar.txt
+  tar zcvf ssh`date +%d%m%y`.tar.gz  /home/zago/guiaz/ssh &gt;&gt; /tmp/logtar.txt
+</pre>
+<p></p>
+<dl>
+<dt>Execute o script com a opção -xv para exibir as linhas de comando, 
+(bash -xv script.sh). Use linhas com echo para salvar ou exibir conteúdo
+ de variáveis, comentários e mensagens em arquivo. Ttem mais dicas para 
+depurar erros em script neste tutorial. </dt><dd>
+</dd><dt><a href="http://www.zago.eti.br/script/log-de-comandos.html">http://www.zago.eti.br/script/log-de-comandos.html</a></dt><dd>
+</dd></dl>
+
+<a name="toc15"></a>
+<h1>indicações</h1>
+<dl>
+<dt>FAQ com mensagens da lista Linux-br</dt><dd>
+</dd><dt><a href="http://www.zago.eti.br/tar.txt">http://www.zago.eti.br/tar.txt</a></dt><dd>
+<p></p>
+</dd><dt>tar+ssh, uso para backup via rede, salvar em outra maquina da 
+rede, dicas e exemplos em;</dt><dd>
+</dd><dt><a href="http://www.zago.eti.br/ssh/ssh.html">http://www.zago.eti.br/ssh/ssh.html</a></dt><dd>
+<p></p>
+</dd><dt>FAQ, dicas e indicação de tutorias sobre uso dos pacotes zip e 
+suas variações, gzip, bzip, unzip, xzip, gnozip e etc....</dt><dd>
+</dd><dt><a href="http://www.zago.eti.br/zip.txt">http://www.zago.eti.br/zip.txt</a></dt><dd>
+<p></p>
+</dd><dt>FAQ sobre backup em geral.</dt><dd>
+</dd><dt><a href="http://www.zago.eti.br/backup.txt">http://www.zago.eti.br/backup.txt</a></dt><dd>
+<p></p>
+</dd><dt>Fita DAT, uso do tar em fita DAT, FAQ especifico em:</dt><dd>
+</dd><dt><a href="http://www.zago.eti.br/fitadat.txt">http://www.zago.eti.br/fitadat.txt</a></dt><dd>
+</dd></dl>
+
+<dl>
+<dt>Manual do tar (inglês)</dt><dd>
+</dd><dt><a href="http://www.gnu.org/software/tar/manual/tar.html">http://www.gnu.org/software/tar/manual/tar.html</a></dt><dd>
+</dd></dl>
+
+<dl>
+<dt>Página principal deste site (FAQ)</dt><dd>
+</dd><dt><a href="http://www.zago.eti.br/menu.html">http://www.zago.eti.br/menu.html</a></dt><dd>
+<p></p>
+</dd></dl>
+
+
+<!-- html code generated by txt2tags 2.3 (http://txt2tags.sf.net) -->
+<!-- cmdline: txt2tags -t html /home/zago/guiaz/tar.t2t -->
+</body></html>

@@ -1,0 +1,9 @@
+Endereçamento IP:
+http://www.infowester.com/internetprotocol.php
+
+Máscara de Rede:
+http://pt.wikipedia.org/wiki/M%C3%A1scara_de_rede
+
+Modelo OSI:
+http://pt.wikipedia.org/wiki/Modelo_OSI
+

@@ -1,0 +1,14 @@
+Como usar o APT (Interessante):
+http://www.debian.org/doc/manuals/apt-howto/index.pt-br.html
+
+Como usar o apt-get:
+http://www.vivaolinux.com.br/artigo/Aptitude-uma-ferramenta-poderosa
+
+Aptitude:
+http://www.vivaolinux.com.br/artigo/Aptitude-uma-ferramenta-poderosa
+
+RedHat Package Manager:
+http://www.vivaolinux.com.br/dica/Usando-o-RPM-%28Red-Hat-Packet-Manager%29
+
+
+

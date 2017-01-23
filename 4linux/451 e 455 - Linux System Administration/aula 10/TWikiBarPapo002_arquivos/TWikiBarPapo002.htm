@@ -1,0 +1,1551 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="pt-br" xmlns="http://www.w3.org/1999/xhtml" lang="pt-br"><head>
+
+
+<title>.:TWikiBarPapo002 &gt; TWikiBar &gt; Aqui temos um _livro livre_ e
+ completo sobre _Shell_:.</title>
+<link rel="shortcut icon" 
+href="http://wiki.softwarelivre.org/pub/TWikiBar/FreeSkinImagens/favicon.ico"
+ type="image/x-icon">
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta name="Keywords" content="brasil, software, livre, liberdade, 
+copyleft, gnu, linux, grupo, bash, shell, Julio, Cezar, Neves, venda, 
+aluguel, casa, Arraial, do, Cabo">
+<meta name="Description" content="Os sedentos do " saber="" livre="" 
+são="" muito="" benvindos.="">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta name="author" content="Julio Cezar Neves">
+<!-- base href="http://wiki.softwarelivre.org/TWikiBar/TWikiBarPapo002" -->
+</head><body>\
+<style type="text/css" media="all">
+
+/* elementos HTML básicos */
+
+html body {
+  line-height:1.55em;
+  font-family: "Bitstream Vera Sans", "Lucida Grande", verdana, lucida, helvetica, sans-serif;
+  background-color: #f8f8f8;
+  margin:0;
+  padding:0;
+  font-size:x-small;
+  voice-family:"\"}\""; 
+  voice-family:inherit;
+  font-size:small;
+}
+
+html>body {
+  font-size:small;   
+}
+
+/* be kind to netscape 4 that doesn't understand inheritance */
+body, p, li, ul, ol, dl, dt, dd, acronym, h1, h2, h3, h4, h5, h6 {
+   background-color:transparent;
+}
+p {
+   margin:1em 0 0 0;
+}
+table {
+   border-collapse: separate;
+   background-color: #000000;
+}
+
+table.destaque {
+   border-collapse: separate;
+   background-color: #ffffcc !important;
+}
+
+#SearchResultsTable table,
+#SearchResultsTable tr,
+#SearchResultsTable td{
+   background-color: #ffffff !important;
+}
+
+strong, b {
+   font-weight:bold;
+}
+hr {
+   color:#9E9E70;
+   background-color:#9E9E70;
+   height:1px;
+   border:none;
+}
+pre, code, tt {
+   font-size:100%;
+   line-height:1.4em;
+   color:#7A4707;
+}
+pre {
+   margin-top:1em;
+   margin-bottom:1em;
+}
+
+/* Text */
+
+h1, h2, h3, h4, h5, h6 {
+   font-family:"Lucida Grande", helvetica, lucida, verdana, sans-serif;
+   line-height:104%;
+   padding:0;
+   margin:1em 0 0.1em 0;
+}
+h1 {
+   font-size:210%;
+   color:#e24628;
+   margin:0 0 0.1em 0;
+}
+h2 {
+   font-size:145%;
+   display:block;
+   background-color:#F3EDE7;
+   color:#900;
+   padding:0.2em 0.7em;
+   margin:1em 0.7em 0.15em 0.7em;
+   height:auto;
+}
+h3 { font-size:140%; color:#900;}
+h4 { font-size:125%; color:#900;}
+h5 { font-size:110%; color:#900;}
+h6 { font-size:95%; color:#900;}
+
+/* Links */
+
+:link:focus,
+:visited:focus,
+:link,
+:visited,
+:link:active,
+:visited:active {
+   text-decoration:none;
+   color:#1e5bbd;
+   background-color:transparent;
+}
+:link:hover,
+:visited:hover {
+   text-decoration:underline;
+   background-color:#b4d5ff;
+   color:#1559B3;
+}
+a:link img,
+a:visited img,
+a:hover img,
+a:active img {
+   background-color:transparent;
+}
+th a:link,
+th a:visited {
+   font-weight:bold;
+}
+
+/* ----------------------------------------
+   Referências à Menu de Contexto
+   Fonte: http://br.mozdev.org/thunderbird/vocesabia/?privacidade 
+          http://br.mozdev.org/images/html/br.css
+---------------------------------------- */
+
+kbd {
+  padding: 0px 1px 0px 1px !important;
+  border-width: 1px 2px 2px 1px !important;
+  border-style: solid !important;
+  background: #faf6f6  !important;
+  color: #000  !important;
+  border-color:  #edd #baa #baa #eed  !important;
+}
+
+/* ----------------------------------------
+   Estilo para tooltip em links
+   Fonte: http://loadaveragezero.com/vnav/labs/CSS/tooltips.php
+---------------------------------------- */
+
+span.tool {
+  position: relative;   /* this is key */
+  cursor: help;
+}
+ 
+span.tool span.tip {
+  display: none;        /* so is this */
+}
+
+/* tooltip will display on :hover event */
+
+span.tool:hover span.tip {
+  display: block;
+  z-index: 100;
+  position: absolute;
+  top: 2.5em;
+  left: 0;
+  width: auto;
+  line-height: 1.2em;
+  padding: 3px 7px 4px 6px;
+  border: 1px solid #336;
+  background-color: #f7f7ee;
+  font-size: 12px;
+  font-weight: normal;
+  color: #000;
+  text-align: left;
+}
+
+#content span.tool:after {
+  padding-left: 2px;            /* eye candy */
+  content: url(http://wiki.softwarelivre.org/pub/TWiki/TWikiDocGraphics/bubble.gif);
+}
+
+/* ----------------------------------------
+   Estilo para caixa div de código code-box 
+   Fonte: http://loadaveragezero.com/vnav/labs/CSS/code.php
+---------------------------------------- */
+
+.code-box {
+  font-family: 'Lucida Console', 'Bitstream Vera Sans Mono', 'Courier New', Monaco, Courier, monospace;
+  width: 100%;
+  border: 1px dashed #aaa8a8;
+  padding: 0.5em 0 0.3em 0.5em;
+  color: #000;
+  overflow: auto;
+  background: #fff url(http://wiki.softwarelivre.org/pub/TWiki/TWikiDocGraphics/hand.gif) no-repeat top right;
+}
+
+/* ----------------------------------------
+   Estilos das Divisões
+---------------------------------------- */
+
+.geral {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.cabecalho { }
+
+.padraogoverno {
+  border:1px solid #FFCC00;
+  background-color: #FFCC00;
+  text-align: center;
+}
+
+.padraocabecalho {
+  border:1px solid #669966; /* verde pálido */
+/*  text-align: center; */
+  background: #FFF url(http://wiki.softwarelivre.org/pub/TWikiBar/FreeSkinImagens/6aEdicao.PNG) right top no-repeat;
+  color: #FFF;
+  min-height: 105px; /* tamanho da logo */
+}
+
+.corpo {
+  position: relative;
+  top:0;
+  left:0;
+}
+
+.lateral {
+  position: absolute;
+  background-color: #FFFAFF; /* rosa claríssimo */
+
+  width: 12.5em; /* 0.5em à mais do menuL */
+
+  z-index:1; /* forçar estar acima dos demais */
+}
+
+.barranavegacao {
+  background-color: #CDCE9C;
+}
+
+.topico {
+  position: relative;
+  padding-left:1em;
+  padding-bottom:1em;
+  margin-left: 13.1em; /* deslocado 1em à direita do menuL */
+  min-height: 20em;
+
+/*  overflow: auto; */
+
+  border:1px solid #000;
+  background-color: #FFF;
+}
+
+.localizacao {
+  margin-left: 13.1em; /* deslocado 1em à direita do menuL */
+  padding-left:1em;
+
+  border:1px solid #E6E6E6; /* cinza claro */
+  background-color: #E6E6E6;
+}
+
+.edicao {
+  margin-left: 13.1em; /* deslocado 1em à direita do menuL */
+  padding-left:1em;
+
+  border:1px solid #EEF6FF;
+  background-color: #EEF6FF; /* azul claríssimo */
+}
+
+.rodape {
+  margin-left: 13.1em; /* deslocado 1em à direita do menuL */
+  padding-left:1em;
+
+  text-align: center;
+
+  border:1px solid #FFFAFF;
+  background-color: #FFFAFF; /* rosa claríssimo */
+}
+
+/* ----------------------------------------
+   Barra de Navegacao através de listas.
+   http://www.maujor.com/tutorial/cssmenu.php
+---------------------------------------- */
+#menuH ul {
+  border:none;
+  margin: 0;
+  padding: 0;
+  text-align:left;
+}
+
+#menuH ul li {
+  list-style: none;
+  margin: 0;
+  display: inline;
+}
+
+#menuH ul li a {
+  height:1px; /* IE5.0 bug */
+/*  padding: 3px 1px; */
+  margin:0;
+/*  border: 1px solid #f00; */
+/*  background: #999; */
+  text-decoration: none;
+}
+
+#menuH ul li a:link, #menuH ul li a:visited {
+/*  color: #fff; */
+}
+
+#menuH ul li a:hover {
+/*  background: #ccc; */
+  color: #F00;
+/* border-color: #000; */
+}
+
+/* ----------------------------------------
+   Menu Construído através de listas. Baseado em:
+   http://www.maujor.com/tutorial/tecmenu.php e
+   http://www.tanfa.co.uk/css/examples/css-dropdown-menus.asp
+---------------------------------------- */
+
+/* Tamanho, Fonte, Cor, Borda do MenuL */
+#menuL {
+  width: 12em;
+  background: #999;
+  font-size: 11px/16px;
+  font-weight: bold;
+}
+
+/* Caixa do Menu OL */
+#menuL ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Caixa dos Itens do Menu UL - Fica dentro da caixa OL */
+#menuL ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Titulo do Menu OL - ordenado */
+#menuL ol li {
+  color: #fff;
+  background: #000;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+/* Items dentro do Menu OL */
+#menuL ol li li {
+  color: #fff;
+  background: #000;
+  text-transform: none;
+  text-align: left;
+}
+
+/* Links dos Menus */
+#menuL ol li li a {
+  display: block;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #ccc #888 #555 #bbb;
+  margin: 0;
+  padding: 2px 3px;
+}
+
+/* Itens do Menu OL - Links */
+#menuL a {
+  color: #000;
+  background: #efefef;
+  text-decoration: none;
+}
+
+/* Itens do Menu OL - Links com o mouse em cima */
+#menuL a:hover {
+  color: #a00;
+  background: #fff;
+}
+
+/* Posicionamento dos Itens - "Mágica" */
+#menuL li {
+  position: relative;
+}
+
+#menuL ol ul ul {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  width: 100%;
+}
+
+/* Magia CSS */
+div#menuL ol ul ul,
+div#menuL ol ul ul ul,
+div#menuL ol ul li:hover ul ul,
+div#menuL ol ul ul li:hover ul ul
+{display: none;}
+
+/* Magia CSS */
+div#menuL ol ul li:hover ul,
+div#menuL ol ul ul li:hover ul,
+div#menuL ol ul ul ul li:hover ul
+{display: block;}
+
+/* Corrige o espaço deixado pelos parágrafos */
+div#menuL p {display:inline;}
+</style>
+
+<!-- Internet Explorer CSS Fixes -->
+<!--[if IE]>
+  <style type="text/css" media="screen">
+    body {  behavior: url(http://wiki.softwarelivre.org/pub/TWikiBar/FreeSkinCSS/csshover.htc); font-size: 100%;} 
+    #menuL ol li { float: left; width: 100%; }
+    #menuL ol li a { height: 1%; }
+  </style>
+<![endif]-->
+
+
+<!--GENERATED_HEADERS--><!-- TABLEPLUGIN_table2 --> <style type="text/css" media="all">
+.foswikiTable#table2 th {background-color:#0000FF;}
+.foswikiTable#table2 th.foswikiSortedCol {background-color:#0000FF;}
+.foswikiTable#table2 th {color:#FFFF00;}
+.foswikiTable#table2 th a:link {color:#FFFF00;}
+.foswikiTable#table2 th a:visited {color:#FFFF00;}
+.foswikiTable#table2 th a:link font {color:#FFFF00;}
+.foswikiTable#table2 th a:visited font {color:#FFFF00;}
+.foswikiTable#table2 th a:hover {color:#0000FF;background-color:#FFFF00;}
+.foswikiTable#table2 th a:hover font {color:#0000FF;background-color:#FFFF00;}
+.foswikiTable#table2 tr.foswikiTableRowdataBg0 td {background-color:#BBBBBB;}
+.foswikiTable#table2 tr.foswikiTableRowdataBg1 td {background-color:#DDDDDD;}
+.foswikiTable#table2 tr.foswikiTableRowdataBg0 td.foswikiSortedCol {background-color:#BBBBBB;}
+.foswikiTable#table2 tr.foswikiTableRowdataBg1 td.foswikiSortedCol {background-color:#DDDDDD;}
+.foswikiTable#table2 td {padding:4px;}
+.foswikiTable#table2 th {padding:4px;}
+</style>
+<!-- TABLEPLUGIN_table1 --> <style type="text/css" media="all">
+.foswikiTable#table1 th {background-color:#0000FF;}
+.foswikiTable#table1 th.foswikiSortedCol {background-color:#0000FF;}
+.foswikiTable#table1 th {color:#FFFF00;}
+.foswikiTable#table1 th a:link {color:#FFFF00;}
+.foswikiTable#table1 th a:visited {color:#FFFF00;}
+.foswikiTable#table1 th a:link font {color:#FFFF00;}
+.foswikiTable#table1 th a:visited font {color:#FFFF00;}
+.foswikiTable#table1 th a:hover {color:#0000FF;background-color:#FFFF00;}
+.foswikiTable#table1 th a:hover font {color:#0000FF;background-color:#FFFF00;}
+.foswikiTable#table1 tr.foswikiTableRowdataBg0 td {background-color:#BBBBBB;}
+.foswikiTable#table1 tr.foswikiTableRowdataBg1 td {background-color:#DDDDDD;}
+.foswikiTable#table1 tr.foswikiTableRowdataBg0 td.foswikiSortedCol {background-color:#BBBBBB;}
+.foswikiTable#table1 tr.foswikiTableRowdataBg1 td.foswikiSortedCol {background-color:#DDDDDD;}
+.foswikiTable#table1 td {padding:4px;}
+.foswikiTable#table1 th {padding:4px;}
+</style>
+<div class="geral">
+<div class="cabecalho">
+	 <div class="padraocabecalho">		
+<h3><a name="Aqui_temos_um_livro_livre_e_comp"></a> Aqui temos um <em>livro
+ livre</em> e completo sobre <em>Shell</em> </h3>
+<h4><a name="Os_sedentos_do_saber_livre_s_o_m"></a> Os sedentos do 
+"saber livre" são muito benvindos. </h4>
+<!-- <span class="foswikiNewLink">SiteSearch<a href="/bin/edit/TWikiBar/SiteSearch?topicparent=TWikiBar.TWikiBarPapo002" rel="nofollow" title="Criar este tópico">?</a></span> Google -->
+<form method="get" action="http://www.google.com/search" target="_blank">
+<input name="ie" value="UTF-8" type="hidden">
+<input name="oe" value="UTF-8" type="hidden">
+<input name="q" size="10" maxlength="255" type="text">
+<input name="btnG" value="Procure comando no Botequim" type="submit">
+<input name="domains" value="wiki.softwarelivre.org" type="hidden">
+<input name="sitesearch" 
+value="twiki.softwarelivre.org/bin/view/TWikiBar" checked="checked" 
+type="hidden">
+</form>
+<!-- <span class="foswikiNewLink">SiteSearch<a href="/bin/edit/TWikiBar/SiteSearch?topicparent=TWikiBar.TWikiBarPapo002" rel="nofollow" title="Criar este tópico">?</a></span> Google -->
+<p>
+	 </p></div>
+	 <div class="barranavegacao">		<div id="menuH"> <ul>
+<li> [ 12 Apr 2010 - 22:01 ] <strong>Links Amigos</strong> 
+</li> <li> <a style="" target="_blank" 
+href="http://br-linux.org/linux/?q=node/2037" title="Linux Levado à 
+Sério (Abrirá em nova Aba)">BR-Linux</a>
+</li> <li> <a style="" target="_blank" 
+href="http://www.vivaolinux.com.br/" title="Viva o Linux (Abrirá em nova
+ Aba)">Viva o Linux</a>
+</li> <li> <a style="" target="_blank" 
+href="http://www.dicas-l.unicamp.br/" title="Dicas-L - Rubens (Abrirá em
+ nova Aba)">Dicas-L</a>
+</li> <li> <a style="" target="_blank" 
+href="http://www.aurelio.net/shell" title="Por que programar tem que ser
+ divertido (Abrirá em nova Aba)">Aurelio</a>
+</li> <li> <a style="" target="_blank" href="http://www.thobias.org/" 
+title=" Thobias login (Abrirá em nova Aba)">Thobias</a>
+</li></ul> 
+</div>
+	 </div>
+  </div>
+  <div class="lateral">	 
+<div id="menuL"> <ol>
+<li> TWiki Básico <ul>
+<li> <a style="" href="http://wiki.softwarelivre.org/TWikiBar/WebHome" 
+class="foswikiCurrentWebHomeLink" title="Ir para a Página Inicial dessa 
+Área!"><img src="TWikiBarPapo002_arquivos/home.gif" alt="HOME" 
+width="16" height="16"> Página Inicial</a>
+</li> <li> <a style="" 
+href="http://wiki.softwarelivre.org/TWikiBar/WebChanges" title="Mostrar 
+as páginas (tópicos) alterados mais recentemente!"><img 
+src="TWikiBarPapo002_arquivos/recentchanges.gif" alt="INDEX" width="16" 
+height="16"> Últimas Alterações</a>
+</li> <li> <a style="" 
+href="http://wiki.softwarelivre.org/TWikiBar/WebIndex" title="Indice 
+Analítico!"><img src="TWikiBarPapo002_arquivos/index.gif" alt="INDEX" 
+width="16" height="16"> Índice</a>
+</li> <li> <a style="" 
+href="http://wiki.softwarelivre.org/TWikiBar/WebSearch" title="Permite 
+que você procure um texto qualquer em todos os tópicos. Se desejar pode 
+utilizar expressões regulares também!"><img 
+src="TWikiBarPapo002_arquivos/searchtopic.gif" alt="SEARCH" width="16" 
+height="16"> Procura</a>
+</li> <li> <a style="" 
+href="http://wiki.softwarelivre.org/TWikiBar/WebStatistics" title="Umas 
+estatísticas geradas pelo próprio TWiki via crontab."><img 
+src="TWikiBarPapo002_arquivos/statistics.gif" alt="STATISTICS" 
+width="16" height="16"> Estatísticas de Uso</a>
+</li> <li> <a style="" 
+href="http://wiki.softwarelivre.org/TWikiBar/WebNotify" title="Permite 
+que você seja informado se alguma página for alterada."><img 
+src="TWikiBarPapo002_arquivos/notify.gif" alt="NOTIFY" width="16" 
+height="16"> Aviso de Atualização</a>
+</li> <li> <a style="" 
+href="http://wiki.softwarelivre.org/TWikiBar/WebMap" title="Mostra um 
+Mapa do Site Gerado Automagicamente.">Mapa do Site</a>
+</li></ul> 
+</li> <li> TWiki Avançado <ul>
+<li> <strong><a style="" 
+href="http://wiki.softwarelivre.org/System/UserRegistration" title="Se 
+você quer contribuir com este site.">Registre-se</a></strong>
+</li> <li> <a style="" 
+href="http://wiki.softwarelivre.org/TWikiBar/WebPreferences" 
+title="Configurações Gerais desta Área.">Configurações Gerais</a>
+</li> <li> <a style="" 
+href="http://wiki.softwarelivre.org/Main/TWikiBarGroup" title="Entre em 
+Contato Conosco">Quem Somos</a>
+</li> <li> <a style="" 
+href="http://wiki.softwarelivre.org/System/TextFormattingRules" 
+title="Dicas de Formatação">Regras de Formatação</a>
+</li> <li> <a style="" 
+href="http://wiki.softwarelivre.org/System/DocumentGraphics" 
+title="Dicas Gráficas">Biblioteca Gráfica</a>
+</li> <li> <a style="" 
+href="http://wiki.softwarelivre.org/System/SmiliesPlugin" title="Use os 
+Smiles Simples.">Carinhas Gráficas</a>
+</li></ul> 
+</li> <li> <a 
+href="http://wiki.softwarelivre.org/TWikiBar/ProjetoGrafico">Projeto 
+Gráfico</a> <ul>
+<li> <a style="" 
+href="http://wiki.softwarelivre.org/TWikiBar/FreeSkinPreTopic" title="O 
+que vem ANTES do Tópico">Pré Tópico</a>
+</li> <li> <a style="" 
+href="http://wiki.softwarelivre.org/TWikiBar/FreeSkinPosTopic" title="O 
+que vem DEPOIS do Tópico">Pós Tópico</a>
+</li> <li> <a style="" 
+href="http://wiki.softwarelivre.org/TWikiBar/FreeSkinMenu" title="Este 
+próprio menu">Menu Lateral</a>
+</li> <li> <a style="" 
+href="http://wiki.softwarelivre.org/TWikiBar/FreeSkinBarraNavegacao" 
+title="Links Interessantes e Recomendados">Menu de Navegação</a>
+</li> <li> <a style="" 
+href="http://wiki.softwarelivre.org/TWikiBar/FreeSkinCSS" 
+title="Definições do CSS utilizado">CSS Utilizado</a>
+</li> <li> <a style="" 
+href="http://wiki.softwarelivre.org/TWikiBar/FreeSkinControlesEdicao" 
+title="Controles de Edição, Anexar, etc">Botões Especiais</a>
+</li> <li> <a style="" 
+href="http://wiki.softwarelivre.org/TWikiBar/FreeSkinVoceEstaAqui" 
+title="Indicador de Onde Estamos dentro da Web">Indica Onde Estamos</a>
+</li> <li> <a style="" 
+href="http://wiki.softwarelivre.org/TWikiBar/FreeSkinPadraoCabecalho" 
+title="Definição do Cabeçalho Padronizado">Cabeçalho Padrão</a>
+</li> <li> <a style="" 
+href="http://wiki.softwarelivre.org/TWikiBar/FreeSkinCopyRight" 
+title="Informações de Copy Right/Left">Copy Right/Left</a>
+</li></ul> 
+</li></ol> 
+</div>
+  </div>
+  <div class="corpo">
+	 <div class="localizacao">		Você está aqui: <a 
+href="http://wiki.softwarelivre.org/TWikiBar/WebHome" 
+class="foswikiCurrentWebHomeLink">TWikiBar</a>  &gt; <a 
+href="http://wiki.softwarelivre.org/TWikiBar/BatePapos">BatePapos</a> 
+&gt; <a href="http://wiki.softwarelivre.org/TWikiBar/TWikiBarPapo002" 
+class="foswikiCurrentTopicLink">TWikiBarPapo002</a>
+	 </div>
+	 <div class="edicao">		Controles: <a style="" 
+href="http://wiki.softwarelivre.org/bin/edit/TWikiBar/TWikiBarPapo002?nocache=Apr13010128&amp;skin=pattern"
+ target="_top" title="Editar este tópico"><img 
+src="TWikiBarPapo002_arquivos/edittopic.gif" alt="EDITAR" width="16" 
+height="16"></a>
+<a style="" 
+href="http://wiki.softwarelivre.org/bin/attach/TWikiBar/TWikiBarPapo002?skin=pattern"
+ target="_top" title="Anexar Imagens ou Arquivos"><img 
+src="TWikiBarPapo002_arquivos/attachfile.gif" alt="ANEXAR" width="16" 
+height="16"></a>
+<a style="" 
+href="http://wiki.softwarelivre.org/TWikiBar/TWikiBarPapo002?raw=on&amp;skin=pattern"
+ target="_top" title="Visualizar o Código Fonte"><img 
+src="TWikiBarPapo002_arquivos/cachetopic.gif" alt="MAIS" width="16" 
+height="16"></a>
+<a style="" 
+href="http://wiki.softwarelivre.org/bin/oops/TWikiBar/TWikiBarPapo002?template=oopsmore&amp;param1=23&amp;param2=23&amp;skin=pattern"
+ target="_top" title="Renomear, Mover, Apagar, etc..."><img 
+src="TWikiBarPapo002_arquivos/tip.gif" alt="MAIS" width="16" height="16"></a>
+<a style="" 
+href="http://wiki.softwarelivre.org/bin/rdiff/TWikiBar/TWikiBarPapo002?skin=pattern"
+ target="_top" title="Ver Todas Alterações"><img 
+src="TWikiBarPapo002_arquivos/recentchanges.gif" alt="ALTERACOES" 
+width="16" height="16"></a>
+<a style="" 
+href="http://wiki.softwarelivre.org/TWikiBar/TWikiBarPapo002?skin=freeprint"
+ target="_top" title="Preparar para Impressão"><img 
+src="TWikiBarPapo002_arquivos/printtopic.gif" alt="IMPRIMIR" width="16" 
+height="16"></a>
+- Última Atualização: [01 Aug 2009 - V.23]
+	 </div>
+	 <div class="topico"><h1><a name="Papo_de_Botequim_Parte_II"></a>  Papo
+ de Botequim Parte II </h1>
+<p>
+<a name="foswikiTOC"></a></p><div class="foswikiToc"> <ul>
+<li> <a href="#Eu_fico_com_o_grep_voc_com_a_gri"> Eu fico com o grep, 
+você com a gripe</a> <ul>
+<li> <a href="#A_fam_lia_grep"> A família grep</a>
+</li></ul> 
+</li> <li> <a href="#Vamos_Montar_uma_cdteca"> Vamos Montar uma "cdteca"</a>
+ <ul>
+<li> <a href="#Passando_par_metros"> Passando parâmetros</a>
+</li> <li> <a href="#Macetes_param_tricos"> Macetes paramétricos</a>
+</li></ul> 
+</li></ul> 
+</div>
+<p>
+&nbsp;&nbsp;&nbsp;&nbsp;-  Garçom! Traz um "chops" e dois "pastel". O 
+meu amigo hoje não vai beber por que ele finalmente está sendo 
+apresentado a um verdadeiro sistema operacional e ainda tem muita coisa a
+ aprender!<br> 
+&nbsp;&nbsp;&nbsp;&nbsp;- E então, amigo, tá entendendo tudo que te 
+expliquei até agora?<br> 
+&nbsp;&nbsp;&nbsp;&nbsp;- Entendendo eu tô, mas não vi nada prático 
+nisso...<br> 
+&nbsp;&nbsp;&nbsp;&nbsp;- Calma rapaz, o que te falei até agora, serve 
+como base ao que há de vir daqui pra frente. Vamos usar estas 
+ferramentas que vimos para montar programas estruturados, que o <em>Shell</em>
+ permite. Você verá porque até na TV já teve programa chamado "O <em>Shell</em>
+ é o Limite".<br> 
+&nbsp;&nbsp;&nbsp;&nbsp;- Para começar vamos falar dos comandos da 
+família <code>grep</code>.<br> 
+&nbsp;&nbsp;&nbsp;&nbsp;- <code>grep</code>? Não conheço nenhum termo em
+ inglês com este nome...<br> 
+&nbsp;&nbsp;&nbsp;&nbsp;- É claro, <code>grep</code> é um acrônimo <strong>Global
+ Regular Expression Print</strong>, que usa expressões regulares para 
+pesquisar a ocorrência de cadeias de caracteres na entrada definida (se 
+bem que há uma lenda sobre como este comando foi nomeado: no editor de 
+textos "ed", o avô do "vim", o comando usado para buscas era 
+g/_expressao regular_/p, ou no inglês g/_re_/p.). Por falar em 
+expressões regulares (ou <strong>regexp</strong>), o <a 
+href="http://www.google.com.br/search?num=100&amp;hl=pt-BR&amp;as_qdr=all&amp;q=%2B%22%5E+EXPRESS%C3%95ES+REGULARES+%24%22+%2Blego+%2B%22como+farejar+um+texto%22&amp;btnG=Pesquisar&amp;meta="
+ target="_blank">Aurélio Marinho Jargas</a> tem todas as dicas em sua 
+página (inclusive tutorias) que abordam o tema. Se você está mesmo a fim
+ de aprender a programar em <strong>Shell</strong>, <strong>Perl</strong>,
+ <strong>Python</strong>, ... Acho bom você ler estes artigos para te 
+ajudar no que está para vir.
+</p><p>
+</p><h2><a name="Eu_fico_com_o_grep_voc_com_a_gri"></a> Eu fico com o <code>grep</code>,
+ você com a gripe </h2>
+<p>
+Esse negócio de gripe é brincadeira! É só um pretexto para pedir umas 
+caipirinhas. Mas voltando à vaca fria, eu te falei que o <code>grep</code>
+ procura cadeia de caracteres dentro de uma entrada definida, mas o que 
+vem a ser uma "entrada definida"? Bem, existem várias formas de definir a
+ entrada do comando <code>grep</code>. Vejamos:
+Pesquisando em um arquivo:
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);">$ grep rafael /etc/passwd
+</div>
+<p>
+Pesquisando em vários arquivos:
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);">$ grep grep *.sh
+</div>
+<p>
+Pesquisando na saida de comando:
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);">$ who | grep Pelegrino
+</div>
+<p>
+No 1º exemplo, o mais simples, procurei a palavra rafael em qualquer 
+lugar do arquivo <code>/etc/passwd</code>. Se quisesse procurá-la como 
+um login name, isto é, somente no início dos registros deste arquivo, eu
+ deveria fazer:
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);">$ grep '^rafael' /etc/passwd
+</div>
+<p>
+E para que serve este circunflexo e os apóstrofos, você vai me 
+perguntar. O circunflexo (<code>^</code>), se você tivesse lido os 
+artigos anteriores sobre expressões regulares que te falei, saberia que 
+servem para limitar a pesquisa ao início de cada linha, e os apóstrofos (<code>'</code>)
+ servem para o <em>Shell</em> não interpretar este circunflexo, 
+deixando-o passar incólume para o comando <code>grep</code>. 
+</p><p>
+Olha que legal! O <code>grep</code> aceita como entrada, a saída de 
+outro comando redirecionado por um <code>pipe</code> (isto é muito comum
+ em <em>Shell</em> e é um tremendo acelerador de execução de comando já 
+que atua como se a saída de um programa fosse guardada em disco e o 
+segundo programa lesse este arquivo gerado), desta forma, no 3º exemplo,
+ o comando <code>who</code> listou as pessoas "logadas" na mesma máquina
+ que você (não se esqueça jamais: o <em>Linux</em> é multiusuário) e o <code>grep</code>
+ foi usado para verificar se o Pelegrino estava trabalhando ou 
+"coçando".
+</p><p>
+</p><h3><a name="A_fam_lia_grep"></a> A família <code>grep</code> </h3>
+<p>
+Este comando <code>grep</code> é muito conhecido, pois é usado com muita
+ freqüência, o que muitas pessoas desconhecem é que existem três 
+comandos na família <code>grep</code>, que são:
+</p><p> </p><ul>
+<li> <code>grep</code>
+</li> <li> <code>egrep</code>
+</li> <li> <code>fgrep</code>
+</li></ul> 
+<p>
+A principais características diferenciais entre os 3 são: </p><ul>
+<li> O <code>grep</code> pode ou não usar expressões regulares simples, 
+porém no caso de não usá-las, o <code>fgrep</code> é melhor, por ser 
+mais rápido;
+</li> <li> O <code>egrep</code> ("e" de extended, extendido) é muito 
+poderoso no uso de expressões regulares. Por ser o mais lento da 
+família, só deve ser usado quando for necessária a elaboração de uma 
+expressão regular não aceita pelo <code>grep</code>;
+</li> <li> O <code>fgrep</code> ("f" de fast, rápido, ou de "file", 
+arquivo) como o nome diz é o rapidinho da família, executa o serviço de 
+forma muito veloz (por vezes é cerca de 30% mais veloz que o grep e 50% 
+mais que o egrep), porém não permite o uso de expressões regulares na 
+pesquisa. 
+</li></ul> 
+<p>
+</p><div style="min-height: 105px; margin: 1em; padding: 1em; border: 
+1px dashed red; background-color: rgb(255, 255, 204);"><img 
+style="float: left; padding: 0px 8px 0px 0px;" 
+src="TWikiBarPapo002_arquivos/pinguim_atencao.gif" alt="Pinguim com 
+placa de atenção">
+Tudo que foi dito acima sobre velocidade, só se aplica à família de 
+comandos <code>grep</code> do <em>Unix</em>. No <em>Linux</em> o <code>grep</code>
+ é sempre mais veloz, já que os outros dois (<code>fgrep</code> e <code>egrep</code>)
+ são <em>scripts</em> em <em>Shell</em> que chamam o primeiro e, já vou 
+adiantando, <strong>não gosto</strong> nem um pouquinho desta solução.
+</div>
+   &nbsp;&nbsp;&nbsp;&nbsp;- Agora que você já conhece as diferenças 
+entre os membros da família, me diga: o que você acha dos três exemplos 
+que eu dei antes das explicações?<br> 
+   &nbsp;&nbsp;&nbsp;&nbsp;- Eu achei que o <code>fgrep</code> 
+resolveria o teu problema de forma mais veloz do que o <code>grep</code>.<br>
+ 
+   &nbsp;&nbsp;&nbsp;&nbsp;- Perfeito! Tô vendo que você está atento! 
+Está entendendo tudo que estou te explicando! Então vamos ver mais 
+exemplos para clarear de vez as diferenças de uso dos membros da 
+família. <br> 
+<p>
+Exemplos
+</p><p>
+Eu sei que em um arquivo existe um texto falando sobre <code>Linux</code>
+ só não tenho certeza se está escrito com <code>L</code> maiúsculo ou <code>l</code>
+ minúsculo. Posso fazer de duas formas:
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);">$ egrep (Linux | linux) 
+arquivo.txt
+</div>
+<p>
+ou
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);">$ grep [Ll]inux arquivo.txt
+</div>
+<p>
+No primeiro caso, a expressão regular complexa <code>"(Linux | linux)"</code>
+ usa os parênteses para agrupar as opções e a barra vertical (<code>|</code>)
+ como um "ou" lógico, isto é, estou procurando <code>Linux</code> ou <code>linux</code>.
+ 
+</p><p>
+No segundo, a expressão regular <code>[Ll]inux</code> significa: 
+começado por <code>L</code> ou <code>l</code> seguido de <code>inux</code>.
+ Por esta expressão ser mais simples, o <code>grep</code> consegue 
+resolvê-la, portanto acho melhor usar a segunda forma, já que o <code>egrep</code>
+ tornaria a pesquisa mais lenta.
+</p><p>
+Outro exemplo. Para listar todos os subdiretórios do diretório corrente,
+ basta:
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);">$ ls -l | grep '^d'<font 
+color="#ffffff">
+drwxr-xr-x   3 root     root         4096 Dec 18  2000 doc
+drwxr-xr-x  11 root     root         4096 Jul 13 18:58 freeciv
+drwxr-xr-x   3 root     root         4096 Oct 17  2000 gimp
+drwxr-xr-x   3 root     root         4096 Aug  8  2000 gnome
+drwxr-xr-x   2 root     root         4096 Aug  8  2000 idl
+drwxrwxr-x  14 root     root         4096 Jul 13 18:58 locale
+drwxrwxr-x  12 root     root         4096 Jan 14  2000 lyx
+drwxrwxr-x   3 root     root         4096 Jan 17  2000 pixmaps
+drwxr-xr-x   3 root     root         4096 Jul  2 20:30 scribus
+drwxrwxr-x   3 root     root         4096 Jan 17  2000 sounds
+drwxr-xr-x   3 root     root         4096 Dec 18  2000 xine</font>
+</div>
+<p>
+No exemplo que acabamos de ver, o circunflexo (<code>^</code>) serviu 
+para limitar a pesquisa à primeira posição da saída do <code>ls</code> 
+longo. Os apóstrofos foram colocados para o <em>Shell</em> não "ver" o 
+circunflexo (<code>^</code>).
+</p><p>
+Vamos ver mais um. Sabemos que as quatro primeiras posições possíveis de
+ um <code>ls -l</code> de um arquivo comum (arquivo comum! Não é 
+diretório, nem <em>link</em>, nem ...) devem ser:
+</p><p>
+</p><center>
+<table id="table1" class="foswikiTable" border="0" cellpadding="4" 
+cellspacing="1" rules="rows">
+	<thead>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 
+foswikiTableRowdataBg0">
+			<th class="foswikiTableCol0 foswikiFirstCol" align="center" 
+bgcolor="#0000ff" valign="top"> <font color="#ffff00">Posição</font> </th>
+			<th class="foswikiTableCol1" bgcolor="#0000ff" valign="top"> <font 
+color="#ffff00">&nbsp;1ª&nbsp;</font> </th>
+			<th class="foswikiTableCol2" bgcolor="#0000ff" valign="top"> <font 
+color="#ffff00">&nbsp;2ª&nbsp;</font> </th>
+			<th class="foswikiTableCol3" bgcolor="#0000ff" valign="top"> <font 
+color="#ffff00">&nbsp;3ª&nbsp;</font> </th>
+			<th class="foswikiTableCol4 foswikiLastCol" align="center" 
+bgcolor="#0000ff" valign="top"> <font color="#ffff00">&nbsp;4ª&nbsp;</font>
+ </th>
+		</tr>
+	</thead>
+	<tfoot>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 
+foswikiTableRowdataBg0">
+			<td class="foswikiTableCol1 foswikiLast" bgcolor="#bbbbbb" 
+valign="top"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLast" bgcolor="#bbbbbb" 
+valign="top"> &nbsp; </td>
+			<td class="foswikiTableCol3 foswikiLast" bgcolor="#bbbbbb" 
+valign="top"> &nbsp; </td>
+			<td class="foswikiTableCol4 foswikiLastCol foswikiLast" 
+align="center" bgcolor="#bbbbbb" valign="top"> <code>-</code> </td>
+		</tr>
+	</tfoot>
+	<tbody>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 
+foswikiTableRowdataBg0">
+			<td rowspan="3" class="foswikiTableCol0 foswikiFirstCol foswikiLast" 
+bgcolor="#bbbbbb" valign="top"> &nbsp;Valores Possíveis&nbsp; </td>
+			<td class="foswikiTableCol1" align="center" bgcolor="#bbbbbb" 
+valign="top"> <code>-</code> </td>
+			<td class="foswikiTableCol2" align="center" bgcolor="#bbbbbb" 
+valign="top"> <code>r</code> </td>
+			<td class="foswikiTableCol3" align="center" bgcolor="#bbbbbb" 
+valign="top"> <code>w</code> </td>
+			<td class="foswikiTableCol4 foswikiLastCol" align="center" 
+bgcolor="#bbbbbb" valign="top"> <code>x</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 
+foswikiTableRowdataBg1">
+			<td class="foswikiTableCol1" bgcolor="#dddddd" valign="top"> &nbsp; </td>
+			<td class="foswikiTableCol2" align="center" bgcolor="#dddddd" 
+valign="top"> <code>-</code> </td>
+			<td class="foswikiTableCol3" align="center" bgcolor="#dddddd" 
+valign="top"> <code>-</code> </td>
+			<td class="foswikiTableCol4 foswikiLastCol" align="center" 
+bgcolor="#dddddd" valign="top"> &nbsp; <code>s</code> (suid)&nbsp; </td>
+		</tr>
+	</tbody></table>
+</center>
+<p>
+Assim sendo, para descobrir todos os arquivos executáveis em um 
+determinado diretório eu deveria fazer:
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);">$ ls -la | egrep '^-..(x|s)'<font
+ color="#ffffff">
+-rwxr-xr-x   1 root     root       2875 Jun 18 19:38 rc
+-rwxr-xr-x   1 root     root        857 Aug  9 22:03 rc.local
+-rwxr-xr-x   1 root     root      18453 Jul  6 17:28 rc.sysinit</font>
+</div>
+<p>
+Onde novamente usamos o circunflexo (<code>^</code>) para limitar a 
+pesquisa ao início de cada linha, então as linhas listadas serão as que 
+começam por um traço (<code>-</code>), seguido de qualquer coisa (o 
+ponto quando usado como uma expressão regular significa qualquer coisa),
+ novamente seguido de qualquer coisa, vindo a seguir um <code>x</code> 
+ou um <code>s</code>.
+</p><p>
+Obteríamos o mesmo resultado se fizéssemos:
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);">$ ls -la | grep '^-..[xs]'
+</div>
+<p>
+e agilizaríamos a pesquisa. 
+</p><p>
+</p><h2><a name="Vamos_Montar_uma_cdteca"></a> Vamos Montar uma "cdteca"
+ </h2>
+<p>
+Vamos começar a desenvolver programas, acho que a montagem de um banco 
+de dados de músicas é bacana para efeito didático (e útil nesses tempos 
+de <em>downloads</em> de mp3 e "queimadores" de CDs). Não se esqueça 
+que, da mesma forma que vamos desenvolver um monte de programas para 
+organizar os seus CDs de música, com pequenas adaptações, você pode 
+fazer o mesmo com os CDs de <em>software</em> que vêm com a <strong><em>Linux
+ Magazine</em></strong> e outros que você compra ou queima, 
+disponibilizando este banco de <em>software</em> para todos que 
+trabalham com você (o <em>Linux</em> é multiusuário, e como tal deve ser
+ explorado), desta forma ganhando muitos pontos com seu adorado chefe.
+</p><p>
+   &nbsp;&nbsp;&nbsp;&nbsp;- Péra ai! De onde eu vou receber os dados 
+dos CDs? <br> 
+   &nbsp;&nbsp;&nbsp;&nbsp;- Inicialmente, vou lhe mostrar como o seu 
+programa pode receber parâmetros de quem o estiver executando e em 
+breve, ensinarei a ler os dados pela tela ou de um arquivo. <br> 
+</p><p>
+</p><h3><a name="Passando_par_metros"></a> Passando parâmetros </h3>
+<p>
+O layout do arquivo musicas será o seguinte: 
+</p><p>
+   &nbsp;&nbsp;&nbsp;&nbsp; <code>nome do álbum^intérprete1~nome da 
+música1:..:intérprete~nome da música</code>
+</p><p>
+isto é, o nome do álbum será separado por um circunflexo (<code>^</code>)
+ do resto do registro, que é formado por diversos grupos compostos pelo 
+intérprete de cada música do CD e a respectiva música interpretada. 
+Estes grupos são separados entre si por dois-pontos (<code>:</code>) e 
+internamente, o intérprete será separado por um til (<code>~</code>) do 
+nome da música.
+</p><p>
+Eu quero escrever um programa que chamado <code>musinc</code>, que 
+incluirá registros no meu arquivo musicas. Eu passarei o conteúdo de 
+cada álbum como parâmetro na chamada do programa fazendo assim:
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);">$ musinc 
+"álbum^interprete~musica:interprete~musica:..."
+</div>
+<p>
+Desta forma o programa <code>musinc</code> estará recebendo os dados de 
+cada álbum como se fosse uma variável. A única diferença entre um 
+parâmetro recebido e uma variável é que os primeiros recebem nomes 
+numéricos (nome numérico fica muito esquisito, né? O que quis dizer é 
+que seus nomes são formados por um e somente um algarismo), isto é <code>$1,
+ $2, $3, ..., $9</code>. Vamos, antes de tudo, fazer um teste:
+</p><p>
+Exemplos
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);">$ cat teste
+<font color="#ffffff">#!/bin/bash
+# Programa para testar passagem de parametros
+echo "1o. parm -&gt; $1"
+echo "2o. parm -&gt; $2"
+echo "3o. parm -&gt; $3"</font>
+</div>
+<p>
+Vamos executá-lo:
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);">$ teste passando parametros 
+para testar
+<font color="#ffffff">bash: teste: cannot execute</font>
+</div>
+<p>
+Ops! Esqueci-me de torná-lo executável. Vou fazê-lo de forma a permitir 
+que todos possam executá-lo e em seguida vou testá-lo:
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);">$ chmod 755 teste
+$ teste passando parametros para testar
+<font color="#ffffff">1o. parm -&gt; passando
+2o. parm -&gt; parametros
+3o. parm -&gt; para</font>
+</div>
+<p>
+Repare que a palavra <code>testar</code>, que seria o quarto parâmetro, 
+não foi listada. Isto deu-se justamente porque o programa teste só 
+listava os três primeiros parâmetros. Vamos executá-lo de outra forma:
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);">$ teste "passando parametros" 
+para testar<font color="#ffffff">
+1o. parm -&gt; passando parametros
+2o. parm -&gt; para
+3o. parm -&gt; testar</font>
+</div>
+<p>
+As aspas não deixaram o <code>Shell</code> ver o espaço em branco entre 
+as palavras e considerou-as um único parâmetro.
+</p><p>
+</p><h3><a name="Macetes_param_tricos"></a> Macetes paramétricos </h3>
+<p>
+Já que estamos falando em passagem de parâmetros deixa eu te dar mais 
+umas dicas:
+</p><p>
+</p><center>
+<table id="table2" class="foswikiTable" border="0" cellpadding="4" 
+cellspacing="1" rules="rows">
+	<thead>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 
+foswikiTableRowdataBg0">
+			<th colspan="2" class="foswikiTableCol0 foswikiFirstCol" 
+align="center" bgcolor="#0000ff" valign="top"> <font color="#ffff00">Significado
+ das Principais Variáveis Referentes aos Parâmetros</font> </th>
+		</tr>
+	</thead>
+	<tfoot>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 
+foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol foswikiLast" 
+align="center" bgcolor="#dddddd" valign="top"> <code>$*</code> </td>
+			<td class="foswikiTableCol1 foswikiLastCol foswikiLast" 
+bgcolor="#dddddd" valign="top"> &nbsp; Contém o conjunto de todos os 
+parâmetros (muito parecido com <code>$@</code>) &nbsp; </td>
+		</tr>
+	</tfoot>
+	<tbody>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 
+foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" bgcolor="#bbbbbb" 
+valign="top"> &nbsp; <strong>Variável</strong> &nbsp; </td>
+			<td class="foswikiTableCol1 foswikiLastCol" bgcolor="#bbbbbb" 
+valign="top"> &nbsp; <strong>Significado</strong> &nbsp; </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 
+foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" align="center" 
+bgcolor="#dddddd" valign="top"> <code>$0</code> </td>
+			<td class="foswikiTableCol1 foswikiLastCol" bgcolor="#dddddd" 
+valign="top"> &nbsp; Contém o nome do programa &nbsp; </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 
+foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" align="center" 
+bgcolor="#bbbbbb" valign="top"> <code>$#</code> </td>
+			<td class="foswikiTableCol1 foswikiLastCol" bgcolor="#bbbbbb" 
+valign="top"> &nbsp; Contém a quantidade de parâmetros passados &nbsp; </td>
+		</tr>
+	</tbody></table>
+</center>
+<p>
+Exemplos
+</p><p>
+Vamos alterar o programa <code>teste</code> para usar as variáveis que 
+acabamos de ver. Vamos fazê-lo assim: 
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);">$ cat teste
+<font color="#ffffff">#!/bin/bash
+# Programa para testar passagem de parametros (2a. Versao)
+echo O programa $0 recebeu $# parametros
+echo "1o. parm -&gt; $1"
+echo "2o. parm -&gt; $2"
+echo "3o. parm -&gt; $3"
+echo Todos de uma só \"tacada\": $*</font>
+</div>
+<p>
+Repare que antes das aspas eu usei uma barra invertida para o 
+escondê-las da interpretação do <em>Shell</em> (se não usasse as 
+contrabarras as aspas não apareceriam). Vamos executá-lo:
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);">$ teste passando parametros 
+para testar
+<font color="#ffffff">O programa teste recebeu 4 parametros
+1o. parm -&gt; passando
+2o. parm -&gt; parametros
+3o. parm -&gt; para
+Todos de uma só "tacada": passando parametros para testar</font>
+</div>
+<p>
+Conforme eu disse, os parâmetros recebem números de <code>1</code> a  <code>9</code>,
+ mas isso não significa que não posso usar mais de 9 parâmetros 
+significa somente que só posso endereçar 9. Vamos testar isso: 
+</p><p>
+Exemplo:
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);">$ cat teste
+<font color="#ffffff">#!/bin/bash
+# Programa para testar passagem de parametros (3a. Versao)
+echo O programa $0 recebeu $# parametros
+echo "11o. parm -&gt; $11"
+shift
+echo "2o. parm -&gt; $1"
+shift 2
+echo "4o. Parm -&gt; $1"</font>
+</div>
+<p>
+Vamos executá-lo: 
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);">$ teste passando parametros 
+para testar
+<font color="#ffffff">O programa teste recebeu 4 parametros que são:
+11o. parm -&gt; passando1
+2o. parm -&gt; parametros
+4o. parm -&gt; testar</font>
+</div>
+<p>
+Duas coisas muito interessantes neste <em>script</em>: </p><ol>
+<li> Para mostrar que os nomes dos parâmetros variam de <code>$1</code> a
+ <code>$9</code> eu fiz um echo <code>$11</code> e o que aconteceu? O <em>Shell</em>
+ interpretou como sendo <code>$1</code> seguido do algarismo <code>1</code>
+ e listou <code>passando1</code>;
+</li> <li> O comando <code>shift</code> cuja sintaxe é <code>shift n</code>,
+ podendo o <code>n</code> assumir qualquer valor numérico (porém seu <em>default</em>
+ é <code>1</code> como no exemplo dado), despreza os <code>n</code> 
+primeiros parâmetros, tornando o parâmetro de ordem <code>n+1</code>, o 
+primeiro ou seja, o <code>$1</code>.
+</li></ol> 
+<p>
+Bem, agora que você já sabe mais sobre passagem de parâmetros do que eu,
+ vamos voltar à nossa "cdteca" para fazer o <em>script</em> de inclusão 
+de CDs no meu banco chamado <code>musicas</code>. O programa é muito 
+simples (como tudo em <em>Shell</em>) e vou listá-lo para você ver:
+</p><p>
+Exemplos
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);">$ cat musinc
+<font color="#ffffff">#!/bin/bash
+# Cadastra CDs (versao 1)
+#
+echo $1 &gt;&gt; musicas</font>
+</div>
+<p>
+O <em>script</em> é fácil e funcional, limito-me a anexar ao fim do 
+arquivo <code>musicas</code> o parâmetro recebido. Vamos cadastrar 3 
+álbuns para ver se funciona (para não ficar "enchendo lingüiça", vou 
+supor que em cada CD só existem 2 músicas): 
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);">$ musinc "album 
+3^Artista5~Musica5:Artista6~Musica5"
+$ musinc "album 1^Artista1~Musica1:Artista2~Musica2"
+$ musinc "album 2^Artista3~Musica3:Artista4~Musica4"
+</div>
+<p>
+Listando o conteúdo de musicas.
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);">$ cat musicas
+<font color="#ffffff">album 3^Artista5~Musica5:Artista6~Musica6
+album 1^Artista1~Musica1:Artista2~Musica2
+album 2^Artista3~Musica3:Artista4~Musica4</font>
+</div>
+<p>
+Não está funcional como achava que deveria ficar... podia ter ficado 
+melhor. Os álbuns estão fora de ordem, dificultando a pesquisa. Vamos 
+alterar nosso <em>script</em> e depois testá-lo novamente: 
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);">$ cat musinc
+<font color="#ffffff">#!/bin/bash
+# Cadastra CDs (versao 2)
+#
+echo $1 &gt;&gt; musicas
+sort musicas -o musicas</font>
+</div>
+<p>
+Vamos cadastrar mais um:
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);">$ musinc "album 
+4^Artista7~Musica7:Artista8~Musica8"
+</div>
+<p>
+Agora vamos ver o que aconteceu com o arquivo <code>musicas</code>:
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);">$ cat musicas
+<font color="#ffffff">album 1^Artista1~Musica1:Artista2~Musica2
+album 2^Artista3~Musica3:Artista4~Musica4
+album 3^Artista5~Musica5:Artista6~Musica5
+album 4^Artista7~Musica7:Artista8~Musica8</font>
+</div>
+<p>
+Simplesmente inseri uma linha que classifica o arquivo <code>musicas</code>
+ dando a saída nele mesmo (para isso serve a opção <code>-o</code>), 
+após cada álbum ser anexado.
+</p><p>
+Oba! Agora está legal e quase funcional. Mas atenção, não se desespere! 
+Esta não é a versão final. O programa ficará muito melhor e mais 
+amigável, em uma nova versão que desenvolveremos após aprendermos a 
+adquirir os dados da tela e formatar a entrada.
+</p><p>
+Exemplos
+</p><p>
+Ficar listando com o comando <code>cat</code> não está com nada, vamos 
+então fazer um programa chamado <code>muslist</code> para listar um 
+álbum cujo nome será passado como parâmetro:
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);">$ cat muslist
+<font color="#ffffff">#!/bin/bash
+# Consulta CDs (versao 1)
+#
+grep $1 musicas</font>
+</div>
+<p>
+Vamos executá-lo, procurando pelo <code>album 2</code>. Como já vimos 
+antes, para passar a cadeia <code>album 2</code> é necessário protegê-la
+ da interpretação do <em>Shell</em>, para que ele não a interprete como 
+dois parâmetros. Vamos fazer assim: 
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);">$ muslist "álbum 2"
+<font color="#ffffff">grep: can't open 2
+musicas: album 1^Artista1~Musica1:Artista2~Musica2
+musicas: album 2^Artista3~Musica3:Artista4~Musica4
+musicas: album 3^Artista5~Musica5:Artista6~Musica6
+musicas: album 4^Artista7~Musica7:Artista8~Musica8</font>
+</div>
+<p>
+Que lambança! Onde está o erro? Eu tive o cuidado de colocar o parâmetro
+ passado entre aspas, para o <em>Shell</em> não dividi-lo em dois!
+</p><p>
+É, mas repare como está o <code>grep</code> executado:
+</p><p>
+&nbsp;&nbsp;&nbsp;&nbsp; <code>grep $1 musicas</code>
+</p><p>
+Mesmo colocando <code>álbum 2</code> entre aspas, para que fosse 
+encarado como um único parâmetro, quando o <code>$1</code> foi passado 
+pelo <em>Shell</em> para o comando <code>grep</code>, transformou-se em 
+dois argumentos. Desta forma o conteúdo final da linha, que o comando <code>grep</code>
+ executou foi o seguinte: 
+</p><p>
+&nbsp;&nbsp;&nbsp;&nbsp; <code>grep album 2 musicas</code>
+</p><p>
+Como a sintaxe do <code>grep</code> é:
+</p><p>
+&nbsp;&nbsp;&nbsp;&nbsp;=grep <cadeia de="" caracteres=""> [arq1, arq2, 
+..., arqn]=
+</cadeia></p><p>
+o <code>grep</code> entendeu que deveria procurar a cadeia de caracteres
+ <code>album</code> nos <code>arquivos 2</code> e <code>musicas</code>, 
+Por não existir o <code>arquivo 2</code> gerou o erro, e por encontrar a
+ palavra <code>album</code> em todos os registros de <code>musicas</code>,
+ listou a todos. 
+</p><p>
+</p><div style="min-height: 121px; margin: 1em; padding: 1em; border: 
+1px dashed red; background-color: rgb(255, 255, 204);"><img 
+style="float: left; padding: 0px 8px 0px 0px;" 
+src="TWikiBarPapo002_arquivos/pinguim_dica.gif" alt="Pinguim com placa 
+de dica" align="left">
+Sempre que a <code>cadeia de caracteres</code> a ser passada para o 
+comando <code>grep</code> possuir brancos ou <code>TAB</code>, mesmo que
+ dentro de variáveis, coloque-a sempre entre aspas para evitar que as 
+palavras após o primeiro espaço em branco ou <code>TAB</code> sejam 
+interpretadas como nomes de arquivos.
+</div>
+<p>
+Por outro lado, é melhor ignorarmos maiúsculas e minúsculas na pesquisa.
+ Resolveríamos os dois problemas se o programa tivesse a seguinte forma:
+ 
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);">$ cat muslist
+<font color="#ffffff">#!/bin/bash
+# Consulta CDs (versao 2)
+#
+grep -i "$1" musicas</font>
+</div>
+<p>
+Neste caso, usamos a opção <code>-i</code> do <code>grep</code>, que 
+como já vimos, serve para ignorar maiúsculas e minúsculas, e colocamos o
+ <code>$1</code> entre aspas, para que o <code>grep</code> continuasse a
+ ver a cadeia de caracteres resultante da expansão da linha pelo <code>Shell</code>
+ como um único argumento de pesquisa.
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);">$ muslist "album 2"<font 
+color="#ffffff">
+album2^Artista3~Musica3:Artista4~Musica4</font>
+</div>
+<p>
+Agora repare que o <code>grep</code> localiza a cadeia pesquisada em 
+qualquer lugar do registro, então da forma que estamos fazendo, podemos 
+pesquisar por álbum, por música, por intérprete ou até por um pedaço de 
+qualquer um destes. Quando conhecermos os comandos condicionais, 
+montaremos uma nova versão de <code>muslist</code> que permitirá 
+especificar por qual campo pesquisar.
+</p><p>
+Aí você vai me dizer:
+</p><p>
+   &nbsp;&nbsp;&nbsp;&nbsp;- Poxa, mas é um saco ter que colocar o 
+argumento de pesquisa entre aspas na hora de passar o nome do álbum. 
+Esta forma não é nem um pouco amigável! <br> 
+   &nbsp;&nbsp;&nbsp;&nbsp;- Tem razão, e por isso vou te mostrar uma 
+outra forma de fazer o que você pediu: <br> 
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);">$ cat muslist
+<font color="#ffffff">#!/bin/bash
+# Consulta CDs (versao 3)
+#
+grep -i "$*" musicas
+$ muslist album 2
+album 2^Artista3~Musica3:Artista4~Musica4</font>
+</div>
+<p>
+Desta forma, o <code>$*</code>, que significa todos os parâmetros, será 
+substituído pela cadeia <code>album 2</code> (de acordo com o exemplo 
+anterior, fazendo o que você queria.
+</p><p>
+Não se esqueça o problema do <em>Shell</em> não é se você pode ou não 
+fazer uma determinada coisa. O problema é decidir qual é a melhor forma 
+de fazê-la, já que para desempenhar qualquer tarefa, a quantidade de 
+opções é enorme.
+</p><p>
+Ah! Em um dia de verão você foi à praia, esqueceu o CD no carro, aquele 
+"solzinho" de 40 graus empenou o seu CD e agora você precisa de uma 
+ferramenta para removê-lo do banco de dados? Não tem problema, vamos 
+desenvolver um <em>script</em> chamado <code>musexc</code>, para excluir
+ estes CDs.
+</p><p>
+Antes de desenvolver o "bacalho", quero te apresentar a uma opção 
+bastante útil da família de comandos <code>grep</code>. É a opção <code>-v</code>,
+ que quando usada lista todos os registros da entrada, exceto o(s) 
+localizado(s) pelo comando. Vejamos:
+</p><p>
+Exemplos
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);">$ grep -v "album 2" musicas
+<font color="#ffffff">album 1^Artista1~Musica1:Artista2~Musica2
+album 3^Artista5~Musica5:Artista6~Musica6
+album 4^Artista7~Musica7:Artista8~Musica8</font>
+</div>
+<p>
+Conforme eu expliquei antes, o <code>grep</code> do exemplo listou todos
+ os registros de musicas exceto o referente a <code>album 2</code>, 
+porque atendia ao argumento do comando. Estamos então prontos para 
+desenvolver o <em>script</em> para remover aquele CD empenado da sua 
+"CDteca". Ele tem a seguinte cara:
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);">$ cat musexc
+<font color="#ffffff">#!/bin/bash
+# Exclui CDs (versao 1)
+#
+grep -v "$1" musicas &gt; /tmp/mus$$
+mv -f /tmp/mus$$ musicas</font>
+</div>
+<p>
+Na primeira linha mandei para <code>/tmp/mus$$</code> o arquivo musicas,
+ sem os registros que atendessem a consulta feita pelo comando <code>grep</code>.
+ Em seguida, movi (que, no duro, equivale a renomear) <code>/tmp/mus$$</code>
+ por cima do antigo <code>musicas</code>.
+</p><p>
+Usei o arquivo <code>/tmp/mus$$</code> como arquivo de trabalho, porque 
+como já havia citado no artigo anterior, o <code>$$</code> contém o <code>PID</code>
+ (<em>Process Identification</em> ou identificação do processo) e desta 
+forma cada um que editar o arquivo <code>musicas</code> o fará em um 
+arquivo de trabalho diferente, desta forma evitando colisões no uso. 
+</p><p>
+   &nbsp;&nbsp;&nbsp;&nbsp;- Aê cara, estes programas que fizemos até 
+aqui estão muito primários em virtude da falta de ferramentas que ainda 
+temos. Mas é bom, enquanto eu tomo mais um chope, você ir para casa 
+praticar em cima dos exemplos dados porque, eu prometo, chegaremos a 
+desenvolver um sistema bacana para controle dos seus CDs. <br> 
+   &nbsp;&nbsp;&nbsp;&nbsp;- Quando nos encontrarmos da próxima vez, vou
+ te ensinar como funcionam os comandos condicionais e aprimoraremos mais
+ um pouco estes <em>scripts</em>. <br> 
+   &nbsp;&nbsp;&nbsp;&nbsp;- Por hoje chega! Já falei demais e preciso 
+molhar a palavra porque estou de goela seca! <br> 
+   &nbsp;&nbsp;&nbsp;&nbsp;- Garçom! Mais um sem colarinho!
+</p><p>
+Vou aproveitar também para mandar o meu jabá: diga para os amigos que 
+quem estiver afim de fazer um curso porreta de programação em <em>Shell</em>
+ que mande um e-mail para a nossa <a 
+href="mailto:contato@clavis.com.br?Subject=Curso%20de%20Shell%20com%20Julio%20Neves">gerencia
+ de treinamento</a> para informar-se. 
+</p><p>
+Qualquer dúvida ou falta de companhia para um chope ou até para falar 
+mal dos políticos é só mandar um e-mail para <a 
+href="mailto:julioneves@openoffice.org?Subject=D%C3%BAvidas%20Papo%20de%20Botequim">mim</a>.
+ 
+</p><p>
+Valeu!
+	 </p></div><!-- fecha div topico -->
+	 <div class="rodape">		<br>  <a 
+href="http://creativecommons.org/licenses/by-nc-sa/2.0/br/" 
+target="_blank"><img 
+src="TWikiBarPapo002_arquivos/Logo_CC-by-nc-sa_pequeno.png" alt="Licença
+ Creative Commons - Atribuição e Não Comercial" title="Licença Creative 
+Commons - Atribuição e Não Comercial (pequeno)" border="0"></a> (CC) 
+2010 Pelos <a href="http://wiki.softwarelivre.org/Main/TWikiBarGroup">Frequentadores
+ do Bar do Júlio Neves</a>.<br> 
+Todo o conteúdo desta página pode ser utilizado segundo os termos da <a 
+href="http://creativecommons.org/licenses/by-nc-sa/2.0/br/">Creative 
+Commons License</a>: Atribuição-UsoNãoComercial-PermanênciaDaLicença.
+	 </div>
+  </div><!-- fecha div corpo -->
+</div><!-- fecha div geral -->
+</body></html>

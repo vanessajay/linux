@@ -1,0 +1,924 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+
+
+
+
+<title>Compactação e descompactação de arquivos com Tar e gzip</title>
+
+<link href="http://www.infowester.com/newsiw.xml" rel="alternate" 
+type="application/rss+xml" title="RSS">
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta http-equiv="content-language" content="pt-br">
+
+
+<link rel="shortcut icon" 
+href="http://www.infowester.com/layout02/images/favicon.ico">
+
+<link rel="stylesheet" href="lintargzip.php_arquivos/estilo.css" 
+type="text/css">
+<link rel="stylesheet" href="lintargzip.php_arquivos/print.css" 
+type="text/css" media="print">
+
+
+<meta name="title" content="InfoWester - Propagando conhecimento">
+<meta name="author" content="Emerson Alecrim">
+<meta name="url" content="http://www.infowester.com">
+<meta name="copyright" content="Artigos disponiveis sob uma licenca 
+Creative Commons, salvo indicativo do contrario">
+<meta name="description" content="InfoWester - Propagando conhecimento">
+<meta name="keywords" content="computação, informatica, hardware, linux,
+ pc, ti, dicas, tutoriais, software, web, tecnologia, internet">
+
+<meta name="dc.language" content="pt">
+<meta name="rating" content="general">
+<meta name="robots" content="index,follow">
+<meta name="revisit-after" content="1 days">
+
+<script src="lintargzip.php_arquivos/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-4145870-2";
+urchinTracker();
+</script>
+
+<!-- COLOCAR ESSA TAG NA SE��O cabe�alho -->
+<script type="text/javascript" src="lintargzip.php_arquivos/google_service.js">
+</script>
+<script type="text/javascript">
+  GS_googleAddAdSenseService("ca-pub-2797463243909555");
+  GS_googleEnableAllServices();
+</script><script src="lintargzip.php_arquivos/google_ads.js"></script>
+<script type="text/javascript">
+  GA_googleAddSlot("ca-pub-2797463243909555", "728x90");
+</script>
+<script type="text/javascript">
+  GA_googleFetchAds();
+</script>
+<!-- FIM DE TAG PARA SE��O cabe�alho -->
+
+
+<script language="JavaScript">
+//<!--
+function Abre(url, width, height)
+{
+ window.open(url,"_blank","maximizable=no,resizable=no,toolbar=no,status=no,menubar=no,scrollbars=yes,width=" + width + ",height=" + height);
+}
+//-->
+</script>
+
+<script language="JavaScript" type="text/JavaScript">
+//Specify affected tags. Add or remove from list:
+var tgs = new Array( 'div' );
+
+//Specify spectrum of different font sizes:
+var szs = new Array( '11px','12px','13px','16px','18px','20px','24px' );
+var startSz = 0;
+
+function ts( trgt,inc ) {
+if (!document.getElementById) return
+var d = document,cEl = null,sz = startSz,i,j,cTags;
+sz += inc;
+if ( sz < 0 ) sz = 0;
+if ( sz > 6 ) sz = 6;
+startSz = sz;
+if ( !( cEl = d.getElementById( trgt ) ) ) cEl = d.getElementsByTagName( trgt )[ 0 ];
+
+cEl.style.fontSize = szs[ sz ];
+
+for ( i = 0; i < tgs.length; i++ ) {
+cTags = cEl.getElementsByTagName( tgs[ i ] );
+for ( j = 0; j < cTags.length; j++ ) cTags[ j ].style.fontSize = szs[ sz ];
+}
+}
+</script>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script src="lintargzip.php_arquivos/ga.js" type="text/javascript"></script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-4145870-2");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+<link href="lintargzip.php_arquivos/artigos.css" rel="stylesheet" 
+type="text/css" media="screen">
+
+<link href="lintargzip.php_arquivos/hw_csspadrao_0_v14.css" 
+type="text/css" rel="stylesheet"><script src="lintargzip.php_arquivos/script.jsp" charset="ISO-8859-1" type="text/javascript"></script><script src="lintargzip.php_arquivos/mostra_004.jsp" charset="ISO-8859-1" type="text/javascript"></script><script src="lintargzip.php_arquivos/mostra_002.jsp" charset="ISO-8859-1" type="text/javascript"></script><script src="lintargzip.php_arquivos/mostra_003.jsp" charset="ISO-8859-1" type="text/javascript"></script><script src="lintargzip.php_arquivos/mostra.jsp" charset="ISO-8859-1" type="text/javascript"></script><script src="lintargzip.php_arquivos/mostraPx.jsp" charset="ISO-8859-1" type="text/javascript"></script></head><body>
+
+<div id="tudo">
+
+	<div id="acesso">
+
+	<a href="#conteudo">ir para o conteúdo</a> |
+	<a href="#jump_menu">ir para o menu</a> |
+	<a href="http://www.infowester.com/irpara.php">sobre os links "ir para"</a>
+
+</div>
+
+<div id="topo">
+
+	<a href="http://www.infowester.com/"><h1>InfoWester</h1></a>
+
+	<div class="banner2">
+
+     <script type="text/javascript"><!--
+     google_ad_client = "pub-2797463243909555";
+     /* 728x90, topo artigos e p�ginas principais, 08/07/09 */
+     google_ad_slot = "0390470476";
+     google_ad_width = 728;
+     google_ad_height = 90;
+     //-->
+     </script>
+     <script type="text/javascript" src="lintargzip.php_arquivos/show_ads.js">
+     </script><script src="lintargzip.php_arquivos/expansion_embed.js"></script><script src="lintargzip.php_arquivos/test_domain.js"></script><script>google_protectAndRun("ads_core.google_render_ad", google_handleError, google_render_ad);</script><ins
+ style="display: inline-table; border: medium none; height: 90px; 
+margin: 0pt; padding: 0pt; position: relative; visibility: visible; 
+width: 728px;"><ins style="display: block; border: medium none; height: 
+90px; margin: 0pt; padding: 0pt; position: relative; visibility: 
+visible; width: 728px;"><iframe allowtransparency="true" hspace="0" 
+id="google_ads_frame1" marginheight="0" marginwidth="0" 
+name="google_ads_frame" src="lintargzip.php_arquivos/ads.htm" 
+style="left: 0pt; position: absolute; top: 0pt;" vspace="0" width="728" 
+frameborder="0" height="90" scrolling="no"></iframe></ins></ins>
+
+    </div>
+
+</div>
+
+<div id="topo-print">
+     <img src="lintargzip.php_arquivos/logo-print.gif" alt="" 
+align="left"> <br>www.infowester.com
+</div>
+
+<div id="google1">
+
+     <div class="anuncios">
+
+     <script type="text/javascript"><!--
+     google_ad_client = "pub-2797463243909555";
+     /* 728x15, criado 19/08/08, links topo */
+     google_ad_slot = "0609391704";
+     google_ad_width = 728;
+     google_ad_height = 15;
+     //-->
+     </script>
+     <script type="text/javascript" src="lintargzip.php_arquivos/show_ads.js">
+     </script><script>google_protectAndRun("ads_core.google_render_ad", google_handleError, google_render_ad);</script><ins
+ style="display: inline-table; border: medium none; height: 15px; 
+margin: 0pt; padding: 0pt; position: relative; visibility: visible; 
+width: 728px;"><ins style="display: block; border: medium none; height: 
+15px; margin: 0pt; padding: 0pt; position: relative; visibility: 
+visible; width: 728px;"><iframe allowtransparency="true" hspace="0" 
+id="google_ads_frame2" marginheight="0" marginwidth="0" 
+name="google_ads_frame" src="lintargzip.php_arquivos/ads_002.htm" 
+style="left: 0pt; position: absolute; top: 0pt;" vspace="0" width="728" 
+frameborder="0" height="15" scrolling="no"></iframe></ins></ins>
+
+     </div>
+
+
+<form action="http://www.infowester.com/busca.php" id="cse-search-box">
+  <div>
+    <input name="cx" value="partner-pub-2797463243909555:86kaursnsjt" 
+type="hidden">
+    <input name="cof" value="FORID:10" type="hidden">
+    <input name="ie" value="ISO-8859-1" type="hidden">
+    <input style="border: 1px solid rgb(126, 157, 185); padding: 2px; 
+background: 
+url(&quot;http://www.google.com.br/cse/intl/pt/images/google_custom_search_watermark.gif&quot;)
+ no-repeat scroll left center rgb(255, 255, 255);" name="q" size="18" 
+type="text">
+    <input name="sa" value="Pesquisar" type="submit">
+  </div>
+<input value="www.infowester.com/lintargzip.php" name="siteurl" 
+type="hidden"></form>
+
+<script type="text/javascript" src="lintargzip.php_arquivos/brand.htm"></script>
+
+</div>
+
+	<div id="lateral">
+
+				<a id="jump_menu"></a>
+		<ul id="menu">
+   		<li><a href="http://www.infowester.com/index.php"><img 
+src="lintargzip.php_arquivos/home.gif" alt="Páginal inicial"> Páginal 
+inicial </a></li>
+		<li><a href="http://www.infowester.com/hardware.php"><img 
+src="lintargzip.php_arquivos/hardware.gif" alt="Hardware"> Hardware</a></li>
+		<li><a href="http://www.infowester.com/software.php"><img 
+src="lintargzip.php_arquivos/software.gif" alt="Software"> Software</a></li>
+		<li><a href="http://www.infowester.com/linux.php"><img 
+src="lintargzip.php_arquivos/linux.gif" alt="GNU/Linux"> GNU/Linux</a></li>
+		<li><a href="http://www.infowester.com/dicas.php"><img 
+src="lintargzip.php_arquivos/dicas.gif" alt="Dicas"> Dicas</a></li>
+		<li><a href="http://www.infowester.com/tutoriais.php"><img 
+src="lintargzip.php_arquivos/tutoriais.gif" alt="Tutoriais"> Tutoriais</a></li>
+		<li><a href="http://www.infowester.com/colunas.php"><img 
+src="lintargzip.php_arquivos/colunas.gif" alt="Colunas"> Colunas</a></li>
+		<li><a href="http://www.infowester.com/web.php"><img 
+src="lintargzip.php_arquivos/web.gif" alt="Web"> Web</a></li>
+		<li><a href="http://www.infowester.com/noticias/"><img 
+src="lintargzip.php_arquivos/news.gif" alt="Notícias"> Notícias</a></li>
+		<li><a href="http://www.infowester.com/blog/"><img 
+src="lintargzip.php_arquivos/blog.gif" alt="Blog"> Blog</a></li>
+		<li><a href="http://www.infowester.com/newsletter.php"><img 
+src="lintargzip.php_arquivos/newsletter.gif" alt="Newsletter"> 
+Newsletter</a></li>
+		<li><a href="http://forumiw.com/"><img 
+src="lintargzip.php_arquivos/forum.gif" alt="Fórum"> Fórum</a></li>
+		<li><a href="http://www.infowester.com/contato.php"><img 
+src="lintargzip.php_arquivos/contato.gif" alt="Contato"> Contato</a></li>
+		<li><a href="http://forumiw.com/shop/"><img 
+src="lintargzip.php_arquivos/shop.gif" alt="Shopping InfoWester ML"> 
+Shopping<small><font color="#ff0000"> Novo!</font></small></a></li>
+		</ul>
+
+		<p><a href="http://www.infowester.com/newsiw.xml"><img 
+src="lintargzip.php_arquivos/botao-160x50-feed.png" style="width: 160px;
+ height: 50px;" alt="Assine nosso feed RSS!" title="Assine nosso feed 
+RSS!" border="0"></a></p>
+		
+		<p><a href="http://twitter.com/InfoWester" target="_blank"><img 
+src="lintargzip.php_arquivos/botao-160x50-twitter.png" style="width: 
+160px; height: 50px;" alt="Siga o InfoWester no Twitter!" title="Siga o 
+InfoWester no Twitter!" border="0"></a></p>
+	
+		<p><a href="http://www.orkut.com.br/Community.aspx?cmm=632507" 
+target="_blank"><img 
+src="lintargzip.php_arquivos/botao-160x50-orkut.htm" style="width: 
+160px; height: 50px;" alt="InfoWester no orkut - Participe!" 
+title="InfoWester no Orkut - Participe!" border="0"></a></p>
+
+		<p><a href="http://www.facebook.com/InfoWester" target="_blank"><img 
+src="lintargzip.php_arquivos/botao-160x50-facebook.png" style="width: 
+160px; height: 50px;" alt="InfoWester no Facebook - Participe!" 
+title="InfoWester no Facebook - Participe!" border="0"></a></p>
+		
+		<br>
+		
+		<h2 class="news">Notícias Recentes</h2>
+
+		<ul id="news">
+
+             <script src="lintargzip.php_arquivos/InfowesterNoticias.js" type="text/javascript"></script><div
+ class="feedburnerFeedBlock" 
+id="InfowesterNoticias7tseubj3fd2rd0ubirarvnturk"><ul><li><span 
+class="headline"><a 
+href="http://www.infowester.com/noticias/rumores-confirmados-microsoft-anuncia-linha-kin-de-smartphones/">Rumores
+ confirmados: Microsoft anuncia linha KIN de smartphones</a></span></li><li><span
+ class="headline"><a 
+href="http://www.infowester.com/noticias/canonical-ha-12-milhoes-de-usuarios-do-ubuntu/">Canonical:
+ há 12 milhões de usuários do Ubuntu</a></span></li><li><span 
+class="headline"><a 
+href="http://www.infowester.com/noticias/dell-do-brasil-lanca-desktop-de-alto-desempenho-para-o-mercado-corporativo/">Dell
+ do Brasil lança desktop de alto desempenho para o mercado corporativo</a></span></li><li><span
+ class="headline"><a 
+href="http://www.infowester.com/noticias/panasonic-lanca-no-brasil-a-finissima-camera-lumix-fp1/">Panasonic
+ lança no Brasil a finíssima câmera Lumix FP1</a></span></li><li><span 
+class="headline"><a 
+href="http://www.infowester.com/noticias/apple-apresenta-o-iphone-os-4-0-veja-as-principais-novidades/">Apple
+ apresenta o iPhone OS 4.0 – Veja as principais novidades</a></span></li></ul>
+ <div id="creditfooter"><a href="http://www.feedburner.com/" 
+target="_blank"><img src="lintargzip.php_arquivos/buzzboost-pwrd.gif" 
+alt="Headlines by FeedBurner" style="border: 0pt none;"></a></div></div><noscript>
+             <p>Subscribe to RSS headline updates from: <a href="http://feeds2.feedburner.com/InfowesterNoticias"></a><br/>Powered by FeedBurner</p> </noscript>
+
+		</ul>
+
+		<h2 class="blog">Últimas do Blog</h2>		
+
+		<ul id="blog">
+
+            <script src="lintargzip.php_arquivos/BlogInfowester.js" type="text/javascript"></script><div
+ class="feedburnerFeedBlock" 
+id="BlogInfowester831hac1b39o1e53plne2mtntuc"><ul><li><span 
+class="headline"><a 
+href="http://www.infowester.com/blog/livraria-cultura-comeca-a-vender-e-books-sera-que-a-moda-pega-no-brasil/">Livraria
+ Cultura começa a vender e-books. Será que a moda pega no Brasil?</a></span></li><li><span
+ class="headline"><a 
+href="http://www.infowester.com/blog/windows-live-messenger-em-qualquer-lugar-gracas-ao-seu-celular/">Windows
+ Live Messenger: em qualquer lugar graças ao seu celular</a></span></li><li><span
+ class="headline"><a 
+href="http://www.infowester.com/blog/windows-live-programas-para-voce-nao-perder-tempo/">Windows
+ Live: programas para você não perder tempo</a></span></li><li><span 
+class="headline"><a 
+href="http://www.infowester.com/blog/guia-manga-de-calculo-diferencial-e-integral/">Lançamento
+ Novatec: Guia Mangá de Cálculo Diferencial e Integral</a></span></li><li><span
+ class="headline"><a 
+href="http://www.infowester.com/blog/windows-live-muito-mais-que-o-messenger/">Windows
+ Live: muito mais que o Messenger</a></span></li></ul> <div 
+id="creditfooter"><a href="http://www.feedburner.com/" target="_blank"><img
+ src="lintargzip.php_arquivos/buzzboost-pwrd.gif" alt="Headlines by 
+FeedBurner" style="border: 0pt none;"></a></div></div><noscript>
+            <p>Subscribe to RSS headline updates from: <a href="http://feeds2.feedburner.com/BlogInfowester"></a><br/>Powered by FeedBurner</p> </noscript>
+
+		</ul>
+		
+		<p>
+			<script type="text/javascript"><!--
+			google_ad_client = "pub-2797463243909555";
+			/* 160x600, criado 02/02/09, esquerda artigos */
+			google_ad_slot = "8178736420";
+			google_ad_width = 160;
+			google_ad_height = 600;
+			//-->
+			</script>
+			<script type="text/javascript" src="lintargzip.php_arquivos/show_ads.js">
+			</script><script>google_protectAndRun("ads_core.google_render_ad", google_handleError, google_render_ad);</script><ins
+ style="display: inline-table; border: medium none; height: 600px; 
+margin: 0pt; padding: 0pt; position: relative; visibility: visible; 
+width: 160px;"><ins style="display: block; border: medium none; height: 
+600px; margin: 0pt; padding: 0pt; position: relative; visibility: 
+visible; width: 160px;"><iframe allowtransparency="true" hspace="0" 
+id="google_ads_frame3" marginheight="0" marginwidth="0" 
+name="google_ads_frame" src="lintargzip.php_arquivos/ads_003.htm" 
+style="left: 0pt; position: absolute; top: 0pt;" vspace="0" width="160" 
+frameborder="0" height="600" scrolling="no"></iframe></ins></ins>
+		</p>
+
+    </div>
+
+<!-- **************************************************************************************************************************** -->
+
+	<div id="conteudo">
+
+    <div id="texto">
+        <iframe src="lintargzip.php_arquivos/widget.htm" width="50" 
+frameborder="0" height="57" scrolling="no"></iframe><script type="text/javascript" src="lintargzip.php_arquivos/buzzwidget.js"></script>
+
+Tamanho<br>do texto<br><br>
+		<a class="aumenta" href="javascript:ts('conteudo',1)" title="Aumentar o
+ tamanho do texto">Aumentar o tamanho do texto</a>
+		<a class="diminui" href="javascript:ts('conteudo',-1)" title="Diminuir
+ o tamanho do texto">Diminuir o tamanho do texto</a>
+
+
+    </div>
+
+    <div id="secao" class="linux">Linux</div>
+    
+    <h1><a href="http://www.infowester.com/lintargzip.php">Compactação e
+ descompactação
+      de arquivos com Tar e gzip</a></h1>
+      
+    <h3>Introdução</h3>
+    
+    <table align="right" border="0" width="305" height="255">
+      <tbody><tr> 
+        <td> 
+          <script type="text/javascript"><!--
+google_ad_client = "pub-2797463243909555";
+/* 300x250, criado 19/08/08, gnu/linux */
+google_ad_slot = "0510435278";
+google_ad_width = 300;
+google_ad_height = 250;
+//-->
+</script>
+<script type="text/javascript" src="lintargzip.php_arquivos/show_ads.js">
+</script><script>google_protectAndRun("ads_core.google_render_ad", google_handleError, google_render_ad);</script><ins
+ style="display: inline-table; border: medium none; height: 250px; 
+margin: 0pt; padding: 0pt; position: relative; visibility: visible; 
+width: 300px;"><ins style="display: block; border: medium none; height: 
+250px; margin: 0pt; padding: 0pt; position: relative; visibility: 
+visible; width: 300px;"><iframe allowtransparency="true" hspace="0" 
+id="google_ads_frame4" marginheight="0" marginwidth="0" 
+name="google_ads_frame" src="lintargzip.php_arquivos/ads_004.htm" 
+style="left: 0pt; position: absolute; top: 0pt;" vspace="0" width="300" 
+frameborder="0" height="250" scrolling="no"></iframe></ins></ins>
+
+        </td>
+      </tr>
+    </tbody></table>
+    
+    <div id="HOTWordsTxt" name="HOTWordsTxt"> 
+      <p>O <b>Tar</b> e o <b>gzip</b> são duas ferramentas utilizadas em
+ 
+        sistemas operacionais baseados no Unix, como o GNU/Linux, para o
+ "empacotamento" 
+        e para a compressão de arquivos, respectivamente. Embora seja 
+perfeitamente 
+        possível usar qualquer desses programas de forma individual, a 
+        utilização de ambos ao mesmo tempo é muito comum 
+        e útil. Sendo assim, que tal aprender a compactar e a 
+descompactar 
+        arquivos utilizando Tar e gzip e, conseqüentemente, entender o 
+funcionando 
+        dos famosos arquivos de extensão tar.gz? É isso que você 
+        verá neste artigo. De quebra, você ainda saberá como 
+        trabalhar com o compactador <b>bzip2</b>.</p>
+      <br>
+      <h3>Comando Tar</h3>
+      <p>Backup (cópia de segurança) de arquivos é uma necessidade 
+        antiga. Há várias formas de se fazer isso, mas nos sistemas 
+        operacionais baseados no Unix, uma das maneiras mais 
+tradicionais corresponde 
+        à utilização da ferramenta <b>Tar</b>, sigla de <b><i>T</i></b><i>ape
+ 
+        <b>Ar</b>chive</i>. O que o Tar faz é muito simples de entender:
+ 
+        ele "empacota" vários arquivos em um só, isto 
+        é, faz com que um único arquivo contenha vários outros. 
+        Assim, é possível, por exemplo, armazenar em único 
+        arquivo as cópias de documentos existentes na pasta de um 
+usuário.</p>
+      <p>O arquivo resultante de um empacotamento feito com Tar tem, 
+como é 
+        de se esperar, a extensão .tar (por exemplo, infowester.tar), 
+embora 
+        sua utilização não seja obrigatória (mas é 
+        recomendada para fins de organização). Quando for necessário 
+        extrair o conteúdo existente dentro de um arquivo .tar, 
+naturalmente, 
+        basta acionar o programa Tar. Os procedimentos para 
+empacotamento e extração 
+        de arquivos são executados através de comandos e parâmetros 
+        inseridos em terminais (shell). Quando um usuário domina essas 
+        instruções, consegue executar tais tarefas de forma ágil. 
+        Isso se deve principalmente ao fato do Tar manter as 
+propriedades dos 
+        arquivos e a estruturas de diretórios originais, facilitando a 
+        localização e a utilização de cada item após 
+        a extração.</p>
+      <p>A sintaxe do Tar é a seguinte:</p>
+      <p><b>tar [parâmetros] [nome_do_arquivo_tar] [arquivos_de_origem]</b></p>
+      <p>Na linha acima, <b>tar</b> é o comando. Em <b>parâmetros</b>, 
+        é possível utilizar várias opções. 
+        Eis as principais:</p>
+      <p><b>-c</b> - cria um novo arquivo tar;<br>
+        <b>-t</b> - exibe o conteúdo de um arquivo tar;<br>
+        <b>-p</b> - mantém as permissões  <a href="#" 
+onclick="hwClick3826182(undefined);return false;" style="color: rgb(0, 
+102, 0); text-decoration: underline; border-bottom: 1px dotted;" 
+onmouseover="hw3826182(event, this, 'undefined'); 
+this.style.cursor='hand'; this.style.textDecoration='underline'; 
+this.style.borderBottom='solid';" 
+onmouseout="hideMaybe('HOTWordsTitle'); this.style.cursor='hand'; 
+this.style.textDecoration='underline'; this.style.borderBottom='dotted 
+1px'; " oncontextmenu="return false;">originais</a> do(s) arquivo(s);<br>
+        <b>-r</b> - adiciona arquivos a um arquivo tar existente;<br>
+        <b>-f</b> - permite especificar o arquivo tar a ser utilizado;<br>
+        <b>-v</b> - exibe detalhes da operação;<br>
+        <b>-w</b> - pede confirmação antes de cada ação 
+        no comando;<br>
+        <b>-x</b> - extrai arquivos de um arquivo tar existente;<br>
+        <b>-z</b> - comprime o arquivo tar resultante com o gzip (visto 
+mais à 
+        frente);<br>
+        <b>-C</b> - especifica o diretório dos arquivos a serem 
+armazenados 
+        (note que, neste caso, a letra é maiúscula).</p>
+      <p>O campo <b>nome_do_arquivo_tar</b> especifica qual o nome que o
+ arquivo 
+        .tar terá, e o campo <b>arquivos_de_origem</b> define o 
+diretório 
+        ou os arquivos que se tornarão um .tar. Vamos ver alguns 
+exemplos 
+        para facilitar a compreensão:</p>
+      <p><b>tar -cf lendas.tar saci.txt curupira.txt</b></p>
+      <p>O comando acima cria o arquivo <b>lendas.tar</b>, que contém os
+ 
+        arquivos <b>saci.txt</b> e <b>curupira.txt</b>. Aqui, você deve 
+        ter reparado que é possível combinar parâmetros. Neste 
+        exemplo, isso ocorreu com <b>-c</b> e <b>-f</b>. No exemplo 
+abaixo, o 
+        diretório <b>hardware</b> tem todo o seu conteúdo compactado 
+        no arquivo <b>infowester.tar</b>, só que os detalhes são 
+        exibidos graças à opção <b>-v</b>:</p>
+      <p><b>tar -cvf infowester.tar hardware</b></p>
+      <p><img src="lintargzip.php_arquivos/tar1.png" alt="Usando tar" 
+width="471" height="262"></p>
+      <p>O exemplo a seguir lista o conteúdo do arquivo <b>infowester.tar</b>:</p>
+      <p><b>tar -tf infowester.tar</b></p>
+      <p>Por sua vez, o comando abaixo faz com que todos os arquivos de <b>infowester.tar</b>
+ 
+        sejam extraídos (neste ponto, você certamente já sabe 
+        as funções dos parâmetros <b>x</b>,<b> v</b> e <b>f</b> 
+        no comando):</p>
+      <p><b>tar -xvf infowester.tar</b></p>
+      <p><img src="lintargzip.php_arquivos/tar2.png" alt="Extraindo 
+arquivos de um .tar" width="447" height="262"></p>
+      <p>Já no comando a seguir, apenas o arquivo saci.txt é extraído:</p>
+      <p><b>tar -xvf lendas.tar saci.txt</b></p>
+      <p>Uma coisa  <a href="#" 
+onclick="hwClick4826182(undefined);return false;" style="color: rgb(0, 
+102, 0); text-decoration: underline; border-bottom: 1px dotted;" 
+onmouseover="hw4826182(event, this, 'undefined'); 
+this.style.cursor='hand'; this.style.textDecoration='underline'; 
+this.style.borderBottom='solid';" 
+onmouseout="hideMaybe('HOTWordsTitle'); this.style.cursor='hand'; 
+this.style.textDecoration='underline'; this.style.borderBottom='dotted 
+1px'; " oncontextmenu="return false;">interessante</a> é que, se a opção
+ <b>-v</b> 
+        for usada duas vezes, detalhes como permissões e data do(s) 
+arquivo(s) 
+        apareção:</p>
+      <p><b>tar -x<font color="#0000ff">vv</font>f lendas.tar saci.txt</b></p>
+      <br>
+      <h3>Comando gzip</h3>
+      <p>A ferramenta Tar, por si somente, serve apenas para juntar 
+vários 
+        arquivos em um só. No entanto, o programa não é capaz 
+        de diminuir o tamanho do arquivo resultante, isto é, de 
+compactá-lo. 
+        É neste ponto que entra em cena o <b>gzip</b> (<i>GNU zip</i>) 
+        ou outro compactador de sua preferência. Se utilizado 
+isoladamente, 
+        o gzip faz uso da seguinte sintaxe:</p>
+      <p><b>gzip [parâmetros] [nome_do_arquivo]</b></p>
+      <p>Entre os parâmetros disponíveis, tem-se:</p>
+      <p><b>-c</b> - extrai um arquivo para a saída padrão;<br>
+        <b>-d</b> - descompacta um arquivo comprimido;<br>
+        <b>-l</b> - lista o conteúdo de um arquivo compactado;<br>
+        <b>-v</b> - exibe detalhes sobre o procedimento;<br>
+        <b>-r</b> - compacta pastas;<br>
+        <b>-t</b> testa a integridade de um arquivo compactado.</p>
+      <p>Ainda no que se refere às opções de parâmetros, 
+        é possível utilizar uma numeração de 1 a 9 
+        para indicar o nível de compactação. Quanto maior 
+        o número, maior será a compactação do arquivo.</p>
+      <p>Eis alguns exemplos para facilitar a compreensão do comando 
+gzip:</p>
+      <p><b>gzip infowester.odt</b></p>
+      <p>O comando acima compacta o arquivo <b>infowester.odt</b>. Note 
+que os 
+        arquivos compactados com gzip recebem a extensão .gz.</p>
+      <p><b>gzip -d infowester.odt.gz</b></p>
+      <p>O comando acima descompacta o arquivo <b>infowester.odt.gz</b>.</p>
+      <p><b>gzip -1 colorado.ods</b></p>
+      <p>O procedimento acima faz com que o arquivo <b>colorado.ods</b> 
+seja compactado 
+        considerando o nível mais baixo de compreensão.</p>
+      <br>
+      <h3>Usando Tar e gzip</h3>
+      <p>O uso conjunto dos comandos Tar e gzip é um belo exemplo de 
+coerência 
+        da frase "a união faz a força". Muitas vezes, 
+        é necessário juntar arquivos e, ao mesmo, fazer com que 
+        o arquivo resultante, além de conter todos os outros, também 
+        seja compactado. É aí que entra em cena a capacidade de 
+        juntar arquivos do Tar com a capacidade de compactação do 
+        gzip. Para utilizar ambos ao mesmo tempo, o procedimento é muito
+ 
+        simples: basta aplicar o comando <b>tar</b> com o parâmetro <b>-z</b>.
+ 
+        O arquivo resultante desse procedimento receberá a extensão 
+        .tar.gz.</p>
+      <p>Neste ponto, vemos um comando bastante usado na instalação 
+        de programas e bibliotecas:</p>
+      <p><b>tar -zxvf nome_do_arquivo.tar.gz</b></p>
+      <p>Se você estiver lendo este artigo deste o começo, certamente 
+        já sabe o que o comando acima faz, mesmo assim, vamos explicar 
+        para não restar dúvidas: a letra <b>z</b> deve ser usada 
+        porque o arquivo foi compactado com gzip; a letra <b>x</b> 
+indica que 
+        o comando deve extrair o arquivo (portanto, a referida instrução
+ 
+        serve para extrair e descompactar o arquivo tar.gz); a letra <b>v</b>
+ 
+        exibe os detalhes do procedimento; por fim, a letra <b>f</b> 
+especifica 
+        qual arquivo será usado nesta atividade.</p>
+      <p>Suponha, agora, que você queira deixar em um único pacote 
+        os arquivos <b>marvin.png</b>, <b>zaphod.txt</b> e <b>trillian.odt</b>.
+ 
+        O arquivo resultante terá o nome <b>guia.tar.gz</b>. Eis o 
+comando 
+        que utilizaremos para este exemplo:</p>
+      <p><b>tar -zcvf guia.tar.gz marvin.png zaphod.txt trillian.odt</b></p>
+      <p><img src="lintargzip.php_arquivos/tar3.png" alt="Usando Tar e 
+gzip" width="518" height="210"></p>
+      <p>Note que o comando é muito parecido com o procedimento de 
+descompactação 
+        do exemplo anterior, com a diferença de que o parâmetro <b>c</b>
+ 
+        foi utilizado no lugar de <b>x</b>, pois o objetivo aqui é criar
+ 
+        um arquivo novo, e não fazer a extração de um já 
+        existente. Para extrair o conteúdo desse arquivo, basta executar
+ 
+        o comando abaixo (também exibido na figura acima):</p>
+      <p><b>tar -zxvf guia.tar.gz</b></p>
+      <p>Se você quiser extrair apenas um dos arquivos contidos no 
+arquivo 
+        compactado, basta indicá-lo no final do comando. Por exemplo, 
+suponha 
+        que você queira extrair o arquivo <b>marvin.png</b> de <b>guia.tar.gz</b>.
+ 
+        Eis o que você deve digitar:</p>
+      <p><b>tar -zxvf guia.tar.gz marvin.png</b></p>
+      <p><img src="lintargzip.php_arquivos/tar4.png" alt="Extraindo um 
+único arquivo de um  .tar.gz" width="503" height="262"></p>
+      <br>
+      <h3>Usando Tar e bzip2</h3>
+      <p>A combinação Tar e gzip é muito utilizada, mas não 
+        é a única. Também é possível utilizar 
+        o algoritmo de compressão <b>bzip2</b>, cuja extensão é 
+        .bz2. Há quem prefira esta opção pela característica 
+        do bzip2 de gerar arquivos menores que o gzip, embora o programa
+ o faça 
+        de maneira mais lenta que este último.</p>
+      <p>Para utilizar Tar com bzip2, basta utilizar o parâmetro <b>-j</b>.
+ 
+        Por exemplo:</p>
+      <p><b>tar -jcvf frases.tar.bz2 confucio.html nietzsche.html</b></p>
+      <p>Para extrair o conteúdo arquivo, o comando é:</p>
+      <p><b>tar -jxvf frases.tar.bz2</b></p>
+      <p><img src="lintargzip.php_arquivos/tar5.png" alt="Usando Tar e 
+bzip2" width="517" height="232"></p>
+      <p>Caso queira utilizar o bzip2 isoladamente, a sintaxe é:</p>
+      <p><b>bzip2 [parâmetros] [nome_do_arquivo]</b></p>
+      <p>Os parâmetros são praticamente os mesmos do gzip, por isso 
+        não serão mostrados aqui. Eis um comando de exemplo:</p>
+      <p><b>bzip2 -d vivaldi.htm.bz2</b></p>
+      <p>Esse comando descompacta o arquivo <b>vivaldi.htm</b>.</p>
+      <br>
+      <h3>Finalizando</h3>
+      <table align="right" border="0" width="179">
+        <tbody><tr> 
+          <td bgcolor="#ffcc33"> 
+            <div align="center"><b>.: Livros sugeridos :.</b></div>
+          </td>
+        </tr>
+        <tr> 
+          <td bgcolor="#ffffcc"><a 
+href="http://clicklog-af.shopping.uol.com.br/?urlRedir=http%3A%2F%2Fshopping.uol.com.br%2Fbusca.html%3Fsearch%3Dyes%26q%3Dlivro%20Linux%20o%20guia%20essencial&amp;urlReferer=www.infowester.com&amp;type=7&amp;idtURL=34010&amp;idtAd=19857&amp;caf=2884992fb5b04c4d8aa11189a7e3c25d&amp;idtLabel=12111"
+ rel="external nofollow" target="_blank"><b>::</b> 
+            Linux - O guia essencial</a></td>
+        </tr>
+        <tr> 
+          <td bgcolor="#ffffcc"><a 
+href="http://clicklog-af.shopping.uol.com.br/?urlRedir=http%3A%2F%2Fshopping.uol.com.br%2Fbusca.html%3Fsearch%3Dyes%26q%3Dlivro%20Comandos%20do%20Linux%20Pratico%20e%20Didatico&amp;urlReferer=www.infowester.com&amp;type=7&amp;idtURL=34010&amp;idtAd=19857&amp;caf=2884992fb5b04c4d8aa11189a7e3c25d&amp;idtLabel=12111"
+ rel="external nofollow" target="_blank"><b>::</b> 
+            Comandos do Linux - Prático e Didático</a></td>
+        </tr>
+        <tr> 
+          <td bgcolor="#ffffcc"><a 
+href="http://clicklog-af.shopping.uol.com.br/?urlRedir=http%3A%2F%2Fshopping.uol.com.br%2Fbusca.html%3Fsearch%3Dyes%26q%3Dlivro%20Manual%20completo%20do%20Linux%20Guia%20do%20administrador&amp;urlReferer=www.infowester.com&amp;type=7&amp;idtURL=34010&amp;idtAd=19857&amp;caf=2884992fb5b04c4d8aa11189a7e3c25d&amp;idtLabel=12111"
+ rel="external nofollow" target="_blank"><b>::</b> 
+            Manual completo do Linux - Guia do administrador</a></td>
+        </tr>
+        <tr> 
+          <td bgcolor="#ffcc33"> 
+            <div align="right"><font size="1">Via Shopping UOL</font></div>
+          </td>
+        </tr>
+      </tbody></table>
+      <p>Atualmente, é possível encontrar interfaces gráficas 
+        que permitem manipular as opções provenientes dos programa 
+        Tar, gzip, bzip2 e suas possíveis combinações de 
+        maneira simples, apenas com o uso do  <a href="#" 
+onclick="hwClick1826182(undefined);return false;" style="color: rgb(0, 
+102, 0); text-decoration: underline; border-bottom: 1px dotted;" 
+onmouseover="hw1826182(event, this, 'undefined'); 
+this.style.cursor='hand'; this.style.textDecoration='underline'; 
+this.style.borderBottom='solid';" 
+onmouseout="hideMaybe('HOTWordsTitleBIGIframe0'); 
+this.style.cursor='hand'; this.style.textDecoration='underline'; 
+this.style.borderBottom='dotted 1px'; " oncontextmenu="return false;">mouse</a>.
+ No entanto, entender como 
+        utilizar esses comandos é essencial para quando somente a linha 
+        de comando estiver disponível e, claro, é importante também 
+        para que você possa compreender perfeitamente o que está 
+        sendo feito. É por isso que este artigo foi escrito.</p>
+      <p>Caso você queira mais detalhes sobre esses programas, digite em
+ 
+        um terminal os comandos <b>man tar</b>, <b>man gzip</b> ou <b>man
+ bzip2</b>. 
+        Se preferir, visite os sites que serviram de referência para 
+este 
+        artigo:</p>
+      <p>- <a href="http://www.gnu.org/software/tar" target="_blank">www.gnu.org/software/tar</a>;<br>
+        - <a href="http://www.gzip.org/" target="_blank">www.gzip.org</a>;<br>
+        - <a href="http://focalinux.cipsga.org.br/" target="_blank">focalinux.cipsga.org.br</a>;<br>
+        - <a href="http://en.wikipedia.org/wiki/Tar_%28file_format%29" 
+target="_blank">en.wikipedia.org/wiki/Tar_(file_format)</a>;<br>
+        - <a href="http://en.wikipedia.org/wiki/Bzip2" target="_blank">en.wikipedia.org/wiki/Bzip2</a>;<br>
+        - <a href="http://bzip.org/" target="_blank">bzip.org</a>.</p>
+      <p><i>Escrito por Emerson Alecrim - Publicado em 10/6/2008 - 
+Atualizado 
+        em 10/6/2008</i></p>
+        
+    </div>
+
+<!-- ******************************************************************************************************************** -->
+
+</div>
+
+</div>
+
+
+
+<script language="Javascript">
+//<!--
+function Abre(url, width, height)
+{
+ window.open(url,"_blank","maximizable=no,resizable=no,toolbar=no,status=no,menubar=no,scrollbars=yes,width=" + width + ",height=" + height);
+}
+//-->
+</script>
+
+<!-- </head>
+<body> -->
+
+<div id="tools">
+
+	<a class="back" href="javascript:history.go(-1)">Voltar</a>
+
+	<a class="home" href="http://www.infowester.com/">Página inicial</a>
+
+	<form name="send" id="send" 
+action="send.php?titulo=Compacta%26ccedil%3B%26atilde%3Bo+e+descompacta%26ccedil%3B%26atilde%3Bo+de+arquivos+com+Tar+e+gzip"
+ method="post">
+
+    <a class="print" 
+href="http://www.infowester.com/printversion/lintargzip.php">Versão para
+ imprimir</a> 
+
+    <input name="link" value="http://www.infowester.com/lintargzip.php" 
+type="hidden">
+	<a class="mail" href="javascript://" 
+onclick="document.getElementById('send').submit()">Indicar por e-mail</a>
+ 
+	</form>
+ 
+	<a class="delicious" href="http://delicious.com/post" 
+onclick="window.open('http://delicious.com/post?v=4&amp;noui&amp;jump=close&amp;url='+encodeURIComponent(location.href)+'&amp;title='+encodeURIComponent(document.title),
+ 'delicious','toolbar=no,width=700,height=400'); return false;">Adicionar
+ ao Delicious</a>
+
+<div align="center">
+
+	<script type="text/javascript">
+	<!--
+	uolxmlshopping='07|745|210|34010|14389'; uolxmlshoppingbusca='notebook, netbook, pc, desktop, smartphone, celular, camera';
+	XMLViewColor='#FFFFFF'; XMLBorderColor='0xF5F5F5'; XMLPriceColor='0x336699'; XMLDescriptionColor='0x336699'; XMLBackColor='0xFFFFFF'; XMLLinkColor='0x336699'; XMLFormColor='0x000000';
+	-->
+	</script>
+	<div style="text-indent: -100000px;" class="af-xml-shopping-uol"><a 
+href="http://shopping.uol.com.br/"><span style="text-decoration: none;">Anúncios
+ Shopping UOL</span></a></div><script type="text/javascript" src="lintargzip.php_arquivos/uolxml.js"></script><object
+ classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" 
+codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0"
+ align="middle" width="745" height="210"><param name="allowScriptAccess"
+ value="sameDomain"><param name="movie" 
+value="http://adrequisitor-af.shopping.uol.com.br/formatos/peca.swf?urlXML=http%3A%2F%2Fxml.shopping.uol.com.br%2Fbusca.html%3Fsearch%3Dyes%26q%3Dnotebook%2C%20netbook%2C%20pc%2C%20desktop%2C%20smartphone%2C%20celular%2C%20camera%26num%3D20%26idtURL%3D34010%26idtLabel%3D14389&amp;bordaColor=0xF5F5F5&amp;priceColor=#336699&amp;descriptionColor=#336699&amp;backColor=0xFFFFFF&amp;linkColor=#336699&amp;formColor=#000000"><param
+ name="quality" value="high"><param name="wmode" value="transparent"><param
+ name="menu" value="false"><embed src="lintargzip.php_arquivos/peca.swf"
+ bgcolor="#FFFFFF" quality="high" menu="false" wmode="transparent" 
+allowscriptaccess="sameDomain" type="application/x-shockwave-flash" 
+pluginspage="http://www.macromedia.com/go/getflashplayer" align="middle"
+ width="745" height="210"></object>
+   	
+	<p>
+	</p><hr>
+	
+
+    <script type="text/javascript"><!--
+    google_ad_client = "pub-2797463243909555";
+    /* links rodap�, criado 12/08/09 */
+    google_ad_slot = "8393109043";
+    google_ad_width = 728;
+    google_ad_height = 15;
+    //-->
+    </script>
+    <script type="text/javascript" src="lintargzip.php_arquivos/show_ads.js">
+    </script><script>google_protectAndRun("ads_core.google_render_ad", google_handleError, google_render_ad);</script><ins
+ style="display: inline-table; border: medium none; height: 15px; 
+margin: 0pt; padding: 0pt; position: relative; visibility: visible; 
+width: 728px;"><ins style="display: block; border: medium none; height: 
+15px; margin: 0pt; padding: 0pt; position: relative; visibility: 
+visible; width: 728px;"><iframe allowtransparency="true" hspace="0" 
+id="google_ads_frame5" marginheight="0" marginwidth="0" 
+name="google_ads_frame" src="lintargzip.php_arquivos/ads_005.htm" 
+style="left: 0pt; position: absolute; top: 0pt;" vspace="0" width="728" 
+frameborder="0" height="15" scrolling="no"></iframe></ins></ins>	
+    
+</div>
+	
+</div>
+
+<br class="clear">
+
+<!-- </body>
+</html> -->
+
+<div id="rodape">
+
+    <div id="largura">
+
+ 	<div id="esquerda">
+
+	    <form name="send" 
+action="send2.php?titulo=InfoWester+-+Propagando+conhecimento" 
+method="post">
+
+		<ul id="links">
+		<li><a href="http://www.infowester.com/newsiw.xml"><img 
+src="lintargzip.php_arquivos/rss.gif" alt="RSS do site"> RSS do site</a></li>
+		<li><a href="http://www.infowester.com/rss.php"><img 
+src="lintargzip.php_arquivos/rss.gif" alt="O que é  RSS?"> O que é  RSS?</a></li>
+		<li><a href="http://www.facebook.com/pages/InfoWester/158551134117" 
+target="_blank"><img src="lintargzip.php_arquivos/facebook.gif" 
+alt="InfoWester no Facebook"> InfoWester no Facebook</a></li>
+		<li><a href="http://twitter.com/infowester/" target="_blank"><img 
+src="lintargzip.php_arquivos/twitter.gif" alt="InfoWester no Twitter"> 
+InfoWester no Twitter</a></li>
+		<li><a href="http://www.orkut.com/Community.aspx?cmm=632507" 
+target="_blank"><img src="lintargzip.php_arquivos/orkut.htm" 
+alt="InfoWester no orkut"> InfoWester no orkut</a></li>
+		<li><a href="http://www.infowester.com/acompanhe.php"><img 
+src="lintargzip.php_arquivos/acompanhe.gif" alt="Acompanhe o site"> 
+Acompanhe o site</a></li>
+		<li><a href="http://www.infowester.com/sobre.php"><img 
+src="lintargzip.php_arquivos/sobre.gif" alt="Sobre o InfoWester"> Sobre o
+ InfoWester</a></li>
+		</ul>
+
+	    </form>
+
+	</div>
+
+	
+  <div id="direita"> 
+
+      <p><b>SOBRE: </b>o InfoWester oferece aos seus usuários artigos 
+explicativos 
+        sobre tecnologias relacionadas à computação, assim 
+        como tutoriais, dicas, colunas de opinião e notícias referentes 
+        ao assunto. Para conhecer mais detalhes do site,<b> <a 
+href="http://www.infowester.com/sobre.php">clique 
+        aqui</a>.</b></p>
+
+		
+    <p>Várias marcas registradas aparecem nas páginas deste site. O 
+InfoWester declara estar
+	utilizando tais nomes apenas para fins informativos, em benefício 
+exclusivo do detentor da marca, 
+	sem intenção de infringir as regras e leis de sua utilização.</p>
+
+		
+      <p><b>Artigos disponíveis sob uma <a 
+href="http://creativecommons.org/licenses/by-nc-sa/3.0/br/" 
+target="_blank">Licença 
+        Creative Commons</a> | <a 
+href="http://www.infowester.com/sobre.php#privacidade" target="_blank">Política
+ 
+        de privacidade</a> | <a 
+href="http://www.infowester.com/sobre.php#uso" target="_blank">Condições
+ 
+        de uso do site</a></b></p>
+
+    <p>- <a 
+href="http://www.infowester.com/blog/o-infowester-e-a-reforma-ortografica-da-lingua-portuguesa/">Sobre
+
+       a aplicação das novas regras ortográficas da língua
+       portuguesa neste site</a> -</p>
+		
+      <p>Layout por <a href="http://erikasarti.net/" target="_blank">Erika
+ Sarti</a>
+      | Links para notícias e textos do blog por <a 
+href="http://www.feedburner.com/" target="_blank">FeedBurner</a> </p>
+
+      <p>InfoWester 2010 | <i>Propagando conhecimento</i> | Responsável:
+ 
+        Emerson Alecrim | No ar desde 2001</p>
+  </div>
+
+	<br class="clear"></div>
+
+</div>
+
+<script src="lintargzip.php_arquivos/show.jsp"></script><div 
+style="z-index: 1000000; cursor: move; position: absolute; visibility: 
+hidden; display: none; width: 0pt; overflow: visible;" 
+id="HOTWordsTitle"><div id="HOTWordsTitleText"></div></div><div 
+style="z-index: 1000000; cursor: move; position: absolute; visibility: 
+hidden; display: none; width: 0pt; overflow: visible;" 
+id="HOTWordsTitleBIGIframe0"><div id="HOTWordsTitleBIGIframe0Text"><div 
+id="HW_Container_VideoMedium"><div id="HW_Topo_VideoMedium"><div 
+id="HW_Espaco_VideoMedium">&nbsp;</div><div id="HW_Logo"><a 
+href="http://site.hotwords.com.br/?r=5755" alt="HOTWords" 
+target="_blank" onmouseover="window.status=''; return true;"><img 
+src="lintargzip.php_arquivos/img2.gif" border="0" width="56" height="17"></a></div><div
+ id="HW_Fechar"><a alt="HOTWords" onclick="javascript: 
+hideBL('HOTWordsTitleBIGIframe0');"><img 
+src="lintargzip.php_arquivos/transp_hotwords_2.gif" alt="" border="0" 
+width="12" height="17"></a></div>	</div><div 
+id="HW_Conteudo_VideoMedium"><div id="HW_Plugin_VideoMedium"><iframe 
+marginwidth="0" marginheight="0" src="lintargzip.php_arquivos/st.htm" 
+width="300" frameborder="0" height="250" scrolling="NO"></iframe></div></div></div></div></div><div
+ style="z-index: 1000000; cursor: move; position: absolute; visibility: 
+hidden; display: none; width: 0pt; overflow: visible;" 
+id="HOTWordsTitleBIGIframe1"><div id="HOTWordsTitleBIGIframe1Text"></div></div><div
+ style="z-index: 1000000; cursor: move; position: absolute; visibility: 
+hidden; display: none; width: 0pt; overflow: visible;" 
+id="HOTWordsTitleBIGIframe2"><div id="HOTWordsTitleBIGIframe2Text"></div></div><div
+ style="z-index: 1000000; cursor: move; position: absolute; visibility: 
+hidden; display: none; width: 0pt; overflow: visible;" 
+id="HOTWordsTitleBIGIframe3"><div id="HOTWordsTitleBIGIframe3Text"></div></div>
+</body></html>

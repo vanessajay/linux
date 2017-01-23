@@ -1,0 +1,414 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="index,nofollow">
+
+<title>Upstart - Ubuntu Brasil</title>
+<script type="text/javascript" src="Upstart_arquivos/common.js"></script>
+
+<script type="text/javascript">
+<!--// common functions
+
+// We keep here the state of the search box
+searchIsDisabled = false;
+
+function searchChange(e) {
+    // Update search buttons status according to search box content.
+    // Ignore empty or whitespace search term.
+    var value = e.value.replace(/\s+/, '');
+    if (value == '' || searchIsDisabled) { 
+        searchSetDisabled(true);
+    } else {
+        searchSetDisabled(false);
+    }
+}
+
+function searchSetDisabled(flag) {
+    // Enable or disable search
+    document.getElementById('fullsearch').disabled = flag;
+    document.getElementById('titlesearch').disabled = flag;
+}
+
+function searchFocus(e) {
+    // Update search input content on focus
+    if (e.value == 'Procurar') {
+        e.value = '';
+        e.className = '';
+        searchIsDisabled = false;
+    }
+}
+
+function searchBlur(e) {
+    // Update search input content on blur
+    if (e.value == '') {
+        e.value = 'Procurar';
+        e.className = 'disabled';
+        searchIsDisabled = true;
+    }
+}
+
+function actionsMenuInit(title) {
+    // Initialize action menu
+    for (i = 0; i < document.forms.length; i++) {
+        var form = document.forms[i];
+        if (form.className == 'actionsmenu') {
+            // Check if this form needs update
+            var div = form.getElementsByTagName('div')[0];
+            var label = div.getElementsByTagName('label')[0];
+            if (label) {
+                // This is the first time: remove label and do buton.
+                div.removeChild(label);
+                var dobutton = div.getElementsByTagName('input')[0];
+                div.removeChild(dobutton);
+                // and add menu title
+                var select = div.getElementsByTagName('select')[0];
+                var item = document.createElement('option');
+                item.appendChild(document.createTextNode(title));
+                item.value = 'show';
+                select.insertBefore(item, select.options[0]);
+                select.selectedIndex = 0;
+            }
+        }
+    }
+}
+//-->
+</script>
+
+
+<link rel="stylesheet" type="text/css" charset="utf-8" media="all" 
+href="Upstart_arquivos/common.css">
+<link rel="stylesheet" type="text/css" charset="utf-8" media="screen" 
+href="Upstart_arquivos/screen.css">
+<link rel="stylesheet" type="text/css" charset="utf-8" media="print" 
+href="Upstart_arquivos/print.css">
+<link rel="stylesheet" type="text/css" charset="utf-8" 
+media="projection" href="Upstart_arquivos/projection.css">
+
+<!-- css only for MSIE browsers -->
+<!--[if IE]>
+   <link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="/wiki/ubuntu-br/css/msie.css">
+<![endif]-->
+
+
+
+<link rel="Start" href="http://wiki.ubuntu-br.org/FrontPage">
+<link rel="Alternate" title="Markup da Wiki" 
+href="http://wiki.ubuntu-br.org/Upstart?action=raw">
+<link rel="Alternate" media="print" title="Visualizar Impressão" 
+href="http://wiki.ubuntu-br.org/Upstart?action=print">
+<link rel="Search" href="http://wiki.ubuntu-br.org/FindPage">
+<link rel="Index" href="http://wiki.ubuntu-br.org/TitleIndex">
+<link rel="Glossary" href="http://wiki.ubuntu-br.org/WordIndex">
+<link rel="Help" href="http://wiki.ubuntu-br.org/HelpOnFormatting">
+</head><body dir="ltr" lang="pt-br">
+
+<div id="header">
+<div id="mastwrap"><div id="masthead">
+<div id="logo"><a href="http://wiki.ubuntu-br.org/FrontPage"><img 
+src="Upstart_arquivos/logo.htm" alt="Ubuntu Brasil"></a></div>
+
+<form id="searchform" method="get" action="">
+<div>
+<input name="action" value="fullsearch" type="hidden">
+<input name="context" value="180" type="hidden">
+<label style="display: none;" for="searchinput">Procurar:</label>
+<input class="disabled" id="searchinput" name="value" value="Procurar" 
+size="20" onfocus="searchFocus(this)" onblur="searchBlur(this)" 
+onkeyup="searchChange(this)" onchange="searchChange(this)" alt="Search" 
+type="text">
+<input disabled="disabled" id="titlesearch" name="titlesearch" 
+value="Títulos" alt="Search Titles" type="submit">
+<input disabled="disabled" id="fullsearch" name="fullsearch" 
+value="Texto" alt="Search Full Text" type="submit">
+</div>
+</form>
+<script type="text/javascript">
+<!--// Initialize search form
+var f = document.getElementById('searchform');
+f.getElementsByTagName('label')[0].style.display = 'none';
+var e = document.getElementById('searchinput');
+searchChange(e);
+searchBlur(e);
+//-->
+</script>
+
+<ul id="username">
+<li><a id="login" 
+href="http://wiki.ubuntu-br.org/UserPreferences?action=login">Login</a></li>
+</ul>
+
+  <div id="sisternav">
+      <ul>
+        <li id="plain">
+            <a href="http://www.ubuntu.com/" accesskey="t">Ubuntu</a>
+        </li>
+        <li id="plain">
+            <a href="http://www.ubuntu-br.org/" accesskey="t">Ubuntu 
+Brasil</a>
+        </li>
+        <li id="current">
+            <a href="http://wiki.ubuntu-br.org/" accesskey="t">Wiki</a>
+        </li>
+        <li id="plain">
+            <a href="http://forum.ubuntu-br.org/" accesskey="t">Fórum</a>
+        </li>
+        <li id="plain">
+            <a href="http://wiki.ubuntu-br.org/Listas" accesskey="t">Listas</a>
+        </li>
+        <li id="plain">
+            <a href="http://planeta.ubuntu-br.org/" accesskey="t">Planeta</a>
+        </li>
+      </ul>
+  </div>
+
+</div></div>
+
+
+<ul id="navibar">
+
+</ul>
+
+
+<ul class="extranav">
+<li><a href="http://wiki.ubuntu-br.org/RecentChanges">RecentChanges</a></li>
+<li><a href="http://wiki.ubuntu-br.org/FindPage">FindPage</a></li>
+</ul>
+<ul class="editbar"><li><span class="disabled">Página Não Editável</span></li><li><a
+ href="http://wiki.ubuntu-br.org/Upstart?action=info">Informações</a></li><li><a
+ href="http://wiki.ubuntu-br.org/Upstart?action=AttachFile">Anexos</a></li><li>
+<form class="actionsmenu" method="get" action="">
+<div>
+    
+    <select name="action" onchange="if ((this.selectedIndex != 0) 
+&amp;&amp;
+                      (this.options[this.selectedIndex].disabled == 
+false)) {
+                this.form.submit();
+            }
+            this.selectedIndex = 0;">
+        <option selected="selected" value="show">Mais Ações:</option><option
+ value="raw">Visualizar Texto</option>
+<option value="print">Visualizar Impressão</option>
+<option value="RenderAsDocbook">Render as Docbook</option>
+<option value="refresh">Deletar Cache</option>
+<option value="show" disabled="disabled" class="disabled">------------</option>
+<option value="SpellCheck">Verificar ortografia</option>
+<option value="LikePages">Páginas Semelhantes</option>
+<option value="LocalSiteMap">Mapa do Site Local</option>
+<option value="show" disabled="disabled" class="disabled">------------</option>
+<option value="RenamePage" disabled="disabled" class="disabled">Renomear
+ Página</option>
+<option value="DeletePage" disabled="disabled" class="disabled">Apagar 
+Página</option>
+<option value="show" disabled="disabled" class="disabled">------------</option>
+<option value="MyPages">My Pages</option>
+<option value="SubscribeUser">Subscribe User</option>
+<option value="show" disabled="disabled" class="disabled">------------</option>
+<option value="Despam">Remove Spam</option>
+<option value="PackagePages">Package Pages</option>
+    </select>
+    
+</div>
+<script type="text/javascript">
+<!--// Init menu
+actionsMenuInit('Mais Ações:');
+//-->
+</script>
+</form>
+</li></ul>
+
+</div>
+
+<div id="page" dir="ltr" lang="en">
+
+
+<ul id="pagelocation">
+<li><a class="backlink" title="Clique aqui para fazer uma busca completa
+ para este título" 
+href="http://wiki.ubuntu-br.org/Upstart?action=fullsearch&amp;value=linkto%3A%22Upstart%22&amp;context=180">Upstart</a></li>
+</ul>
+<div dir="ltr" id="content" lang="en"><span class="anchor" id="top"></span>
+<span class="anchor" id="line-1"></span><p class="line867">
+</p><h1 id="head-990d0183e021f05549a1939ead8fa529b2b2b8a0">O que é o 
+upstart</h1>
+<span class="anchor" id="line-2"></span><span class="anchor" id="line-3"></span><p
+ class="line874">Antes de começar, gostaria de explicar que por um 
+processo de adaptação e compatibilidade, o arquivo /etc/inittab existe 
+para quem fez upgrade da versão Dapper para Edgy. Porém o mesmo não é 
+mais necessário para a versão 6.10, podendo ser deletado. <span 
+class="anchor" id="line-4"></span><span class="anchor" id="line-5"></span></p><p
+ class="line874">O upstart é um evento/base para o daemon do /sbin/init 
+(pai de todos os processos). Ele assegura o começo e parada das tarefas e
+ serviços durante o boot, bem como uma parada programada, além de 
+supervisionar os sistemas em execução. O upstart pretende substituir 
+todos os daemons, como o inetd, conde e etc. O upstart é pretendido por 
+várias distribuições Linux. Além do Ubuntu, já há registros de teste com
+ o Gentoo.  <span class="anchor" id="line-6"></span><span class="anchor"
+ id="line-7"></span></p><p class="line867">
+</p><h2 id="head-1e47e341071f4708b9948df764b8cc118b69d14d">Destaques do 
+upstart:</h2>
+<span class="anchor" id="line-8"></span><span class="anchor" id="line-9"></span><ul><li>As
+ tarefas e os serviços são começados e parados por eventos (Signal); <span
+ class="anchor" id="line-10"></span></li><li>Os eventos são gerados 
+enquanto as tarefas e os serviços estão funcionando ou parados; <span 
+class="anchor" id="line-11"></span></li><li>Os eventos podem também ser 
+gerados em intervalos programados, ou quando os arquivos de configuração
+ forem alterados; <span class="anchor" id="line-12"></span></li><li>Os 
+eventos podem ser recebidos de qualquer um ou de processos do sistema; <span
+ class="anchor" id="line-13"></span></li><li>Os serviços podem ser 
+reiniciados se morrerem inesperadamente; <span class="anchor" 
+id="line-14"></span></li><li>Comunicação bidirecional com o daemon do 
+init, para descobrir se os serviços estão funcionando, porque falharam, 
+etc.  <span class="anchor" id="line-15"></span><span class="anchor" 
+id="line-16"></span><span class="anchor" id="line-17"></span></li></ul><p
+ class="line867">
+</p><h3 id="head-f2df65c87bf2769c33cd7f6d339ff30eb9907af6">Você pode 
+começar a brincar com o upstart através dos comandos de controle.</h3>
+<span class="anchor" id="line-18"></span><span class="anchor" 
+id="line-19"></span><ul><li><p class="line862">sudo stop tty2 --&gt; 
+para o tty2 (faça um teste); <span class="anchor" id="line-20"></span></p></li><li><p
+ class="line862">sudo initctl list --&gt; lista todos as execuções e seu
+ estado (start, stop, waiting). Se você executou o comando acima para o 
+tty2, verá que ele irá aparecer como stop; <span class="anchor" 
+id="line-21"></span></p></li><li><p class="line862">sudo start tty2 
+--&gt; inicia o tty2; <span class="anchor" id="line-22"></span></p></li><li><p
+ class="line862">sudo status tty2 --&gt; verifica o status do tty2 (on 
+ou off).  <span class="anchor" id="line-23"></span><span class="anchor" 
+id="line-24"></span></p></li></ul><p class="line867">
+</p><h2 id="head-90e256026dc3765298e04cb6fabcdb76e8defaf0">Onde 
+configurar as opções que tinham no inittab?</h2>
+<span class="anchor" id="line-25"></span><span class="anchor" 
+id="line-26"></span><p class="line874">Ao contrário do System V, que 
+concentrava todas as configurações em um único arquivo (/etc/inittab), 
+agindo na forma serial de inicialização, o upstart utiliza um arquivo 
+para cada item, antes contido no inittab. <span class="anchor" 
+id="line-27"></span><span class="anchor" id="line-28"></span></p><p 
+class="line874">Os arquivos ficam dentro do diretório /etc/event.d. <span
+ class="anchor" id="line-29"></span><span class="anchor" id="line-30"></span></p><p
+ class="line874">Dentro deste diretório você irá encontrar os arquivos 
+que habilitam as opções antes encontradas no inittab, como os terminais 
+TTY, controlaltdel, powerfail e etc. <span class="anchor" id="line-31"></span><span
+ class="anchor" id="line-32"></span></p><p class="line874">Exemplo: Para
+ habilitar o tty2 apenas no runlevel 3 edite o arquivo abaixo: <span 
+class="anchor" id="line-33"></span><span class="anchor" id="line-34"></span></p><p
+ class="line874"># vim /etc/event.d/tty2  <span class="anchor" 
+id="line-35"></span><span class="anchor" id="line-36"></span><span 
+class="anchor" id="line-37"></span><span class="anchor" id="line-38"></span></p><p
+ class="line874"># tty2 - getty <span class="anchor" id="line-39"></span>#
+ <span class="anchor" id="line-40"></span>stop on runlevel-2 <span 
+class="anchor" id="line-41"></span>start on runlevel-3 <span 
+class="anchor" id="line-42"></span>stop on runlevel-4 <span 
+class="anchor" id="line-43"></span>stop on runlevel-5 <span 
+class="anchor" id="line-44"></span><span class="anchor" id="line-45"></span></p><p
+ class="line874">stop on shutdown <span class="anchor" id="line-46"></span><span
+ class="anchor" id="line-47"></span></p><p class="line874">respawn 
+/sbin/getty 38400 tty2 <span class="anchor" id="line-48"></span><span 
+class="anchor" id="line-49"></span></p><p class="line874">Com o upstart 
+as configurações ficaram bem mais flexíveis. Coloque start para 
+inicializar ou stop para desligar um processo no runlevel desejado. <span
+ class="anchor" id="line-50"></span><span class="anchor" id="line-51"></span></p><p
+ class="line874">Você também pode desligar se trocar o parâmetro "on" 
+por "off". Cuidado com essas junções, pois segue o princípio da tabela 
+verdade. <span class="anchor" id="line-52"></span><span class="anchor" 
+id="line-53"></span></p><p class="line874">Exemplo: stop off - A 
+expressão com duas negações se torna verdadeira. <span class="anchor" 
+id="line-54"></span><span class="anchor" id="line-55"></span></p><p 
+class="line867">
+</p><h3 id="head-2530530e5831fc92d60d9ef2c440e2d6cfcee408">Alterando o 
+seu runlevel default</h3>
+<span class="anchor" id="line-56"></span><span class="anchor" 
+id="line-57"></span><p class="line874">Para alterar o initdefault é 
+necessário alterar o arquivo rc-default. Altere o parâmetro do teleinit 
+pelo runlevel que deseja inicializar. <span class="anchor" id="line-58"></span><span
+ class="anchor" id="line-59"></span></p><p class="line862">Dica para 
+quem fez upgrade para o Edgy --&gt; não esqueça de remover o 
+/etc/inittab, caso contrário o script do rc-default irá respeitar o 
+valor definido na opção initdefault do inittab.  <span class="anchor" 
+id="line-60"></span><span class="anchor" id="line-61"></span></p><p 
+class="line867">
+</p><h2 id="head-be2d1d4d4e00fd6adde580ba70855a190dd60d85">Dicas e 
+finalizando</h2>
+<span class="anchor" id="line-62"></span><span class="anchor" 
+id="line-63"></span><p class="line874">O conteúdo de um arquivo dentro 
+do /etc/event.d tem as seguintes características: <span class="anchor" 
+id="line-64"></span><span class="anchor" id="line-65"></span></p><p 
+class="line874">* Os arquivos contidos no event.d executam um comando 
+sempre após o comando "exec". Exemplo: <span class="anchor" id="line-66"></span>#
+ vim /etc/event.d/controlaltdel <span class="anchor" id="line-67"></span><span
+ class="anchor" id="line-68"></span></p><p class="line874"># 
+control-alt-delete - emergency keypress handling <span class="anchor" 
+id="line-69"></span># <span class="anchor" id="line-70"></span>on 
+ctrlaltdel <span class="anchor" id="line-71"></span>exec /sbin/shutdown 
+-r now "Control-Alt-Delete pressed" <span class="anchor" id="line-72"></span><span
+ class="anchor" id="line-73"></span></p><p class="line874">No exemplo 
+acima, ao acionar as teclas control+alt+del, será executado o comando 
+shutdown. <span class="anchor" id="line-74"></span><span class="anchor" 
+id="line-75"></span></p><p class="line874">* Outro ponto interessante é 
+colocar o parâmetro "respawn". Esse parâmetro monitora o comando 
+executado. Caso o mesmo termine inesperadamente, um novo programa é 
+inicializado automaticamente. Exemplo: <span class="anchor" id="line-76"></span><span
+ class="anchor" id="line-77"></span></p><p class="line874"># vim 
+/etc/event.d/tty2 <span class="anchor" id="line-78"></span><span 
+class="anchor" id="line-79"></span></p><p class="line874">respawn 
+/sbin/getty 38400 tty2 <span class="anchor" id="line-80"></span><span 
+class="anchor" id="line-81"></span></p><p class="line874">* Nos 
+arquivos, além das execuções acima é possível também executar um script.
+ Exemplo: <span class="anchor" id="line-82"></span><span class="anchor" 
+id="line-83"></span></p><p class="line874"># vim /etc/event.d/sulogin <span
+ class="anchor" id="line-84"></span><span class="anchor" id="line-85"></span></p><p
+ class="line874"># sulogin - rescue mode <span class="anchor" 
+id="line-86"></span># <span class="anchor" id="line-87"></span>on 
+stalled <span class="anchor" id="line-88"></span>exec /sbin/sulogin <span
+ class="anchor" id="line-89"></span>console owner <span class="anchor" 
+id="line-90"></span><span class="anchor" id="line-91"></span></p><p 
+class="line874">start script <span class="anchor" id="line-92"></span></p><ul><li
+ style="list-style-type: none;">echo <span class="anchor" id="line-93"></span>echo
+ "The system has reached a state where there are no jobs running." <span
+ class="anchor" id="line-94"></span>echo "A shell will be spawned so 
+that you may start such jobs that are" <span class="anchor" id="line-95"></span>echo
+ "necessary." <span class="anchor" id="line-96"></span>echo <span 
+class="anchor" id="line-97"></span>echo "Type 'exit' when finished." <span
+ class="anchor" id="line-98"></span></li></ul><p class="line874">end 
+script <span class="anchor" id="line-99"></span><span class="anchor" 
+id="line-100"></span></p><p class="line874">Espero ter de ajudado a 
+entender o upstart e sua forma de funcionamento. Assim que aprender mais
+ sobre o upstart irei explicar nesse canal. <span class="anchor" 
+id="line-101"></span><span class="anchor" id="line-102"></span></p><p 
+class="line874">Outra dica. Dê uma olhada com o "cat" em cada arquivo 
+dentro do /etc/event.d. <span class="anchor" id="line-103"></span><span 
+class="anchor" id="line-104"></span></p><p class="line874">Mais 
+informações podem ser obtidas em: <span class="anchor" id="line-105"></span><span
+ class="anchor" id="line-106"></span></p><ul><li><p class="line891"><a 
+class="http" href="http://upstart.ubuntu.com/">http://upstart.ubuntu.com/</a>
+  <span class="anchor" id="line-107"></span><span class="anchor" 
+id="line-108"></span><span class="anchor" id="line-109"></span></p></li></ul><p
+ class="line874">"Por Antônio Ricardo Leocadio - Ubuntu-MG" <span 
+class="anchor" id="line-110"></span><span class="anchor" id="bottom"></span></p></div><p
+ id="pageinfo" class="info" dir="ltr" lang="pt-br">Upstart  (editada 
+pela última vez em 2009-04-16 14:55:20 por <span title="MichaelLins @ 
+srv10.mma.gov.br[200.252.111.2]"><a class="nonexistent" 
+href="http://wiki.ubuntu-br.org/MichaelLins" title="MichaelLins @ 
+srv10.mma.gov.br[200.252.111.2]">MichaelLins</a></span>)</p>
+
+<div id="pagebottom"></div>
+</div>
+
+
+<div id="footer">
+
+  <div id="ubuntulinks">
+     © 2005 <a href="http://www.canonical.com/">Canonical Ltd.</a> 
+Ubuntu e Canonical são marcas registradas da Canonical Ltd.<br>
+     
+
+     <a href="https://www.ubuntulinux.org/feedback">Feedback</a> — 
+     <a href="https://www.ubuntulinux.org/legal">Questões legais</a> — 
+     <a href="https://wiki.ubuntu.com/wiki/credits">Créditos</a>
+
+  </div>
+
+
+</div>
+</body></html>

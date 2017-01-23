@@ -1,0 +1,10 @@
+Compactadores:
+http://www.infowester.com/lintargzip.php
+
+Empacotadores e Compactadores do Linux:
+http://www.vivaolinux.com.br/artigo/Empacotamento-e-compactadores-de-arquivos/
+
+447 - Bacula: Backup Corporativo com Software Livre:
+http://www.4linux.com.br/cursos/bacula-backup-corporativo-software-livre-447.html
+
+

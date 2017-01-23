@@ -1,0 +1,20 @@
+Dispositivos de bloco:
+http://focalinux.cipsga.org.br/guia/inic_interm/ch-disc.html#s-disc-id
+
+Montagem de partições:
+http://focalinux.cipsga.org.br/guia/inic_interm/ch-disc.html#s-disc-montagem
+
+Arquivo fstab:
+http://focalinux.cipsga.org.br/guia/inic_interm/ch-disc.html#s-disc-fstab
+
+UUID:
+http://www.gdhpress.com.br/blog/ubuntu-uuids/
+
+Entendendo o udev:
+http://www.guiadohardware.net/tutoriais/acessando-dispositivos-usb-escrevendo-regras/entendendo-udev.html
+
+Criando arquivos dispositivos com os comandos MAKEDEV e mknod :
+http://www.vivaolinux.com.br/artigo/BIOS-barramentos-e-dispositivos?pagina=13
+
+Diferenças do red Hat (Completo):
+http://web.mit.edu/rhel-doc/4/RH-DOCS/rhel-isa-pt_br-4/s1-storage-rhlspec.html

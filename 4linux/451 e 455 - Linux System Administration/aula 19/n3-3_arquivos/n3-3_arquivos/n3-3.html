@@ -1,0 +1,363 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "/_dtd/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt-br" lang="pt-br"><head>
+
+  
+    <meta http-equiv="Content-Type" content="text/html; 
+charset=ISO-8859-1">
+    <title>O que é o ssh?</title>
+    <link rel="stylesheet" href="n3-3_arquivos/newsgen.css">
+    <script type="text/javascript" src="n3-3_arquivos/rnp.js" charset="iso-8859-1"></script>
+    <link rel="shortcut icon" href="http://www.rnp.br/favicon.ico">
+    <meta name="publisher" content="RNP">
+    <meta name="creator" content="Paulino Ng">
+    <meta name="subject" content="newsgeneration, newsgen">
+    <meta name="type" content="text">
+    <meta name="format" content="text/html">
+    <meta name="identifier" content="/newsgen/9708/n3-3.html">
+    <meta name="language" content="pt-br">
+    <meta name="date" scheme="W3CDTF" content="2004-06-18T23:57:00">
+    <meta name="description" content="Apresentação deste serviço que é 
+um pacote de programas cujo objetivo é aumentar a segurança de um 
+sistema de redes, enfatizando a sua abrangência e necessidade. São dadas
+ dicas importantes de sua instalação em máquinas UNIX.">
+    <meta name="rights" content="Copyright RNP ©2004">
+  </head><body lefmargin="16" topmargin="0" vlink="#666666" 
+alink="#009999" bgcolor="#ffffff" link="#000099" marginheight="0" 
+marginwidth="16" text="#000000">
+    <a name="inicio"></a>
+    <div align="center">
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody><tr>
+          <td><img class="topimage" src="n3-3_arquivos/ng2_logo1.gif" 
+alt="NewsGeneration: um serviço oferecido pela RNP desde 1997" 
+usemap="#volta" width="598" border="0" height="101"></td>
+        </tr>
+      </tbody></table>
+    </div>
+    <div style="position: absolute; left: 50%; top: 39px; width: 400px; 
+height: 101px; visibility: visible;">
+      <div class="base-p1b-o">
+        <br>
+        <br><img class="topimage" src="n3-3_arquivos/d0.gif" alt="" 
+width="235" height="1">ISSN&nbsp;1518-5974</div>
+    </div>
+    <div style="position: absolute; left: 16px; top: 39px; height: 
+101px; visibility: visible;">
+      <div class="base-p1b-o" align="left"><img class="topimage" 
+src="n3-3_arquivos/d0.gif" alt="" width="56" height="1">Boletim 
+bimestral sobre tecnologia de redes<br><img class="topimage" 
+src="n3-3_arquivos/d0.gif" alt="" width="200" height="1">produzido e 
+publicado pela &nbsp;<a href="http://www.rnp.br/" class="blue">RNP &#8211; 
+Rede Nacional de Ensino e Pesquisa</a>
+        <br>01 de agosto de 1997 | volume 1, número 3</div>
+    </div>
+    <br>
+    <map name="volta">
+      <area shape="rect" coords="199,0,389,34" 
+href="http://www.rnp.br/newsgen" alt="volta à página inicial de 
+NewsGeneration">
+    </map>
+    <div style="position: absolute; left: 82%; top: 140px; height: 
+200px; overflow: visible;">
+      <p class="base-p1b">Nesta edição:</p>
+      <div class="nav">
+        <a href="http://www.rnp.br/newsgen/9708/n3-1.html" class="nu">Firewalls</a>
+        <br>
+        <br>
+        <a href="http://www.rnp.br/newsgen/9708/n3-2.html" class="nu">Introdução
+ a Gerenciamento de Redes TCP/IP</a>
+        <br>
+        <br>
+        <a href="http://www.rnp.br/newsgen/9708/n3-3.html" class="nu">O 
+que e' o ssh?</a>
+        <br>
+        <br>
+        <br>
+        <br>
+      </div><span class="base-p1b">NewsGeneration:</span><br>
+      <br>
+      <form name="newsgen" action="/newsgen/consulta/" method="get">
+        <input size="12" name="words" id="words" type="text">
+        <br>
+        <input value="buscar" name="submit" type="submit">
+      </form>
+      <div class="nav">
+        <br>
+        <a href="http://www.rnp.br/newsgen/gerais/artigos.html" 
+class="nu">Artigos publicados</a>
+        <br>
+        <br>
+        <a href="http://www.rnp.br/newsgen/gerais/autores.html" 
+class="nu">Autores</a>
+        <br>
+        <br>
+        <a href="http://www.rnp.br/newsgen/gerais/faq.html" class="nu">FAQ</a>
+        <br>
+        <br>
+        <a href="http://www.rnp.br/newsgen/gerais/assine.html" 
+class="nu">Assine</a>
+        <br>
+        <br>
+        <a href="http://www.rnp.br/newsgen/" class="nu">Página inicial</a>
+      </div>
+      <br>
+    </div>
+    <h1>O que é o ssh?</h1>
+    <div class="content">
+      <p class="autores">
+        <strong>Paulino Ng</strong> &lt;<span class="email">paulino<span>@</span>na-sp.rnp.br</span>&gt;</p>
+      <p>Rede Nacional de Ensino e Pesquisa (RNP)</p>
+      <p>
+        <a href="#ng-introducao" class="nu">Introdução</a>
+        <br>
+        <a href="#ng-instalacao" class="nu">Instalação do Pacote do ssh</a>
+        <br>
+        <a href="#ng-utilizacao" class="nu">Utilização dos programas do 
+ssh</a>
+        <br>
+        <a href="#ng-configuracao" class="nu">Configuração do ssh</a>
+        <br>
+        <a href="#ng-conclusao" class="nu">Conclusão</a>
+        <br>
+        <a href="#ng-mais" class="nu">Mais Informações</a>
+        <br>
+      </p>
+      <p class="MsoNormal">O ssh é um pacote de programas cujo objetivo é
+ aumentar a segurança de um sistema de redes. Ele, basicamente fornece 
+um substituto mais seguro para os programas "remotos" - rsh, rlogin, 
+rcp. Alem de ser uma boa alternativa para o telnet.</p>
+      <p>
+        <a class="arrow" href="#inicio">^</a>
+      </p>
+      <h2>
+        <a name="ng-introducao"></a>Introdução</h2>
+      <p class="MsoNormal">O problema de segurança que este pacote tenta
+ solucionar é o da escuta de rede para obter informações sigilosas. Os 
+comandos remotos e o telnet usam transferência direta de dados sem 
+codificação. Isto permite que redes abertas a "escutas" tenham 
+informações criticas vazadas. Uma "escuta" é facilmente instalada numa 
+rede ethernet na qual não é possível controlar o acesso de maquinas ou 
+usuários suspeitos.</p>
+<p class="MsoNormal">A situação torna-se mais critica quando sistemas 
+sem nenhuma segurança como DOS, WIN 3.x e WIN 95 participam da rede, e o
+ acesso a essas maquinas não é suficientemente controlado. Isto porque 
+tais sistemas não possuem a noção de usuário privilegiado, não sendo 
+muito complicado instalar nos mesmos programas de escuta de rede que 
+podem "ouvir" as transferências feitas numa rede ethernet, ou qualquer 
+rede do tipo "broadcast".</p>
+<p class="MsoNormal">O exemplo mais simples de utilização de uma escuta é
+ para pegar a senha de alguém que esteja fazendo telnet. A senha é 
+passada entre a maquina cliente e o servidor de telnet como texto puro. A
+ solução seria usar o rlogin no lugar do telnet mas os comandos remotos 
+possuem também as suas falhas. O sistema de autorização da conexão 
+(autenticação) é baseado nos arquivos hosts.equiv e .rhosts, que 
+basicamente deveriam dizer quais maquinas podem fazer a conexão. A 
+autenticidade da identidade destas maquinas é garantida pelo seu 
+endereço IP ou pelo seu nome de domínio. Existem muitos métodos de 
+falsificação de identidade IP e alguém capaz de instalar uma escuta na 
+rede é muito bem capaz de instalar um programa "travesti" de IP e 
+simular que é uma maquina autorizada.</p>
+<p class="MsoNormal">O ssh se propõe a solucionar o problema da escuta 
+com uma transferência de dados criptografada e com um protocolo de 
+autenticação mais seguro. Os métodos de autenticação selecionáveis 
+incluem .rhosts apenas (inseguro), .rhosts com validação do host atraves
+ de RSA ou validação exclusiva através de RSA. Os protocolos do X 
+Windows também apresentam diversos problemas de segurança e o ssh 
+procura fornecer seções seguras para clientes X11 executados a partir 
+dele.</p>
+      <p>
+        <a class="arrow" href="#inicio">^</a>
+      </p>
+      <h2>
+        <a name="ng-instalacao"></a>Instalação do Pacote do ssh</h2>
+      <p class="MsoNormal">O ssh possui a home-page 
+http://www.cs.hut.fi/ssh/. Através dela pode-se chegar a diversos 
+repositórios para copiar o pacote. A versão mais atual é a 1.2.20. Esta 
+versão foi instalada no NA-SP em maquinas Solaris 2.4, AIX 4.1.4 e 
+Linux-Slackware 3.2 com service pack 2 aplicado. A compilação não 
+apresentou nenhum problema utilizando o gcc-2.7.2.1/2. A seguir são 
+dadas algumas sugestões de configurações e uso do ssh.</p>
+<p class="MsoNormal">Nas estações AIX e Solaris é interessante utilizar o
+ comando:</p>
+<p class="MsoNormal">&nbsp;</p>
+<pre><span>
+</span>./configure --with-rsh=/usr/bin/rsh 
+</pre>
+<p class="MsoNormal"> </p>
+<p class="MsoNormal">para configurar a compilação do pacote. Esta opção 
+permitirá ao ssh encontrar o rsh que será utilizado quando não houver um
+ servidor sshd funcionando no host contactado. Nesse caso, os comandos s
+ (seguros) passam a usar os comandos r (remotamente seguros), alem de 
+instalar no diretório /usr/local/bin links simbolicos rsh, rlogin e rcp 
+para ssh, slogin e scp, respectivamente.</p>
+<p class="MsoNormal">Os comandos "make" e "make install" não 
+apresentaram maiores dificuldades para instalar o pacote na maquina 
+utilizada para a compilação. Nas outras maquinas que compartilham o 
+codigo, não é necessario fazer um "make install", mas é necessário 
+executar o comando "make hostinstall" para cada maquina que use o código
+ compartilhado.</p>
+<p class="MsoNormal">O "make hostinstall" instala os arquivos de 
+configuração de default no diretório /etc (ssh_config e sshd_config) e 
+gera o par de chaves publica/privada para a estação. As chaves das 
+estações são geradas sem nenhuma frase-senha, observe que estas chaves 
+são diferentes das chaves do "root" da estação (veja geração de chaves 
+pessoais com o ssh-keygen).</p>
+      <p>
+        <a class="arrow" href="#inicio">^</a>
+      </p>
+      <h2>
+        <a name="ng-utilizacao"></a>Utilização dos programas do ssh</h2>
+      <p class="MsoNormal">O pacote do ssh consiste de vários programas,
+ os mais interessantes são:</p>
+<p class="MsoNormal">&nbsp;</p>
+<ul style="margin-top: 0cm;" type="disc">
+<li class="MsoNormal">sshd - servidor de conexões do protocolo SSH, deve
+ ser executado como root e normalmente é instalado nos arquivos de 
+inicialização das estações (rc files) mas é possível também iniciá-lo 
+via o inetd. Como o servidor precisa calcular um par chave publica/chave
+ privada de 1024 bits a cada inicialização, o método do inetd não é 
+recomendado para maquinas de baixo desempenho. O servidor escuta a porta
+ 22.</li>
+<li class="MsoNormal">ssh - substituto do rsh com algumas melhorias. Por
+ exemplo, se não houver uma entrada nos arquivos .rhosts, ou .shosts, 
+para a maquina cliente, o servidor tenta autenticar pelo servidor de 
+chaves RSA (vide a seguir) ou pela senha. Existe uma pequena mudança de 
+sintaxe para comandos remotos trocando o nome do usuário. Exemplo:</li>
+</ul>
+<pre><span>
+</span><span>
+</span><span xml:lang="EN-US" lang="EN-US">h fool@outra.maquina who -a </span>
+</pre>
+<p class="MsoNormal">Ao executar o ssh pela primeira vez, cria-se um 
+diretorio .ssh debaixo do $HOME e um arquivo random_seed. Caso a maquina
+ servidora não seja "conhecida" pela maquina cliente (chave publica da 
+maquina servidora no arquivo /etc/ssh_known_hosts), o ssh pede para 
+validar a identidade da maquina para inclui-la entre as servidoras de 
+ssh conhecidas do usuário no arquivo .ssh/known_hosts. Estes arquivos 
+guardam as chaves publicas das maquinas com as quais os usuários 
+normalmente conectam-se, quando ocorre a mudança de chave publica de 
+alguma maquina, existe a possibilidade de está havendo uma quebra de 
+segurança. O usuário, nesse caso, pode aceitar a nova chave publica ou 
+rejeitar e consultar o responsável daquela maquina para saber se ele 
+trocou as chaves do ssh.</p>
+<ul style="margin-top: 0cm;" type="disc">
+<li class="MsoNormal">slogin - semelhante ao rlogin e assim como o rsh 
+recai no rlogin quando nenhum comando é dado, o ssh também recai num 
+shell criptografado quando executado sem um comando explicito para a 
+maquina remota.</li>
+<li class="MsoNormal">scp - semelhante ao rcp, com a vantagem de não 
+derrubar a conexão se a estação remota não possuir uma referencia `a 
+maquina local nos seus arquivos hosts.equiv e .rhosts. Caso não obtenha 
+autorização pelo .rhosts, a transferência pode ser autorizada por RSA 
+pessoal ou password transmitido codificado.</li>
+<li class="MsoNormal">ssh-keygen - gerador de chaves RSA. Cada usuário 
+pode ter as suas próprias chaves RSA, que são geradas e colocadas no 
+diretorio .ssh. Estas chaves são utilizadas para a autenticação das 
+conexões por chaves RSA. As chaves são geradas baseadas numa frase 
+senha, o que aumenta a sua segurança em relação ao sistema de senhas das
+ estações que em muitos casos é limitado a poucos caracteres. O arquivo 
+de senha gerado, ssh/identity, deve ter permissão de leitura/escritura 
+apenas para o usuário.</li>
+<li class="MsoNormal">ssh-agent - especie de servidor de chaves RSA para
+ uma seção, normalmente deve ser executado a partir do arquivo .login 
+nas maquinas com login textual e .xsession nas maquinas com login 
+controlado por xdm e seus equivalentes. O comando para executa-lo é:</li>
+</ul>
+<pre><span>
+</span><span>
+</span>val `ssh-agent` 
+</pre>
+<p class="MsoNormal"> </p>
+<p class="MsoNormal">O eval é necessário para inicializar as variáveis 
+de ambiente usadas pelo ssh-agent. O comando ssh-add fornece as chaves 
+para o servidor. Ele mantem as chaves "adicionadas" na memoria, evitando
+ que seja necessário entrar com elas a cada comando quando não for 
+aceita a autenticação por .rhosts.</p>
+<p class="MsoNormal">ssh-add - descrito acima.</p>
+      <p>
+        <a class="arrow" href="#inicio">^</a>
+      </p>
+      <h2>
+        <a name="ng-configuracao"></a>Configuração do ssh</h2>
+      <p class="MsoNormal">O arquivo /etc/sshd_config configura o 
+servidor sshd. Os defaults da instalação são normalmente suficientes. 
+Uma opção importante é "StrictMode". Com esta opção, o sshd torna-se 
+mais rigoroso quanto ao controle dos direitos de acesso dos arquivos e 
+diretórios. Se eles não estiverem corretamente acertados, a conexão não é
+ estabelecida.</p>
+<p class="MsoNormal">Não se recomenda habilitar a opção 
+RhostsAuthentication que permite a autenticação por .rhosts sem 
+verificação da identidade dos hosts pelas chaves RSA. Caso não haja 
+interesse em permitir autenticação por .rhosts, de modo algum, é 
+possível desabilitar RhostsRSAAuthentication. Alem disso, se for 
+desejado apenas permitir que sejam usadas frases senhas e não as senhas 
+de sistema, pode-se desabilitar a opção PasswordAuthentication. O sshd 
+não necessita do tcp-wrapper para utilizar listas de allow e deny. Isto é
+ possível através das clausulas AllowHosts e DenyHosts.</p>
+<p class="MsoNormal">O arquivo /etc/ssh_config permite configurar os 
+métodos de autenticação usados pelos clientes ssh, slogin e scp. Este 
+arquivo pode ter as suas opções sobrepostas pelo arquivo 
+$HOME/.ssh/config do usuário.</p>
+<p class="MsoNormal">Portanto, não é conveniente esperar que restrições 
+colocadas nesse arquivo sejam seguidas. O correto é colocar as 
+restrições na configuração do servidor. O arquivo de configuração dos 
+clientes permite que sejam aplicadas opções diferentes dependendo do 
+servidor usado.</p>
+      <p>
+        <a class="arrow" href="#inicio">^</a>
+      </p>
+      <h2>
+        <a name="ng-conclusao"></a>Conclusão</h2>
+      <p class="MsoNormal">O pacote de programas ssh é interessante 
+quando se suspeita da existência de "escutas" instaladas nas linhas 
+físicas usadas para a transferencia de dados entre as maquinas dentro de
+ uma rede. Ele criptografa as transferências dificultando a leitura dos 
+dados transmitidos. Alem disso, ele utiliza métodos de autenticação mais
+ fortes do que os utilizados pelos comandos remotos, rsh, rlogin e rcp, 
+reduzindo a possibilidade de conexões travestidas (desde que, os 
+servidores de rsh, rlogin e rcp estejam desabilidos). É razoavelmente 
+simples de usar sendo um substituto quase transparente para os comandos 
+remotos.</p>
+<p class="MsoNormal">Não foram tratados aqui usos mais avançados do ssh,
+ como codificação do canal de controle de uma transferência ftp, 
+codificação de transferências PPP, uso do ssh para fazer uma Virtual 
+Private Network, etc. Estas aplicações mais avançadas estão propostas 
+nas paginas WWW sobre o ssh e na lista de discusão do ssh citadas a 
+seguir.</p>
+      <p>
+        <a class="arrow" href="#inicio">^</a>
+      </p>
+      <h2>
+        <a name="ng-mais"></a>Mais Informações</h2>
+      <p class="MsoNormal"><span xml:lang="EN-US" lang="EN-US">RFCs:</span></p>
+<p class="MsoNormal"><span xml:lang="EN-US" lang="EN-US">SSH 
+Authentication Protocol, draft-ietf-secsh-userauth-00.txt,T. Ylonen.</span></p>
+<p class="MsoNormal"><span xml:lang="EN-US" lang="EN-US">Connect, 
+draft-ietf-secsh-connect-00.tx, T. Ylonen.</span></p>
+<p class="MsoNormal"><span xml:lang="EN-US" lang="EN-US">SSH Transport 
+Layer Protocol, draft-ietf-secsh-transport-00.txt,T. Ylonen.</span></p>
+<p class="MsoNormal"><span xml:lang="EN-US" lang="EN-US">URLs:</span></p>
+<p class="MsoNormal"><span xml:lang="EN-US" lang="EN-US">Ssh (Secure 
+Shell) Home Page:http://www.cs.hut.fi/ssh/Ssh</span></p>
+<p class="MsoNormal"><span xml:lang="EN-US" lang="EN-US">Getting Started
+ with SSH:http://www.tac.nyc.ny.us/~kim/ssh/</span>&nbsp;</p>
+<p class="MsoNormal"><span xml:lang="EN-US" lang="EN-US">SSH para 
+windows (comercial): http://www.datafellows.com/f-secure/</span></p>
+<p class="MsoNormal">Repositorio principal do 
+SSH:ftp://ftp.cs.hut.fi/pub/ssh/<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></p>
+<p class="MsoNormal">FAQ do SSH: 
+http://www.uni-karlsruhe.de/~ig25/ssh-faq/</p>
+<p class="MsoNormal">Lista:</p>
+<p class="MsoNormal">majordomo@clinet.fi, corpo com "subscribe ssh"</p>
+      <p>
+        <a class="arrow" href="#inicio">^</a>
+      </p>
+      <p>
+        <strong>
+          <a href="http://www.rnp.br/newsgen/"><span style="color: 
+rgb(0, 0, 153);">NewsGeneration</span></a>, um serviço oferecido pela <a
+ href="http://www.rnp.br/"><span style="color: rgb(0, 0, 153);">RNP&nbsp;&#8211;&nbsp;Rede&nbsp;Nacional&nbsp;de&nbsp;Ensino&nbsp;e&nbsp;Pesquisa</span></a>
+        </strong>
+        <br>Copyright © RNP, 1997 &#8211; 2004</p>
+    </div>
+  </body></html>

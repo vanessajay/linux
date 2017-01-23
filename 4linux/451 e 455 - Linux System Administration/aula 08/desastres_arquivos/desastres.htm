@@ -1,0 +1,875 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head>
+
+
+
+<meta name="verify-v1" 
+content="QrBGbj7bi3N9ZPFXrZM1/zcLgkUhehM9srWnOK49tPQ=">
+<meta name="\&quot;y_key\&quot;" 
+content="\&quot;b0c1ae5f8b46c432\&quot;">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta id="e_vb_meta_bburl" name="vb_meta_bburl" 
+content="http://under-linux.org">
+<meta name="generator" content="vbMediaWiki 4.0.2 by bepe">
+<meta name="generator" content="vBulletin 4.0.3">
+
+
+		<meta name="keywords" content="notícias atualizadas , Artigos, Dicas ,
+ Forums , Wiki ,Linux, Apache, Wireless, VoIP, Spam, qmail, FreeBSD, 
+Sendmail, OpenBSD, Segurança, Programação, DNS, NetBSD, Postfix, 
+firewall, Asterisk, exploit, distribuição, mikrotik, roteadores, cisco, 
+cyclades, 3com, huawei, Slackware, Ubuntu, Mandriva, Suse, Novell, 
+Kurumin, kubuntu, xubuntu, opensuse, fedora, redhat, mepis, debian, 
+gentoo, centos, oracle, mysql, postgresql, Radius, VPN, POP, IMAP, SMTP,
+ TCP, UDP, ICMP, MPLS, BGP, ospf, rip, ppp, squid, iptables, ipfw, pix, 
+ids">
+		<meta name="description" content="UnderLinux o Portal do Administrador
+ de Sistemas">
+
+
+<script type="text/javascript" src="desastres_arquivos/yuiloader-dom-event.js"></script>
+<script type="text/javascript" src="desastres_arquivos/connection-min.js"></script>
+<script type="text/javascript">
+<!--
+	var SESSIONURL = "s=7d24e0032ce155351d81be716c208d32&";
+	var SECURITYTOKEN = "guest";
+	var IMGDIR_MISC = "images/misc";
+	var IMGDIR_BUTTON = "images/buttons";
+	var vb_disable_ajax = parseInt("0", 10);
+	var SIMPLEVERSION = "403";
+	var BBURL = "http://under-linux.org";
+	var LOGGEDIN = 0 > 0 ? true : false;
+// -->
+</script>
+<script type="text/javascript" src="desastres_arquivos/vbulletin-core.js"></script>
+
+
+
+
+
+	<link rel="alternate" type="application/rss+xml" title="Under-Linux.org
+ Feed RSS" href="http://under-linux.org/rss.xml">
+	
+
+
+
+	<link rel="stylesheet" type="text/css" 
+href="desastres_arquivos/main-rollup.css">
+        
+
+
+
+
+<!-- PUT THIS TAG IN THE head SECTION -->
+<script type="text/javascript" src="desastres_arquivos/google_service.js">
+</script>
+<script type="text/javascript">
+  GS_googleAddAdSenseService("ca-pub-5231037339223764");
+  GS_googleEnableAllServices();
+</script><script src="desastres_arquivos/google_ads.js"></script>
+<script type="text/javascript">
+  GA_googleAddSlot("ca-pub-5231037339223764", "728x90-topo");
+  GA_googleAddSlot("ca-pub-5231037339223764", "720x90-before");
+  GA_googleAddSlot("ca-pub-5231037339223764", "728x90-rodape-admanager");
+  GA_googleAddSlot("ca-pub-5231037339223764", "160x600");
+  GA_googleAddSlot("ca-pub-5231037339223764", "728x90-after-first-post");
+  GA_googleAddSlot("ca-pub-5231037339223764", "160x160");
+  GA_googleAddSlot("ca-pub-5231037339223764", "160x160-3");
+</script>
+<script type="text/javascript">
+  GA_googleFetchAds();
+</script>
+<!-- END OF TAG FOR head SECTION -->
+
+
+
+
+<style type="text/css" id="publicidade">
+#propaganda {
+  position: fixed;
+  left: 1024px;
+  width: 164px;
+  top: 0px;
+}
+
+</style>
+
+
+
+<style type="text/css">
+#rss-follow { border: 0;position: fixed; top: 180px; left:0;}
+#twitter-follow { border: 0;position: fixed; top: 310px; left:0;}
+#facebook-follow { border: 0;position: fixed; top: 440px; left:0;}
+</style>
+ 
+<link rel="stylesheet" type="text/css" 
+href="desastres_arquivos/additional.css">
+<!--[if lt IE 8]>
+<link rel="stylesheet" type="text/css" href="http://under-linux.org/clientscript/vbulletin_css/style00004l/replacement-vbulletin-ie.css" />
+<![endif]-->
+ 
+		<meta http-equiv="Content-Style-Type" content="text/css">
+		<meta name="generator" content="MediaWiki 1.15.1">
+		<meta name="keywords" content="Tutoriais/Seguranca/desastres">
+		<link rel="shortcut icon" href="http://under-linux.org/favicon.ico">
+		<link rel="search" type="application/opensearchdescription+xml" 
+href="http://under-linux.org/wiki/opensearch_desc.php" title="UnderLinux
+ Wiki (pt-br)">
+		<link rel="alternate" type="application/rss+xml" title="Feed RSS 
+UnderLinux Wiki" 
+href="http://under-linux.org/wiki/index.php?title=Especial:Mudan%C3%A7as_recentes&amp;feed=rss">
+		<link rel="alternate" type="application/atom+xml" title="Feed Atom 
+UnderLinux Wiki" 
+href="http://under-linux.org/wiki/index.php?title=Especial:Mudan%C3%A7as_recentes&amp;feed=atom">
+		<title>Tutoriais/Seguranca/desastres - UnderLinux Wiki</title>
+		<link rel="stylesheet" href="desastres_arquivos/shared.css" 
+type="text/css" media="screen">
+		<link rel="stylesheet" href="desastres_arquivos/commonPrint.css" 
+type="text/css" media="print">
+		<link rel="stylesheet" href="desastres_arquivos/main.css" 
+type="text/css" media="screen">
+		<!--[if lt IE 5.5000]><link rel="stylesheet" href="/wiki/skins/vbmediawiki/IE50Fixes.css?207" type="text/css" media="screen" /><![endif]-->
+		<!--[if IE 5.5000]><link rel="stylesheet" href="/wiki/skins/vbmediawiki/IE55Fixes.css?207" type="text/css" media="screen" /><![endif]-->
+		<!--[if IE 6]><link rel="stylesheet" href="/wiki/skins/vbmediawiki/IE60Fixes.css?207" type="text/css" media="screen" /><![endif]-->
+		<!--[if IE 7]><link rel="stylesheet" href="/wiki/skins/vbmediawiki/IE70Fixes.css?207" type="text/css" media="screen" /><![endif]-->
+		<link rel="stylesheet" href="desastres_arquivos/index_002.css" 
+type="text/css">
+		<link rel="stylesheet" href="desastres_arquivos/index_004.css" 
+type="text/css" media="print">
+		<link rel="stylesheet" href="desastres_arquivos/index_003.css" 
+type="text/css">
+		<link rel="stylesheet" href="desastres_arquivos/index.css" 
+type="text/css">
+		<!--[if lt IE 7]><script type="text/javascript" src="/wiki/skins/common/IEFixes.js?207"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+
+		<script type="text/javascript">/*<![CDATA[*/
+		var skin = "vbmediawiki";
+		var stylepath = "/wiki/skins";
+		var wgArticlePath = "/wiki/$1";
+		var wgScriptPath = "/wiki";
+		var wgScript = "/wiki/index.php";
+		var wgVariantArticlePath = false;
+		var wgActionPaths = {};
+		var wgServer = "http://under-linux.org";
+		var wgCanonicalNamespace = "";
+		var wgCanonicalSpecialPageName = false;
+		var wgNamespaceNumber = 0;
+		var wgPageName = "Tutoriais/Seguranca/desastres";
+		var wgTitle = "Tutoriais/Seguranca/desastres";
+		var wgAction = "view";
+		var wgArticleId = "1539";
+		var wgIsArticle = true;
+		var wgUserName = null;
+		var wgUserGroups = null;
+		var wgUserLanguage = "pt-br";
+		var wgContentLanguage = "pt-br";
+		var wgBreakFrames = false;
+		var wgCurRevisionId = 2847;
+		var wgVersion = "1.15.1";
+		var wgEnableAPI = true;
+		var wgEnableWriteAPI = true;
+		var wgSeparatorTransformTable = [",	.", " 	,"];
+		var wgDigitTransformTable = ["", ""];
+		var wgRestrictionEdit = [];
+		var wgRestrictionMove = [];
+		/*]]>*/</script>
+
+		<script type="text/javascript" src="desastres_arquivos/wikibits.js"><!-- wikibits js --></script>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="desastres_arquivos/ajax.js"></script>
+		<script type="text/javascript" src="desastres_arquivos/index.php"><!-- site js --></script>
+
+
+<script type="text/javascript">
+//<![CDATA[
+
+window.google_analytics_uacct = "UA-248395-1";
+
+
+//]]>
+</script>
+<script src="desastres_arquivos/ga.js" async="" type="text/javascript"></script><script src="desastres_arquivos/script.jsp" charset="ISO-8859-1" type="text/javascript"></script></head><body
+ class="mediawiki ltr ns-0 ns-subject page-Tutoriais_Seguranca_desastres
+ skin-vbmediawiki">
+<script type="text/javascript"><!--
+var _gaq = _gaq || [];
+_gaq.push(
+['_setAccount', 'UA-248395-1'],
+['_setVar', 'usergroup-1-Unregistered / Not Logged In'],
+['_trackPageview']
+);
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+document.documentElement.firstChild.appendChild(ga);
+})();
+//-->
+</script>
+
+  <!--[if lt IE 7]>
+  <div style='border: 1px solid #F7941D; background: #FEEFDA; text-align: center; clear: both; height: 75px; position: relative;'>
+    <div style='position: absolute; right: 3px; top: 3px; font-family: courier new; font-weight: bold;'><a href='#' onclick='javascript:this.parentNode.parentNode.style.display="none"; return false;'><img src='http://www.ie6nomore.com/files/theme/ie6nomore-cornerx.jpg' style='border: none;' alt='Close this notice'/></a></div>
+    <div style='width: 640px; margin: 0 auto; text-align: left; padding: 0; overflow: hidden; color: black;'>
+      <div style='width: 75px; float: left;'><img src='http://www.ie6nomore.com/files/theme/ie6nomore-warning.jpg' alt='AVISO!'/></div>
+      <div style='width: 275px; float: left; font-family: Arial, sans-serif;'>
+        <div style='font-size: 14px; font-weight: bold; margin-top: 12px;'>Você está usando um navegador desatualizado</div>
+        <div style='font-size: 12px; margin-top: 6px; line-height: 12px;'>Para navegar melhor neste site, por favor, atualize seu navegador.</div>
+      </div>
+      <div style='width: 75px; float: left;'><a onclick="pageTracker._trackPageview ('/outgoing/http_pt_br_www_mozilla_com_pt_BR_');" rel='nofollow' href='http://pt-br.www.mozilla.com/pt-BR/' target='_blank'><img src='http://www.ie6nomore.com/files/theme/ie6nomore-firefox.jpg' style='border: none;' alt='Get Firefox 3.5'/></a></div>
+      <div style='width: 75px; float: left;'><a onclick="pageTracker._trackPageview ('/outgoing/http_www_microsoft_com_downloads_details_aspx_FamilyID_341c2ad5_8c3d_4347_8c03_08cdecd8852b_DisplayLang_pt_br');" rel='nofollow' href='http://www.microsoft.com/downloads/details.aspx?FamilyID=341c2ad5-8c3d-4347-8c03-08cdecd8852b&DisplayLang=pt-br' target='_blank'><img src='http://www.ie6nomore.com/files/theme/ie6nomore-ie8.jpg' style='border: none;' alt='Get Internet Explorer 8'/></a></div>
+      <div style='width: 73px; float: left;'><a onclick="pageTracker._trackPageview ('/outgoing/http_www_apple_com_br_safari_download_');" rel='nofollow' href='http://www.apple.com/br/safari/download/' target='_blank'><img src='http://www.ie6nomore.com/files/theme/ie6nomore-safari.jpg' style='border: none;' alt='Get Safari 4'/></a></div>
+      <div style='float: left;'><a onclick="pageTracker._trackPageview ('/outgoing/http_www_google_com_chrome_hl_pt_BR');" rel='nofollow' href='http://www.google.com/chrome?hl=pt-BR' target='_blank'><img src='http://www.ie6nomore.com/files/theme/ie6nomore-chrome.jpg' style='border: none;' alt='Get Google Chrome'/></a></div>
+    </div>
+  </div>
+  <![endif]-->
+
+
+
+<!--[if !IE]-->
+<div id="propaganda">
+<script type="text/javascript">
+  GA_googleFillSlot("160x600");
+</script><script src="desastres_arquivos/ads"></script><div 
+id="google_ads_div_160x600">
+<iframe style="border: 0pt none;" marginheight="0" marginwidth="0" 
+name="google_ads_iframe_160x600" id="google_ads_iframe_160x600" 
+width="160" frameborder="0" height="600" scrolling="no"></iframe></div>
+<script>GA_googleCreateDomIframe('google_ads_div_160x600' ,'160x600');</script>
+</div>
+<!--[endif]-->
+
+<!--[if gte IE 7]>
+<div id="propaganda">
+<script type="text/javascript">
+  GA_googleFillSlot("160x600");
+</script>
+</div>
+<![endif]-->
+
+
+
+<!--[if !IE]-->
+<div id="twitter-follow"><a onclick="pageTracker._trackPageview 
+('/outgoing/http_twitter_com_underlinux');" rel="nofollow" 
+href="http://twitter.com/underlinux" target="_blank"><img title="Siga 
+nosso Twitter" alt="Siga nosso Twitter" 
+src="desastres_arquivos/Twitterfollowme.png"></a></div>
+<div id="rss-follow"><a href="http://feeds.under-linux.org/underlinux" 
+target="_blank"><img title="Assine nooses feeds" alt="Assine nooses 
+feeds" src="desastres_arquivos/Subscriberss.png"></a></div>
+<div id="facebook-follow"><a onclick="pageTracker._trackPageview 
+('/outgoing/http_www_facebook_com_underlinux');" rel="nofollow" 
+href="http://www.facebook.com/underlinux" target="_blank"><img 
+title="Add in Facebook" alt="Add in Facebook" 
+src="desastres_arquivos/Facebook.png"></a></div>
+<!--[endif]-->
+
+<!--[if gte IE 7]>
+<div id='twitter-follow'><a onclick="pageTracker._trackPageview ('/outgoing/http_twitter_com_underlinux');" rel='nofollow' href='http://twitter.com/underlinux' target='_blank'><img alt='Siga nosso Twitter' src='http://under-linux.org/wiki/images/9/95/Twitterfollowme.png'/></a></div>
+<div id='rss-follow'><a href='http://feeds.under-linux.org/underlinux' target='_blank'><img alt='Assine nooses feeds' src='http://under-linux.org/wiki/images/f/ff/Subscriberss.png'/></a></div>
+<div id='facebook-follow'><a onclick="pageTracker._trackPageview ('/outgoing/http_www_facebook_com_underlinux');" rel='nofollow' href='http://www.facebook.com/underlinux' target='_blank'><img alt='Add in Facebook' src='http://under-linux.org/wiki/images/5/55/Facebook.png'/></a></div>
+<![endif]>-->
+
+
+
+<div class="above_body"> <!-- closing tag is in template navbar -->
+<div id="header" class="floatcontainer doc_header">
+	 
+	<div><a name="top" href="http://under-linux.org/" class="logo-image"><img
+ title="Under-Linux.org" src="desastres_arquivos/Newunderlogo2.png" 
+alt="Under-Linux.org"></a></div>
+	<div id="toplinks" class="toplinks">
+		
+			<ul class="nouser">
+			
+				<li><a href="http://under-linux.org/register.php" rel="nofollow">Registro</a></li>
+			
+				<li><a rel="help" href="http://under-linux.org/faq.php">Ajuda</a></li>
+				<li>
+			<script type="text/javascript" src="desastres_arquivos/vbulletin_md5.js"></script>
+			<form id="navbar_loginform" 
+action="http://under-linux.org/login.php?do=login" method="post" 
+onsubmit="md5hash(vb_login_password, vb_login_md5password, 
+vb_login_md5password_utf, 0)">
+				<fieldset id="logindetails" class="logindetails">
+					<div>
+						<div>
+					<input style="color: rgb(130, 130, 130);" class="textbox" 
+name="vb_login_username" id="navbar_username" size="10" accesskey="u" 
+tabindex="101" value="Nome do Usuário" type="text">
+					<input class="textbox default-value" tabindex="102" 
+name="vb_login_password_hint" id="navbar_password_hint" size="10" 
+value="Senha" style="display: inline;" type="text">
+					<input style="display: none;" class="textbox" tabindex="102" 
+name="vb_login_password" id="navbar_password" size="10" type="password">
+					<input class="loginbutton" tabindex="104" value="Conectar" 
+title="Digite seu nome de usuário e senha nas caixas apropriadas para 
+conectar, ou clique no botão 'Registro' para criar um perfil para você."
+ accesskey="s" type="submit">
+						</div>
+					</div>
+				</fieldset>
+				<div id="remember" class="remember">
+					<label for="cb_cookieuser_navbar"><input name="cookieuser" 
+value="1" id="cb_cookieuser_navbar" class="cb_cookieuser_navbar" 
+accesskey="c" tabindex="103" type="checkbox"> Lembrar de mim?</label>
+				</div>
+
+				<input name="s" value="7d24e0032ce155351d81be716c208d32" 
+type="hidden">
+				<input name="securitytoken" value="guest" type="hidden">
+				<input name="do" value="login" type="hidden">
+				<input name="vb_login_md5password" type="hidden">
+				<input name="vb_login_md5password_utf" type="hidden">
+			</form>
+			<script type="text/javascript">
+			YAHOO.util.Dom.setStyle('navbar_password_hint', "display", "inline");
+			YAHOO.util.Dom.setStyle('navbar_password', "display", "none");
+			YAHOO.util.Dom.setStyle('navbar_username', "color", "#828282");
+			vB_XHTML_Ready.subscribe(function()
+			{
+			//
+				YAHOO.util.Event.on('navbar_username', "focus", navbar_username_focus);
+				YAHOO.util.Event.on('navbar_username', "blur", navbar_username_blur);
+				YAHOO.util.Event.on('navbar_password_hint', "focus", navbar_password_hint);
+				YAHOO.util.Event.on('navbar_password', "blur", navbar_password);
+			});
+			
+			function navbar_username_focus(e)
+			{
+			//
+				var textbox = YAHOO.util.Event.getTarget(e);
+				if (textbox.value == 'Nome do Usuário')
+				{
+				//
+					textbox.value='';
+					textbox.style.color='black';
+				}
+			}
+
+			function navbar_username_blur(e)
+			{
+			//
+				var textbox = YAHOO.util.Event.getTarget(e);
+				if (textbox.value == '')
+				{
+				//
+					textbox.value='Nome do Usuário';
+					textbox.style.color='#828282';
+				}
+			}
+			
+			function navbar_password_hint(e)
+			{
+			//
+				var textbox = YAHOO.util.Event.getTarget(e);
+				
+				YAHOO.util.Dom.setStyle('navbar_password_hint', "display", "none");
+				YAHOO.util.Dom.setStyle('navbar_password', "display", "inline");
+				YAHOO.util.Dom.get('navbar_password').focus();
+			}
+
+			function navbar_password(e)
+			{
+			//
+				var textbox = YAHOO.util.Event.getTarget(e);
+				
+				if (textbox.value == '')
+				{
+					YAHOO.util.Dom.setStyle('navbar_password_hint', "display", "inline");
+					YAHOO.util.Dom.setStyle('navbar_password', "display", "none");
+				}
+			}
+			</script>
+				</li>
+				
+			</ul>
+		
+	</div>
+	<div class="ad_global_header">
+		 
+		 
+	</div>
+	<hr>
+	 
+</div> 
+<div id="navbar" class="navbar">
+
+	<ul id="navtabs" class="navtabs floatcontainer">
+		
+	<li>
+	
+		<a class="navtab" href="http://under-linux.org/">Home</a>
+	
+	</li>
+ 
+		
+			<li><a class="navtab" href="http://under-linux.org/forums/">Fórum</a></li>
+		
+		
+	<li><a class="navtab" href="http://under-linux.org/blogs/">Blogs</a></li>
+ 
+
+<li class="selected">
+	<a class="navtab" href="http://under-linux.org/wiki">Wiki</a>
+	<ul class="floatcontainer">
+
+	</ul>
+</li>
+
+		 
+		
+			<li><a class="navtab" 
+href="http://under-linux.org/search.php?do=getdaily&amp;contenttype=vBForum_Post"
+ accesskey="2">Novidades</a></li>
+		
+		<li id="yui-gen0" class="popupmenu"><a id="yui-gen2" 
+href="javascript://" class="popupctrl navtab" style="background: 
+url(&quot;images/misc/arrow.png&quot;) no-repeat scroll right center 
+transparent; padding-right: 15px;">Comunidade</a><ul id="yui-gen1" 
+class="popupbody"><li style="text-indent: 0px;"><a style="color: rgb(0, 
+0, 0);" href="http://under-linux.org/calendar.php" target="_self">Calendário</a></li><li
+ style="text-indent: 0px;"><a style="color: rgb(0, 0, 0);" 
+href="http://under-linux.org/members/albums/" target="_self">Fotos</a></li><li
+ style="text-indent: 0px;"><a style="color: rgb(0, 0, 0);" 
+href="http://under-linux.org/groups/" target="_self">Grupos</a></li></ul></li><li
+ id="yui-gen3" class="popupmenu"><a id="yui-gen5" href="javascript://" 
+class="popupctrl navtab" style="background: 
+url(&quot;images/misc/arrow.png&quot;) no-repeat scroll right center 
+transparent; padding-right: 15px;">UnderLinux</a><ul id="yui-gen4" 
+class="popupbody"><li style="text-indent: 0px;"><a style="color: rgb(0, 
+0, 0);" href="http://under-linux.org/wiki/Termos" target="_self">Termos 
+de Uso</a></li><li style="text-indent: 0px;"><a style="color: rgb(0, 0, 
+0);" href="http://under-linux.org/wiki/UnderLinux_Wiki:Sobre" 
+target="_self">Sobre</a></li><li style="text-indent: 0px;"><a 
+style="color: rgb(0, 0, 0);" 
+href="http://under-linux.org/wiki/UnderLinux_Wiki:FAQ" target="_self">FAQ</a></li></ul></li>
+	</ul>
+
+	
+	<div id="globalsearch" class="globalsearch">
+		<form action="/busca" id="cse-search-box">
+    <input name="cx" value="partner-pub-5231037339223764:3536agwsksw" 
+type="hidden">
+    <input name="cof" value="FORID:10" type="hidden">
+    <input name="ie" value="ISO-8859-1" type="hidden">
+			<span class="textboxcontainer"><span><input style="border: 1px solid 
+rgb(126, 157, 185); padding: 2px; background: 
+url(&quot;http://www.google.com/cse/intl/pt/images/google_custom_search_watermark.gif&quot;)
+ no-repeat scroll left center rgb(255, 255, 255);" name="q" 
+class="textbox" tabindex="99" type="text"></span></span>
+			<span class="buttoncontainer"><span><input class="searchbutton" 
+src="desastres_arquivos/search.png" name="sa" 
+onclick="document.getElementById('navbar_search').submit;" 
+tabindex="100" type="image"></span></span>
+		<input value="under-linux.org/wiki/Tutoriais/Seguranca/desastres" 
+name="siteurl" type="hidden"></form>
+<script type="text/javascript" src="desastres_arquivos/brand.htm"></script>
+		<ul class="navbar_advanced_search">
+			<li><a href="http://under-linux.org/search.php" accesskey="4">Pesquisa
+ Avançada</a></li>
+		</ul>
+	</div>
+	
+
+</div>
+</div><!-- closing div for above_body -->
+
+<div style="border: 0px none; margin: 0px; padding-bottom: 4px; 
+text-align: right; color: rgb(144, 144, 144); font-size: 7pt;" 
+align="right"><b>Visite também</b>:
+<a onclick="pageTracker._trackPageview ('/outgoing/http_br_linux_org');"
+ rel="nofollow" href="http://br-linux.org/" target="_top">BR-Linux</a>&nbsp;·&nbsp;
+<a onclick="pageTracker._trackPageview 
+('/outgoing/http_www_vivaolinux_com_br');" rel="nofollow" 
+href="http://www.vivaolinux.com.br/" target="_parent">VivaOLinux</a>&nbsp;·&nbsp;
+<a onclick="pageTracker._trackPageview 
+('/outgoing/http_www_linuxsecurity_com_br');" rel="nofollow" 
+href="http://www.linuxsecurity.com.br/" target="_parent">LinuxSecurity</a>&nbsp;·&nbsp;
+<a onclick="pageTracker._trackPageview 
+('/outgoing/http_www_dicas_l_com_br');" rel="nofollow" 
+href="http://www.dicas-l.com.br/" target="_parent">Dicas-L</a>&nbsp;·&nbsp;
+<a onclick="pageTracker._trackPageview 
+('/outgoing/http_www_noticiaslinux_com_br');" rel="nofollow" 
+href="http://www.noticiaslinux.com.br/" target="_parent">NoticiasLinux</a>&nbsp;·&nbsp;
+<a onclick="pageTracker._trackPageview 
+('/outgoing/http_www_softwarelivre_org');" rel="nofollow" 
+href="http://www.softwarelivre.org/" target="_parent">SoftwareLivre.org</a>&nbsp;·&nbsp;
+<a onclick="pageTracker._trackPageview 
+('/outgoing/http_br_linux_org_comunidade_');" rel="nofollow" 
+href="http://br-linux.org/comunidade/" target="_parent">[mais]</a>
+</div>
+
+<div class="body_wrapper">
+<div id="breadcrumb" class="breadcrumb">
+	<ul class="floatcontainer">
+		<li class="navbithome"><a href="http://under-linux.org/index.php" 
+accesskey="1"><img title="Home" src="desastres_arquivos/navbit-home.png"
+ alt="Home"></a></li>
+
+		
+	<li class="navbit"><a 
+href="http://under-linux.org/wiki/P%C3%A1gina_principal">Wiki</a></li>
+ 
+		
+	<li class="navbit lastnavbit"><span>Tutoriais/Seguranca/desastres</span></li>
+ 
+	</ul>
+	<hr>
+</div>
+
+ 
+ 
+
+
+	<form action="http://under-linux.org/profile.php?do=dismissnotice" 
+method="post" id="notices" class="notices">
+		<input name="do" value="dismissnotice" type="hidden">
+		<input name="s" value="s=7d24e0032ce155351d81be716c208d32&amp;" 
+type="hidden">
+		<input name="securitytoken" value="guest" type="hidden">
+		<input id="dismiss_notice_hidden" name="dismiss_noticeid" value="" 
+type="hidden">
+		<input name="url" value="" type="hidden">
+		<div id="vbseo_vhtml_0"><ol>			<li class="restore" 
+id="navbar_notice_1004">		Bem vindo ao Portal Under-Linux! O maior 
+Portal sobre Linux e Tecnologia da Informação do Brasil! Você ainda não é
+  <a href="http://under-linux.org/register.php" target="_blank"><b>registrado</b></a>?
+ Pois não perca seu tempo e <a 
+href="http://under-linux.org/register.php" target="_blank"><b>crie já 
+seu usuário</b></a>. É rápido e fácil! E você terá muitas vantagens: 
+Além de participar do maior fórum de tecnologia do país, ainda terá seu 
+próprio Blog para escrever sobre os seus temas favoritos, e criar uma 
+verdadeira comunidade à sua volta. E você ainda poderá crescer (e 
+enriquecer) profissionalmente, interagindo com os milhares de usuários 
+de nosso Portal, profissionais de TI e diversas empresas da área de 
+tecnologia que estão sempre online no Under-Linux.Org.</li> 		</ol></div>
+	</form>
+ 
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+				<h1 id="firstHeading" class="firstHeading">Tutoriais/Seguranca/desastres</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">De UnderLinux Wiki</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Ir para: <a href="#column-one">navegação</a>,
+ <a href="#searchInput">pesquisa</a></div>			<!-- start content -->
+			<a name="Protegendo_Arquivos_Contras_Desastres" 
+id="Protegendo_Arquivos_Contras_Desastres"></a><h1> <span 
+class="mw-headline"><b>Protegendo Arquivos Contras Desastres</b></span></h1>
+<p>Muita gente utiliza o linux como root, ao invés de criar um usuário 
+comum, muitas vezes isso acaba causando acidentes, como por exemplo, 
+remover arquivos por engando. Mas existe uma maneira que pouca gente 
+conhece de proteger esses arquivos do próprio root. Sim é verdade, e 
+você ainda não precisa instalar nenhum patch, recompilar o kernel ou 
+qualquer outra coisa, é uma simples ferramenta que funciona mais ou 
+menos como o chmod. Ela é o chattr (Change Attributes). Esses atributos 
+são especiais, você não consegue visualizalos somente com o ls, para ver
+ os atributos dos arquivos é necessário utilizar o lsattr. Vamos agora 
+ver algumas das opções do chattr, e o que cada uma delas faz:
+</p>
+<ul><li> A - Os arquivos que tiverem essa opção, o seu registro da data 
+de acesso não é alterado.
+</li><li> a - Com essa opção você pode apenas adicionar conteúdo ao 
+arquivo. (Apenas o root pode utilizar)
+</li><li> c - O arquivo que tiver essa opção é automaticamente 
+compactado pelo no disco pelo kernel. A leitura do arquivo irá mostrar o
+ conteúdo normalmente. Quando forem feitas alterações, elas são 
+comprimidas antes de serem gravadas no disco.
+</li><li> D - Quando um diretório com essa opção é alterado, as 
+modificações são escritas sincronizadas no disco. Isso é equivalente a 
+opção de montagem dirsync.
+</li><li> d - Quando o comando dump for utilizado o arquivo que contiver
+ essa opção não será feito o backup.
+</li><li> i - O arquivo que contiver essa opção não pode ser alterado, 
+apagado ou renomeado, também não será possível criar links para este 
+arquivo. (Apenas o root pode utilizar)
+</li><li> s - Quando um arquivo com essa opção é deletado, seus blocos 
+serão zerados e gravados novamente no disco.
+</li><li> S - Quando um arquivo com essa opção é alterado, as 
+modificações são gravadas sincronizadas no disco, isto é equivalente  a 
+opção de montagem sync.
+</li><li> u - Quando um arquivo com essa opção é removido, seu conteúdo é
+ salvo. Isto permite o usuário a restaurar seu conteúdo.
+</li></ul>
+<p>Como vocês viram existem uma série de opções muito úteis, as que eu 
+mais uso sao a "i" e "u".
+Aplicar esses atributos é tão simples como um chmod:
+</p><p>Como exemplo vou "travar" o lilo.conf, primeiro vamos ver como o 
+lilo.conf é originalmente:
+</p>
+<pre>lsattr /etc/lilo.conf
+------------- /etc/lilo.conf
+</pre>
+<p>Agora vamos aplicar a opção i
+</p>
+<pre>chattr +i /etc/lilo.conf
+lsattr /etc/lilo.conf
+----i-------- /mnt/hda3/etc/lilo.conf
+rm /etc/lilo.conf
+rm: remove write-protected regular file `/etc/lilo.conf'? y
+rm: cannot remove `teste': Operation not permitted
+</pre>
+<p>Viram&nbsp;:) nem o root pode remover o arquivo com essa opção
+</p><p>Resumindo, vc utiliza o chattr assim:
+Ativar:
+</p>
+<pre>chattr +OPCAO arquivo
+</pre>
+<p>Desativar:
+</p>
+<pre>chattr -OPCAO arquivo
+</pre>
+<p>ANTEÇÃO Antes de tentar remover algum arquivo importante, teste com 
+um arquivo qualquer (o chattr não funciona em qualquer filesystem)
+By: Rafael M. Capovilla - 1c3_m4n - under NOSPAM underlinux com br
+</p>
+<!-- 
+NewPP limit report
+Preprocessor node count: 2/1000000
+Post-expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key underwiki:pcache:idhash:1539-0!1!0!!pt-br!2!edit=0 and timestamp 20100412163124 -->
+<div class="printfooter">
+Obtido em "<a 
+href="http://under-linux.org/wiki/Tutoriais/Seguranca/desastres">http://under-linux.org/wiki/Tutoriais/Seguranca/desastres</a>"</div>
+						<!-- end content -->
+						<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Acessos</h5>
+		<div class="pBody">
+			<ul>
+	
+				 <li id="ca-nstab-main" class="selected"><a 
+href="http://under-linux.org/wiki/Tutoriais/Seguranca/desastres" 
+title="Ver a página de conteúdo [alt-shift-c]" accesskey="c">Página</a></li>
+				 <li id="ca-talk" class="new"><a rel="nofollow" 
+href="http://under-linux.org/wiki/index.php?title=Discuss%C3%A3o:Tutoriais/Seguranca/desastres&amp;action=edit&amp;redlink=1"
+ title="Discussão sobre o conteúdo da página [alt-shift-t]" 
+accesskey="t">Discussão</a></li>
+				 <li id="ca-viewsource"><a rel="nofollow" 
+href="http://under-linux.org/wiki/index.php?title=Tutoriais/Seguranca/desastres&amp;action=edit"
+ title="Esta página está protegida; você pode exibir seu código, no 
+entanto. [alt-shift-e]" accesskey="e">Ver código-fonte</a></li>
+				 <li id="ca-history"><a rel="nofollow" 
+href="http://under-linux.org/wiki/index.php?title=Tutoriais/Seguranca/desastres&amp;action=history"
+ title="Edições anteriores desta página. [alt-shift-h]" accesskey="h">História</a></li>
+			</ul>
+		</div>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+	<div class="generated-sidebar portlet" id="p-navigation">
+		<h5>Navegação</h5>
+		<div class="pBody">
+			<ul>
+				<li id="n-mainpage-description"><a 
+href="http://under-linux.org/wiki/P%C3%A1gina_principal">Página 
+principal</a></li>
+				<li id="n-portal"><a 
+href="http://under-linux.org/wiki/UnderLinux_Wiki:Portal_comunit%C3%A1rio"
+ title="Sobre o projeto">Portal comunitário</a></li>
+				<li id="n-currentevents"><a 
+href="http://under-linux.org/wiki/UnderLinux_Wiki:Eventos_atuais" 
+title="Informação temática sobre eventos atuais">Eventos atuais</a></li>
+				<li id="n-recentchanges"><a 
+href="http://under-linux.org/wiki/Especial:Mudan%C3%A7as_recentes" 
+title="A lista de mudanças recentes nesta wiki. [alt-shift-r]" 
+accesskey="r">Mudanças recentes</a></li>
+				<li id="n-randompage"><a 
+href="http://under-linux.org/wiki/Especial:Aleat%C3%B3ria" 
+title="Carregar página aleatória [alt-shift-x]" accesskey="x">Página 
+aleatória</a></li>
+				<li id="n-Ajuda"><a href="http://under-linux.org/faq#Wiki">Ajuda</a></li>
+				<li id="n-Padrao"><a href="http://under-linux.org/wiki/Padrao">Padrao</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Pesquisa</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/index.php" id="searchform"><div>
+				<input name="title" value="Especial:Search" type="hidden">
+				<input id="searchInput" name="search" title="Pesquisar nesta wiki 
+[alt-shift-f]" accesskey="f" type="text">
+				<input name="go" class="searchButton" id="searchGoButton" value="Ir"
+ title="Ir a uma página com este exato nome, caso exista" type="submit">&nbsp;
+
+				<input name="fulltext" class="searchButton" id="mw-searchButton" 
+value="Pesquisa" title="Procurar por páginas contendo este texto" 
+type="submit">
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Ferramentas</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a 
+href="http://under-linux.org/wiki/Especial:P%C3%A1ginas_afluentes/Tutoriais/Seguranca/desastres"
+ title="Lista de todas as páginas que ligam-se a esta [alt-shift-j]" 
+accesskey="j">Páginas afluentes</a></li>
+				<li id="t-recentchangeslinked"><a 
+href="http://under-linux.org/wiki/Especial:Novidades_relacionadas/Tutoriais/Seguranca/desastres"
+ title="Mudanças recentes em páginas relacionadas a esta [alt-shift-k]" 
+accesskey="k">Alterações relacionadas</a></li>
+<li id="t-specialpages"><a 
+href="http://under-linux.org/wiki/Especial:P%C3%A1ginas_especiais" 
+title="Lista de páginas especiais [alt-shift-q]" accesskey="q">Páginas 
+especiais</a></li>
+				<li id="t-print"><a 
+href="http://under-linux.org/wiki/index.php?title=Tutoriais/Seguranca/desastres&amp;printable=yes&amp;useskin=monobook"
+ rel="alternate" title="Versão para impressão desta página 
+[alt-shift-p]" accesskey="p">Versão para impressão</a></li>				<li 
+id="t-permalink"><a rel="nofollow" 
+href="http://under-linux.org/wiki/index.php?title=Tutoriais/Seguranca/desastres&amp;oldid=2847"
+ title="Link permanente para esta versão desta página">Link permanente</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a onclick="pageTracker._trackPageview 
+('/outgoing/http_www_mediawiki_org_');" rel="nofollow" 
+href="http://www.mediawiki.org/"><img title="Powered by MediaWiki" 
+src="desastres_arquivos/poweredby_mediawiki_88x31.png" alt="Powered by 
+MediaWiki"></a></div>
+			<ul id="f-list">
+					<li id="lastmod"> Esta página foi modificada pela última vez às 
+16h06min, 12 de fevereiro de 2006.</li>
+					<li id="privacy"><a 
+href="http://under-linux.org/wiki/UnderLinux_Wiki:Pol%C3%ADtica_de_privacidade"
+ title="UnderLinux Wiki:Política de privacidade">Política de privacidade</a></li>
+					<li id="about"><a 
+href="http://under-linux.org/wiki/UnderLinux_Wiki:Sobre" 
+title="UnderLinux Wiki:Sobre">Sobre</a></li>
+					<li id="disclaimer"><a 
+href="http://under-linux.org/wiki/UnderLinux_Wiki:Aviso_geral" 
+title="UnderLinux Wiki:Aviso geral">Alerta de Conteúdo</a></li>
+			</ul>
+		</div>
+</div>
+
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+<!-- Served in 0.055 secs. -->
+ 
+
+<center>
+<script type="text/javascript">
+  GA_googleFillSlot("728x90-rodape-admanager");
+</script><script src="desastres_arquivos/ads_002"></script><div 
+id="google_ads_div_728x90-rodape-admanager">
+<iframe style="border: 0pt none;" marginheight="0" marginwidth="0" 
+name="google_ads_iframe_728x90-rodape-admanager" 
+id="google_ads_iframe_728x90-rodape-admanager" width="728" 
+frameborder="0" height="90" scrolling="no"></iframe></div>
+<script>GA_googleCreateDomIframe('google_ads_div_728x90-rodape-admanager' ,'728x90-rodape-admanager');</script>
+</center>
+ 
+<div id="footer" class="floatcontainer footer">
+
+	<form action="http://under-linux.org/forums/" method="get" 
+id="footer_select" class="footer_select">
+
+			
+		
+			<select name="styleid" onchange="switch_id(this, 'style')">
+				<optgroup label="Seletor Rápido de Estilos">
+					<option value="4" class="" selected="selected">-- vB4 Default Style</option>
+ 
+				</optgroup>
+			</select>	
+		
+		
+		
+			<select name="langid" onchange="switch_id(this, 'lang')">
+				<optgroup label="Seletor Rápido de Idioma">
+					<option value="1" class="">-- English (US)</option> <option 
+value="8" class="" selected="selected">-- Português do Brasil (PT-BR)</option>
+ 
+				</optgroup>
+			</select>
+		
+	</form>
+
+	<ul id="footer_links" class="footer_links">
+		<li><a href="http://under-linux.org/faleconosco" rel="nofollow" 
+accesskey="9">Fale Conosco</a></li>
+		<li><a href="http://under-linux.org/">Under-Linux.Org</a></li>
+		
+		
+		
+		
+		
+		
+		<li><a 
+href="http://under-linux.org/wiki/Tutoriais/Seguranca/desastres#top" 
+onclick="document.location.hash='top'; return false;">Topo</a></li>
+	</ul>
+	
+	
+	
+	
+	<script type="text/javascript">
+	<!--
+		// Main vBulletin Javascript Initialization
+		vBulletin_init();
+	//-->
+	</script>
+        
+</div>
+</div> <!-- closing div for body_wrapper -->
+
+<div class="below_body">
+<div id="footer_time" class="shade footer_time">Todos horários são GMT  
+-2. Hora atual: <span class="time">23:04</span>.</div>
+
+<div id="footer_copyright" class="shade footer_copyright">
+	<!-- Do not remove this copyright notice -->
+	Powered by vBulletin® <br>Copyright ©2000 - 2010, Jelsoft Enterprises 
+Ltd.
+	
+<br><!-- google_ad_section_start(weight=ignore) -->SEO by vBSEO 3.5.0 
+RC3 ©2010, Crawlability, Inc.<!-- google_ad_section_end --><!-- Do not remove this copyright notice -->
+	
+</div>
+<div id="footer_morecopyright" class="shade footer_morecopyright">
+	<!-- Do not remove cronimage or your scheduled tasks will cease to function -->
+	
+	<!-- Do not remove cronimage or your scheduled tasks will cease to function -->
+	
+</div>
+
+  
+</div>
+
+
+
+
+
+
+<script src="desastres_arquivos/show.jsp"></script>
+ 
+
+<script type="text/javascript">
+//<![CDATA[
+
+var vbseo_jshtml = new Array();
+vbseo_jshtml[0] = "<ol>			<li class=\"restore\" id=\"navbar_notice_1004\">		Bem vindo ao Portal Under-Linux! O maior Portal sobre Linux e Tecnologia da Informação do Brasil! Você ainda não é  <a href=\"http://under-linux.org/register.php\" target=\"_blank\"><b>registrado</b></a>? Pois não perca seu tempo e <a href=\"http://under-linux.org/register.php\" target=\"_blank\"><b>crie já seu usuário</b></a>. É rápido e fácil! E você terá muitas vantagens: Além de participar do maior fórum de tecnologia do país, ainda terá seu próprio Blog para escrever sobre os seus temas favoritos, e criar uma verdadeira comunidade à sua volta. E você ainda poderá crescer (e enriquecer) profissionalmente, interagindo com os milhares de usuários de nosso Portal, profissionais de TI e diversas empresas da área de tecnologia que estão sempre online no Under-Linux.Org.</li> 		</ol>";
+
+for(var vi=0;vi<vbseo_jshtml.length;vi++)
+if(fetch_object("vbseo_vhtml_"+vi))fetch_object("vbseo_vhtml_"+vi).innerHTML = vbseo_jshtml[vi];
+
+//]]>
+</script>
+</body></html>

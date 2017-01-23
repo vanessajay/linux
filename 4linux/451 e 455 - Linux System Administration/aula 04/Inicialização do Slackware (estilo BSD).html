@@ -1,0 +1,836 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+
+	<title>Piter Punk's Articles - Slackinit</title>
+</head><body>
+<center>
+<table valign="middle" width="750" border="0" cellpadding="2" cellspacing="0">
+<tbody><tr>
+	<td colspan="3" bgcolor="#000080">
+	<center><b><font size="+3" color="#ffffff">
+	Piter Punk's HomePage - Artigos
+	</font></b></center>
+	</td>
+</tr>
+<tr>
+	<td width="10" bgcolor="#000080">
+	&nbsp;
+	</td>
+	<td width="730" bgcolor="#ffffff">
+	<table>
+		<tbody><tr><td>
+	<a href="http://piterpunk.info02.com.br/english/Slackinit_en.html">
+	<img src="Inicializa%C3%A7%C3%A3o%20do%20Slackware%20%28estilo%20BSD%29_arquivos/englishflag.gif" alt="English version" align="right">
+	</a>
+		<br>	
+<center>
+	<font size="+3"><b>
+Inicialização do Slackware<br>
+	</b></font>
+<br>
+	<font size="-1">
+Piter Punk<br>
+<br>
+Existe muita documentação a respeito do método de inicialização System
+V, utilizada por vários *nix comerciais e pelos RedHat-like (Mandrake,
+Conectiva, etc...). Já o Slackware, utiliza como método de inicialização
+o estilo BSD, muito mais compatível com a filosofia de manter tudo
+simples dominante no Slack...
+	</font>
+</center>
+<h2>1. Introdução</h2>
+
+<p>Quem já utilizou vários Linux já percebeu, o boot do Slackware é mais
+rápido. E o grande responsável por isto é o método de inicialização
+dele. Ao contrário dos sistemas baseados em SystemV, que carregam
+dezenas de scripts para cada serviço a ser utilizado, o Slackware
+carrega apenas uns poucos scripts, mais rápidos e eficientes...
+
+</p><p>Todos estes scripts estão hospedados sob o /etc/rc.d, cada um deles
+responsável por uma das etapas da inicialização:
+</p><ul>
+	<li>rc.S - Este é o script de Start do Slackware;
+	</li><li>rc.K - Carregado quando entramos no runlevel 1, para manutenção do sistema;
+	</li><li>rc.M - Modo multiusuário, utilizado nos demais runlevels;
+	</li><li>rc.4 - Aciona o login gráfico (runlevel 4);
+	</li><li>rc.0 e rc.6 - Respectivamente desliga e reboota o computador.
+	</li><li>rc.sysvinit - Utilizado quando existem scripts no padrão
+	SystemV para serem iniciados.
+</li></ul>
+<p>Outros scripts configuram a própria máquina para que tudo possa funcionar
+bem, graças a eles são configurados módulos e iniciados alguns daemons 
+essenciais:
+</p><ul>
+	<li>rc.udev - Carrega o daemon udevd, responsável pela criação
+	dinâmica de dispositivos no kernel 2.6.
+	</li><li>rc.modules - Carrega os módulos do kernel;
+	</li><li>rc.pcmcia - Suporte a dispositivos pcmcia (muito utilizados em 
+	notebooks);
+	</li><li>rc.serial - Configura as portas seriais da máquina;
+	</li><li>rc.hotplug - Carrega módulos do kernel dinamicamente, a medida
+	que são necessários.
+	</li><li>rc.alsa - Configura o volume do som e carrega alguns módulos
+	</li><li>rc.acpid - Sistema de gerenciamento de energia.
+	</li><li>rc.font - Carrega a fonte de console a ser utilizada;
+	</li><li>rc.gpm - Carrega o gpm, daemon que controla o mouse no modo texto e;
+	</li><li>rc.keymap - Ativa o mapa de teclado apropriado
+</li></ul>
+<p>Em uma categoria intermediária estão os scripts que carregam as
+configurações de rede e roteamento, não chegam a ser scripts de serviços,
+mas também não se pode chamar de configuração de hardware (principalmente
+porque são vários e vários deles para difentes partes da configuração
+de rede).
+</p><ul>
+	<li>rc.netdevice - Carrega o módulo para a placa de rede correta.
+	</li><li>rc.inet1 - Configura IP, Gateway, etc... 
+	</li><li>rc.inet1.conf - Armazena as configurações de até quatro
+	placas de rede como IP, Gateway, etc. Utilizado pelo rc.inet1
+	</li><li>rc.wireless - Configura uma placa de rede wireless, é chamado
+	pelo rc.inet1.
+	</li><li>rc.wireless.conf - Armazena as configurações utilizadas pelo
+	rc.wireless
+	</li><li>rc.ip_forward - Habilita ou desabilita o IP Forwarding
+	</li><li>rc.firewall - Regras de Firewall. Não existe por default,
+	apesar de haver uma chamada para ele.
+	</li><li>rc.inet2 - Carrega os diversos serviços de rede.
+</li></ul>
+<p>Por fim, os scripts de serviço. Os nomes destes scripts normalmente são
+relativos aos serviços iniciados, por exemplo rc.lala seria o responsável pela
+inicializacao do lala.
+</p><ul>
+	<li>rc.atalk - Adiciona suporte a redes AppleTalk (da Apple, dã...)
+	</li><li>rc.bind - Carrega o named, um dos servidores de DNS mais conhecidos
+	</li><li>rc.cups - Sistema de impressão no mínimo exótico com configuração
+	pela web.
+	</li><li>rc.dnsmasq - Servidor de DNS para redes "mascaradas".
+	</li><li>rc.httpd - Inicia o apache, servidor HTTP (para quem não sabe,
+	HTTP = web).
+	</li><li>rc.lprng - Outro sistema de impressão. É o default do slackware.
+	</li><li>rc.mysqld - Executa o MySQL, banco de dados muito popular.
+	</li><li>rc.nfsd - Aciona o servidor de NFS, o sistema de arquivos de
+	rede "padrão" do mundo UNIX.
+	</li><li>rc.portmap - Necessário para o NFS, tanto para utilizar como para
+	atuar como servidor
+	</li><li>rc.samba - Adiciona o suporte a redes CIFS (vulgo SMB, também 
+	conhecidas como SAMBA).
+	</li><li>rc.sendmail - Carrega o sendmail, apenas
+	necessário se você pretende montar um servidor de e-mails.
+	</li><li>rc.sshd - Servidor SSH, acesso a uma shell remota de maneira
+	segura.
+	</li><li>rc.syslog - Logs do sistema, carrega o klogd e o syslogd
+	</li><li>rc.yp - Inicia o NIS, uma maneira simples de compartilhar
+	senhas e configurações pela rede.
+</li></ul>
+<p>Estes scripts de serviço costumam aceitar a sintaxe "start|stop|restart"
+para, respectivamente, iniciar|parar|reiniciar o serviço em questão. Para
+isso, digite, por exemplo:
+</p><pre>	# /etc/rc.d/rc.sendmail start
+</pre>
+<p>E isso irá ativar o sendmail. O stop iria pará-lo e o restart reiniciar.
+
+</p><p>Por último, carregamos o rc.local, que contém as configurações próprias
+da máquina local. Algumas pessoas colocam aqui suas regras de firewall
+(outras preferem colocar em um rc.firewall), outras usam o rc.local
+para carregar programas como monitores de rede, etc...
+
+</p><p>Nas próximas seções, iremos descrever em detalhes o que fazem cada
+um destes scripts. Nos acompanhe -;)
+
+</p><h2>2. Os básicos...</h2>
+
+<p>Bom, considerei como básicos os scripts responsáveis por cada runlevel
+(0,1,2,3,4,5,6), lembrando que os níveis 2 e 5 na realidade carregam
+o runlevel 3. 
+
+</p><h3>2.1. rc.S</h3>
+
+<p>O rc.S faz as primeiras configurações da máquina, como ativar a swap
+e checar os sistemas de arquivos. É um arquivo cheio de comentários,
+sendo facilmente modificável (embora não seja tão aconselhável fazer
+estas modificações). Para deixar sua box rápida desde o boot, esse é 
+o melhor lugar para colocar as suas configurações do hdparm, mas antes
+garanta que o seu /usr/sbin esteja disponível, já que ele teoricamente
+pode estar em uma partição NFS e montada via rede.
+
+</p><p>A primeira coisa que o rc.S faz é setar o PATH e montar alguns
+sistemas de arquivos essenciais: o /proc e, no caso do kernel 2.6 o
+/sys e o /udev. Para que estes dois últimos sistemas sejam iniciados,
+é necessário que o hotplug esteja ativado e, no caso do udev, que o
+rc.udev esteja com permissão de execução.
+
+</p><p>Logo após, é ativado as partições de swap, e a partição com a
+raiz do sistema é checada. Você pode desabilitar essa checagem (e a
+de outras partições) utilizando o -f quando o comando shutdown for
+executado (exemplo: ao invés de "shutdown -h now", use "shutdown
+-hf now"). Se a checagem fracassar, será solicitada a senha de root
+para que seja feita a checagem e correção manual.
+
+</p><p>O próximo passo é remontar a partição raiz para leitura e escrita
+e remontar o /proc e /sys. Em seguida, é atualizado o relógio do
+sistema (copiando o valor que está na CMOS para o sistema).
+
+</p><p>Se existir um /etc/isapnp.conf, os dispositivos ISA PnP que estiverem
+no sistema serão configurados e preparados para que seus módulos sejam
+carregados pelo rc.modules (que é o próximo script a ser executado,
+carregando vários módulos).
+
+</p><p>As configurações do sistema que estiverem no /etc/sysctl.conf serão
+carregadas e executadas. Todas as partições que estiverem em LVM são
+iniciadas agora e, logo depois, todas as partições do sistema (com
+excessão da partição raiz) são verificadas. Após a checagem, são montadas
+todas as partições, com excessão das partições de rede, já que ainda
+não foram carregados os módulos de apropriados.
+
+</p><p>Na seqüência, são apagados alguns arquivos temporários e eliminados
+vestígios que tenham restado de um initrd em memória. Aproveitando a 
+limpeza de arquivos temporários, são recriados os arquivos responsáveis
+pelo utmp. Caso sua partição raiz seja do tipo UMSDOS (como no ZipSlack), 
+é neste momento que ela será sincronizada e organizada para ser utilizada 
+corretamente.
+
+</p><p>Algo que deixa muitos usuários desesperados é perceber que depois
+de um reboot a mensagem do dia (/etc/motd) retorna ao estado original.
+Isso acontece porque neste momento, o rc.S restaura a motd. Se você não
+quiser que isso aconteça, comente a linha responsável por isso.
+
+</p><p>As últimos comandos executados pelo rc.S, chamam o rc.serial e carregam
+a semente randômica do sistema. A partir daqui o sistema irá carregar
+o rc.K, no caso de estar sendo iniciado o runlevel 1 ou o rc.M no
+caso de ser 2, 3, 4 ou 5. Se algum louco colocou o runlevel 0 ou 6
+como default, a máquina irá se desligar ou rebootar (após ler o script
+apropriado).
+
+</p><h3>2.2. rc.K</h3>
+
+<p>O rc.K é utilizado quando o sistema entra no modo monousuário. Ele
+desativa todos os daemons, mata todos os processos e mantém 
+os sistemas de arquivos montados (para que seja possível efetuar a
+manutenção neles)
+
+</p><p>A primeira providência tomada pelo sistema é executar os scripts
+SystemV que por um acaso existam para o runlevel 1. Após isso começa
+uma longa seqüência em que diversos subsistemas são desativados:
+</p><ul>
+	<li>quotas;
+	</li><li>registro de processos;
+	</li><li>http;
+	</li><li>samba;
+	</li><li>nfs e
+	</li><li>pcmcia
+</li></ul>
+<p>Em intervalos de cinco segundos, são enviados aos processos do
+sistema os sinais para se desligarem (SIGHUP), para terminarem (SIGTERM)
+e, por fim o de "morte" (SIGKILL). Com isso é garantido que todos os
+processos são finalizados (afinal, depois do kill -9 não sobre mais
+nada sobre a terra).
+
+</p><p>Em seguida o sistema entra no modo monousuário Apesar de extremamente 
+útil, este script também é extremamente curto -;).
+
+</p><h3>2.3. rc.M</h3>
+
+<p>Responsável pelo modo Multiusuário (daí vem o M), o rc.M configura
+o sistema e carrega o necessário para que possamos usufruir do Linux
+em todas as suas capacidades... 
+
+</p><p>A primeira providência tomada pelo rc.M é configurar o tempo de inatividade
+para que o monitor seja "desligado". Se isto te incomoda, ou se
+é preferível um tempo menor, basta comentar ou alterar este trecho...
+
+</p><p>O próximo passo é setar o nome da máquina, se não houver
+nenhum nome configurado (/etc/HOSTNAME) será colocado o nome default,
+darkstar.example.net. Nas próximas linhas ele separa apenas a primeira
+parte para ser o nome da máquina (darkstar) o restante fica como nome
+do domínio.
+
+</p><p>O conteúdo do dmesg é salvo em /var/log/dmesg (o que é uma boa,
+porque se a máquina ficar ligada muito tempo, não é possível ver
+mais as mensagens do boot). E é ativado o syslogd se ele estiver
+disponível (rc.syslog como executável e o /usr/sbin/syslogd).
+
+</p><p>Neste momento são iniciados os dispositivos pcmcia, se o rc.pcmcia
+tiver permissão de execução. Os cartões pcmcia demoram um pouco para
+inicializar, portanto é uma boa aguardar.
+
+</p><p>Depois são iniciados os sistemas de rede e o hotplug. Os primeiros
+irão carregar as configurações de rede e diversos daemons, além de montar
+os sistemas de arquivo de rede (NFS e samba). O hotplug é um mecanismo
+para detecção de hardware, muito interessante e essencial para quem
+pretende utilizar o udev.
+
+</p><p>Antes de começar a carregar os outros serviços, são realizadas algumas
+tarefas de manutenção, como apagar os arquivo de lock que estejam perdidos,
+corrigir as permissões do /dev/null e /tmp e atualizar as bibliotecas 
+do sistema e fontes instaladas.
+
+</p><p>Com tudo já preparado, é carregado o sistema de impressão (cups ou
+lprng, depende de qual você escolheu), e o suporte a redes Apple (alguém
+realmente usa isso?).
+
+</p><p>Se estiver habilitado, é iniciado o sistema de log de processos,
+cuidado ao habilitar isso, o /var/log/pacct pode ficar com um tamanho
+monstruoso. Este serviço está desabilitado por default, nada pior que
+um arquivo enorme acabar com o espaço da tua máquina e você nem saber
+de onde ele veio. É um serviço interessante se você for paranóico
+e quiser saber tudo o que seus usuários fizeram...
+
+</p><p>Os dois agendadores de tarefas, crond e atd, são inicados na 
+seqüência. O primeiro cuida da execução de tarefas periódicas, como
+a reconstrução da base de dados do locate, ou a remoção de módulos
+não utilizados há "x" tempo. O segundo agenda tarefas para serem
+executadas em um tempo determinado (por exemplo, daqui a 10 minutos,
+daqui a 20 horas, etc...)
+
+</p><p>Aproveitando que os serviços de rede já estão on-line, o rc.M carrega
+o módulo rc.atalk, para comunicação com redes Appletalk. Depois inicializa
+o crond e o atd (ambos executam tarefas agendadas).
+
+</p><p>Agora vêm um grande trecho comentado. Nele há uma pequena explicação
+de como configurar quotas em um sistema Slackware, abaixo desta explicação
+estão os comandos para verificar se existem quotas, checá-las e ativá-las.
+
+</p><p>A partir daí, são iniciados uma série de daemons e serviços. Na
+ordem: rc.acpid ou apm (sistemas para gerenciamento de energia,
+desligar o computador, colocar em standby, etc...), rc.alsa (som),
+rc.font e rc.keymap (fonte e mapa de teclado do console), rc.hpoj
+(utilizado pelas impressoras HP OfficeJet), rc.mysql (base de dados),
+rc.httpd (servidor web), rc.samba (servidor de arquivos em redes SMB/CIFS) e
+rc.gpm (mouse no console).
+
+</p><p>Por fim, são iniciados os serviços que estiverem no padrão SystemV,
+e o rc.local, um script onde se deve colocar as personalizações que você
+pretende fazer na máquina.
+
+</p><p>Caso você não queira que algum destes serviços sejam carregados, 
+basta fazer:
+</p><pre>	# chmod -x rc.nonono
+</pre>
+<p>Assim, o script em questão não estará mais como executável. Como o
+rc.M sempre verifica primeiro se o script é executável antes de tentar
+chamá-lo, transformando o script em arquivo comum você impede que
+ele seja carregado. No meu caso o rc.samba, rc.atalk, rc.httpd estão
+todos como não-executáveis.
+
+</p><p>Quando você entra nos níveis de execução 2, 3 ou 5, a inicialização
+pára por aqui e carrega o programa de login, geralmente o agetty.
+Se você entrou no nível 4, ao invés do agetty será lido o rc.4...
+
+</p><h3>2.4. rc.4</h3>
+
+<p>Script muito simples. Ele verifica se existe o gdm instalado, se houver
+executa. Se não houver gdm, ele procura o kdm e executa. Se não houver
+kdm ele executa o xdm e se não houver xdm ele imprime na tela uma
+mensagem de erro!
+
+</p><p>Editando este arquivo você pode fazer que ele apresente o seu login
+gráfico preferido, o meu é o xdm (então eu comentei todas as linhas
+e deixei só a que executa o xdm). Se você gosta do wdm, basta incluí-lo
+nesta lista (e instalar o wdm na tua máquina).
+
+</p><h3>2.5. rc.0 e rc.6</h3>
+
+<p>Um deles é um link para o outro. Este script quando chamado como rc.0 
+desliga o computador e quando chamado como rc.6 reinicia a máquina. Uma
+série de atividades deve ser executada antes da máquina ser desligada.
+
+</p><p>A primeira delas é salvar o horário atual do sistema na CMOS. Depois,
+uma série de scripts de serviços é iniciada, passando a todos eles
+a ordem de parar as suas atividades.
+
+</p><p>Os sistemas de arquivos remotos são desmontados, o dhcpcd e o
+pppd são mortos (se estiverem sendo executados) e os outros processos
+em execução recebem o sinal para terminar (SIGTERM), após 5 segundos
+é enviado o da morte (SIGKILL).
+
+</p><p>As quotas são desabilitadas, a semente randômica armazenada e, por
+fim, desmontados os outros sistemas de arquivos e desativada a swap.
+A última atividade do script é rebootar ou desligar a máquina. No caso
+de estar rodando o apmd ou o acpid e da fonte ser ATX, a máquina realmente
+se desliga, caso contrário ela fica apenas pedindo para ser desligada.
+
+</p><h2>3. Configuração da máquina...</h2>
+
+<p>Estes scripts são responsáveis por carregar o suporte ao hardware 
+(rc.modules, rc.hotplug e rc.pcmcia), configurá-lo (rc.serial, rc.alsa 
+e rc.gpm) ou simplesmente tornar o sistema mais confortável (rc.font e 
+rc.keymap). 
+
+</p><h3>3.1. rc.udev</h3>
+
+<p>Esse script, em conjunto com o hotplug é responsável por manter
+o /udev, onde os devices são criados a medida que vão sendo necessários.
+Desta maneira, não é preciso ter um /dev com todos os dispositivos possíveis
+e imaginários lá, o udevd vai criando-os conforme necessário.
+
+</p><h3>3.2. rc.modules</h3>
+
+<p>Este arquivo é responsável pelo carregamento dos módulos para o kernel.
+No geral, é uma extensa lista com todos os módulos possíveis e imagináveis,
+sendo que você precisa apenas descomentar a linha apropriada (removendo
+o # da frente) para que o módulo seja carregado durante o boot.
+
+</p><p>Primeiramente ele verifica a existência de novos módulos e realiza
+o update das dependências. Ou seja, monta uma tabela com o que cada
+módulo precisa para funcionar (por exemplo, o módulo para SoundBlaster
+necessita do SoundCore para funcionar...)
+
+</p><p>A próxima coisa visível, são vários trechos de código comentado.
+Alguns deles são bem comuns de serem descomentados, como o suporte
+a APM. O suporte a porta paralela e a impressora não precisam ser
+descomentados se você for um usuário do hotplug, caso contrário,
+deve descomentar esses dois trechos (isso se você estiver a fim
+de usar uma impressora conectada na porta paralela do seu computador).
+
+</p><p>Se houver algum sistema de arquivos que use quota, o módulo para
+quota é carregado. Independente de houver uma porta AGP no seu micro,
+é carregado o módulo agpgart. Em máquinas sem AGP isso devolve uma mensagem
+de erro. Tirando isso não há problema nenhum e, se você não gosta da 
+mensagem, é só comentar a linha que carrega o módulo.
+
+</p><p>Em seguida, vem uma extensa lista com nomes de módulos (e alguns parâmetros)
+comentados. Se você quiser carregar algum deles, é só retirar o #
+da frente da linha. Apesar de haverem dúzias de módulos com placas
+de rede, a configuração destas é preferívelmente feita através do
+rc.netdevice, que é editado pelo script netconfig (e nada impede que
+seja feito na mão).
+
+</p><p>Este é um arquivo que merece uma boa olhada, módulos para mouses, placas
+de som, placas de rede, placas SCSI, sistemas de arquivos, etc... 
+
+</p><h3>3.3. rc.hotplug</h3>
+
+<p>É um sistema mágico. O rc.hotplug detecta o seu hardware e carrega os
+módulos necessários. Apesar de ser um processo demorado, raras são as 
+placas PCI que ele não detecta. O suporte a USB ainda não está tão bom
+quanto, mas está ótimo.
+
+</p><p>Além disso, ele prepara o kernel para, depois de iniciado, carregar
+automaticamente módulos quando você conectar um novo hardware, como uma
+impressora ou um chaveiro USB. E, como se isso não fosse suficiente,
+ainda é utilizado pelo udev para criar os devices do /udev automaticamente.
+
+</p><h3>3.4. rc.pcmcia</h3>
+
+<p>Como não tenho experiência com dispositivos pcmcia, não posso dar muitas
+indicações de como este arquivo funciona. Observando a sintaxe do
+script, podemos constatar que ele verifica a existência de um barramento
+PCIC, existindo este barramento, ele carrega uma série de módulos
+e o cardmgr, um programa para gerenciar os cartões. 
+
+</p><h3>3.5. rc.serial</h3>
+
+<p>Este arquivo é o responsável pelo carregamento de drivers e inicialização
+dos dispositivos seriais de seu computador. É uma ótima idéia mantê-lo
+exatamente do jeito que está, e se necessitar de alguma alteração,
+mexer preferencialmente no /etc/serial.conf (pode parecer meio covarde, 
+mas em time que está ganhando não se mexe!)
+
+</p><h3>3.6. rc.alsa</h3>
+
+<p>Quando chamado, esse script verifica se algum módulo de som ALSA
+está carregado, caso isso seja verdade, ele restaura as configurações
+de volume e carrega os módulos de compatibilidade com o OSS.
+
+</p><p>Fato interessante, se não houver volume configurado, é impresso
+na tela um aviso, comunicando que deve ser utilizado o programa
+alsamixer para configurar os volumes de som (e quais canais estarão
+mudos) e que os ajustes podem ser salvos com o alsactl store. Pena
+que pouca gente lê este aviso, ou se lê prefere perguntar nas listas
+de discussão para confirmar o que leu.
+
+</p><h3>3.7. rc.acpid</h3>
+
+<p>O acpid é um sistema de gerenciamento de energia, como o apm, mas
+é muito melhor e mais novo. Infelizmente, não são todas as placas
+que oferecem suporte ao ACPI, sendo mais "garantido" carregar o módulo
+APM e o apmd. Antes que eu me esqueça, os dois sistemas são totalmente
+incompatíveis e habilitá-los simultaneamente não costuma dar boa coisa.
+
+</p><h3>3.8. rc.gpm</h3>
+
+<p>Aqui é configurado o mouse para o console. Lendo o script ele explica
+como utilizar a mesma configuração no X também. Ótima pedida -:) Se
+você não sacar direito como fazer essa "repetição" do mouse, leia
+o meu artigo a respeito do GPM -;)
+
+</p><h3>3.9. rc.font e rc.keymap</h3>
+
+<p>Estes dois servem para deixar as coisas mais agradáveis no console.
+Por exemplo, colocar uma fonte com acentos e um mapa de teclado que
+aceite esses acentos -;). Se você colocar o mapa com acentos e uma
+fonte sem acentos, vai ter na sua tela sinais de interrogação de cabeça
+para baixo, carinhas sorridentes e outros símbolos estranhos. Se você
+colocar uma fonte com acentos e não utilizar o mapa apropriado, você
+terá vários acentos mas nunca irá conseguir digitá-los... por isso
+é importante deixar as coisas bem integradas. Divirta-se!
+
+</p><h2>4. Configurações de rede</h2> 
+
+<p>Estes scripts carregam o módulos das placas de rede, as configurações
+delas e alguns serviços essenciais, além de montar as partições remotas,
+tanto NFS quanto partições SMB.
+
+</p><h3>4.1. rc.netdevice</h3>
+
+<p>Este script serve unicamente para carregar o módulo da placa de rede...
+ele é gerado pelo netconfig. Facilita um pouco o trabalho de trocar
+o módulo quando se troca de placa de rede, mas não muito... principalmente
+agora nesses tempos de hotplug.
+
+</p><h3>4.2. rc.wireless.conf</h3>
+
+<p>Arquivo com configurações para rede wireless. Como a chave criptográfica
+é armazenada neste arquivo, apenas o root pode lê-lo. As configurações são
+feitas baseados no MAC Address da placa.
+
+</p><p>Algumas configurações genéricas estão disponíveis no próprio arquivo,
+com os modelos mais comuns de placas. Essas configurações estão baseadas
+nos três primeiros campos do MAC Adress que, normalmente, tornam possível
+identificar qual o fabricante da placa utilizada.
+
+</p><h3>4.3. rc.wireless</h3>
+
+<p>O rc.wireless lê as configurações disponíveis no rc.wireless.conf e,
+através do iwconfig configura a placa de rede com informações como o
+nome da rede, canal utilizado, freqüência, etc...
+
+</p><p>Uma das primeiras atitudes do script é verificar se a placa de
+rede que ele está configurando é wireless, caso não seja, ele simplesmente
+sai do script sem executar nada.
+
+</p><h3>4.4. rc.inet1.conf</h3>
+
+<p>Aqui ficam as configurações para até quatro placas de rede.
+A primeira placa de rede é configurada normalmente pelo netconfig,
+enquanto as outras devem ser configuradas "na mão".
+
+</p><p>É uma configuração bem simples, em que se coloca o IP da
+placa, a máscara de rede, se ela usa DHCP e o nome da sua máquina
+no DHCP. Essas configurações ficam armazenadas nas variáveis:
+IPPADDR[n], NETMASK[n], USE_DHCP[n] e DHCP_HOSTNAME[n]; lembrando
+que "n" se refere ao número da placa de rede, 0 para a eth0, 1
+para a eth1 e assim por diante...
+
+</p><p>Se você tiver mais de uma placa de rede, lembre de NÃO executar
+novamente o netconfig, pois ele apaga as configurações deste
+arquivo e você fica na roça.
+
+</p><h3>4.5. rc.inet1</h3>
+
+<p>Reponsável por carregar as configurações de cada placa, setar
+as rotas e até mesmo carregar os módulos necessários. É possível
+iniciar todas as placas de rede ao mesmo tempo, ou apenas uma
+delas, dependendo de como se passa a linha de comando. Assim como
+os scripts de serviço, o rc.inet1 aceita as opções start|stop|restart
+e, adiciona outras. Se você quiser (por exemplo) iniciar apenas
+a eth2, deve fazer:
+</p><pre>	# /etc/rc.d/rc.inet1 eth2_start
+</pre>
+<p>Ficando óbvio o que fazer para parar e reiniciar e, até mesmo
+para utilizar as outras interfaces. Apenas o start|stop|restart,
+sem o ethN_ na frente, faz com que o comandos seja aplicado a
+todas as interfaces.
+
+</p><p>O rc.inet1 é um script complexo, possuindo diversas funções
+internas que são chamadas conforme a linha de comando passada ao
+script. A função eth_up é responsável por carregar as configurações
+da interface.
+
+</p><p>Se houver um alias para a interface no modules.conf, será carregado
+o módulo da placa que estiver lá listado. Esses aliases são utilizados
+principalmente quando se tem mais de uma placa de rede, para indicar
+qual módulo vai ser utilizado por cada eth0.
+
+</p><p>Depois de carregados os módulos, é configurada a rede propriamente
+dita. Caso exista um rc.wireless e ele esteja como executável, ele será
+lido para carregar qualquer configuração wireless que possa existir para
+esta placa de rede.
+
+</p><p>Na seqüência, é chamado o dhcpcd, se a placa estiver configurada para
+pegar o IP via DHCP (muito comum em empresas). Por último são carregadas
+diretamente as configurações como IP e máscara de rede, caso a placa não
+esteja configurada como DHCP. Apesar de complicado para descrever, o
+processo não dura mais que alguns segundos (se é que chega a isso).
+
+</p><p>A função eth_down, derruba a placa de rede selecionada. Caso ela utilize
+DHCP, o processo dhcpcd referente a esta placa é morto, caso contrário ela
+é apenas desativada.
+
+</p><p>gateway_up e gateway_down respectivamente configuram a rota padrão ou
+a apagam. São funções bem simples e as configurações para o GATEWAY estão
+no /etc/rc.d/rc.inet1.conf. Com as placas de rede corretamente configuradas
+e com a rota padrão selecionada, é possível executar os outros serviços
+de rede.
+
+</p><h3>4.6. rc.ip_forward</h3>
+
+<p>Este script é utilizado para iniciar ou parar a transmissão de pacotes
+entre diferentes dispositivos de rede. Por exemplo, para poder compartilhar
+a sua conexão discada com outras máquinas, será necessário repassar os
+pacotes que entram pela ppp0 (modem) para a eth0 (rede). Neste caso, você
+deve habilitar esse script e autorizar o repasse de pacotes.
+
+</p><p>Sempre que você quiser montar um gateway ou um roteador este script
+deve estar com a permissão de execução. Apesar de não ser um serviço, ele
+permite o uso do start|stop|restart para iniciar, parar e reiniciar a
+retransmissão de pacotes.
+
+</p><h3>4.7. rc.firewall</h3>
+
+<p>Este script não existe na instalação padrão do Slackware, portanto
+não posso dizer exatamente o que ele faz. Nele devem ficar as configurações
+do iptables para o seu firewall. Depois de criado o script, ele deve
+ser colocado como executável. A partir daí, será carregado durante todos
+os boots.
+
+</p><h3>4.8. rc.inet2</h3>
+
+<p>Depois de configuradas as placas de rede, costuma ser necessário
+carregar uma série de serviços especiais, como a montagem de sistemas
+de arquivo em rede (NFS e SAMBA). Carregar o DNS e iniciar os 
+serviços do NIS, tanto o client como o server.
+
+</p><p>A primeira coisa que o script faz é verificar se existe no /etc/fstab
+alguma sistemas de arquivo NFS para montar. Se houver, é carregado o
+rc.portmap (ou seja, lembre-se de deixar o rc.portmap como executável)
+e, em seguida são montados os sistemas de arquivos.
+
+</p><p>Se o rc.portmap não estiver como executável e houverem partições
+NFS, a inicialização irá travar (mesmo, de verdade) e será apresentada
+na tela a solução (tornar o rc.portmap executável). Será necessário
+reiniciar a máquina e entrar no modo single user para resolver isso.
+
+</p><p>Caso o syslog não esteja sendo executado (pode ser que o syslogd
+esteja em uma partição NFS e só agora esteja disponível), ele agora
+será iniciado.
+
+</p><p>Os próximos serviços iniciados é o rc.ip_forward e o rc.firewall,
+o primeiro deles habilita a transferência de pacotes entre as placas
+de rede e deve estar como executável se você quiser usar o seu computador
+como um roteador. O segundo carrega as configurações de firewall. 
+O funcionamento de ambos já foi explicado logo acima.
+
+</p><p>Depois é ativado o inetd, um servidor encarregado de acionar e chamar 
+outros daemons de internet por demanda. Ou seja, você não precisa 
+manter um servidor de telnet, um de ftp, um de rlogin e outros 
+funcionando ao mesmo tempo, você mantém o inetd e quando chegar uma 
+requisição de ftp ele carrega o servidor de ftp, quando chega a de 
+telnet ele aciona o servidor de telnet... a configuração deste 
+superservidor está em /etc/inetd.conf.
+
+</p><p>Uma série de serviços é iniciada na seqüência, como o rc.sshd, o
+rc.bind, rc.yp e rc.nfsd. O rc.sshd carrega o SSH, que torna possível
+a conexão à sua máquina de forma segura; o rc.bind carrega o servidor
+de nomes (DNS) o rc.yp os serviços NIS e o rc.nfsd o daemon do NFS,
+necessário se você quiser exportar diretórios pela rede.
+
+</p><p>Pronto! Acabou o rc.inet2... 
+
+</p><h2>5. Os vários serviços</h2>
+
+<p>Agora serão iniciados os diversos serviços e daemons, alguns deles
+são chamados pelo rc.M e outros pelo rc.inet2. Estes scripts são chamados
+depois que todos os sistemas de rede estão carregados (o único que foge
+desta regra é o rc.portmap) e, como já foi dito, obedecem a sintaxe de:
+</p><pre>	rc.nome_do_serviço start|stop|restart
+</pre>
+<p>para serem iniciados, parados ou reiniciados. Também não foi dito,
+mas não custa nada lembrar que para retirar ou colocar um destes
+serviços para serem iniciados no boot basta utilizar
+</p><ul>
+	<li>chmod +x rc.nome_do_serviço (para colocar no boot) e
+	</li><li>chmod -x rc.nome_do_serviço (para retirar do boot).
+</li></ul>
+<p>Agora, depois dos lembretes, vamos à descrição de cada um desses
+scripts.
+
+</p><h3>5.1. rc.atalk</h3>
+
+<p>Alguém, REALMENTE usa isso? Este script carrega uma série de servidores
+para prover o Linux com o protocolo AppleTalk. É uma espécie de samba
+para redes AppleTalk. Autenticação de nomes, zonas, etc...
+
+</p><h3>5.2. rc.bind</h3>
+
+<p>Inicia o servidor de nomes. O nome do daemon iniciado é o named, e as
+configurações para ele ficam no /etc/named.conf. É possível iniciar o
+named em um chroot, e existe documentação a respeito disso em 
+/usr/doc/Linux-HOWTOs/Chroot-BIND-HOWTO, como mencionado nos comentários
+do prório rc.bind.
+
+</p><h3>5.3. rc.cups</h3>
+
+<p>Um sistema de impressão que funciona de maneira totalmente diferente
+do LPD (sistema "padrão" do UNIX por alguns 20 anos). É configurado por
+alguns arquivos de configuração no /etc/cups e por uma interface web,
+acessível na URL http://localhost:631.
+
+</p><h3>5.4. rc.dnsmasq</h3>
+
+<p>Inicia o dnsmasq, um serviço especial direcionado para redes mascaradas,
+ele atua como servidor DHCP e DNS simultaneamente, pode prover nomes para 
+a sua rede interna e também "retransmitir" os nomes encontrados na rede
+externa. Muito interessante e vale a pena colocar para funcionar. -:)
+
+</p><h3>5.5. rc.httpd</h3>
+
+<p>Script que inicia o Apache. Na realidade ele acaba chamando outro
+script, o apachectl. Que é um link ou para o apachectl-standard ou para
+o apachectl-mod_ssl, sendo que o segundo possibilita o uso do apache
+com suporte a SSL.
+
+</p><h3>5.6. rc.lprng</h3>
+
+<p>Carrega o LPRng, o sistema de impressão herdeiro do LPD. Totalmente
+compatível com a sintaxe do LPD, adiciona diversas novas features e
+simplifica bastante a vida. É o servidor de impressão padrão do slackware,
+e a melhor forma de configurar uma impressora nele é utilizando o apsfilter
+(/usr/share/apsfilter/SETUP).
+
+</p><h3>5.7. rc.mysqld</h3>
+
+<p>O mysql é um dos mais populares bancos de dados do mundo linux. 
+O rc.mysqld serve para controlá-lo, iniciando, parando ou reiniciando
+os seus serviços. Muita atenção, o mysqld não funciona simplesmente tornando
+este script executável, você antes deve instalar as bases de dados. Para
+fazer isso basta seguir os comentários dentro do próprio script (para os
+preguiçosos, é só fazer: su - mysql e, logo depois mysql_install_db).
+
+</p><h3>5.8. rc.nfsd</h3>
+
+<p>Este é o servidor de NFS, você não precisa dele se pretende apenas
+montar compartilhamentos NFS exportados de outras máquinas. Mas, ele
+é totalmente necessário se você pretende exportar alguns diretórios para
+outras máquinas da rede.
+
+</p><p>Ele só é iniciado se existir algo para ser exportado no /etc/exportfs,
+portanto, enquanto você não colocar nada para ser exportado, não adianta 
+nada deixá-lo como executável. Se o rpc.portmap não estiver sendo
+executado, o próprio rc.nfsd carrega-o, já que é necessário um para o
+outro estar "no ar".
+
+</p><h3>5.9. rc.portmap</h3>
+
+<p>O rc.portmap é necessário para o NFS funcionar corretamente, tanto
+para montar compartilhamentos de outras máquinas como para exportar os
+da sua máquina para a rede, além de ser utilizado pelo NIS. É uma boa 
+idéia sempre deixá-lo habilitado.
+
+</p><h3>5.10. rc.samba</h3>
+
+<p>Servidor para redes SMB (CIFS), também conhecidas como redes "Windows".
+Ë necessário ser você quiser compartilhar arquivos e impressoras em uma
+rede mista com Windows e Linux. Graças ao suporte nativo que a Apple dá 
+ao samba no Mac OS X, você também pode misturar MacIntoshs nessa rede -:).
+
+</p><h3>5.11. rc.sendmail</h3>
+
+<p>O sendmail é o servidor de e-mails mais conhecido e, normalmente,
+outros servidores possuem pelo menos um modo de compatibilidade com ele.
+Este script é utilizado para iniciar o sendmail no boot. Se você não
+pretende montar um servidor de e-mail ou pretende utilizar o SMTP do
+seu provedor, não é necessário deixá-lo ativado.
+
+</p><h3>5.12. rc.sshd</h3>
+
+<p>Para conectar em outra máquina e conseguir uma shell nela, nada melhor
+que o SSH, que envia os dados de maneira segura entre as duas máquinas. É
+um bom daemon para se deixar sempre em execução, para qualquer emergência.
+
+</p><p>Na primeira vez que é executado, o daemon cria as chaves para o ssh. Em
+máquinas mais antigas isso pode demorar alguns bons minutos.
+
+</p><h3>5.13. rc.syslog</h3>
+
+<p>Totalmente necessário, inicia o syslogd e o klogd, responsáveis por
+registrar os logs do sistemas e do próprio kernel. Sempre deixe-os
+habilitados, lembrando que os logs são o melhor lugar para procurar
+de onde veio um problema e como solucioná-lo.
+
+</p><h3>5.14. rc.yp</h3>
+
+<p>Este arquivo está todo comentado. Para ativá-lo, é necessário 
+descomentar a parte que achar conveniente. Tanto a configuração para
+servidor como a configuração para o cliente estão neste arquivo.
+
+</p><p>Independente de qual das duas configurações, a parte que seta
+o domínio NIS deve ser descomentada. Depois vem a parte relativa ao
+servidor e ao daemon responsávle pela alteração de senhas. Ë possível
+utilizar um servidor NIS sem possuir o yppasswdd rodando, seus clientes
+apenas não poderão alterar suas senhas.
+
+</p><p>No final vem a parte relativa ao cliente. Bem simples e rápida, carregando
+o ypbind e imprimindo uma mensagem na tela. Para quem não sabe, o NIS
+é utilizado para compartilhar senhas, grupos, configurações de impressora,
+entre outros...
+
+</p><h2>6. The End...</h2>
+
+<p>O último script carregado é o rc.local. Este é o lugar onde colocamos
+as nossas personalizações. Por exemplo, podemos colocar aqui alguns
+comandos para recriar o issue, assim nós sobrescrevemos o criado pelo
+rc.S.
+
+</p><p>Podemos colocar no rc.local chamadas para outros scripts, como o 
+rc.dnsmasq. No caso do meu roteador, que é uma máquina "dedicada", está no 
+rc.local o comando para discar para o provedor...
+
+</p><p>Depois de lidos todos estes scripts, o sistema carrega os programas
+de login: agetty no caso dos terminais texto e o rc.4 (que carrega
+o xdm) no modo gráfico. É possível disponibilizar o login em um terminal
+serial, mas isso foge do escopo deste artigo.
+
+</p><p>Quaisquer sugestões, dúvidas ou críticas mande um e-mail para: <a href="mailto:piterpk@terra.com.br">piterpk@terra.com.br</a>
+		</p></td></tr></tbody></table>
+		<hr>
+                <center>
+                <table valign="middle" width="100%" align="center">
+                <tbody><tr>
+                        <td width="15%">
+                                <a href="http://piterpunk.info02.com.br/links.html">
+<img src="Inicializa%C3%A7%C3%A3o%20do%20Slackware%20%28estilo%20BSD%29_arquivos/web.gif" alt="Links" border="0"></a>
+                        </td>
+                        <td width="14%">
+                                <a href="http://piterpunk.info02.com.br/index.html">
+<img src="Inicializa%C3%A7%C3%A3o%20do%20Slackware%20%28estilo%20BSD%29_arquivos/home.gif" alt="Principal" border="0"></a>
+                        </td>
+                        <td width="14%">
+                                <a href="http://piterpunk.info02.com.br/docs.html">
+<img src="Inicializa%C3%A7%C3%A3o%20do%20Slackware%20%28estilo%20BSD%29_arquivos/docs.gif" alt="Artigos" border="0"></a>
+                        </td>
+                        <td width="14%">
+                                <a href="http://piterpunk.info02.com.br/piterpunk.html">
+<img src="Inicializa%C3%A7%C3%A3o%20do%20Slackware%20%28estilo%20BSD%29_arquivos/who.gif" alt="Piter Punk" border="0"></a>
+                        </td>
+                        <td width="14%">
+                                <a href="http://piterpunk.info02.com.br/dicas.html">
+<img src="Inicializa%C3%A7%C3%A3o%20do%20Slackware%20%28estilo%20BSD%29_arquivos/tips.gif" alt="Dicas" border="0"></a>
+                        </td>
+                        <td width="14%">
+                                <a href="http://piterpunk.info02.com.br/programas.html">
+<img src="Inicializa%C3%A7%C3%A3o%20do%20Slackware%20%28estilo%20BSD%29_arquivos/progs.gif" alt="Programas" border="0"></a>
+                        </td>
+                </tr>
+                </tbody></table>
+                </center>
+	</td>
+	<td width="10" bgcolor="#000080">
+	&nbsp;
+	</td>
+</tr>
+<tr>
+	<td colspan="3" align="center" bgcolor="#000080">
+<table><tbody><tr><td width="50%">
+	<font size="-1" color="#ffffff">
+	Powered by Slackware Linux - Written in VIm (the best one!) 
+	</font>
+</td><td width="50%" align="right">
+	<font size="-1" color="#ffffff">
+	Last Update: 30 Oct 2004 &nbsp;&nbsp; 
+	</font>
+</td></tr></tbody></table>
+	</td>
+</tr>
+</tbody></table>
+</center>
+</body></html>

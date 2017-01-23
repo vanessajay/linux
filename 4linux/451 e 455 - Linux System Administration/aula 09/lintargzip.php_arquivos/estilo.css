@@ -1,0 +1,204 @@
+/* **************************************** */
+/*                                          */
+/*        InfoWester - Estilo Geral         */
+/*                                          */
+/* **************************************** */
+
+<!--
+
+	html, body, h1, h2	{margin: 0; padding: 0;}
+
+	body			{background: #FFF url(../images/bkg-body.gif) repeat-x 0 45px; color: #000;
+				font: 12px Verdana,Tahoma,sans-serif;}
+
+	a:link			{text-decoration: none; color: #039;}
+	a:visited		{text-decoration: none; color: #039;}
+	a:hover			{text-decoration: underline; color: #C30;}
+	a:active		{text-decoration: none; color: #C30;}
+
+	h1, h2, h3, h4, h5, h6	{margin: 0; padding: 0; line-height: 110%;}
+
+	h1			{color: #555; font-weight: normal; margin: 30px 0 20px; font-size: 24px;}
+
+	h2			{margin: 20px 0 -10px 0; font-size: 12px;}
+
+	.clear			{clear: both;}
+
+	.center			{text-align: center;}
+
+/* ************************************************************************************************************************* */
+
+    /* corpo do layout */
+
+	#tudo			{width: 980px; margin: auto; clear: both;}
+
+/* ************************************************************************************************************************* */
+
+    /* links acessibilidade */
+
+	#acesso			{height: 15px; overflow: hidden; font-size: 9px; text-align: right;}
+
+/* ************************************************************************************************************************* */
+
+    /* cabeçalho do layout */
+
+	#topo			{height: 130px; clear: both; margin-bottom: 20px;}
+
+		#topo h1		{width: 250px; height: 110px; display: block; margin: 15px 0 0 0px; float: left; text-indent: -1000px;
+					background: url(../images/logo.png) no-repeat;} 
+
+		#topo .banner		{width: 470px; height: 60px; float: right; margin: 40px 120px 0 0;}
+
+		#topo .banner img	{width: 468px; height: 60px; border: none;}
+
+
+		#topo .banner2		{width: 728px; height: 90px; float: right; margin: 25px 0px 0 0; background: #FFF;}
+
+		#topo .banner2 img	{}
+
+	/* cabeçalho do site na versão para impressão */
+
+	#topo-print		{display: none;}
+
+/* ************************************************************************************************************************* */
+
+    /* anuncios e busca do google abaixo do cabeçalho */
+
+	#google1		{height: 50px; margin: 10px 0;}
+
+		#google1 .anuncios		{width: 730px; height: 30px; margin-top: 20px; float: left;}
+
+		#google1 .cse-branding-bottom	{width: 250px; height: 50px; float: right;}
+
+			#google1 .cse-branding-bottom .sa	{width: 150px;}
+
+
+    /* anuncio do google no meio do conteúdo */
+
+	#google2		{margin: 30px 0; clear: both;}
+
+
+/* ************************************************************************************************************************* */
+
+    /* conteudo do site (cada tipo de página tem um CSS diferente para essa área) */
+
+	#conteudo		{width: 590px; float: left;}
+
+/* ************************************************************************************************************************* */
+
+    /* lateral direita (menu) */
+
+	#lateral		{width: 165px; float: left; margin-top: 30px; padding: 0 15px 0 5px}
+
+		#lateral ul		{width: 160px; margin: 0 0 40px; padding: 0; list-style-type: none;}
+
+		#lateral li		{margin: 9px 0;}
+
+		#lateral ul a		{font-size: 11px; font-weight: normal;}
+
+		#lateral h2		{color: #666; margin: 20px 0 10px; *margin-top: 10px;}
+
+		#lateral img		{width: 16px; height: 16px; border: none; vertical-align: middle; margin: -5px 3px 0 0; _margin-top: 0;}
+
+		#menu			{margin: 0; padding: 0; float: left; border-top: 1px solid #CCC; }
+
+		#menu li		{background: #F5F5F5; margin: 0; padding: 0px; list-style-type: none;
+					border-bottom: 1px solid #CCC; text-align: left; display: block; float: left;}
+
+		#menu a:link,
+		#menu a:visited		{background: #F5F5F5; color: #666; width: 145px; padding: 8px;
+					font-size: 12px; font-weight: bold; text-decoration: none; display: block;}
+
+		#menu li.item a,
+		#menu a:hover		{background: #E5F0FF; color: #039;}
+
+	#creditfooter img	{display: none; /*width: 88px; height: 18px; overflow: hidden; */}
+
+
+/* ************************************************************************************************************************* */
+
+   /* lateral esquerda (recursos) */
+
+
+	#recursos		{width: 190px; float: right;}
+
+		#recursos h2		{color: #666; margin: 30px 0 10px;}
+
+/* ************************************************************************************************************************* */
+
+   /* lista de últimas entradas do blog, notícias e artigos atualizados que vão na lateral (esquerda ou direita) */
+
+	h2.blog			{background: url(../images/icons/blog.gif) no-repeat; padding: 2px 0 0 20px;}
+
+	h2.publi		{background: url(../images/icons/colunas.gif) no-repeat; padding: 0 0 4px 20px;}
+
+	h2.news			{background: url(../images/icons/news.gif) no-repeat; padding: 2px 0 0 20px; margin-top: 10px !important;}
+
+	h2.artigos		{background: url(../images/icons/artigos.gif) no-repeat; padding: 2px 0 1px 20px;}
+
+	ul#blog,
+	ul#publi,
+	ul#news,
+	ul#artigos		{margin: 0; padding: 0;}
+
+	#lateral .mail,
+	.google .mail		{background: url(../images/icons/mail.gif) no-repeat; padding: 2px 0 0 20px; font-weight: bold;}
+
+
+		ul#blog li,
+		ul#publi li,
+		ul#news li,
+		ul#artigos li		{list-style: square inside url(../images/bullet2.gif); padding: 0; margin: 0 0 10px 0;
+					*list-style-image: url(../images/bullet.gif);}
+
+
+		ul#blog a:link,
+		ul#blog a:visited	{color: #C30; font-weight: normal; font-size: 11px;}
+
+ 		ul#publi a:link,
+		ul#publi a:visited	{font-weight: normal; font-size: 11px;}
+
+		ul#news a:link,
+		ul#news a:visited,
+		ul#artigos a:link,
+		ul#artigos a:visited	{color: #039; font-weight: normal; font-size: 11px;}
+
+		ul#blog a:hover,
+		ul#publi a:hover,
+		ul#news a:hover,
+		ul#artigos a:hover	{text-decoration: underline;}
+
+
+/* ************************************************************************************************************************* */
+
+    /* rodape */
+
+	#rodape			{background: #DDD; color: #333; margin: 30px auto 0; font-size: 10px;
+				text-align: center;}
+
+		#rodape img		{width: 16px; height: 16px; border: none; vertical-align: middle;}
+
+/*		#rodape a:link			{text-decoration: none; color: #99AEC2;}
+		#rodape a:visited		{text-decoration: none; color: #99AEC2;}
+		#rodape a:hover			{text-decoration: underline; color: #99AEC2;}
+		#rodape a:active		{text-decoration: none; color: #99AEC2;} */
+
+	#rodape #largura	{background: #DDD; width: 980px; margin: 0 auto; padding: 10px;}
+
+	#rodape #esquerda	{width: 280px; float: left; padding-top: 10px;}
+
+		#links			{margin: 0; padding: 0; float: left; font-size: 12px;}
+
+		#links li		{background: #DDD; margin: 0; padding: 0px; list-style-type: none;
+					text-align: left; display: block; float: left;}
+
+		#links a:link,
+		#links a:visited	{background: #DDD; color: #333; width: 250px; padding: 5px;
+					font-weight: bold; text-decoration: none; display: block; font-size: 11px;}
+
+		#links li.item a,
+		#links a:hover		{background: #DDD; color: #000;}
+
+	#rodape #direita	{width: 700px; float: left; margin-top: 10px;}
+
+-->

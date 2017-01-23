@@ -1,0 +1,872 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+
+<link rel="SHORTCUT ICON" 
+href="http://brlinux.linuxsecurity.com.br/lib.ico">
+<link rel="icon" href="http://brlinux.linuxsecurity.com.br/lib.png" 
+type="image/png">
+
+<title>Artigos br-linux.org: Gerenciamento de quotas de disco no Linux</title>
+
+<link rel="stylesheet" href="001840_arquivos/col2004.css" 
+type="text/css">
+<link rel="alternate" type="application/rss+xml" title="RSS" 
+href="http://br-linux.org/tutoriais/index.rdf">
+
+<link rel="start" href="http://br-linux.org/tutoriais/" title="Home">
+<link rel="prev" href="http://br-linux.org/tutoriais/001804.html" 
+title="Recompilando o Kernel 2.4.x ou 2.6.x">
+
+<link rel="next" href="http://br-linux.org/tutoriais/001879.html" 
+title="Migração do Advanced Protheus da Microsiga para o Linux">
+
+
+<script type="text/javascript" language="javascript">
+<!--
+
+function OpenTrackback (c) {
+    window.open(c,
+                    'trackback',
+                    'width=480,height=480,scrollbars=yes,status=yes');
+}
+
+var HOST = 'br-linux.org';
+
+// Copyright (c) 1996-1997 Athenia Associates.
+// http://www.webreference.com/js/
+// License is granted if and only if this entire
+// copyright notice is included. By Tomer Shiran.
+
+function setCookie (name, value, expires, path, domain, secure) {
+    var curCookie = name + "=" + escape(value) + ((expires) ? "; expires=" + expires.toGMTString() : "") + ((path) ? "; path=" + path : "") + ((domain) ? "; domain=" + domain : "") + ((secure) ? "; secure" : "");
+    document.cookie = curCookie;
+}
+
+function getCookie (name) {
+    var prefix = name + '=';
+    var c = document.cookie;
+    var nullstring = '';
+    var cookieStartIndex = c.indexOf(prefix);
+    if (cookieStartIndex == -1)
+        return nullstring;
+    var cookieEndIndex = c.indexOf(";", cookieStartIndex + prefix.length);
+    if (cookieEndIndex == -1)
+        cookieEndIndex = c.length;
+    return unescape(c.substring(cookieStartIndex + prefix.length, cookieEndIndex));
+}
+
+function deleteCookie (name, path, domain) {
+    if (getCookie(name))
+        document.cookie = name + "=" + ((path) ? "; path=" + path : "") + ((domain) ? "; domain=" + domain : "") + "; expires=Thu, 01-Jan-70 00:00:01 GMT";
+}
+
+function fixDate (date) {
+    var base = new Date(0);
+    var skew = base.getTime();
+    if (skew > 0)
+        date.setTime(date.getTime() - skew);
+}
+
+function rememberMe (f) {
+    var now = new Date();
+    fixDate(now);
+    now.setTime(now.getTime() + 365 * 24 * 60 * 60 * 1000);
+    setCookie('mtcmtauth', f.author.value, now, '', HOST, '');
+    setCookie('mtcmtmail', f.email.value, now, '', HOST, '');
+    setCookie('mtcmthome', f.url.value, now, '', HOST, '');
+}
+
+function forgetMe (f) {
+    deleteCookie('mtcmtmail', '', HOST);
+    deleteCookie('mtcmthome', '', HOST);
+    deleteCookie('mtcmtauth', '', HOST);
+    f.email.value = '';
+    f.author.value = '';
+    f.url.value = '';
+}
+
+//-->
+</script>
+
+
+
+
+
+</head><body>
+
+<table style="border: 1px solid;" align="center" cellpadding="8" 
+width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr>
+<td width="140"><a href="http://br-linux.org/"><img 
+src="001840_arquivos/logo2004a.jpg" alt="br-linux" border="0"></a></td>
+<td style="vertical-align: middle;">
+<h3 align="center">Artigos br-linux.org<br>Artigos sobre Linux em bom 
+português, originais e com qualidade</h3>
+
+</td></tr></tbody></table>
+
+<div class="blog">
+
+<div id="menu">
+<a href="http://br-linux.org/tutoriais/001804.html">« Recompilando o 
+Kernel 2.4.x ou 2.6.x | </a>
+
+<a href="http://br-linux.org/tutoriais/">Índice de Tutoriais</a>
+<a href="http://br-linux.org/tutoriais/001879.html"> | Migração do 
+Advanced Protheus da Microsiga para o Linux »</a>
+
+</div>
+
+</div>
+
+
+<div align="right">
+<!-- Search Google -->
+<center>
+<form method="GET" action="http://www.google.com.br/custom">
+<input name="q" size="15" maxlength="255" type="text">
+<input name="sa" value="Pesquisar" type="submit">
+<input name="cof" 
+value="S:http://br-linux.org/;AH:left;LH:76;L:http://br-linux.org/noticias/logo2004e.jpg;LW:411;AWFID:9d08426eabe68107;"
+ type="hidden">
+<input name="domains" 
+value="br-linux.org;brlinux.linuxsecurity.com.br;linux.trix.net" 
+type="hidden">
+<input name="sitesearch" value="br-linux.org" checked="checked" 
+type="hidden">
+</form>
+</center>
+<!-- Search Google --></div>
+
+<div id="container">
+
+<div class="blog">
+
+<div class="blogbody">
+
+
+
+<div class="title">Gerenciamento de quotas de disco no Linux</div>
+<div class="posted">Publicado em 15 de fevereiro de 2004 </div>
+
+
+<p>Excelente howto de João Alexandre Lobo Marques 
+(alex_lobo@terra.com.br) ensinando configurar e habilitar o 
+"Gerenciamento de quotas de discos no Linux".</p>
+
+<p>Se você tem problemas com usuários usando desgovernadamente os 
+espaços em disco do seus servidores, não deixe de ler este artigo.<br>
+</p>
+
+<a name="more"></a>
+<p><b>Gerenciamento de quotas de disco no Linux</b></p>
+
+<p><i>Por: João Alexandre Lobo Marques <a 
+href="mailto:alex_lobo@terra.com.br">alex_lobo@terra.com.br</a></i></p>
+
+<p><i>Baseado no capítulo referente a quotas de disco <br>
+encontrado no site: <a 
+href="http://www.linuxhomenetworking.com/index.htm">http://www.linuxhomenetworking.com/index.htm</a><br>
+</i></p>
+
+<p><br>
+Se você trabalha gerenciando servidores de arquivos ou de e-mail, 
+certamente o gerenciamento de quotas de disco poderá ser uma ferramenta 
+muito útil para o uso racional do espaço em disco no seu servidor.</p>
+
+<p>Com o sistema de QUOTAS de disco nativo do Linux, você poderá gerar 
+restrições por partição para cada usuário do seu sistema ou mesmo para 
+grupos de usuários. Com este tutorial iremos apresentar um exemplo de 
+configuração para mostrar como é simples sua utilização.</p>
+
+<p>O sistema utilizado foi o Red Hat 9.</p>
+
+<p><br>
+<b>1- APRESENTANDO O PROBLEMA</b></p>
+
+<p>Imagine que seu servidor de arquivos possua duas partições, sendo uma
+ padrão para os arquivos de inicialização do Linux (/boot), a segunda 
+para o sistema e aplicativos ( / ) e uma terceira para os arquivos dos 
+usuários, tendo como raiz o diretório /home. Teríamos, então, a seguinte
+ tabela de particionamento:</p>
+
+<table border="0" cellspacing="30">
+  <caption><b>Tabela de Particionamento:</b></caption>
+  <tbody>
+    <tr>
+      <td>/boot</td>
+      <td>/dev/hda1</td>
+      <td>ext3</td>
+    </tr>
+    <tr>
+      <td>/</td>
+      <td>/dev/hda2</td>
+      <td>ext3</td>
+    </tr>
+    <tr>
+      <td>/home</td>
+      <td>/dev/hda3</td>
+      <td>ext3</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Neste momento não nos interessa o tamanho de cada partição.</p>
+
+<p>O problema é que alguns usuários estão utilizando abusivamente o 
+servidor,  salvando toneladas de vídeos e músicas que não tem nada a ver
+ com sua empresa. E este problema, certamente tenderá a crescer a ponto 
+de faltar espaço no seu servidor para arquivos úteis ao trabalho da 
+empresa.</p>
+
+<p>Para não ter que ficar monitorando o tamanho das pastas dos usuários 
+como uma câmera do Big Brother, a solução será oferecer uma fatia do 
+disco com tamanho limitado para cada usuário. Esta divisão deverá ser 
+individual, afinal, sem favorecer ninguém, mas o pessoal da informática 
+normalmente precisa de mais espaço que os demais colegas. ;-)</p>
+
+<p>Assim, você deverá, antes de tudo, fazer um projeto dos tamanhos das 
+fatias que cada usuário deverá receber no disco. </p>
+
+<p><br>
+<b>2 - O SISTEMA DE QUOTAS E O KERNEL DO LINUX</b></p>
+
+<p>O suporte ao sistema de QUOTAS é nativo do kernel do próprio LINUX. 
+Se você visualizar nas opções de FILESYSTEM do CÓDIGO FONTE do Kernel, <br>
+um dos primeiros itens será a ativação do suporte às quotas de disco. 
+Creio que a maioria das distribuições já deve instalar seu kernel 
+compilado <br>
+com o suporte a quotas embutido nele. Desta forma, cabe apenas ao 
+usuário ativar ou não o sistema.</p>
+
+<p>Obs: Para visualizar esta opção no Kernel, certifique-se que você 
+possui os fontes do kernel instalados e então utilize os comandos:</p>
+
+<p><b>1 - Modo caractere: </b><br>
+<i># cd /usr/src/linux-2.4<br>
+# make menuconfig</i></p>
+
+<p><b>2-	Modo gráfico:</b><br>
+Abra um xterm<br>
+<i># cd /usr/src/linux-2.4<br>
+# make xconfig</i></p>
+
+<p>Em ambas as opções procure pela seção FILESYSTEM e confira a opção de
+ suporte a QUOTA.</p>
+
+<p>Se sua distribuição não possui esta característica você pode aplicar 
+um patch no kernel, ativar a opção, recompilar, etc, etc, etc, mas este 
+artigo não visa cobrir esta trabalheira toda... </p>
+
+<p>Uma sugestão bem pessoal: para servidor de arquivo em produção, 
+coloque uma distribuição que já tenha todas as opções já compiladas no 
+kernel.</p>
+
+<p><br>
+<b>3 - CONFIGURANDO AS PARTIÇÕES DO SISTEMA</b></p>
+
+<p>Voltando ao nosso problema das quotas do disco. Temos três partições,
+ porém, a princípio iremos configurar o controle de quotas apenas para a
+ partição dos usuários: <i>/home</i>.</p>
+
+<p>Importante: Um ponto fundamental para o entendimento do sistema de 
+quotas é que ele é configurado POR PARTIÇÃO. Não se esqueça disso.</p>
+
+<p>Para que o sistema de quotas seja suportado por uma partição é 
+necessário que esteja integrado com o momento da montagem desta 
+partição. Ou seja, devemos informar no momento da montagem da partição 
+que ela suportará um sistema de quotas. </p>
+
+<p>A forma mais adequada de utilizarmos as quotas sempre no sistema é 
+ativarmos as quotas sempre que montarmos a partição. O arquivo que 
+mantém a tabela de partições que são montadas durante a inicialização do
+ sistema chama-se: <i>/etc/fstab</i>.</p>
+
+<p>Abaixo está um exemplo de fstab para o nosso problema:</p>
+
+<table border="0" cellspacing="30">
+  <caption><b>Exemplo do /etc/fstab</b></caption>
+  <tbody>
+    <tr>
+      <td>LABEL=/boot  </td>
+      <td>/boot</td>
+      <td>ext3</td>
+      <td>defaults</td>
+      <td>1 1</td>
+    </tr>
+    <tr>
+      <td>LABEL=/home</td>
+      <td> /home</td>
+      <td>ext3</td>
+      <td>defaults</td>
+      <td>1 2</td>
+    </tr>
+    <tr>
+      <td>LABEL=/</td>
+      <td>/</td>
+      <td>ext3</td>
+      <td>defaults</td>
+      <td>1 3</td>
+    </tr>
+  </tbody>
+</table>
+	                	               
+<b>3.1 - PARA CONTROLE POR USUÁRIO</b>
+
+<p>Para ativar a quota na partição, deve ser inserida a opção <i>"usrquota"</i>,
+ resultando num arquivo fstab conforme mostrado a seguir:</p>
+
+<table border="0" cellspacing="30">
+  <caption><b>Exemplo do /etc/fstab com a opção usrquota</b></caption>
+  <tbody>
+    <tr>
+      <td>LABEL=/boot </td>
+      <td>/boot</td>
+      <td>ext3</td>
+      <td>defaults</td>
+      <td>1 1</td>
+    </tr>
+    <tr>
+      <td>LABEL=/home</td>
+      <td> /home</td>
+      <td>ext3</td>
+      <td>defaults,<b>usrquota</b></td>
+      <td>1 2</td>
+    </tr>
+    <tr>
+      <td>LABEL=/</td>
+      <td>/</td>
+      <td>ext3</td>
+      <td>defaults</td>
+      <td>1 3</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Com esta alteração você deve remontar a partição reconfigurada. Você 
+pode reiniciar seu computador ou apenas usar o comando:</p>
+
+<p><i># mount -o remount /home</i></p>
+
+<p><b>3.2 - PARA CONTROLE POR GRUPOS DE USUÁRIOS</b></p>
+
+<p>Para ativar a quota na partição, deve ser inserida a opção 
+"grpquota", resultando num arquivo fstab conforme mostrado a seguir:</p>
+
+<table border="0" cellspacing="30">
+  <caption><b>Exemplo do /etc/fstab com grpquota</b></caption>
+  <tbody>
+    <tr>
+      <td>LABEL=/boot  </td>
+      <td>/boot</td>
+      <td>ext3</td>
+      <td>defaults</td>
+      <td>1 1</td>
+    </tr>
+    <tr>
+      <td>LABEL=/home</td>
+      <td> /home</td>
+      <td>ext3</td>
+      <td>defaults,<i>usrquota</i>,<b>grpquota</b></td>
+      <td>1 2</td>
+    </tr>
+    <tr>
+      <td>LABEL=/</td>
+      <td>/</td>
+      <td>ext3</td>
+      <td>defaults</td>
+      <td>1 3</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Com esta alteração você deve remontar a partição reconfigurada. Você 
+pode reiniciar seu computador ou apenas usar o comando:</p>
+
+<p><i># mount -o remount /home</i></p>
+
+<p><br>
+<b>4 - CRIANDO OS ARQUIVOS DE CONFIGURAÇÃO</b></p>
+
+<p>Dentro da pasta raiz da partição configurada deve ser criado um 
+arquivo chamado: <b>aquota.user</b> com permissões de leitura e escrita 
+somente para o root. Use os comandos a seguir:</p>
+
+<p><i># touch  /home/aquota.user<br>
+# chmod  600  /home/aquota.user</i></p>
+
+<p>Obs: Caso você queira utilizar o controle de quotas de disco por 
+grupos de usuários, deverá ser criado um arquivo adicional:</p>
+
+<p><i># touch  /home/aquota.group<br>
+# chmod  600  /home/aquota.group</i></p>
+
+<p>Após criar o arquivo, você deverá utilizar um programinha do sistema 
+da seguinte forma:</p>
+
+<p><i># quotacheck -vagum</i></p>
+
+<p>Da primeira vez que você executar o <i>quotacheck</i> deverá aparecer
+ um aviso (veja abaixo) de arquivo truncado, mas não se preocupe, daí em
+ diante não haverá mais problemas.</p>
+
+<p><i>quotacheck: WARNING -  Quotafile /home/aquota.user was probably 
+truncated. Can't save quota settings...<br>
+quotacheck: Scanning /dev/hda3 [/home] done<br>
+quotacheck: Checked 185 directories and 926 files</i></p>
+
+<p><br>
+<b>5 - ADICIONANDO REGRAS DE QUOTAS</b></p>
+
+<p>Suponha que o nosso sistema possua um usuário chamado: "tux". Para 
+manipular o sistema de quotas dos usuários, é utilizado o comando: <i>edquota</i>
+ com a seguinte sintaxe:</p>
+
+<p><i># edquota -u tux</i></p>
+
+<p>Este comando irá abrir o editor <b>vi</b> com uma lista de campos, 
+conforme mostrado a seguir:</p>
+
+<p><b>Disk quotas for user tux (uid 501):</b></p>
+
+<table border="0" cellspacing="20">
+  <tbody>
+    <tr align="left">
+      <td>Filesystem</td>
+      <td>blocks</td>
+      <td>soft</td>
+      <td>hard</td>
+      <td>inodes</td>
+      <td>soft</td>
+      <td>hard</td>
+    </tr>
+    <tr align="center">
+      <td>/dev/hda2 </td>
+      <td>24</td>
+      <td>0</td>
+      <td>0</td>
+      <td>7</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+ 
+Iremos analisar detalhadamente cada um destes campos:
+
+<p><b>Filesystem</b>  é a partição que está sendo monitorada pelo 
+sistema de quotas. No nosso exemplo, o <i>/home</i> está na partição <i>/dev/hda2</i>;</p>
+
+<p><b>Blocks</b> mostra o número de blocos (simplificando, o número de 
+KiloBytes) atualmente utilizados pelo usuários;</p>
+
+<p><b>Inodes</b> Pulando para o quinto campo, o sistema de arquivos do 
+Linux possui uma tabela que possui todas as informações de todos os 
+arquivos lá existentes. Cada arquivo é referenciado por um <i>inode</i> e
+ o sistema de quotas permite que você limite o número de inodes que o 
+usuário pode utilizar.</p>
+
+<p>Obs: Para simplificação, nos preocuparemos apenas com o gerenciamento
+ de quotas por uso em Kbytes. Normalmente, estaremos preocupados em 
+colocar 5Mbytes ou 2 Mbytes para cada usuário e não com os inodes que 
+eles utilizarão.</p>
+
+<p>Outros campos:<br>
+Existem três conceitos importantes quando falamos de gerenciamento de <br>
+quotas de disco:</p>
+
+<p><b>1 -	SOFT LIMIT</b> é um limite básico que cada usuário pode 
+utilizar. Caso você utilize o item 2 (<i>GRACE PERIOD</i>), o usuário 
+terá um prazo para limpar seus arquivos, caso contrário, não serão 
+permitidas novas gravações na sua área de disco.</p>
+
+<p><b>2-	GRACE PERIOD</b> é um período de tolerância básico, dentro do 
+qual o usuário recebe avisos que ultrapassou seu <i>SOFT LIMIT</i> e que
+ deve tomar alguma providência.</p>
+
+<p><b>3 -	HARD LIMIT</b> é o limite final de tamanho para o usuário. 
+Normalmente é um valor maior que o <i>SOFT LIMIT</i>, mas não muito. Ao 
+ser atingido o <i>HARD LIMIT</i>, o sistema não mais permitirá gravação 
+de arquivos, independente do valor do <i>GRACE PERIOD</i>.</p>
+
+<p>Com isso em mente, voltamos às colunas do comando <i>edquota</i>:</p>
+
+<p><b>soft</b> a terceira coluna do arquivo representa a quantidade, em 
+KBytes, do <i>SOFT LIMIT</i>.</p>
+
+<p><b>hard</b> a quarta coluna representa a quantidade em KBytes, do <i>HARD
+ LIMIT</i>.</p>
+
+<p>A sexta e a sétima colunas, denominadas também como <i>soft</i> e <i>hard</i>
+ dizem respeito aos limites, em <i>inodes</i>, para o usuário. Como não 
+utilizaremos este parâmetro, podemos deixar os valores padrões (0).</p>
+
+<p>No nosso exemplo, projetamos que o usuário <i>tux</i> terá direito a 3
+ MegaBytes de dados (SOFT LIMIT), com uma tolerância máxima de 4 
+MegaBytes (HARD LIMIT). Com isso, editamos os campos soft e hard, 
+resultando no seguinte:</p>
+
+<p><b>Disk quotas for user tux (uid 501):</b></p>
+
+<table border="0" cellspacing="20">
+  <tbody>
+   <tr align="left">
+      <td>Filesystem</td>
+      <td>blocks</td>
+      <td>soft</td>
+      <td>hard</td>
+      <td>inodes</td>
+      <td>soft</td>
+      <td>hard</td>
+    </tr>
+    <tr align="center">
+      <td>/dev/hda2 </td>
+      <td>24</td>
+      <td>3000</td>
+      <td>4000</td>
+      <td>7</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Salve o arquivo no <b>vi</b>.</p>
+
+<p><br>
+<b>6 - CONFIGURANDO O PARÂMETRO <i>GRACE PERIOD</i></b></p>
+
+<p>Para ajustar este parâmetro, entre com o comando:</p>
+
+<p><i># edquota -t</i></p>
+
+<p>Também será aberta um editor <i>vi</i> com o arquivo no seguinte 
+formato:</p>
+
+<p><b>Grace period before enforcing soft limits for users:<br>
+Time units may be: days, hours, minutes, or seconds:</b></p>
+
+<table border="0" cellspacing="20">
+  <tbody>
+    <tr align="left">
+    	<td>Filesystem</td>
+		<td>Block grace period</td>
+		<td>Inode grace period</td>
+	 </tr>
+    <tr align="center">
+	   <td>/dev/hda2</td>
+		<td>7days</td>
+		<td>7days</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Fique atento que a unidade do período pode ser: <i>dias (days), horas
+ (hours), minutos (minutes) ou segundos (seconds)</i> e deve ser 
+configurado sem espaços entre o número e a unidade do período. Isto é: 
+deve ser colocado <i>7days</i> e não <i>7 days</i>.</p>
+
+<p>Salve o arquivo e pronto.</p>
+
+<p><br>
+<b>7 - VERIFICANDO AS QUOTAS</b></p>
+
+<p>Existem duas verificações interessantes para as quotas criadas.</p>
+
+<p>1 - A primeira é com o comando:</p>
+
+<p><i># quota</i></p>
+
+<p>Este comando irá responder com a situação atual do uso de disco do 
+usuário atualmente logado no sistema. Se quiser verificar a situação de 
+outro usuário (por exemplo, do usuário <i>tux</i>):</p>
+
+<p><i># quota tux</i></p>
+
+<p><br>
+2 - Um segundo modo de se ter um panorama geral das quotas do sistema é 
+com o comando:</p>
+
+<p><i># repquota /home</i></p>
+
+<p>que irá listar um relatório geral dos usuários com o seguinte 
+formato:</p>
+
+<p><b>Report for user quotas on device /dev/hda2<br>
+Block grace time: 7days; Inode grace time: 7days</b></p>
+
+<table border="0" cellspacing="20">
+  <tbody>
+    <tr align="right">
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>Block limits</td>
+      <td></td>
+      <td>File limits</td>
+      <td></td>
+    </tr>
+    <tr align="center">
+      <td>User</td>
+      <td>used</td>
+      <td>soft</td>
+      <td>hard</td>
+      <td>grace</td>
+      <td>used</td>
+      <td>soft</td>
+      <td>hard</td>
+      <td>grace</td>
+    </tr>
+    <tr align="center">
+	   <td>root</td>
+      <td>52696</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1015</td>
+      <td>0</td>
+      <td>0</td>
+       <td></td>
+      <td></td>
+    </tr>
+    <tr align="center">
+		<td>tux</td>
+      <td>24</td>
+      <td>3000</td>
+      <td>4000</td>
+      <td>7</td>
+      <td>0</td>
+      <td>0</td>
+      <td></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+
+<p><br>
+<b>8 - CHECAGEM DE QUOTAS</b></p>
+
+<p>O sistema operacional não faz uma checagem de quotas em todas as 
+vezes que um usuário cria um novo arquivo. É necessário que o sistema 
+seja atualizado freqüentemente (na verdade, a freqüência depende da sua 
+necessidade de monitoramento do espaço utilizado no disco).</p>
+
+<p>Para processar os arquivos <i>aquota.user</i> e, se for o caso <i>aquota.group</i>
+ deve ser usado o comando:</p>
+
+<p><i># quotacheck -vagu</i></p>
+
+<p>O ideal é que você crie um agendamento através do cron com este 
+comando.</p>
+
+<p><br>
+<b>9 - CONCLUSÕES</b></p>
+
+<p>O sistema de quotas é muito útil para os administradores de redes que
+ possuem muitos usuários. É papel básico do sistema servidor de redes 
+oferecer esta funcionalidade. Sistemas como Netware ou Windows 
+implementam estas características com muita simplicidade em seus 
+serviços de diretórios. O Linux também não fica atrás, principalmente se
+ você  utilizar um software como o WEBMIN que oferece uma interface 
+simples e funcional para a manutenção no dia a dia. </p>
+
+<p>Com este tutorial, espero ter aproximado um pouco mais dos 
+administradores de sistemas Linux esta excelente funcionalidade.</p>
+
+<p></p>
+
+<p><b>Autor:</b><i> João Alexandre Lobo Marques</i><br>
+<b>Email:</b><i> <a href="mailto:alex_lobo@terra.com.br">alex_lobo@terra.com.br</a></i></p>
+
+<span class="posted">Postado por fuji em fevereiro 15, 2004 10:49 PM
+
+
+<br></span>
+
+</div>
+
+
+<p></p><div class="comments-head"><a name="comments"></a>Comentários 
+para "Gerenciamento de quotas de disco no Linux"</div>
+
+<div class="comments-body">
+<p><span class="comments-post"><a name="014164">»</a> Postado por: <a 
+href="mailto:tarcisio@centec.org.br">Tarcísio C. Espínola</a> em 
+fevereiro 24, 2004 07:45 PM, 200.217.87.:</span>
+</p><ul><dt><p>Podemos, também, utilizar o utilitário Webmin para a 
+administração das cotas dos usuários e grupos. É incrível a facilidade 
+com que esse utilitário permite que isso seja feito.</p>
+
+<p>Tarcísio.</p></dt></ul>
+<p style="border-top: 1px dotted;">&nbsp;</p>
+</div>
+<div class="comments-body">
+<p><span class="comments-post"><a name="014185">»</a> Postado por: <a 
+href="mailto:luciano@labtel.ele.ufes.br">Luciano</a> em fevereiro 25, 
+2004 01:54 PM, 200.141.250:</span>
+</p><ul><dt><p>existe ainda um script programa sei la chamado warnquota 
+que ao ser rodado ele envia um e-mail para cada usuario que estiver com 
+quota cheia que pode ser editado no /etc/warnquota.conf<br>
+acho q é isso... recurso interessante, vc pode explicar para pessoa como
+ proceder visto que quando a quota estoura por exemplo nao é mais 
+possivel logar no kde por exemplo...<br>
+ai tem q ir no terminal ou no xfce apagar os arquivos sobrando...</p></dt></ul>
+<p style="border-top: 1px dotted;">&nbsp;</p>
+</div>
+<div class="comments-body">
+<p><span class="comments-post"><a name="014231">»</a> Postado por: <a 
+href="mailto:jothap@yahoo.com.br">Jean</a> em fevereiro 26, 2004 09:44 
+AM, 200.194.106:</span>
+</p><ul><dt><p>Pelo que percebi...é necessário executar o comando para 
+cada usuario existente?...ou seja como eu tenho 3000 usuarios....vou ter
+ q fazer isso 3000 vezes?</p>
+
+<p>Valeu!</p>
+
+<p>Jean</p></dt></ul>
+<p style="border-top: 1px dotted;">&nbsp;</p>
+</div>
+<div class="comments-body">
+<p><span class="comments-post"><a name="014325">»</a> Postado por: <a 
+href="mailto:eduardo_gobbo@hotmail.com">Eduardo</a> em fevereiro 27, 
+2004 02:47 PM, 200.217.40.:</span>
+</p><ul><dt><p>Vc tb pode setar a quota por grupo. </p>
+
+<p>entao ao invés de "edquota -u usuario" poderia ser "edquota -g 
+grupo". Nesse caso basta saber a qual grupo esses seus usuários 
+pertencem .<br>
+</p></dt></ul>
+<p style="border-top: 1px dotted;">&nbsp;</p>
+</div>
+<div class="comments-body">
+<p><span class="comments-post"><a name="014421">»</a> Postado por: <a 
+href="mailto:linux@stractus.com.br">Wellerson</a> em fevereiro 29, 2004 
+08:12 PM, 200.150.55.:</span>
+</p><ul><dt><p>Faltou informar como é calculado o uso de espaço ao usar 
+quotas por GRUPO de usuários. Ex. 10MB para o grupo GTUX. Serão 10MB 
+para cada usuário do grupo GTUX ou 10MB para a soma do tamanho dos 
+arquivos dos usuários do grupo GTUX?</p></dt></ul>
+<p style="border-top: 1px dotted;">&nbsp;</p>
+</div>
+<div class="comments-body">
+<p><span class="comments-post"><a name="020133">»</a> Postado por: <a 
+href="mailto:beto@inf.ufes.br">Beto</a> em maio 14, 2004 08:27 PM, 
+201.8.109.1:</span>
+</p><ul><dt><p>Não tenho certeza sobre isso mas de qualquer forma pelo 
+menos no quotas do freebsd há uma opção em que vc a partir de um usuário
+ define as quotas de um intervalo de usuários... deve ter algo parecido 
+no Linux com certeza.. O comando seria: edquota -p userbase 
+uidinicial-uidfinal : <br>
+edquota -p user 500-10000 Isso setaria as configurações de cotas do 
+usario user para o usuário com uid 500 até o usuário 10000... <br>
+Estou usando NFS gostaria de saber se há alguma configuração especial a 
+ser feita no CLIETNE para que o sistema de quotas funcione...</p></dt></ul>
+<p style="border-top: 1px dotted;">&nbsp;</p>
+</div>
+<div class="comments-body">
+<p><span class="comments-post"><a name="020500">»</a> Postado por: <a 
+href="mailto:presoto@laonline.com.br">Tiago Presoto</a> em maio 19, 2004
+ 10:30 AM, 200.206.72.:</span>
+</p><ul><dt><p>eu tenho que fazer um trabalho sobre o tema gerenciamento
+ de disco ficarei muito grato se puderem me ajudar<br>
+</p></dt></ul>
+<p style="border-top: 1px dotted;">&nbsp;</p>
+</div>
+
+
+
+<p></p><div class="comments-head">Antes de comentar...</div>
+
+<div class="comments-body">
+<br>- Preserve a qualidade desta discussão 
+<br>- Leia os <a target="_blank" 
+href="http://brlinux.linuxsecurity.com.br/artigos/termos.htm">Termos de 
+Uso</a>.
+<br>- Este formulário deve ser usado para comentários sobre a notícia. 
+Se você tem dúvidas ou precisa de ajuda, use o <a target="_blank" 
+href="http://forum.br-linux.org/">Fórum</a>.
+<br>- Mantenha o foco nos argumentos e no assunto 
+<br>- Não faça ataques pessoais. 
+<br>- Pense 5 vezes antes de entrar em discussões inúteis, como "qual é a
+ melhor distribuição/ambiente gráfico/linguagem de programação/etc.", 
+mesmo se alguém já tiver provocado - um erro não justifica o outro 
+<br>- Não seja um <a target="_blank" 
+href="http://br-linux.org/e-mala.htm">e-mala</a> ;-)
+
+<p></p><center><img src="001840_arquivos/newflame3.gif"></center>
+
+<a name="form"></a>
+<div class="comments-head">Envie seu comentário</div>
+
+<form method="post" 
+action="http://brlinux.linuxsecurity.com.br/x/mt/mt-comments.cgi" 
+name="comments_form" onsubmit="if (this.bakecookie[0].checked) 
+rememberMe(this)">
+<input name="static" value="1" type="hidden">
+<input name="entry_id" value="1840" type="hidden">
+
+<div style="width: 180px; padding-right: 15px; margin-right: 15px; 
+float: left; text-align: left; border-right: 1px dotted rgb(187, 187, 
+187);">
+	<label for="author">Nome:</label><br>
+	<input tabindex="1" id="author" name="author"><br><br>
+
+	<label for="email">E-mail:</label><br>
+	<input tabindex="2" id="email" name="email"><br><br>
+
+	<label for="url">Seu website:</label><br>
+	<input tabindex="3" id="url" name="url"><br><br>
+</div>
+
+Lembrar as informações pessoais?<br>
+<input id="bakecookie" name="bakecookie" type="radio"><label 
+for="bakecookie">Sim</label><input checked="checked" id="forget" 
+name="bakecookie" onclick="forgetMe(this.form)" value="Forget Info" 
+style="margin-left: 15px;" type="radio"><label for="forget">Não</label><br
+ style="clear: both;">
+
+<br><b>Atenção</b>: Este formulário deve ser usado para comentários 
+sobre a notícia. Se você tem dúvidas ou precisa de ajuda, use o <a 
+target="_blank" href="http://forum.br-linux.org/">Fórum</a>, onde mais 
+pessoas estarão disponíveis para respondê-lo..
+
+<p><label for="text">Comentários:</label><br>
+<textarea tabindex="4" id="text" name="text" rows="10" cols="50"></textarea><br><br>
+
+<input name="preview" value="&nbsp;Conferir&nbsp;" type="submit">
+<input style="font-weight: bold;" name="post" value="&nbsp;Postar&nbsp;"
+ type="submit"><br><br>
+
+
+
+<script type="text/javascript" language="javascript">
+<!--
+document.comments_form.email.value = getCookie("mtcmtmail");
+document.comments_form.author.value = getCookie("mtcmtauth");
+document.comments_form.url.value = getCookie("mtcmthome");
+if (getCookie("mtcmtauth")) {
+    document.comments_form.bakecookie[0].checked = true;
+} else {
+    document.comments_form.bakecookie[1].checked = true;
+}
+//-->
+</script>
+</p></form></div>
+
+
+</div>
+</div>
+
+</td></tr></tbody></table>
+
+<p></p><center>Nota: os comentários pertencem a seus respectivos autores
+ e são de responsabilidade de quem os postou. O restante desta nota está
+ disponível sob a licença <a target="_blank" 
+href="http://www.gnu.org/copyleft/fdl.html">GNU FDL</a>, exceto se 
+explicitamente declarado em contrário.</center>
+
+</body></html>

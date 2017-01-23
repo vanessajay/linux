@@ -1,0 +1,9 @@
+O que é BASH?:
+http://blog.scriptseguro.com.br/o-que-e-bash/
+
+/etc/issue:
+http://www.vivaolinux.com.br/dica/O-arquivo-etc-issue
+
+Colocando o logotipo do Debian no seu motd:
+http://www.vivaolinux.com.br/dica/Colocando-o-logotipo-do-Debian-no-seu-motd
+

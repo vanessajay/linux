@@ -1,0 +1,12 @@
+Instalando o Debian Lenny Linux:
+http://www.vivaolinux.com.br/artigo/Instalando-o-Debian-Lenny-Linux/
+
+Instalando o Ubuntu 9.10:
+http://ubuntued.info/como-instalar-ubuntu-karmic-koala-9-10
+
+Pré-Particionamento para sistemas Multi-Boot:(Curso, bem interessante)
+http://www.debian.org/releases/stable/i386/ch03s05.html.pt
+
+Guia Rápido de Instalação do Fedora 12:
+http://docs.fedoraproject.org/en-US/Fedora/13/html/Installation_Quick_Start_Guide/
+

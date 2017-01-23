@@ -1,0 +1,5 @@
+Desligando e reiniciando o sistema com o comando init:
+http://www.uniriotec.br/~morganna/guia/init.html
+
+Os poderes do bash_history
+http://www.vivaolinux.com.br/dica/Os-poderes-do-.bash_history

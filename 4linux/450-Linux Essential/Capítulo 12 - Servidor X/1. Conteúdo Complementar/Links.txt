@@ -1,0 +1,9 @@
+Entendendo o modo gráfico no Linux:
+http://leonardoafonso.blogspot.com/2007/09/entendendo-o-modo-grfico-no-linux.html
+
+Servidor X:
+http://www.cin.ufpe.br/~cinlug/wiki/index.php/Conhecendo_o_Servidor_X
+
+Sobre o Xorg:
+http://under-linux.org/wiki/Tutoriais/X/Xorg
+

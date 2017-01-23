@@ -1,0 +1,8 @@
+Editor de textos VI:
+http://www.infowester.com/linuxvi.php
+
+Editor de textos VIM:
+http://aurelio.net/vim/
+
+Nano:
+http://www.vivaolinux.com.br/dica/Nano-editor/

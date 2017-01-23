@@ -1,0 +1,16 @@
+Criando e gerenciando usuários no Linux:
+http://www.infowester.com/usuarioslinux.php
+
+Administração de usuários e grupos no Linux:
+http://www.linuxnarede.com.br/artigos/fullnews.php?id=205
+
+Entendendo e usando permissões no Linux - parte 1:
+http://www.infowester.com/usuarioslinux.php
+
+Entendendo e usando permissões no Linux - parte 2:
+http://www.infowester.com/linuxpermissoes2.php
+
+Permissões Especiais:
+http://www.vivaolinux.com.br/artigo/Tipos-de-permissoes-especiais-GNU-Linux/
+
+

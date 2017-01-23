@@ -1,0 +1,1143 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="pt-br" xmlns="http://www.w3.org/1999/xhtml" lang="pt-br"><head>
+
+
+<title>.:TWikiBarPapo011 &gt; TWikiBar &gt; Aqui temos um _livro livre_ e
+ completo sobre _Shell_:.</title>
+<link rel="shortcut icon" 
+href="http://wiki.softwarelivre.org/pub/TWikiBar/FreeSkinImagens/favicon.ico"
+ type="image/x-icon">
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta name="Keywords" content="brasil, software, livre, liberdade, 
+copyleft, gnu, linux, grupo, bash, shell, Julio, Cezar, Neves, venda, 
+aluguel, casa, Arraial, do, Cabo">
+<meta name="Description" content="Os sedentos do " saber="" livre="" 
+são="" muito="" benvindos.="">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta name="author" content="Julio Cezar Neves">
+<!-- base href="http://wiki.softwarelivre.org/TWikiBar/TWikiBarPapo011" -->
+</head><body>\
+<style type="text/css" media="all">
+
+/* elementos HTML básicos */
+
+html body {
+  line-height:1.55em;
+  font-family: "Bitstream Vera Sans", "Lucida Grande", verdana, lucida, helvetica, sans-serif;
+  background-color: #f8f8f8;
+  margin:0;
+  padding:0;
+  font-size:x-small;
+  voice-family:"\"}\""; 
+  voice-family:inherit;
+  font-size:small;
+}
+
+html>body {
+  font-size:small;   
+}
+
+/* be kind to netscape 4 that doesn't understand inheritance */
+body, p, li, ul, ol, dl, dt, dd, acronym, h1, h2, h3, h4, h5, h6 {
+   background-color:transparent;
+}
+p {
+   margin:1em 0 0 0;
+}
+table {
+   border-collapse: separate;
+   background-color: #000000;
+}
+
+table.destaque {
+   border-collapse: separate;
+   background-color: #ffffcc !important;
+}
+
+#SearchResultsTable table,
+#SearchResultsTable tr,
+#SearchResultsTable td{
+   background-color: #ffffff !important;
+}
+
+strong, b {
+   font-weight:bold;
+}
+hr {
+   color:#9E9E70;
+   background-color:#9E9E70;
+   height:1px;
+   border:none;
+}
+pre, code, tt {
+   font-size:100%;
+   line-height:1.4em;
+   color:#7A4707;
+}
+pre {
+   margin-top:1em;
+   margin-bottom:1em;
+}
+
+/* Text */
+
+h1, h2, h3, h4, h5, h6 {
+   font-family:"Lucida Grande", helvetica, lucida, verdana, sans-serif;
+   line-height:104%;
+   padding:0;
+   margin:1em 0 0.1em 0;
+}
+h1 {
+   font-size:210%;
+   color:#e24628;
+   margin:0 0 0.1em 0;
+}
+h2 {
+   font-size:145%;
+   display:block;
+   background-color:#F3EDE7;
+   color:#900;
+   padding:0.2em 0.7em;
+   margin:1em 0.7em 0.15em 0.7em;
+   height:auto;
+}
+h3 { font-size:140%; color:#900;}
+h4 { font-size:125%; color:#900;}
+h5 { font-size:110%; color:#900;}
+h6 { font-size:95%; color:#900;}
+
+/* Links */
+
+:link:focus,
+:visited:focus,
+:link,
+:visited,
+:link:active,
+:visited:active {
+   text-decoration:none;
+   color:#1e5bbd;
+   background-color:transparent;
+}
+:link:hover,
+:visited:hover {
+   text-decoration:underline;
+   background-color:#b4d5ff;
+   color:#1559B3;
+}
+a:link img,
+a:visited img,
+a:hover img,
+a:active img {
+   background-color:transparent;
+}
+th a:link,
+th a:visited {
+   font-weight:bold;
+}
+
+/* ----------------------------------------
+   Referências à Menu de Contexto
+   Fonte: http://br.mozdev.org/thunderbird/vocesabia/?privacidade 
+          http://br.mozdev.org/images/html/br.css
+---------------------------------------- */
+
+kbd {
+  padding: 0px 1px 0px 1px !important;
+  border-width: 1px 2px 2px 1px !important;
+  border-style: solid !important;
+  background: #faf6f6  !important;
+  color: #000  !important;
+  border-color:  #edd #baa #baa #eed  !important;
+}
+
+/* ----------------------------------------
+   Estilo para tooltip em links
+   Fonte: http://loadaveragezero.com/vnav/labs/CSS/tooltips.php
+---------------------------------------- */
+
+span.tool {
+  position: relative;   /* this is key */
+  cursor: help;
+}
+ 
+span.tool span.tip {
+  display: none;        /* so is this */
+}
+
+/* tooltip will display on :hover event */
+
+span.tool:hover span.tip {
+  display: block;
+  z-index: 100;
+  position: absolute;
+  top: 2.5em;
+  left: 0;
+  width: auto;
+  line-height: 1.2em;
+  padding: 3px 7px 4px 6px;
+  border: 1px solid #336;
+  background-color: #f7f7ee;
+  font-size: 12px;
+  font-weight: normal;
+  color: #000;
+  text-align: left;
+}
+
+#content span.tool:after {
+  padding-left: 2px;            /* eye candy */
+  content: url(http://wiki.softwarelivre.org/pub/TWiki/TWikiDocGraphics/bubble.gif);
+}
+
+/* ----------------------------------------
+   Estilo para caixa div de código code-box 
+   Fonte: http://loadaveragezero.com/vnav/labs/CSS/code.php
+---------------------------------------- */
+
+.code-box {
+  font-family: 'Lucida Console', 'Bitstream Vera Sans Mono', 'Courier New', Monaco, Courier, monospace;
+  width: 100%;
+  border: 1px dashed #aaa8a8;
+  padding: 0.5em 0 0.3em 0.5em;
+  color: #000;
+  overflow: auto;
+  background: #fff url(http://wiki.softwarelivre.org/pub/TWiki/TWikiDocGraphics/hand.gif) no-repeat top right;
+}
+
+/* ----------------------------------------
+   Estilos das Divisões
+---------------------------------------- */
+
+.geral {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.cabecalho { }
+
+.padraogoverno {
+  border:1px solid #FFCC00;
+  background-color: #FFCC00;
+  text-align: center;
+}
+
+.padraocabecalho {
+  border:1px solid #669966; /* verde pálido */
+/*  text-align: center; */
+  background: #FFF url(http://wiki.softwarelivre.org/pub/TWikiBar/FreeSkinImagens/6aEdicao.PNG) right top no-repeat;
+  color: #FFF;
+  min-height: 105px; /* tamanho da logo */
+}
+
+.corpo {
+  position: relative;
+  top:0;
+  left:0;
+}
+
+.lateral {
+  position: absolute;
+  background-color: #FFFAFF; /* rosa claríssimo */
+
+  width: 12.5em; /* 0.5em à mais do menuL */
+
+  z-index:1; /* forçar estar acima dos demais */
+}
+
+.barranavegacao {
+  background-color: #CDCE9C;
+}
+
+.topico {
+  position: relative;
+  padding-left:1em;
+  padding-bottom:1em;
+  margin-left: 13.1em; /* deslocado 1em à direita do menuL */
+  min-height: 20em;
+
+/*  overflow: auto; */
+
+  border:1px solid #000;
+  background-color: #FFF;
+}
+
+.localizacao {
+  margin-left: 13.1em; /* deslocado 1em à direita do menuL */
+  padding-left:1em;
+
+  border:1px solid #E6E6E6; /* cinza claro */
+  background-color: #E6E6E6;
+}
+
+.edicao {
+  margin-left: 13.1em; /* deslocado 1em à direita do menuL */
+  padding-left:1em;
+
+  border:1px solid #EEF6FF;
+  background-color: #EEF6FF; /* azul claríssimo */
+}
+
+.rodape {
+  margin-left: 13.1em; /* deslocado 1em à direita do menuL */
+  padding-left:1em;
+
+  text-align: center;
+
+  border:1px solid #FFFAFF;
+  background-color: #FFFAFF; /* rosa claríssimo */
+}
+
+/* ----------------------------------------
+   Barra de Navegacao através de listas.
+   http://www.maujor.com/tutorial/cssmenu.php
+---------------------------------------- */
+#menuH ul {
+  border:none;
+  margin: 0;
+  padding: 0;
+  text-align:left;
+}
+
+#menuH ul li {
+  list-style: none;
+  margin: 0;
+  display: inline;
+}
+
+#menuH ul li a {
+  height:1px; /* IE5.0 bug */
+/*  padding: 3px 1px; */
+  margin:0;
+/*  border: 1px solid #f00; */
+/*  background: #999; */
+  text-decoration: none;
+}
+
+#menuH ul li a:link, #menuH ul li a:visited {
+/*  color: #fff; */
+}
+
+#menuH ul li a:hover {
+/*  background: #ccc; */
+  color: #F00;
+/* border-color: #000; */
+}
+
+/* ----------------------------------------
+   Menu Construído através de listas. Baseado em:
+   http://www.maujor.com/tutorial/tecmenu.php e
+   http://www.tanfa.co.uk/css/examples/css-dropdown-menus.asp
+---------------------------------------- */
+
+/* Tamanho, Fonte, Cor, Borda do MenuL */
+#menuL {
+  width: 12em;
+  background: #999;
+  font-size: 11px/16px;
+  font-weight: bold;
+}
+
+/* Caixa do Menu OL */
+#menuL ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Caixa dos Itens do Menu UL - Fica dentro da caixa OL */
+#menuL ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Titulo do Menu OL - ordenado */
+#menuL ol li {
+  color: #fff;
+  background: #000;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+/* Items dentro do Menu OL */
+#menuL ol li li {
+  color: #fff;
+  background: #000;
+  text-transform: none;
+  text-align: left;
+}
+
+/* Links dos Menus */
+#menuL ol li li a {
+  display: block;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #ccc #888 #555 #bbb;
+  margin: 0;
+  padding: 2px 3px;
+}
+
+/* Itens do Menu OL - Links */
+#menuL a {
+  color: #000;
+  background: #efefef;
+  text-decoration: none;
+}
+
+/* Itens do Menu OL - Links com o mouse em cima */
+#menuL a:hover {
+  color: #a00;
+  background: #fff;
+}
+
+/* Posicionamento dos Itens - "Mágica" */
+#menuL li {
+  position: relative;
+}
+
+#menuL ol ul ul {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  width: 100%;
+}
+
+/* Magia CSS */
+div#menuL ol ul ul,
+div#menuL ol ul ul ul,
+div#menuL ol ul li:hover ul ul,
+div#menuL ol ul ul li:hover ul ul
+{display: none;}
+
+/* Magia CSS */
+div#menuL ol ul li:hover ul,
+div#menuL ol ul ul li:hover ul,
+div#menuL ol ul ul ul li:hover ul
+{display: block;}
+
+/* Corrige o espaço deixado pelos parágrafos */
+div#menuL p {display:inline;}
+</style>
+
+<!-- Internet Explorer CSS Fixes -->
+<!--[if IE]>
+  <style type="text/css" media="screen">
+    body {  behavior: url(http://wiki.softwarelivre.org/pub/TWikiBar/FreeSkinCSS/csshover.htc); font-size: 100%;} 
+    #menuL ol li { float: left; width: 100%; }
+    #menuL ol li a { height: 1%; }
+  </style>
+<![endif]-->
+
+
+
+<div class="geral">
+<div class="cabecalho">
+	 <div class="padraocabecalho">		
+<h3><a name="Aqui_temos_um_livro_livre_e_comp"></a> Aqui temos um <em>livro
+ livre</em> e completo sobre <em>Shell</em> </h3>
+<h4><a name="Os_sedentos_do_saber_livre_s_o_m"></a> Os sedentos do 
+"saber livre" são muito benvindos. </h4>
+<!-- <span class="foswikiNewLink">SiteSearch<a href="/bin/edit/TWikiBar/SiteSearch?topicparent=TWikiBar.TWikiBarPapo011" rel="nofollow" title="Criar este tópico">?</a></span> Google -->
+<form method="get" action="http://www.google.com/search" target="_blank">
+<input name="ie" value="UTF-8" type="hidden">
+<input name="oe" value="UTF-8" type="hidden">
+<input name="q" size="10" maxlength="255" type="text">
+<input name="btnG" value="Procure comando no Botequim" type="submit">
+<input name="domains" value="wiki.softwarelivre.org" type="hidden">
+<input name="sitesearch" 
+value="twiki.softwarelivre.org/bin/view/TWikiBar" checked="checked" 
+type="hidden">
+</form>
+<!-- <span class="foswikiNewLink">SiteSearch<a href="/bin/edit/TWikiBar/SiteSearch?topicparent=TWikiBar.TWikiBarPapo011" rel="nofollow" title="Criar este tópico">?</a></span> Google -->
+<p>
+	 </p></div>
+	 <div class="barranavegacao">		<div id="menuH"> <ul>
+<li> [ 12 Apr 2010 - 22:00 ] <strong>Links Amigos</strong> 
+</li> <li> <a style="" target="_blank" 
+href="http://br-linux.org/linux/?q=node/2037" title="Linux Levado à 
+Sério (Abrirá em nova Aba)">BR-Linux</a>
+</li> <li> <a style="" target="_blank" 
+href="http://www.vivaolinux.com.br/" title="Viva o Linux (Abrirá em nova
+ Aba)">Viva o Linux</a>
+</li> <li> <a style="" target="_blank" 
+href="http://www.dicas-l.unicamp.br/" title="Dicas-L - Rubens (Abrirá em
+ nova Aba)">Dicas-L</a>
+</li> <li> <a style="" target="_blank" 
+href="http://www.aurelio.net/shell" title="Por que programar tem que ser
+ divertido (Abrirá em nova Aba)">Aurelio</a>
+</li> <li> <a style="" target="_blank" href="http://www.thobias.org/" 
+title=" Thobias login (Abrirá em nova Aba)">Thobias</a>
+</li></ul> 
+</div>
+	 </div>
+  </div>
+  <div class="lateral">	 
+<div id="menuL"> <ol>
+<li> TWiki Básico <ul>
+<li> <a style="" href="http://wiki.softwarelivre.org/TWikiBar/WebHome" 
+class="foswikiCurrentWebHomeLink" title="Ir para a Página Inicial dessa 
+Área!"><img src="TWikiBarPapo011_arquivos/home.gif" alt="HOME" 
+width="16" height="16"> Página Inicial</a>
+</li> <li> <a style="" 
+href="http://wiki.softwarelivre.org/TWikiBar/WebChanges" title="Mostrar 
+as páginas (tópicos) alterados mais recentemente!"><img 
+src="TWikiBarPapo011_arquivos/recentchanges.gif" alt="INDEX" width="16" 
+height="16"> Últimas Alterações</a>
+</li> <li> <a style="" 
+href="http://wiki.softwarelivre.org/TWikiBar/WebIndex" title="Indice 
+Analítico!"><img src="TWikiBarPapo011_arquivos/index.gif" alt="INDEX" 
+width="16" height="16"> Índice</a>
+</li> <li> <a style="" 
+href="http://wiki.softwarelivre.org/TWikiBar/WebSearch" title="Permite 
+que você procure um texto qualquer em todos os tópicos. Se desejar pode 
+utilizar expressões regulares também!"><img 
+src="TWikiBarPapo011_arquivos/searchtopic.gif" alt="SEARCH" width="16" 
+height="16"> Procura</a>
+</li> <li> <a style="" 
+href="http://wiki.softwarelivre.org/TWikiBar/WebStatistics" title="Umas 
+estatísticas geradas pelo próprio TWiki via crontab."><img 
+src="TWikiBarPapo011_arquivos/statistics.gif" alt="STATISTICS" 
+width="16" height="16"> Estatísticas de Uso</a>
+</li> <li> <a style="" 
+href="http://wiki.softwarelivre.org/TWikiBar/WebNotify" title="Permite 
+que você seja informado se alguma página for alterada."><img 
+src="TWikiBarPapo011_arquivos/notify.gif" alt="NOTIFY" width="16" 
+height="16"> Aviso de Atualização</a>
+</li> <li> <a style="" 
+href="http://wiki.softwarelivre.org/TWikiBar/WebMap" title="Mostra um 
+Mapa do Site Gerado Automagicamente.">Mapa do Site</a>
+</li></ul> 
+</li> <li> TWiki Avançado <ul>
+<li> <strong><a style="" 
+href="http://wiki.softwarelivre.org/System/UserRegistration" title="Se 
+você quer contribuir com este site.">Registre-se</a></strong>
+</li> <li> <a style="" 
+href="http://wiki.softwarelivre.org/TWikiBar/WebPreferences" 
+title="Configurações Gerais desta Área.">Configurações Gerais</a>
+</li> <li> <a style="" 
+href="http://wiki.softwarelivre.org/Main/TWikiBarGroup" title="Entre em 
+Contato Conosco">Quem Somos</a>
+</li> <li> <a style="" 
+href="http://wiki.softwarelivre.org/System/TextFormattingRules" 
+title="Dicas de Formatação">Regras de Formatação</a>
+</li> <li> <a style="" 
+href="http://wiki.softwarelivre.org/System/DocumentGraphics" 
+title="Dicas Gráficas">Biblioteca Gráfica</a>
+</li> <li> <a style="" 
+href="http://wiki.softwarelivre.org/System/SmiliesPlugin" title="Use os 
+Smiles Simples.">Carinhas Gráficas</a>
+</li></ul> 
+</li> <li> <a 
+href="http://wiki.softwarelivre.org/TWikiBar/ProjetoGrafico">Projeto 
+Gráfico</a> <ul>
+<li> <a style="" 
+href="http://wiki.softwarelivre.org/TWikiBar/FreeSkinPreTopic" title="O 
+que vem ANTES do Tópico">Pré Tópico</a>
+</li> <li> <a style="" 
+href="http://wiki.softwarelivre.org/TWikiBar/FreeSkinPosTopic" title="O 
+que vem DEPOIS do Tópico">Pós Tópico</a>
+</li> <li> <a style="" 
+href="http://wiki.softwarelivre.org/TWikiBar/FreeSkinMenu" title="Este 
+próprio menu">Menu Lateral</a>
+</li> <li> <a style="" 
+href="http://wiki.softwarelivre.org/TWikiBar/FreeSkinBarraNavegacao" 
+title="Links Interessantes e Recomendados">Menu de Navegação</a>
+</li> <li> <a style="" 
+href="http://wiki.softwarelivre.org/TWikiBar/FreeSkinCSS" 
+title="Definições do CSS utilizado">CSS Utilizado</a>
+</li> <li> <a style="" 
+href="http://wiki.softwarelivre.org/TWikiBar/FreeSkinControlesEdicao" 
+title="Controles de Edição, Anexar, etc">Botões Especiais</a>
+</li> <li> <a style="" 
+href="http://wiki.softwarelivre.org/TWikiBar/FreeSkinVoceEstaAqui" 
+title="Indicador de Onde Estamos dentro da Web">Indica Onde Estamos</a>
+</li> <li> <a style="" 
+href="http://wiki.softwarelivre.org/TWikiBar/FreeSkinPadraoCabecalho" 
+title="Definição do Cabeçalho Padronizado">Cabeçalho Padrão</a>
+</li> <li> <a style="" 
+href="http://wiki.softwarelivre.org/TWikiBar/FreeSkinCopyRight" 
+title="Informações de Copy Right/Left">Copy Right/Left</a>
+</li></ul> 
+</li></ol> 
+</div>
+  </div>
+  <div class="corpo">
+	 <div class="localizacao">		Você está aqui: <a 
+href="http://wiki.softwarelivre.org/TWikiBar/WebHome" 
+class="foswikiCurrentWebHomeLink">TWikiBar</a>  &gt; <a 
+href="http://wiki.softwarelivre.org/TWikiBar/TWikiBarPapo011" 
+class="foswikiCurrentTopicLink">TWikiBarPapo011</a>
+	 </div>
+	 <div class="edicao">		Controles: <a style="" 
+href="http://wiki.softwarelivre.org/bin/edit/TWikiBar/TWikiBarPapo011?nocache=Apr13010003&amp;skin=pattern"
+ target="_top" title="Editar este tópico"><img 
+src="TWikiBarPapo011_arquivos/edittopic.gif" alt="EDITAR" width="16" 
+height="16"></a>
+<a style="" 
+href="http://wiki.softwarelivre.org/bin/attach/TWikiBar/TWikiBarPapo011?skin=pattern"
+ target="_top" title="Anexar Imagens ou Arquivos"><img 
+src="TWikiBarPapo011_arquivos/attachfile.gif" alt="ANEXAR" width="16" 
+height="16"></a>
+<a style="" 
+href="http://wiki.softwarelivre.org/TWikiBar/TWikiBarPapo011?raw=on&amp;skin=pattern"
+ target="_top" title="Visualizar o Código Fonte"><img 
+src="TWikiBarPapo011_arquivos/cachetopic.gif" alt="MAIS" width="16" 
+height="16"></a>
+<a style="" 
+href="http://wiki.softwarelivre.org/bin/oops/TWikiBar/TWikiBarPapo011?template=oopsmore&amp;param1=8&amp;param2=8&amp;skin=pattern"
+ target="_top" title="Renomear, Mover, Apagar, etc..."><img 
+src="TWikiBarPapo011_arquivos/tip.gif" alt="MAIS" width="16" height="16"></a>
+<a style="" 
+href="http://wiki.softwarelivre.org/bin/rdiff/TWikiBar/TWikiBarPapo011?skin=pattern"
+ target="_top" title="Ver Todas Alterações"><img 
+src="TWikiBarPapo011_arquivos/recentchanges.gif" alt="ALTERACOES" 
+width="16" height="16"></a>
+<a style="" 
+href="http://wiki.softwarelivre.org/TWikiBar/TWikiBarPapo011?skin=freeprint"
+ target="_top" title="Preparar para Impressão"><img 
+src="TWikiBarPapo011_arquivos/printtopic.gif" alt="IMPRIMIR" width="16" 
+height="16"></a>
+- Última Atualização: [01 Aug 2009 - V.8]
+	 </div>
+	 <div class="topico"><h1><a name="Papo_de_botequim_parte_XI"></a>  Papo
+ de botequim parte XI </h1>
+<hr>
+<a name="foswikiTOC"></a><div class="foswikiToc"> <ul>
+<li> <a href="#Named_Pipes"> Named Pipes</a> <ul>
+<li> <a href="#Sincroniza_o_de_processos"> Sincronização de processos.</a>
+</li> <li> <a href="#Bloqueio_de_arquivos"> Bloqueio de arquivos</a>
+</li> <li> <a href="#Substitui_o_de_processos"> Substituição de 
+processos</a>
+</li></ul> 
+</li></ul> 
+</div>
+<hr>
+&nbsp;&nbsp;&nbsp;&nbsp; - E aí rapaz, tudo bom?
+<p>
+&nbsp;&nbsp;&nbsp;&nbsp; - Belê, mas você lembra que me pediu para fazer
+ um programa que quando o tamanho de uma tela variasse, no seu centro 
+apareceria dinamicamente, em vídeo reverso, a quantidade de linhas e 
+colunas do jeito que o Linux faz normalmente? Pois é eu fiz mas a 
+aparência não ficou igual.
+</p><p>
+&nbsp;&nbsp;&nbsp;&nbsp; - Não estou nem aí para a aparência, o que eu 
+queria é que você exercitasse o que aprendemos. Deixe-me ver o que você 
+fez.
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);">$ cat tamtela.sh<font 
+color="#ffffff">
+#!/bin/bash
+#
+# Coloca no centro da tela, em video reverso,
+# a quantidade de colunas e linhas
+# quando o tamanho da tela eh alterado.
+#
+trap Muda 28   # 28 = sinal gerado pela mudanca no tamanho
+               # da tela e Muda eh a funcao que fara isso.
+</font><p>
+<font color="#ffffff">Bold=$(tput bold)    # Modo de enfase
+Rev=$(tput rev)      # Modo de video reverso
+Norm=$(tput sgr0)    # Restaura a tela ao padrao default
+</font></p><p>
+<font color="#ffffff">Muda ()
+{
+    clear
+    Cols=$(tput cols)
+    Lins=$(tput lines)
+    tput cup $(($Lins / 2)) $(((Cols - 7) / 2)) # Centro da tela
+    echo $Bold$Rev$Cols X $Lins$Norm
+}
+</font></p><p>
+<font color="#ffffff">clear
+read -n1 -p "Mude o tamanho da tela ou tecle algo para terminar "</font>
+</p></div>
+<p>
+&nbsp;&nbsp;&nbsp;&nbsp; - Perfeito! Que se dane a aparência, depois vou
+ te ensinar uns macetes para melhorá-la o que vale é que o programa está
+ funcionando e está bem enxuto.
+</p><p>
+&nbsp;&nbsp;&nbsp;&nbsp; - Poxa, perdi o maior tempo tentando descobrir 
+como aumentar o fonte ...
+</p><p>
+&nbsp;&nbsp;&nbsp;&nbsp; - Deixe isso para lá e hoje vamos ver umas 
+coisas bastante interessantes e úteis.
+</p><p>
+</p><h2><a name="Named_Pipes"></a> Named Pipes </h2>
+<p>
+Um outro tipo de <em>pipe</em> é o <code>named pipe</code>, que também é
+ chamado de <code>FIFO</code>. <code>FIFO</code> é um acrônimo de <em><kbd>F</kbd>irst
+ <kbd>I</kbd>n <kbd>F</kbd>irst <kbd>O</kbd>ut</em> que se refere à 
+propriedade em que a ordem dos bytes entrando no pipe é a mesma que a da
+ saída. O <em>name</em> em <code>named pipe</code> é, na verdade, o nome
+ de um arquivo. Os arquivos tipo <code>named pipes</code> são exibidos 
+pelo comando <code>ls</code> como qualquer outro, com poucas diferenças,
+ veja: 
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);">$ ls -l pipe1<font 
+color="#ffffff">
+prw-r-r--   1   julio   dipao   0 Jan 22 23:11 pipe1|</font>
+</div>
+<p>
+O <code>p</code> na coluna mais à esquerda indica que <code>fifo1</code>
+ é um <code>named pipe</code>. O resto dos <em>bits</em> de controle de 
+permissões, quem pode ler ou gravar o <em>pipe</em>, funcionam como um 
+arquivo normal. Nos sistemas mais modernos uma barra vertical (<code>|</code>)
+ colocado ao fim do nome do arquivo, é outra dica, e nos sistemas <em>LINUX</em>,
+ onde a opção de cor está habilitada, o nome do arquivo é escrito em 
+vermelho por <em>default</em>.
+</p><p>
+Nos sistemas mais antigos, os <code>named pipes</code> são criados pelo 
+programa <code>mknod</code>, normalmente situado no diretório <code>/etc</code>.
+</p><p>
+Nos sistemas mais modernos, a mesma tarefa é feita pelo <code>mkfifo</code>.
+ O programa <code>mkfifo</code> recebe um ou mais nomes como argumento e
+ cria <em>pipes</em> com estes nomes. Por exemplo, para criar um <code>named
+ pipe</code> com o nome <code>pipe1</code>, faça:
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);">$ mkfifo pipe1 
+</div>
+<p>
+Como sempre, a melhor forma de mostrar como algo funciona é dando 
+exemplos. Suponha que nós tenhamos criado o <code>named pipe</code> 
+mostrado anteriormente. Vamos agora trabalhar com duas sessões ou duas 
+consoles virtuais ou uma de cada. Em uma delas faça:
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);">$ ls -l &gt; pipe1
+</div>
+<p>
+e em outra faça: 
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);">$ cat &lt; pipe1
+</div>
+<p>
+<em>Voilá</em>! A saída do comando executado na primeira console foi 
+exibida na segunda. Note que a ordem em que os comandos ocorreram não 
+importa.
+</p><p>
+Se você prestou atenção, reparou que o primeiro comando executado, 
+parecia ter "pendurado, congelado". Isto acontece porque a outra ponta 
+do <em>pipe</em> ainda não estava conectada, e então o sistema 
+operacional suspendeu o primeiro processo até que o segundo "abrisse" o <em>pipe</em>.
+ Para que um processo que usa <em>pipe</em> não fique em modo de <em>wait</em>,
+ é necessário que em uma ponta do <em>pipe</em> tenha um processo 
+"tagarela" e na outra um "ouvinte" e no exemplo que demos, o <code>ls</code>
+ era o "falador" e o <code>cat</code> era o "orelhão".
+</p><p>
+Uma aplicação muito útil dos <code>named pipes</code> é permitir que 
+programas sem nenhuma relação possam se comunicar entre si, os <code>named
+ pipes</code> também são usados para sincronizar processos, já que em um
+ determinado ponto você pode colocar um processo para "ouvir" ou para 
+"falar" em um determinado <code>named pipe</code> e ele daí só sairá, se
+ outro processo "falar" ou "ouvir" aquele <em>pipe</em>.
+</p><p>
+Você já viu que o uso desta ferramenta é ótimo para sincronizar 
+processos e para fazer bloqueio em arquivos de forma a evitar 
+perda/corrupção de informações devido a atualizações simultâneas 
+(concorrência). Vejamos exemplos para ilustrar estes casos.
+</p><p>
+</p><h3><a name="Sincroniza_o_de_processos"></a> Sincronização de 
+processos. </h3>
+<p>
+Suponha que você dispare paralelamente dois programas (processos) cujos 
+diagramas de blocos de suas rotinas são como a figura a seguir:
+</p><p>
+</p><center>
+    <img src="TWikiBarPapo011_arquivos/imagem.GIF" alt="Gráfico do Named
+ Pipe">
+</center>
+<p>
+Os dois processos são disparados em paralelo e no <code>BLOCO1</code> do
+ <code>Programa1</code> as três classificações são disparadas da 
+seguinte maneira:
+</p><p>
+</p><pre>    for Arq in BigFile1 BigFile2 BigFile3
+    do
+        if  sort $Arq 
+        then
+            Manda=va
+        else
+            Manda=pare
+            break
+        fi
+    done
+    echo $Manda &gt; pipe1
+    [ $Manda = pare ] &amp;&amp;
+        {
+        echo Erro durante a classificação dos arquivos
+        exit 1
+        }
+    ...
+</pre>
+<p>
+Assim sendo, o comando <code>if</code> testa cada classificação que está
+ sendo efetuada. Caso ocorra qualquer problema, as classificações 
+seguintes serão abortadas, uma mensagem contendo a cadeia <code>pare</code>
+ é enviada pelo <code>pipe1</code> e <code>programa1</code> é 
+descontinuado com um fim anormal.
+</p><p>
+Enquanto o <code>Programa1</code> executava o seu primeiro bloco (as 
+classificações) o <code>Programa2</code> executava o seu <code>BLOCO1</code>,
+ processando as suas rotinas de abertura e menu paralelamente ao <code>Programa1</code>,
+ ganhando desta forma um bom intervalo de tempo.
+</p><p>
+O fragmento de código do <code>Programa2</code> a seguir, mostra a 
+transição do seu <code>BLOCO1</code> para o <code>BLOCO2</code>:
+</p><p>
+</p><pre>    OK=`cat pipe1`
+    if  [ $OK = va ]
+    then
+        ...
+        Rotina de impressão
+        ...
+    else    #  Recebeu "pare" em OK
+        exit 1
+    fi
+</pre>
+<p>
+Após a execução de seu primeiro bloco, o <code>Programa2</code> passará a
+ "ouvir" o <code>pipe1</code>, ficando parado até que as classificações 
+do <code>Programa1</code> terminem, testando a seguir a mensagem passada
+ pelo <code>pipe1</code> para decidir se os arquivos estão íntegros para
+ serem impressos, ou se o programa deverá ser descontinuado. Desta forma
+ é possível disparar programas de forma assíncrona e sincronizá-los 
+quando necessário, ganhando bastante tempo de processamento.
+</p><p>
+</p><h3><a name="Bloqueio_de_arquivos"></a> Bloqueio de arquivos </h3>
+<p>
+Suponha que você escreveu uma CGI (<em><kbd>C</kbd>ommon <kbd>G</kbd>ateway
+ <kbd>I</kbd>nterface</em>) em <em>Shell</em> para contar quantos <em>hits</em>
+ recebe uma determinada URL e a rotina de contagem está da seguinte 
+maneira:
+</p><p>
+</p><pre>    Hits="$(cat page.hits 2&gt; /dev/null)" || Hits=0
+    echo $((Hits=Hits++)) &gt; page.hits
+</pre>
+<p>
+Desta forma se a página receber dois ou mais acessos concorrentes, um ou
+ mais poderá(ão) ser perdido(s), basta que o segundo acesso seja feito 
+após a leitura da arquivo <code>page.hits</code> e antes da sua 
+gravação, isto é, basta que o segundo acesso seja feito após o primeiro 
+ter executado a primeira linha do <em>script</em> e antes de executar a 
+segunda.
+</p><p>
+Então o que fazer? Para resolver o problema de concorrência vamos 
+utilizar um <code>named pipe</code>. Criamos o seguinte <em>script</em> 
+que será o <em>daemon</em> que receberá todos os pedidos para 
+incrementar o contador. Note que ele vai ser usado por qualquer página 
+no nosso site que precise de um contador.
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);">$ cat contahits.sh<font 
+color="#ffffff">
+#!/bin/bash
+</font><p>
+<font color="#ffffff">PIPE="/tmp/pipe_contador" # arquivo named pipe
+# dir onde serao colocados os arquivos contadores de cada pagina
+DIR="/var/www/contador"
+</font></p><p>
+<font color="#ffffff">[ -p "$PIPE" ] || mkfifo "$PIPE"
+</font></p><p>
+<font color="#ffffff">while :
+do
+    for URL in $(cat &lt; $PIPE)
+    do
+        FILE="$DIR/$(echo $URL | sed 's,.*/,,')"
+        # OBS1: no sed acima, como precisava procurar
+        #       uma barra,usamos vírgula como separador.
+        # OBS2: quando rodar como daemon comente a proxima linha
+        echo "arquivo = $FILE"
+</font></p><p>
+<font color="#ffffff">        n="$(cat $FILE 2&gt; /dev/null)" || n=0
+        echo $((n=n+1)) &gt; "$FILE"
+    done
+done</font>
+</p></div>
+<p>
+Como só este script altera os arquivos, não existe problema de 
+concorrência. 
+</p><p>
+Este script será um <em>daemon</em>, isto é, rodará em <em>background</em>.
+ Quando uma página sofrer um acesso, ela escreverá a sua URL no arquivo 
+de <em>pipe</em>. Para testar, execute este comando: 
+</p><p>
+</p><pre>    echo "teste_pagina.html" &gt; /tmp/pipe_contador 
+</pre>
+<p>
+Para evitar erros, em cada página que quisermos adicionar o contador 
+acrescentamos a seguinte linha: 
+</p><p>
+</p><pre>    &lt;!--#exec cmd="echo $REQUEST_URI &gt; /tmp/pipe_contador"--&gt;
+</pre>
+<p>
+Note que a variável <code>$REQUEST_URI</code> contém o nome do arquivo 
+que o navegador (<em>browser</em>) requisitou.
+</p><p>
+Este último exemplo, é fruto de uma idéia que troquei com o amigo e 
+mestre em <em>Shell</em>, Thobias Salazar Trevisan que escreveu o <em>script</em>
+ e colocou-o em sua excelente URL. Aconselho a todos que querem aprender
+ <em>Shell</em> a dar uma olhada nela (<a 
+href="http://www.google.com.br/search?hl=pt-BR&amp;q=%22thobias+salazar+trevisan%22+%22Seja+bem-vindo%22&amp;btnG=Pesquisar&amp;meta=lr%3Dlang_pt"
+ target="_blank">Dê uma olhada e inclua-a nos favoritos</a>).
+</p><p>
+Ahhh! Você pensa que o assunto sobre <code>named pipes</code> está 
+esgotado? Enganou-se. Vou mostrar um uso diferente a partir de agora.
+</p><p>
+</p><h3><a name="Substitui_o_de_processos"></a> Substituição de 
+processos </h3>
+<p>
+Acabei de mostrar um monte de dicas sobre <code>named pipes</code>, 
+agora vou mostrar que o <em>Shell</em> também usa os <code>named pipes</code>
+ de uma maneira bastante singular, que é a substituição de processos (<em>process
+ substitution</em>). Uma substituição de processos ocorre quando você 
+põe um comando ou um <em>pipeline</em> de comandos entre parênteses e um
+ <code>&lt;</code> ou um <code>&gt;</code> grudado na frente do 
+parêntese da esquerda. Por exemplo, teclando-se o comando:
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);">$ cat &lt;(ls -l)
+</div>
+<p>
+Resultará no comando <code>ls -l</code> executado em um <em>subshell</em>
+ como é normal (por estar entre parênteses), porém redirecionará a saída
+ para um <code>named pipe</code> temporário, que o <em>Shell</em> cria, 
+nomeia e depois remove. Então o <code>cat</code> terá um nome de arquivo
+ válido para ler (que será este <code>named pipe</code> e cujo 
+dispositivo lógico associado é <code>/dev/fd/63</code>), e teremos a 
+mesma saída que a gerada pela listagem do <code>ls -l</code>, porém 
+dando um ou mais passos que o usual, isto é, mais onerosa para o 
+computador.
+</p><p>
+Como poderemos constatar isso? Fácil... Veja o comando a seguir:
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);">$ ls -l &gt;(cat)
+l-wx------ 1 jneves jneves 64 Aug 27 12:26 /dev/fd/63 -&gt; pipe:[7050]
+</div>
+<p>
+É... Realmente é um <code>named pipe</code>.
+</p><p>
+Você deve estar pensando que isto é uma maluquice de <em>nerd</em>, né? 
+Então suponha que você tenha 2 diretórios: <code>dir</code> e <code>dir.bkp</code>
+ e deseja saber se os dois estão iguais (aquela velha dúvida: será que 
+meu <em>backup</em> está atualizado?). Basta comparar os dados dos 
+arquivos dos diretórios com o comando <code>cmp</code>, fazendo:
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);">$ cmp &lt;(cat dir/*) &lt;(cat
+ dir.bkp/*) || echo backup furado
+</div>
+<p>
+ou, melhor ainda:
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);">$ cmp &lt;(cat dir/*) &lt;(cat
+ dir.bkp/*) &gt;/dev/null || echo backup furado
+</div>
+<p>
+Da forma acima, a comparação foi efetuada em todas as linhas de todos os
+ arquivos de ambos os diretórios. Para acelerar o processo, poderíamos 
+compara somente a listagem longa de ambos os diretórios, pois qualquer 
+modificação que um arquivo sofra, é mostrada na data/hora de alteração 
+e/ou no tamanho do arquivo. Veja como ficaria:
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);">$ cmp &lt;(ls -l dir) &lt;(ls 
+-l dir.bkp) &gt;/dev/null || echo backup furado
+</div>
+<p>
+Este é um exemplo meramente didático, mas são tantos os comandos que 
+produzem mais de uma linha de saída, que serve como guia para outros. Eu
+ quero gerar uma listagem dos meus arquivos, numerando-os e ao final dar
+ o total de arquivos do diretório corrente:
+</p><p>
+</p><pre>    while read arq
+    do
+        ((i++)) # assim nao eh necessario inicializar i
+        echo "$i: $arq"
+    done &lt; &lt;(ls)
+    echo "No diretorio corrente (`pwd`) existem $i arquivos"
+</pre>
+<p>
+Tá legal, eu sei que existem outras formas de executar a mesma tarefa. 
+Usando o comando <code>while</code>, a forma mais comum de resolver esse
+ problema seria:
+</p><p>
+</p><pre>    ls | while read arq
+    do
+        ((i++)) # assim nao eh necessario inicializar i
+        echo "$i: $arq"
+    done
+    echo "No diretorio corrente (`pwd`) existem $i arquivos"
+</pre>
+<p>
+Quando executasse o <em>script</em>, pareceria estar tudo certo, porém 
+no comando <code>echo</code> após o <code>done</code>, você verá que o 
+valor de <code>$i</code> foi perdido. Isso deve-se ao fato desta 
+variável estar sendo incrementada em um <em>subshell</em> criado pelo <em>pipe</em>
+ (<code>|</code>) e que terminou no comando <code>done</code>, levando 
+com ele todas as variáveis criadas no seu interior e as alterações 
+feitas em todas as variáveis, inclusive as criadas externamente.
+</p><p>
+Somente para te mostrar que uma variável criada fora do subshell e 
+alterada em seu interior perde as alterações feitas ao seu final, 
+execute o <em>script</em> a seguir:
+</p><p>
+</p><pre>    #!/bin/bash
+    LIST=""                  # Criada no shell principal
+    ls | while read FILE     # Inicio do subshell
+    do
+        LIST="$FILE $LIST"   # Alterada dentro do subshell
+    done                     # Fim do subshell
+    echo :$LIST:
+</pre>
+<p>
+Ao final da execução você verá que aperecerão apenas dois dois-pontos (<code>::</code>).
+ Mas no início deste exemplo eu disse que era meramente didático porque 
+existem formas melhores de fazer a mesma tarefa. Veja só estas duas:
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);">$ ls | ln
+</div>
+<p>
+ou então, usando a própria substituição de processos:
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);">$ cat -n &lt;(ls)
+</div>
+<p>
+Um último exemplo: você deseja comparar <code>arq1</code> e <code>arq2</code>
+ usando o comando <code>comm</code>, mas este comando necessita que os 
+arquivos estejam classificados. Então a melhor forma de proceder é:
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);">$ comm &lt;(sort arq1) 
+&lt;(sort arq2)
+</div>
+<p>
+Esta forma evita que você faça as seguintes operações:
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);">$ sort arq1 &gt; /tmp/sort1
+$ sort arq2 &gt; /tmp/sort2
+$ comm /tmp/sort1 /tmp/sort2
+$ rm -f /tmp/sort1 /tmp/sort2
+</div>
+<p>
+Pessoal, o nosso Papo de Botequim chegou ao fim <img 
+src="TWikiBarPapo011_arquivos/frown.gif" alt="frown" title="frown" 
+border="0"> . Curti muito aqui e recebi diversos elogios pelo trabalho 
+desenvolvido ao longo de doze meses e, o melhor de tudo, fiz muitas 
+amizades e tomei muitos chopes de graça com os leitores que encontrei 
+pelos congressos e palestras que ando fazendo pelo nosso querido Brasil.
+</p><p>
+O que vou escrever aqui não está combinado nem sei se será publicado, 
+mas como os editores desta revista são dois malucos beleza (ambos 
+Rafael), é bem capaz de deixarem passar. É o seguinte: se quiserem que o
+ Papo de Botequim continue, entulhem a caixa postal da <em>Linux 
+Magazine</em> pedindo por isso e desde já escolham o próximo tema entre <code>sed
+ + expressões regulares</code> ou linguagem <code>awk</code>.
+</p><p>
+De qualquer forma, caso não consigamos sensibilizar a direção da 
+revista, me despeço de todos mandando um grande abraço aos barbudos e 
+beijos às meninas e agradecendo os mais de 100 e-mails que recebi (todos
+ elogiosos) e todos devidamente respondidos.
+</p><p>
+À saúde de todos nós: Tim, Tim.
+</p><p>
+- Chico, fecha a minha conta porque vou mudar de botequim.
+</p><p>
+Vou aproveitar também para mandar o meu jabá: diga para os amigos que 
+quem estiver afim de fazer um curso porreta de programação em <em>Shell</em>
+ que mande um e-mail para a nossa <a 
+href="mailto:contato@clavis.com.br?Subject=Curso%20de%20Shell%20com%20Julio%20Neves">gerencia
+ de treinamento</a> para informar-se. 
+</p><p>
+Qualquer dúvida ou falta de companhia para um chope ou até para falar 
+mal dos políticos é só mandar um e-mail para <a 
+href="mailto:julioneves@openoffice.org?Subject=D%C3%BAvidas%20Papo%20de%20Botequim">mim</a>.
+ 
+</p><p>
+Valeu!
+	 </p></div><!-- fecha div topico -->
+	 <div class="rodape">		<br>  <a 
+href="http://creativecommons.org/licenses/by-nc-sa/2.0/br/" 
+target="_blank"><img 
+src="TWikiBarPapo011_arquivos/Logo_CC-by-nc-sa_pequeno.png" alt="Licença
+ Creative Commons - Atribuição e Não Comercial" title="Licença Creative 
+Commons - Atribuição e Não Comercial (pequeno)" border="0"></a> (CC) 
+2010 Pelos <a href="http://wiki.softwarelivre.org/Main/TWikiBarGroup">Frequentadores
+ do Bar do Júlio Neves</a>.<br> 
+Todo o conteúdo desta página pode ser utilizado segundo os termos da <a 
+href="http://creativecommons.org/licenses/by-nc-sa/2.0/br/">Creative 
+Commons License</a>: Atribuição-UsoNãoComercial-PermanênciaDaLicença.
+	 </div>
+  </div><!-- fecha div corpo -->
+</div><!-- fecha div geral -->
+</body></html>

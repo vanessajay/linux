@@ -1,0 +1,162 @@
+﻿<aula>
+
+    <video title="Introdução I"><![CDATA[O objetivo dessa vídeo-aula é instalar o Debian Etch 4.0 em um computador que já tenha o Windows XP instalado. A questão mais delicada nesse tipo de procedimento é particionar o disco rígido sem comprometer o sistema operacional que já está instalado.]]></video>
+
+    <video title="Introdução II"><![CDATA[Atenção: Por medida de segurança, é altamente recomendável que você faça um backup de todos os seus dados. Não nos responsabilizamos por qualquer perda de dados que venha acontecer ou pelo mal funcionamento do sistema já instalado após o uso desse procedimento.]]></video>
+
+    <video title="Introdução III"><![CDATA[Será usado um live-cd do Ubuntu, versão 7.04, para redimensionar o disco rígido, ou seja, deixar um espaço que será usado no particionador do Debian futuramente.]]></video>
+
+    <video title="Introdução IV"><![CDATA[Escolher essa forma de particionamento surgiu da necessidade de escolher um particionador que fosse software livre. Escolhemos o Gparted, um particionador gráfico fácil de usar. O Gparted está incluso no live-cd do Ubuntu. Então, usaremos o live-cd do Ubuntu somente para redimensionar a partição em que se encontra o Windows.]]></video>
+
+    <video title="Introdução V"><![CDATA[Essa vídeo-aula está divida em 3 etapas: A primeira é desfragmentar o disco rígido no Windows XP. A segunda é redimensionar o disco rígido com o Gparted através do live-cd do Ubuntu 7.04. A terceira é instalar o Debian Etch 4.0 na partição reservada para o Linux.]]></video>
+
+    <video title="Desfragmento o disco no Windows I"><![CDATA[Clique no menu INICIAR e depois em TODOS OS PROGRAMAS]]></video>
+
+    <video title="Desfragmento o disco no Windows II"><![CDATA[Clique agora em ACESSÓRIOS]]></video>
+
+    <video title="Desfragmento o disco no Windows III"><![CDATA[Clique agora em FERRAMENTAS DO SISTEMA e depois em DESFRAGMENTADOR DE DISCO]]></video>
+
+    <video title="Desfragmento o disco no Windows IV"><![CDATA[Após clicar em DESFRAGMENTADOR DE DISCO, o sistema mostrará uma janela. Clique em DESFRAGMENTAR e aguarde a desfragmentação. Esse passo pode demorar, aguarde.]]></video>
+
+    <video title="Desfragmento o disco no Windows V"><![CDATA[Após o término da desfragmentação, reinicie o computador e dê boot com o live-cd do Ubuntu.]]></video>
+
+    <video title="Redimensionando partição do Windows I"><![CDATA[Após dar o boot com o live-cd do Ubuntu, pressione F2 para selecionar que o Ubuntu fique em Português do Brasil.]]></video>
+
+    <video title="Redimensionando partição do Windows II"><![CDATA[Selecione "Português do Brasil" e pressione ENTER.]]></video>
+
+    <video title="Redimensionando partição do Windows III"><![CDATA[Pronto! Agora com o sistema já na língua portuguesa, selecione INICIAR UBUNTU e pressione ENTER.]]></video>
+
+    <video title="Redimensionando partição do Windows IV"><![CDATA[Aguarde enquanto o Ubuntu inicia...]]></video>
+
+    <video title="Redimensionando partição do Windows V"><![CDATA[Pronto! Agora já é possível redimensionar a partição do Windows para que sobre um espaço no disco rígido. Esse espaço será particionado pelo particionador do Debian posteriormente. Clique em SISTEMA, depois em EDITOR DE PARTIÇÕES DO GNOME.]]></video>
+
+    <video title="Redimensionando partição do Windows VI"><![CDATA[Com o Gparted aberto, já é possível redimensionar a partição do Windows. Nesse caso, o disco rídigo usado tem 80 GB.]]></video>
+
+    <video title="Redimensionando partição do Windows VII"><![CDATA[O espaço que será deixado nesse exemplo será de 14 GB para o Debian. Você poderá escolher o tamanho que julgar necessário, lembrando que para ter um sistema desktop é recomendado no mínimo 5 GB. Veja que a partição referente ao Windows está representada pela linha que começa com /dev/hdc1 e com sistema de arquivos NTFS e já está com 3.06 GB em uso. 
+Clique com o botão direito do mouse na partição que contém o Windows para redimensioná-la. Uma janela com o título "Redimensionar /dev/hdc1" será aberta. Em novo tamanho, coloque o tamanho que a partição passará a ter. Como definido anteriormente, 14 GB estarão reservados para o Debian. Nesse caso, como o HD é de 80 GB, coloco em MB o tamanho que a partição do Windows passará a ter (66 GB), no caso 66000 MB.]]></video>
+
+    <video title="Redimensionando partição do Windows VIII"><![CDATA[Veja agora o novo layout. O Windows ficará com 66 GB. O Debian com 14 GB. Lembrando que essa partição de 14 GB será particionada pelo Debian durante a sua instalação. Preocupe-se agora em somente deixar esse espaço de 14 GB reservado para o Debian.]]></video>
+
+    <video title="Redimensionando partição do Windows VIIII"><![CDATA[Agora, aplique a alteração feita. Clique em EDITAR e depois APLICAR.]]></video>
+
+    <video title="Redimensionando partição do Windows X"><![CDATA[Uma janela com o título "Aplica as operações no disco rígido" será aberta. Clique em APLICAR. Nessa parte já é considerado que você fez seu backup por segurança antes de iniciar todo o processo.]]></video>
+
+    <video title="Redimensionando partição do Windows XI"><![CDATA[Aguarde enquanto o Gparted aplica as operações pendentes. Algumas janelas poderão ser abertas automaticamente, não se preocupe. Após o término, reinicie o computador e dê boot com o cd do Debian Etch 4.0.]]></video>
+
+    <video title="Boot com o cd do Debian Etch 4.0"><![CDATA[Pressione ENTER para que o Debian inicie o boot.]]></video>
+
+    <video title="Linguagem e localidade I"><![CDATA[Escolha a linguagem "Portuguese (Brasil)" para que o processo de instalação seja em Português do Brasil e pressione ENTER.]]></video>
+
+    <video title="Linguagem e localidade II"><![CDATA[Escolha Brasil e pressione ENTER.]]></video>
+
+    <video title="Linguagem e localidade III"><![CDATA[Escolha o layout de teclado "Português Brasileiro (br-abnt2)".]]></video>
+
+    <video title="Detectando CD-ROM I"><![CDATA[Aguarde enquanto o instalador detecta seu hardware para encontrar leitores de CD-ROM]]></video>
+
+    <video title="Detectando CD-ROM II"><![CDATA[Aguarde enquanto o CD-ROM é lido.]]></video>
+
+    <video title="Detectando CD-ROM III"><![CDATA[Aguarde enquanto os componentes adicionais são carregados.]]></video>
+
+    <video title="Configurando Rede I"><![CDATA[O instalador tentará encontrar um servidor DHCP, caso o processo falhe não se preocupe, apenas siga as 4 próximas etapas referentes a configuração de Rede. Caso dê certo, pule para "Configurando Rede VI"]]></video>
+
+    <video title="Configurando Rede II"><![CDATA[Primeiro, define-se o endereço IP, nesse exemplo será 192.168.0.1. Pressione ENTER.]]></video>
+
+    <video title="Configurando Rede III"><![CDATA[Defina a máscara de rede a ser utilizada que é da Classe C como 255.255.255.0. Pressione ENTER.]]></video>
+
+    <video title="Configurando Rede IV"><![CDATA[Defina quem será o gateway a ser utilizado por essa máquina. Nesse exemplo, será usado o endereço 192.168.0.254. Pressione ENTER. ]]></video>
+
+    <video title="Configurando Rede V"><![CDATA[Em servidor de nomes se for de sua preferência deixe em branco. Pressione ENTER.]]></video>
+
+    <video title="Configurando Rede VI"><![CDATA[Escolha um nome para sua máquina ou deixe como "debian".]]></video>
+
+    <video title="Configurando Rede VII"><![CDATA[Se for de sua preferência ou caso esteja em dúvida, deixe o nome de domínio em branco.]]></video>
+
+    <video title="Particionamento I"><![CDATA[Aguarde enquanto o disco rígido é detectado.]]></video>
+
+    <video title="Particionamento II"><![CDATA[Aguarde enquanto o particionador é iniciado.]]></video>
+
+    <video title="Particionamento III"><![CDATA[Atenção: Escolha como método de particionamento: MANUAL]]></video>
+
+    <video title="Particionamento IV"><![CDATA[Selecione a partição com ESPAÇO LIVRE, nesse caso é a partição com 14 GB. Pressione ENTER nela. Vamos criar 3 partições. Uma para o diretório raiz (/), outra para o diretório /home, e outra para swap.]]></video>
+
+    <video title="Particionamento V"><![CDATA[Pressione ENTER em CRIAR NOVA PARTIÇÃO.]]></video>
+
+    <video title="Particionamento VI"><![CDATA[Cria-se primeiro a partição para o diretório raiz (/), fazendo uma analogia com o Windows seria o C: . Nesse caso, o tamanho será de 7.5 GB. O recomendável para um desktop é na faixa de 5 GB. ]]></video>
+
+    <video title="Particionamento VII"><![CDATA[O tipo da partição para o diretório raiz (/) será primária.]]></video>
+
+    <video title="Particionamento VIII"><![CDATA[A localização para a nova partição será no INÍCIO.]]></video>
+
+    <video title="Particionamento VIV"><![CDATA[Em "USAR COMO", deixe com "sistema de arquivos com journaling ext3". "PONTO DE MONTAGEM" como / . Pressione ENTER em FINALIZAR A CONFIGURAÇÃO DA PARTIÇÃO.]]></video>
+
+    <video title="Particionamento X"><![CDATA[A partição para o diretório raiz está criada com 7.5 GB e com o sistema de arquivos ext3. Agora, o próximo passo é criar uma partição para o diretório /home. Fazendo uma analogia com o Windows, /home seria Meus documentos.]]></video>
+
+    <video title="Particionamento XI"><![CDATA[Pressione ENTER em CRIAR NOVA PARTIÇÃO.]]></video>
+
+    <video title="Particionamento XII"><![CDATA[Tem-se disponível agora 6.5 GB. Lembrando que é preciso mais uma partição para swap, portanto não será usado 6.5 GB para o diretório /home. Então, altere 6.5 GB para 6 GB, assim preserva-se 500 MB para swap. Após alterar esse valor, pressione ENTER.]]></video>
+
+    <video title="Particionamento XIII"><![CDATA[O tipo dessa nova partição será LÓGICA. Selecione LÓGICA e pressione ENTER.]]></video>
+
+    <video title="Particionamento XIV"><![CDATA[A localização para a nova partição será no INÍCIO.]]></video>
+
+    <video title="Particionamento XV"><![CDATA[Em "USAR COMO", deixe com "sistema de arquivos com journaling ext3". "PONTO DE MONTAGEM" como /home . Pressione ENTER em FINALIZAR A CONFIGURAÇÃO DA PARTIÇÃO.  ]]></video>
+
+    <video title="Particionamento XVI"><![CDATA[A partição para o diretório /home está criada com 6 GB de tamanho e com sistema de arquivos ext3. Selecione agora o ESPAÇO LIVRE com 500 MB e pressione ENTER.]]></video>
+
+    <video title="Particionamento XVII"><![CDATA[Pressione ENTER em CRIAR NOVA PARTIÇÃO.]]></video>
+
+    <video title="Particionamento XVIII"><![CDATA[Tem-se agora 500 MB livres. Deixe todo o espaço para a partição que será swap. É a swap que ajuda nossa memória RAM.]]></video>
+
+    <video title="Particionamento XIV"><![CDATA[O tipo dessa nova partição será LÓGICA. Selecione LÓGICA e pressione ENTER.]]></video>
+
+    <video title="Particionamento XX"><![CDATA[Muita atenção agora! Dessa vez é necessário mudar o sistema de arquivos. Pressione ENTER em "USAR COMO". Mude o sistema de ext3 para ÁREA DE TROCA.]]></video>
+
+    <video title="Particionamento XXI"><![CDATA[Em "COMO USAR ESTA PARTIÇÃO", escolha ÁREA DE TROCA e pressione ENTER.]]></video>
+
+    <video title="Particionamento XXII"><![CDATA[Pressione ENTER em FINALIZAR A CONFIGURAÇÃO DA PARTIÇÃO.]]></video>
+
+    <video title="Particionamento XXIII"><![CDATA[Pronto! Agora que se tem todas as partições que definimos logo no início. Pressione ENTER em "FINALIZAR O PARTICIONAMENTO E GRAVAR MUDANÇAS NO DISCO".]]></video>
+
+    <video title="Particionamento XXIV"><![CDATA[Pressione ENTER em SIM para gravar essas mudanças no disco.]]></video>
+
+    <video title="Particionamento XXV"><![CDATA[Aguarde enquanto o instalador formata as partições.]]></video>
+
+    <video title="Fuso horário"><![CDATA[Selecione a cidade de seu fuso horário e pressione ENTER.]]></video>
+
+    <video title="Configurando usuários e senhas I"><![CDATA[Em CONFIGURAR USUÁRIOS E SENHAS, escolha uma senha de root.]]></video>
+
+    <video title="Configurando usuários e senhas II"><![CDATA[Digite a senha novamente para verificação.]]></video>
+
+    <video title="Configurando usuários e senhas III"><![CDATA[Adicione um usuário no sistema. Digite o nome dele e pressione ENTER em CONTINUAR.]]></video>
+
+    <video title="Configurando usuários e senhas IV"><![CDATA[Escolha um login para que o usuário possar logar posteriormente.]]></video>
+
+    <video title="Configurando usuários e senhas V"><![CDATA[Escolha uma senha para esse usuário.]]></video>
+
+    <video title="Configurando usuários e senhas VI"><![CDATA[Digite a senha novamente para verificação.]]></video>
+
+    <video title="Sistema básico"><![CDATA[Aguarde enquanto o sistema básico é instalado.]]></video>
+
+    <video title="APT"><![CDATA[Aguarde enquanto o APT é configurado.]]></video>
+
+    <video title="Espelho de Rede"><![CDATA[Em UTILIZAR UM ESPELHO DE REDE, pressione ENTER em NÃO.]]></video>
+
+    <video title="Concurso de utilização de pacotes"><![CDATA[Em PARTICIPAR DO CONCURSO DE UTILIZAÇÃO DE PACOTES, pressione ENTER em NÃO.]]></video>
+
+    <video title="Escolher softwares I"><![CDATA[Aguarde enquanto não aparece o menu para você escolher quais softwares instalará.]]></video>
+
+    <video title="Escolher softwares II"><![CDATA[Chegou o momento para selecionar os softwares que serão instalados. Deixe selecionado apenas AMBIENTE DESKTOP e SISTEMA BÁSICO.]]></video>
+
+    <video title="Escolher softwares III"><![CDATA[Aguarde enquanto os softwares são instalados.]]></video>
+ 
+    <video title="Configurando o GRUB I"><![CDATA[O instalador está instalando o gerenciador de inicialização GRUB. É com ele que você poderá escolher qual sistema operacional será usado após ligar a máquina. Aguarde.]]></video>
+
+    <video title="Configurando o GRUB II"><![CDATA[O GRUB já detecta o Windows. Em INSTALAR O CARREGADOR DE INICIALIZAÇÃO GRUB NO REGISTRO DE INICIALIZAÇÃO PRINCIPAL pressione ENTER.]]></video>
+
+    <video title="Finalizando instalação"><![CDATA[Aguarde enquanto a instalação é finalizada. Após o término da instalação, o cd do Debian será ejetado. Retire o cd e pressione ENTER em CONTINUAR. O computador será reiniciado. Aguarde!]]></video>
+ 
+    <video title="Usando o Linux I"><![CDATA[Agora é só escolher a primeira opção do GRUB: Debian GNU/Linux. O "single-user mode" é para manutenção do sistema. Veja que tem também a opção para acessar o Windows. Pressione ENTER em Debian GNU/Linux.]]></video>
+
+    <video title="Final da instalação"><![CDATA[Aguarde enquanto o Linux é iniciado. Faça login com o usuário que você criou na instalação. Parabéns!!! Bem-vindo(a) ao mundo Linux!!!]]></video>
+
+</aula>

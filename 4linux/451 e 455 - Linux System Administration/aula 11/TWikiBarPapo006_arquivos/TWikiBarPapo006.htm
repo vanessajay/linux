@@ -1,0 +1,1440 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="pt-br" xmlns="http://www.w3.org/1999/xhtml" lang="pt-br"><head>
+
+
+<title>.:TWikiBarPapo006 &gt; TWikiBar &gt; Aqui temos um _livro livre_ e
+ completo sobre _Shell_:.</title>
+<link rel="shortcut icon" 
+href="http://wiki.softwarelivre.org/pub/TWikiBar/FreeSkinImagens/favicon.ico"
+ type="image/x-icon">
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta name="Keywords" content="brasil, software, livre, liberdade, 
+copyleft, gnu, linux, grupo, bash, shell, Julio, Cezar, Neves, venda, 
+aluguel, casa, Arraial, do, Cabo">
+<meta name="Description" content="Os sedentos do " saber="" livre="" 
+são="" muito="" benvindos.="">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta name="author" content="Julio Cezar Neves">
+<!-- base href="http://wiki.softwarelivre.org/TWikiBar/TWikiBarPapo006" -->
+</head><body>\
+<style type="text/css" media="all">
+
+/* elementos HTML básicos */
+
+html body {
+  line-height:1.55em;
+  font-family: "Bitstream Vera Sans", "Lucida Grande", verdana, lucida, helvetica, sans-serif;
+  background-color: #f8f8f8;
+  margin:0;
+  padding:0;
+  font-size:x-small;
+  voice-family:"\"}\""; 
+  voice-family:inherit;
+  font-size:small;
+}
+
+html>body {
+  font-size:small;   
+}
+
+/* be kind to netscape 4 that doesn't understand inheritance */
+body, p, li, ul, ol, dl, dt, dd, acronym, h1, h2, h3, h4, h5, h6 {
+   background-color:transparent;
+}
+p {
+   margin:1em 0 0 0;
+}
+table {
+   border-collapse: separate;
+   background-color: #000000;
+}
+
+table.destaque {
+   border-collapse: separate;
+   background-color: #ffffcc !important;
+}
+
+#SearchResultsTable table,
+#SearchResultsTable tr,
+#SearchResultsTable td{
+   background-color: #ffffff !important;
+}
+
+strong, b {
+   font-weight:bold;
+}
+hr {
+   color:#9E9E70;
+   background-color:#9E9E70;
+   height:1px;
+   border:none;
+}
+pre, code, tt {
+   font-size:100%;
+   line-height:1.4em;
+   color:#7A4707;
+}
+pre {
+   margin-top:1em;
+   margin-bottom:1em;
+}
+
+/* Text */
+
+h1, h2, h3, h4, h5, h6 {
+   font-family:"Lucida Grande", helvetica, lucida, verdana, sans-serif;
+   line-height:104%;
+   padding:0;
+   margin:1em 0 0.1em 0;
+}
+h1 {
+   font-size:210%;
+   color:#e24628;
+   margin:0 0 0.1em 0;
+}
+h2 {
+   font-size:145%;
+   display:block;
+   background-color:#F3EDE7;
+   color:#900;
+   padding:0.2em 0.7em;
+   margin:1em 0.7em 0.15em 0.7em;
+   height:auto;
+}
+h3 { font-size:140%; color:#900;}
+h4 { font-size:125%; color:#900;}
+h5 { font-size:110%; color:#900;}
+h6 { font-size:95%; color:#900;}
+
+/* Links */
+
+:link:focus,
+:visited:focus,
+:link,
+:visited,
+:link:active,
+:visited:active {
+   text-decoration:none;
+   color:#1e5bbd;
+   background-color:transparent;
+}
+:link:hover,
+:visited:hover {
+   text-decoration:underline;
+   background-color:#b4d5ff;
+   color:#1559B3;
+}
+a:link img,
+a:visited img,
+a:hover img,
+a:active img {
+   background-color:transparent;
+}
+th a:link,
+th a:visited {
+   font-weight:bold;
+}
+
+/* ----------------------------------------
+   Referências à Menu de Contexto
+   Fonte: http://br.mozdev.org/thunderbird/vocesabia/?privacidade 
+          http://br.mozdev.org/images/html/br.css
+---------------------------------------- */
+
+kbd {
+  padding: 0px 1px 0px 1px !important;
+  border-width: 1px 2px 2px 1px !important;
+  border-style: solid !important;
+  background: #faf6f6  !important;
+  color: #000  !important;
+  border-color:  #edd #baa #baa #eed  !important;
+}
+
+/* ----------------------------------------
+   Estilo para tooltip em links
+   Fonte: http://loadaveragezero.com/vnav/labs/CSS/tooltips.php
+---------------------------------------- */
+
+span.tool {
+  position: relative;   /* this is key */
+  cursor: help;
+}
+ 
+span.tool span.tip {
+  display: none;        /* so is this */
+}
+
+/* tooltip will display on :hover event */
+
+span.tool:hover span.tip {
+  display: block;
+  z-index: 100;
+  position: absolute;
+  top: 2.5em;
+  left: 0;
+  width: auto;
+  line-height: 1.2em;
+  padding: 3px 7px 4px 6px;
+  border: 1px solid #336;
+  background-color: #f7f7ee;
+  font-size: 12px;
+  font-weight: normal;
+  color: #000;
+  text-align: left;
+}
+
+#content span.tool:after {
+  padding-left: 2px;            /* eye candy */
+  content: url(http://wiki.softwarelivre.org/pub/TWiki/TWikiDocGraphics/bubble.gif);
+}
+
+/* ----------------------------------------
+   Estilo para caixa div de código code-box 
+   Fonte: http://loadaveragezero.com/vnav/labs/CSS/code.php
+---------------------------------------- */
+
+.code-box {
+  font-family: 'Lucida Console', 'Bitstream Vera Sans Mono', 'Courier New', Monaco, Courier, monospace;
+  width: 100%;
+  border: 1px dashed #aaa8a8;
+  padding: 0.5em 0 0.3em 0.5em;
+  color: #000;
+  overflow: auto;
+  background: #fff url(http://wiki.softwarelivre.org/pub/TWiki/TWikiDocGraphics/hand.gif) no-repeat top right;
+}
+
+/* ----------------------------------------
+   Estilos das Divisões
+---------------------------------------- */
+
+.geral {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.cabecalho { }
+
+.padraogoverno {
+  border:1px solid #FFCC00;
+  background-color: #FFCC00;
+  text-align: center;
+}
+
+.padraocabecalho {
+  border:1px solid #669966; /* verde pálido */
+/*  text-align: center; */
+  background: #FFF url(http://wiki.softwarelivre.org/pub/TWikiBar/FreeSkinImagens/6aEdicao.PNG) right top no-repeat;
+  color: #FFF;
+  min-height: 105px; /* tamanho da logo */
+}
+
+.corpo {
+  position: relative;
+  top:0;
+  left:0;
+}
+
+.lateral {
+  position: absolute;
+  background-color: #FFFAFF; /* rosa claríssimo */
+
+  width: 12.5em; /* 0.5em à mais do menuL */
+
+  z-index:1; /* forçar estar acima dos demais */
+}
+
+.barranavegacao {
+  background-color: #CDCE9C;
+}
+
+.topico {
+  position: relative;
+  padding-left:1em;
+  padding-bottom:1em;
+  margin-left: 13.1em; /* deslocado 1em à direita do menuL */
+  min-height: 20em;
+
+/*  overflow: auto; */
+
+  border:1px solid #000;
+  background-color: #FFF;
+}
+
+.localizacao {
+  margin-left: 13.1em; /* deslocado 1em à direita do menuL */
+  padding-left:1em;
+
+  border:1px solid #E6E6E6; /* cinza claro */
+  background-color: #E6E6E6;
+}
+
+.edicao {
+  margin-left: 13.1em; /* deslocado 1em à direita do menuL */
+  padding-left:1em;
+
+  border:1px solid #EEF6FF;
+  background-color: #EEF6FF; /* azul claríssimo */
+}
+
+.rodape {
+  margin-left: 13.1em; /* deslocado 1em à direita do menuL */
+  padding-left:1em;
+
+  text-align: center;
+
+  border:1px solid #FFFAFF;
+  background-color: #FFFAFF; /* rosa claríssimo */
+}
+
+/* ----------------------------------------
+   Barra de Navegacao através de listas.
+   http://www.maujor.com/tutorial/cssmenu.php
+---------------------------------------- */
+#menuH ul {
+  border:none;
+  margin: 0;
+  padding: 0;
+  text-align:left;
+}
+
+#menuH ul li {
+  list-style: none;
+  margin: 0;
+  display: inline;
+}
+
+#menuH ul li a {
+  height:1px; /* IE5.0 bug */
+/*  padding: 3px 1px; */
+  margin:0;
+/*  border: 1px solid #f00; */
+/*  background: #999; */
+  text-decoration: none;
+}
+
+#menuH ul li a:link, #menuH ul li a:visited {
+/*  color: #fff; */
+}
+
+#menuH ul li a:hover {
+/*  background: #ccc; */
+  color: #F00;
+/* border-color: #000; */
+}
+
+/* ----------------------------------------
+   Menu Construído através de listas. Baseado em:
+   http://www.maujor.com/tutorial/tecmenu.php e
+   http://www.tanfa.co.uk/css/examples/css-dropdown-menus.asp
+---------------------------------------- */
+
+/* Tamanho, Fonte, Cor, Borda do MenuL */
+#menuL {
+  width: 12em;
+  background: #999;
+  font-size: 11px/16px;
+  font-weight: bold;
+}
+
+/* Caixa do Menu OL */
+#menuL ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Caixa dos Itens do Menu UL - Fica dentro da caixa OL */
+#menuL ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Titulo do Menu OL - ordenado */
+#menuL ol li {
+  color: #fff;
+  background: #000;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+/* Items dentro do Menu OL */
+#menuL ol li li {
+  color: #fff;
+  background: #000;
+  text-transform: none;
+  text-align: left;
+}
+
+/* Links dos Menus */
+#menuL ol li li a {
+  display: block;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #ccc #888 #555 #bbb;
+  margin: 0;
+  padding: 2px 3px;
+}
+
+/* Itens do Menu OL - Links */
+#menuL a {
+  color: #000;
+  background: #efefef;
+  text-decoration: none;
+}
+
+/* Itens do Menu OL - Links com o mouse em cima */
+#menuL a:hover {
+  color: #a00;
+  background: #fff;
+}
+
+/* Posicionamento dos Itens - "Mágica" */
+#menuL li {
+  position: relative;
+}
+
+#menuL ol ul ul {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  width: 100%;
+}
+
+/* Magia CSS */
+div#menuL ol ul ul,
+div#menuL ol ul ul ul,
+div#menuL ol ul li:hover ul ul,
+div#menuL ol ul ul li:hover ul ul
+{display: none;}
+
+/* Magia CSS */
+div#menuL ol ul li:hover ul,
+div#menuL ol ul ul li:hover ul,
+div#menuL ol ul ul ul li:hover ul
+{display: block;}
+
+/* Corrige o espaço deixado pelos parágrafos */
+div#menuL p {display:inline;}
+</style>
+
+<!-- Internet Explorer CSS Fixes -->
+<!--[if IE]>
+  <style type="text/css" media="screen">
+    body {  behavior: url(http://wiki.softwarelivre.org/pub/TWikiBar/FreeSkinCSS/csshover.htc); font-size: 100%;} 
+    #menuL ol li { float: left; width: 100%; }
+    #menuL ol li a { height: 1%; }
+  </style>
+<![endif]-->
+
+
+<!--GENERATED_HEADERS--><!-- TABLEPLUGIN_table1 --> <style type="text/css" media="all">
+.foswikiTable#table1 th {background-color:#0000FF;}
+.foswikiTable#table1 th.foswikiSortedCol {background-color:#0000FF;}
+.foswikiTable#table1 th {color:#FFFF00;}
+.foswikiTable#table1 th a:link {color:#FFFF00;}
+.foswikiTable#table1 th a:visited {color:#FFFF00;}
+.foswikiTable#table1 th a:link font {color:#FFFF00;}
+.foswikiTable#table1 th a:visited font {color:#FFFF00;}
+.foswikiTable#table1 th a:hover {color:#0000FF;background-color:#FFFF00;}
+.foswikiTable#table1 th a:hover font {color:#0000FF;background-color:#FFFF00;}
+.foswikiTable#table1 tr.foswikiTableRowdataBg0 td {background-color:#BBBBBB;}
+.foswikiTable#table1 tr.foswikiTableRowdataBg1 td {background-color:#DDDDDD;}
+.foswikiTable#table1 tr.foswikiTableRowdataBg0 td.foswikiSortedCol {background-color:#BBBBBB;}
+.foswikiTable#table1 tr.foswikiTableRowdataBg1 td.foswikiSortedCol {background-color:#DDDDDD;}
+.foswikiTable#table1 td {padding:4px;}
+.foswikiTable#table1 th {padding:4px;}
+</style>
+<div class="geral">
+<div class="cabecalho">
+	 <div class="padraocabecalho">		
+<h3><a name="Aqui_temos_um_livro_livre_e_comp"></a> Aqui temos um <em>livro
+ livre</em> e completo sobre <em>Shell</em> </h3>
+<h4><a name="Os_sedentos_do_saber_livre_s_o_m"></a> Os sedentos do 
+"saber livre" são muito benvindos. </h4>
+<!-- <span class="foswikiNewLink">SiteSearch<a href="/bin/edit/TWikiBar/SiteSearch?topicparent=TWikiBar.TWikiBarPapo006" rel="nofollow" title="Criar este tópico">?</a></span> Google -->
+<form method="get" action="http://www.google.com/search" target="_blank">
+<input name="ie" value="UTF-8" type="hidden">
+<input name="oe" value="UTF-8" type="hidden">
+<input name="q" size="10" maxlength="255" type="text">
+<input name="btnG" value="Procure comando no Botequim" type="submit">
+<input name="domains" value="wiki.softwarelivre.org" type="hidden">
+<input name="sitesearch" 
+value="twiki.softwarelivre.org/bin/view/TWikiBar" checked="checked" 
+type="hidden">
+</form>
+<!-- <span class="foswikiNewLink">SiteSearch<a href="/bin/edit/TWikiBar/SiteSearch?topicparent=TWikiBar.TWikiBarPapo006" rel="nofollow" title="Criar este tópico">?</a></span> Google -->
+<p>
+	 </p></div>
+	 <div class="barranavegacao">		<div id="menuH"> <ul>
+<li> [ 12 Apr 2010 - 22:00 ] <strong>Links Amigos</strong> 
+</li> <li> <a style="" target="_blank" 
+href="http://br-linux.org/linux/?q=node/2037" title="Linux Levado à 
+Sério (Abrirá em nova Aba)">BR-Linux</a>
+</li> <li> <a style="" target="_blank" 
+href="http://www.vivaolinux.com.br/" title="Viva o Linux (Abrirá em nova
+ Aba)">Viva o Linux</a>
+</li> <li> <a style="" target="_blank" 
+href="http://www.dicas-l.unicamp.br/" title="Dicas-L - Rubens (Abrirá em
+ nova Aba)">Dicas-L</a>
+</li> <li> <a style="" target="_blank" 
+href="http://www.aurelio.net/shell" title="Por que programar tem que ser
+ divertido (Abrirá em nova Aba)">Aurelio</a>
+</li> <li> <a style="" target="_blank" href="http://www.thobias.org/" 
+title=" Thobias login (Abrirá em nova Aba)">Thobias</a>
+</li></ul> 
+</div>
+	 </div>
+  </div>
+  <div class="lateral">	 
+<div id="menuL"> <ol>
+<li> TWiki Básico <ul>
+<li> <a style="" href="http://wiki.softwarelivre.org/TWikiBar/WebHome" 
+class="foswikiCurrentWebHomeLink" title="Ir para a Página Inicial dessa 
+Área!"><img src="TWikiBarPapo006_arquivos/home.gif" alt="HOME" 
+width="16" height="16"> Página Inicial</a>
+</li> <li> <a style="" 
+href="http://wiki.softwarelivre.org/TWikiBar/WebChanges" title="Mostrar 
+as páginas (tópicos) alterados mais recentemente!"><img 
+src="TWikiBarPapo006_arquivos/recentchanges.gif" alt="INDEX" width="16" 
+height="16"> Últimas Alterações</a>
+</li> <li> <a style="" 
+href="http://wiki.softwarelivre.org/TWikiBar/WebIndex" title="Indice 
+Analítico!"><img src="TWikiBarPapo006_arquivos/index.gif" alt="INDEX" 
+width="16" height="16"> Índice</a>
+</li> <li> <a style="" 
+href="http://wiki.softwarelivre.org/TWikiBar/WebSearch" title="Permite 
+que você procure um texto qualquer em todos os tópicos. Se desejar pode 
+utilizar expressões regulares também!"><img 
+src="TWikiBarPapo006_arquivos/searchtopic.gif" alt="SEARCH" width="16" 
+height="16"> Procura</a>
+</li> <li> <a style="" 
+href="http://wiki.softwarelivre.org/TWikiBar/WebStatistics" title="Umas 
+estatísticas geradas pelo próprio TWiki via crontab."><img 
+src="TWikiBarPapo006_arquivos/statistics.gif" alt="STATISTICS" 
+width="16" height="16"> Estatísticas de Uso</a>
+</li> <li> <a style="" 
+href="http://wiki.softwarelivre.org/TWikiBar/WebNotify" title="Permite 
+que você seja informado se alguma página for alterada."><img 
+src="TWikiBarPapo006_arquivos/notify.gif" alt="NOTIFY" width="16" 
+height="16"> Aviso de Atualização</a>
+</li> <li> <a style="" 
+href="http://wiki.softwarelivre.org/TWikiBar/WebMap" title="Mostra um 
+Mapa do Site Gerado Automagicamente.">Mapa do Site</a>
+</li></ul> 
+</li> <li> TWiki Avançado <ul>
+<li> <strong><a style="" 
+href="http://wiki.softwarelivre.org/System/UserRegistration" title="Se 
+você quer contribuir com este site.">Registre-se</a></strong>
+</li> <li> <a style="" 
+href="http://wiki.softwarelivre.org/TWikiBar/WebPreferences" 
+title="Configurações Gerais desta Área.">Configurações Gerais</a>
+</li> <li> <a style="" 
+href="http://wiki.softwarelivre.org/Main/TWikiBarGroup" title="Entre em 
+Contato Conosco">Quem Somos</a>
+</li> <li> <a style="" 
+href="http://wiki.softwarelivre.org/System/TextFormattingRules" 
+title="Dicas de Formatação">Regras de Formatação</a>
+</li> <li> <a style="" 
+href="http://wiki.softwarelivre.org/System/DocumentGraphics" 
+title="Dicas Gráficas">Biblioteca Gráfica</a>
+</li> <li> <a style="" 
+href="http://wiki.softwarelivre.org/System/SmiliesPlugin" title="Use os 
+Smiles Simples.">Carinhas Gráficas</a>
+</li></ul> 
+</li> <li> <a 
+href="http://wiki.softwarelivre.org/TWikiBar/ProjetoGrafico">Projeto 
+Gráfico</a> <ul>
+<li> <a style="" 
+href="http://wiki.softwarelivre.org/TWikiBar/FreeSkinPreTopic" title="O 
+que vem ANTES do Tópico">Pré Tópico</a>
+</li> <li> <a style="" 
+href="http://wiki.softwarelivre.org/TWikiBar/FreeSkinPosTopic" title="O 
+que vem DEPOIS do Tópico">Pós Tópico</a>
+</li> <li> <a style="" 
+href="http://wiki.softwarelivre.org/TWikiBar/FreeSkinMenu" title="Este 
+próprio menu">Menu Lateral</a>
+</li> <li> <a style="" 
+href="http://wiki.softwarelivre.org/TWikiBar/FreeSkinBarraNavegacao" 
+title="Links Interessantes e Recomendados">Menu de Navegação</a>
+</li> <li> <a style="" 
+href="http://wiki.softwarelivre.org/TWikiBar/FreeSkinCSS" 
+title="Definições do CSS utilizado">CSS Utilizado</a>
+</li> <li> <a style="" 
+href="http://wiki.softwarelivre.org/TWikiBar/FreeSkinControlesEdicao" 
+title="Controles de Edição, Anexar, etc">Botões Especiais</a>
+</li> <li> <a style="" 
+href="http://wiki.softwarelivre.org/TWikiBar/FreeSkinVoceEstaAqui" 
+title="Indicador de Onde Estamos dentro da Web">Indica Onde Estamos</a>
+</li> <li> <a style="" 
+href="http://wiki.softwarelivre.org/TWikiBar/FreeSkinPadraoCabecalho" 
+title="Definição do Cabeçalho Padronizado">Cabeçalho Padrão</a>
+</li> <li> <a style="" 
+href="http://wiki.softwarelivre.org/TWikiBar/FreeSkinCopyRight" 
+title="Informações de Copy Right/Left">Copy Right/Left</a>
+</li></ul> 
+</li></ol> 
+</div>
+  </div>
+  <div class="corpo">
+	 <div class="localizacao">		Você está aqui: <a 
+href="http://wiki.softwarelivre.org/TWikiBar/WebHome" 
+class="foswikiCurrentWebHomeLink">TWikiBar</a>  &gt; <a 
+href="http://wiki.softwarelivre.org/TWikiBar/BatePapos">BatePapos</a> 
+&gt; <a href="http://wiki.softwarelivre.org/TWikiBar/TWikiBarPapo006" 
+class="foswikiCurrentTopicLink">TWikiBarPapo006</a>
+	 </div>
+	 <div class="edicao">		Controles: <a style="" 
+href="http://wiki.softwarelivre.org/bin/edit/TWikiBar/TWikiBarPapo006?nocache=Apr13010018&amp;skin=pattern"
+ target="_top" title="Editar este tópico"><img 
+src="TWikiBarPapo006_arquivos/edittopic.gif" alt="EDITAR" width="16" 
+height="16"></a>
+<a style="" 
+href="http://wiki.softwarelivre.org/bin/attach/TWikiBar/TWikiBarPapo006?skin=pattern"
+ target="_top" title="Anexar Imagens ou Arquivos"><img 
+src="TWikiBarPapo006_arquivos/attachfile.gif" alt="ANEXAR" width="16" 
+height="16"></a>
+<a style="" 
+href="http://wiki.softwarelivre.org/TWikiBar/TWikiBarPapo006?raw=on&amp;skin=pattern"
+ target="_top" title="Visualizar o Código Fonte"><img 
+src="TWikiBarPapo006_arquivos/cachetopic.gif" alt="MAIS" width="16" 
+height="16"></a>
+<a style="" 
+href="http://wiki.softwarelivre.org/bin/oops/TWikiBar/TWikiBarPapo006?template=oopsmore&amp;param1=21&amp;param2=21&amp;skin=pattern"
+ target="_top" title="Renomear, Mover, Apagar, etc..."><img 
+src="TWikiBarPapo006_arquivos/tip.gif" alt="MAIS" width="16" height="16"></a>
+<a style="" 
+href="http://wiki.softwarelivre.org/bin/rdiff/TWikiBar/TWikiBarPapo006?skin=pattern"
+ target="_top" title="Ver Todas Alterações"><img 
+src="TWikiBarPapo006_arquivos/recentchanges.gif" alt="ALTERACOES" 
+width="16" height="16"></a>
+<a style="" 
+href="http://wiki.softwarelivre.org/TWikiBar/TWikiBarPapo006?skin=freeprint"
+ target="_top" title="Preparar para Impressão"><img 
+src="TWikiBarPapo006_arquivos/printtopic.gif" alt="IMPRIMIR" width="16" 
+height="16"></a>
+- Última Atualização: [10 Mar 2010 - V.21]
+	 </div>
+	 <div class="topico"><h1><a name="Papo_de_botequim_parte_VI"></a>  Papo
+ de botequim parte VI </h1>
+<p>
+<a name="foswikiTOC"></a></p><div class="foswikiToc"> <ul>
+<li> <a href="#Comandos_de_Loop_ou_La_o_Continu"> Comandos de Loop ou 
+Laço (Continuação)</a> <ul>
+<li> <a href="#Um_Pouco_Mais_de_for_e_Matem_tic"> Um Pouco Mais de for e
+ Matemática</a>
+</li> <li> <a href="#O_comando_while"> O comando while</a>
+</li> <li> <a href="#O_comando_until"> O comando until</a>
+</li> <li> <a href="#Atalhos_no_loop"> Atalhos no loop</a>
+</li></ul> 
+</li></ul> 
+</div>
+<p>
+</p><h2><a name="Comandos_de_Loop_ou_La_o_Continu"></a> Comandos de <em>Loop</em>
+ ou Laço (Continuação) </h2>
+&nbsp;&nbsp;&nbsp;&nbsp; - Fala cara! E aí, já tá sabendo tudo do 
+comando <code>for</code>? Eu te deixei um exercício para treinar, se não
+ me engano era para contar a quantidade de palavras de um arquivo... 
+Você fez?
+<p>
+&nbsp;&nbsp;&nbsp;&nbsp; - Claro! Tô empolgadão com essa linguagem, eu 
+fiz da forma que você pediu, isto é sem usar o comando <code>wc</code> 
+porque senão era mais mole ainda. Olha só como eu fi...
+</p><p>
+&nbsp;&nbsp;&nbsp;&nbsp; - Êpa! Perai! Você realmente está fissurado na 
+linguagem, mas eu tô sequinho pra tomar um chope. Aê Chico, traz dois 
+por favor. Um sem colarinho!
+</p><p>
+&nbsp;&nbsp;&nbsp;&nbsp; - Como eu ia dizendo olha a forma que eu fiz. É
+ muito fácil...
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);">$ cat contpal.sh<font 
+color="#ffffff">
+#!/bin/bash
+# Script  meramente pedagógico cuja
+# função é contar a qtd de palavras
+# de um  arquivo.  Supõe-se  que as
+# palavras estão separadas entre si
+# por espaço, <tab> ou <enter>.
+</enter></tab></font><p>
+<font color="#ffffff">if  [ $# -ne 1 ]
+then
+    echo uso: $0 /caminho/do/arquivo
+    exit 2
+fi
+Cont=0
+for Palavra in $(cat $1)
+do
+    Cont=$((Cont+1))
+done
+echo O arquivo $1 tem $Cont palavras.</font>
+</p></div>
+<p>
+Ou seja, o programa começa como sempre verificando se a passagem de 
+parâmetros foi correta, em seguida o comando <code>for</code> se incumbe
+ de pegar cada uma das palavras (lembre-se que o <code>$IFS</code> 
+padrão (default) é branco, <code>&lt;TAB&gt;</code> e <code>&lt;ENTER&gt;</code>,
+ que é exatamente o que desejamos para separar as palavras), 
+incrementando a variável <code>$Cont</code>.
+</p><p>
+Vamos relembrar como é o arquivo <code>ArqDoDOS.txt</code>.
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);">$ cat ArqDoDOS.txt<font 
+color="#ffffff">
+Este arquivo
+foi gerado pelo
+DOS/Rwin e foi
+baixado por um
+ftp mal feito.</font>
+</div>
+<p>
+Agora vamos testar o programa passando este arquivo como parâmetro:
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);">$ contpal.sh ArqDoDOS.txt<font
+ color="#ffffff">
+O arquivo ArqDoDOS.txt tem 14 palavras</font>
+</div>
+<p>
+&nbsp;&nbsp;&nbsp;&nbsp; - Beleza, funcionou legal! 
+</p><p>
+</p><h3><a name="Um_Pouco_Mais_de_for_e_Matem_tic"></a> Um Pouco Mais de
+ <code>for</code> e Matemática </h3>
+<p>
+Voltando à vaca fria, na última vez que aqui estivemos, terminamos o 
+nosso papo mostrando o <em>loop</em> de <code>for</code> a seguir:
+</p><p>
+</p><pre>    for ((; i&lt;=9;))
+    do
+        let i++
+        echo -n "$i "
+    done
+</pre>
+<p>
+Uma vez que chegamos neste ponto, creio ser bastante interessante citar 
+que o Shell trabalha com o conceito de "Expansão Aritmética" (<em>Arithmetic
+ Expansion</em>), da qual vou falar rapidamente porque na seção <a 
+href="https://twiki.softwarelivre.org/bin/view/TWikiBar/TWikiBarBirinaite#Aritm%E9tica_em_Shell"
+ target="_blank">Tira Gosto</a> isso está muito bem mastigado.
+</p><p>
+A expansão aritmética é acionada por uma construção da forma:
+</p><p>
+&nbsp;&nbsp;&nbsp;&nbsp; <code>$((expressão))</code>
+</p><p>
+ou
+</p><p>
+&nbsp;&nbsp;&nbsp;&nbsp; <code>let expressão</code>
+</p><p>
+No último <code>for</code> citado usei a expansão das duas formas, mas 
+não poderíamos seguir adiante sem saber que a expressão pode ser de uma 
+das listadas a seguir:
+</p><p>
+</p><center>
+<table id="table1" class="foswikiTable" border="0" cellpadding="4" 
+cellspacing="1" rules="rows">
+	<thead>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 
+foswikiTableRowdataBg0">
+			<th colspan="2" class="foswikiTableCol0 foswikiFirstCol" 
+align="center" bgcolor="#0000ff" valign="top"> <font color="#ffff00">Expansão
+ Aritmética</font> </th>
+		</tr>
+	</thead>
+	<tfoot>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 
+foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol foswikiLast" 
+align="center" bgcolor="#dddddd" valign="top"> <code>||</code> </td>
+			<td class="foswikiTableCol1 foswikiLastCol foswikiLast" 
+bgcolor="#dddddd" valign="top"> &nbsp; OU lógico </td>
+		</tr>
+	</tfoot>
+	<tbody>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 
+foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" align="center" 
+bgcolor="#bbbbbb" valign="top"> &nbsp; <strong>Expressão</strong> &nbsp;
+ </td>
+			<td class="foswikiTableCol1 foswikiLastCol" align="center" 
+bgcolor="#bbbbbb" valign="top"> &nbsp; <strong>Resultado</strong> &nbsp;
+ </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 
+foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" align="center" 
+bgcolor="#dddddd" valign="top"> <code>id++ id--</code> </td>
+			<td class="foswikiTableCol1 foswikiLastCol" bgcolor="#dddddd" 
+valign="top"> &nbsp; pós-incremento e pós-decremento de variáveis </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 
+foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" align="center" 
+bgcolor="#bbbbbb" valign="top"> <code>++id -&#8211;id</code> </td>
+			<td class="foswikiTableCol1 foswikiLastCol" bgcolor="#bbbbbb" 
+valign="top"> &nbsp; pré-incremento e pré-decremento de variáveis </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 
+foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" align="center" 
+bgcolor="#dddddd" valign="top"> <code>**</code> </td>
+			<td class="foswikiTableCol1 foswikiLastCol" bgcolor="#dddddd" 
+valign="top"> &nbsp; exponenciação </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 
+foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" align="center" 
+bgcolor="#bbbbbb" valign="top"> <code>* / %</code> </td>
+			<td class="foswikiTableCol1 foswikiLastCol" bgcolor="#bbbbbb" 
+valign="top"> &nbsp; multiplicação, divisão, resto da divisão </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 
+foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" align="center" 
+bgcolor="#dddddd" valign="top"> <code>+ -</code> </td>
+			<td class="foswikiTableCol1 foswikiLastCol" bgcolor="#dddddd" 
+valign="top"> &nbsp; adição, subtração </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 
+foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" align="center" 
+bgcolor="#bbbbbb" valign="top"> <code>&lt;= &gt;= &lt; &gt;</code> </td>
+			<td class="foswikiTableCol1 foswikiLastCol" bgcolor="#bbbbbb" 
+valign="top"> &nbsp; comparação </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 
+foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" align="center" 
+bgcolor="#dddddd" valign="top"> <code>== !=</code> </td>
+			<td class="foswikiTableCol1 foswikiLastCol" bgcolor="#dddddd" 
+valign="top"> &nbsp; igualdade, desigualdade </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 
+foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" align="center" 
+bgcolor="#bbbbbb" valign="top"> <code>&amp;&amp;</code> </td>
+			<td class="foswikiTableCol1 foswikiLastCol" bgcolor="#bbbbbb" 
+valign="top"> &nbsp; E lógico </td>
+		</tr>
+	</tbody></table>
+</center>
+<p>
+&nbsp;&nbsp;&nbsp;&nbsp; - Mas você pensa que o papo de <em>loop</em> 
+(ou laço) se encerra no comando <code>for</code>? Ledo engano amigo, 
+vamos a partir de agora ver mais dois.
+</p><p>
+</p><p>
+</p><h3><a name="O_comando_while"></a> O comando <code>while</code> </h3>
+<p>
+Todos os programadores conhecem este comando, porque ele é comum a todas
+ as linguagens e nelas, o que normalmente ocorre é que um bloco de 
+comandos é executado, <strong>enquanto</strong> (enquanto em ingles é <em>while</em>)
+ uma determinada <strong>condição</strong> for verdadeira. Pois bem, 
+isto é o que ocorre nas linguagens caretas! Em programação <em>Shell</em>,
+ o bloco de comandos é executado <strong>enquanto</strong> um <strong>comando</strong>
+ for verdadeiro. E é claro, se quiser testar uma condição use o comando <code>while</code>
+ junto com o comando <code>test</code>, exatamente como você aprendeu a 
+fazer no <code>if</code>, lembra?
+</p><p>
+Então a sintaxe do comando fica assim:
+</p><p>
+</p><pre>    while comando
+    do
+        cmd1
+        cmd2
+        ...
+        cmdn
+    done
+</pre>
+<p>
+e desta forma o bloco de comandos formado pelas instruções <code>cmd1</code>,
+ <code>cmd2</code>,... e <code>cmdn</code> é executado enquanto a 
+execução da instrução <code>comando</code> for bem sucedida.
+</p><p>
+Suponha a seguinte cena: tem uma tremenda gata me esperando e eu preso 
+no trabalho sem poder sair porque o meu chefe, que é um pé no saco 
+(aliás chefe-chato é uma redundância, né?:), ainda estava na sua sala, 
+que fica bem na minha passagem para a rua.
+</p><p>
+Ele começou a ficar com as antenas (provavelmente instaladas na cabeça 
+dele pela esposa) ligadas depois da quinta vez que passei pela sua porta
+ e olhei para ver se já havia ido embora. Então voltei para a minha mesa
+ e fiz, no servidor, um <em>script</em> assim:
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);">$ cat logaute.sh<font 
+color="#ffffff">
+#!/bin/bash
+</font><p>
+<font color="#ffffff"># Espero que a Xuxa não tenha
+# copyright de xefe e xato :)
+</font></p><p>
+<font color="#ffffff">while who | grep xefe
+do
+    sleep 30
+done
+echo O xato se mandou, não hesite, dê exit e vá a luta</font>
+</p></div>
+<p>
+Neste <em>scriptizinho</em>, o comando <code>while</code> testa o <em>pipeline</em>
+ composto pelo <code>who</code> e pelo <code>grep</code> e que será 
+verdadeiro enquanto o <code>grep</code> localizar a palavra <code>xefe</code>
+ na saída do <code>who</code>. Desta forma, o <em>script</em> dormirá 
+por 30 segundos enquanto o chefe estiver logado (Argh!). Assim que ele 
+se desconectar do servidor, o fluxo do <em>script</em> sairá do <em>loop</em>
+ e dará a tão ansiada mensagem de liberdade.
+</p><p>
+Quando o executei adivinha o que aconteceu?
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);">$ logaute.sh<font 
+color="#ffffff">
+xefe  pts/0   Jan  4 08:46 (10.2.4.144)
+xefe  pts/0   Jan  4 08:47 (10.2.4.144)
+...
+xefe  pts/0   Jan  4 08:52 (10.2.4.144)</font>
+</div>
+<p>
+Isto é a cada 30 segundos seria enviado para a tela a saída do <code>grep</code>,
+ o que não seria legal já que poluiria a tela do meu micro e a mensagem 
+esperada poderia passar desapercebida. Para evitar isso já sabemos que a
+ saída do <em>pipeline</em> tem que ser redirecionada para <code>/dev/null</code>
+ (uma outra forma de fazer o mesmo, seria usar a opção <code>-q</code> 
+(quiet) do <code>grep</code>, mas isso funciona somente no <code>GNU 
+grep</code> não funciona no UNIX).
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);">$ cat logaute.sh<font 
+color="#ffffff">
+#!/bin/bash
+</font><p>
+<font color="#ffffff"># Espero que a Xuxa não tenha
+# copyright de xefe e xato :)
+</font></p><p>
+<font color="#ffffff">while who | grep xefe &gt; /dev/null
+do
+    sleep 30
+done
+echo O xato se mandou, não hesite, dê exit e vá a luta</font>
+</p></div>
+<p>
+Agora quero montar um <em>script</em> que receba o nome (e eventuais 
+parâmetros) de um programa que será executado em <em>background</em> e 
+que me informe do seu término. Mas, para você entender este exemplo, 
+primeiro tenho de mostar uma nova variável do sistema. Veja estes 
+comandos diretos no <em>prompt</em>:
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);">$ sleep 10&amp;<font 
+color="#ffffff">
+[1] 16317</font>
+$ echo $!<font color="#ffffff">
+16317
+[1]+  Done                    sleep 10</font>
+$ echo $!<font color="#ffffff">
+16317</font>
+</div>
+<p>
+Isto é, criei um processo em <em>background</em> para dormir por 10 
+segundos, somente para mostrar que a variável <code>$!</code> guarda o 
+PID (<em>Process IDentification</em>) do último processo em <em>background</em>,
+ mas repare após a linha do <code>done</code>, que a variável reteve o 
+valor mesmo após o término deste processo.
+</p><p>
+Bem sabendo isso já fica mais fácil de monitorar qualquer processo em <em>background</em>.
+ Veja só como:
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);">$ cat monbg.sh<font 
+color="#ffffff">
+#!/bin/bash
+</font><p>
+<font color="#ffffff"># Executa e  monitora um
+# processo em background
+</font></p><p>
+<font color="#ffffff">$1 &amp;      # Coloca em backgroud
+while ps | grep -q $!
+do
+    sleep 5
+done
+echo Fim do Processo $1</font>
+</p></div>
+<p>
+Este <em>script</em> é bastante similar ao anterior, mas tem uns macetes
+ a mais, veja só: ele tem que ser executado em <em>background</em> para 
+não prender o <em>prompt</em> mas o <code>$!</code> será o do programa 
+passado como parâmetro já que ele foi colocado em <em>background</em> 
+após o <code>monbg.sh</code> propriamente dito. Repare também a opção <code>-q</code>
+ (<em>quiet</em>) do <code>grep</code>, ela serve para tranformá-lo num 
+comando mineiro, isto é, para o <code>grep</code> "trabalhar em 
+silêncio". O mesmo resultado poderia ser obtido se a linha fosse <code>while
+ ps | grep $! &gt; /dev/null</code>, como nos exemplos que vimos até 
+agora.
+</p><p>
+</p><div style="min-height: 121px; margin: 1em; padding: 1em; border: 
+1px dashed red; background-color: rgb(255, 255, 204);"><img 
+style="float: left; padding: 0px 8px 0px 0px;" 
+src="TWikiBarPapo006_arquivos/pinguim_dica.gif" alt="Pinguim com placa 
+de dica" align="left">  
+Não esqueça: o <em>Bash</em> disponibiliza a variável <code>$!</code> 
+que possui o <code>PID</code> (<em>Process IDentification</em>) do 
+último processo executado em <em>background</em>.
+</div>
+<p>
+Vamos melhorar o <code>musinc</code>, que é o nosso programa para 
+incluir registros no arquivo <code>musicas</code>, mas antes preciso te 
+ensinar a pegar um dado da tela, e já vou avisando: só vou dar uma 
+pequena dica do comando <em>read</em> (que é quem pega o dado da tela) 
+que seja o suficiente para resolver este nosso problema. Em uma outra 
+rodada de chope vou te ensinar tudo sobre o assunto, inclusive como 
+formatar tela, mas hoje estamos falando sobre <em>loops</em>.
+</p><p>
+A sintaxe do comando <code>read</code> que nos interessa por hoje é a 
+seguinte:
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);">$ read -p "prompt de leitura" 
+var
+</div>
+<p>
+Onde <code>prompt de leitura</code> é o texto que você quer que apareça 
+escrito na tela, e quando o  operador teclar o dado, ele irá para a 
+variável <code>var</code>. Por exemplo:
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);">$ read -p "Título do Álbum: " 
+Tit
+</div>
+<p>
+Bem, uma vez entendido isso, vamos à especificação do nosso problema: 
+faremos um programa que inicialmente lerá o nome do álbum e em seguida 
+fara um <em>loop</em> de leitura, pegando a música e o artista. Este <em>loop</em>
+ termina quando for informada uma música vazia, isto é, ao ser 
+solicitada a digitação da música, o operador dá um simples <code>&lt;ENTER&gt;</code>.
+ Para facilitar a vida do operador, vamos oferecer como <em>default</em>
+ o mesmo nome do artista da música anterior (já que é normal que o álbum
+ seja todo do mesmo artista) até que ele deseje alterá-lo. Vamos ver 
+como ficou:
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);">$ cat musinc<font 
+color="#ffffff">
+#!/bin/bash
+# Cadastra CDs (versao 4)
+#
+clear
+read -p "Título do Álbum: " Tit
+[ "$Tit" ] || exit 1 # Fim da execução se título vazio
+if grep "^$Tit\^" musicas &gt; /dev/null
+then
+    echo Este álbum já está cadastrado
+    exit 1
+fi
+Reg="$Tit^"
+Cont=1
+oArt=
+while true
+do
+    echo Dados da trilha $Cont:
+    read -p "Música: " Mus
+    [ "$Mus" ] || break       # Sai se vazio
+    read -p "Artista: $oArt // " Art
+    [ "$Art" ] &amp;&amp; oArt="$Art" # Se vazio Art anterior
+    Reg="$Reg$oArt~$Mus:"     # Montando registro
+    Cont=$((Cont + 1))        
+    # A linha anterior tb poderia ser ((Cont++))
+done
+echo "$Reg" &gt;&gt; musicas
+sort musicas -o musicas</font>
+</div>
+<p>
+Este exemplo, começa com a leitura do título do álbum, que se não for 
+informado, terminará a execução do programa. Em seguida um <code>grep</code>
+ procura no início (<code>^</code>) de cada registro de musicas, o 
+título informado seguido do separador (<code>^</code>) (que está 
+precedido de uma contrabarra (<code>\</code>) para protegê-lo da 
+interpretação do <em>Shell</em>).
+</p><p>
+Para ler os nomes dos artistas e as músicas do álbum, foi montado um <em>loop</em>
+ de <code>while</code> simples, cujo único destaque é o fato de estar 
+armazenando o artista da música anterior na variável <code>$oArt</code> 
+que só terá o seu conteúdo alterado, quando algum dados for informado 
+para a variável <code>$Art</code>, isto é, quando não teclou-se um 
+simples <code>&lt;ENTER&gt;</code> para manter o artista anterior.
+</p><p>
+O que foi visto até agora sobre o <code>while</code> foi muito pouco. 
+Este comando é muito utilizado, principalmente para leitura de arquivos,
+ porém nos falta bagagem para prosseguir. Depois que aprendermos a ler, 
+veremos esta instrução mais a fundo.
+</p><p>
+</p><div style="min-height: 121px; margin: 1em; padding: 1em; border: 
+1px dashed red; background-color: rgb(255, 255, 204);"><img 
+style="float: left; padding: 0px 8px 0px 0px;" 
+src="TWikiBarPapo006_arquivos/pinguim_dica.gif" alt="Pinguim com placa 
+de dica" align="left">
+Leitura de arquivo significa ler um-a-um todos os registros, o que é 
+sempre uma operação lenta. Fique atento para não usar o <code>while</code>
+ quando seu uso for desnecessário. O <em>Shell</em> tem ferramentas como
+ o <code>sed</code> e a família <code>grep</code> que vasculham arquivos
+ de forma otimizada sem ser necessário o uso de comandos de <em>loop</em>
+ para fazê-lo registro a registro (ou até palavra a palavra).
+</div>
+<p>
+</p><p>
+</p><h3><a name="O_comando_until"></a> O comando <code>until</code> </h3>
+<p>
+O comando <code>until</code> funciona exatamente igual ao <code>while</code>,
+ porém ao contrário. Disse tudo mas não disse nada, né? É o seguinte: 
+ambos testam comandos; ambos possuem a mesma sintaxe e ambos atuam em <em>loop</em>,
+ porém enquanto o <code>while</code> executa o bloco de intruções do <em>loop</em>
+ <strong>enquanto</strong> um comando for bem sucedido, o <code>until</code>
+ executa o bloco do <em>loop</em> <strong>até que</strong> o comando 
+seja bem sucedido. Parece pouca coisa mas a diferença é fundamental.
+</p><p>
+A sintaxe do comando é praticamente a mesma do <code>while</code>. Veja:
+</p><p>
+</p><pre>    until comando
+    do
+        cmd1
+        cmd2
+        ...
+        cmdn
+    done
+</pre>
+<p>
+E desta forma o bloco de comandos formado pelas instruções <code>cmd1</code>,
+ <code>cmd2</code>,... e <code>cmdn</code> é executado até que a 
+execução da instrução <code>comando</code> seja bem sucedida.
+</p><p>
+Como eu te disse, o <code>while</code> e <code>until</code> funcionam de
+ forma antagônica e isso é muito fácil de demonstrar: em uma guerra 
+sempre que se inventa uma arma, o inimigo busca uma solução para 
+neutralizá-la. Baseado neste principio belicoso que o meu chefe, 
+desenvolveu, no mesmo servidor que eu executava o <code>logaute.sh</code>
+ um <em>script</em> para controlar o meu horário de chegada.
+</p><p>
+Um dia deu um problema da rede, ele me pediu para dar uma olhada no 
+micro dele e me deixou sozinho em sua sala. Imediatamente comecei a 
+bisbilhotar seus arquivos - porque guerra é guerra - e veja só o que 
+descobri:
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);">$cat chegada.sh<font 
+color="#ffffff">
+#!/bin/bash
+</font><p>
+<font color="#ffffff">until who | grep julio
+do
+    sleep 30
+done
+echo $(date "+ Em %d/%m às %H:%Mh") &gt;&gt; relapso.log</font>
+</p></div>
+<p>
+Olha que safado! O cara estava montando um <em>log</em> com os horários 
+que eu chegava, e ainda por cima chamou o arquivo que me monitorava de <code>relapso.log</code>!
+ O que será que ele quis dizer com isso?
+</p><p>
+Neste <em>script</em>, o <em>pipeline</em> <code>who | grep julio</code>,
+ será bem sucedido somente quando <code>julio</code> for encontrado no 
+comando <code>who</code>, isto é, quando eu me "logar" no servidor. Até 
+que isso aconteça, o comando <code>sleep</code>, que forma o bloco de 
+instruções do <code>until</code>, porá o programa em espera por 30 
+segundos. Quando este loop encerrar-se, será dada uma mensagem para o <code>relapso.log</code>
+ (ARGHH!). Supondo que no dia 20/01 eu me loguei às 11:23 horas, a 
+mensagem seria a seguinte:
+</p><p>
+&nbsp;&nbsp;&nbsp;&nbsp; <code>Em 20/01 às 11:23h</code>
+</p><p>
+Quando vamos cadastrar músicas, o ideal seria que pudéssemos cadastrar 
+diversos CDs, e na última versão que fizemos do <code>musinc</code>, 
+isso não ocorre, a cada CD que cadastramos o programa termina. Vejamos 
+como melhorá-lo:
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);">$ cat musinc<font 
+color="#ffffff">
+#!/bin/bash
+# Cadastra CDs (versao 5)
+#
+Para=
+until [ "$Para" ]
+do
+    clear
+    read -p "Título do Álbum: " Tit
+    if  [ ! "$Tit" ] # Se titulo vazio...
+    then
+        Para=1     # Liguei flag de saída
+    else
+        if grep "^$Tit\^" musicas &gt; /dev/null
+        then
+            echo Este álbum já está cadastrado
+            exit 1
+        fi
+        Reg="$Tit^"
+        Cont=1
+        oArt=
+        while [ "$Tit" ]
+        do
+            echo Dados da trilha $Cont:
+            read -p "Música: " Mus
+            [ "$Mus" ] || break       # Sai se vazio
+            read -p "Artista: $oArt // " Art
+            [ "$Art" ] &amp;&amp; oArt="$Art" # Se vazio Art anterior
+            Reg="$Reg$oArt~$Mus:"     # Montando registro
+            Cont=$((Cont + 1))        
+            # A linha anterior tb poderia ser ((Cont++))
+        done
+        echo "$Reg" &gt;&gt; musicas
+        sort musicas -o musicas
+    fi
+done</font>
+</div>
+<p>
+Nesta versão, um <em>loop</em> maior foi adicionado antes da leitura do 
+título, que só terminará quando a variável <code>$Para</code> deixar de 
+ser vazia. Caso o título do álbum não seja informado, a variável <code>$Para</code>
+ receberá valor (no caso coloquei <code>1</code> mas poderia ter 
+colocado qualquer coisa. O importante é que não seja vazia) para sair 
+deste <em>loop</em>, terminando desta forma o programa. No resto, o <em>script</em>
+ é idêntico à sua versão anterior.
+</p><p>
+</p><h3><a name="Atalhos_no_loop"></a> Atalhos no loop </h3>
+<p>
+Nem sempre um ciclo de programa, compreendido entre um <code>do</code> e
+ um <code>done</code>, sai pela porta da frente. Em algumas 
+oportunidades, temos que colocar um comando que aborte de forma 
+controlada este <em>loop</em>. De maneira inversa, algumas vezes 
+desejamos que o fluxo de execução do programa volte antes de chegar ao 
+done. Para isto, temos respectivamente, os comandos <code>break</code> 
+(que já vimos rapidamente nos exemplos do comado <code>while</code>) e <code>continue</code>,
+ que funcionam da seguinte forma: 
+</p><p>
+O que eu não havia dito anteriormente é que nas suas sintaxes genéricas 
+eles aparecem da seguinte forma:
+</p><p>
+&nbsp;&nbsp;&nbsp;&nbsp; <code>break [qtd loop]</code>
+</p><p>
+e
+</p><p>
+&nbsp;&nbsp;&nbsp;&nbsp; <code>continue [qtd loop]</code>
+</p><p>
+Onde <em>qtd loop</em> representa a quantidade dos <em>loops</em> mais 
+internos sobre os quais os comandos irão atuar. Seu valor <em>default</em>
+ é 1.
+</p><p>
+</p><center>
+<img src="TWikiBarPapo006_arquivos/Fluxograma.jpg" alt="Fluxograma">
+</center>
+<p>
+Duvido que você nunca tenha deletado um arquivo e logo após deu um 
+tabefe na testa se xingando porque não devia tê-lo removido. Pois é, na 
+décima vez que fiz esta besteira, criei um <em>script</em> para simular 
+uma lixeira, isto é, quando mando remover um (ou vários) arquivo(s), o 
+programa "finge" que removeu-o, mas no duro o que fez foi mandá-lo(s) 
+para o diretório <em>/tmp/LoginName_do_usuario</em>. Chamei este 
+programa de <code>erreeme</code> e no <em>/etc/profile</em> coloquei a 
+seguinte linha:
+</p><p>
+&nbsp;&nbsp;&nbsp;&nbsp; <code>alias rm=erreeme</code>
+</p><p>
+O programa era assim:
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);">$ cat erreeme<font 
+color="#ffffff">
+#/bin/bash
+#
+#  Salvando Copia de Arquivo Antes de Remove-lo
+#
+</font><p>
+<font color="#ffffff">if  [ $# -eq 0 ]  #  Tem de ter um ou mais 
+arquivos para remover
+then
+    echo "Erro -&gt; Uso: erreeme arq [arq] ... [arq]"
+    echo "  O uso de metacaracteres e&#8217; permitido. Ex. erreeme arq*"
+    exit 1
+fi
+</font></p><p>
+<font color="#ffffff">MeuDir="/tmp/$LOGNAME" # Variavel do sist. Contém o
+ nome do usuário.
+if  [ ! -d $MeuDir ]   # Se não existir o meu diretório sob o /tmp...
+then
+    mkdir $MeuDir      # Vou cria-lo
+fi
+</font></p><p>
+<font color="#ffffff">if  [ ! -w $MeuDir ]   # Se não posso gravar no 
+diretório...
+then
+    echo Impossivel salvar arquivos em $MeuDir. Mude permissao...
+    exit 2
+fi
+</font></p><p>
+<font color="#ffffff">Erro=0                 # Variavel para indicar o 
+cod. de retorno do prg
+for Arq                # For sem o "in" recebe os parametros passados
+do
+    if  [ ! -f $Arq ]  # Se este arquivo não existir...
+    then
+        echo $Arq nao existe.
+        Erro=3
+        continue       # Volta para o comando for
+    fi
+</font></p><p>
+<font color="#ffffff"> DirOrig=`dirname $Arq` # Cmd. dirname informa 
+nome do dir de $Arq
+    if  [ ! -w $DirOrig ]  # Verifica permissão de gravacaoo no 
+diretório
+    then
+        echo Sem permissao de remover no diretorio de $Arq
+        Erro=4
+        continue           # Volta para o comando for
+    fi
+</font></p><p>
+<font color="#ffffff">    if  [ "$DirOrig" = "$MeuDir" ] # Se estou 
+"esvaziando a lixeira"...
+    then
+        echo $Arq ficara sem copia de seguranca
+        rm -i $Arq         # Pergunta antes de remover
+        [ -f $Arq ] || echo $Arq removido  # Será que o usuario removeu?
+        continue
+    fi
+</font></p><p>
+<font color="#ffffff">    cd $DirOrig     # Guardo no fim do arquivo o 
+seu diretorio
+    pwd &gt;&gt; $Arq  # original para usa-lo em um script de undelete
+    mv $Arq $MeuDir  # Salvo e removo
+    echo $Arq removido
+done
+exit $Erro # Passo eventual numero do erro para o codigo de retorno</font>
+</p></div>
+<p>
+Como você pode ver, a maior parte do <em>script</em> é formada por 
+pequenas criticas aos parâmetros informados, mas como o <em>script</em> 
+pode ter recebido diversos arquivos para remover, a cada arquivo que não
+ se encaixa dentro do especificado, há um <code>continue</code>, para 
+que a sequência volte para o <em>loop</em> do <code>for</code> de forma a
+ receber outros arquivos. 
+</p><p>
+Quando você está no <em>Windows</em> (com perdão da má palavra) e tenta 
+remover aquele monte de lixo com nomes esquisitos como <code>HD04TG.TMP</code>,
+ se der erro em um deles, os outros não são removidos, não é? Então, o <code>continue</code>
+ foi usado para evitar que um impropério desses ocorra, isto é, mesmo 
+que dê erro na remoção de um arquivo, o programa continuará removendo os
+ outros que foram passados.
+</p><p>
+&nbsp;&nbsp;&nbsp;&nbsp; - Eu acho que a esta altura você deve estar 
+curioso para ver o programa que restaura o arquivo removido, não é? Pois
+ então aí vai vai um desafio: faça-o em casa e me traga para discutirmos
+ no nosso próximo encontro aqui no boteco.
+</p><p>
+&nbsp;&nbsp;&nbsp;&nbsp; - Poxa, mas nesse eu acho que vou dançar, pois 
+não sei nem como começar...
+</p><p>
+&nbsp;&nbsp;&nbsp;&nbsp; - Cara, este programa é como tudo que se faz em
+ Shell, extremamente fácil, é para ser feito em, no máximo 10 linhas. 
+Não se esqueça que o arquivo está salvo em <code>/tmp/$LOGNAME</code> e 
+que a sua última linha é o diretório em que ele residia antes de ser 
+"removido". Também não se esqueça de criticar se foi passado o nome do 
+arquivo a ser removido.
+</p><p>
+&nbsp;&nbsp;&nbsp;&nbsp; - É eu vou tentar, mas sei não...
+</p><p>
+&nbsp;&nbsp;&nbsp;&nbsp; - Tenha fé irmão, eu tô te falando que é mole! 
+Qualquer dúvida é só me passar um e-mail para <a 
+href="mailto:julio.neves@gmail.com?Subject=Duvidas%20Papo%20de%20botequim">julio.neves@gmail.com</a>.
+ Agora chega de papo que eu já estou de goela seca de tanto falar. Me 
+acompanha no próximo chope ou já vai sair correndo para fazer o script 
+que passei?
+</p><p>
+&nbsp;&nbsp;&nbsp;&nbsp; - Deixa eu pensar um pouco...
+</p><p>
+&nbsp;&nbsp;&nbsp;&nbsp; - Chico, traz mais um chope enquanto ele pensa!
+</p><p>
+Vou aproveitar também para mandar o meu jabá: diga para os amigos que 
+quem estiver afim de fazer um curso porreta de programação em <em>Shell</em>
+ que mande um e-mail para a nossa <a 
+href="mailto:contato@clavis.com.br?Subject=Curso%20de%20Shell%20com%20Julio%20Neves">gerencia
+ de treinamento</a> para informar-se. 
+</p><p>
+Qualquer dúvida ou falta de companhia para um chope ou até para falar 
+mal dos políticos é só mandar um e-mail para <a 
+href="mailto:julioneves@openoffice.org?Subject=D%C3%BAvidas%20Papo%20de%20Botequim">mim</a>.
+ 
+</p><p>
+Valeu!
+	 </p></div><!-- fecha div topico -->
+	 <div class="rodape">		<br>  <a 
+href="http://creativecommons.org/licenses/by-nc-sa/2.0/br/" 
+target="_blank"><img 
+src="TWikiBarPapo006_arquivos/Logo_CC-by-nc-sa_pequeno.png" alt="Licença
+ Creative Commons - Atribuição e Não Comercial" title="Licença Creative 
+Commons - Atribuição e Não Comercial (pequeno)" border="0"></a> (CC) 
+2010 Pelos <a href="http://wiki.softwarelivre.org/Main/TWikiBarGroup">Frequentadores
+ do Bar do Júlio Neves</a>.<br> 
+Todo o conteúdo desta página pode ser utilizado segundo os termos da <a 
+href="http://creativecommons.org/licenses/by-nc-sa/2.0/br/">Creative 
+Commons License</a>: Atribuição-UsoNãoComercial-PermanênciaDaLicença.
+	 </div>
+  </div><!-- fecha div corpo -->
+</div><!-- fecha div geral -->
+</body></html>

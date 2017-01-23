@@ -1,0 +1,10 @@
+teUrl='http://te.kontera.com/ContentLink/ContentLink?publisherId=11034&layout=adlinks&sId=142,770&cb=1271120000&creative=L&cn=';
+directAdsPrefetch=true;
+setMaxLinksOnPage(6);
+konaPostalCode="";
+pageTopicVector="";
+
+konaTweakMode=8731;
+setKonaResults(1,0,"L|0|0|0|white|none&pRfr=http://translate.googleusercontent.com/translate_c?hl=pt-BR&ie=UTF-8&sl=en&tl=pt&u=http://www.debianadmin.com/implement-and-manage-disk-quotas-in-linux.html&prev=_t&rurl=translate.google.com.br&usg=ALkJrhg2mUSyoY3rBp_YBtJgKN8OMOqqig&dc_aff_id=");
+onKonaReturn(0);
+

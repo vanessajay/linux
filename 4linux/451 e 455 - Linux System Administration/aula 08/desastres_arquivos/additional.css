@@ -1,0 +1,119 @@
+.alert {
+        text-align: center;
+        font-weight: bold;
+        font-size: 11px;
+        }
+
+.alert2 {
+        background: #FFF6BF url('http://under-linux.org/css/parrafo-alert.png') 10px center no-repeat;
+        border-top: 2px solid #FFD324;
+        border-bottom: 2px solid #FFD324;
+        padding: 10px 10px 10px 52px;
+        text-align: center;
+        line-height: normal;
+        }
+
+.download {
+        background: #D0F29D url('http://under-linux.org/css/parrafo-download.png') 10px center no-repeat;
+        border-top: 2px solid #9CD941;
+        border-bottom: 2px solid #9CD941;
+        padding: 10px 10px 10px 52px;
+        text-align: center;
+        line-height: normal;
+        }
+
+.construction {
+        background: #ffcccc url('http://under-linux.org/css/parrafo-cross.png') 10px center no-repeat;
+        border-top: 2px solid #c90404;
+        border-bottom: 2px solid #c90404;
+        padding: 10px 10px 10px 52px;
+        text-align: center;
+        line-height: normal;
+        }
+
+.favorite {
+        background: #FFF6BF url('http://under-linux.org/css/parrafo-favorite.png') 10px center no-repeat;
+        border-top: 2px solid #FFD324;
+        border-bottom: 2px solid #FFD324;
+        padding: 10px 10px 10px 52px;
+        text-align: center;
+        line-height: normal;
+        }
+
+.info {
+        background: #9DD1F2 url('http://under-linux.org/css/parrafo-info.png') 10px center no-repeat;
+        border-top: 2px solid #419ED9;
+        border-bottom: 2px solid #419ED9;
+        padding: 10px 10px 10px 52px;
+        text-align: center;
+        line-height: normal;
+        }
+
+.question {
+        background: #9DD1F2 url('http://under-linux.org/css/parrafo-question.png') 10px center no-repeat;
+        border-top: 2px solid #419ED9;
+        border-bottom: 2px solid #419ED9;
+        padding: 10px 10px 10px 52px;
+        text-align: center;
+        line-height: normal;
+        }
+
+.code {
+        background: #f2f2f2 url('http://under-linux.org/css/parrafo-code.png') 10px 10px no-repeat;
+        border-top: 2px solid #CCC;
+        border-bottom: 2px solid #CCC;
+        padding: 10px 10px 10px 52px;
+        text-align: left;
+        font: Courier, Fixed;
+        min-height: 30px;
+        }
+
+.ciscobox {
+        background: black;
+        text-align: left;
+	color: white;
+	font: Courier, Fixed;
+	padding: 2px 2px 2px 2px;
+}
+
+
+.bluebox {
+        background: #9DD1F2;
+        border-top: 2px solid #419ED9;
+        border-bottom: 2px solid #419ED9;
+        text-align: center;
+        padding: 5px 20px;
+        }
+
+.yellowbox {
+        background: #FFF6BF;
+        border-top: 2px solid #FFD324;
+        border-bottom: 2px solid #FFD324;
+        text-align: center;
+        padding: 5px 20px;
+        }
+
+.redbox {
+        background: #ffcccc;
+        border-top: 2px solid #c90404;
+        border-bottom: 2px solid #c90404;
+        text-align: center;
+        padding: 5px 20px;
+        }
+
+.greenbox {
+        background: #D0F29D;
+        border-top: 2px solid #9CD941;
+        border-bottom: 2px solid #9CD941;
+        text-align: center;
+        padding: 5px 20px;
+        }
+
+.greybox {
+        background: #f2f2f2;
+        border-top: 2px solid #CCC;
+        border-bottom: 2px solid #CCC;
+        text-align: center;
+        padding: 5px 20px;
+        }
+ 

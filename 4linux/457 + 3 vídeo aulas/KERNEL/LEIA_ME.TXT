@@ -1,0 +1,20 @@
+﻿--------------------------------------
+4Linux
+--------------------------------------
+Vídeo-aula: Compilação de Kernel
+--------------------------------------
+
+Para assistir a vídeo-aula você precisará do Flash Player 8 ou superior.
+Você pode acessar a vídeo-aula abrindo o arquivo index.html no seu navegador ou
+o arquivo index.swf no seu Flash Player.
+Resolução mínima de 1024x768
+
+Navegadores testados com suporte ao arquivo html:
+Mozilla Firefox 1.x e superiores (Linux e Windows)
+Internet Explorer 6 e superiores (Windows)
+
+Para fazer o download do plugin do Flash, acesse:
+http://www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash&promoid=BIOW
+
+
+

@@ -1,0 +1,1910 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="pt-br" xmlns="http://www.w3.org/1999/xhtml" lang="pt-br"><head>
+
+
+<title>.:TWikiBarPapo003 &gt; TWikiBar &gt; Aqui temos um _livro livre_ e
+ completo sobre _Shell_:.</title>
+<link rel="shortcut icon" 
+href="http://wiki.softwarelivre.org/pub/TWikiBar/FreeSkinImagens/favicon.ico"
+ type="image/x-icon">
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta name="Keywords" content="brasil, software, livre, liberdade, 
+copyleft, gnu, linux, grupo, bash, shell, Julio, Cezar, Neves, venda, 
+aluguel, casa, Arraial, do, Cabo">
+<meta name="Description" content="Os sedentos do " saber="" livre="" 
+são="" muito="" benvindos.="">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta name="author" content="Julio Cezar Neves">
+<!-- base href="http://wiki.softwarelivre.org/TWikiBar/TWikiBarPapo003" -->
+</head><body>\
+<style type="text/css" media="all">
+
+/* elementos HTML básicos */
+
+html body {
+  line-height:1.55em;
+  font-family: "Bitstream Vera Sans", "Lucida Grande", verdana, lucida, helvetica, sans-serif;
+  background-color: #f8f8f8;
+  margin:0;
+  padding:0;
+  font-size:x-small;
+  voice-family:"\"}\""; 
+  voice-family:inherit;
+  font-size:small;
+}
+
+html>body {
+  font-size:small;   
+}
+
+/* be kind to netscape 4 that doesn't understand inheritance */
+body, p, li, ul, ol, dl, dt, dd, acronym, h1, h2, h3, h4, h5, h6 {
+   background-color:transparent;
+}
+p {
+   margin:1em 0 0 0;
+}
+table {
+   border-collapse: separate;
+   background-color: #000000;
+}
+
+table.destaque {
+   border-collapse: separate;
+   background-color: #ffffcc !important;
+}
+
+#SearchResultsTable table,
+#SearchResultsTable tr,
+#SearchResultsTable td{
+   background-color: #ffffff !important;
+}
+
+strong, b {
+   font-weight:bold;
+}
+hr {
+   color:#9E9E70;
+   background-color:#9E9E70;
+   height:1px;
+   border:none;
+}
+pre, code, tt {
+   font-size:100%;
+   line-height:1.4em;
+   color:#7A4707;
+}
+pre {
+   margin-top:1em;
+   margin-bottom:1em;
+}
+
+/* Text */
+
+h1, h2, h3, h4, h5, h6 {
+   font-family:"Lucida Grande", helvetica, lucida, verdana, sans-serif;
+   line-height:104%;
+   padding:0;
+   margin:1em 0 0.1em 0;
+}
+h1 {
+   font-size:210%;
+   color:#e24628;
+   margin:0 0 0.1em 0;
+}
+h2 {
+   font-size:145%;
+   display:block;
+   background-color:#F3EDE7;
+   color:#900;
+   padding:0.2em 0.7em;
+   margin:1em 0.7em 0.15em 0.7em;
+   height:auto;
+}
+h3 { font-size:140%; color:#900;}
+h4 { font-size:125%; color:#900;}
+h5 { font-size:110%; color:#900;}
+h6 { font-size:95%; color:#900;}
+
+/* Links */
+
+:link:focus,
+:visited:focus,
+:link,
+:visited,
+:link:active,
+:visited:active {
+   text-decoration:none;
+   color:#1e5bbd;
+   background-color:transparent;
+}
+:link:hover,
+:visited:hover {
+   text-decoration:underline;
+   background-color:#b4d5ff;
+   color:#1559B3;
+}
+a:link img,
+a:visited img,
+a:hover img,
+a:active img {
+   background-color:transparent;
+}
+th a:link,
+th a:visited {
+   font-weight:bold;
+}
+
+/* ----------------------------------------
+   Referências à Menu de Contexto
+   Fonte: http://br.mozdev.org/thunderbird/vocesabia/?privacidade 
+          http://br.mozdev.org/images/html/br.css
+---------------------------------------- */
+
+kbd {
+  padding: 0px 1px 0px 1px !important;
+  border-width: 1px 2px 2px 1px !important;
+  border-style: solid !important;
+  background: #faf6f6  !important;
+  color: #000  !important;
+  border-color:  #edd #baa #baa #eed  !important;
+}
+
+/* ----------------------------------------
+   Estilo para tooltip em links
+   Fonte: http://loadaveragezero.com/vnav/labs/CSS/tooltips.php
+---------------------------------------- */
+
+span.tool {
+  position: relative;   /* this is key */
+  cursor: help;
+}
+ 
+span.tool span.tip {
+  display: none;        /* so is this */
+}
+
+/* tooltip will display on :hover event */
+
+span.tool:hover span.tip {
+  display: block;
+  z-index: 100;
+  position: absolute;
+  top: 2.5em;
+  left: 0;
+  width: auto;
+  line-height: 1.2em;
+  padding: 3px 7px 4px 6px;
+  border: 1px solid #336;
+  background-color: #f7f7ee;
+  font-size: 12px;
+  font-weight: normal;
+  color: #000;
+  text-align: left;
+}
+
+#content span.tool:after {
+  padding-left: 2px;            /* eye candy */
+  content: url(http://wiki.softwarelivre.org/pub/TWiki/TWikiDocGraphics/bubble.gif);
+}
+
+/* ----------------------------------------
+   Estilo para caixa div de código code-box 
+   Fonte: http://loadaveragezero.com/vnav/labs/CSS/code.php
+---------------------------------------- */
+
+.code-box {
+  font-family: 'Lucida Console', 'Bitstream Vera Sans Mono', 'Courier New', Monaco, Courier, monospace;
+  width: 100%;
+  border: 1px dashed #aaa8a8;
+  padding: 0.5em 0 0.3em 0.5em;
+  color: #000;
+  overflow: auto;
+  background: #fff url(http://wiki.softwarelivre.org/pub/TWiki/TWikiDocGraphics/hand.gif) no-repeat top right;
+}
+
+/* ----------------------------------------
+   Estilos das Divisões
+---------------------------------------- */
+
+.geral {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.cabecalho { }
+
+.padraogoverno {
+  border:1px solid #FFCC00;
+  background-color: #FFCC00;
+  text-align: center;
+}
+
+.padraocabecalho {
+  border:1px solid #669966; /* verde pálido */
+/*  text-align: center; */
+  background: #FFF url(http://wiki.softwarelivre.org/pub/TWikiBar/FreeSkinImagens/6aEdicao.PNG) right top no-repeat;
+  color: #FFF;
+  min-height: 105px; /* tamanho da logo */
+}
+
+.corpo {
+  position: relative;
+  top:0;
+  left:0;
+}
+
+.lateral {
+  position: absolute;
+  background-color: #FFFAFF; /* rosa claríssimo */
+
+  width: 12.5em; /* 0.5em à mais do menuL */
+
+  z-index:1; /* forçar estar acima dos demais */
+}
+
+.barranavegacao {
+  background-color: #CDCE9C;
+}
+
+.topico {
+  position: relative;
+  padding-left:1em;
+  padding-bottom:1em;
+  margin-left: 13.1em; /* deslocado 1em à direita do menuL */
+  min-height: 20em;
+
+/*  overflow: auto; */
+
+  border:1px solid #000;
+  background-color: #FFF;
+}
+
+.localizacao {
+  margin-left: 13.1em; /* deslocado 1em à direita do menuL */
+  padding-left:1em;
+
+  border:1px solid #E6E6E6; /* cinza claro */
+  background-color: #E6E6E6;
+}
+
+.edicao {
+  margin-left: 13.1em; /* deslocado 1em à direita do menuL */
+  padding-left:1em;
+
+  border:1px solid #EEF6FF;
+  background-color: #EEF6FF; /* azul claríssimo */
+}
+
+.rodape {
+  margin-left: 13.1em; /* deslocado 1em à direita do menuL */
+  padding-left:1em;
+
+  text-align: center;
+
+  border:1px solid #FFFAFF;
+  background-color: #FFFAFF; /* rosa claríssimo */
+}
+
+/* ----------------------------------------
+   Barra de Navegacao através de listas.
+   http://www.maujor.com/tutorial/cssmenu.php
+---------------------------------------- */
+#menuH ul {
+  border:none;
+  margin: 0;
+  padding: 0;
+  text-align:left;
+}
+
+#menuH ul li {
+  list-style: none;
+  margin: 0;
+  display: inline;
+}
+
+#menuH ul li a {
+  height:1px; /* IE5.0 bug */
+/*  padding: 3px 1px; */
+  margin:0;
+/*  border: 1px solid #f00; */
+/*  background: #999; */
+  text-decoration: none;
+}
+
+#menuH ul li a:link, #menuH ul li a:visited {
+/*  color: #fff; */
+}
+
+#menuH ul li a:hover {
+/*  background: #ccc; */
+  color: #F00;
+/* border-color: #000; */
+}
+
+/* ----------------------------------------
+   Menu Construído através de listas. Baseado em:
+   http://www.maujor.com/tutorial/tecmenu.php e
+   http://www.tanfa.co.uk/css/examples/css-dropdown-menus.asp
+---------------------------------------- */
+
+/* Tamanho, Fonte, Cor, Borda do MenuL */
+#menuL {
+  width: 12em;
+  background: #999;
+  font-size: 11px/16px;
+  font-weight: bold;
+}
+
+/* Caixa do Menu OL */
+#menuL ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Caixa dos Itens do Menu UL - Fica dentro da caixa OL */
+#menuL ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Titulo do Menu OL - ordenado */
+#menuL ol li {
+  color: #fff;
+  background: #000;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+/* Items dentro do Menu OL */
+#menuL ol li li {
+  color: #fff;
+  background: #000;
+  text-transform: none;
+  text-align: left;
+}
+
+/* Links dos Menus */
+#menuL ol li li a {
+  display: block;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #ccc #888 #555 #bbb;
+  margin: 0;
+  padding: 2px 3px;
+}
+
+/* Itens do Menu OL - Links */
+#menuL a {
+  color: #000;
+  background: #efefef;
+  text-decoration: none;
+}
+
+/* Itens do Menu OL - Links com o mouse em cima */
+#menuL a:hover {
+  color: #a00;
+  background: #fff;
+}
+
+/* Posicionamento dos Itens - "Mágica" */
+#menuL li {
+  position: relative;
+}
+
+#menuL ol ul ul {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  width: 100%;
+}
+
+/* Magia CSS */
+div#menuL ol ul ul,
+div#menuL ol ul ul ul,
+div#menuL ol ul li:hover ul ul,
+div#menuL ol ul ul li:hover ul ul
+{display: none;}
+
+/* Magia CSS */
+div#menuL ol ul li:hover ul,
+div#menuL ol ul ul li:hover ul,
+div#menuL ol ul ul ul li:hover ul
+{display: block;}
+
+/* Corrige o espaço deixado pelos parágrafos */
+div#menuL p {display:inline;}
+</style>
+
+<!-- Internet Explorer CSS Fixes -->
+<!--[if IE]>
+  <style type="text/css" media="screen">
+    body {  behavior: url(http://wiki.softwarelivre.org/pub/TWikiBar/FreeSkinCSS/csshover.htc); font-size: 100%;} 
+    #menuL ol li { float: left; width: 100%; }
+    #menuL ol li a { height: 1%; }
+  </style>
+<![endif]-->
+
+
+<!--GENERATED_HEADERS--><!-- TABLEPLUGIN_table2 --> <style type="text/css" media="all">
+.foswikiTable#table2 th {background-color:#0000FF;}
+.foswikiTable#table2 th.foswikiSortedCol {background-color:#0000FF;}
+.foswikiTable#table2 th {color:#FFFF00;}
+.foswikiTable#table2 th a:link {color:#FFFF00;}
+.foswikiTable#table2 th a:visited {color:#FFFF00;}
+.foswikiTable#table2 th a:link font {color:#FFFF00;}
+.foswikiTable#table2 th a:visited font {color:#FFFF00;}
+.foswikiTable#table2 th a:hover {color:#0000FF;background-color:#FFFF00;}
+.foswikiTable#table2 th a:hover font {color:#0000FF;background-color:#FFFF00;}
+.foswikiTable#table2 tr.foswikiTableRowdataBg0 td {background-color:#BBBBBB;}
+.foswikiTable#table2 tr.foswikiTableRowdataBg1 td {background-color:#DDDDDD;}
+.foswikiTable#table2 tr.foswikiTableRowdataBg0 td.foswikiSortedCol {background-color:#BBBBBB;}
+.foswikiTable#table2 tr.foswikiTableRowdataBg1 td.foswikiSortedCol {background-color:#DDDDDD;}
+.foswikiTable#table2 td {padding:4px;}
+.foswikiTable#table2 th {padding:4px;}
+</style>
+<!-- TABLEPLUGIN_table1 --> <style type="text/css" media="all">
+.foswikiTable#table1 th {background-color:#0000FF;}
+.foswikiTable#table1 th.foswikiSortedCol {background-color:#0000FF;}
+.foswikiTable#table1 th {color:#FFFF00;}
+.foswikiTable#table1 th a:link {color:#FFFF00;}
+.foswikiTable#table1 th a:visited {color:#FFFF00;}
+.foswikiTable#table1 th a:link font {color:#FFFF00;}
+.foswikiTable#table1 th a:visited font {color:#FFFF00;}
+.foswikiTable#table1 th a:hover {color:#0000FF;background-color:#FFFF00;}
+.foswikiTable#table1 th a:hover font {color:#0000FF;background-color:#FFFF00;}
+.foswikiTable#table1 tr.foswikiTableRowdataBg0 td {background-color:#BBBBBB;}
+.foswikiTable#table1 tr.foswikiTableRowdataBg1 td {background-color:#DDDDDD;}
+.foswikiTable#table1 tr.foswikiTableRowdataBg0 td.foswikiSortedCol {background-color:#BBBBBB;}
+.foswikiTable#table1 tr.foswikiTableRowdataBg1 td.foswikiSortedCol {background-color:#DDDDDD;}
+.foswikiTable#table1 td {padding:4px;}
+.foswikiTable#table1 th {padding:4px;}
+</style>
+<div class="geral">
+<div class="cabecalho">
+	 <div class="padraocabecalho">		
+<h3><a name="Aqui_temos_um_livro_livre_e_comp"></a> Aqui temos um <em>livro
+ livre</em> e completo sobre <em>Shell</em> </h3>
+<h4><a name="Os_sedentos_do_saber_livre_s_o_m"></a> Os sedentos do 
+"saber livre" são muito benvindos. </h4>
+<!-- <span class="foswikiNewLink">SiteSearch<a href="/bin/edit/TWikiBar/SiteSearch?topicparent=TWikiBar.TWikiBarPapo003" rel="nofollow" title="Criar este tópico">?</a></span> Google -->
+<form method="get" action="http://www.google.com/search" target="_blank">
+<input name="ie" value="UTF-8" type="hidden">
+<input name="oe" value="UTF-8" type="hidden">
+<input name="q" size="10" maxlength="255" type="text">
+<input name="btnG" value="Procure comando no Botequim" type="submit">
+<input name="domains" value="wiki.softwarelivre.org" type="hidden">
+<input name="sitesearch" 
+value="twiki.softwarelivre.org/bin/view/TWikiBar" checked="checked" 
+type="hidden">
+</form>
+<!-- <span class="foswikiNewLink">SiteSearch<a href="/bin/edit/TWikiBar/SiteSearch?topicparent=TWikiBar.TWikiBarPapo003" rel="nofollow" title="Criar este tópico">?</a></span> Google -->
+<p>
+	 </p></div>
+	 <div class="barranavegacao">		<div id="menuH"> <ul>
+<li> [ 12 Apr 2010 - 22:00 ] <strong>Links Amigos</strong> 
+</li> <li> <a style="" target="_blank" 
+href="http://br-linux.org/linux/?q=node/2037" title="Linux Levado à 
+Sério (Abrirá em nova Aba)">BR-Linux</a>
+</li> <li> <a style="" target="_blank" 
+href="http://www.vivaolinux.com.br/" title="Viva o Linux (Abrirá em nova
+ Aba)">Viva o Linux</a>
+</li> <li> <a style="" target="_blank" 
+href="http://www.dicas-l.unicamp.br/" title="Dicas-L - Rubens (Abrirá em
+ nova Aba)">Dicas-L</a>
+</li> <li> <a style="" target="_blank" 
+href="http://www.aurelio.net/shell" title="Por que programar tem que ser
+ divertido (Abrirá em nova Aba)">Aurelio</a>
+</li> <li> <a style="" target="_blank" href="http://www.thobias.org/" 
+title=" Thobias login (Abrirá em nova Aba)">Thobias</a>
+</li></ul> 
+</div>
+	 </div>
+  </div>
+  <div class="lateral">	 
+<div id="menuL"> <ol>
+<li> TWiki Básico <ul>
+<li> <a style="" href="http://wiki.softwarelivre.org/TWikiBar/WebHome" 
+class="foswikiCurrentWebHomeLink" title="Ir para a Página Inicial dessa 
+Área!"><img src="TWikiBarPapo003_arquivos/home.gif" alt="HOME" 
+width="16" height="16"> Página Inicial</a>
+</li> <li> <a style="" 
+href="http://wiki.softwarelivre.org/TWikiBar/WebChanges" title="Mostrar 
+as páginas (tópicos) alterados mais recentemente!"><img 
+src="TWikiBarPapo003_arquivos/recentchanges.gif" alt="INDEX" width="16" 
+height="16"> Últimas Alterações</a>
+</li> <li> <a style="" 
+href="http://wiki.softwarelivre.org/TWikiBar/WebIndex" title="Indice 
+Analítico!"><img src="TWikiBarPapo003_arquivos/index.gif" alt="INDEX" 
+width="16" height="16"> Índice</a>
+</li> <li> <a style="" 
+href="http://wiki.softwarelivre.org/TWikiBar/WebSearch" title="Permite 
+que você procure um texto qualquer em todos os tópicos. Se desejar pode 
+utilizar expressões regulares também!"><img 
+src="TWikiBarPapo003_arquivos/searchtopic.gif" alt="SEARCH" width="16" 
+height="16"> Procura</a>
+</li> <li> <a style="" 
+href="http://wiki.softwarelivre.org/TWikiBar/WebStatistics" title="Umas 
+estatísticas geradas pelo próprio TWiki via crontab."><img 
+src="TWikiBarPapo003_arquivos/statistics.gif" alt="STATISTICS" 
+width="16" height="16"> Estatísticas de Uso</a>
+</li> <li> <a style="" 
+href="http://wiki.softwarelivre.org/TWikiBar/WebNotify" title="Permite 
+que você seja informado se alguma página for alterada."><img 
+src="TWikiBarPapo003_arquivos/notify.gif" alt="NOTIFY" width="16" 
+height="16"> Aviso de Atualização</a>
+</li> <li> <a style="" 
+href="http://wiki.softwarelivre.org/TWikiBar/WebMap" title="Mostra um 
+Mapa do Site Gerado Automagicamente.">Mapa do Site</a>
+</li></ul> 
+</li> <li> TWiki Avançado <ul>
+<li> <strong><a style="" 
+href="http://wiki.softwarelivre.org/System/UserRegistration" title="Se 
+você quer contribuir com este site.">Registre-se</a></strong>
+</li> <li> <a style="" 
+href="http://wiki.softwarelivre.org/TWikiBar/WebPreferences" 
+title="Configurações Gerais desta Área.">Configurações Gerais</a>
+</li> <li> <a style="" 
+href="http://wiki.softwarelivre.org/Main/TWikiBarGroup" title="Entre em 
+Contato Conosco">Quem Somos</a>
+</li> <li> <a style="" 
+href="http://wiki.softwarelivre.org/System/TextFormattingRules" 
+title="Dicas de Formatação">Regras de Formatação</a>
+</li> <li> <a style="" 
+href="http://wiki.softwarelivre.org/System/DocumentGraphics" 
+title="Dicas Gráficas">Biblioteca Gráfica</a>
+</li> <li> <a style="" 
+href="http://wiki.softwarelivre.org/System/SmiliesPlugin" title="Use os 
+Smiles Simples.">Carinhas Gráficas</a>
+</li></ul> 
+</li> <li> <a 
+href="http://wiki.softwarelivre.org/TWikiBar/ProjetoGrafico">Projeto 
+Gráfico</a> <ul>
+<li> <a style="" 
+href="http://wiki.softwarelivre.org/TWikiBar/FreeSkinPreTopic" title="O 
+que vem ANTES do Tópico">Pré Tópico</a>
+</li> <li> <a style="" 
+href="http://wiki.softwarelivre.org/TWikiBar/FreeSkinPosTopic" title="O 
+que vem DEPOIS do Tópico">Pós Tópico</a>
+</li> <li> <a style="" 
+href="http://wiki.softwarelivre.org/TWikiBar/FreeSkinMenu" title="Este 
+próprio menu">Menu Lateral</a>
+</li> <li> <a style="" 
+href="http://wiki.softwarelivre.org/TWikiBar/FreeSkinBarraNavegacao" 
+title="Links Interessantes e Recomendados">Menu de Navegação</a>
+</li> <li> <a style="" 
+href="http://wiki.softwarelivre.org/TWikiBar/FreeSkinCSS" 
+title="Definições do CSS utilizado">CSS Utilizado</a>
+</li> <li> <a style="" 
+href="http://wiki.softwarelivre.org/TWikiBar/FreeSkinControlesEdicao" 
+title="Controles de Edição, Anexar, etc">Botões Especiais</a>
+</li> <li> <a style="" 
+href="http://wiki.softwarelivre.org/TWikiBar/FreeSkinVoceEstaAqui" 
+title="Indicador de Onde Estamos dentro da Web">Indica Onde Estamos</a>
+</li> <li> <a style="" 
+href="http://wiki.softwarelivre.org/TWikiBar/FreeSkinPadraoCabecalho" 
+title="Definição do Cabeçalho Padronizado">Cabeçalho Padrão</a>
+</li> <li> <a style="" 
+href="http://wiki.softwarelivre.org/TWikiBar/FreeSkinCopyRight" 
+title="Informações de Copy Right/Left">Copy Right/Left</a>
+</li></ul> 
+</li></ol> 
+</div>
+  </div>
+  <div class="corpo">
+	 <div class="localizacao">		Você está aqui: <a 
+href="http://wiki.softwarelivre.org/TWikiBar/WebHome" 
+class="foswikiCurrentWebHomeLink">TWikiBar</a>  &gt; <a 
+href="http://wiki.softwarelivre.org/TWikiBar/BatePapos">BatePapos</a> 
+&gt; <a href="http://wiki.softwarelivre.org/TWikiBar/TWikiBarPapo003" 
+class="foswikiCurrentTopicLink">TWikiBarPapo003</a>
+	 </div>
+	 <div class="edicao">		Controles: <a style="" 
+href="http://wiki.softwarelivre.org/bin/edit/TWikiBar/TWikiBarPapo003?nocache=Apr13010015&amp;skin=pattern"
+ target="_top" title="Editar este tópico"><img 
+src="TWikiBarPapo003_arquivos/edittopic.gif" alt="EDITAR" width="16" 
+height="16"></a>
+<a style="" 
+href="http://wiki.softwarelivre.org/bin/attach/TWikiBar/TWikiBarPapo003?skin=pattern"
+ target="_top" title="Anexar Imagens ou Arquivos"><img 
+src="TWikiBarPapo003_arquivos/attachfile.gif" alt="ANEXAR" width="16" 
+height="16"></a>
+<a style="" 
+href="http://wiki.softwarelivre.org/TWikiBar/TWikiBarPapo003?raw=on&amp;skin=pattern"
+ target="_top" title="Visualizar o Código Fonte"><img 
+src="TWikiBarPapo003_arquivos/cachetopic.gif" alt="MAIS" width="16" 
+height="16"></a>
+<a style="" 
+href="http://wiki.softwarelivre.org/bin/oops/TWikiBar/TWikiBarPapo003?template=oopsmore&amp;param1=24&amp;param2=24&amp;skin=pattern"
+ target="_top" title="Renomear, Mover, Apagar, etc..."><img 
+src="TWikiBarPapo003_arquivos/tip.gif" alt="MAIS" width="16" height="16"></a>
+<a style="" 
+href="http://wiki.softwarelivre.org/bin/rdiff/TWikiBar/TWikiBarPapo003?skin=pattern"
+ target="_top" title="Ver Todas Alterações"><img 
+src="TWikiBarPapo003_arquivos/recentchanges.gif" alt="ALTERACOES" 
+width="16" height="16"></a>
+<a style="" 
+href="http://wiki.softwarelivre.org/TWikiBar/TWikiBarPapo003?skin=freeprint"
+ target="_top" title="Preparar para Impressão"><img 
+src="TWikiBarPapo003_arquivos/printtopic.gif" alt="IMPRIMIR" width="16" 
+height="16"></a>
+- Última Atualização: [01 Aug 2009 - V.24]
+	 </div>
+	 <div class="topico"><h1><a name="Papo_de_Botequim_Parte_III_pula"></a>
+  Papo de Botequim Parte III<!--pula duas linhas--> </h1>
+<p>
+</p><p>
+<a name="foswikiTOC"></a></p><div class="foswikiToc"> <ul>
+<li> <a href="#Trabalhando_com_cadeias"> Trabalhando com cadeias</a> <ul>
+<li> <a href="#O_Comando_cut_que_n_o_a_central"> O Comando cut (que não é
+ a central de trabalhadores) <!--pula duas linhas--></a> <ul>
+<li> <a href="#O_comando_cut_com_a_op_o_c"> O comando cut com a opção -c</a>
+</li> <li> <a href="#O_comando_cut_com_a_op_o_f"> O comando cut com a 
+opção -f</a>
+</li></ul> 
+</li> <li> <a href="#Se_tem_cut_tem_paste"> Se tem cut tem paste</a> <ul>
+<li> <a href="#Quem_est_em_p_deita"> Quem está em pé, deita</a>
+</li> <li> <a href="#Usando_separadores"> Usando separadores</a>
+</li></ul> 
+</li> <li> <a href="#O_Comando_tr"> O Comando tr</a> <ul>
+<li> <a href="#Trocando_caracteres_com_tr">  Trocando caracteres com tr</a>
+</li> <li> <a href="#Removendo_caracteres_com_tr">  Removendo caracteres
+ com tr</a>
+</li> <li> <a href="#Xpremendo_com_tr"> Xpremendo com tr</a>
+</li></ul> 
+</li></ul> 
+</li> <li> <a href="#Comandos_Condicionais"> Comandos Condicionais</a> <ul>
+<li> <a href="#O_Comando_if"> O Comando if</a>
+</li></ul> 
+</li></ul> 
+</div> 
+<p>
+&nbsp;&nbsp;&nbsp;&nbsp;- Garçon, traga dois chopes por favor que hoje 
+eu vou ter que falar muito.
+</p><p>
+</p><h2><a name="Trabalhando_com_cadeias"></a> Trabalhando com cadeias </h2>
+<p>
+Pelo título acima não pense você que vou lhe ensinar a ser carcereiro! 
+Estou me referindo a cadeia de caracteres!
+</p><p>
+</p><h3><a name="O_Comando_cut_que_n_o_a_central"></a> O Comando cut 
+(que não é a central de trabalhadores) <!--pula duas linhas--> </h3>
+<p>
+Primeiro quero te mostrar, de forma eminentemente prática uma instrução 
+simples de usar e muito útil: o comando <code>cut</code>, Esta instrução
+ é usada para cortar um determinado pedaço de um arquivo e tem duas 
+formas distintas de uso
+</p><p>
+</p><h4><a name="O_comando_cut_com_a_op_o_c"></a> O comando <code>cut</code>
+ com a opção -c </h4>
+<p>
+Com esta opção, o comando tem a seguinte sintaxe:<br> 
+</p><p>
+&nbsp;&nbsp;&nbsp;&nbsp; <code>cut -c PosIni-PosFim [arquivo]</code>
+</p><p>
+Onde:<br> 
+</p><p>
+&nbsp;&nbsp;&nbsp;&nbsp; <code>PosIni = Posição inicial</code> <br> 
+&nbsp;&nbsp;&nbsp;&nbsp; <code>PosFim = Posição final</code>
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);">$ cat numeros
+<font color="#ffffff">1234567890
+0987654321
+1234554321
+9876556789</font>
+$ cut -c1-5 numeros
+<font color="#ffffff">12345
+09876
+12345
+98765</font>
+$ cut -c-6 numeros<font color="#ffffff">
+123456
+098765
+123455
+987655</font>
+$ cut -c4- numeros<font color="#ffffff">
+4567890
+7654321
+4554321
+6556789</font>
+$ cut -c1,3,5,7,9 numeros<font color="#ffffff">
+13579
+08642
+13542
+97568</font>
+$ cut -c -3,5,8- numeros<font color="#ffffff">
+1235890
+0986321
+1235321
+9875789</font>
+</div>
+<p>
+Como dá para ver, no duro mesmo existem quatro sintaxes distintas: na 
+primeira <code>(-c 1-5)</code>, eu especifiquei uma faixa, na segunda <code>(-c
+ -6)</code>, especifiquei tudo até uma posição, na terceira <code>(-c 
+4-)</code> de uma determinada posição em diante e na quarta <code>(-c 
+1,3,5,7,9)</code>, determinadas posições. A última <code>(-c -3,5,8-)</code>
+ foi só para mostrar que podemos misturar tudo.
+</p><p>
+</p><h4><a name="O_comando_cut_com_a_op_o_f"></a> O comando <code>cut</code>
+ com a opção -f </h4>
+<p>
+Mas não pense você que acabou por aí! Como você deve ter percebido esta 
+forma de <code>cut</code> é útil para arquivos com campos de tamanho 
+fixo, mas atualmente o que mais existe são arquivos com campos de 
+tamanho variáveis, onde cada campo termina com um delimitador. Vamos dar
+ uma olhada no arquivo <code>musicas</code> que começamos a preparar no 
+nosso papo na última vez que viemos aqui no botequim.
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);">$ cat musicas<font 
+color="#ffffff">
+album 1^Artista1~Musica1:Artista2~Musica2
+album 2^Artista3~Musica3:Artista4~Musica4
+album 3^Artista5~Musica5:Artista6~Musica5
+album 4^Artista7~Musica7:Artista8~Musica8</font>
+</div>
+<p>
+Então, recapitulando, o seu <em>"leiaute"</em> é o seguinte:<br> 
+</p><p>
+&nbsp;&nbsp;&nbsp;&nbsp; <code>nome do album^interprete1~nome da 
+musica1:...:interpreten~nome da musican</code>
+</p><p>
+isto é, o nome do álbum será separado por um circunflexo (<code>^</code>)
+ do resto do registro, que é formado por diversos grupos compostos pelo 
+intérprete de cada música do CD e a respectiva música interpretada. 
+Estes grupos são separados entre si por dois-pontos (<code>:</code>) e 
+internamente, o nome do intérprete será separado por um til (<code>~</code>)
+ do nome da música.
+</p><p>
+Então para pegarmos os dados referentes a todas as segundas músicas do 
+arquivo <code>musicas</code>, devemos fazer:
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);">$ cut -f2 -d: musicas<font 
+color="#ffffff">
+Artista2~Musica2
+Artista4~Musica4
+Artista6~Musica5
+Artista8~Musica8</font>
+</div>
+<p>
+Ou seja, cortamos o segundo campo (<code>-f</code> de <em>field</em> em 
+inglês) delimitado (<code>-d</code>) por dois-pontos (<code>:</code>). 
+Mas, se quisermos somente os intérpretes, devemos fazer:
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);">$ cut -f2 -d: musicas | cut 
+-f1 -d~<font color="#ffffff">
+Artista2
+Artista4
+Artista6
+Artista8</font>
+</div>
+<p>
+Para entender isso, vamos pegar a primeira linha de <code>musicas</code>:
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);">$ head -1 musicas<font 
+color="#ffffff">
+album 1^Artista1~Musica1:Artista2~Musica2</font>
+</div>
+<p>
+Então observe o que foi feito:
+</p><p>
+Delimitador do primeiro <code>cut</code> (<code>:</code>)
+</p><p>
+&nbsp;&nbsp;&nbsp;&nbsp; <code><font color="#ff6600">album 
+1^Artista1~Musica1</font>:<font color="#ff00ff">Artista2~Musica2</font></code>
+</p><p>
+Desta forma, no primeiro <code>cut</code>, o primeiro campo do 
+delimitador (<code>-d</code>) dois-pontos (<code>:</code>) é <font 
+color="#ff6600">album 1^Artista1~Musica1</font> e o segundo, que é o que
+ nos interessa, é <font color="#ff00ff">Artista2~Musica2</font>.
+</p><p>
+Vamos então ver o que aconteceu no segundo <code>cut</code>:
+</p><p>
+Novo delimitador (<code>~</code>)
+</p><p>
+&nbsp;&nbsp;&nbsp;&nbsp; <code><font color="#ff6600">Artista2</font>~<font
+ color="#ff00ff">Musica2</font></code>
+</p><p>
+Agora, primeiro campo do delimitador (<code>-d</code>) til (<code>~</code>),
+ que é o que nos interessa, é <font color="#ff6600">Artista2</font> e o 
+segundo é <font color="#ff00ff">Musica2</font>.
+</p><p>
+Se o raciocínio que fizemos para a primeira linha for aplicado no 
+restante do arquivo, chegaremos à resposta anteriormente dada.
+</p><p>
+</p><h3><a name="Se_tem_cut_tem_paste"></a> Se tem cut tem paste </h3>
+<p>
+Como já era de se esperar, o comando <code>paste</code>  serve para 
+colar, só que aqui no <em>Shell</em> o que ele cola são arquivos. Só 
+para começar a entendê-lo, vamos fazer assim::
+</p><p>
+</p><pre>    paste arq1 arq2
+</pre>
+<p>
+Desta forma ele mandará para a saída padrão (<code>stdout</code>) cada 
+um dos registros de <code>arq1</code> ao lado dos registros de <code>arq2</code>
+ correspondentes e caso nenhum delimitador seja especificado, ele usará 
+por <em>default</em> o <code>&lt;TAB&gt;</code>.
+</p><p>
+O paste é um comando pouco usado por sua sintaxe ser pouco conhecida. 
+Vamos brincar com 2 arquivos criados da seguinte forma:
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);">$ seq 10 &gt; inteiros
+$ seq 2 2 10 &gt; pares
+</div>
+<p>
+Para ver o conteúdo dos arquivos criados, vamos usar o <code>paste</code>
+ na sua forma careta que mostramos acima: 
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);">$ paste inteiros pares<font 
+color="#ffffff">
+1       2
+2       4
+3       6
+4       8
+5       10
+6
+7
+8
+9
+10</font>
+</div>
+<p>
+</p><h4><a name="Quem_est_em_p_deita"></a> Quem está em pé, deita </h4>
+<p>
+Agora vamos transformar a coluna do <code>pares</code> em linha: 
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);">$ paste -s pares<font 
+color="#ffffff">
+2       4       6       8       10</font>
+</div>
+<p>
+</p><h4><a name="Usando_separadores"></a> Usando separadores </h4>
+<p>
+Como já foi dito, o separador <em>default</em> do <code>paste</code> é o
+ <code>&lt;TAB&gt;</code>, mas isso pode ser alterado com a opção <code>-d</code>.
+ Então para calcular a soma do conteúdo de <code>pares</code> 
+primeiramente faríamos:
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);">$ paste -s -d'+' pares # 
+também poderia ser -sd'+'<font color="#ffffff">
+2+4+6+8+10</font>
+</div>
+<p>
+e depois passaríamos esta linha para a calculadora (<code>bc</code>) e 
+então ficaria: 
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);">$ paste -sd'+' pares | bc<font
+ color="#ffffff">
+30</font>
+</div>
+<p>
+Assim sendo, para calcular o fatorial do número contido em <code>$Num</code>,
+ basta:
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);">$ seq $Num | paste -sd'*' | bc
+</div>
+<p>
+Com o comando <code>paste</code> você também pode montar formatações 
+exóticas como esta a seguir: 
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);">$ ls | paste -s -d'\t\t\n'<font
+ color="#ffffff">
+arq1    arq2    arq3
+arq4    arq5    arq6</font>
+</div>
+<p>
+O que aconteceu foi o seguinte: foi especificado para o comando <code>paste</code>
+ que ele transformaria linhas em colunas (pela opção <code>-s</code>) e 
+que os seus separadores (é...! Ele aceita mais de um, mas somente um 
+após cada coluna criada pelo comando) seriam uma <code>&lt;TAB&gt;</code>,
+ outra <code>&lt;TAB&gt;</code> e um <code>&lt;ENTER&gt;</code>, gerando
+ desta forma a saída tabulada em 3 colunas.
+</p><p>
+Agora que você já entendeu isto, veja como fazer a mesma coisa, porém de
+ forma mais fácil e menos bizarra e tosca, usando o mesmo comando mas 
+com a seguinte sintaxe:
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);">$ ls | paste - - -<font 
+color="#ffffff">
+arq1    arq2    arq3
+arq4    arq5    arq6</font>
+</div>
+<p>
+E isto acontece porque se ao invés de especificarmos os arquivos 
+colocarmos o sinal de menos (<code>-</code>), o comando <code>paste</code>
+ os substitui pela saída ou entrada padrão conforme o caso. No exemplo 
+anterior os dados foram mandados para a saída padrão (<code>stdout</code>),
+ porque o <em>pipe</em> (<code>|</code>) estava desviando a saída do <code>ls</code>
+ para a entrada padrão (<code>stdin</code>) do <code>paste</code>, mas 
+veja o exemplo a seguir: 
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);">$ cat arq1<font 
+color="#ffffff">
+predisposição
+privilegiado
+profissional</font>
+$ cat arq2<font color="#ffffff">
+encher
+mário
+motor</font>
+$ cut -c-3 arq1 | paste -d "" - arq2<font color="#ffffff">
+preencher
+primário
+promotor</font>
+</div>
+<p>
+Neste caso, o <code>cut</code> devolveu as três primeiras letras de cada
+ registro de <code>arq1</code>, o <code>paste</code> foi montado para 
+não ter separador (<code>-d""</code>) e receber a entrada padrão 
+(desviada pelo <em>pipe</em>) no traço (<code>-</code>) gerando a saída 
+juntamente com <code>arq2</code>.
+</p><p>
+</p><h3><a name="O_Comando_tr"></a> O Comando tr </h3>
+<p>
+Outro comando muito interessante é o tr que serve para substituir, 
+comprimir ou remover caracteres. Sua sintaxe segue o seguinte padrão:
+</p><p>
+</p><pre>    tr [opções] cadeia1 [cadeia2]
+</pre>
+<p>
+O comando <code>tr</code> copia o texto da entrada padrão (<em>stdin</em>),
+ troca as ocorrência dos caracteres de <code>cadeia1</code> pelo seu 
+correspondente na <code>cadeia2</code> ou troca múltiplas ocorrências 
+dos caracteres de <code>cadeia1</code> por somente um caracter, ou ainda
+ remove caracteres da <code>cadeia1</code>.
+</p><p>
+As principais <code>opções</code> do comando são:
+</p><p>
+</p><center>
+<table id="table1" class="foswikiTable" border="0" cellpadding="4" 
+cellspacing="1" rules="rows">
+	<thead>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 
+foswikiTableRowdataBg0">
+			<th colspan="2" class="foswikiTableCol0 foswikiFirstCol" 
+align="center" bgcolor="#0000ff" valign="top"> <font color="#ffff00">Principais
+ Opções do comando tr</font> </th>
+		</tr>
+	</thead>
+	<tfoot>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 
+foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol foswikiLast" 
+align="center" bgcolor="#bbbbbb" valign="top"> -d </td>
+			<td class="foswikiTableCol1 foswikiLastCol foswikiLast" 
+bgcolor="#bbbbbb" valign="top"> &nbsp; Remove os caracteres de cadeia1 
+&nbsp; </td>
+		</tr>
+	</tfoot>
+	<tbody>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 
+foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" bgcolor="#bbbbbb" 
+valign="top"> &nbsp; <strong>Opção</strong> &nbsp; </td>
+			<td class="foswikiTableCol1 foswikiLastCol" bgcolor="#bbbbbb" 
+valign="top"> &nbsp; <strong>Significado</strong> &nbsp; </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 
+foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" align="center" 
+bgcolor="#dddddd" valign="top"> -s </td>
+			<td class="foswikiTableCol1 foswikiLastCol" bgcolor="#dddddd" 
+valign="top"> &nbsp; Comprime n ocorrências de cadeia1 em apenas uma 
+&nbsp; </td>
+		</tr>
+	</tbody></table>
+</center>
+<p>
+</p><h4><a name="Trocando_caracteres_com_tr"></a> Trocando caracteres 
+com <code>tr</code> </h4>
+<p>
+Primeiro vou te dar um exemplo bem bobo:
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);">$ echo bobo | tr o a<font 
+color="#ffffff">
+baba</font>
+</div>
+<p>
+Isto é, troquei todas as ocorrências da letra <code>o</code> pela letra <code>a</code>.
+</p><p>
+Suponha que em um determinado ponto do meu <em>script</em> eu peça ao 
+operador para teclar <code>s</code> ou <code>n</code> (sim ou não), e 
+guardo sua resposta na variável <code>$Resp</code>. Ora o conteúdo de <code>$Resp</code>
+ pode estar com letra maiúscula ou minúscula, e desta forma eu teria que
+ fazer diversos testes para saber se a resposta dada foi <code>S</code>,
+ <code>s</code>, <code>N</code> ou <code>n</code>. Então o melhor é 
+fazer:
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);">$ Resp=$(echo $Resp | tr SN 
+sn)
+</div>
+<p>
+e após este comando eu teria certeza que o conteúdo de <code>$Resp</code>
+ seria um <code>s</code> ou um <code>n</code>.
+</p><p>
+Se o meu arquivo <code>ArqEnt</code> está todo escrito com letras 
+maiúsculas e desejo passá-las para minúsculas eu faço:
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);">$ tr A-Z a-z &lt; ArqEnt &gt; 
+/tmp/$$
+$ mv -f /tmp/$$ ArqEnt
+</div>
+<p>
+Note que neste caso usei a notação <code>A-Z</code> para não escrever <code>ABCD...YZ</code>.
+ Outro tipo de notação que pode ser usada são as <em>escape sequences</em>
+ (prefiro escrever no bom e velho português, mas nesse caso como eu 
+traduziria? Seqüências de escape? Meio sem sentido, né? Mas vá lá...) 
+que também são reconhecidas por outros comandos e também na linguagem C,
+ e cujo significado você verá a seguir:
+</p><p>
+</p><center>
+<table id="table2" class="foswikiTable" border="0" cellpadding="4" 
+cellspacing="1" rules="rows">
+	<thead>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 
+foswikiTableRowdataBg0">
+			<th colspan="3" class="foswikiFirstCol" align="center" 
+bgcolor="#0000ff" valign="top"> <font color="#ffff00">Escape Sequences</font>
+ </th>
+		</tr>
+	</thead>
+	<tfoot>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 
+foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol foswikiLast" 
+align="center" bgcolor="#bbbbbb" valign="top"> \\ </td>
+			<td class="foswikiTableCol1 foswikiLast" bgcolor="#bbbbbb" 
+valign="top"> &nbsp; Uma barra invertida &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol foswikiLast" 
+align="center" bgcolor="#bbbbbb" valign="top"> \0134 </td>
+		</tr>
+	</tfoot>
+	<tbody>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 
+foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" bgcolor="#bbbbbb" 
+valign="top"> &nbsp; <strong>Seqüência</strong> &nbsp; </td>
+			<td class="foswikiTableCol1" bgcolor="#bbbbbb" valign="top"> &nbsp; <strong>Significado</strong>
+ &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol" bgcolor="#bbbbbb" 
+valign="top"> &nbsp; <strong>Octal</strong> &nbsp; </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 
+foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" align="center" 
+bgcolor="#dddddd" valign="top"> \t </td>
+			<td class="foswikiTableCol1" bgcolor="#dddddd" valign="top"> &nbsp; 
+Tabulação &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol" align="center" 
+bgcolor="#dddddd" valign="top"> \011 </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 
+foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" align="center" 
+bgcolor="#bbbbbb" valign="top"> \n </td>
+			<td class="foswikiTableCol1" bgcolor="#bbbbbb" valign="top"> &nbsp; 
+Nova linha <enter> &nbsp; </enter></td>
+			<td class="foswikiTableCol2 foswikiLastCol" align="center" 
+bgcolor="#bbbbbb" valign="top"> \012 </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 
+foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" align="center" 
+bgcolor="#dddddd" valign="top"> \v </td>
+			<td class="foswikiTableCol1" bgcolor="#dddddd" valign="top"> &nbsp; 
+Tabulação Vertical &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol" align="center" 
+bgcolor="#dddddd" valign="top"> \013 </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 
+foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" align="center" 
+bgcolor="#bbbbbb" valign="top"> \f </td>
+			<td class="foswikiTableCol1" bgcolor="#bbbbbb" valign="top"> &nbsp; 
+Nova Página &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol" align="center" 
+bgcolor="#bbbbbb" valign="top"> \014 </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 
+foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" align="center" 
+bgcolor="#dddddd" valign="top"> \r </td>
+			<td class="foswikiTableCol1" bgcolor="#dddddd" valign="top"> &nbsp; 
+Início da linha &lt;^M&gt; &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol" align="center" 
+bgcolor="#dddddd" valign="top"> \015 </td>
+		</tr>
+	</tbody></table>
+</center>
+<p>
+</p><h4><a name="Removendo_caracteres_com_tr"></a> Removendo caracteres 
+com <code>tr</code> </h4>
+<p>
+Então deixa eu te contar um "causo": um aluno que estava danado comigo, 
+resolveu complicar a minha vida e em um exercício prático valendo nota 
+que passei para ser feito no computador, me entregou o <em>script</em> 
+com todos os comandos separados por ponto-e-vírgula (lembra que eu disse
+ que o ponto-e-vírgula servia para separar diversos comandos em uma 
+mesma linha?).
+</p><p>
+Vou dar um exemplo simplificado e idiota de uma "tripa" assim:
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);">$ cat confuso<font 
+color="#ffffff">
+echo leia Programação Shell Linux do Julio Cezar Neves &gt; livro;cat 
+livro;pwd;ls;rm -f lixo 2&gt;/dev/null;cd ~</font>
+</div>
+<p>
+Eu executava o programa e ele funcionava:
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);">$ confuso<font color="#ffffff">
+leia Programação Shell Linux do Julio Cezar Neves
+/home/jneves/LM
+confuso  livro  musexc  musicas  musinc  muslist  numeros</font>
+</div>
+<p>
+Mas nota de prova é coisa séria (e nota de dólar é mais ainda :)) então,
+ para entender o que o aluno havia feito, o chamei e em sua frente 
+executei o seguinte comando:
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);">$ tr ";" "\n" &lt; confuso<font
+ color="#ffffff">
+echo leia Programação Shell Linux do Julio Cezar Neves
+pwd
+ls
+rm -f lixo 2&gt;/dev/null</font>
+cd ~
+</div>
+<p>
+O cara ficou muito desapontado, porque em 2 ou 3 segundos eu desfiz a 
+gozação que ele perdera horas para fazer.<br> 
+</p><p>
+Mas preste atenção! Se eu estivesse em uma máquina com Unix, eu teria 
+feito:
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);">$ tr ";" "\012" &lt; confuso
+</div>
+<p>
+</p><h4><a name="Xpremendo_com_tr"></a> Xpremendo com <code>tr</code> </h4>
+<p>
+Agora veja a diferença entre os dois comandos <code>date</code>: o que 
+fiz hoje e outro que foi executado há duas semanas:
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);">$ date      # Hoje<font 
+color="#ffffff">
+Sun Sep 19 14:59:54  2004</font>
+$ date      # Há duas semanas<font color="#ffffff">
+Sun Sep  5 10:12:33  2004</font>
+</div>
+<p>
+Para pegar a hora eu deveria fazer:
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);">$ date | cut -f 4 -d ' '<font 
+color="#ffffff">
+14:59:54</font>
+</div>
+<p>
+Mas duas semanas antes ocorreria o seguinte:
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);">$ date | cut -f 4 -d ' '<font 
+color="#ffffff">
+5</font>
+</div>
+<p>
+Mas observe porque:
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);">$ date      # Há duas semanas<font
+ color="#ffffff">
+Sun Sep  5 10:12:33  2004</font>
+</div>
+<p>
+Como você pode notar, existem 2 caracteres em branco antes do <code>5</code>
+ (dia), o que estraga tudo porque o terceiro pedaço está vazio e o 
+quarto é o dia (<code>5</code>). Então o ideal seria comprimir os 
+espaços em brancos sucessivos em somente um espaço para poder tratar as 
+duas cadeias resultantes do comando <code>date</code> da mesma forma, e 
+isso se faz assim:
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);">$ date | tr -s " "<font 
+color="#ffffff">
+Sun Sep 5 10:12:33 2004</font>
+</div>
+<p>
+Como você pode ver não existem mais os dois espaços, então agora eu 
+poderia cortar:
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);">$ date | tr -s " " | cut -f 4 
+-d " "<font color="#ffffff">
+10:12:33</font>
+</div>
+<p>
+Olha só como o <em>Shell</em> já está quebrando o galho. Veja este 
+arquivo que foi baixado de uma máquina com aquele sistema operacional 
+que pega vírus:
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);">$ cat -ve ArqDoDOS.txt<font 
+color="#ffffff">
+Este arquivo^M$
+foi gerado pelo^M$
+DOS/Rwin e foi^M$
+baixado por um^M$
+ftp mal feito.^M$</font>
+</div>
+<p>
+E agora eu quero te dar duas dicas:
+</p><p>
+</p><div style="min-height: 121px; margin: 1em; padding: 1em; border: 
+1px dashed red; background-color: rgb(255, 255, 204);"><img 
+style="float: left; padding: 0px 8px 0px 0px;" 
+src="TWikiBarPapo003_arquivos/pinguim_dica.gif" alt="Pinguim com placa 
+de dica" align="left">
+<strong>Dica #1</strong> - A opção <code>-v</code> do <code>cat</code> 
+mostra os caracteres de controle invisíveis, com a notação <code>^L</code>,
+ onde <code>^</code> é a tecla control e <code>L</code> é a respectiva 
+letra. A opção <code>-e</code> mostra o final da linha como um cifrão (<code>$</code>).
+</div>
+<p>
+</p><div style="min-height: 121px; margin: 1em; padding: 1em; border: 
+1px dashed red; background-color: rgb(255, 255, 204);"><img 
+style="float: left; padding: 0px 8px 0px 0px;" 
+src="TWikiBarPapo003_arquivos/pinguim_dica.gif" alt="Pinguim com placa 
+de dica" align="left">
+<strong>Dica #2</strong> - Isto ocorre porque no formato DOS (ou rwin), o
+ fim dos registros é formado por um <em>carriage-return</em> (<code>\r</code>)
+ e um <em>line-feed</em> (<code>\n</code>). No Linux porém o final do 
+registro tem somente o <em>line-feed</em>. 
+</div>
+<p>
+Vamos então limpar este arquivo.
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);">$ tr -d '\r' &lt; ArqDoDOS.txt
+ &gt; /tmp/$$
+$ mv -f /tmp/$$ ArqDoDOS.txt
+</div>
+<p>
+Agora vamos ver o que aconteceu:
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);">$ cat -ve ArqDoDOS.txt<font 
+color="#ffffff">
+Este arquivo$
+foi gerado pelo$
+DOS/Rwin e foi$
+baixado por um$
+ftp mal feito.$</font>
+</div>
+<p>
+Bem a opção <code>-d</code> do <code>tr</code> remove o caractere 
+especificado de todo o arquivo. Desta forma eu removi os caracteres 
+indesejados salvando em um arquivo de trabalho e posteriormente 
+renomeei-o para a sua designação original.<br> 
+</p><p>
+Obs: No Unix eu deveria fazer:
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);">$ tr -d '\015' &lt; 
+ArqDoDOS.txt &gt; /tmp/$$
+</div>
+<p>
+</p><div style="min-height: 105px; margin: 1em; padding: 1em; border: 
+1px dashed red; background-color: rgb(255, 255, 204);"><img 
+style="float: left; padding: 0px 8px 0px 0px;" 
+src="TWikiBarPapo003_arquivos/pinguim_atencao.gif" alt="Pinguim com 
+placa de atenção">
+Isto aconteceu porque o <code>ftp</code> foi feito do modo binário (ou <code>image</code>),
+ isto é, sem a interpretação do texto. Se antes da transmissão do 
+arquivo tivesse sido estipulada a opção <code>ascii</code> do <code>ftp</code>,
+ isto não teria ocorrido.
+</div>
+<p>
+&nbsp;&nbsp;&nbsp;&nbsp; - Olha, depois desta dica tô começando a gostar
+ deste tal de <em>Shell</em>, mas ainda tem muita coisa que não consigo 
+fazer.
+</p><p>
+&nbsp;&nbsp;&nbsp;&nbsp; - Pois é, ainda não te falei quase nada sobre 
+programação em <em>Shell</em>, ainda tem muita coisa para aprender, mas 
+com o que aprendeu, já dá para resolver muitos problemas, desde que você
+ adquira o &#8220;modo <em>Shell</em> de pensar&#8221;. Você seria capaz de fazer um
+ <em>script</em> para me dizer quais são as pessoas que estão &#8220;logadas&#8221; 
+há mais de um dia no seu servidor?
+</p><p>
+&nbsp;&nbsp;&nbsp;&nbsp; - Claro que não! Para isso seria necessário eu 
+conhecer os comandos condicionais que você ainda não me explicou como 
+funcionam.
+</p><p>
+&nbsp;&nbsp;&nbsp;&nbsp;- Deixa eu tentar mudar um pouco a sua lógica e 
+trazê-la para o &#8220;modo <em>Shell</em> de pensar&#8221;, mas antes é melhor 
+tomarmos um chope... Ô Chico, traz mais dois...
+</p><p>
+&nbsp;&nbsp;&nbsp;&nbsp; - Agora que já molhei a palavra, vamos resolver
+ o problema que te propus. Repare como funciona o comando who:
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);">$ who<font color="#ffffff">
+jneves   pts/1        Sep 18 13:40
+rtorres  pts/0        Sep 20 07:01
+rlegaria pts/1        Sep 20 08:19
+lcarlos  pts/3        Sep 20 10:01</font>
+</div>
+<p>
+E veja também o <code>date</code>:
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);">$ date<font color="#ffffff">
+Mon Sep 20 10:47:19 BRT 2004</font>
+</div>
+<p>
+Repare que o mês e o dia estão no mesmo formato em ambos os comandos.
+</p><p>
+</p><div style="min-height: 121px; margin: 1em; padding: 1em; border: 
+1px dashed red; background-color: rgb(255, 255, 204);"><img 
+style="float: left; padding: 0px 8px 0px 0px;" 
+src="TWikiBarPapo003_arquivos/pinguim_dica.gif" alt="Pinguim com placa 
+de dica" align="left">
+Algumas vezes um comando tem a saída em português e o outro em inglês. 
+Quando isso ocorrer, você pode usar o seguinte artifício:
+<div style="font-family: Courier,&quot;Courier New&quot;,&quot;Lucida 
+Console&quot;,&quot;Bitstream Vera Sans Mono&quot;,Monaco,monospace; 
+white-space: pre; margin: 1em 0.5em; border: 1px none; padding: 1.5em 
+1em; overflow: auto; font-size: 100%; line-height: 1em; color: yellow; 
+font-weight: bold; background: none no-repeat scroll right top rgb(0, 0,
+ 0);">$ date<font color="#ffffff">
+Mon Sep 20 10:47:19 BRT 2004</font>
+$ LANG=pt_BR date<font color="#ffffff">
+Seg Set 20 10:47:19 BRT 2004</font>
+</div>
+Desta forma passando a saída do comando <code>date</code> para 
+português.
+</div>
+<p>
+Ora, se em algum registro do <code>who</code> eu não encontrar a data de
+ hoje, é sinal que o cara está "logado" há mais de um dia, já que ele 
+não pode ter se "logado" amanhã... Então vamos guardar o pedaço que 
+importa da data de hoje para procurá-la na saída do <code>who</code>:
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);">$ Data=$(date | cut -c 5-10)
+</div>
+<p>
+Eu usei a construção <code>$(...)</code>, para priorizar a execução dos 
+comandos antes de atribuir a sua saída à variável <code>$Data</code>. 
+Vamos ver se funcionou:
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);">$ echo $Data<font 
+color="#ffffff">
+Sep 20</font>
+</div>
+<p>
+Beleza! Agora, o que temos que fazer é procurar no comando <code>who</code>
+ os registros que não possuem esta data.
+</p><p>
+&nbsp;&nbsp;&nbsp;&nbsp; - Ah! Eu acho que estou entendendo! Você falou 
+em procurar e me ocorreu o comando <code>grep</code>, estou certo?
+</p><p>
+&nbsp;&nbsp;&nbsp;&nbsp; - Certíssimo! Só que eu tenho que usar o <code>grep</code>
+ com aquela opção que ele só lista os registros nos quais ele <strong>não</strong>
+ encontrou a cadeia. Você se lembra que opção é essa?
+</p><p>
+&nbsp;&nbsp;&nbsp;&nbsp; - Claro, é a opção <code>-v</code>...
+</p><p>
+&nbsp;&nbsp;&nbsp;&nbsp; - Isso! Tá ficando bão! Então vamos ver:
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);">$ who | grep -v "$Data"<font 
+color="#ffffff">
+jneves   pts/1        Sep 18 13:40</font>
+</div>
+<p>
+&nbsp;&nbsp;&nbsp;&nbsp; - E se eu quisesse mais um pouco de perfumaria 
+eu faria assim:
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);">$ who | grep -v "$Data" | cut 
+-f1 -d ' '<font color="#ffffff">
+jneves</font>
+</div>
+<p>
+&nbsp;&nbsp;&nbsp;&nbsp; - Viu? Não foi necessário usar nenhum comando 
+condicional, até porque o nosso mais usado comando condicional, o famoso
+ <code>if</code>, não testa condição, mas sim instruções, como veremos 
+agora.
+</p><p>
+</p><p>
+</p><h2><a name="Comandos_Condicionais"></a> Comandos Condicionais </h2>
+<p>
+</p><p>
+Veja as linhas de comando a seguir:
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);">$ ls musicas<font 
+color="#ffffff">
+musicas</font>
+$ echo $?<font color="#ffffff">
+0</font>
+$ ls ArqInexistente<font color="#ffffff">
+ls: ArqInexistente: No such file or directory</font>
+$ echo $?<font color="#ffffff">
+1</font>
+$ who | grep jneves<font color="#ffffff">
+jneves   pts/1        Sep 18 13:40 (10.2.4.144)</font>
+$ echo $?<font color="#ffffff">
+0</font>
+$ who | grep juliana<font color="#ffffff">
+$ echo $?</font>
+1
+</div>
+<p>
+&nbsp;&nbsp;&nbsp;&nbsp; - O que é esse <code>$?</code> faz aí? 
+Começando por cifrão (<code>$</code>) parece ser uma variável, certo?
+</p><p>
+&nbsp;&nbsp;&nbsp;&nbsp; - Sim é uma variável que contém o código de 
+retorno da última instrução executada. Posso te garantir que se esta 
+instrução foi bem sucedida, $? terá o valor zero, caso contrário seu 
+valor será diferente de zero. 
+</p><p>
+</p><p>
+</p><h3><a name="O_Comando_if"></a> O Comando if </h3>
+<p>
+</p><p>
+O que o nosso comando condicional <code>if</code> faz é testar a 
+variável <code>$?</code>. Então vamos ver a sua sintaxe:<br> 
+</p><pre>    if cmd
+    then
+        cmd1
+        cmd2
+        cmdn
+    else
+        cmd3
+        cmd4
+        cmdm
+    fi
+</pre>
+<p>
+ou seja: caso comando <code>cmd</code> tenha sido executado com sucesso,
+ os comandos do bloco do <code>then</code> (<code>cmd1</code>, <code>cmd2</code>
+ e <code>cmdn</code>) serão executados, caso contrário, os comandos 
+executados serão os do bloco opcional do <code>else</code> (<code>cmd3</code>,
+ <code>cmd4</code> e <code>cmdm</code>), terminando com um <code>fi</code>.
+</p><p>
+Vamos ver na prática como isso funciona usando um <em>scriptizinho</em> 
+que serve para incluir usuários no <code>/etc/passwd</code>:
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);">$ cat incusu<font 
+color="#ffffff">
+#!/bin/bash
+# Versão 1
+if  grep ^$1 /etc/passwd
+then
+    echo Usuario \'$1\' já existe
+else
+    if  useradd $1
+    then
+        echo Usuário \'$1\' incluído em /etc/passwd
+    else
+        echo "Problemas no cadastramento. Você é root?"
+    fi
+fi</font>
+</div>
+<p>
+Repare que o <code>if</code> está testando direto o comando <code>grep</code>
+ e esta é a sua finalidade. Caso o <code>if</code> seja bem sucedido, ou
+ seja, o usuário (cujo nome está em <code>$1</code>) foi encontrado em <code>/etc/passwd</code>,
+ os comandos do bloco do <code>then</code> serão executados (neste 
+exemplo é somente o <code>echo</code>) e caso contrário, as instruções 
+do bloco do <code>else</code> é que serão executadas, quando um novo <code>if</code>
+ testa se o comando <code>useradd</code> foi executado a contento, 
+criando o registro do usuário em <code>/etc/passwd</code>, ou não quando
+ dará a mensagem de erro.<br> 
+Vejamos sua execução, primeiramente passando um usuário já cadastrado:
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);">$ incusu jneves<font 
+color="#ffffff">
+jneves:x:54002:1001:Julio Neves:/home/jneves:/bin/bash
+Usuario 'jneves' ja existe</font>
+</div>
+<p>
+Como já vimos diversas vezes, mas é sempre bom insistir no tema para que
+ você já fique precavido, no exemplo dado surgiu uma linha indesejada, 
+ela é a saída do comando <code>grep</code>. Para evitar que isso 
+aconteça, devemos desviar a saída desta instrução para <code>/dev/null</code>,
+ ficando assim:
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);">$ cat incusu<font 
+color="#ffffff">
+#!/bin/bash
+# Versão 2
+if  grep ^$1 /etc/passwd &gt; /dev/null     # ou: if grep -q ^$1 
+/etc/passwd
+then
+    echo Usuario \'$1\' já existe
+else
+    if  useradd $1
+    then
+        echo Usuário \'$1\' incluído em /etc/passwd
+    else
+        echo "Problemas no cadastramento. Você é root?"
+    fi
+fi</font>
+</div>
+<p>
+Agora vamos testá-lo como usuário normal (não <em>root</em>):
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);">$ incusu ZeNinguem<font 
+color="#ffffff">
+./incusu[6]: useradd:  not found
+Problemas no cadastramento. Você é root?</font>
+</div>
+<p>
+Epa, aquele erro não era para acontecer! Para evitar que isso aconteça 
+devemos mandar também a saída de erro (<em>strerr</em>, lembra?) do <code>useradd</code>
+ para <code>/dev/null</code>, ficando na versão final assim:
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);">$ cat incusu<font 
+color="#ffffff">
+#!/bin/bash
+# Versão 3
+if  grep ^$1 /etc/passwd &gt; /dev/null
+then
+    echo Usuario \'$1\' já existe
+else
+    if  useradd $1 2&gt; /dev/null
+    then
+        echo Usuário \'$1\' incluído em /etc/passwd
+    else
+        echo "Problemas no cadastramento. Você é root?"
+    fi
+fi</font>
+</div>
+<p>
+Depois destas alterações e de fazer um <code>su &#8211;</code> (me tornar <em>root</em>)
+ vejamos o seu comportamento:
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);">$ incusu botelho<font 
+color="#ffffff">
+Usuário 'botelho' incluido em /etc/passwd</font>
+</div>
+<p>
+E novamente:
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);">$ incusu botelho<font 
+color="#ffffff">
+Usuário 'botelho' já existe</font>
+</div>
+<p>
+Lembra que eu falei que ao longo dos nossos papos e chopes os nossos 
+programas iriam se aprimorando? Então vejamos agora como poderíamos 
+melhorar o nosso programa para incluir músicas:
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);">$ cat musinc<font 
+color="#ffffff">
+#!/bin/bash
+# Cadastra CDs (versao 3)
+#
+if  grep "^$1$" musicas &gt; /dev/null
+then
+    echo Este álbum já está cadastrado
+else
+    echo $1 &gt;&gt; musicas
+    sort musicas -o musicas
+fi</font>
+</div>
+<p>
+Como você viu, é uma pequena evolução da versão anterior, assim, antes 
+de incluir um registro (que pela versão anterior poderia ser duplicado),
+ testamos se o registro começava (<code>^</code>) e terminava (<code>$</code>)
+ igual ao parâmetro passado (<code>$1</code>). O uso do circunflexo (<code>^</code>)
+ no início da cadeia e cifrão (<code>$</code>) no fim, são para testar 
+se o parâmetro passado (o álbum e seus dados) são exatamente iguais a 
+algum registro anteriormente cadastrado e não somente igual a um pedaço 
+de algum dos registros.<br> 
+</p><p>
+Vamos executá-lo passando um álbum já cadastrado:
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);">$ musinc "album 
+4^Artista7~Musica7:Artista8~Musica8"<font color="#ffffff">
+Este álbum já está cadastrado</font>
+</div>
+<p>
+E agora um não cadastrado:
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);">$ musinc "album 
+5^Artista9~Musica9:Artista10~Musica10"
+$ cat musicas<font color="#ffffff">
+album 1^Artista1~Musica1:Artista2~Musica2
+album 2^Artista3~Musica3:Artista4~Musica4
+album 3^Artista5~Musica5:Artista6~Musica5
+album 4^Artista7~Musica7:Artista8~Musica8
+album 5^Artista9~Musica9:Artista10~Musica10</font>
+</div>
+<p>
+&nbsp;&nbsp;&nbsp;&nbsp; - Como você viu, o programa melhorou um 
+pouquinho, mas ainda não está pronto. À medida que eu for te ensinando a
+ programar em <em>shell</em>, nossa CDteca irá ficando cada vez melhor.
+</p><p>
+&nbsp;&nbsp;&nbsp;&nbsp; - Entendi tudo que você me explicou, mas ainda 
+não sei como fazer um <code>if</code> para testar condições, ou seja o 
+uso normal do comando.
+</p><p>
+&nbsp;&nbsp;&nbsp;&nbsp; - Cara, para isso existe o comando <code>test</code>,
+ ele é que testa condições. O comando <code>if</code> testa o comando <code>test</code>.
+ Mas isso está meio confuso e como já falei muito, estou precisando de 
+uns chopes para molhar a palavra. Vamos parando por aqui e na próxima 
+vez te explico direitinho o uso do <code>test</code> e de diversas 
+outras sintaxes do <code>if</code>.
+</p><p>
+&nbsp;&nbsp;&nbsp;&nbsp; - Falou! Acho bom mesmo porque eu também já tô 
+ficando zonzo e assim tenho tempo para praticar esse monte de coisas que
+ você me falou hoje.
+</p><p>
+&nbsp;&nbsp;&nbsp;&nbsp; - Para fixar o que você aprendeu, tente fazer 
+um <em>scriptizinho</em> para informar se um determinado usuário, que 
+será passado como parâmetro esta logado (arghh!) ou não.
+</p><p>
+&nbsp;&nbsp;&nbsp;&nbsp; - Aê Chico, mais dois chopes por favor...
+</p><p>
+Vou aproveitar também para mandar o meu jabá: diga para os amigos que 
+quem estiver afim de fazer um curso porreta de programação em <em>Shell</em>
+ que mande um e-mail para a nossa <a 
+href="mailto:contato@clavis.com.br?Subject=Curso%20de%20Shell%20com%20Julio%20Neves">gerencia
+ de treinamento</a> para informar-se. 
+</p><p>
+Qualquer dúvida ou falta de companhia para um chope ou até para falar 
+mal dos políticos é só mandar um e-mail para <a 
+href="mailto:julioneves@openoffice.org?Subject=D%C3%BAvidas%20Papo%20de%20Botequim">mim</a>.
+ 
+</p><p>
+Valeu!
+	 </p></div><!-- fecha div topico -->
+	 <div class="rodape">		<br>  <a 
+href="http://creativecommons.org/licenses/by-nc-sa/2.0/br/" 
+target="_blank"><img 
+src="TWikiBarPapo003_arquivos/Logo_CC-by-nc-sa_pequeno.png" alt="Licença
+ Creative Commons - Atribuição e Não Comercial" title="Licença Creative 
+Commons - Atribuição e Não Comercial (pequeno)" border="0"></a> (CC) 
+2010 Pelos <a href="http://wiki.softwarelivre.org/Main/TWikiBarGroup">Frequentadores
+ do Bar do Júlio Neves</a>.<br> 
+Todo o conteúdo desta página pode ser utilizado segundo os termos da <a 
+href="http://creativecommons.org/licenses/by-nc-sa/2.0/br/">Creative 
+Commons License</a>: Atribuição-UsoNãoComercial-PermanênciaDaLicença.
+	 </div>
+  </div><!-- fecha div corpo -->
+</div><!-- fecha div geral -->
+</body></html>

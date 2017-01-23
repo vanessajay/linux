@@ -1,0 +1,394 @@
+// ADMOTION - Banner/Videobanner v2r18 - 03/02/2010
+
+new function()
+{
+	function ADM_Banner_Config()
+	{
+		with(ADM_cData)
+		{
+			files[2]=BasicMethods.isImg(files[1].name)?files[1]:files[2];
+
+			this.swfName = files[1].name;
+			this.swfWdth = files[1].width;
+			this.swfHght = files[1].height;
+			this.bckupName = files[2].name;
+			this.bckupWdth = files[2].width;
+			this.bckupHght = files[2].height;
+			this.CodMovie = CodMovie;
+			this.diferido = diferido;
+
+			this.webCode = WebCode;
+			this.clickURL = getClickUrl(ClickUrl, WebCode);
+			this.hostADS = hostADS;
+
+			this.feeds = {};
+			for (var i=3,j=1;i<files.length;i++,j++)
+				this.feeds[files[j].name]=files[i].name;
+		}
+		this.fixOperationAborted = false;
+		this.flashMinVer = 6;
+		//this.hideSelects = false;
+		this.urlAudit = null;
+		this.clickAudit = null;
+		this.useFlashvars = true;
+		this.clicktracking = self.ADM_clicktracking;
+	}
+
+	function getClickUrl(url, wc)
+	{
+		var validUrl=function(u){return !!(u?u.match(/(http|https):\/\//i):u);}
+		url += validUrl(self['ADM_clicks_p_'+wc]) ? '&ci='+escape(self['ADM_clicks_p_'+wc])+'&ti=1' : '';
+		return url + (validUrl(self['ADM_clicks_d_'+wc]) ? '&ci='+escape(self['ADM_clicks_d_'+wc])+'&ti=2' : '');
+	}
+
+	ObjectElement = function()
+	{
+		var _str = "<object>";
+		var isException = function(name)
+		{
+			var exceptions = ['name', 'type', 'style'];
+			for(var i=0; i<exceptions.length; i++)
+				if (name.toLowerCase()==exceptions[i])
+					return true;
+		}
+		this.setAttribute = function(name, value)
+		{
+			if (isException(name))
+				_str = _str.replace("<object", "<object " + name + "='" + value + "'");
+			else
+				_str += "<param name='" + name + "' value='" + value + "'>";
+		}
+		this.appendTo = function(node)
+		{
+			_str += "</object>";
+			var container = node.ownerDocument.createElement("div");
+			container.innerHTML = _str;
+			node.insertBefore(container, node.firstChild);
+			return container.firstChild;
+		}
+	}
+
+	EmbedElement = function()
+	{
+		var _str = "<embed";
+		this.setAttribute = function(name, value)
+		{
+			_str += " " + name + "='" + value + "'";
+		}
+		this.appendTo = function(node)
+		{
+			_str += "></embed>";
+			var container = node.ownerDocument.createElement("span");
+			node.insertBefore(container, node.firstChild);
+			container.innerHTML = _str;
+			return container.firstChild;
+		}
+	}
+
+	var ADM_CreateFlash = function(node, src, _width, _height, name, fvars, _left, _top)
+	{
+		var obj = new (ADM_MSIE ? ObjectElement : EmbedElement);
+		with(obj)
+		{
+			setAttribute("type", "application/x-shockwave-flash");
+			setAttribute("wmode", "transparent");
+			setAttribute("flashvars", fvars);
+			setAttribute("movie", src);
+			setAttribute("src", src);
+			setAttribute("allowScriptAccess", "always");
+			setAttribute("name", name);
+		}
+		obj = obj.appendTo(node);
+		with(obj.style)
+		{
+			if (_left!=undefined || _top!=undefined)
+			{
+				position = 'absolute';
+				if (_left)
+					left = _left + 'px';
+				if (_top)
+					top = _top + 'px';
+			}
+			width = _width + 'px';
+			height = _height + 'px';
+		}
+		return obj;
+	}
+
+	function BasicMethods(_config){
+		function getData(){
+			var _dataObj=new _config;
+			var _data=new Object;
+			for (var _i in _dataObj) _data[_i]=_dataObj[_i];
+			return _data;
+		}
+		this.uniqueID=function(){
+			if(document.___documentMark!=undefined)
+				document.___documentMark++;
+			else document.___documentMark=0;
+			return document.___documentMark;
+		}
+		var dat=getData();
+		this.getData=function(){return dat;}
+		var _admfs=window.admfs?window.admfs:"clsf";
+		var imgPing=new Image;
+		var filePath=function(_swf){
+			return /^https?:\/\//.test(_swf) ? _swf : 'http://'+_admfs+'.nspmotion.com/MOVIES/'+_swf;
+		}
+		this.getFilePath=function(_swf){
+			if(!dat.useFlashvars)
+				return filePath(_swf)+'?'+flashVars(_swf);
+			return filePath(_swf);
+		}
+		this.flashVer=function(){
+			var ver=0;
+			if (ADM_MSIE){
+				ver=ADM_FPV();
+				try
+				{
+					ver=parseInt(ver.substring(ver.indexOf('WIN')+4));
+				} catch (_){}
+			} else ver=parseInt(ADM_FPV());
+			return ver;
+		}
+		var flashVars=function(name){
+			return 'clickTAG='+escape(dat.clickURL+(dat.clickAudit?'&dest='+escape(addRnd(dat.clickAudit)):''))+'&host='+_admfs+'&movieNum='+dat.CodMovie+'&hostAdserver='+dat.hostADS+'&feed='+dat.feeds[name];
+		}
+		this.getFlshVars=function(name){
+			if (!dat.useFlashvars)
+				return null;
+			return flashVars(name);
+		}
+		this.admPing=function(_url){
+			if(_url)imgPing.src=_url;
+		}
+		var addRnd=this.addRnd=function(_url){
+			return _url.replace(/(\[random\])|(\[timestamp\])|(\$random)|(\[inserte random\])/gi,Math.floor((Math.random()*999998)+1));
+		}
+		this.isImg=function()
+		{
+			var ext=dat.swfName.toLowerCase().split('.').pop();
+			return ext=='jpg'||ext=='gif';
+		}
+	}
+	BasicMethods.isImg=function(name)
+	{
+		var ext=name.toLowerCase().split('.').pop();
+		return ext=='jpg'||ext=='gif';
+	}
+
+	function preloadPack(isOpera){
+		var timer=this.timer=function(punFunc,time){
+			var args=arguments,szTmp='punFunc(',i;
+			for(i=0;i<arguments.length-2;i++)szTmp+='args['+(i+2)+'],';
+			szTmp=szTmp.substring(0,szTmp.length-1);szTmp+=');';
+			setTimeout(function(){eval(szTmp);},time);
+		}
+		var _operaTimeout=0;
+		this.checkFlashLoad=function checkFlashLoad(_Flash,func) {
+			try {
+				if(isOpera)
+				{
+					_Flash.style.visibility='visible';
+					_operaTimeout++;
+				}
+				if(_Flash.PercentLoaded()==100 || _operaTimeout>80)
+					func();
+				else
+					throw("retry");
+			} catch(e){
+				if(isOpera)
+					_Flash.style.visibility='hidden';
+				timer(arguments.callee,50,_Flash,func);
+			}
+		}
+	}
+
+	var Timer = function()
+	{
+		var _sec, _tot = 0, _status = false, _startTimes = 0;
+		this.reset = function() { _tot = 0; _sec = (new Date).getTime(); }
+		this.getElapsedTime = function() { return _status ? _tot + ((new Date).getTime() - _sec) : _tot; }
+		this.start = function()
+		{
+			_startTimes++;
+			if(!_status)
+			{
+				_sec = (new Date).getTime();
+				_status = true;
+			}
+		}
+		var stop = this.stop = function()
+		{
+			_startTimes--;
+			if(_startTimes==0)
+			{
+				if (_status)
+				{
+					_tot += (new Date).getTime() - _sec;
+					_status = false;
+				}
+			}
+		}
+	}
+
+	Interactor = function(){
+		var _interacting = false;
+		var _timeout;
+		var _this = this;
+
+		var setAutoResetInteracting = function()
+		{
+			if (!_timeout)
+			{
+				if(_interacting==0 && _this.oninteractionbegin)
+					_this.oninteractionbegin();
+			}
+			else clearTimeout(_timeout);
+			_timeout = setTimeout(function()
+			{
+				if(_interacting==0 && _this.oninteractionend)
+						_this.oninteractionend();
+				_timeout = null;
+			}, 1000);//1sec.
+		}
+		this.addElement = function(elem){
+			if(elem.attachEvent)
+				elem.attachEvent("onmousemove", setAutoResetInteracting);
+			else if (elem.addEventListener)
+				elem.addEventListener("mousemove", setAutoResetInteracting, true);
+			else elem.onmousemove = setAutoResetInteracting;
+		}
+		this.setInteracting = function(){
+			_interacting++;
+			if(_interacting==1)
+			{
+				if (!_timeout && _this.oninteractionbegin)
+					_this.oninteractionbegin();
+			}
+		}
+		this.resetInteracting = function(){
+			_interacting--;
+			if(_interacting <= 0)
+			{
+				if(!_timeout && _this.oninteractionend)
+						_this.oninteractionend();
+			}
+		}
+	}
+
+	new function ADM_banner() {
+		var admWc = ADM_webcode;
+		var admBasic=new BasicMethods(ADM_Banner_Config);
+		var ADM_data=admBasic.getData();
+		if (ADM_data.urlAudit && !ADM_data.diferido)
+			admBasic.admPing(admBasic.addRnd(ADM_data.urlAudit));
+		var ADM_ID=admBasic.uniqueID();
+		document.write("<span id='ADM_node"+ADM_ID+"' style='display:inline-block'></span>");
+		var node=ADM_DE("ADM_node"+ADM_ID);
+		var ADM_Flash, FSCommandFunc;
+		var timer = new Timer();
+		var interactor = new Interactor();
+		interactor.oninteractionbegin = function(){
+			timer.start();
+		}
+		interactor.oninteractionend = function(){
+			timer.stop();
+		}
+		var initFlashMode = function()
+		{
+			ADM_Flash = ADM_CreateFlash(node, admBasic.getFilePath(ADM_data.swfName),ADM_data.swfWdth,ADM_data.swfHght,"flashID"+ADM_ID,admBasic.getFlshVars(ADM_data.swfName));
+			interactor.addElement(ADM_Flash);
+			
+			var _nums=[],_calls=[];
+			var findNum=function(n){
+				n=parseInt(n);
+				for(var i=0;i<_nums.length;i++)
+					if(_nums[i]==n)
+						return true;
+				_nums.push(n);
+				return false;
+			}
+			var POI=function(num)
+			{
+				if(findNum(num))return;
+				_calls.push(new Image);
+				_calls[_calls.length-1].src="http://nspmotion.com/poi_full.aspx?m="+ADM_data.CodMovie+"&p="+num+"&rnd="+Math.round(Math.random()*99999999);
+			}
+			FSCommandFunc=function()
+			{
+				switch (arguments[0])
+				{
+					case 'click':
+						admTracking();
+						break;
+					case "CallPOI":
+						POI(arguments[1]);
+						break;
+					case "interactionresume":
+						interactor.setInteracting();
+						break;
+					case "interactionstop":
+						interactor.resetInteracting();
+						break;
+				}
+			}
+			if (ADM_MSIE) ADM_Flash.attachEvent('FSCommand',FSCommandFunc);
+			else window['flashID'+ADM_ID+'_DoFSCommand']=FSCommandFunc;
+			var admTracking = function()
+			{
+				if (ADM_data.clicktracking)
+					(new Image).src = ADM_data.clicktracking;
+			}
+			if (ADM_data.diferido)
+				(new Image).src = "http://nspmotion.com/ads_diferido.aspx?c="+admWc+"&m="+ADM_data.CodMovie+"&r="+Math.round(Math.random()*999);
+			var oPreload=new preloadPack(ADM_OPERA);
+			oPreload.checkFlashLoad(ADM_Flash,function()
+			{
+				document.close();
+				if(ADM_data.urlAudit && ADM_data.diferido)
+					admBasic.admPing(admBasic.addRnd(ADM_data.urlAudit));
+			});
+		}
+
+		if (admBasic.flashVer()>=ADM_data.flashMinVer && !admBasic.isImg())
+		{
+			if(ADM_data.fixOperationAborted && ADM_MSIE)
+			{
+				setInterval(function()
+				{
+					if(document.readyState=="complete")
+						initFlashMode();
+				},50);
+			}
+			else
+				initFlashMode();
+		}
+		else
+		{
+			var oBackup=document.createElement("img");
+			with (oBackup.style) {
+				width=ADM_data.bckupWdth;
+				height=ADM_data.bckupHght;
+				cursor="pointer";
+			}
+			oBackup.src=admBasic.getFilePath(admBasic.isImg()?ADM_data.swfName:ADM_data.bckupName);
+			oBackup.onclick=function(){window.open(ADM_data.clickURL);}
+			node.parentNode.replaceChild(oBackup,node);
+		}
+		var probability=function(percentage){
+			var prob = Math.round(Math.random() * 100);
+			return prob <= percentage;
+		}
+		new function(){
+			if(probability(6)){
+				var _timer = new Timer();
+				_timer.start();
+				var img = new Image();
+				ADM_aEvn(window,"unload",function(){
+					img.src="http://nspmotion.com/adm_tc.aspx?m="+ADM_data.CodMovie+"&t="+parseInt(_timer.getElapsedTime()/1000)+"&it="+parseInt(timer.getElapsedTime()/1000);
+				});
+			}
+		}
+	}
+}

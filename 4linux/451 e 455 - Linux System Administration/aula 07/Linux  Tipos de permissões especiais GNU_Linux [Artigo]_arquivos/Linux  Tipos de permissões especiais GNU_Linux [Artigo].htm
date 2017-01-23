@@ -1,0 +1,1223 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="pt-BR"><head profile="http://www.w3.org/2005/10/profile">
+
+
+<link rel="icon" type="image/png" 
+href="http://img.vivaolinux.com.br/favicon.png">
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Linux: Tipos de permissões especiais GNU/Linux [Artigo]</title>
+<meta name="description" content="Saiba como funciona os tipos de 
+permissões SUID, SGUID, STICKY. Este artigo tenta de forma mais clara 
+possível passar o conceito e funcionamento dos tipos de permissões 
+especiais do GNU/Linux.">
+<meta name="keywords" content="Linux,site sobre linux,comunidade 
+linux,instalar linux,software livre,fórum linux">
+<link rel="stylesheet" 
+href="Linux%20%20Tipos%20de%20permiss%C3%B5es%20especiais%20GNU_Linux%20%5BArtigo%5D_arquivos/linux025.css"
+ type="text/css">
+<link rel="alternate" type="application/rss+xml" title="RSS Linux" 
+href="http://www.vivaolinux.com.br/index.rdf">
+<meta name="verify-v1" 
+content="QT3PYQU5yGuEhXltPUTz5tRTN/hXmwUDT1wDE1iCfTU=">
+<meta http-equiv="Content-language" content="pt-BR">
+<link 
+href="Linux%20%20Tipos%20de%20permiss%C3%B5es%20especiais%20GNU_Linux%20%5BArtigo%5D_arquivos/hw_csspadrao_0_v14.css"
+ type="text/css" rel="stylesheet"><script src="Linux%20%20Tipos%20de%20permiss%C3%B5es%20especiais%20GNU_Linux%20%5BArtigo%5D_arquivos/script.jsp" charset="ISO-8859-1" type="text/javascript"></script><script src="Linux%20%20Tipos%20de%20permiss%C3%B5es%20especiais%20GNU_Linux%20%5BArtigo%5D_arquivos/mostra_004.jsp" charset="ISO-8859-1" type="text/javascript"></script><script src="Linux%20%20Tipos%20de%20permiss%C3%B5es%20especiais%20GNU_Linux%20%5BArtigo%5D_arquivos/mostra_002.jsp" charset="ISO-8859-1" type="text/javascript"></script><script src="Linux%20%20Tipos%20de%20permiss%C3%B5es%20especiais%20GNU_Linux%20%5BArtigo%5D_arquivos/mostra_005.jsp" charset="ISO-8859-1" type="text/javascript"></script><script src="Linux%20%20Tipos%20de%20permiss%C3%B5es%20especiais%20GNU_Linux%20%5BArtigo%5D_arquivos/mostra.jsp" charset="ISO-8859-1" type="text/javascript"></script><script src="Linux%20%20Tipos%20de%20permiss%C3%B5es%20especiais%20GNU_Linux%20%5BArtigo%5D_arquivos/mostra_003.jsp" charset="ISO-8859-1" type="text/javascript"></script><script src="Linux%20%20Tipos%20de%20permiss%C3%B5es%20especiais%20GNU_Linux%20%5BArtigo%5D_arquivos/mostraPx.jsp" charset="ISO-8859-1" type="text/javascript"></script></head><body>
+
+
+<div id="cabecalho">
+<div id="topoesquerda"><a href="http://www.vivaolinux.com.br/index.php"><img
+ id="logo" 
+src="Linux%20%20Tipos%20de%20permiss%C3%B5es%20especiais%20GNU_Linux%20%5BArtigo%5D_arquivos/linux-logo-002.jpg"
+ alt="Linux logo" width="125" height="55"></a></div>
+<div id="topodireita">
+<form method="get" action="http://www.google.com.br/custom" 
+target="_top" name="pesquisa" id="pesquisa">
+<input name="domains" value="www.vivaolinux.com.br" type="hidden">
+<input name="sitesearch" value="www.vivaolinux.com.br" type="hidden">
+<input name="client" value="pub-3535276187000580" type="hidden">
+<input name="forid" value="1" type="hidden">
+<input name="ie" value="ISO-8859-1" type="hidden">
+<input name="oe" value="ISO-8859-1" type="hidden">
+<input name="cof" 
+value="GALT:#0066CC;GL:1;DIV:#999999;VLC:336633;AH:center;BGC:FFFFFF;LBGC:FFFFFF;ALC:0066CC;LC:0066CC;T:000000;GFNT:666666;GIMP:666666;LH:45;LW:98;L:http://img.vivaolinux.com.br/imagens/banners/logo_vol_google.jpg;S:http://www.vivaolinux.com.br;LP:1;FORID:1;"
+ type="hidden">
+<input name="hl" value="pt" type="hidden">
+<input name="q" class="inputText" type="text">
+<select name="tipoBusca" class="inputText" id="tipoBusca" style="height:
+ 18px;"> 
+<option selected="selected" value="0">Todo o site</option> 
+<option value="artigos">Artigos</option> 
+<option value="conf">.Conf</option> 
+<option value="comunidade">Comunid.</option> 
+<option value="dicas">Dicas</option> 
+<option value="faq">Perguntas</option> 
+<option value="screenshot">Shots</option> 
+<option value="scripts">Scripts</option> 
+<option value="wallpaper">Walls</option> 
+</select>
+<input name="sa" 
+src="Linux%20%20Tipos%20de%20permiss%C3%B5es%20especiais%20GNU_Linux%20%5BArtigo%5D_arquivos/linux-busca.gif"
+ onclick="submeter_busca(document.pesquisa)" class="inputButton" 
+alt="Busca Linux" type="image">
+</form>
+	</div>
+	<div id="topocentral"><img id="slogan" 
+src="Linux%20%20Tipos%20de%20permiss%C3%B5es%20especiais%20GNU_Linux%20%5BArtigo%5D_arquivos/linux-slogan.gif"
+ alt="Linux slogan"></div>
+</div>
+<div id="menu">
+	<div id="menuesquerda"></div>
+	<div id="menudireita">
+		<div id="loginInfo"><a class="destaque" 
+href="http://www.vivaolinux.com.br/testarLogin.php?msg=0">Login</a> 
+&nbsp;&nbsp;|&nbsp;&nbsp; <a class="destaque" 
+href="http://www.vivaolinux.com.br/formCadastro.php">Cadastre-se</a>&nbsp;&nbsp;<a
+ href="http://www.vivaolinux.com.br/index.rdf"><img 
+src="Linux%20%20Tipos%20de%20permiss%C3%B5es%20especiais%20GNU_Linux%20%5BArtigo%5D_arquivos/linux-rss.jpg"
+ alt="Linux RSS" title="RSS do VOL" border="0" width="13" height="13"></a>&nbsp;<a
+ href="http://www.twitter.com/vivaolinux_"><img 
+src="Linux%20%20Tipos%20de%20permiss%C3%B5es%20especiais%20GNU_Linux%20%5BArtigo%5D_arquivos/linux-twitter.png"
+ alt="VOL no Twitter" title="VOL no Twitter" border="0" width="13" 
+height="13"></a></div>
+	</div>
+	<div id="menucentral">
+		<div id="navegacao">
+			» <a class="destaque" href="http://www.vivaolinux.com.br/linux/">O 
+que é GNU/Linux</a> &nbsp;&nbsp;|&nbsp;&nbsp; <a class="destaque" 
+href="http://www.vivaolinux.com.br/download-linux/">Download do 
+GNU/Linux</a> &nbsp;&nbsp;|&nbsp;&nbsp; <a class="destaque" 
+href="http://www.vivaolinux.com.br/anuncie/">Anuncie</a> 
+&nbsp;&nbsp;|&nbsp;&nbsp; <a class="destaque" 
+href="http://www.vivaolinux.com.br/falecom/index.php">Fale Conosco</a>
+		</div>
+</div>
+</div>
+
+
+<div id="barratop">Visite também: <a 
+href="http://www.vivaolinux.com.br/verBanner.php?codigo=252" 
+target="_new" class="texttop">Segurança Linux</a>&nbsp;·&nbsp;<a 
+href="http://www.vivaolinux.com.br/verBanner.php?codigo=134" 
+target="_new" class="texttop">BR-Linux.org</a>&nbsp;·&nbsp;<a 
+href="http://www.vivaolinux.com.br/verBanner.php?codigo=135" 
+target="_new" class="texttop">Dicas-L</a>&nbsp;·&nbsp;<a 
+href="http://www.vivaolinux.com.br/verBanner.php?codigo=130" 
+target="_new" class="texttop">NoticiasLinux</a>&nbsp;·&nbsp;<a 
+href="http://www.vivaolinux.com.br/verBanner.php?codigo=133" 
+target="_new" class="texttop">SoftwareLivre.org</a>&nbsp;·&nbsp;<a 
+href="http://www.vivaolinux.com.br/verBanner.php?codigo=131" 
+target="_new" class="texttop">UnderLinux</a>&nbsp;·&nbsp;<a 
+href="http://www.vivaolinux.com.br/verBanner.php?codigo=132" 
+target="_new" class="texttop">BestLinux</a></div>
+
+
+<div id="conteudo">
+
+<!-- inicio do quadro da esquerda -->
+<div id="centroesquerda">
+
+<!-- inicio box menu -->
+<div class="box" style="margin-bottom: 0px;">
+<span class="titulo">» Menu</span>
+<ul class="lista">
+<li><a class="destaquemenu" 
+href="http://www.vivaolinux.com.br/artigos/index.php" title="Artigos 
+sobre Linux">Artigos</a></li> 
+<li><a class="destaquemenu" 
+href="http://www.vivaolinux.com.br/conf/index.php" title="Arquivos de 
+configuração">.Conf</a></li> 
+<li><a class="destaquemenu" 
+href="http://www.vivaolinux.com.br/camisetas/" title="Camisetas Viva o 
+Linux">Camisetas</a></li>
+<li><a class="destaquemenu" 
+href="http://www.vivaolinux.com.br/comunidades/" title="Comunidades 
+sobre Linux">Comunidades</a></li>
+<li><a class="destaquemenu" href="http://www.vivaolinux.com.br/dicas/" 
+title="Dicas sobre Linux">Dicas</a></li>
+<li><a class="destaquemenu" href="http://volcon.org/" title="Eventos do 
+Viva o Linux">Eventos</a></li>
+<li><a class="destaquemenu" 
+href="http://www.vivaolinux.com.br/perguntas/" title="Aprenda Linux">Perguntas</a></li>
+<li><a class="destaquemenu" 
+href="http://www.vivaolinux.com.br/screenshots/" title="Telas do Linux">Screenshots</a></li>
+<li><a class="destaquemenu" href="http://www.vivaolinux.com.br/scripts/"
+ title="Scripts Linux">Scripts</a></li>
+<li><a class="destaquemenu" 
+href="http://www.vivaolinux.com.br/simulado/" title="Simulado Linux">Simulado</a></li>
+<li><a class="destaquemenu" 
+href="http://www.vivaolinux.com.br/wallpapers/" title="Wallpapers para 
+Linux">Wallpapers</a></li>
+</ul>
+</div>
+<!-- fim box menu -->
+
+<!-- inicio google left -->
+
+<div>
+<script type="text/javascript"><!--
+google_ad_client = "pub-3535276187000580";
+/* 160x600 esquerda artigo */
+google_ad_slot = "5076429219";
+google_ad_width = 160;
+google_ad_height = 600;
+//-->
+</script>
+<script type="text/javascript" src="Linux%20%20Tipos%20de%20permiss%C3%B5es%20especiais%20GNU_Linux%20%5BArtigo%5D_arquivos/show_ads.js">
+</script><script src="Linux%20%20Tipos%20de%20permiss%C3%B5es%20especiais%20GNU_Linux%20%5BArtigo%5D_arquivos/expansion_embed.js"></script><script src="Linux%20%20Tipos%20de%20permiss%C3%B5es%20especiais%20GNU_Linux%20%5BArtigo%5D_arquivos/test_domain.js"></script><script>google_protectAndRun("ads_core.google_render_ad", google_handleError, google_render_ad);</script><ins
+ style="display: inline-table; border: medium none; height: 600px; 
+margin: 0pt; padding: 0pt; position: relative; visibility: visible; 
+width: 160px;"><ins style="display: block; border: medium none; height: 
+600px; margin: 0pt; padding: 0pt; position: relative; visibility: 
+visible; width: 160px;"><iframe allowtransparency="true" hspace="0" 
+id="google_ads_frame1" marginheight="0" marginwidth="0" 
+name="google_ads_frame" 
+src="Linux%20%20Tipos%20de%20permiss%C3%B5es%20especiais%20GNU_Linux%20%5BArtigo%5D_arquivos/ads.htm"
+ style="left: 0pt; position: absolute; top: 0pt;" vspace="0" width="160"
+ frameborder="0" height="600" scrolling="no"></iframe></ins></ins>
+</div>
+
+<!-- fim google left -->
+
+<!-- inicio ultimos artigos -->
+<div class="box">
+<span class="titulo">» Últimos artigos</span>
+<div id="boxartigos" class="conteudo">
+<a class="destaque" 
+href="http://www.vivaolinux.com.br/artigo/Apresentando-o-Linux-Mint-LXDE-Edition"
+ title="Ler">Apresentando o Linux Mint LXDE Edition</a>
+<a class="destaque" 
+href="http://www.vivaolinux.com.br/artigo/Ripando-CDs-de-musica-em-MP3-no-Rhythmbox-e-convertendo-OGG-para-MP3-no-Ubuntu"
+ title="Ler">Ripando CDs de música em MP3 no Rhythmbox e convertendo OGG
+ para MP3 no Ubuntu</a>
+<a class="destaque" 
+href="http://www.vivaolinux.com.br/artigo/Redirecionamento-de-paginas-e-dominios-com-Jetty-Rewrite-Handler"
+ title="Ler">Redirecionamento de páginas e domínios com Jetty Rewrite 
+Handler</a>
+<a class="destaque" 
+href="http://www.vivaolinux.com.br/artigo/Desvendando-as-regras-de-Firewall-Linux-Iptables"
+ title="Ler">Desvendando as regras de Firewall Linux Iptables</a>
+<a class="destaque" 
+href="http://www.vivaolinux.com.br/artigo/Gerencie-suas-informacoes-atraves-de-instrucoes-SQL-com-selects-turbinados-%28para-leigos-e-experts%29"
+ title="Ler">Gerencie suas informações através de instruções SQL com 
+selects turbinados (para leigos e experts)</a>
+<a class="destaque" 
+href="http://www.vivaolinux.com.br/artigo/Dominando-o-BrOffice.org-Pincel-de-Estilo-Sumarios-e-Objetos-OLE-no-Writer"
+ title="Ler">Dominando o BrOffice.org: Pincel de Estilo, Sumários e 
+Objetos OLE no Writer</a>
+</div>
+</div>
+<!-- fim ultimos artigos -->
+
+<!-- inicio box screenshot -->
+<div class="box">
+<span class="titulo">» Screenshot</span>
+<div class="conteudo">
+<a 
+href="http://www.vivaolinux.com.br/screenshot/Window-Maker-Wmaker-Maneiro-franklinbr"
+ class="artigo"><img 
+src="Linux%20%20Tipos%20de%20permiss%C3%B5es%20especiais%20GNU_Linux%20%5BArtigo%5D_arquivos/wmaker_new.png"
+ alt="Linux: Wmaker  Maneiro" border="0" width="120" height="96"></a><br>
+<div style="margin-top: 3px;">Por <a class="destaque" 
+href="http://www.vivaolinux.com.br/perfil/verPerfil.php?login=franklinbr">franklinbr</a></div>
+</div>
+</div>
+<!-- fim box screenshot -->
+
+<!-- inicio ultimas dicas -->
+<div class="box">
+<span class="titulo">» Últimas dicas</span>
+<div id="boxdicas" class="conteudo">
+<a class="destaque" 
+href="http://www.vivaolinux.com.br/dica/Deletar-kernel-antigo-para-nao-aparecer-no-GRUB2"
+ title="Ler">Deletar kernel antigo para não aparecer no GRUB2</a>
+<a class="destaque" 
+href="http://www.vivaolinux.com.br/dica/Tem-um-xis-vermelho-no-aMSN..." 
+title="Ler">Tem um xis vermelho no aMSN...</a>
+<a class="destaque" 
+href="http://www.vivaolinux.com.br/dica/Copiando-e-colando-texto-da-web-sem-formatacao"
+ title="Ler">Copiando e colando texto da web sem formatação</a>
+<a class="destaque" 
+href="http://www.vivaolinux.com.br/dica/Ouvindo-musicas-e-vendo-videos-no-Ubuntu-e-Debianlike-%28interface-grafica%29"
+ title="Ler">Ouvindo músicas e vendo vídeos no Ubuntu e Debian-like 
+(interface gráfica)</a>
+<a class="destaque" 
+href="http://www.vivaolinux.com.br/dica/Solucoes-para-aplicativos-de-escritorio-e-os-varios-formatos-de-arquivos"
+ title="Ler">Soluções para aplicativos de escritório e os vários 
+formatos de arquivos</a>
+<a class="destaque" 
+href="http://www.vivaolinux.com.br/dica/Conexao-de-rede-cabeada-no-Gnome-com-Avahi"
+ title="Ler">Conexão de rede cabeada no Gnome com Avahi</a>
+<a class="destaque" 
+href="http://www.vivaolinux.com.br/dica/Asterisk-como-SIP-Proxy" 
+title="Ler">Asterisk como SIP Proxy</a>
+<a class="destaque" 
+href="http://www.vivaolinux.com.br/dica/Mudando-a-posicao-dos-botoes-nas-janelas-do-Ubuntu-10.04"
+ title="Ler">Mudando a posição dos botões nas janelas do Ubuntu 10.04</a>
+</div>
+</div>
+<!-- fim ultimas dicas -->
+
+<!-- inicio seguranca linux -->
+<div class="box">
+<span class="titulo">» Segurança Linux</span>
+<div id="boxscripts" class="conteudo">
+<a class="destaque" 
+href="http://segurancalinux.com/artigo/Os-imortais-e-os-mortais-da-seguranca-da-informacao"
+ title="Segurança Linux">[Artigo] Os imortais e os mortais da segurança 
+da informação</a>
+<a class="destaque" 
+href="http://segurancalinux.com/artigo/Nmap-Instalacao-e-utilizacao" 
+title="Segurança Linux">[Artigo] Nmap - Instalação e utilização</a>
+<a class="destaque" 
+href="http://segurancalinux.com/dica/Hardening-do-Proftpd" 
+title="Segurança Linux">[Dica] Hardening do Proftpd</a>
+<a class="destaque" 
+href="http://segurancalinux.com/artigo/WebGoat-Aprenda-a-testar-e-explorar-vulnerabilidades-de-aplicacoes-Web"
+ title="Segurança Linux">[Artigo] WebGoat - Aprenda a testar e explorar 
+vulnerabilidades de aplicações Web</a>
+<a class="destaque" 
+href="http://segurancalinux.com/dica/APG-Automatic-Password-Generator" 
+title="Segurança Linux">[Dica] APG - Automatic Password Generator</a>
+<a class="destaque" 
+href="http://segurancalinux.com/dica/Scroogle-Conheca-o-Google-Scrapper-via-SSL"
+ title="Segurança Linux">[Dica] Scroogle - Conheça o Google Scrapper via
+ SSL</a>
+<a class="destaque" 
+href="http://segurancalinux.com/dica/Proteger-senhas-de-usuarios-contra-ataques-de-dicionario"
+ title="Segurança Linux">[Dica] Proteger senhas de usuários contra 
+ataques de dicionário</a>
+</div>
+</div>
+<!-- fim seguranca linux -->
+
+<!-- inicio ultimos scripts -->
+<div class="box">
+<span class="titulo">» Últimos scripts</span>
+<div id="boxscripts" class="conteudo">
+<a class="destaque" 
+href="http://www.vivaolinux.com.br/script/Converter-RMVB-para-MP4" 
+title="Ver">[Shell-Script] Converter RMVB para MP4</a>
+<a class="destaque" 
+href="http://www.vivaolinux.com.br/script/Algoritmo-de-ordenacao-Selection-Sort"
+ title="Ver">[C/C++] Algoritmo de ordenação: Selection Sort</a>
+<a class="destaque" 
+href="http://www.vivaolinux.com.br/script/Algoritmo-de-ordenacao-Bubble-Sort"
+ title="Ver">[C/C++] Algoritmo de ordenação: Bubble Sort</a>
+<a class="destaque" 
+href="http://www.vivaolinux.com.br/script/Automatizando-backups-no-Samba"
+ title="Ver">[Shell-Script] Automatizando backups no Samba</a>
+<a class="destaque" 
+href="http://www.vivaolinux.com.br/script/Script-para-obter-um-wallpaper-de-como-esta-o-globo-em-tempo-real"
+ title="Ver">[Python] Script para obter um wallpaper de como está o 
+globo em tempo real</a>
+</div>
+</div>
+<!-- fim ultimos scripts -->
+</div>
+<!-- fim do quadro da esqueda -->
+
+
+<!-- inicio do quadro da direita -->
+<div id="centrodireita">
+
+<!-- inicio banner -->
+
+<br>
+<div class="textosolto">
+<div class="tresbt"><a 
+href="http://www.vivaolinux.com.br/verBanner.php?codigo=87" 
+style="color: rgb(0, 0, 0) ! important; text-decoration: none;" 
+target="_new">Treinamento Zope Plone</a><br></div>
+<div style="margin-bottom: 8px;"><a 
+href="http://www.vivaolinux.com.br/verBanner.php?codigo=247" 
+target="_blank"><img 
+src="Linux%20%20Tipos%20de%20permiss%C3%B5es%20especiais%20GNU_Linux%20%5BArtigo%5D_arquivos/banner-hostgator-160x120.gif"
+ border="0" width="160" height="120"></a></div>
+<div style="margin-bottom: 8px;">
+<a href="http://www.vivaolinux.com.br/verBanner.php?codigo=115"><img 
+src="Linux%20%20Tipos%20de%20permiss%C3%B5es%20especiais%20GNU_Linux%20%5BArtigo%5D_arquivos/banner-redbug19.gif"
+ alt="Linux banner" border="0" width="160" height="100"></a></div>
+<div style="margin-bottom: 8px;">
+<a href="http://www.vivaolinux.com.br/verBanner.php?codigo=242"><img 
+src="Linux%20%20Tipos%20de%20permiss%C3%B5es%20especiais%20GNU_Linux%20%5BArtigo%5D_arquivos/banner-pr-nethost.gif"
+ alt="Linux banner" border="0" width="160" height="100"></a></div> 
+<div style="margin-bottom: 8px;">
+<a href="http://www.vivaolinux.com.br/verBanner.php?codigo=253"><img 
+src="Linux%20%20Tipos%20de%20permiss%C3%B5es%20especiais%20GNU_Linux%20%5BArtigo%5D_arquivos/banner-oys.gif"
+ alt="Linux banner" border="0" width="160" height="120"></a></div>
+<div>
+<a href="http://www.vivaolinux.com.br/verBanner.php?codigo=249"><img 
+src="Linux%20%20Tipos%20de%20permiss%C3%B5es%20especiais%20GNU_Linux%20%5BArtigo%5D_arquivos/banner-treinalinux160x120.gif"
+ alt="Linux banner" border="0" width="160" height="120"></a></div>
+<div class="tresbt" style="padding: 3px;">[<a 
+href="http://www.vivaolinux.com.br/anuncie/">Como anunciar?</a>]</div>
+</div>
+<br><br>
+
+<!-- fim banner -->
+
+<div class="box">
+<span class="titulo">» Destaques</span>
+<div class="conteudo" id="boxeventos">
+<a class="destaque" 
+href="http://www.vivaolinux.com.br/topico/Divulgacao-de-eventos/FLISOL-Rib-Preto-SP/">FLISOL
+ - Rib Preto/SP  (1)</a>
+<a class="destaque" 
+href="http://www.vivaolinux.com.br/topico/Anuncios-de-emprego/Diversas-oportunidades-de-TI-em-Porto-Alegre-RS/">Diversas
+ oportunidades de TI em Porto Alegre &#8211; RS  (0)</a>
+<a class="destaque" 
+href="http://www.vivaolinux.com.br/topico/Anuncios-de-emprego/Vagas-para-Desenvolvedor-Joomla-WordPress-e-PHP-SP/">Vagas
+ para Desenvolvedor Joomla, WordPress e PHP &#8211; SP  (0)</a>
+<a class="destaque" 
+href="http://www.vivaolinux.com.br/topico/Divulgacao-de-eventos/Palestra-Gratuita-Web-Designers-X-Javascript-SP/">Palestra
+ Gratuita &#8211; Web Designers X Javascript &#8211; SP  (0)</a>
+<a class="destaque" 
+href="http://www.vivaolinux.com.br/topico/Anuncios-de-emprego/Prodest-45-vagas-de-Analista-de-TI-Concurso-Publico/">Prodest
+ -  45 vagas de Analista de TI - Concurso Publico  (2)</a>
+<a class="destaque" 
+href="http://www.vivaolinux.com.br/topico/Divulgacao-de-eventos/Senac-realiza-evento-de-novas-versoes-de-softwares-Autodesk/">Senac
+ realiza evento de novas versões de softwares Autodesk  (0)</a>
+<a class="destaque" 
+href="http://www.vivaolinux.com.br/topico/Divulgacao-de-eventos/Campanha-pelos-Drivers-para-Linux/">Campanha
+ pelos Drivers para Linux  (23)</a>
+<a class="destaque" 
+href="http://www.vivaolinux.com.br/topico/Classificados-de-empregos-Linux/Vaga-para-Suporte-Tecnico/">Vaga
+ para Suporte Técnico - Botafogo / RJ  (0)</a>
+<a class="destaque" 
+href="http://www.vivaolinux.com.br/topico/Divulgacao-de-eventos/Encontro-VoIP-em-Florianopolis/">Encontro
+ VoIP em Florianópolis  (0)</a>
+<a class="destaque" 
+href="http://www.vivaolinux.com.br/topico/Divulgacao-de-eventos/A-Conferencia-Paulista-de-CeTeI/">A
+ Conferência Paulista de C&amp;T&amp;I  (0)</a>
+<a class="destaque" 
+href="http://www.vivaolinux.com.br/topico/Divulgacao-de-eventos/Flisol-2010-Maringa/">Flisol
+ 2010 Maringá  (0)</a>
+<a class="destaque" 
+href="http://www.vivaolinux.com.br/topico/Divulgacao-de-eventos/1%C2%BA-Encontro-da-Cultura-Digital-Urbana-em-Osasco/">1o
+ Encontro da Cultura Digital Urbana em Osasco/SP  (1)</a>
+<a class="destaque" 
+href="http://www.vivaolinux.com.br/topico/Divulgacao-de-eventos/Chamada-de-Trabalhos-FLISOL-2010-MossoroRN/">Chamada
+ de Trabalhos FLISOL 2010 Mossoró-RN  (2)</a>
+<a class="destaque" 
+href="http://www.vivaolinux.com.br/topico/Classificados-de-empregos-Linux/Analista-de-Sistemas/">Analista
+ de Sistemas - Florianópolis...  (0)</a>
+<a class="destaque" 
+href="http://www.vivaolinux.com.br/topico/Classificados-de-empregos-Linux/Vagas-PHP-ZEND/">Vagas
+ PHP ZEND  (0)</a>
+<a class="destaque" 
+href="http://www.vivaolinux.com.br/topico/Classificados-de-empregos-Linux/Oportunidade-de-trabalho/">Oportunidade
+ de trabalho - São José dos Campos/SP  (2)</a>
+<a class="destaque" 
+href="http://www.vivaolinux.com.br/topico/Divulgacao-de-eventos/Flisol-2010-Vitoria-ES/">24/04
+ - Flisol 2010 - Vitória/ES  (5)</a>
+
+</div>
+</div>
+
+
+<div class="box">
+<span class="titulo">» Login</span>
+<div class="conteudo"><div class="padrao">
+<form name="formLogin1" action="/testarLogin.php" method="post">
+<input name="referer" 
+value="/artigo/Tipos-de-permissoes-especiais-GNU-Linux/?" type="hidden">
+
+<div class="loginBox">
+Login: <input name="formLogin" style="width: 75px;" maxlength="16" 
+class="padrao">
+</div>
+
+<div class="loginBox">
+Senha: <input style="width: 75px;" name="formSenha" maxlength="100" 
+class="padrao" type="password">
+</div>
+
+<div class="centro">
+<input name="imageField2" 
+src="Linux%20%20Tipos%20de%20permiss%C3%B5es%20especiais%20GNU_Linux%20%5BArtigo%5D_arquivos/botao_enviar.jpg"
+ alt="Linux login" border="0" width="36" height="15" type="image">
+</div>
+
+<br>
+Se você ainda não possui uma conta, <a 
+href="http://www.vivaolinux.com.br/formCadastro.php">clique aqui</a>.
+<br>
+<p align="center"><a 
+href="http://www.vivaolinux.com.br/formLembrarSenha.php">Esqueci minha 
+senha</a></p>
+</form>
+</div>
+
+</div>
+</div>
+
+<div class="box">
+<span class="titulo">» Top 10 usuários</span>
+<div id="boxtop10" class="conteudo">
+<a class="destaque" 
+href="http://www.vivaolinux.com.br/perfil/verPerfil.php?login=fabio" 
+title="Perfil do usuário">5008416: Fábio Berbert de Paula</a>
+<a class="destaque" 
+href="http://www.vivaolinux.com.br/perfil/verPerfil.php?login=cabelo" 
+title="Perfil do usuário">4151707: Alessandro de Oliveira Faria (A.K.A. 
+CABELO)</a>
+<a class="destaque" 
+href="http://www.vivaolinux.com.br/perfil/verPerfil.php?login=acvsilva" 
+title="Perfil do usuário">2056717: Antonio Carlos Vasques da Silva</a>
+<a class="destaque" 
+href="http://www.vivaolinux.com.br/perfil/verPerfil.php?login=jeffestanislau"
+ title="Perfil do usuário">1924710: Jefferson Estanislau da Silva</a>
+<a class="destaque" 
+href="http://www.vivaolinux.com.br/perfil/verPerfil.php?login=percival" 
+title="Perfil do usuário">1822162: Percival F. Jr.</a>
+<a class="destaque" 
+href="http://www.vivaolinux.com.br/perfil/verPerfil.php?login=rychardi" 
+title="Perfil do usuário">1772888: Ricardo Santiago</a>
+<a class="destaque" 
+href="http://www.vivaolinux.com.br/perfil/verPerfil.php?login=davidsonpaulo"
+ title="Perfil do usuário">1747680: Davidson Rodrigues Paulo</a>
+<a class="destaque" 
+href="http://www.vivaolinux.com.br/perfil/verPerfil.php?login=cvs" 
+title="Perfil do usuário">1410948: Thiago Alves</a>
+<a class="destaque" 
+href="http://www.vivaolinux.com.br/perfil/verPerfil.php?login=elgio" 
+title="Perfil do usuário">1406910: Elgio Schlemer</a>
+<a class="destaque" 
+href="http://www.vivaolinux.com.br/perfil/verPerfil.php?login=juliaojunior"
+ title="Perfil do usuário">1359771: Cicero Juliao da Silva Junior</a>
+</div>
+</div>
+
+<div class="textosolto" style="margin-top: 2px; margin-bottom: 2px;"><a 
+href="http://www.vivaolinux.com.br/membros/index.php?papo=on&amp;&amp;submeter=Ok"
+ title="Converse sobre Linux">[0] usuários para <br>Papo Direto</a></div>
+
+<!-- inicio box wallpaper -->
+<div class="box">
+<span class="titulo">» Wallpaper</span>
+<div class="conteudo">
+<a 
+href="http://www.vivaolinux.com.br/wallpaper/Linux-%281024x768%29-leonardofoda"
+ class="artigo"><img 
+src="Linux%20%20Tipos%20de%20permiss%C3%B5es%20especiais%20GNU_Linux%20%5BArtigo%5D_arquivos/1149940630.jpg"
+ alt="Linux: Linux" border="0" width="120" height="96"></a><br>
+<div style="margin-top: 3px;">Por <a class="destaque" 
+href="http://www.vivaolinux.com.br/perfil/verPerfil.php?login=leonardofoda">leonardofoda</a></div>
+</div>
+</div>
+<!-- fim box wallpaper -->
+
+<div>
+<!-- google 160x90 -->
+<script type="text/javascript"><!--
+google_ad_client = "pub-3535276187000580";
+/* 160x90 home links */
+google_ad_slot = "7244755630";
+google_ad_width = 160;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript" src="Linux%20%20Tipos%20de%20permiss%C3%B5es%20especiais%20GNU_Linux%20%5BArtigo%5D_arquivos/show_ads.js">
+</script><script>google_protectAndRun("ads_core.google_render_ad", google_handleError, google_render_ad);</script><ins
+ style="display: inline-table; border: medium none; height: 90px; 
+margin: 0pt; padding: 0pt; position: relative; visibility: visible; 
+width: 160px;"><ins style="display: block; border: medium none; height: 
+90px; margin: 0pt; padding: 0pt; position: relative; visibility: 
+visible; width: 160px;"><iframe allowtransparency="true" hspace="0" 
+id="google_ads_frame2" marginheight="0" marginwidth="0" 
+name="google_ads_frame" 
+src="Linux%20%20Tipos%20de%20permiss%C3%B5es%20especiais%20GNU_Linux%20%5BArtigo%5D_arquivos/ads_002.htm"
+ style="left: 0pt; position: absolute; top: 0pt;" vspace="0" width="160"
+ frameborder="0" height="90" scrolling="no"></iframe></ins></ins>
+<!-- google 160x90 -->
+</div>
+<br>
+
+<div class="box">
+<span class="titulo">» <a href="http://www.vivaolinux.com.br/perguntas/"
+ class="boxLink">Perguntas</a></span>
+<div id="boxperguntas" class="conteudo">
+<a class="destaque" 
+href="http://www.vivaolinux.com.br/topico/Debian/Duvida-no-Debian-1">Duvida
+ no Debian  (4)</a>
+<a class="destaque" 
+href="http://www.vivaolinux.com.br/topico/O-Gimp-para-mentes-criativas/Gimp-2">Gimp
+  (1)</a>
+<a class="destaque" 
+href="http://www.vivaolinux.com.br/topico/IPFW/Instalacao-IPFW">Instalação
+ IPFW [RESOLVIDO]  (3)</a>
+<a class="destaque" 
+href="http://www.vivaolinux.com.br/topico/Debian-para-iniciantes/Como-configurar-o-bluetooth-no-meu-PC">Como
+ configurar o bluetooth no meu PC  (1)</a>
+<a class="destaque" 
+href="http://www.vivaolinux.com.br/topico/Sed-Awk-ER-Manipulacao-de-Textos-Strings/Se-existir-palavra-X-no-arquivo-Y...">Se
+ existir palavra X no arquivo Y...  (0)</a>
+<a class="destaque" 
+href="http://www.vivaolinux.com.br/topico/Debian/Restrigindo-copias-de-*.mp3-para-o-servidor">Restrigindo
+ cópias de *.mp3 para o servidor [RESOLVIDO]  (2)</a>
+<a class="destaque" 
+href="http://www.vivaolinux.com.br/topico/Linux-X-Windows/TO-BOIANDO-ATE-HOJE.">TÔ
+ BOIANDO ATÉ HOJE.  (2)</a>
+<a class="destaque" 
+href="http://www.vivaolinux.com.br/topico/Squid-Iptables/Deixar-apenas-o-Google-Earth">Deixar
+ apenas o Google Earth  (7)</a>
+</div>
+</div>
+
+<div class="box">
+<span class="titulo">» .Conf</span>
+<div id="boxconf" class="conteudo">
+<a class="destaque" href="http://www.vivaolinux.com.br/etc/.conkyrc1">[Conky]
+ .conkyrc1 - Conky Ubuntu 9.10 Karmic Koala</a>
+<a class="destaque" href="http://www.vivaolinux.com.br/etc/smb.conf-17">[Samba]
+ smb.conf - Samba autenticando no Windows</a>
+<a class="destaque" href="http://www.vivaolinux.com.br/etc/conkyrc-1">[Conky]
+ conkyrc - Conky colorido e monitorando 3G</a>
+<a class="destaque" href="http://www.vivaolinux.com.br/etc/krb5.conf">[Kerberos]
+ krb5.conf - Como configurar o kerberos no Linux para autenticar no 
+Windo...</a>
+<a class="destaque" href="http://www.vivaolinux.com.br/etc/.conkyrc-11">[Conky]
+ .conkyrc - .conkyrc para monitoramento de logs</a>
+</div>
+</div>
+
+</div>
+<!-- fim do quadro da direita -->
+
+<!-- inicio do quadro central -->
+<div id="central">
+<!-- google_ad_section_start -->
+<script language="Javascript">
+function editar(codigo) {
+   top = window.open('/comentarios/formEditarComentario.php?codigo='+ codigo, 'edit', 'width=350, height=200');
+}
+
+function imagem(url,w,h) {
+   if (window.open('/imagens/artigos/comunidade/' + url, url, 'width='+w+',height='+h)) {};
+}
+</script>
+
+
+<div class="centro">
+<script type="text/javascript"><!--
+google_ad_client = "pub-3535276187000580";
+/* 468x15 artigo */
+google_ad_slot = "3038087199";
+google_ad_width = 468;
+google_ad_height = 15;
+//-->
+</script>
+<script type="text/javascript" src="Linux%20%20Tipos%20de%20permiss%C3%B5es%20especiais%20GNU_Linux%20%5BArtigo%5D_arquivos/show_ads.js">
+</script><script>google_protectAndRun("ads_core.google_render_ad", google_handleError, google_render_ad);</script><ins
+ style="display: inline-table; border: medium none; height: 15px; 
+margin: 0pt; padding: 0pt; position: relative; visibility: visible; 
+width: 468px;"><ins style="display: block; border: medium none; height: 
+15px; margin: 0pt; padding: 0pt; position: relative; visibility: 
+visible; width: 468px;"><iframe allowtransparency="true" hspace="0" 
+id="google_ads_frame3" marginheight="0" marginwidth="0" 
+name="google_ads_frame" 
+src="Linux%20%20Tipos%20de%20permiss%C3%B5es%20especiais%20GNU_Linux%20%5BArtigo%5D_arquivos/ads_003.htm"
+ style="left: 0pt; position: absolute; top: 0pt;" vspace="0" width="468"
+ frameborder="0" height="15" scrolling="no"></iframe></ins></ins>
+</div>
+
+<br>
+
+<!-- inicio -->
+<div class="boxConteudo">
+<div class="titulo"><h3 class="destaquetitulo">Artigo</h3></div>
+
+<div class="breadcrumb"><h4 class="destaquenolink"><a 
+href="http://www.vivaolinux.com.br/index.php" class="destaquemenu">Home</a>
+ » <a class="destaquemenu" 
+href="http://www.vivaolinux.com.br/artigos/index.php">Artigos</a> » <a 
+class="destaquemenu" 
+href="http://www.vivaolinux.com.br/artigos/categoriaIndex.php?codigo=1">Linux</a>
+ » <a class="destaquemenu" 
+href="http://www.vivaolinux.com.br/artigos/verSubCategoria.php?codigo=12">Introdução</a>
+ » Visualização de artigo </h4></div>
+<div><h5>Tipos de permissões especiais GNU/Linux</h5></div>
+
+<div class="conteudo">
+<!-- tabela usuario -->
+<div style="float: left; padding: 3px; text-align: center; margin-right:
+ 5px;">
+<a 
+href="http://www.vivaolinux.com.br/perfil/verPerfil.php?login=m4sk4r4" 
+title="Perfil do usuário"><img 
+src="Linux%20%20Tipos%20de%20permiss%C3%B5es%20especiais%20GNU_Linux%20%5BArtigo%5D_arquivos/gabriel2.jpg"
+ alt="Linux user" border="0" width="80" height="60"></a><br>
+<a class="destaquemenu" 
+href="http://www.vivaolinux.com.br/perfil/verPerfil.php?login=m4sk4r4" 
+title="Perfil do usuário">m4sk4r4</a> <br>
+04/12/2004 
+</div>
+<div class="padraodestaque" style="padding: 3px;">
+Saiba como funciona os tipos de permissões SUID, SGUID, STICKY. Este 
+artigo tenta de forma mais clara possível passar o conceito e 
+funcionamento dos tipos de permissões especiais do GNU/Linux.<br>
+
+<div style="margin-top: 5px;"><b>Por:</b> Gabriel Santana </div>
+<div class="direita" style="padding: 3px;">[ <b>Hits:</b> 35389 ]</div>
+
+<div style="margin-left: 100px;">
+<span style="float: left;">
+<b>Conceito: </b>9.8 &nbsp;&nbsp;<img 
+src="Linux%20%20Tipos%20de%20permiss%C3%B5es%20especiais%20GNU_Linux%20%5BArtigo%5D_arquivos/conceito.jpg"
+ alt="3 voto(s)" title="3 voto(s)" border="0" height="13"><img 
+src="Linux%20%20Tipos%20de%20permiss%C3%B5es%20especiais%20GNU_Linux%20%5BArtigo%5D_arquivos/conceito.jpg"
+ alt="3 voto(s)" title="3 voto(s)" border="0" height="13"><img 
+src="Linux%20%20Tipos%20de%20permiss%C3%B5es%20especiais%20GNU_Linux%20%5BArtigo%5D_arquivos/conceito.jpg"
+ alt="3 voto(s)" title="3 voto(s)" border="0" height="13"><img 
+src="Linux%20%20Tipos%20de%20permiss%C3%B5es%20especiais%20GNU_Linux%20%5BArtigo%5D_arquivos/conceito.jpg"
+ alt="3 voto(s)" title="3 voto(s)" border="0" height="13"><img 
+src="Linux%20%20Tipos%20de%20permiss%C3%B5es%20especiais%20GNU_Linux%20%5BArtigo%5D_arquivos/conceito.jpg"
+ alt="3 voto(s)" title="3 voto(s)" border="0" height="13"> </span>
+<span style="float: right;">
++ <a href="http://www.vivaolinux.com.br/artigos/votar.php?codigo=1812">quero
+ dar nota ao artigo</a> </span>
+</div>
+
+</div>
+</div>
+</div>
+
+<div class="padrao" style="text-align: right;">
++ <a 
+href="http://www.vivaolinux.com.br/addBookmark.php?tipo=artigo&amp;codigo=1812"
+ title="Adicionar aos favoritos">Favoritos</a>&nbsp;&nbsp;
+ <a 
+href="http://www.vivaolinux.com.br/artigos/impressora.php?codigo=1812"><img
+ 
+src="Linux%20%20Tipos%20de%20permiss%C3%B5es%20especiais%20GNU_Linux%20%5BArtigo%5D_arquivos/print_ico.gif"
+ alt="Artigo Linux tela cheia" align="absmiddle" border="0" width="20" 
+height="18"> Versão para impressora</a>&nbsp;&nbsp;
+<a 
+href="http://www.vivaolinux.com.br/formIndicar.php?tipo=artigo&amp;codigo=1812"><img
+ 
+src="Linux%20%20Tipos%20de%20permiss%C3%B5es%20especiais%20GNU_Linux%20%5BArtigo%5D_arquivos/friend.gif"
+ alt="Indicar artigo Linux" align="absmiddle" border="0" width="20" 
+height="14"> Indicar para um amigo</a>&nbsp;&nbsp;
+<a href="http://www.vivaolinux.com.br/contribuir/artigo/index.php"><img 
+src="Linux%20%20Tipos%20de%20permiss%C3%B5es%20especiais%20GNU_Linux%20%5BArtigo%5D_arquivos/escrever.png"
+ alt="Enviar artigo Linux" align="absmiddle" border="0" width="18" 
+height="18"> Enviar artigo</a>&nbsp;&nbsp;
+</div>
+
+
+<div class="dezpx padrao">
+<p></p>
+
+<!-- hotwords -->
+<h1>Introdução: SUID, SGUID, STICKY</h1>
+
+
+<div class="floatright">
+<script type="text/javascript"><!--
+google_ad_client = "pub-3535276187000580";
+/* 336x280 artigo direita verde */
+google_ad_slot = "2913193654";
+google_ad_width = 336;
+google_ad_height = 280;
+//-->
+</script>
+<script type="text/javascript" src="Linux%20%20Tipos%20de%20permiss%C3%B5es%20especiais%20GNU_Linux%20%5BArtigo%5D_arquivos/show_ads.js">
+</script><script>google_protectAndRun("ads_core.google_render_ad", google_handleError, google_render_ad);</script><ins
+ style="display: inline-table; border: medium none; height: 280px; 
+margin: 0pt; padding: 0pt; position: relative; visibility: visible; 
+width: 336px;"><ins style="display: block; border: medium none; height: 
+280px; margin: 0pt; padding: 0pt; position: relative; visibility: 
+visible; width: 336px;"><iframe allowtransparency="true" hspace="0" 
+id="google_ads_frame4" marginheight="0" marginwidth="0" 
+name="google_ads_frame" 
+src="Linux%20%20Tipos%20de%20permiss%C3%B5es%20especiais%20GNU_Linux%20%5BArtigo%5D_arquivos/ads_004.htm"
+ style="left: 0pt; position: absolute; top: 0pt;" vspace="0" width="336"
+ frameborder="0" height="280" scrolling="no"></iframe></ins></ins>
+</div>
+
+
+<div id="HOTWordsTxt" name="HOTWordsTxt"> 
+<div>
+<div>
+No <a 
+href="http://www.vivaolinux.com.br/artigos/verArtigo.php?codigo=1541">artigo
+ anterior</a> vimos como funcionam as <i>permissões</i> pelo modo octal e
+ literal. Vimos um pouco também sobre o funcionamento do <i>umask</i>.
+<br><br>
+Agora vamos estudar como funcionam os tipos de <i>permissões especiais</i>,
+ que afetam  <a href="#" onclick="hwClick3550475(undefined);return 
+false;" style="color: rgb(0, 102, 0); text-decoration: underline; 
+border-bottom: 1px dotted;" onmouseover="hw3550475(event, this, 
+'undefined'); this.style.cursor='hand'; 
+this.style.textDecoration='underline'; this.style.borderBottom='solid';"
+ onmouseout="hideMaybe('HOTWordsTitle'); this.style.cursor='hand'; 
+this.style.textDecoration='underline'; this.style.borderBottom='dotted 
+1px'; " oncontextmenu="return false;">arquivos</a> executáveis e 
+diretórios: <i>SUID</i>, <i>SGUID</i> e <i>STICKY</i>, conhecidos também
+ como permissões de sistema.
+<br><br>
+
+<h1>SUID</h1>
+<br>
+Se este bit estiver ligado em um arquivo executável, isso indica que que
+ ele vai rodar com as permissões do seu dono (o proprietário do arquivo)
+ e não com as permissões do  <a href="#" 
+onclick="hwClick1550475(undefined);return false;" style="color: rgb(0, 
+102, 0); text-decoration: underline; border-bottom: 1px dotted;" 
+onmouseover="hw1550475(event, this, 'undefined'); 
+this.style.cursor='hand'; this.style.textDecoration='underline'; 
+this.style.borderBottom='solid';" 
+onmouseout="hideMaybe('HOTWordsTitle'); this.style.cursor='hand'; 
+this.style.textDecoration='underline'; this.style.borderBottom='dotted 
+1px'; " oncontextmenu="return false;">usuário</a> que o executou.
+<br><br>
+OBS: Só tem efeito em arquivos executáveis.
+<br><br>
+
+<h1>SGUID</h1>
+<br>
+Faz o mesmo que o SUID, mas agora o arquivo executado vai rodar com as 
+permissões do grupo do arquivo. Se aplicado a um diretório, força os 
+arquivos/diretórios criados dentro dele a ter o mesmo grupo do diretório
+ pai, ao invés do grupo primário do usuário que o criou.
+<br><br>
+
+<h1>STICKY</h1>
+<br>
+Se este bit for ativado, faz com que arquivos criados em um determinado 
+diretório só possam ser apagados por quem o criou (dono) ou pelo 
+super-usuário do sistema. Um exemplo de uso do STICKY é o diretório 
+/tmp.
+<br><br>
+</div>
+
+<div class="centro">
+<b>Tabela de Valores</b>
+<br><br>
+<table class="tabCorpo" align="center" cellpadding="3" cellspacing="0">
+<tbody><tr>
+<td>SUID</td>
+<td class="centro" width="32">4</td>
+</tr>
+<tr>
+<td>SGUID</td>
+<td class="centro" width="32">2</td>
+</tr>
+<tr>
+<td>STICKY</td>
+<td class="centro" width="32">1</td>
+</tr>
+</tbody></table>
+</div>
+
+<br><br>
+</div>
+</div>
+
+
+</div>
+
+<div>
+<span class="floatleft"></span>
+<span class="floatright"><a 
+href="http://www.vivaolinux.com.br/artigo/Tipos-de-permissoes-especiais-GNU-Linux/?pagina=2">Próxima
+ página &gt;&gt;</a></span>
+</div>
+<br><br>
+
+<div class="cinza padrao"><b>Páginas do artigo</b></div>
+<div class="padrao">
+&nbsp;&nbsp;&nbsp;1. Introdução: SUID, SGUID, STICKY<br>
+&nbsp;&nbsp;&nbsp;2. <a 
+href="http://www.vivaolinux.com.br/artigo/Tipos-de-permissoes-especiais-GNU-Linux/?pagina=2">SUID</a><br>
+&nbsp;&nbsp;&nbsp;3. <a 
+href="http://www.vivaolinux.com.br/artigo/Tipos-de-permissoes-especiais-GNU-Linux/?pagina=3">SQUID</a><br>
+&nbsp;&nbsp;&nbsp;4. <a 
+href="http://www.vivaolinux.com.br/artigo/Tipos-de-permissoes-especiais-GNU-Linux/?pagina=4">STICKY</a><br>
+&nbsp;&nbsp;&nbsp;5. <a 
+href="http://www.vivaolinux.com.br/artigo/Tipos-de-permissoes-especiais-GNU-Linux/?pagina=5">Conclusão</a><br>
+
+</div>
+
+<br>
+<div class="cinza padrao"><b>Outros artigos deste autor</b></div>
+<div class="padrao">
+&nbsp;&nbsp;&nbsp;<img 
+src="Linux%20%20Tipos%20de%20permiss%C3%B5es%20especiais%20GNU_Linux%20%5BArtigo%5D_arquivos/linux-arrow.gif"
+ valign="absmiddle" alt="Artigo Linux recomendado"> <a 
+href="http://www.vivaolinux.com.br/artigo/Hotwayd-Conectandose-ao-servidor-POP3-do-Hotmail"
+ title="Leitura recomendada">Hotwayd :: Conectando-se ao servidor POP3 
+do Hotmail</a><br>
+&nbsp;&nbsp;&nbsp;<img 
+src="Linux%20%20Tipos%20de%20permiss%C3%B5es%20especiais%20GNU_Linux%20%5BArtigo%5D_arquivos/linux-arrow.gif"
+ valign="absmiddle" alt="Artigo Linux recomendado"> <a 
+href="http://www.vivaolinux.com.br/artigo/Entendendo-os-tipos-de-permissoes"
+ title="Leitura recomendada">Entendendo os tipos de permissões</a><br>
+
+</div>
+<br>
+<div class="cinza padrao"><b>Leitura recomendada</b></div>
+<div class="padrao">
+&nbsp;&nbsp;&nbsp;<img 
+src="Linux%20%20Tipos%20de%20permiss%C3%B5es%20especiais%20GNU_Linux%20%5BArtigo%5D_arquivos/linux-arrow.gif"
+ valign="absmiddle" alt="Artigo Linux recomendado"> <a 
+href="http://www.vivaolinux.com.br/artigo/Instalando-o-Gentoo-Linux-atraves-do-livecd-do-Ubuntu"
+ title="Leitura recomendada">Instalando o Gentoo Linux através do 
+live-cd do Ubuntu</a><br>
+&nbsp;&nbsp;&nbsp;<img 
+src="Linux%20%20Tipos%20de%20permiss%C3%B5es%20especiais%20GNU_Linux%20%5BArtigo%5D_arquivos/linux-arrow.gif"
+ valign="absmiddle" alt="Artigo Linux recomendado"> <a 
+href="http://www.vivaolinux.com.br/artigo/Instalando-o-Debian-Lenny-Linux"
+ title="Leitura recomendada">Instalando o Debian Lenny Linux</a><br>
+&nbsp;&nbsp;&nbsp;<img 
+src="Linux%20%20Tipos%20de%20permiss%C3%B5es%20especiais%20GNU_Linux%20%5BArtigo%5D_arquivos/linux-arrow.gif"
+ valign="absmiddle" alt="Artigo Linux recomendado"> <a 
+href="http://www.vivaolinux.com.br/artigo/AUR-Arch-Linux-UserCommunity-Repository"
+ title="Leitura recomendada">AUR - Arch Linux User-Community Repository</a><br>
+&nbsp;&nbsp;&nbsp;<img 
+src="Linux%20%20Tipos%20de%20permiss%C3%B5es%20especiais%20GNU_Linux%20%5BArtigo%5D_arquivos/linux-arrow.gif"
+ valign="absmiddle" alt="Artigo Linux recomendado"> <a 
+href="http://www.vivaolinux.com.br/artigo/Qual-o-melhor-Linux-para-eu-utilizar"
+ title="Leitura recomendada">Qual o melhor Linux para eu utilizar?</a><br>
+&nbsp;&nbsp;&nbsp;<img 
+src="Linux%20%20Tipos%20de%20permiss%C3%B5es%20especiais%20GNU_Linux%20%5BArtigo%5D_arquivos/linux-arrow.gif"
+ valign="absmiddle" alt="Artigo Linux recomendado"> <a 
+href="http://www.vivaolinux.com.br/artigo/Entendendo-a-estrutura-do-Linux"
+ title="Leitura recomendada">Entendendo a estrutura do Linux</a><br>
+
+</div>
+<br>
+
+<div class="cinza padrao"><b>Comentários</b></div>
+
+<!-- hotwords -->
+<div id="HOTWordsTxt" name="HOTWordsTxt"> 
+<div style="background-color: rgb(255, 255, 255);">
+[1] Comentário enviado por <a 
+href="http://www.vivaolinux.com.br/perfil/verPerfil.php?login=fabio">fabio</a>
+ em 04/12/2004 - 07:40h:
+<br><br>
+Fala garoto!<br>
+<br>
+Tá ficando bom nesse  <a href="#" 
+onclick="hwClick0550475(undefined);return false;" style="color: rgb(0, 
+102, 0); text-decoration: underline; border-bottom: 1px dotted;" 
+onmouseover="hw0550475(event, this, 'undefined'); 
+this.style.cursor='hand'; this.style.textDecoration='underline'; 
+this.style.borderBottom='solid';" 
+onmouseout="hideMaybe('HOTWordsTitle'); this.style.cursor='hand'; 
+this.style.textDecoration='underline'; this.style.borderBottom='dotted 
+1px'; " oncontextmenu="return false;">negócio</a> (Linux) heim!?<br>
+<br>
+Ó, não esqueci da sua camisa do Viva o Linux não, em Janeiro vou ver se 
+mando imprimir algumas pra mulecada, daí te dou um toque.<br>
+<br>
+[]'s
+<br><br>
+ 
+</div>
+<div style="background-color: rgb(238, 238, 238);">
+[2] Comentário enviado por <a 
+href="http://www.vivaolinux.com.br/perfil/verPerfil.php?login=m4sk4r4">m4sk4r4</a>
+ em 04/12/2004 - 12:26h:
+<br><br>
+Olá Fábio,<br>
+<br>
+Tou me esforcando, na verdade acho que tou apaixonado( I Love Slack). 
+Depois que conheci essa distro, o VOL, e as bibas que trabalham para 
+está comunidade, fiquei assim cego de amor.<br>
+<br>
+Não esquece da camisa não, pois tou passando um frio desgraçado aqui, 
+uhauhauha<br>
+<br>
+t+<br>
+[]'s
+<br><br>
+ 
+</div>
+<div style="background-color: rgb(255, 255, 255);">
+[3] Comentário enviado por <a 
+href="http://www.vivaolinux.com.br/perfil/verPerfil.php?login=beetle_juice">beetle_juice</a>
+ em 04/12/2004 - 12:30h:
+<br><br>
+e aí m4sc4r4 blz? Vc estah de parabéns mais uma vez e esse artigo ficou 
+muito show! Valeu tbm por ter mandando um e-mail! Um abraço beetle_juice
+<br><br>
+ 
+</div>
+<div style="background-color: rgb(238, 238, 238);">
+[4] Comentário enviado por <a 
+href="http://www.vivaolinux.com.br/perfil/verPerfil.php?login=ctrlc">ctrlc</a>
+ em 04/12/2004 - 17:45h:
+<br><br>
+parabens meu  <a href="#" onclick="hwClick2550475(undefined);return 
+false;" style="color: rgb(0, 102, 0); text-decoration: underline; 
+border-bottom: 1px dotted;" onmouseover="hw2550475(event, this, 
+'undefined'); this.style.cursor='hand'; 
+this.style.textDecoration='underline'; this.style.borderBottom='solid';"
+ onmouseout="hideMaybe('HOTWordsTitle'); this.style.cursor='hand'; 
+this.style.textDecoration='underline'; this.style.borderBottom='dotted 
+1px'; " oncontextmenu="return false;">amigo</a>,<br>
+<br>
+sempre tive certas duvidas sobre este assunto de permissoes.<br>
+<br>
+abracos
+<br><br>
+ 
+</div>
+<div style="background-color: rgb(255, 255, 255);">
+[5] Comentário enviado por <a 
+href="http://www.vivaolinux.com.br/perfil/verPerfil.php?login=y2h4ck">y2h4ck</a>
+ em 04/12/2004 - 19:17h:
+<br><br>
+Muito bom o Artigo :) achei que muita gente que chegou ao final do 
+artigo nao conhecia as permissões para STICKY.<br>
+<br>
+PS: Tks por indicar o meu artigo de Race Condition ehehe :)<br>
+<br>
+<br>
+[]s<br>
+
+<br><br>
+ 
+</div>
+<div style="background-color: rgb(238, 238, 238);">
+[6] Comentário enviado por <a 
+href="http://www.vivaolinux.com.br/perfil/verPerfil.php?login=vodooo">vodooo</a>
+ em 06/12/2004 - 08:19h:
+<br><br>
+Parabéns pelo artigo! Muito bom cara!<br>
+<br>
+Permissões de  <a href="#" onclick="hwClick3550475(undefined);return 
+false;" style="color: rgb(0, 102, 0); text-decoration: underline; 
+border-bottom: 1px dotted;" onmouseover="hw3550475(event, this, 
+'undefined'); this.style.cursor='hand'; 
+this.style.textDecoration='underline'; this.style.borderBottom='solid';"
+ onmouseout="hideMaybe('HOTWordsTitle'); this.style.cursor='hand'; 
+this.style.textDecoration='underline'; this.style.borderBottom='dotted 
+1px'; " oncontextmenu="return false;">arquivos</a> e sempre um problema 
+apra aqueles que estão migrando do Win pro Linux!<br>
+<br>
+Abraços<br>
+<br>
+
+<br><br>
+ 
+</div>
+<div style="background-color: rgb(255, 255, 255);">
+[7] Comentário enviado por <a 
+href="http://www.vivaolinux.com.br/perfil/verPerfil.php?login=belvio">belvio</a>
+ em 07/12/2004 - 01:19h:
+<br><br>
+Caro m4sk4r4 elogios nunca é demais então ai vai mais um, realmente 
+muito bom o artigo hehehe, mas acresentando algo no seu artigo sobre o 
+sticky além do que vc colocou ele ainda faz com que os programas ainda 
+permaneçam na memória mesmo depois de terminados, isto faz com que os 
+programas executem mais rápido da próxima vez que forem executados. Esta
+ informação foi retirada do livro Certificação Linux (Uirá Ribeiro) pg. 
+68.
+<br><br>
+ 
+</div>
+<div style="background-color: rgb(238, 238, 238);">
+[8] Comentário enviado por <a 
+href="http://www.vivaolinux.com.br/perfil/verPerfil.php?login=brunotorres">brunotorres</a>
+ em 08/12/2004 - 13:49h:
+<br><br>
+Sua explicação para o sticky bit ta certa, só que você esqueceu de 
+mencionar que ele age dessa maneira quando alicado a um diretório. Hoje 
+em dia não faz mais sentido usar o sticky bit em arquivos, o que ele 
+fazia era guardar uma copia do arquivo (executavel) na memoria para 
+acelerar a execução na proxima vez. Hoke o kernel faz isso 
+automaticamente. Portanto é bom saber, para o sticky bit funcionar da 
+maneira mencionada, deve ser aplicado ao diretorio e nao aos arquivos.
+<br><br>
+ 
+</div>
+<div style="background-color: rgb(255, 255, 255);">
+[9] Comentário enviado por <a 
+href="http://www.vivaolinux.com.br/perfil/verPerfil.php?login=msmadela">msmadela</a>
+ em 17/02/2005 - 11:35h:
+<br><br>
+Parabéns,<br>
+<br>
+muito bem explicado. Rápido e nítido.
+<br><br>
+ 
+</div>
+<div style="background-color: rgb(238, 238, 238);">
+[10] Comentário enviado por <a 
+href="http://www.vivaolinux.com.br/perfil/verPerfil.php?login=leogsouza">leogsouza</a>
+ em 02/11/2005 - 03:12h:
+<br><br>
+Parabéns mt bom o artigo. Me ajudou a resolver um problema na empresa
+<br><br>
+ 
+</div>
+<div style="background-color: rgb(255, 255, 255);">
+[11] Comentário enviado por <a 
+href="http://www.vivaolinux.com.br/perfil/verPerfil.php?login=monthiel">monthiel</a>
+ em 01/12/2005 - 23:27h:
+<br><br>
+muito bom parceiro, parabéns, o artigo me ajudou a resolver alguns 
+dúvidas sobre permissões...<br>
+abraços
+<br><br>
+ 
+</div>
+<div style="background-color: rgb(238, 238, 238);">
+[12] Comentário enviado por <a 
+href="http://www.vivaolinux.com.br/perfil/verPerfil.php?login=GilsonDeElt">GilsonDeElt</a>
+ em 21/01/2007 - 20:02h:
+<br><br>
+Muito bom, cara!<br>
+<br>
+Finalmente entendi a utilidade de SUID, SGUID e STICKY!<br>
+<br>
+Valeu pela ajuda!
+<br><br>
+ 
+</div>
+<div style="background-color: rgb(255, 255, 255);">
+[13] Comentário enviado por <a 
+href="http://www.vivaolinux.com.br/perfil/verPerfil.php?login=edipo.magrelo">edipo.magrelo</a>
+ em 28/01/2009 - 14:36h:
+<br><br>
+Muito bom artigo..só uma correção quanto ao subtitulo da segunda pagina.<br>
+Ao invés de SGUID você colocou SQUID.que por sinal é ótimo mais não tem<br>
+muito a ver com o artigo.<br>
+Mas quanto ao conteudo do artigo ta show de bola
+<br><br>
+ 
+</div>
+
+</div>
+
+<!-- tabela comentario -->
+<br>
+<div class="padrao tabelaCinza">
+<form action="/comentarios/enviarComentario.php" method="post">
+<input name="tabela" value="artigo" type="hidden">
+<input name="codtabela" value="1812" type="hidden">
+
+<b>Contribuir com comentário</b><br>
+
+<div class="centro">
+<div class="tresbt"><textarea name="comentario" readonly="readonly" 
+id="boxcomentario" style="width: 95%;" rows="18" class="padrao"></textarea></div>
+<input value=" Enviar " class="botao" type="submit">&nbsp;&nbsp;
+<input value=" Limpar " class="botao" type="reset">
+<br>
+<font color="#ff0000">Para executar esta ação você precisa estar logado 
+no site, caso
+contrário, tudo o que for digitado será perdido.</font>
+</div>
+</form>
+</div>
+<!-- fim tabela comentario -->
+
+</div>
+
+<!-- google_ad_section_end -->
+</div>
+<!-- fim do quadro central -->
+
+
+<!-- inicio do rodape -->
+<div id="rodape">
+	<div id="rodapeesquerda"></div>
+	<div id="rodapedireita"></div>
+	<div id="rodapecentral">
+		<div id="mapa" class="padrao">
+			Contribuir com: [ <a 
+href="http://www.vivaolinux.com.br/contribuir/artigo/index.php">Artigo</a>
+ | <a href="http://www.vivaolinux.com.br/contribuir/conf/index.php">Conf</a>
+ | <a href="http://www.vivaolinux.com.br/contribuir/dicas/index.php">Dica</a>
+ | <a 
+href="http://www.vivaolinux.com.br/comunidades/formTopico.php?codigo=353">Evento</a>
+ | <a 
+href="http://www.vivaolinux.com.br/comunidades/formTopico.php?codigo=232">Oportunidade
+ de trabalho</a> |<a 
+href="http://www.vivaolinux.com.br/contribuir/perguntas/index.php">Pergunta</a>
+ | <a href="http://www.vivaolinux.com.br/contribuir/scripts/index.php">Script</a>
+ | <a 
+href="http://www.vivaolinux.com.br/contribuir/screenshots/index.php">Screenshot</a>
+ | <a href="http://www.vivaolinux.com.br/contribuir/simulado/index.php">Simulado</a>
+ | <a 
+href="http://www.vivaolinux.com.br/contribuir/wallpapers/index.php">Wallpaper</a>
+ ] 
+		</div>
+		<div id="creditos">
+			Responsável pelo site: <a 
+href="http://www.vivaolinux.com.br/%7Efabio" class="destaque" 
+style="color: rgb(255, 255, 255) ! important; font-weight: bold;">Fábio 
+Berbert de Paula</a> - Conteúdo distribuído sob <a 
+href="http://pt.wikipedia.org/wiki/GNU_Free_Documentation_License" 
+class="destaque" style="color: rgb(255, 255, 255) ! important;">licença 
+GNU FDL</a><br>
+
+<div class="floatright" style="text-align: left; margin-top: -20px;">
+Site hospedado por: 
+<div><a href="http://www.vivaolinux.com.br/verBanner.php?codigo=247" 
+target="_blank"><img 
+src="Linux%20%20Tipos%20de%20permiss%C3%B5es%20especiais%20GNU_Linux%20%5BArtigo%5D_arquivos/hostgator.jpg"
+ border="0" width="200" height="95"></a></div>
+</div>
+
+		</div>
+
+	</div>
+</div>
+
+<div id="rodapecontainer">
+	<div id="rodapebox">
+
+	<div id="volrelease">
+	<h1>Viva o Linux</h1>
+	A maior comunidade Linux da América Latina! Artigos, dicas, tutoriais, 
+fórum, scripts e muito mais. Ideal para quem busca auto-ajuda em Linux.
+	</div>
+
+	<div id="voloptions">
+	<a href="http://www.vivaolinux.com.br/estatisticas.php">Estatísticas do
+ site</a>
+	<a href="http://www.vivaolinux.com.br/equipe/">Equipe de moderadores</a>
+	<a href="http://www.vivaolinux.com.br/faq.php">FAQ: Perguntas 
+freqüentes</a>
+	<a href="http://www.vivaolinux.com.br/membros/">Membros da comunidade</a>
+	</div>
+
+	</div>
+<br><br>
+</div>
+
+<!-- fim do rodape -->
+
+<!-- hotwords -->
+<script src="Linux%20%20Tipos%20de%20permiss%C3%B5es%20especiais%20GNU_Linux%20%5BArtigo%5D_arquivos/show.jsp"></script>
+<!-- hotwords -->
+
+<div style="z-index: 1000000; cursor: move; position: absolute; 
+visibility: hidden; display: none; width: 0pt; overflow: visible;" 
+id="HOTWordsTitle"><div id="HOTWordsTitleText"></div></div><div 
+style="z-index: 1000000; cursor: move; position: absolute; visibility: 
+hidden; display: none; width: 0pt; overflow: visible;" 
+id="HOTWordsTitleBIGIframe0"><div id="HOTWordsTitleBIGIframe0Text"></div></div><div
+ style="z-index: 1000000; cursor: move; position: absolute; visibility: 
+hidden; display: none; width: 0pt; overflow: visible;" 
+id="HOTWordsTitleBIGIframe1"><div id="HOTWordsTitleBIGIframe1Text"></div></div><div
+ style="z-index: 1000000; cursor: move; position: absolute; visibility: 
+hidden; display: none; width: 0pt; overflow: visible;" 
+id="HOTWordsTitleBIGIframe2"><div id="HOTWordsTitleBIGIframe2Text"></div></div><div
+ style="z-index: 1000000; cursor: move; position: absolute; visibility: 
+hidden; display: none; width: 0pt; overflow: visible;" 
+id="HOTWordsTitleBIGIframe3"><div id="HOTWordsTitleBIGIframe3Text"></div></div><script language="Javascript" src="Linux%20%20Tipos%20de%20permiss%C3%B5es%20especiais%20GNU_Linux%20%5BArtigo%5D_arquivos/funcoes.js"></script>
+<script language="Javascript">
+function altW(e) { if (document.body.clientWidth < 950) { e.style.width = '950px'; }}
+</script>
+<style>
+#conteudo { width: expression(altW(this)); }
+</style>
+
+</body></html>

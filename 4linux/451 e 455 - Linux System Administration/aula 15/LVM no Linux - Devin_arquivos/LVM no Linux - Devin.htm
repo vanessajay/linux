@@ -1,0 +1,1799 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+
+	<title>  LVM no Linux - Devin</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="robots" content="index,follow">
+	<meta name="generator" content="WordPress 2.9.2">
+	<link rel="stylesheet" 
+href="LVM%20no%20Linux%20-%20Devin_arquivos/style.css" type="text/css" 
+media="screen">
+	<!--[if IE 6]> 
+	<link rel="stylesheet" href="http://www.devin.com.br/wp-content/themes/devin/ie6only.css" type="text/css" media="screen"> 
+	<![endif]-->
+	<link rel="alternate" type="application/rss+xml" title="Devin RSS Feed"
+ href="http://www.devin.com.br/feed/">
+	<link rel="pingback" href="http://www.devin.com.br/xmlrpc.php">
+	<link rel="alternate" type="application/rss+xml" title="Devin » LVM no 
+Linux  Feed de comentários" href="http://www.devin.com.br/lvm/feed/">
+<link rel="stylesheet" id="wp-postratings-css" 
+href="LVM%20no%20Linux%20-%20Devin_arquivos/postratings-css.css" 
+type="text/css" media="all">
+<script type="text/javascript" src="LVM%20no%20Linux%20-%20Devin_arquivos/jquery.js"></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" 
+href="http://www.devin.com.br/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" 
+href="http://www.devin.com.br/wp-includes/wlwmanifest.xml"> 
+<link rel="index" title="Devin" href="http://www.devin.com.br/">
+<link rel="start" title="Comentários das distribuições Linux" 
+href="http://www.devin.com.br/distro_comments/">
+<link rel="prev" title="Comentários para os tutoriais" 
+href="http://www.devin.com.br/20-03-2008-comentarios-para-os-tutoriais/">
+<link rel="next" title="Novo Tutorial" 
+href="http://www.devin.com.br/12-05-2008-novo-tutorial/">
+<meta name="generator" content="WordPress 2.9.2">
+<link rel="canonical" href="http://www.devin.com.br/lvm/">
+	<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+	<link rel="stylesheet" 
+href="LVM%20no%20Linux%20-%20Devin_arquivos/branding.css" 
+type="text/css" media="screen">
+</head><body>
+
+<div id="titulo">
+	<div id="toprss">
+           <a href="http://twitter.com/eitchugo"><img 
+src="LVM%20no%20Linux%20-%20Devin_arquivos/followtwitter.gif" alt=""></a>
+           <a href="feed://http//www.devin.com.br/feed/"><img 
+src="LVM%20no%20Linux%20-%20Devin_arquivos/grabrss.gif" alt=""></a>
+        </div>
+	<a href="http://www.devin.com.br/"><img 
+src="LVM%20no%20Linux%20-%20Devin_arquivos/devin_logo.gif" alt="devin" 
+width="254" height="101"></a>
+</div> <!-- Fecha Titulo -->
+
+<div id="wrapper">
+
+<div id="nav">
+<ul>
+
+<li>
+<a href="http://www.devin.com.br/palestras"><span>Palestras</span></a>
+</li>
+
+<li>
+<a href="http://www.devin.com.br/curriculum"><span>Curriculum</span></a>
+</li>
+
+<li>
+<a href="http://www.devin.com.br/nostalgia"><span>Nostalgia</span></a>
+</li>
+
+<li>
+<a href="http://www.devin.com.br/guestbook"><span>Livro de Visitas</span></a>
+</li>
+
+<li>
+<a href="http://www.devin.com.br/sobre"><span>Sobre a Devin</span></a>
+</li>
+
+</ul>
+</div> <!-- Fecha Nav -->
+
+<div id="nav2">
+<ul>
+
+<li>
+<a href="http://www.devin.com.br/" title="Home"><span>Principal</span></a>
+</li>
+
+<li>
+<a href="http://www.devin.com.br/cat/tutoriais"><span>Tutoriais</span></a>
+</li>
+
+<li>
+<a href="http://www.devin.com.br/cat/dicas"><span>Dicas</span></a>
+</li>
+
+<li>
+<a href="http://www.devin.com.br/traducoes"><span>Traduções</span></a>
+</li>
+
+<li>
+<a href="http://www.devin.com.br/programas"><span>Programas</span></a>
+</li>
+
+<li>
+<a href="http://www.devin.com.br/tlm/"><span>The Linux Manual</span></a>
+</li>
+
+<li>
+<a href="http://www.devin.com.br/blog"><span>Blog Pessoal</span></a>
+</li>
+
+</ul>
+</div> <!-- Fecha Nav2 -->
+
+<div class="topcurvewhite">
+	<div class="topcurvewhiteleft">
+		<div class="topcurvewhiteright"></div>
+	</div>
+</div>
+
+<div id="main">
+
+<div id="allsidebars">
+
+
+
+
+<div class="sidebarsB">
+
+<div class="adsense_sidebar"><!-- Insert your adsense code for a 336x280 rectangle right under here -->
+</div>
+
+<div class="sidebar1">
+
+<ul>
+
+	<li>
+<!-- Insert your adsense code for a 160x600 banner right under here -->
+<script type="text/javascript"><!--
+google_ad_client = "pub-9615963589819332";
+google_ad_slot = "2992791666";
+google_ad_width = 160;
+google_ad_height = 600;
+//-->
+</script>
+<script type="text/javascript" src="LVM%20no%20Linux%20-%20Devin_arquivos/show_ads.js">
+</script><script src="LVM%20no%20Linux%20-%20Devin_arquivos/expansion_embed.js"></script><script src="LVM%20no%20Linux%20-%20Devin_arquivos/test_domain.js"></script><script>google_protectAndRun("ads_core.google_render_ad", google_handleError, google_render_ad);</script><ins
+ style="display: inline-table; border: medium none; height: 600px; 
+margin: 0pt; padding: 0pt; position: relative; visibility: visible; 
+width: 160px;"><ins style="display: block; border: medium none; height: 
+600px; margin: 0pt; padding: 0pt; position: relative; visibility: 
+visible; width: 160px;"><iframe allowtransparency="true" hspace="0" 
+id="google_ads_frame1" marginheight="0" marginwidth="0" 
+name="google_ads_frame" 
+src="LVM%20no%20Linux%20-%20Devin_arquivos/ads.htm" style="left: 0pt; 
+position: absolute; top: 0pt;" vspace="0" width="160" frameborder="0" 
+height="600" scrolling="no"></iframe></ins></ins>
+
+	</li>
+
+<li id="text-226434071" class="sidebaritem"><h2 class="widgettitle">Parceiros</h2>
+			<div class="textwidget"><div align="center">
+<a href="http://www.coletivodigital.org.br/"><img 
+src="LVM%20no%20Linux%20-%20Devin_arquivos/logo_coletivodigital.png" 
+alt="Coletivo Digital" border="0"></a>
+<br>
+<a href="http://br-linux.org/"><img alt="BR-Linux.org" title="Notícias e
+ informações sobre Linux e Software Livre - BR-Linux" 
+src="LVM%20no%20Linux%20-%20Devin_arquivos/br-linux-120-peng-b.png" 
+width="120" border="0" height="60"></a>
+</div></div>
+		</li><li id="meta-2" class="sidebaritem"><h2 class="widgettitle">Meta</h2>
+			<ul>
+						<li><a href="http://www.devin.com.br/wp-login.php">Login</a></li>
+			<li><a href="http://www.devin.com.br/feed/" title="Assinar este site 
+usando RSS 2.0">Posts <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="http://www.devin.com.br/comments/feed/" title="Os 
+comentários mais recentes de todos os posts em RSS"><abbr title="em 
+inglês: Really Simple Syndication">RSS</abbr> dos comentários</a></li>
+			<li><a href="http://wordpress.org/" title="Powered by WordPress, uma 
+plataforma semântica de vanguarda para publicação pessoal.">WordPress.org</a></li>
+						</ul>
+</li></ul>
+
+</div>  <!-- Closes Sidebar1 -->
+
+<div class="sidebar2">
+
+<ul>
+<li>
+<div class="cse-branding-logo">
+  <img src="LVM%20no%20Linux%20-%20Devin_arquivos/poweredby_FFFFFF.gif" 
+alt="Google">
+</div>
+<div class="cse-branding-bottom" style="background-color: rgb(255, 255, 
+255); color: rgb(0, 0, 0);">
+  <div class="cse-branding-form">
+    <form action="http://www.google.com.br/cse" id="cse-search-box">
+      <div style="font-size: 9pt;">
+        <input name="cx" 
+value="partner-pub-9615963589819332:tk5sl4u8elx" type="hidden">
+        <input name="ie" value="UTF-8" type="hidden">
+        <input name="q" size="17" type="text">
+	<br>
+	<input id="custom" name="cx" 
+value="partner-pub-9615963589819332:tk5sl4u8elx" checked="checked" 
+type="radio">
+	  <label for="custom"> devin.com.br</label>
+	<input id="www" name="cx" 
+value="!partner-pub-9615963589819332:tk5sl4u8elx" type="radio">
+	  <label for="www"> Web </label>
+	<br>
+        <input name="sa" value="Pesquisar" type="submit">
+      </div>
+    </form>
+  </div>
+</div>
+</li>
+
+		<li id="recent-comments-2" class="sidebaritem">			<h2 
+class="widgettitle">Últimos Comentários</h2>			<ul id="recentcomments"><li
+ class="recentcomments">Jsn em <a 
+href="http://www.devin.com.br/shell_script/comment-page-2/#comment-2233">Programando
+ em shell-script</a></li><li class="recentcomments">Rodolfo em <a 
+href="http://www.devin.com.br/processos/comment-page-1/#comment-2232">Processos
+ no Linux</a></li><li class="recentcomments"><a 
+href="http://www.indicedigital.com.br/" rel="external nofollow" 
+class="url">DynCoch</a> em <a 
+href="http://www.devin.com.br/post-twitter-via-linha-de-comando/comment-page-1/#comment-2231">Postando
+ no Twitter via linha de comando</a></li><li class="recentcomments"><a 
+href="http://www.indicedigital.com.br/" rel="external nofollow" 
+class="url">DynCoch</a> em <a 
+href="http://www.devin.com.br/post-twitter-via-linha-de-comando/comment-page-1/#comment-2230">Postando
+ no Twitter via linha de comando</a></li><li class="recentcomments"><a 
+href="http://www.quedialongo.blogspot.com/" rel="external nofollow" 
+class="url">Daniel Plácido</a> em <a 
+href="http://www.devin.com.br/shell_script/comment-page-2/#comment-2229">Programando
+ em shell-script</a></li></ul>
+		</li><li id="rss-226299531" class="sidebaritem"><h2 
+class="widgettitle"><a class="rsswidget" 
+href="http://br-linux.org/feed/" title="Assinar este conteúdo"><img 
+style="background: none repeat scroll 0% 0% orange; color: white; 
+border: medium none;" 
+src="LVM%20no%20Linux%20-%20Devin_arquivos/rss.png" alt="RSS" width="14"
+ height="14"></a> <a class="rsswidget" href="http://br-linux.org/" 
+title="Linux levado a sério desde 1996">BR-Linux</a></h2><ul><li><a 
+class="rsswidget" 
+href="http://br-linux.org/2010/camisetas-canecas-e-buttons-do-archlinux/"
+ title="Enviado por Marcelo Cavalcante (marceloΘmarcelocavalcante·net): 
+“É com satisfação que informamos que firmamos uma nova parceria. Agora 
+os usuários Arch do Brasil poderão adquirir produtos na loja do Arch 
+Linux na lojageek.com.br. A LojaGeek é uma loja nova e que está 
+expandindo sua linha de produtos a cada dia. Já contamos com alguns 
+produtos na loja do [... […]">Camisetas, canecas e buttons do ArchLinux</a>
+ <span class="rss-date">15 de abril de 2010</span></li><li><a 
+class="rsswidget" href="http://br-linux.org/2010/fedora-13-beta/" 
+title="Versão definitiva deve sair em meados do mês que vem. Segundo o 
+iG Tecnologia, “alguns dos destaques são a automação de tarefas como a 
+instalação de codecs para reprodução de música ou drivers de impressora,
+ feita com o software Packagekit. Desenvolvedores vão gostar o ambiente 
+de desenvolvimento Python 3, instalado em paralelo com a versão [...] 
+[…]">Fedora 13 Beta</a> <span class="rss-date">15 de abril de 2010</span></li><li><a
+ class="rsswidget" 
+href="http://br-linux.org/2010/doacao-ao-gnome-resultado-da-pesquisa/" 
+title="Enviado por Jonh Wendell (jwendellΘgnome·org): “A pesquisa da 
+semana passada teve 373 respostas. No link a seguir tem os resultados e 
+as respostas a algumas perguntas que surgiram no processo.” [referência:
+ bani.com.br] […]">Doação ao GNOME – resultado da pesquisa</a> <span 
+class="rss-date">15 de abril de 2010</span></li><li><a class="rsswidget"
+ 
+href="http://br-linux.org/2010/governo-dos-eua-admite-que-a-maioria-dos-estudos-sobre-a-pirataria-sao-bobagem/"
+ title="Sabe aqueles estudos financiados pela RIAA, BSA, MPAA e outros 
+representantes dos grandes estúdios e distribuidores de conteúdo? Eles 
+aparentemente acabam de ser desmoralizados por uma instância que talvez 
+tenham que levar a sério: um relatório do GAO, braço investigativo, 
+avaliador e auditor pertencente ao legislativo federal dos EUA. A 
+matéria do OS News é […]">Governo dos EUA conclui que a maioria dos 
+estudos sobre a pirataria são bobagem</a> <span class="rss-date">15 de 
+abril de 2010</span></li><li><a class="rsswidget" 
+href="http://br-linux.org/2010/como-o-webkit2-vai-consertar-seus-navegadores-instaveis-e-lerdos/"
+ title="Se você usa um navegador que (1) fica instável e lerdo quando 
+acessando determinados conteúdos ou aplicações e (2) é baseado no 
+WebKit, o título acima, que é da matéria do Gizmodo, foi dirigido a 
+você. Já tratamos ontem do anúncio dos desenvolvedores da Apple sobre o 
+WebKit2 (em software livre – LGPL e BSD), mas [...] […]">“Como o WebKit2
+ vai consertar seus navegadores instáveis e lerdos”</a> <span 
+class="rss-date">15 de abril de 2010</span></li><li><a class="rsswidget"
+ 
+href="http://br-linux.org/2010/promocao-cria-livre-dara-curso-gratis-de-gimp-a-um-leitor-do-br-linux/"
+ title="Agradeço ao Razgriz pela oportunidade oferecida aos nossos 
+leitores! Enviado por Guilherme Razgriz (treinamentoΘcrialivre·com·br): 
+“Participe do nosso concurso cultural respondendo a pergunta: “O que o 
+Gimp representa para você?” O autor da melhor resposta, avaliada pelo 
+Cria Livre, terá direito a uma bolsa de 100% no curso de Gimp à 
+distância com turma inic […]">Promoção Cria Livre dará curso grátis de 
+Gimp a um leitor do BR-Linux</a> <span class="rss-date">15 de abril de 
+2010</span></li><li><a class="rsswidget" 
+href="http://br-linux.org/2010/video-ilusoes-de-otica-podem-fazer-download-parecer-mais-rapido/"
+ title="Nenhuma ilusão substitui a rapidez em si, mas quando ela não 
+pode ser garantida, e estamos tratando de interfaces com o usuário, a 
+sensação de velocidade também pode ter o seu valor. Isso não é nenhuma 
+novidade, nem mesmo no âmbito do Linux – talvez alguns de vocês lembrem 
+do OpenLinux 2.2, que em 1999 combatia [...] […]">Vídeo: Ilusões de 
+ótica podem fazer download parecer mais rápido</a> <span 
+class="rss-date">14 de abril de 2010</span></li><li><a class="rsswidget"
+ href="http://br-linux.org/2010/mais-sobre-o-lancamento-do-xen-4-0/" 
+title="Enviado por Pablo Hess (phessΘlinuxmagazine·com·br): “A Citrix, 
+responsável pelo desenvolvimento do hypervisor livre Xen, anunciou hoje o
+ lançamento do Xen 4.0. Entre os novos recursos, a equipe desenvolvedora
+ do sistema destaca: - melhores desempenho e escalabilidade: 128 CPUs 
+virtuais por máquina virtual, até 1 TB de memória no anfitrião, 128 CPUs
+ reais no […]">Mais sobre o lançamento do Xen 4.0</a> <span 
+class="rss-date">14 de abril de 2010</span></li><li><a class="rsswidget"
+ href="http://br-linux.org/2010/conheca-o-forum-do-espaco-liberdade/" 
+title="Enviado por Ricardo Martiniano (ricardomartinianoΘgmail·com): 
+“Continuando nossos avanços em relação as funcionalidades do Espaço 
+Liberdade, tivemos a estréia há algumas semanas do nosso Fórum. A ideia 
+básica de ter um fórum relacionado ao blog, é ter uma área de discussão 
+sobre software livre independente de qualquer software ou distribuição, 
+onde qualquer  […]">Conheça o Fórum do Espaço Liberdade</a> <span 
+class="rss-date">14 de abril de 2010</span></li><li><a class="rsswidget"
+ 
+href="http://br-linux.org/2010/editor-de-video-nao-linear-lightworks-tera-seu-codigo-aberto/"
+ title="Enviado por Leandro R. M. de Marco (leandromarcoΘgmail·com): “A 
+empresa Edit Share anuncia que o Lightworks, seu renomado software de 
+edição de vídeo será disponibilizado como software Open Source. 
+“Utilizado por editores como Chris Gill e a muitas vezes vencedora do 
+Oscar, Thelma Schoonmaker, Lightworks oferece controles intuitivos, 
+efeitos em tempo real av […]">Editor de vídeo não-linear: Lightworks 
+terá seu código aberto</a> <span class="rss-date">14 de abril de 2010</span></li></ul></li><li
+ id="text-248629691" class="sidebaritem"><h2 class="widgettitle">Amigos</h2>
+			<div class="textwidget"><ul>
+<li><a href="http://hdoria.archlinux-br.org/">Hugo Dória</a></li>
+<li><a href="http://contosdezumbi.wordpress.com/">Contos de Zumbi</a></li>
+<li><a href="http://www.licio.eti.br/">Licio Fernando</a></li>
+<li><a href="http://almerindo.devin.com.br/">Almerindo Rehem</a></li>
+</ul></div>
+		</li>		<li id="recent-posts-3" class="sidebaritem">		<h2 
+class="widgettitle">Últimos Posts</h2>		<ul>
+				<li><a 
+href="http://www.devin.com.br/ssh-problemas-com-sessoes-ssh-inativas/" 
+title="SSH: Problemas com sessões SSH inativas?">SSH: Problemas com 
+sessões SSH inativas? </a></li>
+				<li><a href="http://www.devin.com.br/entrando-na-era-dos-originais/"
+ title="Entrando na era dos originais">Entrando na era dos originais </a></li>
+				<li><a 
+href="http://www.devin.com.br/multiplos-bancos-de-dados-no-wordpress/" 
+title="Múltiplos bancos de dados no Wordpress (RW Splitting)">Múltiplos 
+bancos de dados no Wordpress (RW Splitting) </a></li>
+				<li><a href="http://www.devin.com.br/imagemagick/" title="Tratamento
+ de Imagens com ImageMagick">Tratamento de Imagens com ImageMagick </a></li>
+				<li><a 
+href="http://www.devin.com.br/post-twitter-via-linha-de-comando/" 
+title="Postando no Twitter via linha de comando">Postando no Twitter via
+ linha de comando </a></li>
+				</ul>
+		</li></ul>
+
+</div> <!-- Closes Sidebar2 -->
+
+<div class="cleared"></div>
+</div> <!-- Closes SidebarsB -->
+
+
+</div> <!-- Closes allsidebars -->
+
+
+
+
+<div class="post">
+
+<h1 class="pageTitle">LVM no Linux</h1>
+<div class="postMeta">
+<span class="date">20 de mar de 2008</span>, em
+<span class="filed"><a 
+href="http://www.devin.com.br/cat/tutoriais/tutoriais-linux/" title="Ver
+ todos os posts em Linux" rel="category tag">Linux</a>,  <a 
+href="http://www.devin.com.br/cat/tutoriais/" title="Ver todos os posts 
+em Tutoriais" rel="category tag">Tutoriais</a></span>
+<br>
+<span class="tags">Tags: <a href="http://www.devin.com.br/tag/backup/" 
+rel="tag">backup</a>, <a href="http://www.devin.com.br/tag/linux/" 
+rel="tag">linux</a>, <a href="http://www.devin.com.br/tag/lvm/" 
+rel="tag">lvm</a>, <a href="http://www.devin.com.br/tag/particoes/" 
+rel="tag">partições</a>, <a 
+href="http://www.devin.com.br/tag/redimensionamento/" rel="tag">redimensionamento</a></span>
+<br>
+<span class="viewcount">Visualizado 11586 vezes, 1 só hoje</span>
+<br>
+<div id="post-ratings-97" class="post-ratings">Avaliação: <img 
+id="rating_97_1" 
+src="LVM%20no%20Linux%20-%20Devin_arquivos/rating_on.gif" alt="Inútil" 
+title="Inútil" onmouseover="current_rating(97, 1, 'Inútil');" 
+onmouseout="ratings_off(5, 0, 0);" onclick="rate_post();" 
+onkeypress="rate_post();" style="cursor: pointer; border: 0px none;"><img
+ id="rating_97_2" 
+src="LVM%20no%20Linux%20-%20Devin_arquivos/rating_on.gif" alt="Genérico"
+ title="Genérico" onmouseover="current_rating(97, 2, 'Genérico');" 
+onmouseout="ratings_off(5, 0, 0);" onclick="rate_post();" 
+onkeypress="rate_post();" style="cursor: pointer; border: 0px none;"><img
+ id="rating_97_3" 
+src="LVM%20no%20Linux%20-%20Devin_arquivos/rating_on.gif" alt="Bom" 
+title="Bom" onmouseover="current_rating(97, 3, 'Bom');" 
+onmouseout="ratings_off(5, 0, 0);" onclick="rate_post();" 
+onkeypress="rate_post();" style="cursor: pointer; border: 0px none;"><img
+ id="rating_97_4" 
+src="LVM%20no%20Linux%20-%20Devin_arquivos/rating_on.gif" alt="Ótimo" 
+title="Ótimo" onmouseover="current_rating(97, 4, 'Ótimo');" 
+onmouseout="ratings_off(5, 0, 0);" onclick="rate_post();" 
+onkeypress="rate_post();" style="cursor: pointer; border: 0px none;"><img
+ id="rating_97_5" 
+src="LVM%20no%20Linux%20-%20Devin_arquivos/rating_on.gif" 
+alt="MARAVILHA!" title="MARAVILHA!" onmouseover="current_rating(97, 5, 
+'MARAVILHA!');" onmouseout="ratings_off(5, 0, 0);" 
+onclick="rate_post();" onkeypress="rate_post();" style="cursor: pointer;
+ border: 0px none;"> (<strong>3</strong> votos, média: <strong>5,00</strong>
+ de 5)<br><span class="post-ratings-text" id="ratings_97_text"></span></div>
+<div id="post-ratings-97-loading" class="post-ratings-loading"><img 
+src="LVM%20no%20Linux%20-%20Devin_arquivos/loading.gif" alt="Loading 
+..." title="Loading ..." class="post-ratings-image" width="16" 
+height="16">&nbsp;Loading ...</div>
+<br>
+<span class="author">Por Hugo Cisneiros (Eitch)</span>
+</div>
+<br>
+<!-- Insert your adsense code for a 468x15 retangle links right under here -->
+<script type="text/javascript"><!--
+google_ad_client = "pub-9615963589819332";
+google_ad_slot = "5097370042";
+google_ad_width = 468;
+google_ad_height = 15;
+//-->
+</script>
+<script type="text/javascript" src="LVM%20no%20Linux%20-%20Devin_arquivos/show_ads.js">
+</script><script>google_protectAndRun("ads_core.google_render_ad", google_handleError, google_render_ad);</script><ins
+ style="display: inline-table; border: medium none; height: 15px; 
+margin: 0pt; padding: 0pt; position: relative; visibility: visible; 
+width: 468px;"><ins style="display: block; border: medium none; height: 
+15px; margin: 0pt; padding: 0pt; position: relative; visibility: 
+visible; width: 468px;"><iframe allowtransparency="true" hspace="0" 
+id="google_ads_frame2" marginheight="0" marginwidth="0" 
+name="google_ads_frame" 
+src="LVM%20no%20Linux%20-%20Devin_arquivos/ads_002.htm" style="left: 
+0pt; position: absolute; top: 0pt;" vspace="0" width="468" 
+frameborder="0" height="15" scrolling="no"></iframe></ins></ins>
+<br>
+<div class="postContent"><p>Um tutorial completo com muita coisa sobre o
+ LVM do Linux, suas funcionalidades e utilidades.</p>
+<p><span id="more-97"></span></p>
+<h2>Introdução</h2>
+<p>LVM significa Logical Volume Manager. Como o nome diz, essa 
+ferramenta é capaz de gerenciar os chamados volumes lógicos, 
+substituindo assim as tradicionais partições nos discos. Ao longo do 
+tempo, várias empresas fizeram suas implementações de LVM e o Linux não 
+ficou para trás: ele também possui uma implementação (e muito boa) de 
+LVM, que na época da escrita deste documento está na versão 2.</p>
+<p>Utilizar volumes lógicos ao invés do esquema de particionamento comum
+ traz algumas boas vantagens. Mas antes de saber destas vantagens, 
+precisamos saber o que são esses tais volumes lógicos. Um volume lógico é
+ nada mais nada menos que uma representação virtuais de pedaços de um 
+dispositivo fixo. Enquanto as partições definem estes pedaços 
+“cruamente”, o volume lógico permite flexibilidade na hora de definir 
+quem são esses pedaços. Por exemplo, um volume lógico pode ter seu 
+espaço dividido em 3 ou mais HDs, mas para o sistema operacional vai 
+parecer como se fosse apenas um dispositivo. Sendo assim começa a ficar 
+clara as vantagens, não?</p>
+<h2>Vantagens e talvez desvantagens</h2>
+<p>Vamos supor que eu tenha comprado um HD de 60GB. Quando eu instalei o
+ meu Linux, particionei ele da seguinte forma:</p>
+<table align="center" border="1">
+<thead>
+<tr align="center">
+<td>Partição</td>
+<td>Tamanho</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>/boot</td>
+<td>666MB</td>
+</tr>
+<tr>
+<td>/</td>
+<td>10GB</td>
+</tr>
+<tr>
+<td>/home</td>
+<td>49GB</td>
+</tr>
+</tbody>
+</table>
+<p>Deixei 49GB para os arquivos de meu usuário (/home). Mas suponha que 
+eu enchi esta partição com filmes pirateados. Em um cenário normal, eu 
+teria que reformatar e refazer as partições para colocar mais espaço no 
+/home, ou comprar um novo HD maior e refazer tudo, depois copiando os 
+dados. Isso não seria legal, né? Com o LVM, é possível você fazer isso 
+de forma totalmente transparente para o sistema operacional: isso quer 
+dizer que você pode redimensionar estas partições, ou pode adicionar um 
+espaço de um novo HD em um volume lógico já criado.</p>
+<p>Outra vantagem é a criação dos chamados LVM Snapshots, que falarei 
+mais à frente neste artigo. Basicamente um snapshot é uma “parada no 
+tempo” que você faz no volume lógico. Quando você o faz, o LVM faz uma 
+cópia exata do volume lógico, congelado na hora que você pediu. Com isso
+ você pode usar o volume lógico para testes, backups e outros fins, sem 
+modificar o original, que continuará trabalhando normalmente.</p>
+<p>O LVM acaba por também executar alguns conceitos de RAID. Ao você 
+indicar, por exemplo, 2 HDs para funcionar como apenas um volume lógico,
+ o LVM caso esteja trabalhando de uma certa forma, estará dividindo os 
+dados entre os HDs, aumentando a velocidade. Esse é o conceito do RAID0.</p>
+<p>Talvez duas das únicas desvantagens que poderíamos levantar sobre o 
+LVM seriam a dificuldade que as pessoas tem em se adaptar à este novo 
+modelo (sempre a resistência a mudanças) e uma forma de pensar em como 
+montar o LVM sem comprometer a segurança dos dados caso um HD falhe. Por
+ exemplo, se um volume lógico conter 3 HDs, e um deles falhar, pode ser 
+que este volume lógico fique corrompido. Para situações mais complexas 
+como esta, geralmente se usa um conjunto de técnicas de RAID e LVM.</p>
+<p>Tanto para servidores de grande porte, com muito espaço e uso de 
+disco, quanto para as nossas máquinas caseiras do dia-a-dia, o LVM é uma
+ ferramenta bastante útil. É por isso que conhecer a ferramenta é 
+importante e é por isto que estamos aqui ;)</p>
+<p>DICA: Se você quer brincar com fogo e não se queimar (leia-se: se 
+você quer ficar mexendo com LVM sem precisar estragar todos os seus 
+HDs), há um tutorial na Página do Eitch chamado Partições em Arquivos 
+que pode ser muito útil para você. Recomendo a leitura se você não 
+quiser se arriscar muito. É fácil e rápido e depois é só substituir os 
+HDs aqui pelos arquivos.</p>
+<h2>Instalando</h2>
+<p>Atualmente todas as versões mais atuais do kernel 2.6 já vêm com o 
+LVM e suas ferramentas inclusas. A maioria das distribuições de Linux 
+também incluem os pacotes necessários para o funcionamento do mesmo. Ou 
+seja, na grande maioria dos casos, seu sistema deverá estar pronto para 
+utilizar o LVM. Por este motivo não vou me extender sobre isso.</p>
+<p>Neste artigo trabalhamos apenas com o LVM2.</p>
+<p>Caso seu sistema for muito antigo e não possuir estas 
+funcionalidades, você terá que obter o código-fonte do LVM, compilá-lo 
+junto ao seu kernel e fazer todo o trabalho adicional. Basicamente você 
+precisará compilar e instalar o device-mapper e o lvm2. Acesse os 
+seguintes endereços para fazê-lo:</p>
+<ul>
+<li>LVM2 – <a href="http://sources.redhat.com/lvm2/">http://sources.redhat.com/lvm2/</a></li>
+<li>DM – <a href="http://sources.redhat.com/dm/">http://sources.redhat.com/dm/</a></li>
+</ul>
+<p>As próprias páginas têm respectivas instruções de construção.</p>
+<h2>Colocando o LVM em ação</h2>
+<p>Para começar a usar o LVM, você precisará escolher quais dispositivos
+ (partições) deseja usar com o LVM. Então o primeiro passo é preparar os
+ dispositivos físicos através do utilitário fdisk. Neste documento 
+iremos usar 3 HDs: /dev/sdb, /dev/sdc, /dev/sdd, cada um com 2GB de 
+espaço cada. Para criar as partições prontas para trabalhar com o LVM, 
+utilize o fdisk e crie partições do tipo 8e (Linux LVM). Veja o exemplo 
+abaixo da criação da primeira partição em /dev/sdb:</p>
+<pre class="code"># fdisk /dev/sdb
+
+Command (m for help): p
+
+Disk /dev/sdb: 2147 MB, 2147483648 bytes
+255 heads, 63 sectors/track, 261 cylinders
+Units = cylinders of 16065 * 512 = 8225280 bytes
+Disk identifier: 0x0cad2d95
+
+Device Boot      Start         End      Blocks   Id  System
+
+Command (m for help): n
+Command action
+e   extended
+p   primary partition (1-4)
+p
+Partition number (1-4): 1
+First cylinder (1-261, default 1): 1
+Last cylinder or +size or +sizeM or +sizeK (1-261, default 261): 261
+
+Command (m for help): t
+Selected partition 1
+Hex code (type L to list codes): 8e
+Changed system type of partition 1 to 8e (Linux LVM)
+
+Command (m for help): p
+
+Disk /dev/sdb: 2147 MB, 2147483648 bytes
+255 heads, 63 sectors/track, 261 cylinders
+Units = cylinders of 16065 * 512 = 8225280 bytes
+Disk identifier: 0x0cad2d95
+
+Device Boot      Start         End      Blocks   Id  System
+/dev/sdb1               1         261     2096451   8e  Linux LVM
+
+Command (m for help): w
+The partition table has been altered!
+
+Calling ioctl() to re-read partition table.
+Syncing disks.</pre>
+<p>No bloco acima eu executei o fdisk no HD /dev/sdb e criei uma 
+partição utilizando todos os cilindros (tamanho máximo – 2GB), e 
+configurando o tipo de partição para 8e, gerando então uma partição 
+Linux LVM. Eu repeti o mesmo processo no HD /dev/sdc, enquanto que no 
+/dev/sdd eu criei uma partição de aproximadamente 800MB.</p>
+<p>Agora que preparamos as partições para serem usadas pelo LVM, está na
+ hora de colocá-las em ação! As ferramentas do LVM podem ser usadas de 
+duas maneiras: através de um prompt geral do lvm ou através de comandos 
+na shell do sistema. Aqui neste documento estarei utilizando o prompt 
+geral, que pode ser executado através do comando:</p>
+<pre class="code"># lvm</pre>
+<p>Com este comando você cairá em um prompt “lvm&gt;”. Dentro deste 
+prompt você pode utilizar o comando help e todos os outros comandos que o
+ LVM possui.</p>
+<h3>LVM e os dispositivos físicos</h3>
+<p>Vamos começar adicionando ao LVM as três partições que criamos 
+anteriormente com o fdisk. Para adicionar dispositivos físicos no LVM, 
+utilizamos o comando pvcreate, por exemplo:</p>
+<pre class="code">lvm&gt; pvcreate /dev/sdb1 /dev/sdc1 /dev/sdd1
+Physical volume "/dev/sdb1" successfully created
+Physical volume "/dev/sdc1" successfully created
+Physical volume "/dev/sdd1" successfully created</pre>
+<p>Agora as três partições estão disponíveis para alocarmos como 
+quisermos no LVM. Caso você queira listar todos os dispositivos físicos 
+atualmente registrados no LVM, utilize os comandos pvs e/ou pvdisplay. 
+Você também pode remover um dispositivo do LVM com o comando pvremove se
+ quiser.</p>
+<p>Vamos ver como os nossos dispositivos físicos ficaram:</p>
+<pre class="code">lvm&gt; pvdisplay
+--- NEW Physical volume ---
+PV Name               /dev/sdb1
+VG Name
+PV Size               2.00 GB
+Allocatable           NO
+PE Size (KByte)       0
+Total PE              0
+Free PE               0
+Allocated PE          0
+PV UUID               X49M4Q-l9jl-u93u-17yF-kF8a-gusv-6z6267
+
+--- NEW Physical volume ---
+PV Name               /dev/sdc1
+VG Name
+PV Size               2.00 GB
+Allocatable           NO
+PE Size (KByte)       0
+Total PE              0
+Free PE               0
+Allocated PE          0
+PV UUID               Rw3RyW-emUx-OYeJ-58eo-XOG0-ctWu-obtDOE
+
+--- NEW Physical volume ---
+PV Name               /dev/sdd1
+VG Name
+PV Size               784.39 MB
+Allocatable           NO
+PE Size (KByte)       0
+Total PE              0
+Free PE               0
+Allocated PE          0
+PV UUID               WGCxed-i30s-IuJ4-sgc5-CVJo-lL13-uU9DoI</pre>
+<h3>Grupos de Volumes</h3>
+<p>Uma vez em que os dispositivos físicos já estejam preparados para 
+serem utilizados no LVM, está na hora de começar a criar grupos de 
+volumes. Um grupo de volume nada mais é que a especificação de qual 
+fatia do dispositivo físico será utilizada nos volumes lógicos.</p>
+<p>No nosso exemplo aqui, temos 3 dispositivos físicos, certo? Supomos 
+que eu queira criar dois grupos de volumes: O primeiro e o segundo 
+dispositivos físicos serão o Grupo 1 e o terceiro dispositivo será o 
+Grupo 2. Quando eu for criar os volumes lógicos no Grupo 1, os dados 
+estarão nos HDs 1 e 2, enquanto que os volumes do Grupo 2 estarão no HD 
+3. Desta forma você pode escolher e planejar quais partições vão ficar 
+em quais HDs.</p>
+<p>Indo para a prática, vamos fazer o que eu disse acima. O comando para
+ criar um grupo de volume é o vgcreate:</p>
+<pre class="code">lvm&gt; vgcreate Grupo01 /dev/sdb1 /dev/sdc1
+Volume group "Grupo01" successfully created
+lvm&gt; vgcreate Grupo02 /dev/sdd1
+Volume group "Grupo02" successfully created</pre>
+<p>Agora vamos verificar o que foi feito através do comando vgdisplay:</p>
+<pre class="code">lvm&gt; vgdisplay
+--- Volume group ---
+VG Name               Grupo02
+System ID
+Format                lvm2
+Metadata Areas        1
+Metadata Sequence No  1
+VG Access             read/write
+VG Status             resizable
+MAX LV                0
+Cur LV                0
+Open LV               0
+Max PV                0
+Cur PV                1
+Act PV                1
+VG Size               784.00 MB
+PE Size               4.00 MB
+Total PE              196
+Alloc PE / Size       0 / 0
+Free  PE / Size       196 / 784.00 MB
+VG UUID               GNHWKf-HQ65-DJzn-cU0S-2B8a-F0jm-oQOr9g
+
+--- Volume group ---
+VG Name               Grupo01
+System ID
+Format                lvm2
+Metadata Areas        2
+Metadata Sequence No  1
+VG Access             read/write
+VG Status             resizable
+MAX LV                0
+Cur LV                0
+Open LV               0
+Max PV                0
+Cur PV                2
+Act PV                2
+VG Size               3.99 GB
+PE Size               4.00 MB
+Total PE              1022
+Alloc PE / Size       0 / 0
+Free  PE / Size       1022 / 3.99 GB
+VG UUID               XK7VwK-uxVI-XSF0-vNak-S4le-jU2K-sgXXNn</pre>
+<p>Veja que acima, podemos ver que os dois grupos foram criados 
+exatamente da forma que a gente queria: O Grupo 01 tem um tamanho de 4GB
+ (ou 1022 Physical Extends), ou seja, os dois HDs de 2GB juntos. O Grupo
+ 02 tem um tamanho de 784MB (ou 196 Physical Extends), o que corresponde
+ ao terceiro HD.</p>
+<p>Mas antes de prosseguir, que tal se perguntar o que é esse tal de 
+Physical Extend (PE)? Pense no PE como um tijolo da construção de uma 
+casa. Este tijolo tem um tamanho fixo (que no nosso caso é 4MB) e para 
+construir toda a casa, são necessários uma quantidade de tijolos que 
+iguale o tamanho total da casa, que é 4GB. Para chegar nesse espaço, 
+precisa-se de 1022 tijolos, pois 1022 x 4MB = ~2GB. Em um grupo de 
+volume, o tamanho do PE é sempre igual para todos os PEs dentro do 
+grupo, então seu tamanho precisa ser um múltiplo desse tamanho.</p>
+<p>Um PE é uma parte do HD que quando alocado em um grupo de volume, 
+fica disponível para mapear em um volume lógico. Desta forma, um volume 
+lógico pode conter vários PEs de diversos dispositivos físicos 
+diferentes alocados em LEs (Logical Extends) de um único volume lógico. 
+Essa distribuição é que dá flexibilidade ao LVM e permite ele fazer as 
+técnicas de RAID. Isso poderá ficar mais claro quando começarmos a criar
+ os volumes lógicos.</p>
+<p>No comando vgdisplay mostrado acima, você pode observar três linhas 
+que contém definições do Physical Extend (PE): Total PE,Alloc PE / Size e
+ Free PE / Size. O Total PE diz quantos PEs foram alocados no total para
+ o grupo de volume: este é o total que poderá ser utilizados nos volumes
+ lógicos que você irá criar. O Alloc PE / Size é a quantidade (e 
+tamanho) de PEs que já estão alocados em volumes lógicos: como não 
+criamos nenhum ainda, nenhum está alocado no exemplo acima. Já o FreePE /
+ Size contém a quantidade (e tamanho) de PEs livres para criar volumes 
+lógicos: como não criamos nenhum ainda, todos os PEs estão livres no 
+exemplo acima.</p>
+<p>Uma última nota sobre os PEs: o tamanho padrão de um PE ao criar um 
+grupo de volume é de 4MB. Este número, caso você queira, pode ser 
+alterado em uma faixa que vai de 8K a 16GB. Na hora de criar um Grupo de
+ Volume, utilize o parâmetro -s para especificar o tamanho do PE. Por 
+exemplo: vgcreate -s 64M Grupo03 /dev/sde1 – Isso irá criar o Group03 
+com o tamanho dos PEs sendo 64MB. Quanto maior o tamanho, melhor o 
+desempenho e pior a flexibilidade do LVM (pois os tamanhos dos volumes 
+lógicos têm de ser todos múltiplos do tamanho do PE e isso pode 
+acarretar em desperdício de espaço). Neste exemplo continuaremos 
+utilizando o tamanho de 4MB.</p>
+<h3>Volumes Lógicos</h3>
+<p>Preparados os Grupos de Volume, vamos agora criar os famosos volumes 
+lógicos de que falamos tanto. Para ficar mais fácil o entendimento, 
+considere o volume lógico como o equivalente a uma partição comum, pois é
+ assim que o sistema irá ver este volume lógico: você poderá montar, 
+desmontar, formatar, entre outros.</p>
+<p>Como expliquei anteriormente, criar um volume lógico significa mapear
+ os Physical Extends em Logical Extends, distribuindo assim o acesso 
+entre os HDs do Grupo de Volume e criando um volume lógico “virtual”. 
+Neste exemplo iremos criar 3 volumes lógicos em 2 grupos de volume. No 
+Grupo01 iremos criar um volume chamado Grupo01-raiz, ao qual montaremos 
+na raiz, e outro volume chamado Grupo01-home, ao qual montaremos no 
+diretório /home. No Grupo02 iremos criar apenas um volume, chamado 
+Grupo02-log, que montará em /var/log.</p>
+<p>Para criar os volumes lógicos, o comando lvcreate é utilizado (já 
+reparou como os nomes dos comandos são intuitivos? :). Os seguintes 
+parâmetros podem (e devem ser usados) na hora de criar um volume lógico 
+simples:</p>
+<ul>
+<li><strong>-l</strong> : Especifica a quantidade de PEs que serão 
+mapeados como LEs, formando assim o tamanho do volume lógico.</li>
+<li><strong>-L</strong> : Alternativa ao parâmetro -l. Ao invés de você 
+especificar a quantidade de PEs (e por consequencia ter que calcular o 
+tamanho certo do volume), você pode especificar aqui apenas o tamanho da
+ partição e ele já fará a conta para você.</li>
+<li><strong>-n</strong> : O nome do volume lógico, que estará sempre 
+listado no LVM. Opcional, mas para efeito de organização tente sempre 
+colocar um nome intuitivo. Se você não colocar esta opção o LVM vai 
+utilizar um nome aleatório para você.</li>
+</ul>
+<p>Há outras opções úteis como a -i (striping) e -m (mirroring), mas por
+ enquanto não falaremos sobre isso se não as coisas complicam mais.</p>
+<p>Chega de conversa! Vamos criar os volumes lógicos agora mesmo:</p>
+<pre class="code">lvm&gt; lvcreate -L 1G -n Grupo01-raiz Grupo01
+Logical volume "Grupo01-raiz" created
+lvm&gt; lvcreate -L 3G -n Grupo01-home Grupo01
+Insufficient free extents (766) in volume group Grupo01: 768 required
+lvm&gt; lvcreate -l 766 -n Grupo01-home Grupo01
+Logical volume "Grupo01-home" created
+lvm&gt; lvcreate -l 196 -n Grupo02-log Grupo02
+Logical volume "Grupo02-log" created</pre>
+<p>Vejamos o que eu fiz:</p>
+<ol>
+<li>Criei um volume lógico chamado (-n) Grupo01-raiz, dentro do Grupo01 
+(obviamente), com o tamanho (-L) de 1GB;</li>
+<li>Eu tentei criei um volume lógico chamado (-n) Grupo01-home com o 
+tamanho (-L) de 3GB. O LVM converteu esses 3GB para a quantidade de PEs e
+ não deu muito certo: a conversão resultou em 768 PEs e só tinha 766 
+livres, 8MB de diferença. Esta é a desvantagem de utilizar o -L ao invés
+ do -l: você pode não encontrar muita exatidão;</li>
+<li>Corrigi o segundo substituindo o tamanho pela quantidade (-l) de 766
+ PEs. Dessa vez criou com sucesso;</li>
+<li>Por último criei um volume lógico chamado (-n) Grupo02-log com o 
+tamanho de 196 PEs (o total que o comando gdisplay havia me informado 
+anteriormente, ou seja, 784MB).</li>
+</ol>
+<p>Agora vamos usar o comando lvdisplay para obter detalhes de nossos 
+recém-criados volumes lógicos:</p>
+<pre class="code">lvm&gt; lvdisplay
+--- Logical volume ---
+LV Name                /dev/Grupo02/Grupo02-log
+VG Name                Grupo02
+LV UUID                epfsvr-h75Q-7I3L-zl6H-5GLO-2YpH-eH2rVN
+LV Write Access        read/write
+LV Status              available
+# open                 0
+LV Size                784.00 MB
+Current LE             196
+Segments               1
+Allocation             inherit
+Read ahead sectors     0
+Block device           253:4
+
+--- Logical volume ---
+LV Name                /dev/Grupo01/Grupo01-raiz
+VG Name                Grupo01
+LV UUID                2wh0eH-im2b-7lZY-UjoL-yQG1-Pz5A-I16erM
+LV Write Access        read/write
+LV Status              available
+# open                 0
+LV Size                1.00 GB
+Current LE             256
+Segments               1
+Allocation             inherit
+Read ahead sectors     0
+Block device           253:2
+
+--- Logical volume ---
+LV Name                /dev/Grupo01/Grupo01-home
+VG Name                Grupo01
+LV UUID                d1f9vO-4pkY-T29d-c0T1-M2Bd-x3BR-2ZOvOg
+LV Write Access        read/write
+LV Status              available
+# open                 0
+LV Size                2.99 GB
+Current LE             766
+Segments               2
+Allocation             inherit
+Read ahead sectors     0
+Block device           253:3</pre>
+<p>Prontinho, analizando a saída acima, dá pra ver que criamos com 
+sucesso nossos 3 volumes lógicos e agora eles estão prontos para serem 
+usados transparentemente pelo sistema. A única coisa que você precisa 
+saber agora é que, no sistema, ao invés de você utilizar os dispositivos
+ físicos (/dev/sdb1, /dev/sdc1, etc) você utilizará o que está escrito 
+no campo LV Name, ou seja, /dev/Grupo01/Grupo01-raiz, 
+/dev/Grupo01/Grupo01-home e /dev/Grupo02/Grupo02-log. Que tal uns 
+exemplos?</p>
+<h2>Utilizando os volumes lógicos no sistema</h2>
+<p>Ok, acabei de criar os volumes lógicos, o que eu posso fazer com eles
+ agora?</p>
+<p>Vamos pegar como exemplo o volume lógico /dev/Grupo02/Grupo02-log. 
+Antes de montá-lo no lugar correto, você precisa formatar esta 
+“partição”. Faça isso com o comando mkfs.ext3 (caso o sistema de 
+arquivos que você queira seja o ext3 claro):</p>
+<pre class="code"># mkfs.ext3 /dev/Grupo02/Grupo02-log</pre>
+<p>Aguarde um pouco e pronto! Agora monte o volume no diretório correto:</p>
+<pre class="code"># mount /dev/Grupo02/Grupo02-log /var/log</pre>
+<p>Se quiser também pode até adicionar uma linha no /etc/fstab para 
+montar automaticamente na inicialização!</p>
+<pre class="code">/dev/Grupo02/Grupo02-log        /var/log               ext3    defaults        1 1</pre>
+<p>E sim, você pode fazer estes e quaisquer outros comandos que aceitem 
+dispositivos de bloco (p.ex.: partições). Para você isso é transparente,
+ o LVM cuida de todo o resto.</p>
+<h2>Outras operações possíveis e úteis do LVM</h2>
+<p>Além de simplesmente criar os volumes lógicos com o LVM, você também 
+pode fazer inúmeras outras operações que são bastante úteis (e 
+essenciais). Uma delas já falamos aqui: redimensionar os volumes 
+lógicos; outras incluem mover volumes, criar snapshots, adicionar novos 
+dispositivos, entre outros. Que tal falarmos um pouco de cada?</p>
+<h3>Redimensionando volumes lógicos</h3>
+<p>Suponha que realmente o meu espaço do /home encheu de filmes 
+pirateados. Eu, com preguiça de ficar gravando CDs e DVDs, resolvi 
+comprar um novo HD e queria adicionar esse espaço novo no /home sem ter 
+que refazer todo o particionamento. Se o meu /home estiver em um esquema
+ LVM como o criado através deste documento, eu posso fazer isso sem 
+muita dor de cabeça!</p>
+<p>Instalei o novo HD e sei que ele é atualmente o /dev/sde. Agora 
+começo do começo: crio uma nova partição dentro deste HD com o fdisk, 
+coloco esta partição como tipo 8e (Linux LVM), salvo. Depois executo o 
+LVM, adiciono o /dev/sde1 ao LVM com o comando pvcreate e depois utilizo
+ o comando vgextend para adicionar esta nova partição ao meu grupo de 
+volume. Como quero aumentar o /home, os seguintes passos do LVM fazem o 
+que queremos:</p>
+<pre class="code">lvm&gt; pvcreate /dev/sde1
+Physical volume "/dev/sde1" successfully created
+lvm&gt; vgextend Grupo01 /dev/sde1
+Volume group "Grupo01" successfully extended
+
+lvm&gt; vgdisplay Grupo01
+--- Volume group ---
+VG Name               Grupo01
+System ID
+[...]
+VG Size               4.47 GB
+PE Size               4.00 MB
+Total PE              1144
+Alloc PE / Size       1022 / 3.99 GB
+Free  PE / Size       122 / 488.00 MB
+[...]</pre>
+<p>Quando eu extendi o grupo de volume Grupo01, eu adicionei o espaço 
+que tinha no /dev/sde1 e o LVM tornou disponível os PEs para serem 
+utilizados. Neste exemplo, o /dev/sde1 tem 488MB, então como você pode 
+ver depois no comando vgdisplay Grupo01, o grupo foi modificado, agora 
+há 122 novos PEs, o que corresponde a 488MB. Agora você pode utilizar 
+esses PEs como quiser nos volumes lógicos.</p>
+<p>Como queremos aumentar o /home, utilizamos o comando lvresize para 
+redimensionar o volume lógico. Vamos lá:</p>
+<pre class="code">lvm&gt; lvresize -l +122 /dev/Grupo01/Grupo01-home
+Extending logical volume Grupo01-home to 3.47 GB
+Logical volume Grupo01-home successfully resized</pre>
+<p>Simples não? No lvresize, podemos utilizar tanto o -L (por tamanho) 
+quanto o -l (por PE). O sinal de + (ou -) antes do número indica se você
+ quer aumentar ou diminuir a quantidade de PE (ou tamanho). Vamos ver 
+como ficou o nosso volume lógico com o lvdisplay:</p>
+<pre class="code">--- Logical volume ---
+LV Name                /dev/Grupo01/Grupo01-home
+VG Name                Grupo01
+LV UUID                d1f9vO-4pkY-T29d-c0T1-M2Bd-x3BR-2ZOvOg
+LV Write Access        read/write
+LV Status              available
+# open                 0
+LV Size                3.47 GB
+Current LE             888
+Segments               3
+Allocation             inherit
+Read ahead sectors     0
+Block device           253:3</pre>
+<p>Sim… Agora ele ao invés de ter 3GB, tem 3.47GB e está utilizando um 
+outro HD :)</p>
+<p>ATENÇÃO: O processo não acabou por aí. Lembre-se que todo este 
+processo feito no LVM é físico. Dentro deste dispositivo fixo há um 
+sistema de arquivos que também tem que ser tratado. Neste exemplo acima,
+ você terá que fazer o comando “ext2online /dev/Grupo01/grupo01-home” 
+antes de poder utilizar este sistema de arquivos. Lembre-se também que 
+este procedimento deve ser feito enquanto o sistema de arquivos estiver 
+desmontado. Evite corromper seu sistema de arquivos e perder todos os 
+seus dados! Lembrando também que o comando do sistema de arquivos varia,
+ no nosso caso estamos sempre utilizando o ext3.</p>
+<p>Para ajudar, lembre-se sempre destes dois passo-a-passos:</p>
+<p>Aumentando o tamanho de uma partição LVM:</p>
+<ol>
+<li>Desmonte o sistema de arquivos;</li>
+<li>Ajuste a partição no LVM, aumentando o seu tamanho com o lvresize ou
+ lvextend para o desejado;</li>
+<li>Saia do LVM e redimensione o sistema de arquivos com o comando 
+ext2online ou resize2fs;</li>
+<li>Remonte o sistema de arquivos</li>
+</ol>
+<p>Diminuindo o tamanho de uma partição LVM:</p>
+<ol>
+<li>Desmonte o sistema de arquivos;</li>
+<li>Primeiro diminua o tamanho do sistema de arquivos com o comando 
+resize2fs para o desejado;</li>
+<li>Entre no LVM e ajuste o tamanho do volume para o configurado no 
+passo anterior;</li>
+<li>Remonte o sistema de arquivos</li>
+</ol>
+<p>Lembre-se sempre de alterar a ordem! Já vi muita gente corrompendo 
+sistemas de arquivos ao diminuir os seus tamanhos de forma errada.</p>
+<h3>Migrando dispositivos fixos</h3>
+<p>Se por acaso se você acha que um de seus HDs está falhando, você pode
+ mover os PEs de um dispositivo fixo para outro através do comando 
+pvmove. Você pode utilizar essa “movimentação” para criar novos grupos 
+de volume caso você não tenha PEs livres ou nenhum HD novo. Seu 
+funcionamento é bem simples:</p>
+<pre class="code">lvm&gt; pvmove -v</pre>
+<p>No nosso exemplo, vamos supor que o HD /dev/sdc esteja falhando e 
+precisamos trocá-lo. Podemos colocar um novo HD (/dev/sdf), adicioná-lo 
+ao LVM com o pvcreate, adicioná-lo a grupo do /dev/sdc (Grupo01) e 
+migrar todos os PEs com o comando:</p>
+<pre class="code">lvm&gt; pvmove -v /dev/sdc1 /dev/sdf1</pre>
+<p>Depois basta apenas remover o /dev/sdc1 do Volume e LVM. Outra 
+maneira de fazer isso é não espeficicando o destino:</p>
+<pre class="code">lvm&gt; pvmove -v /dev/sdc1</pre>
+<p>Neste caso o LVM vai mover todos os PEs que estavam no /dev/sdc1 para
+ qualquer PE livre dentro do volume Grupo01 (lembre-se de que os PEs tem
+ de estar livres). Depois é só remover o /dev/hdc1 do LVM, substituir 
+por um HD novo e integrá-lo ao Grupo novamente.</p>
+<h3>Exportando e importando volumes entre sistemas</h3>
+<p>Caso alguma vez você precise mover todo um grupo de volume LVM para 
+outra máquina (por exemplo, se você quer trocar o home de uma máquina 
+para outra), você pode utilizar os comandos vgexport e vgimport para 
+exportar e importar esses grupos de volumes. Vamos, neste exemplo, mover
+ o Grupo02 de uma máquina para outra.</p>
+<p>Primeiro tenha certeza de que o sistema não esteja utilizando os 
+volumes. Você pode fazer isso desmontando os diretórios que pertencem ao
+ volume. No nosso caso, o diretório /var/log é utilizado pelo Grupo02, 
+então faço:</p>
+<pre class="code"># umount /var/log</pre>
+<p>(Ou umount em todos os dispositivos do grupo – 
+/dev/Grupo02/Grupo02-log)</p>
+<p>Agora que o disco não está sendo mais usado pelo sistema, basta 
+entrar no LVM, marcar o volume como inativo e exportá-lo:</p>
+<pre class="code">lvm&gt; vgchange -a n Grupo02
+Volume group "Grupo02" successfully deactivated
+lvm&gt; vgexport Grupo02
+Volume group "Grupo02" successfully exported</pre>
+<p>Em seguinda você pode desligar a máquina, tirar o HD e colocar na sua
+ outra máquina.</p>
+<p>Agora na outra máquina, com o HD já colocado e logo depois da 
+inicialização do sistema, basta entrar no LVM, pedir para fazer um 
+“scan” nos dispositivos LVM, importar e ativar:</p>
+<pre class="code">lvm&gt; pvscan
+pvscan -- reading all physical volumes (this may take a while...)
+pvscan -- inactive PV "/dev/sdb1"  is in EXPORTED VG "Grupo02" [784 MB / 784 MB free]
+pvscan -- total: 1 [784 MB] / in use: 1 [784 MB] / in no VG: 0 [0]
+
+lvm&gt; vgimport Grupo02
+Volume group "Grupo02" successfully imported
+
+lvm&gt; vgchange -a y Grupo02
+Volume group "Grupo02" successfully activated</pre>
+<p>Depois basta apenas montar e/ou configurar no /etc/fstab para 
+utilizar este novo volume no sistema.</p>
+<h2>LVM Snapshots – Uma solução de backup</h2>
+<p>Criar snapshots é uma funcionalidade bastante útil e utilizada do 
+LVM. Um “snapshot” é uma imagem do volume lógico, virtual, onde o LVM 
+pára o tempo do volume, deixando-o intacto para trabalhar enquanto o 
+volume lógico “real” continua trabalhando e sendo modificado. Em outras 
+palavras, quando se faz um LVM Snapshot, o LVM duplica o volume lógico e
+ “congela” a duplicata.</p>
+<p>Isto é útil para vários motivos:</p>
+<ul>
+<li>Você pode efetuar backup em um exato instante sem se preocupar com 
+os dados estarem mudando a cada segundo: ótimo para servidores de bancos
+ de dados que tem seus dados sendo mudados constantemente;</li>
+<li>Fazer experimentos no conteúdo do volume sem precisar se preocupar 
+em destruir algum dado;</li>
+<li>Verificar algum acontecimento no sistema de arquivos em alguma hora 
+exata: como por exemplo como estava seus arquivos quando alguém entrou 
+no servidor, ou quando falhou algum serviço;</li>
+<li>Entre outros, usando a criatividade.</li>
+</ul>
+<p>Neste documento vou ilustrar os snapshots com o seu uso mais comum: 
+backups. Aqui irei criar um snapshot da partição dos logs (Grupo02), que
+ são atualizados constantemente, para então fazer um backup em fita, em 
+outro HD, ou em CD/DVD.</p>
+<p>Antes de começar, vamos entender como um snapshot funciona. Quando 
+você pede para o LVM criar um snapshot, você vai especificar um certo 
+tamanho para este snapshot e neste caso, você precisa se certificar de 
+que existam PEs livres para este tamanho. Então supondo que criamos um 
+snapshot de 24MB do volume lógico Grupo02-log, o que significa? O LVM 
+irá criar uma duplicata do Grupo02-log, com o conteúdo exato do 
+Grupo02-log na hora da criação e sem mudanças posteriores. O espaço de 
+24MB necessários para o snapshot será utilizado para as posteriores 
+gravações. Então enquanto você analiza e faz backup da duplicata, o LVM 
+vai continuando a escrever as mudanças dos arquivos neste espaço de 
+24MB, que serve como um buffer. Se as mudanças acumularem e se tornarem 
+maiores que 24MB, o snapshot se torna inválido.</p>
+<p>Sabendo disso, antes de você planejar uma estratégia de backup com 
+LVM Snapshots, você precisa estudar a quantidade de dados e mudanças de 
+dados que a sua máquina tem. Se você acha que em um banco de dados, o 
+processo de backup demora menos que o tempo das mudanças encherem, vamos
+ dizer, 500MB, então reserve 500MB de PEs livres no Grupo de Volume para
+ criar os snapshots. Caso ache que o backup demora mais que isso, 
+aumente o tamanho do snapshot.</p>
+<p>Então com isso já sabemos que no nosso cenário atual de exemplos, é 
+impossível criar LVM snapshots. Por que? Se você der uma olhada em 
+nossos exemplos, verá que nenhum Grupo de Volume terá PEs livres, pois 
+utilizamos todas as PEs em todos os grupos. Pare remediar isso, eu 
+redimensionei (ah, como eu gosto do LVM) o volume lógico Grupo02-log 
+para 684MB ao invés de 784MB, deixando assim 100MB livres para criar um 
+snapshot. O resultado ficará assim:</p>
+<pre class="code">lvm&gt; lvdisplay /dev/Grupo02/Grupo02-log
+--- Logical volume ---
+LV Name                /dev/Grupo02/Grupo02-log
+VG Name                Grupo02
+LV UUID                epfsvr-h75Q-7I3L-zl6H-5GLO-2YpH-eH2rVN
+LV Write Access        read/write
+LV Status              available
+# open                 0
+LV Size                684.00 MB
+Current LE             171
+Segments               1
+Allocation             inherit
+Read ahead sectors     0
+Block device           253:4
+
+lvm&gt; vgdisplay Grupo02
+--- Volume group ---
+VG Name               Grupo02
+System ID
+[...]
+VG Size               784.00 MB
+PE Size               4.00 MB
+Total PE              196
+Alloc PE / Size       171 / 684.00 MB
+Free  PE / Size       25 / 100.00 MB
+[...]</pre>
+<p>Como deu parar reparar, agora o Grupo02 tem 25 PEs livres, ou seja, 
+100MB. Utilizando agora esta situação, vamos criar um snapshot do 
+Grupo02-log utilizando estes PEs livres. O próprio comando lvcreate faz 
+isso, mas agora com a opção -s:</p>
+<pre class="code">lvm&gt; lvcreate -s -L 100M -n Grupo02-log-backup /dev/Grupo02/Grupo02-log
+Logical volume "Grupo02-log-backup" created
+
+lvm&gt; lvdisplay /dev/Grupo02/Grupo02-log-backup
+--- Logical volume ---
+LV Name                /dev/Grupo02/Grupo02-log-backup
+VG Name                Grupo02
+LV UUID                VvU1ok-1tE0-33kQ-by7i-E6bj-NzuI-sAqkGw
+LV Write Access        read/write
+LV snapshot status     active destination for /dev/Grupo02/Grupo02-log
+LV Status              available
+# open                 0
+LV Size                684.00 MB
+Current LE             171
+COW-table size         100.00 MB
+COW-table LE           25
+Allocated to snapshot  0.02%
+Snapshot chunk size    8.00 KB
+Segments               1
+Allocation             inherit
+Read ahead sectors     0
+Block device           253:5</pre>
+<p>Pronto, um snapshot foi criado, agora basta apenas montá-lo como 
+qualquer outro volume e utilizar a sua rotina de backup:</p>
+<pre class="code"># mkdir /mnt/Grupo02-log-backup
+# mount /dev/Grupo02/Grupo02-log-backup /mnt/Grupo02-log-backup
+# cd /mnt/Grupo02-log-backup
+[...] rotina de backup [...]</pre>
+<p>Depois de feito a rotina de backup com o conteúdo do 
+/mnt/Grupo02-log-backup, desmonte o volume:</p>
+<pre class="code"># cd
+# umount /mnt/Grupo02-log-backup</pre>
+<p>E logo em seguida entre no LVM e remove o snapshot:</p>
+<pre class="code">lvm&gt; lvremove /dev/Grupo02/Grupo02-log-backup
+Do you really want to remove active logical volume "Grupo02-log-backup"? [y/n]: y
+Logical volume "Grupo02-log-backup" successfully removed</pre>
+<p>Pronto, backup concluído! O snapshot foi removido e os 100MB de PEs 
+livres estão disponíveis novamente.</p>
+<h2>Conclusões</h2>
+<p>Apesar do LVM não ser reconhecido por 100% das ferramentas em todos 
+os sistemas operacionais, se você utiliza apenas o Linux na máquina, é 
+extremamente recomendável utilizar o LVM por ser tão útil e flexível. 
+Uma grande gama de instaladores das distribuições atuais já vem com 
+ferramentas que preparam o sistema já com o LVM, o que é bastante útil e
+ salva um bom tempo para nós administradores: mas nunca é ruim saber 
+mais detalhes sobre os assuntos né?</p>
+<p>Bom proveito!</p>
+<h3>Gostou?</h3>
+<a href="http://www.devin.com.br/lvm/print/" title="Imprimir esta 
+página" rel="nofollow"><img class="WP-PrintIcon" 
+src="LVM%20no%20Linux%20-%20Devin_arquivos/print.gif" alt="Imprimir esta
+ página" title="Imprimir esta página" style="border: 0px none;"></a>&nbsp;<a
+ href="http://www.devin.com.br/lvm/print/" title="Imprimir esta página" 
+rel="nofollow">Imprimir esta página</a>
+<h3>Leia também:</h3>
+<ol><li><a href="http://www.devin.com.br/compart_internet_linux/" 
+rel="bookmark" title="Permanent Link: Compartilhando uma conexão com o 
+Linux">Compartilhando uma conexão com o Linux</a></li>
+<li><a href="http://www.devin.com.br/recomp_kernel/" rel="bookmark" 
+title="Permanent Link: Recompilando o kernel do Linux">Recompilando o 
+kernel do Linux</a></li>
+<li><a href="http://www.devin.com.br/dispositivos/" rel="bookmark" 
+title="Permanent Link: Dispositivos no Linux">Dispositivos no Linux</a></li>
+<li><a href="http://www.devin.com.br/processos/" rel="bookmark" 
+title="Permanent Link: Processos no Linux">Processos no Linux</a></li>
+<li><a href="http://www.devin.com.br/intro_linux/" rel="bookmark" 
+title="Permanent Link: Introdução ao Linux">Introdução ao Linux</a></li>
+</ol><br>
+</div> <!-- Closes Post -->
+</div>
+
+
+<div class="comment">
+
+<!-- You can start editing here. -->
+
+	<h3 id="comments">17 Comentários em “LVM no Linux”</h3>
+
+	<ol class="commentlist">
+
+	
+		<li class="alt" id="comment-260">
+
+<img alt="" 
+src="LVM%20no%20Linux%20-%20Devin_arquivos/866e68f1016f1b20cb6de65035fef978.png"
+ class="avatar avatar-30 photo" width="30" height="30">
+			<div class="commentbody">
+			<strong><cite>Luciano Menezes</cite></strong>
+						<br>
+
+			<small class="commentmetadata">21 de mar de 2008 em 7:06 pm </small>
+			<p>Estou utilizando o Fedora (atualmente o fc6 e fc8) e há algum 
+tempo venho tentando compreender o LVM e sua página foi sensacional. Me 
+mostrou como funciona e espero conseguir agora me movimentar melhor no 
+hds com LVM.<br>
+Parabenizo pela clareza e objetividade dos textos.</p>
+<p>Luciano Menezes</p>
+
+			</div>
+
+
+
+		</li>
+
+	
+	
+		<li id="comment-261">
+
+<img alt="" 
+src="LVM%20no%20Linux%20-%20Devin_arquivos/1464b40754c904080445c4f51946f37c.png"
+ class="avatar avatar-30 photo" width="30" height="30">
+			<div class="commentbody">
+			<strong><cite>Alessander Botti Benevides</cite></strong>
+						<br>
+
+			<small class="commentmetadata">22 de mar de 2008 em 6:35 pm </small>
+			<p>Excelente artigo!</p>
+
+			</div>
+
+
+
+		</li>
+
+	
+	
+		<li class="alt" id="comment-262">
+
+<img alt="" 
+src="LVM%20no%20Linux%20-%20Devin_arquivos/fae7717d24e281a5f744b0142fb85c8a.png"
+ class="avatar avatar-30 photo" width="30" height="30">
+			<div class="commentbody">
+			<strong><cite>Alexandro Silva</cite></strong>
+						<br>
+
+			<small class="commentmetadata">23 de mar de 2008 em 10:42 am </small>
+			<p>Pira Pira Pirou em Salvador!!!</p>
+<p>Saiu do limbo misera!!!!</p>
+<p>Parabéns pelo excelente artigo!<br>
+Para mim esse é o melhor artigo sobre este assunto.<br>
+Tô linkando em meu blog.</p>
+<p>Salve Salve!</p>
+<p>Forte abraço</p>
+<p>Alex<br>
+<a href="http://penguim.wordpress.com/" rel="nofollow">http://penguim.wordpress.com</a></p>
+
+			</div>
+
+
+
+		</li>
+
+	
+	
+		<li id="comment-263">
+
+<img alt="" 
+src="LVM%20no%20Linux%20-%20Devin_arquivos/de9a7bfa8cfb9f580a81c797bbfa9656.png"
+ class="avatar avatar-30 photo" width="30" height="30">
+			<div class="commentbody">
+			<strong><cite>Adriano Medeiro</cite></strong>
+						<br>
+
+			<small class="commentmetadata">27 de mar de 2008 em 12:58 am </small>
+			<p>Vamos la,<br>
+Devia escrever um livro, hehe </p>
+<p>Tenho uma lan-house e vou implementala toda em linux agora, com 
+windows tinha uma ferramenta chamada shared tolkit que protegia a 
+partição das alterações efetuadas, e quando do reinicio da maquina a 
+menos que manda-se gravar ele retomava a particção limpa. sera que 
+utilizando o LVM consigo fazer isso<br>
+Inté<br>
+Adriano Medeiro</p>
+
+			</div>
+
+
+
+		</li>
+
+	
+	
+		<li class="alt" id="comment-264">
+
+<img alt="" 
+src="LVM%20no%20Linux%20-%20Devin_arquivos/146eecc236278fd5c4d89ce267fee070.png"
+ class="avatar avatar-30 photo" width="30" height="30">
+			<div class="commentbody">
+			<strong><cite>Eitch</cite></strong>
+						<br>
+
+			<small class="commentmetadata">27 de mar de 2008 em 3:26 pm </small>
+			<p>@Adriano Medeiro<br>
+Esse seria o caso inverso do LVM snapshot, e por enquanto eu desconheço 
+um método LVM para fazer isso perfeitamente… Se eu souber de algo aviso 
+aqui. Ou se alguém souber, pode deixar um comentário também :)</p>
+
+			</div>
+
+
+
+		</li>
+
+	
+	
+		<li id="comment-265">
+
+<img alt="" 
+src="LVM%20no%20Linux%20-%20Devin_arquivos/70123449eba056e6e5b3b4c8b7e785c4.png"
+ class="avatar avatar-30 photo" width="30" height="30">
+			<div class="commentbody">
+			<strong><cite>Rodrigo Menezes</cite></strong>
+						<br>
+
+			<small class="commentmetadata">27 de mar de 2008 em 10:01 pm </small>
+			<p>Rapaz, olha quem saiu do armário e apareceu por aqui, dae Hugo, 
+estamos sentindo sua falta no Projeto Fedora.</p>
+<p>Abraço, e veja se deixa o WoW de lado um pouco.</p>
+<p>Rodrigo</p>
+
+			</div>
+
+
+
+		</li>
+
+	
+	
+		<li class="alt" id="comment-271">
+
+<img alt="" 
+src="LVM%20no%20Linux%20-%20Devin_arquivos/29e3897bac5bec49135430ba2b4ba469.png"
+ class="avatar avatar-30 photo" width="30" height="30">
+			<div class="commentbody">
+			<strong><cite>Gustavo Carvalho</cite></strong>
+						<br>
+
+			<small class="commentmetadata">07 de abr de 2008 em 10:35 am </small>
+			<p>Olha só, achei beleza, e completamente esclarecedor. Porém estou 
+com um probleminha, e logicamente não tenho a experiência necessária 
+para corrigir. Gostaria da sua ajuda:<br>
+Tenho uma maquina com lvm criada na instalação do ubuntu cd alternate.<br>
+Então em tenho um /etc/ubuntu/root com os dados, e não consigo desmontar
+ a unidade para fazer o resize acontecer de fato o que devo fazer?</p>
+
+			</div>
+
+
+
+		</li>
+
+	
+	
+		<li id="comment-336">
+
+<img alt="" 
+src="LVM%20no%20Linux%20-%20Devin_arquivos/ac22a0c88ef8df7b70db5f8a50a8aefa.jpeg"
+ class="avatar avatar-30 photo" width="30" height="30">
+			<div class="commentbody">
+			<strong><cite>Lucas Timm</cite></strong>
+						<br>
+
+			<small class="commentmetadata">29 de mai de 2008 em 11:17 am </small>
+			<p>Olá Hugo, achei interessante o seu tutorial. Porém, gostaria de 
+saber como eu faria para montar essas partições para uma possível 
+restauração de sistema, por exemplo: Caso eu tenha que utilizar um 
+LiveCD para efetuar os backups, como eu faria para monta-las? Não 
+encontrei nada a respeito disso. Obrigado, e tt.,<br>
+Lucas Timm.</p>
+
+			</div>
+
+
+
+		</li>
+
+	
+	
+		<li class="alt" id="comment-373">
+
+<img alt="" 
+src="LVM%20no%20Linux%20-%20Devin_arquivos/6b8fee49a543afed7d381124e38e663a.png"
+ class="avatar avatar-30 photo" width="30" height="30">
+			<div class="commentbody">
+			<strong><cite>Stefan</cite></strong>
+						<br>
+
+			<small class="commentmetadata">29 de ago de 2008 em 4:52 pm </small>
+			<p>Antes de mais nada, parabéns pelo excelente tutorial; você não 
+somente mostra dominar o assunto, como possui uma rara e singular 
+capacidade de redação didática. Mais uma vez, parabéns!<br>
+Gostaria se possível que você esclarecesse as seguintes dúvidas:<br>
+1) No caso de uma partição ext3 que já contenha dados (p.ex. /home), é 
+possível converter a mesma em uma partição do tipo lvm através do fdisk,
+ transformando-a posteriormente em um PV, e criando a partir da mesma um
+ VG com outros PVs vazios, sem a perda dos dados existentes? O intuito 
+neste caso seria aumentar o espaço livre da partição original (ext3), 
+preservando seus dados;<br>
+2) É possível criar um sistema de arquivos ext3 em uma partição tipo lvm
+ diretamente, antes de criar PVs, VGs e LVs, e utilizá-la posteriormente
+ no lvm sem perda dos dados existentes? O intuito neste caso seria por 
+exemplo criar a partição como lvm já na instalação do sistema 
+operacional, possibilitando aumento futuro da mesma através do lvm.<br>
+Em resumo, trata-se de saber se partições formatadas como ext3 e que já 
+contenham dados podem ser “aumentadas” através do lvm.<br>
+Será que consegui ser claro? Caso negativo, queira desculpar-me por 
+tomar seu precioso tempo inutilmente.<br>
+Muito grato pela atenção!<br>
+Stefan</p>
+
+			</div>
+
+
+
+		</li>
+
+	
+	
+		<li id="comment-390">
+
+<img alt="" 
+src="LVM%20no%20Linux%20-%20Devin_arquivos/146eecc236278fd5c4d89ce267fee070.png"
+ class="avatar avatar-30 photo" width="30" height="30">
+			<div class="commentbody">
+			<strong><cite>Alisson Rezende</cite></strong>
+						<br>
+
+			<small class="commentmetadata">16 de set de 2008 em 2:47 pm </small>
+			<p>Parabéns!!! Excelente artigo sobre um tema muito confuso para 
+iniciantes!!!</p>
+
+			</div>
+
+
+
+		</li>
+
+	
+	
+		<li class="alt" id="comment-893">
+
+<img alt="" 
+src="LVM%20no%20Linux%20-%20Devin_arquivos/761fc2b6ae2f59c6f5e2a2e159572800.png"
+ class="avatar avatar-30 photo" width="30" height="30">
+			<div class="commentbody">
+			<strong><cite>dirceu barquette</cite></strong>
+						<br>
+
+			<small class="commentmetadata">24 de set de 2008 em 9:22 am </small>
+			<p>Parabéns. Excelente artigo!</p>
+<p>Uma dúvida. Caso um HD já possua, por exemplo, 3 partições LVM com 
+dados e queiramos migrar esse HD para outra máquina. Partindo do 
+princípio que não sabemos como foram gravados esses dados, como podemos 
+recriar esse LVM?</p>
+<p>Dirceu</p>
+
+			</div>
+
+
+
+		</li>
+
+	
+	
+		<li id="comment-1355">
+
+<img alt="" 
+src="LVM%20no%20Linux%20-%20Devin_arquivos/b44a7e97da5998ca187e4bed69ecd67d.png"
+ class="avatar avatar-30 photo" width="30" height="30">
+			<div class="commentbody">
+			<strong><cite><a href="http://clebeer.multiply.com/" rel="external 
+nofollow" class="url">CleBeer</a></cite></strong>
+						<br>
+
+			<small class="commentmetadata">15 de out de 2008 em 2:21 pm </small>
+			<p>excelente artigo….<br>
+mandou muito bem…..</p>
+
+			</div>
+
+
+
+		</li>
+
+	
+	
+		<li class="alt" id="comment-1509">
+
+<img alt="" 
+src="LVM%20no%20Linux%20-%20Devin_arquivos/5e567cf2ee28800b8bfce8b0b3aabfad.png"
+ class="avatar avatar-30 photo" width="30" height="30">
+			<div class="commentbody">
+			<strong><cite>Anderson</cite></strong>
+						<br>
+
+			<small class="commentmetadata">06 de nov de 2008 em 10:09 pm </small>
+			<p>Novamente excelente artigo !</p>
+<p>Você está de parabéns</p>
+
+			</div>
+
+
+
+		</li>
+
+	
+	
+		<li id="comment-1845">
+
+<img alt="" 
+src="LVM%20no%20Linux%20-%20Devin_arquivos/7554e91aaa1572e3d1e870aea474c794.png"
+ class="avatar avatar-30 photo" width="30" height="30">
+			<div class="commentbody">
+			<strong><cite>Celso</cite></strong>
+						<br>
+
+			<small class="commentmetadata">29 de mai de 2009 em 8:14 am </small>
+			<p>Adicionei um novo HD, mas nao criei a particao, so apaquei a 
+particao antiga. tenho que retirar o HD criar a aprticao e depois 
+reinstlar na LV ?</p>
+
+			</div>
+
+
+
+		</li>
+
+	
+	
+		<li class="alt" id="comment-2086">
+
+<img alt="" 
+src="LVM%20no%20Linux%20-%20Devin_arquivos/8778273699ac9ede092318f6cd4d6909.png"
+ class="avatar avatar-30 photo" width="30" height="30">
+			<div class="commentbody">
+			<strong><cite>Marcelo</cite></strong>
+						<br>
+
+			<small class="commentmetadata">20 de nov de 2009 em 8:35 pm </small>
+			<p>Parabéns Devin, muito bom artigo, assim como todos os outros. Acho
+ todo bom administrador deve implementar lvm logo na instalação do 
+servidor.</p>
+<p>Sucesso!!!</p>
+
+			</div>
+
+
+
+		</li>
+
+	
+	
+		<li id="comment-2087">
+
+<img alt="" 
+src="LVM%20no%20Linux%20-%20Devin_arquivos/420a1cb67c5ed9ab87c6ecee0577e0d2.png"
+ class="avatar avatar-30 photo" width="30" height="30">
+			<div class="commentbody">
+			<strong><cite>Ricardo</cite></strong>
+						<br>
+
+			<small class="commentmetadata">22 de nov de 2009 em 2:28 pm </small>
+			<p>Parabens !</p>
+<p>estou estudando para LPI nivel 2 e foi uma super aula :-)</p>
+
+			</div>
+
+
+
+		</li>
+
+	
+	
+		<li class="alt" id="comment-2157">
+
+<img alt="" 
+src="LVM%20no%20Linux%20-%20Devin_arquivos/c3642ce0dd780508071145a6d9be96ea.png"
+ class="avatar avatar-30 photo" width="30" height="30">
+			<div class="commentbody">
+			<strong><cite>Ruy</cite></strong>
+						<br>
+
+			<small class="commentmetadata">05 de fev de 2010 em 4:42 am </small>
+			<p>Muito bom esse tutorial!<br>
+Valeu pela iniciativa.</p>
+
+			</div>
+
+
+
+		</li>
+
+	
+	
+	</ol>
+
+ 
+
+
+<h3 id="respond">Deixe uma Resposta</h3>
+
+
+<form action="http://www.devin.com.br/wp-comments-post.php" 
+method="post" id="commentform">
+
+
+<p><input name="author" id="author" size="22" tabindex="1" type="text">
+<label for="author"><small>Nome (required)</small></label></p>
+
+<p><input name="email" id="email" size="22" tabindex="2" type="text">
+<label for="email"><small>E-Mail (não será publicado) (required)</small></label></p>
+
+<p><input name="url" id="url" size="22" tabindex="3" type="text">
+<label for="url"><small>Website</small></label></p>
+
+
+<p><small><strong>XHTML:</strong> Você pode utilizar estas tags: <code>&lt;a
+ href="" title=""&gt; &lt;abbr title=""&gt; &lt;acronym title=""&gt; 
+&lt;b&gt; &lt;blockquote cite=""&gt; &lt;cite&gt; &lt;code&gt; &lt;del 
+datetime=""&gt; &lt;em&gt; &lt;i&gt; &lt;q cite=""&gt; &lt;strike&gt; 
+&lt;strong&gt; </code></small></p>
+
+<p><textarea name="comment" id="comment" cols="100%" rows="10" 
+tabindex="4"></textarea></p>
+
+<p><input name="submit" id="submit" tabindex="5" value="" type="submit">
+<input name="comment_post_ID" value="97" type="hidden">
+</p>
+
+</form>
+
+
+</div> <!-- Closes Comments -->
+
+
+
+<div class="cleared"></div>
+
+</div> <!-- Fecha Main -->
+
+<div class="bottomcurvewhite">
+	<div class="bottomcurvewhiteleft">
+		<div class="bottomcurvewhiteright">
+			<div class="bottomcurvewhitemiddle"></div>
+		</div>
+	</div>
+</div>
+
+
+<div class="topcurve">
+	<div class="topcurveleft">
+		<div class="topcurveright">
+			<div class="topcurvemiddle"></div>
+		</div>
+	</div>
+</div>
+
+<div id="footer">
+<p>&nbsp;</p><div><a href="http://www.devin.com.br/tag/administracao/" 
+class="tag-link-99" title="3 tópicos" style="font-size: 9.35484pt;">administração</a>
+<a href="http://www.devin.com.br/tag/apache/" class="tag-link-51" 
+title="7 tópicos" style="font-size: 12.7419pt;">apache</a>
+<a href="http://www.devin.com.br/tag/apt/" class="tag-link-23" title="2 
+tópicos" style="font-size: 8pt;">apt</a>
+<a href="http://www.devin.com.br/tag/arquivos/" class="tag-link-13" 
+title="2 tópicos" style="font-size: 8pt;">arquivos</a>
+<a href="http://www.devin.com.br/tag/backup/" class="tag-link-28" 
+title="3 tópicos" style="font-size: 9.35484pt;">backup</a>
+<a href="http://www.devin.com.br/tag/banco-de-dados/" 
+class="tag-link-224" title="3 tópicos" style="font-size: 9.35484pt;">banco
+ de dados</a>
+<a href="http://www.devin.com.br/tag/bash/" class="tag-link-152" 
+title="4 tópicos" style="font-size: 10.4839pt;">bash</a>
+<a href="http://www.devin.com.br/tag/certification/" 
+class="tag-link-117" title="3 tópicos" style="font-size: 9.35484pt;">certification</a>
+<a href="http://www.devin.com.br/tag/comandos/" class="tag-link-12" 
+title="13 tópicos" style="font-size: 15.5645pt;">comandos</a>
+<a href="http://www.devin.com.br/tag/configuracao/" class="tag-link-54" 
+title="3 tópicos" style="font-size: 9.35484pt;">configuração</a>
+<a href="http://www.devin.com.br/tag/css/" class="tag-link-209" title="3
+ tópicos" style="font-size: 9.35484pt;">css</a>
+<a href="http://www.devin.com.br/tag/distribuicoes/" class="tag-link-10"
+ title="3 tópicos" style="font-size: 9.35484pt;">distribuições</a>
+<a href="http://www.devin.com.br/tag/dos/" class="tag-link-84" title="2 
+tópicos" style="font-size: 8pt;">dos</a>
+<a href="http://www.devin.com.br/tag/e-mail/" class="tag-link-75" 
+title="3 tópicos" style="font-size: 9.35484pt;">e-mail</a>
+<a href="http://www.devin.com.br/tag/eclipse/" class="tag-link-121" 
+title="2 tópicos" style="font-size: 8pt;">eclipse</a>
+<a href="http://www.devin.com.br/tag/exam/" class="tag-link-123" 
+title="3 tópicos" style="font-size: 9.35484pt;">exam</a>
+<a href="http://www.devin.com.br/tag/htaccess/" class="tag-link-53" 
+title="2 tópicos" style="font-size: 8pt;">htaccess</a>
+<a href="http://www.devin.com.br/tag/html/" class="tag-link-208" 
+title="3 tópicos" style="font-size: 9.35484pt;">html</a>
+<a href="http://www.devin.com.br/tag/internet/" class="tag-link-32" 
+title="5 tópicos" style="font-size: 11.3871pt;">internet</a>
+<a href="http://www.devin.com.br/tag/iptables/" class="tag-link-34" 
+title="2 tópicos" style="font-size: 8pt;">iptables</a>
+<a href="http://www.devin.com.br/tag/kernel/" class="tag-link-55" 
+title="3 tópicos" style="font-size: 9.35484pt;">kernel</a>
+<a href="http://www.devin.com.br/tag/linha-de-comando/" 
+class="tag-link-67" title="4 tópicos" style="font-size: 10.4839pt;">linha
+ de comando</a>
+<a href="http://www.devin.com.br/tag/linux/" class="tag-link-11" 
+title="51 tópicos" style="font-size: 22pt;">linux</a>
+<a href="http://www.devin.com.br/tag/lpi/" class="tag-link-127" title="3
+ tópicos" style="font-size: 9.35484pt;">lpi</a>
+<a href="http://www.devin.com.br/tag/marketing/" class="tag-link-130" 
+title="2 tópicos" style="font-size: 8pt;">marketing</a>
+<a href="http://www.devin.com.br/tag/mod_rewrite/" class="tag-link-175" 
+title="3 tópicos" style="font-size: 9.35484pt;">mod_rewrite</a>
+<a href="http://www.devin.com.br/tag/mysql/" class="tag-link-172" 
+title="3 tópicos" style="font-size: 9.35484pt;">mysql</a>
+<a href="http://www.devin.com.br/tag/pacotes/" class="tag-link-15" 
+title="2 tópicos" style="font-size: 8pt;">pacotes</a>
+<a href="http://www.devin.com.br/tag/particoes/" class="tag-link-62" 
+title="2 tópicos" style="font-size: 8pt;">partições</a>
+<a href="http://www.devin.com.br/tag/php/" class="tag-link-171" title="8
+ tópicos" style="font-size: 13.3065pt;">php</a>
+<a href="http://www.devin.com.br/tag/programacao/" class="tag-link-173" 
+title="3 tópicos" style="font-size: 9.35484pt;">programação</a>
+<a href="http://www.devin.com.br/tag/relatorios/" class="tag-link-88" 
+title="2 tópicos" style="font-size: 8pt;">relatórios</a>
+<a href="http://www.devin.com.br/tag/rpm/" class="tag-link-25" title="3 
+tópicos" style="font-size: 9.35484pt;">rpm</a>
+<a href="http://www.devin.com.br/tag/servidores/" class="tag-link-159" 
+title="3 tópicos" style="font-size: 9.35484pt;">servidores</a>
+<a href="http://www.devin.com.br/tag/shell/" class="tag-link-150" 
+title="4 tópicos" style="font-size: 10.4839pt;">shell</a>
+<a href="http://www.devin.com.br/tag/shell-script/" class="tag-link-151"
+ title="4 tópicos" style="font-size: 10.4839pt;">shell-script</a>
+<a href="http://www.devin.com.br/tag/sistema-de-arquivos/" 
+class="tag-link-90" title="2 tópicos" style="font-size: 8pt;">sistema de
+ arquivos</a>
+<a href="http://www.devin.com.br/tag/ssh/" class="tag-link-48" title="3 
+tópicos" style="font-size: 9.35484pt;">ssh</a>
+<a href="http://www.devin.com.br/tag/texto/" class="tag-link-191" 
+title="3 tópicos" style="font-size: 9.35484pt;">texto</a>
+<a href="http://www.devin.com.br/tag/usuarios/" class="tag-link-64" 
+title="2 tópicos" style="font-size: 8pt;">usuários</a>
+<a href="http://www.devin.com.br/tag/vida/" class="tag-link-139" 
+title="3 tópicos" style="font-size: 9.35484pt;">vida</a>
+<a href="http://www.devin.com.br/tag/web/" class="tag-link-52" title="5 
+tópicos" style="font-size: 11.3871pt;">web</a>
+<a href="http://www.devin.com.br/tag/windows/" class="tag-link-46" 
+title="4 tópicos" style="font-size: 10.4839pt;">windows</a>
+<a href="http://www.devin.com.br/tag/x11/" class="tag-link-49" title="2 
+tópicos" style="font-size: 8pt;">x11</a>
+<a href="http://www.devin.com.br/tag/yahoo/" class="tag-link-140" 
+title="2 tópicos" style="font-size: 8pt;">yahoo</a></div>
+<br>
+<div id="credits">
+<p>Devin - Tema modificado do <a 
+href="http://www.dailyblogtips.com/wordpress-themes/">StudioPress Theme</a></p>
+<p><a href="feed://http//www.devin.com.br/feed/">RSS Completo</a> - <a 
+href="feed://http//www.devin.com.br/comments/feed/">RSS dos Comentários</a></p>
+</div>
+
+<script type="text/javascript">
+/* <![CDATA[ */
+var ratingsL10n = {
+	plugin_url: "http://www.devin.com.br/wp-content/plugins/wp-postratings",
+	ajax_url: "http://www.devin.com.br/wp-content/plugins/wp-postratings/wp-postratings.php",
+	text_wait: "Please rate only 1 post at a time.",
+	image: "stars",
+	image_ext: "gif",
+	max: "5",
+	show_loading: "1",
+	show_fading: "1",
+	custom: "0"
+};
+var ratings_mouseover_image=new Image();ratings_mouseover_image.src=ratingsL10n.plugin_url+"/images/"+ratingsL10n.image+"/rating_over."+ratingsL10n.image_ext;
+/* ]]> */
+</script>
+<script type="text/javascript" src="LVM%20no%20Linux%20-%20Devin_arquivos/postratings-js.js"></script>
+
+<div class="cleared"></div>
+</div> <!-- Closes Footer -->
+
+</div> <!-- Closes Wrapper -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script src="LVM%20no%20Linux%20-%20Devin_arquivos/ga.js" type="text/javascript"></script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-5647977-1");
+pageTracker._trackPageview();
+</script>
+</body></html>

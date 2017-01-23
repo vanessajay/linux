@@ -1,0 +1,85 @@
+/* **************************************** */
+/*                                          */
+/*         InfoWester - Impressão           */
+/*                                          */
+/* **************************************** */
+
+<!--
+
+	body			{background: #FFF; color: #000; font-size: 12pt; font-family: Times New Roman, Times, serif;}
+
+	a:link, a:visited,
+	a:hover, a:active	{text-decoration: underline; color: #444;}
+
+	h1			{margin: 0 0 0.5cm; font-size: 18pt; font-weight: bold;}
+
+	h2			{font-size: 14pt; margin-top: 1cm;}
+
+
+
+    /* corpo do layout */
+
+	#tudo			{width: auto; margin: 0;}
+
+
+
+    /* cabeçalho do site na versão para impressão */
+
+	#topo-print		{display: block; color: #666; font-size: 18pt; font-weight: bold; margin-bottom: 1cm;}
+
+		#topo-print img		{margin: 0 1cm 0 4cm;}
+
+
+
+    /* elementos que não serão impressos */
+
+	#acesso, #topo, #lateral, #recursos, .google, #texto, #tools	{display: none;}
+
+
+
+
+    /* conteudo do site (cada tipo de página tem um CSS diferente para essa área) */
+
+	#conteudo		{width: 100%; float: none; margin: 0;}
+
+
+
+    /* rodape */
+
+	#rodape			{background: #FFF; color: #000; margin-top: 0.2cm; padding: 0; border-top: #666 solid 1pt;
+				font-size: 10pt; text-align: center; font-style: italic;}
+
+	#rodape #largura	{width: auto;}
+
+	#rodape #esquerda	{display: none;}
+
+	#rodape #direita	{width: auto;}
+
+
+/* ************************************************************************************************************************* */
+
+/* Declarações da Página Inicial */
+
+
+	    /* datas dos artigos */
+
+		small		{font-size: 8pt;}
+
+	    /* colunas para links (esquerda) e propagandas (direita) */
+
+		.esquerda 	{margin-top: 1cm;}
+
+		.direita 	{margin-top: 1cm;}
+
+			.direita h2	{font-size: 12pt; margin: 0 0 0.2cm;}
+
+/* ************************************************************************************************************************* */
+
+/* Declarações dos Artigos */
+
+	#sessao			{color: #666; margin: 0;}
+
+	code, pre		{color: #555; font-size: 11pt;}
+
+
+-->

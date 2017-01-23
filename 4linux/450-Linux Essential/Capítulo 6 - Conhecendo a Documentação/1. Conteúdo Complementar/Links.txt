@@ -1,0 +1,5 @@
+Conhecendo o man:
+http://www.uniriotec.br/~morganna/guia/man.html
+
+Whereis e Which
+http://gnulinuxbr.wordpress.com/tag/comandos-whereis-e-which/

@@ -1,0 +1,81 @@
+/* **************************************** */
+/*                                          */
+/*          InfoWester - Artigos            */
+/*                                          */
+/* **************************************** */
+
+<!--
+	#conteudo		{width: 780px; float: right;}
+
+	#conteudo table		{margin: 5px;}
+
+	code			{color: #00F; font-size: 12px;}
+
+	pre			{color: #555; font-size: 12px; margin-left: 30px;}
+
+
+
+	/* título - o espaçamento do H1 é diferente nos artigos */
+
+	h1			{margin-top: 20px;}
+
+
+
+	/* sessão da página atual */
+
+	#secao			{color: #334D80; width: 200px; margin: 30px 0 0; font-weight: bold; font-size: 16px; padding-left: 20px;}
+
+		.hardware	{background: url(../images/icons/hardware.gif) no-repeat 0 1px;}
+
+		.software	{background: url(../images/icons/software.gif) no-repeat 0 1px;}
+
+		.linux		{background: url(../images/icons/linux.gif) no-repeat 0 1px;}
+
+		.dicas		{background: url(../images/icons/dicas.gif) no-repeat 0 1px;}
+
+		.tutoriais	{background: url(../images/icons/tutoriais.gif) no-repeat 0 1px;}
+
+		.colunas	{background: url(../images/icons/colunas.gif) no-repeat 0 1px;}
+
+		.web		{background: url(../images/icons/web.gif) no-repeat 0 1px;}
+
+
+
+	/* aumenta e diminui o texto */
+
+	#texto			{color: #666; width: 170px; margin-top: 30px; float: right; font-size: 12px;}
+
+		#texto a		{width: 25px; height: 25px; border: none; display: block; text-indent: -10000px;
+					background: url(../images/texto.gif) no-repeat; color: #FFF;}
+
+		#texto a.aumenta	{background-position: 0 0; float: left; /* margin-left: 15px; */ margin-right: 10px;}
+
+		#texto a.diminui	{background-position: 0 -25px; float: left; margin-right: 60px;}
+
+
+	#texto iframe		{border: none !important; float: right;}
+
+
+	/* links no final do artigo */
+
+
+     	#tools			{width: 780px; margin: auto; padding-left: 210px; padding-top: 30px; padding-bottom: 30px;
+				font-size: 11px; /* font: 11px Tahoma,Verdana,sans-serif; */}
+
+		#tools a		{padding: 20px 0 20px 18px; margin: 0 50px 0 0; display: block; float: left;}
+
+		#tools .print		{background: url(../images/icons/print.gif) no-repeat 0 17px;}
+
+		#tools .mail		{background: url(../images/icons/mail.gif) no-repeat 0 17px; *width: 130px !important;}
+
+		#tools .home		{background: url(../images/icons/home.gif) no-repeat 0 17px;}
+
+		#tools .back		{background: url(../images/icons/back.gif) no-repeat 0 17px;}
+
+		#tools .delicious	{background: url(../images/icons/delicious2.gif) no-repeat 0 17px;
+					margin-right: 0 !important; *width: 130px !important;}
+
+
+		.buscape	{background: #FC3; padding: 2px; font-family: Verdana; font-weight: bold; font-size: 11px; float: right;}
+
+-->

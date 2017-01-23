@@ -1,0 +1,15 @@
+document.write('<div class="feedburnerFeedBlock" id="BlogInfowester831hac1b39o1e53plne2mtntuc">');
+document.write('<ul>');
+document.write('<li><span class="headline"><a href="http://www.infowester.com/blog/livraria-cultura-comeca-a-vender-e-books-sera-que-a-moda-pega-no-brasil/">Livraria Cultura come\u00E7a a vender e-books. Ser\u00E1 que a moda pega no Brasil?</a></span>');
+document.write('</li>');
+document.write('<li><span class="headline"><a href="http://www.infowester.com/blog/windows-live-messenger-em-qualquer-lugar-gracas-ao-seu-celular/">Windows Live Messenger: em qualquer lugar gra\u00E7as ao seu celular</a></span>');
+document.write('</li>');
+document.write('<li><span class="headline"><a href="http://www.infowester.com/blog/windows-live-programas-para-voce-nao-perder-tempo/">Windows Live: programas para voc\u00EA n\u00E3o perder tempo</a></span>');
+document.write('</li>');
+document.write('<li><span class="headline"><a href="http://www.infowester.com/blog/guia-manga-de-calculo-diferencial-e-integral/">Lan\u00E7amento Novatec: Guia Mang\u00E1 de C\u00E1lculo Diferencial e Integral</a></span>');
+document.write('</li>');
+document.write('<li><span class="headline"><a href="http://www.infowester.com/blog/windows-live-muito-mais-que-o-messenger/">Windows Live: muito mais que o Messenger</a></span>');
+document.write('</li>');
+document.write('</ul>');
+document.write(' <div id="creditfooter"><a href="http://www.feedburner.com" target="_blank"><img src="http://www.feedburner.com/fb/images/buzzboost-pwrd.gif" alt="Headlines by FeedBurner" style="border:0"/></a></div>');
+document.write('</div>');

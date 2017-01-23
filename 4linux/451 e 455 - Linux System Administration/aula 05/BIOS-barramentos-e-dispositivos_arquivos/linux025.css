@@ -1,0 +1,631 @@
+html, body {
+	margin:0px;
+	padding:0px;
+	background-color:#ffffff;
+	font-family: Tahoma, Arial, Helvetica, sans-serif;
+	font-size:11px;
+	color:#4d5b4a;
+}
+
+h5 {
+	font-size:10px;
+	font-weight:bold;
+}
+h4 {
+	font-weight:normal;
+}
+h3.destaque {
+	font-size:13px;
+	font-weight:bold;
+	color: #000000;
+}
+.mcinza {
+	text-decoration:none !important;
+	color:#404f3d !important;
+}
+.mcinza:hover {
+	text-decoration:underline !important;
+	color:#4a6f43 !important;
+}
+
+/* CABEÇALHO */
+#barratop {
+        position: relative;
+        top: 0px;
+        right: 0px;
+        text-align: right;
+        margin:0px;
+	margin-bottom: -7px;
+	padding-right: 40px;
+}
+
+A.texttop, A.texttop:link, A.texttop:visited, A.texttop:active, #barratop, .texttop {
+        text-decoration: none !important;
+        color: #888888 !important;
+        font-family: Verdana, Geneva, Sans-Serif, Arial;
+        font-size: 9px;
+}
+
+#cabecalho {
+	background-image: url('http://img.vivaolinux.com.br/css/img/linux-map.png');
+	background-position: 0px -67px;
+	background-repeat: repeat-x;
+	height:68px;
+	width:100%;
+}
+	#topoesquerda{
+		background-image: url('http://img.vivaolinux.com.br/css/img/linux-map.png');
+		background-position: -270px 1px;
+		background-repeat:no-repeat;
+		left: 0px;
+		float:left;
+		width:164px;
+		height:66px;
+	}
+		#topoesquerda #logo {
+			margin-left:43px;
+			padding-top:11px;
+			border:0px;
+		}
+	#topodireita {
+		background-image: url('http://img.vivaolinux.com.br/css/img/linux-map.png');
+		background-position: 0px -135px;
+		background-repeat: no-repeat;
+		right:0px;
+		float:right;
+		width:300px;
+		height:66px;
+	}
+	#topocentral {
+		margin: 0px 300px 0px 164px;
+		text-align:left;
+	}
+		#topocentral #slogan {
+			padding-top:42px;
+			margin-left:12px;
+		}
+
+/* MENU */
+#menu {
+	background-image: url('http://img.vivaolinux.com.br/css/img/linux-map.png');
+	background-position: 0px -203px;
+	background-repeat: repeat-x;
+	height:31px;
+	width:100%;
+	margin-top: -2px;
+}
+	#menuesquerda{ 
+		background-image: url('http://img.vivaolinux.com.br/css/img/linux-map.png');
+		background-repeat:no-repeat;
+		background-position: -268px -234px;
+		position: absolute;
+		left: 0px;
+		float:left;
+		width:32px;
+		height:31px;
+	}
+	#menudireita {
+		background-image: url('http://img.vivaolinux.com.br/css/img/linux-map.png');
+		background-repeat:no-repeat;
+		background-position: -100px -265px;
+		position: absolute;
+		right:0px;
+		float:right;
+		width:200px;
+		height:31px;
+	}
+		#menudireita #loginInfo {
+			padding-top:8px;
+		}
+	#menucentral {
+		margin: 0px 200px 0px 32px;
+	}
+		#menucentral #navegacao {
+			margin-left:12px;
+			padding-top:8px;
+		}
+
+/* CONTEUDO */
+#conteudo {
+	background-color:#FFFFFF;
+	min-height:300px;
+	width:100%;
+	padding-top:10px;
+}
+	#centroesquerda{
+		left: 0px;
+		float:left;
+		width:165px;
+		margin-left:15px;
+	}
+	#centrodireita {
+		right:0px;
+		float:right;
+		width:165px;
+		margin-right:15px;
+	}
+	#central {
+		top:0px;
+		margin: -11px 180px 0px 180px;
+		*margin: 0px 200px 0px 200px;
+		padding-left: 2px;
+		padding-right: 2px;
+		padding-top: 10px;
+	}
+	
+/* RODAPÉ */
+#rodape {
+	background-image: url('http://img.vivaolinux.com.br/css/img/linux-map.png');
+	background-repeat: repeat-x;
+	background-position: 0px -296px;
+	background-color:#383838;
+	height:70px;
+	width:100%;
+	clear:both;
+}
+	#rodapeesquerda{
+		background-image: url('http://img.vivaolinux.com.br/css/img/linux-map.png');
+		background-repeat: no-repeat;
+		background-position: -268px -366px;
+		position: absolute;
+		left: 0px;
+		float:left;
+		width:32px;
+		height:57px;
+	}
+	#rodapedireita {
+		background-image: url('http://img.vivaolinux.com.br/css/img/linux-map.png');
+		background-repeat: no-repeat;
+		background-position: -268px -423px;
+		position: absolute;
+		right:0px;
+		float:right;
+		width:32px;
+		height:57px;
+	}
+	#rodapecentral {
+		margin: 0px 32px 0px 32px;
+	}
+		#rodapecentral #mapa {
+			width:100%;
+			text-align:center;
+			padding-top:22px;
+			color:#4a4a4a;
+		}
+		#rodapecentral #creditos {
+			width:100%;
+			text-align:center;
+			padding-top:13px;
+			color:#dbd1d1;
+		}
+
+	#rodapecontainer { background-color:#383838; }
+	#rodapebox { margin-left: auto; margin-right: auto; text-align: center; width: 510px; background-color: #c9c9c9; }
+	
+	#rodapebox #volrelease { width: 250px; float: left; text-align: left; font-size: 12px; font-color: black; padding: 10px; margin-right: 50px; }
+	#rodapebox #volrelease h1 { font-size: 12px; color: inherit; margin: 0px 0px 3px 0px; padding: 0px; }
+	#voloptions  { text-align: left; padding: 10px; }
+	#rodapebox #voloptions a { 
+		font-size: 12px;
+		display: block; margin-bottom: 5px; 
+		color: inherit !important; 
+	}
+
+
+/* CLASSES */
+.box {
+	width:164px;
+	background-color:#eeeeed;
+	background-image:url('http://img.vivaolinux.com.br/imagens/layout/box_bottom.gif');
+	background-repeat:no-repeat;
+	background-position:bottom;
+	min-height:60px;
+	margin-bottom:12px;
+}
+	.box span.titulo, .box div.titulo, .box span.titulo2 {
+		background-image: url('http://img.vivaolinux.com.br/css/img/linux-map.png');
+		background-repeat: no-repeat;
+		background-position: -136px -480px;
+		display:block;
+		width:149px;
+		height:32px;
+		padding: 4px 0px 0px 15px;
+		font-weight:bold;
+	}
+
+	.box div.conteudo {
+		padding: 0px 15px 18px 15px;
+	}
+	.box ul.lista {
+		list-style:none;
+		padding:0px;
+		margin:0px 0px 0px 20px;
+		padding-bottom:18px;
+		list-style-image: none;
+	}
+		.box ul.lista a {
+			text-decoration:none;
+			display:block;
+			width:80%;
+			padding:3px 0px 3px 10px;
+			border-bottom:1px solid #a5b5a2;
+			color:#4d5b4a;
+		}
+		.box ul.lista a:hover {
+			border-bottom:1px solid #4d5b4a;
+		}
+div.boxDestaque {
+	background-image:url('http://img.vivaolinux.com.br/imagens/layout/destaque_topback.gif');
+	background-repeat:repeat-x;
+	background-position: top;
+	background-color:#f6f6f5;
+	width: 95%;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+	div.boxDestaque .titulo {
+		background-image:url('http://img.vivaolinux.com.br/imagens/layout/destaque_topright.gif');
+		background-repeat:no-repeat;
+		background-position:top right;
+		height:33px;
+		width:100%;
+	}
+	div.boxDestaque h3 {
+		background-image: url('http://img.vivaolinux.com.br/css/img/linux-map.png');
+		background-repeat: no-repeat;
+		background-position: -188px -516px;
+		font-size:12px;
+		padding-left:15px;
+		padding-top:2px;
+		height:33px;
+	}
+	div.boxDestaque .conteudo {
+		background-image:url('http://img.vivaolinux.com.br/imagens/layout/destaque_bottomleft.gif');
+		background-repeat:no-repeat;
+		background-position:bottom left;
+		padding: 0px 15px 15px 15px;
+		width:auto;
+	}
+div.boxConteudo {
+	background-image:url('http://img.vivaolinux.com.br/imagens/layout/breadcrumb_topback.gif');
+	background-repeat:repeat-x;
+	background-position: top;
+	background-color:#f6f6f5;
+	width: 95%;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+	div.boxConteudo .aba {
+		background-image:url('http://img.vivaolinux.com.br/imagens/layout/breadcrumb_topright.gif');
+		background-repeat:no-repeat;
+		background-position:top right;
+		width:100%;
+		height:21px;
+	}
+		div.boxConteudo h3 {
+			background-image: url('http://img.vivaolinux.com.br/css/img/linux-map.png');
+			background-repeat:no-repeat;
+			background-position: -183px -573px;
+			padding:1px 0px 0px 15px;
+			height:21px;
+			margin:0px;
+		}
+	div.boxConteudo .breadcrumb {
+		background-image:url('http://img.vivaolinux.com.br/imagens/layout/breadcrumb_middleright.gif');
+		background-color:#ededec;
+		background-repeat:no-repeat;
+		background-position:top right;
+		width:100%;
+		height:26px;
+	}
+		div.boxConteudo h4 {
+			background-image:url('http://img.vivaolinux.com.br/imagens/layout/breadcrumb_middleleft.gif');
+			background-repeat:no-repeat;
+			background-position:top left;
+			font-size:12px;
+			padding:5px 0px 0px 15px;
+			margin:0px;
+			height:26px;
+		}
+	div.boxConteudo .titulo {
+		background-image:url('http://img.vivaolinux.com.br/imagens/layout/breadcrumb_topright.gif');
+		background-repeat:no-repeat;
+		background-position:top right;
+		width:100%;
+		height:19px;
+	}
+		div.boxConteudo h5 {
+			background-image:url('http://img.vivaolinux.com.br/imagens/layout/breadcrumb_titleleft.gif');
+			background-repeat:no-repeat;
+			background-position:top left;
+			font-size:12px;
+			padding:5px 0px 0px 15px;
+			height:19px;
+			margin:0px;
+		}
+	div.boxConteudo .conteudo {
+		padding: 10px 15px 15px 15px;
+		width:auto;
+	}
+	
+
+#pesquisa, #formABC {
+	padding-top:30px;
+}
+#pesquisa .inputText {
+	width:100px;
+	height:15px;
+	border:1px solid #618456;
+	vertical-align:baseline;
+	font-family: Tahoma, Arial, Helvetica, sans-serif;
+	font-size:11px;
+	color:#4d5b4a;
+	padding-left:5px;
+}
+#pesquisa .inputSelect {
+	width:90px;
+	height:17px;
+	*height:19px;
+	border:1px solid #618456;
+	vertical-align:baseline;
+	font-family: Tahoma, Arial, Helvetica, sans-serif;
+	font-size:11px;
+	color:#4d5b4a;	
+}
+#pesquisa .inputButton {
+	vertical-align:bottom;
+}
+
+/*COMPATIBILIDADE COM O ANTIGO */
+.destaque_titulo{
+	font-family:Verdana;
+	text-decoration: underline; 
+	color: #444444; 
+	font-size: 12px;
+	font-weight: bold;
+	text-align: left;
+	}
+
+.destaque, .artigo, .destaquemenu, .destaquenolink, .destaquetitulo {
+	font-family:Verdana;
+	text-decoration: none !important; 
+	color: #666666 !important; 
+	font-size: 11px !important;
+	}
+
+.destaquetitulo { text-decoration: none !important; }
+	
+.destaque:active, .destaquemenu:active {
+	font-family:Verdana;
+	text-decoration: none; 
+	color: #969696; 
+	font-size: 11px;
+	}
+
+.destaque:hover,  .destaquemenu:hover {
+	font-family:Verdana;
+	text-decoration: underline !important; 
+	color: #969696 !important; 
+	font-size: 11px !important;
+	}
+	
+.destaquemenu:hover {
+	text-decoration: none!important; 
+}
+
+.destaque:visited, .destaquemenu:visited {
+	font-family:Verdana;
+	text-decoration: none; 
+	color: #969696; 
+	font-size: 11px;
+	}
+
+.esquerda { text-align: left; }
+.centro { text-align: center !important; }
+.direita { text-align: right; }
+.codigo { background-color: #fffff4; border: 1px solid #d4d4c6; text-align: left!important; }
+
+.titulo2 {
+	font-family:Arial, Helvetica;
+	text-decoration: none; 
+	color: #000000; 
+	font-size: 14px;
+	font-weight: bold;
+	}
+
+.titulo3, H3 {
+	font-family:Arial, Helvetica;
+	text-decoration: none; 
+	color: #1C2D1F; 
+	font-size: 12px;
+	font-weight: bold;
+	}
+
+.coluna { 
+	background-image: url('http://img.vivaolinux.com.br/css/img/linux-map.png');
+	background-position: 0px -594px;
+}
+
+ul {
+ line-height: 1.5em;
+ list-style-type: square;
+ list-style-image: url('http://img.vivaolinux.com.br/imagens/linux-arrow.gif');
+}
+
+.tabCorpo {
+    border-width: 1px;
+    border-style: solid;
+    border-color: black;
+}
+
+h3  {
+  color: #993300;
+}
+
+#central h1, h3 h4 {
+   font-size: 14px;
+   font-weight: bold;
+   color: #993300;
+}
+
+
+b { text-align: left; }
+
+.topic { color: #700404; }
+
+pre {
+	margin: 0px;
+}
+
+#contexto, .moderacao {
+        margin: 0 auto;
+        /*border: 1px dashed blue;*/
+}
+
+
+.texto, .padrao, td, .padraodestaque  {
+	font-family:Verdana;
+	text-decoration: none; 
+        text-align: justify;
+	color: #000000; 
+	font-size: 11px;
+	}
+
+
+/* CLASSES EXTRAS */
+.textosolto {
+	text-align:center;
+}
+.espacamento {
+	line-height:150%;
+}
+
+A:link {
+	text-decoration: underline;
+	color: #005300;
+	}
+
+A:active {	
+	text-decoration: underline;
+	color: #005300;
+	}
+	
+A:hover {
+	text-decoration: underline !important;
+	color: #008200 !important;
+	}	
+		
+A:visited {
+	text-decoration: underline;
+	color: #005300;
+	}
+
+.cinza, .cinza:hover, .cinza:visited { 
+	background-color: #E8E8E8; 
+	padding: 3px;
+	margin-bottom: 5px;
+	font-family:Verdana;
+	text-decoration: none !important; 
+	color: #666666 !important; 
+	font-size: 11px !important;
+	font-weight: bold;
+}
+
+.tresbt {
+	margin-bottom: 3px;
+}
+
+.padraodestaque { 
+	color: #444444; 
+}
+
+.botao {
+	font-family:Verdana;
+	color: #333333; 
+	font-size: 11px;
+}
+.dezpx {
+	margin-left: 5px;
+	margin-right: 5px;
+}
+#tabela {
+	display: table;
+}
+
+#linha  {
+	display: table-row;
+}
+
+#celula {
+	display: table-cell;
+	padding: 3px;
+}
+.pontilhado {
+	background-image: url('http://img.vivaolinux.com.br/imagens/verde/pontilhado.gif');
+	height: 1px;
+}
+.tabelaCinza {
+	background: #eeeeee;
+	border: 1px solid #cccccc;
+	padding: 5px;
+}
+.tabelaCinzaBranco {
+	background: #ffffff;
+	border: 1px solid #cccccc;
+	padding: 5px;
+}
+input, textarea, select {
+	border: 1px solid #cccccc;
+}
+input:radio, input:checkbox, input[type="radio"], input[type="checkbox"] {
+	border: 0;
+}
+.figura {
+	text-align: center;
+	margin: 10px 0px 10px 0px;
+	font-size: 11px;
+	font-style: italic;
+}
+
+.floatleft { float: left; padding: 5px; text-align: center; }
+.floatright { float: right; padding: 5px; text-align: center; }
+.comentario { color: #004080; }
+input:focus, textarea:focus { background: #fffec5; }
+
+.homeBottomBox { width: 30%; float: left; margin-right: 8px;}
+.homeBottomBoxTitle { 
+	width: 124px; height: 16px; background: #EFEFEF; 
+	background-image: url('http://img.vivaolinux.com.br/css/img/linux-map.png');  
+	background-position: -171px -639px;
+	background-repeat: no-repeat;
+	padding: 2px 0px 0px 5px; font-size: 8px; font-weight: normal; background-repeat: no-repeat; font-family: monospace; margin: 0px; } 
+.homeBottomBoxContent { background: #EFEFEF; margin: 0px; border: 1px #EFEFEF solid; height: 290px;} 
+.homeBottomBoxBottom { 
+	width: 93px; height: 20px; 
+	background-image: url('http://img.vivaolinux.com.br/css/img/linux-map.png');  
+	background-position: 0px -619px;
+	text-align: right; 
+}
+
+.loginBox { text-align: left; margin-right: 5px; padding: 2px;font-family: monospace; font-size:10px; }
+.loginBox input { width: 75px; }
+.logadoLinha { background: #dddddd; text-align: center; margin-bottom: 1px; }
+
+#boxtop10 a, #boxperguntas a, #boxscripts a, #boxartigos a, #boxdicas a, #boxconf a, #boxeventos a { display: block; margin-bottom: 5px; }
+#homeconfs a, #homedicas a, #homescripts a { display: block; margin: 10px 3px; }
+.itemArtigo { min-height: 100px; *height: auto !important; *height: 100px; margin-left: 100px; text-align: justify; font-size: 11px; font-family: Verdana, Sans-serif, Sans; }
+.itemArtigo a { text-decoration: none !important; font-size: 15px; color:#404f3d !important; }
+.itemArtigo h1 { margin: 0px 0px 2px; }
+.itemArtigo div { margin: 5px 0px; }
+.fotoleft { float: left; padding: 5px; margin-top: 15px; text-align: center; }
+.fotoleft a { display: block; }
+#artigo { margin-bottom: 30px; margin-top: 10px; }
+.textoCinza { color: #4d5b4a; }
+#anunciantes { text-align: center; }
+#anunciantes a, #anunciantes object { margin: 25px; line-height: 135px; display: inline; }
+.boxLink { color: inherit !important; }
+.erro { 
+	color: #ff0000; 
+	font-weight: bold; 
+	margin: 8px 0px;
+}

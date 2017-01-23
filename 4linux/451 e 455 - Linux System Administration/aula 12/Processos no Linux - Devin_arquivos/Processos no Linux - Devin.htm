@@ -1,0 +1,1234 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+
+	<title>  Processos no Linux - Devin</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="robots" content="index,follow">
+	<meta name="generator" content="WordPress 2.9.2">
+	<link rel="stylesheet" 
+href="Processos%20no%20Linux%20-%20Devin_arquivos/style.css" 
+type="text/css" media="screen">
+	<!--[if IE 6]> 
+	<link rel="stylesheet" href="http://www.devin.com.br/wp-content/themes/devin/ie6only.css" type="text/css" media="screen"> 
+	<![endif]-->
+	<link rel="alternate" type="application/rss+xml" title="Devin RSS Feed"
+ href="http://www.devin.com.br/feed/">
+	<link rel="pingback" href="http://www.devin.com.br/xmlrpc.php">
+	<link rel="alternate" type="application/rss+xml" title="Devin » 
+Processos no Linux  Feed de comentários" 
+href="http://www.devin.com.br/processos/feed/">
+<link rel="stylesheet" id="wp-postratings-css" 
+href="Processos%20no%20Linux%20-%20Devin_arquivos/postratings-css.css" 
+type="text/css" media="all">
+<script type="text/javascript" src="Processos%20no%20Linux%20-%20Devin_arquivos/jquery.js"></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" 
+href="http://www.devin.com.br/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" 
+href="http://www.devin.com.br/wp-includes/wlwmanifest.xml"> 
+<link rel="index" title="Devin" href="http://www.devin.com.br/">
+<link rel="start" title="Comentários das distribuições Linux" 
+href="http://www.devin.com.br/distro_comments/">
+<link rel="prev" title="Modelo de Desenvolvimento Ágil SCRUM" 
+href="http://www.devin.com.br/modelo-scrum/">
+<link rel="next" title="Linux: Mandar e-mail via linha de comando" 
+href="http://www.devin.com.br/mail-linha-de-comando/">
+<meta name="generator" content="WordPress 2.9.2">
+<link rel="canonical" href="http://www.devin.com.br/processos/">
+	<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+	<link rel="stylesheet" 
+href="Processos%20no%20Linux%20-%20Devin_arquivos/branding.css" 
+type="text/css" media="screen">
+</head><body>
+
+<div id="titulo">
+	<div id="toprss">
+           <a href="http://twitter.com/eitchugo"><img 
+src="Processos%20no%20Linux%20-%20Devin_arquivos/followtwitter.gif" 
+alt=""></a>
+           <a href="feed://http//www.devin.com.br/feed/"><img 
+src="Processos%20no%20Linux%20-%20Devin_arquivos/grabrss.gif" alt=""></a>
+        </div>
+	<a href="http://www.devin.com.br/"><img 
+src="Processos%20no%20Linux%20-%20Devin_arquivos/devin_logo.gif" 
+alt="devin" width="254" height="101"></a>
+</div> <!-- Fecha Titulo -->
+
+<div id="wrapper">
+
+<div id="nav">
+<ul>
+
+<li>
+<a href="http://www.devin.com.br/palestras"><span>Palestras</span></a>
+</li>
+
+<li>
+<a href="http://www.devin.com.br/curriculum"><span>Curriculum</span></a>
+</li>
+
+<li>
+<a href="http://www.devin.com.br/nostalgia"><span>Nostalgia</span></a>
+</li>
+
+<li>
+<a href="http://www.devin.com.br/guestbook"><span>Livro de Visitas</span></a>
+</li>
+
+<li>
+<a href="http://www.devin.com.br/sobre"><span>Sobre a Devin</span></a>
+</li>
+
+</ul>
+</div> <!-- Fecha Nav -->
+
+<div id="nav2">
+<ul>
+
+<li>
+<a href="http://www.devin.com.br/" title="Home"><span>Principal</span></a>
+</li>
+
+<li>
+<a href="http://www.devin.com.br/cat/tutoriais"><span>Tutoriais</span></a>
+</li>
+
+<li>
+<a href="http://www.devin.com.br/cat/dicas"><span>Dicas</span></a>
+</li>
+
+<li>
+<a href="http://www.devin.com.br/traducoes"><span>Traduções</span></a>
+</li>
+
+<li>
+<a href="http://www.devin.com.br/programas"><span>Programas</span></a>
+</li>
+
+<li>
+<a href="http://www.devin.com.br/tlm/"><span>The Linux Manual</span></a>
+</li>
+
+<li>
+<a href="http://www.devin.com.br/blog"><span>Blog Pessoal</span></a>
+</li>
+
+</ul>
+</div> <!-- Fecha Nav2 -->
+
+<div class="topcurvewhite">
+	<div class="topcurvewhiteleft">
+		<div class="topcurvewhiteright"></div>
+	</div>
+</div>
+
+<div id="main">
+
+<div id="allsidebars">
+
+
+
+
+<div class="sidebarsB">
+
+<div class="adsense_sidebar"><!-- Insert your adsense code for a 336x280 rectangle right under here -->
+</div>
+
+<div class="sidebar1">
+
+<ul>
+
+	<li>
+<!-- Insert your adsense code for a 160x600 banner right under here -->
+<script type="text/javascript"><!--
+google_ad_client = "pub-9615963589819332";
+google_ad_slot = "2992791666";
+google_ad_width = 160;
+google_ad_height = 600;
+//-->
+</script>
+<script type="text/javascript" src="Processos%20no%20Linux%20-%20Devin_arquivos/show_ads.js">
+</script><script src="Processos%20no%20Linux%20-%20Devin_arquivos/expansion_embed.js"></script><script src="Processos%20no%20Linux%20-%20Devin_arquivos/test_domain.js"></script><script>google_protectAndRun("ads_core.google_render_ad", google_handleError, google_render_ad);</script><ins
+ style="display: inline-table; border: medium none; height: 600px; 
+margin: 0pt; padding: 0pt; position: relative; visibility: visible; 
+width: 160px;"><ins style="display: block; border: medium none; height: 
+600px; margin: 0pt; padding: 0pt; position: relative; visibility: 
+visible; width: 160px;"><iframe allowtransparency="true" hspace="0" 
+id="google_ads_frame1" marginheight="0" marginwidth="0" 
+name="google_ads_frame" 
+src="Processos%20no%20Linux%20-%20Devin_arquivos/ads.htm" style="left: 
+0pt; position: absolute; top: 0pt;" vspace="0" width="160" 
+frameborder="0" height="600" scrolling="no"></iframe></ins></ins>
+
+	</li>
+
+<li id="text-226434071" class="sidebaritem"><h2 class="widgettitle">Parceiros</h2>
+			<div class="textwidget"><div align="center">
+<a href="http://www.coletivodigital.org.br/"><img 
+src="Processos%20no%20Linux%20-%20Devin_arquivos/logo_coletivodigital.png"
+ alt="Coletivo Digital" border="0"></a>
+<br>
+<a href="http://br-linux.org/"><img alt="BR-Linux.org" title="Notícias e
+ informações sobre Linux e Software Livre - BR-Linux" 
+src="Processos%20no%20Linux%20-%20Devin_arquivos/br-linux-120-peng-b.png"
+ border="0" width="120" height="60"></a>
+</div></div>
+		</li><li id="meta-2" class="sidebaritem"><h2 class="widgettitle">Meta</h2>
+			<ul>
+						<li><a href="http://www.devin.com.br/wp-login.php">Login</a></li>
+			<li><a href="http://www.devin.com.br/feed/" title="Assinar este site 
+usando RSS 2.0">Posts <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="http://www.devin.com.br/comments/feed/" title="Os 
+comentários mais recentes de todos os posts em RSS"><abbr title="em 
+inglês: Really Simple Syndication">RSS</abbr> dos comentários</a></li>
+			<li><a href="http://wordpress.org/" title="Powered by WordPress, uma 
+plataforma semântica de vanguarda para publicação pessoal.">WordPress.org</a></li>
+						</ul>
+</li></ul>
+
+</div>  <!-- Closes Sidebar1 -->
+
+<div class="sidebar2">
+
+<ul>
+<li>
+<div class="cse-branding-logo">
+  <img 
+src="Processos%20no%20Linux%20-%20Devin_arquivos/poweredby_FFFFFF.gif" 
+alt="Google">
+</div>
+<div class="cse-branding-bottom" style="background-color: rgb(255, 255, 
+255); color: rgb(0, 0, 0);">
+  <div class="cse-branding-form">
+    <form action="http://www.google.com.br/cse" id="cse-search-box">
+      <div style="font-size: 9pt;">
+        <input name="cx" 
+value="partner-pub-9615963589819332:tk5sl4u8elx" type="hidden">
+        <input name="ie" value="UTF-8" type="hidden">
+        <input name="q" size="17" type="text">
+	<br>
+	<input id="custom" name="cx" 
+value="partner-pub-9615963589819332:tk5sl4u8elx" checked="checked" 
+type="radio">
+	  <label for="custom"> devin.com.br</label>
+	<input id="www" name="cx" 
+value="!partner-pub-9615963589819332:tk5sl4u8elx" type="radio">
+	  <label for="www"> Web </label>
+	<br>
+        <input name="sa" value="Pesquisar" type="submit">
+      </div>
+    </form>
+  </div>
+</div>
+</li>
+
+		<li id="recent-comments-2" class="sidebaritem">			<h2 
+class="widgettitle">Últimos Comentários</h2>			<ul id="recentcomments"><li
+ class="recentcomments"><a href="http://www.indicedigital.com.br/" 
+rel="external nofollow" class="url">DynCoch</a> em <a 
+href="http://www.devin.com.br/post-twitter-via-linha-de-comando/comment-page-1/#comment-2230">Postando
+ no Twitter via linha de comando</a></li><li class="recentcomments"><a 
+href="http://www.quedialongo.blogspot.com/" rel="external nofollow" 
+class="url">Daniel Plácido</a> em <a 
+href="http://www.devin.com.br/shell_script/comment-page-2/#comment-2229">Programando
+ em shell-script</a></li><li class="recentcomments">M.M. em <a 
+href="http://www.devin.com.br/guestbook/comment-page-5/#comment-2228">Livro
+ de Visitas</a></li><li class="recentcomments">Thiago em <a 
+href="http://www.devin.com.br/raid1-em-um-sistema-sem-perder-dados/comment-page-1/#comment-2227">Implementando
+ RAID1 em um sistema sem perder dados</a></li><li class="recentcomments">André
+ Gabriel em <a 
+href="http://www.devin.com.br/guestbook/comment-page-5/#comment-2226">Livro
+ de Visitas</a></li></ul>
+		</li><li id="rss-226299531" class="sidebaritem"><h2 
+class="widgettitle"><a class="rsswidget" 
+href="http://br-linux.org/feed/" title="Assinar este conteúdo"><img 
+style="background: none repeat scroll 0% 0% orange; color: white; 
+border: medium none;" 
+src="Processos%20no%20Linux%20-%20Devin_arquivos/rss.png" alt="RSS" 
+width="14" height="14"></a> <a class="rsswidget" 
+href="http://br-linux.org/" title="Linux levado a sério desde 1996">BR-Linux</a></h2><ul><li><a
+ class="rsswidget" 
+href="http://br-linux.org/2010/gnome-elementary-icons-2-4/" 
+title="Enviado por Henrique Lechner (hlechnerΘgmail·com): “Popular tema 
+de ícones para GNOME “elementary” chega a sua versão 2.4, licenciado sob
+ GPL.” [referência: danrabbit.deviantart.com] (mas a ilustração acima é 
+da versão 2.2, ok?) […]">GNOME: Elementary icons 2.4</a> <span 
+class="rss-date">12 de abril de 2010</span></li><li><a class="rsswidget"
+ 
+href="http://br-linux.org/2010/usuario-europeu-de-ps3-recebe-compensacao-financeira-por-nao-poder-mais-usar-linux/"
+ title="Algumas fontes que consultei chamam a notícia de rumor não 
+confirmado, enquanto outros a afirmam como fato. O Gamer.Blorge tem um 
+resumo e links para mais informações – inclusive sobre a norma europeia 
+de proteção ao consumidor que teria sido usada para pedir o reembolso 
+parcial, sem devolução da mercadoria. Enviado por Estevam Moreira 
+(estevamΘgmail·com): “ […]">Usuário europeu de PS3 recebe compensação 
+financeira por não poder mais usar Linux</a> <span class="rss-date">12 
+de abril de 2010</span></li><li><a class="rsswidget" 
+href="http://br-linux.org/2010/webkit2-segue-a-onda-dos-processos-separados-para-evitar-travamentos-do-navegador/"
+ title="Desenvolvedores da Apple apresentaram a versão 2 do engine 
+WebKit, baseado originalmente em código do projeto KDE e hoje adotado 
+como parte importante da base de navegadores como o Safari (da Apple), 
+Chrome (do Google, que já inclui sua própria implementação de separação 
+de processos) e o Widget Engine no Symbian S60. Em tempos de aplicativos
+ [...] […]">Apple anuncia WebKit2 e segue a onda dos processos separados
+ para evitar travamentos do navegador</a> <span class="rss-date">12 de 
+abril de 2010</span></li><li><a class="rsswidget" 
+href="http://br-linux.org/2010/pai-do-java-e-avo-do-gnu-emacs-deixa-a-oracle/"
+ title="James Gosling, conhecido como “Pai do Java” por boa parte da 
+comunidade ao redor desta linguagem, anunciou que pediu as contas da 
+Oracle (que adquiriu a Sun recentemente) no último dia 2. Ele prefere 
+não comentar o motivo – segundo ele, qualquer coisa que ele pudesse 
+dizer de forma precisa e honesta provavelmente causaria mais prejuízo 
+[...] […]">“Pai do Java” (e avô do GNU Emacs) deixa a Oracle</a> <span 
+class="rss-date">12 de abril de 2010</span></li><li><a class="rsswidget"
+ 
+href="http://br-linux.org/2010/mozilla-lanca-firefox-lorentz-para-isolar-travamentos-de-plugins/"
+ title="Em tempos de aplicações rodando “na nuvem” este tipo de recurso 
+que o Firefox (junto outros navegadores populares) está ativando se 
+torna cada vez mais essencial para muitos usuários. Vale destacar, 
+entretanto, que a implementação atual feita pela Mozilla – ao contrário 
+do que ocorre no Google Chrome – isola apenas plugins (no momento, [...]
+ […]">Mozilla lança Firefox Lorentz para isolar travamentos de plugins</a>
+ <span class="rss-date">12 de abril de 2010</span></li><li><a 
+class="rsswidget" 
+href="http://br-linux.org/2010/livros-de-programacao-disponiveis-para-download/"
+ title="Enviado por André Felipe Dias (andref·diasΘpronus·eng·br): 
+“Indico um link para diversos livros (em inglês) de programação 
+disponíveis para download grátis. São livros sobre diversas linguagens 
+de programação: Python, Ruby, C, C#, C++, CGI, JavaScript, Perl, Delphi,
+ Pascal, Haskell, Java, Lisp, PHP e Prolog além de programação de jogos e
+ engenharia de softwa […]">Livros de programação disponíveis para 
+download</a> <span class="rss-date">12 de abril de 2010</span></li><li><a
+ class="rsswidget" 
+href="http://br-linux.org/2010/vulnerabilidade-no-java-permite-execucao-indevida-de-codigo/"
+ title="Enviado por André Machado (andreferreiramachadoΘgmail·com): 
+“Detalhes de uma vulnerabilidade dia-zero no Java foram publicados no 
+dia 9 de Abril por Tavis Ormandy, um engenheiro de Segurança da 
+Informação do Google. “A vulnerabilidade permite a um atacante executar 
+código remoto na máquina alvo e pode ser disparada ao visitar-se uma 
+simples página da Web”, d […]">Vulnerabilidade no Java permite execução 
+indevida de código</a> <span class="rss-date">12 de abril de 2010</span></li><li><a
+ class="rsswidget" 
+href="http://br-linux.org/2010/primeira-versao-do-hntool/" 
+title="Enviado por Hugo Doria (hugodoriaΘgmail·com): “Seguindo o 
+principio do “release early, release often”, estamos orgulhosos de 
+liberar a primeira versão do HnTool, uma ferramenta que tem como 
+objetivo fazer uma análise simples do servidor e dizer quais as falhas 
+de segurança que existem. Nesta primeira versão você terá: * Suporte ao 
+Arch Linux, CentOS, Debian, […]">Primeira versão do HnTool</a> <span 
+class="rss-date">12 de abril de 2010</span></li><li><a class="rsswidget"
+ 
+href="http://br-linux.org/2010/a-semana-no-br-linux-ubuntu-sem-yahoo-tchau-ao-songbird-linux-no-ps3/"
+ title="Meia-volta: Ubuntu 10.04 não vai mais colocar o Yahoo como busca
+ padrão: Segundo o OMG!Ubuntu e este comunicado aos desenvolvedores, a 
+decisão anterior de colocar o Yahoo como busca padrão no Firefox 
+distribuído pelo Ubuntu não será colocada em prática na versão 10.04 
+LTS, que deve sair daqui a 3 semanas. Songbird canta a valsa de [...] 
+[…]">A semana no BR-Linux: Ubuntu sem Yahoo, tchau ao Songbird, Linux no
+ PS3</a> <span class="rss-date">11 de abril de 2010</span></li><li><a 
+class="rsswidget" href="http://br-linux.org/2010/akademy-br-2010/" 
+title="Enviado por Sandro Santos Andrade (sandroandradeΘkde·org): “Está 
+acontecendo neste final de semana, dias 09, 10 e 11 de abril, a primeira
+ edição do Akademy-BR: encontro oficial dos desenvolvedores, tradutores,
+ artistas e divulgadores do KDE no Brasil. O evento acontece na Praia do
+ Forte, Bahia, e conta com a [...] […]">Akademy-BR 2010</a> <span 
+class="rss-date">10 de abril de 2010</span></li></ul></li><li 
+id="text-248629691" class="sidebaritem"><h2 class="widgettitle">Amigos</h2>
+			<div class="textwidget"><ul>
+<li><a href="http://hdoria.archlinux-br.org/">Hugo Dória</a></li>
+<li><a href="http://contosdezumbi.wordpress.com/">Contos de Zumbi</a></li>
+<li><a href="http://www.licio.eti.br/">Licio Fernando</a></li>
+<li><a href="http://almerindo.devin.com.br/">Almerindo Rehem</a></li>
+</ul></div>
+		</li>		<li id="recent-posts-3" class="sidebaritem">		<h2 
+class="widgettitle">Últimos Posts</h2>		<ul>
+				<li><a 
+href="http://www.devin.com.br/ssh-problemas-com-sessoes-ssh-inativas/" 
+title="SSH: Problemas com sessões SSH inativas?">SSH: Problemas com 
+sessões SSH inativas? </a></li>
+				<li><a href="http://www.devin.com.br/entrando-na-era-dos-originais/"
+ title="Entrando na era dos originais">Entrando na era dos originais </a></li>
+				<li><a 
+href="http://www.devin.com.br/multiplos-bancos-de-dados-no-wordpress/" 
+title="Múltiplos bancos de dados no Wordpress (RW Splitting)">Múltiplos 
+bancos de dados no Wordpress (RW Splitting) </a></li>
+				<li><a href="http://www.devin.com.br/imagemagick/" title="Tratamento
+ de Imagens com ImageMagick">Tratamento de Imagens com ImageMagick </a></li>
+				<li><a 
+href="http://www.devin.com.br/post-twitter-via-linha-de-comando/" 
+title="Postando no Twitter via linha de comando">Postando no Twitter via
+ linha de comando </a></li>
+				</ul>
+		</li></ul>
+
+</div> <!-- Closes Sidebar2 -->
+
+<div class="cleared"></div>
+</div> <!-- Closes SidebarsB -->
+
+
+</div> <!-- Closes allsidebars -->
+
+
+
+
+<div class="post">
+
+<h1 class="pageTitle">Processos no Linux</h1>
+<div class="postMeta">
+<span class="date">24 de mai de 2009</span>, em
+<span class="filed"><a 
+href="http://www.devin.com.br/cat/tutoriais/tutoriais-linux/" title="Ver
+ todos os posts em Linux" rel="category tag">Linux</a>,  <a 
+href="http://www.devin.com.br/cat/tutoriais/" title="Ver todos os posts 
+em Tutoriais" rel="category tag">Tutoriais</a></span>
+<br>
+<span class="tags">Tags: <a href="http://www.devin.com.br/tag/comandos/"
+ rel="tag">comandos</a>, <a href="http://www.devin.com.br/tag/linux/" 
+rel="tag">linux</a>, <a href="http://www.devin.com.br/tag/processos/" 
+rel="tag">processos</a>, <a href="http://www.devin.com.br/tag/threads/" 
+rel="tag">threads</a></span>
+<br>
+<span class="viewcount">Visualizado 14794 vezes, 3 só hoje</span>
+<br>
+<div id="post-ratings-593" class="post-ratings">Avaliação: <img 
+id="rating_593_1" 
+src="Processos%20no%20Linux%20-%20Devin_arquivos/rating_on.gif" 
+alt="Inútil" title="Inútil" onmouseover="current_rating(593, 1, 
+'Inútil');" onmouseout="ratings_off(4.5, 5, 0);" onclick="rate_post();" 
+onkeypress="rate_post();" style="cursor: pointer; border: 0px none;"><img
+ id="rating_593_2" 
+src="Processos%20no%20Linux%20-%20Devin_arquivos/rating_on.gif" 
+alt="Genérico" title="Genérico" onmouseover="current_rating(593, 2, 
+'Genérico');" onmouseout="ratings_off(4.5, 5, 0);" 
+onclick="rate_post();" onkeypress="rate_post();" style="cursor: pointer;
+ border: 0px none;"><img id="rating_593_3" 
+src="Processos%20no%20Linux%20-%20Devin_arquivos/rating_on.gif" 
+alt="Bom" title="Bom" onmouseover="current_rating(593, 3, 'Bom');" 
+onmouseout="ratings_off(4.5, 5, 0);" onclick="rate_post();" 
+onkeypress="rate_post();" style="cursor: pointer; border: 0px none;"><img
+ id="rating_593_4" 
+src="Processos%20no%20Linux%20-%20Devin_arquivos/rating_on.gif" 
+alt="Ótimo" title="Ótimo" onmouseover="current_rating(593, 4, 'Ótimo');"
+ onmouseout="ratings_off(4.5, 5, 0);" onclick="rate_post();" 
+onkeypress="rate_post();" style="cursor: pointer; border: 0px none;"><img
+ id="rating_593_5" 
+src="Processos%20no%20Linux%20-%20Devin_arquivos/rating_half.gif" 
+alt="MARAVILHA!" title="MARAVILHA!" onmouseover="current_rating(593, 5, 
+'MARAVILHA!');" onmouseout="ratings_off(4.5, 5, 0);" 
+onclick="rate_post();" onkeypress="rate_post();" style="cursor: pointer;
+ border: 0px none;"> (<strong>2</strong> votos, média: <strong>4,50</strong>
+ de 5)<br><span class="post-ratings-text" id="ratings_593_text"></span></div>
+<div id="post-ratings-593-loading" class="post-ratings-loading"><img 
+src="Processos%20no%20Linux%20-%20Devin_arquivos/loading.gif" 
+alt="Loading ..." title="Loading ..." class="post-ratings-image" 
+width="16" height="16">&nbsp;Loading ...</div>
+<br>
+<span class="author">Por Hugo Cisneiros (Eitch)</span>
+</div>
+<br>
+<!-- Insert your adsense code for a 468x15 retangle links right under here -->
+<script type="text/javascript"><!--
+google_ad_client = "pub-9615963589819332";
+google_ad_slot = "5097370042";
+google_ad_width = 468;
+google_ad_height = 15;
+//-->
+</script>
+<script type="text/javascript" src="Processos%20no%20Linux%20-%20Devin_arquivos/show_ads.js">
+</script><script>google_protectAndRun("ads_core.google_render_ad", google_handleError, google_render_ad);</script><ins
+ style="display: inline-table; border: medium none; height: 15px; 
+margin: 0pt; padding: 0pt; position: relative; visibility: visible; 
+width: 468px;"><ins style="display: block; border: medium none; height: 
+15px; margin: 0pt; padding: 0pt; position: relative; visibility: 
+visible; width: 468px;"><iframe allowtransparency="true" hspace="0" 
+id="google_ads_frame2" marginheight="0" marginwidth="0" 
+name="google_ads_frame" 
+src="Processos%20no%20Linux%20-%20Devin_arquivos/ads_002.htm" 
+style="left: 0pt; position: absolute; top: 0pt;" vspace="0" width="468" 
+frameborder="0" height="15" scrolling="no"></iframe></ins></ins>
+<br>
+<div class="postContent"><p>Saber o que está sendo executado na máquina é
+ essencial para entender o funcionamento. Este tutorial traz uma 
+introdução sobre os processos e threads no Linux: como listá-los, 
+finalizá-los, interpretá-los.</p>
+<p><span id="more-593"></span></p>
+<p>Cada programa executado, desde a inicialização do sistema, é definido
+ com o que chamamos de processo. Cada um desses processos recebe um 
+número de identificação próprio, chamado PID (Process ID). Além do PID, 
+cada processo tem um conjunto de informações como: nome do comando, uso 
+da memória, usuário e grupo que o executou, entre outros.</p>
+<p>As informações de todos os processos do sistema ficam armazenadas no 
+pseudo-diretório /proc. Dentro deste diretório, cada sub-diretório 
+numérico contém as informações do processo com o número PID 
+correspondente. É deste lugar que os comandos relacionados aos processos
+ retiram suas informações.<br>
+<a name="ps"></a></p>
+<h2>ps – Listar processos</h2>
+<pre class="code">Sintaxe: $ ps [opções]</pre>
+<p>Lista os processos em execução, apresentando o PID e outras 
+informações sobre o processo, como o comando executado (CMD) e estado 
+atual do processo (STAT).</p>
+<p>Exemplo:</p>
+<pre class="code">$ ps aux
+USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root         1  0.0  0.0   1932   704 ?        Ss   Aug29   0:02 init [2]
+root         2  0.0  0.0      0     0 ?        S&lt;   Aug29   0:00 [kthreadd]
+root         3  0.0  0.0      0     0 ?        S&lt;   Aug29   0:00 [migration/0]
+root         4  0.0  0.0      0     0 ?        S&lt;   Aug29   0:06 [ksoftirqd/0]
+...corte...
+daemon    2998  0.0  0.0   1868   432 ?        Ss   Aug29   0:00 /usr/sbin/atd
+root      3017  0.0  0.0   3272   928 ?        Ss   Aug29   0:00 /usr/sbin/cron
+root      3074  0.0  0.0   2972   644 ?        Ss   Aug29   0:00 /usr/bin/kdm
+root      3077  1.7 18.5 390652 384220 tty7    SLs+ Aug29  39:30 /usr/bin/X -br
+...corte...
+root      3092  0.0  0.0   1608   508 tty1     Ss+  Aug29   0:00 /sbin/getty
+root      3093  0.0  0.0   1608   508 tty2     Ss+  Aug29   0:00 /sbin/getty
+root      3094  0.0  0.0   1608   504 tty3     Ss+  Aug29   0:00 /sbin/getty
+root      3095  0.0  0.0   1608   504 tty4     Ss+  Aug29   0:00 /sbin/getty
+root      3096  0.0  0.0   1608   504 tty5     Ss+  Aug29   0:00 /sbin/getty
+root      3097  0.0  0.0   1608   508 tty6     Ss+  Aug29   0:00 /sbin/getty
+eitch  9403  4.5  0.1   5900  3364 tty1     S    23:50   0:00 -bash
+eitch  9416  2.0  0.1   5304  2388 tty1     S+   23:50   0:00 vi testando</pre>
+<p>O parâmetro aux faz com que o comando ps mostre todos os processos do
+ sistema, associado aos seus respectivos usuários e de forma detalhada. 
+Nesta forma detalhada, podemos ver vários “campos” especificados na 
+primeira linha. Eles são:</p>
+<table align="center" border="1">
+<tbody>
+<tr>
+<td>USER</td>
+<td>Usuário que iniciou o processo (dono).</td>
+</tr>
+<tr>
+<td>PID</td>
+<td>Número único do processo.</td>
+</tr>
+<tr>
+<td>%CPU</td>
+<td>Utilização da CPU em porcentagem.</td>
+</tr>
+<tr>
+<td>%MEM</td>
+<td>Utilização da memória física do sistema em porcentagem.</td>
+</tr>
+<tr>
+<td>VSZ</td>
+<td>Memória virtual utilizada pelo processo, inclui a memória física e 
+utilizada por bibliotecas compartilhadas.</td>
+</tr>
+<tr>
+<td>RSS</td>
+<td>Memória física utilizada pelo processo. Inclui memória utilizada por
+ bibliotecas compartilhadas.</td>
+</tr>
+<tr>
+<td>TTY</td>
+<td>Terminal ao qual o processo pertence. Quando não há um terminal 
+controlando (como no caso dos processos do sistema, kernel e processos 
+do servidor gráfico) aparecerá o sinal de interrogação.</td>
+</tr>
+<tr>
+<td>STAT</td>
+<td>Estado atual do processo (mais detalhes depois).</td>
+</tr>
+<tr>
+<td>START</td>
+<td>A hora em que o processo foi iniciado. Caso a hora seja do dia 
+anterior, é representado pelo dia e mês.</td>
+</tr>
+<tr>
+<td>TIME</td>
+<td>Tempo cumulativo de CPU, ou seja, por quanto tempo o processo 
+utilizou a CPU.</td>
+</tr>
+<tr>
+<td>COMMAND</td>
+<td>O comando executado e todos seus argumentos. Caso o tamanho do 
+comando seja maior do que a linha do terminal, ele ignora o resto (não 
+passa para a próxima linha). Para mostrar todo o argumento, utilize o 
+parâmetro w para ajustar o comprimento.</td>
+</tr>
+</tbody>
+</table>
+<p>Em relação ao estado do processo, uma letra estará representando um 
+destes estados:</p>
+<table align="center" border="1">
+<tbody>
+<tr>
+<td>D</td>
+<td>Descansando enquanto espera por outra ação (geralmente E/S), sem 
+possibilidade de interrupção.</td>
+</tr>
+<tr>
+<td>R</td>
+<td>Executando (Running).</td>
+</tr>
+<tr>
+<td>S</td>
+<td>Descansando enquanto espera por outra ação (esperando algum evento 
+ser completado), com possibilidade de interrupção.</td>
+</tr>
+<tr>
+<td>T</td>
+<td>Parado, suspendido. Talvez pelo gerenciamento de tarefas da shell 
+(CTRL+Z).</td>
+</tr>
+<tr>
+<td>Z</td>
+<td>Zumbi. SINISTRO! O processo foi terminado mas não foi removido por 
+quem o chamou.</td>
+</tr>
+</tbody>
+</table>
+<p>Uma outra forma de ver os processos, agora organizados por árvore:</p>
+<pre class="code">$ ps axjf</pre>
+<p><a name="top"></a></p>
+<h2>top – Lista processos em tempo real</h2>
+<pre class="code">Sintaxe: $ top [opções]</pre>
+<p>Mostra ao usuário os processos ativos no sistema da mesma forma que o
+ ps, mas em tempo real e em uma certa ordem. Por padrão, o top mostra 
+nas primeiras linhas os processos que mais gastam processamento (em 
+porcentagem).</p>
+<p>Ao executar o top sem argumentos, sua taxa de atualização na tela é 
+de 3 em 3 segundos. Para mudar para, por exemplo, 1 segundo:</p>
+<pre class="code">$ top -d 1</pre>
+<p>Uma vez dentro do programa, a tecla h mostra a ajuda. Uma das opções 
+úteis é a tecla f que permite especificar a ordem das linhas de acordo 
+com os campos (mais utilização de cpu, memória, maior número UID de 
+usuário, entre outros).<br>
+<a name="pstree"></a></p>
+<h2>pstree – Mostra processos em forma de árvore hierárquica</h2>
+<pre class="code">Sintaxe: $ pstree [opções]</pre>
+<p>Mostra de forma simples e utilizando caracteres ASCII uma árvore 
+hierarquica dos processos do sistema.</p>
+<h2>Sinais de Processos</h2>
+<p>Todo processo, além da entrada padrão que pode ser controlada dentro 
+do programa, também pode receber o que chamamos de “sinal”. Este sinal é
+ o modo que o sistema operacional tem para lidar com o processo. Um 
+sinal pode dizer ao programa para terminar, ou outro sinal pode 
+simplesmente terminar o programa sem dizer nada. Apertar um CTRL+C 
+(Interrupção) no terminal é um sinal que o sistema manda para o programa
+ atual.</p>
+<p>Para saber a lista de sinais, digite:</p>
+<pre class="code">$ man 7 signal</pre>
+<p>Quem faz uma aplicação pode programar para que quando um sinal for 
+recebido pelo processo, o programa se comporte de uma certa maneira. O 
+sinal SIGTERM (15) por exemplo, é chamado quando o programa é finalizado
+ normalmente. Já o sinal SIGINT (2) é chamado quando o usuário aperta o 
+CTRL+C e o programa tem que lidar com essa interrupção.</p>
+<p>Os únicos sinais que são forçados pelo kernel são os sinais SIGKILL 
+(9) e SIGSTOP (19). Neste caso, não importa o que o programador tentou 
+fazer, vai ser executada as funções dos sinais nos processos.</p>
+<p>Os sinais mais importantes são: SIGHUP (1), SIGINT (2), SIGKILL (9), 
+SIGSEGV (11), SIGTERM (15) e SIGSTOP (19).</p>
+<p>O SIGHUP (1) é geralmente utilizado pelos programas para recarregar 
+seus arquivos de configuração. Um exemplo de programa que utiliza o 
+SIGHUP para este fim é o inetd/xinetd.</p>
+<p>O SIGINT (2) é recebido quando o usuário aperta a combinação de 
+teclas CTRL+C. A grande maioria dos programas utiliza esse sinal para 
+indicar uma interrupção do programa, para parar o que estiver fazendo e 
+continuar com outra ação (ou finalizar o programa).</p>
+<p>O SIGKILL (9) é o sinal que mata o processo. Não importa o que o 
+processo esteja fazendo ou se ele é importante, o kernel irá forçar a 
+sua finalização imediatamente. Este sinal não pode ser bloqueado ou 
+rejeitado pelo programa.</p>
+<p>O SIGSEGV (11) é um sinal recebido quando há alguma falha na alocação
+ de memória. Também conhecido como “Segmentation Fault”, ele geralmente 
+indica um problema no programa ou na pior das hipóteses problemas na 
+memória física do computador.</p>
+<p>O SIGTERM (15) é recebido pelos programas dizendo-os para finalizar 
+de forma normal. É equivalente a fechar uma janela em um ambiente 
+gráfico.</p>
+<p>O SIGSTOP (19) é o sinal que suspende os programas, ou “os deixam 
+imóveis” para poder manipulá-los como no uso do CTRL+Z na shell, ou 
+então quando se está executando um trace em um programa.<br>
+<a name="kill-killall"></a></p>
+<h2>kill, killall – Envia um sinal ao processo</h2>
+<pre class="code">Sintaxe: $ kill [-SINAL] &lt;PID&gt;
+Sintaxe: $ killall [-SINAL] &lt;nome do processo&gt;</pre>
+<p>Apesar do nome, o comando kill não mata um processo e sim apenas 
+manda um sinal para ele. Mas como já sabemos, há um sinal onde o kernel 
+literalmente mata o processo. Para obter uma lista dos sinais suportados
+ pelo sistema através do comando kill, digite:</p>
+<pre class="code">$ kill -l</pre>
+<p>Para o comando kill, precisamos primeiro identificar o seu número 
+PID, para depois mandar o sinal.</p>
+<p>Por exemplo, temos um processo executando (vim) e queremos que ele 
+seja morto (SIGKILL) sem aviso prévio:</p>
+<pre class="code">$ ps aux
+ USER        PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+...corte...
+eitch    2315  0.1  0.6   9364  3544 pts/1    S+   12:46   0:02 vim arquivo</pre>
+<p>Uma vez obtido o PID do processo:</p>
+<pre class="code">$ kill -9 2315</pre>
+<p>Então o processo 2315 será morto sem piedade através do sinal 
+SIGKILL.</p>
+<p>Neste exemplo anterior, tivemos que obter o PID do processo para 
+enviar um sinal. Com o comando killall, podemos mandar um sinal para 
+todos os programas que têm um certo nome no comando. Utilizando desta 
+forma, não é preciso saber o PID, mas por outro lado se houver dois 
+processos com o mesmo nome, o sinal será mandado para os dois.</p>
+<p>Matando o mesmo processo do exemplo anterior, agora utilizando o 
+comando killall:</p>
+<pre class="code">$ killall vim</pre>
+<p><a name="prioridades-processos"></a></p>
+<h2>Prioridades de Processos</h2>
+<p>Muita gente não sabe, mas nos sistemas Linux mais modernos, podemos 
+ter um controle de prioridade de processos utilizando a CPU. Estas 
+prioridades funcionam para favorecer melhor um comando à outro. Por 
+exemplo:</p>
+<ul>
+<li>Programa 1 tem prioridade “alta”</li>
+<li>Programa 2 tem prioridade “normal”</li>
+</ul>
+<p>Se o Programa 2 resolve gastar quase todo o processamento no sistema 
+(como por exemplo: compactação de arquivos em bzip2), os programas que 
+estão em prioridade alta não serão completamente afetados.</p>
+<p>Se o Programa 1 estivesse em prioridade “normal”, ele teria que 
+dividir o processamento com o Programa 2, mesmo que ele usasse 
+pouquinho. Mas como ele está em “alta” prioridade, ele sempre vai ter a 
+preferência no sistema, ao invés do Programa 2.</p>
+<p>A faixa de prioridades é:</p>
+<ul>
+<li>-20 (Prioridade Máxima)</li>
+<li>-19</li>
+<li>…</li>
+<li>-1</li>
+<li>0 (Prioridade Padrão)</li>
+<li>1</li>
+<li>…</li>
+<li>18</li>
+<li>19 (Prioridade Mínima)</li>
+</ul>
+<p>Sendo assim, por padrão, todo comando executado “normalmente” recebe a
+ prioridade 0 (Zero). E quanto menor for esse número, maior a prioridade
+ do processo na CPU (Sim, é o contrário! Quanto menor, maior; quanto 
+maior, menor! :).</p>
+<p>Por padrão, os comandos ligados ao kernel e o sistema operacional em 
+si têm prioridade inferior a 0 (aqui no meu sistema, vejo vários 
+processos com prioridade -5). Isso nos faz lembrar que <strong>você 
+precisa ser root para configurar um processo com prioridade menor que 0</strong>.
+ Isso faz sentido, já que em um sistema multi-usuário, os usuários 
+normais compartilham o padrão 0, e podem escolher apenas se o processo 
+pode ter uma prioridade mais baixa, assim não interferindo com os 
+processos do sistema, que teoricamente são mais importantes.</p>
+<p>Para listar as prioridades dos processos, podemos utilizar o ps:</p>
+<pre class="code">$ ps axo user,ni,command
+USER      NI COMMAND
+root       0 init [2]
+root      -5 [kthreadd]
+root       - [migration/0]
+root      -5 [ksoftirqd/0]
+root       - [watchdog/0]
+root       - [migration/1]
+[...]
+root       0 /usr/sbin/cron
+root       0 /usr/bin/kdm -config /var/run/kdm/kdmrc
+root       0 /usr/bin/X -br -nolisten tcp :0 vt7 -auth /var/run/xauth/A:0-QPhClu
+root       0 /sbin/getty 38400 tty1
+[...]
+hugo       0 kdeinit Running...
+hugo       0 dcopserver [kdeinit] --nosid
+hugo       0 klauncher [kdeinit] --new-startup
+hugo       0 kded [kdeinit] --new-startup
+hugo       0 kwrapper ksmserver
+[..]
+root      -2 dhclient3 -pf /var/run/dhclient.eth0.pid -lf /var/lib/dhcp3/dhclient.eth0.leases eth0
+hugo       0 keepassx
+hugo       0 /bin/bash
+hugo      19 tail -f teste.txt
+hugo       0 ps axo user,ni,command</pre>
+<p>Neste comando, a primeira coluna é o usuário que está executando o 
+processo; a segunda é a prioridade de execução; e a terceira é o comando
+ em si. Dá pra perceber bem que a maioria dos comandos recebe 0 como 
+prioridade, com algumas excessões.</p>
+<p><a name="nice-renice"></a></p>
+<h2>nice, renice – Configura prioridades de CPU de um comando ou 
+processo</h2>
+<pre class="code">Sintaxe: $ nice [-n PRIORIDADE] [comando ...]
+Sintaxe: $ renice &lt;PRIORIDADE&gt; [-p PID]</pre>
+<p>Uma vez que já sabemos como funciona a prioridade de processos no 
+Linux, podemos controlar estas prioridades com os comandos <em>nice</em>
+ e <em>renice</em>.</p>
+<p>Por exemplo, supomos que eu esteja trabalhando em um servidor Web 
+bastante movimentado. O Apache (servidor HTTP) está sendo executado com 
+prioridade 0 (normal), e está muito ocupado servindo todas as páginas 
+dinâmicas para os vários usuários ao mesmo tempo. Então, toca o telefone
+ e me pedem para fazer um backup de todas as páginas do servidor, algo 
+em torno de uns 10gb, tudo localizado no diretório /var/www.</p>
+<p>Para fazer o backup, eu utilizei o seguinte comando:</p>
+<pre class="code">tar -zcf /var/lib/backup/backup-htdocs-20090520.tar.gz /var/www</pre>
+<p>Ou seja, agrupar e compactar todo o diretório /var/www e seu conteúdo
+ no arquivo backup-htdocs-20090520.tar.gz. Estaria certo eu fazer assim?</p>
+<p>A resposta é sim e não. Com o comando acima, seria criado com sucesso
+ o backup que precisava, mas o custo é muito alto… Enquanto o sistema 
+compacta todos os 10gb e colocava no arquivo, o Apache tinha que <strong>dividir</strong>
+ as tarefas dele com esse comando! Isso significa que os usuários Web 
+teriam suas páginas entregues de forma mais lenta… Como a prioridade 
+aqui é servidor as páginas, teríamos que usar o comando:</p>
+<pre class="code">nice -n 19 tar -zcf /var/lib/backup/backup-htdocs-20090520.tar.gz /var/www</pre>
+<p>Neste caso, o backup seria feito do mesmo jeito, mas a prioridade 
+dele seria a mínima! Toda vez que o Apache precisasse de muito 
+processamento, o sistema ia dar prioridade total ao Apache, deixando um 
+pouco de lado o backup. Resultado: os usuários do Apache não seriam de 
+maneira alguma afetados e o sistema não iria ter uma carga maior do que o
+ esperado. Ao invés disso, o backup iria demorar mais, pois tinha que 
+esperar primeiro os outros processos usarem a CPU, mas seria feito da 
+mesma forma.</p>
+<p>Então é bem simples: primeiro escolhemos a prioridade antes de 
+executar o comando, e fazemos o mesmo comando, colocando antes dele o “<em>nice
+ -n</em>“. Mas e se o comando já está sendo executado, como no primeiro 
+exemplo aqui? Neste caso, usamos o comando <em>renice</em> para 
+redefinir a prioridade.</p>
+<p>Para utilizar o comando renice, precisamos achar primeiro o PID do 
+processo, depois executar o comando neste PID, exemplo:</p>
+<pre class="code">$ ps axo user,pid,ni,command | grep tar
+hugo      4221   0 tar -zcf /var/lib/backup/backup-htdocs-20090520.tar.gz /var/www
+
+$ renice 19 -p 4221
+4221: old priority 0, new priority 19
+
+$ ps axo user,pid,ni,command | grep tar
+hugo      4221  19 tar -zcf /var/lib/backup/backup-htdocs-20090520.tar.gz /var/www</pre>
+<p>Nos comandos acima, eu: achei o processo que estava executando o 
+backup, e identifiquei que o PID dele era 4221. Note também que a 
+prioridade do processo é 0 (normal). Como queremos colocar o comando em 
+uma prioridade baixa, então utilizei o comando <strong>renice</strong> 
+para redefinir essa prioridade: de 0 para 19. Depois utilizei novamente o
+ comando <em>ps</em> para listar o processo e vi que a prioridade dele 
+tinha mudado.</p>
+<p>Como último exemplo, lembre-se que usuários comuns (aqui em nosso 
+caso, o usuário hugo) não podem ultrapassar prioridades maiores que 0, 
+ou seja, não podem colocar prioridades negativas. Veja o que acontece no
+ mesmo exemplo anterior:</p>
+<pre class="code">$ nice -n -10 tar -zcf /var/lib/backup/backup-htdocs-20090520.tar.gz /var/www
+nice: cannot set niceness: Permission denied</pre>
+<p>Quando tentei utilizar a prioridade -10, o sistema não deixou e 
+retornou a mensagem de permissão negada. Se fôssemos root, neste caso, 
+iria funcionar.</p>
+<p><a name="lsof"></a></p>
+<h2>lsof – Listar arquivos abertos</h2>
+<pre class="code">Sintaxe: $ lsof [opções] [arquivo]</pre>
+<p>O comando lsof é um dos mais importantes comandos para quem 
+administra sistemas Linux, principalmente na área de segurança. Este 
+comando lista <strong>todos</strong> os arquivos abertos por todos os 
+processos. Aqui, quando eu falo arquivo, não são apenas arquivos comuns,
+ mas sim recursos que funcionam como arquivos (podem ser abertos, 
+mapeados na memória, entre outros). Isso inclui bibliotecas, sockets, 
+arquivos comuns, diretórios e por aí vai.</p>
+<p>Em outras palavras, este comando nos fornece um mapeamento completo 
+do que o programa está usando no sistema. Lembre-se que usando apenas o 
+comando lsof, esta lista fica muito grande, pois mostra todos os 
+arquivos de todos os processos. Por exemplo:</p>
+<pre class="code">$ lsof -n
+[...]
+bash      4409          hugo  cwd       DIR      254,1     4096 2752514 /home/hugo
+bash      4409          hugo  rtd       DIR      254,1     4096       2 /
+bash      4409          hugo  txt       REG      254,1   700492 5849112 /bin/bash
+bash      4409          hugo  mem       REG      254,1    42504 5652815 /lib/i686/cmov/libnss_files-2.7.so
+bash      4409          hugo  mem       REG      254,1    38444 5652817 /lib/i686/cmov/libnss_nis-2.7.so
+bash      4409          hugo  mem       REG      254,1    87800 5652810 /lib/i686/cmov/libnsl-2.7.so
+bash      4409          hugo  mem       REG      254,1    30436 5652811 /lib/i686/cmov/libnss_compat-2.7.so
+bash      4409          hugo  mem       REG      254,1  1282816 5213150 /usr/lib/locale/locale-archive
+bash      4409          hugo  mem       REG      254,1  1413540 5652651 /lib/i686/cmov/libc-2.7.so
+bash      4409          hugo  mem       REG      254,1     9680 5652657 /lib/i686/cmov/libdl-2.7.so
+bash      4409          hugo  mem       REG      254,1   202188 7406484 /lib/libncurses.so.5.6
+bash      4409          hugo  mem       REG      254,1    25700 3178882 /usr/lib/gconv/gconv-modules.cache
+bash      4409          hugo  mem       REG      254,1   113248 5653602 /lib/ld-2.7.so
+bash      4409          hugo    0u      CHR      136,3                5 /dev/pts/3
+bash      4409          hugo    1u      CHR      136,3                5 /dev/pts/3
+bash      4409          hugo    2u      CHR      136,3                5 /dev/pts/3
+bash      4409          hugo  255u      CHR      136,3                5 /dev/pts/3
+[...]</pre>
+<p>No exemplo acima, eu peguei apenas um fragmento do comando, indicando
+ o que o comando <em>bash</em> está fazendo. Dá pra ver que bibliotecas 
+ele está usando, onde ele está atuando, entre outros. O parâmetro “-n”, 
+que usei no exemplo acima, serve para que se o comando retornar algum 
+endereço de rede (IP, por exemplo), ele não tente resolver com DNS, 
+assim o retorno do comando fica mais rápido.</p>
+<p>Alguns dos usos mais comuns incluem:</p>
+<ul>
+<li>Ver se algum processo está escutando uma porta na rede suspeita, ou 
+conectado em algum lugar suspeito. Por exemplo, vários scripts de 
+invasão ficam escondidos no sistema (com nomes de outros processos), 
+conectados a servidores de IRC desconhecidos. Com o lsof, dá pra saber 
+que estes comando estão fazendo algo que não é bem o que deveriam fazer 
+;) ;</li>
+<li>Ver que processo está usando um certo arquivo (lsof );</li>
+<li>Ver exatamente que tipos de conexão estão sendo feitas no sistema;</li>
+<li>Medir as memórias utilizadas pelos processos.</li>
+</ul>
+<p>Por exemplo, quero ver todos os processos que utilizam o arquivo 
+/dev/null:</p>
+<pre class="code">$ lsof /dev/null
+COMMAND    PID USER   FD   TYPE DEVICE SIZE NODE NAME
+x-session 3193 hugo    0r   CHR    1,3       617 /dev/null
+dbus-laun 3228 hugo    0r   CHR    1,3       617 /dev/null
+dbus-laun 3228 hugo    1u   CHR    1,3       617 /dev/null
+dbus-laun 3228 hugo    2u   CHR    1,3       617 /dev/null
+dbus-laun 3228 hugo    4u   CHR    1,3       617 /dev/null
+dbus-daem 3229 hugo    0u   CHR    1,3       617 /dev/null
+dbus-daem 3229 hugo    1u   CHR    1,3       617 /dev/null
+dbus-daem 3229 hugo    2u   CHR    1,3       617 /dev/null
+dbus-daem 3229 hugo    4u   CHR    1,3       617 /dev/null
+kwrapper  3275 hugo    0r   CHR    1,3       617 /dev/null
+gconfd-2  3393 hugo    0u   CHR    1,3       617 /dev/null
+gconfd-2  3393 hugo    1u   CHR    1,3       617 /dev/null
+gconfd-2  3393 hugo    2u   CHR    1,3       617 /dev/null
+gconfd-2  3393 hugo    3u   CHR    1,3       617 /dev/null</pre>
+<p>Este comando é bem parecido com o comando “fuser /dev/null”, que 
+também mostra que processos estão utilizando o arquivo /dev/null, mas o 
+lsof nos dá mais detalhes.</p>
+<p>Quero ver agora que processos estão utilizando conexões TCP no meu 
+sistema:</p>
+<pre class="code">$ lsof -n | grep TCP
+firefox-b 3327          hugo   12u     IPv4      41100              TCP 192.168.1.100:58945-&gt;66.102.1.100:www (ESTABLISHED)
+firefox-b 3327          hugo   39u     IPv4      41951              TCP 192.168.1.100:45640-&gt;72.14.247.18:https (ESTABLISHED)
+firefox-b 3327          hugo   42u     IPv4      39570              TCP 192.168.1.100:47900-&gt;72.14.247.19:https (ESTABLISHED)
+wish8.5   3535          hugo    7u     IPv4       9331              TCP 127.0.0.1:65182 (LISTEN)
+wish8.5   3535          hugo    8u     IPv4       9578              TCP 192.168.1.100:46238-&gt;207.46.106.108:msnp (ESTABLISHED)</pre>
+<p>Repare que na penúltima linha do comando anterior, o processo 
+“wish8.5″ está escutando (LISTEN) uma conexão TCP na porta 65182. Que 
+tal a gente saber todos os processos que estão escutando portas de rede?</p>
+<pre class="code"># lsof -n | grep LISTEN
+rpcbind    1264       rpc    8u     IPv4       4159                  TCP *:sunrpc (LISTEN)
+snmpd      1341      root    8u     IPv4       4561                  TCP 127.0.0.1:smux (LISTEN)
+sshd       1351      root    3u     IPv4       4451                  TCP *:domain (LISTEN)
+postmaste  1553  postgres    3u     IPv6       4895                  TCP *:postgres (LISTEN)
+postmaste  1553  postgres    4u     IPv4       4896                  TCP *:postgres (LISTEN)
+proftpd    1601       ftp    0u     IPv6       4858                  TCP *:ftp (LISTEN)
+mysqld     7882     mysql   10u     IPv4    3835186                  TCP *:mysql (LISTEN)
+named     31990     named   21u     IPv4  107763358                  TCP 127.0.0.1:domain (LISTEN)
+named     31990     named   60u     IPv4  107763397                  TCP 127.0.0.1:rndc (LISTEN)</pre>
+<p>Repare que para o comando acima, eu utilizei o <strong>root</strong> 
+(por isso o # antes do comando). Isto é necessário pois quando 
+utilizamos o lsof como usuário normal, não temos todas as permissões 
+necessárias para verificar todos os processos, então a saída do comando 
+vai ficar bem restrita. Executando como root, podemos ter todas as 
+informações possíveis.</p>
+<h3>Gostou?</h3>
+<a href="http://www.devin.com.br/processos/print/" title="Imprimir esta 
+página" rel="nofollow"><img class="WP-PrintIcon" 
+src="Processos%20no%20Linux%20-%20Devin_arquivos/print.gif" 
+alt="Imprimir esta página" title="Imprimir esta página" style="border: 
+0px none;"></a>&nbsp;<a href="http://www.devin.com.br/processos/print/" 
+title="Imprimir esta página" rel="nofollow">Imprimir esta página</a>
+<h3>Leia também:</h3>
+<ol><li><a href="http://www.devin.com.br/comandos_linux/" rel="bookmark"
+ title="Permanent Link: Comandos Linux">Comandos Linux</a></li>
+<li><a href="http://www.devin.com.br/manip_usuarios/" rel="bookmark" 
+title="Permanent Link: Manipulação de Usuários">Manipulação de Usuários</a></li>
+<li><a href="http://www.devin.com.br/comandos-de-tratamento-de-texto/" 
+rel="bookmark" title="Permanent Link: Comandos de Tratamento de Texto">Comandos
+ de Tratamento de Texto</a></li>
+<li><a href="http://www.devin.com.br/utilizando-o-bash/" rel="bookmark" 
+title="Permanent Link: Utilizando o bash">Utilizando o bash</a></li>
+<li><a href="http://www.devin.com.br/shell-entrada-e-saida/" 
+rel="bookmark" title="Permanent Link: Shell: Entrada e Saída">Shell: 
+Entrada e Saída</a></li>
+</ol><br>
+</div> <!-- Closes Post -->
+</div>
+
+
+<div class="comment">
+
+<!-- You can start editing here. -->
+
+	<h3 id="comments">4 Comentários em “Processos no Linux”</h3>
+
+	<ol class="commentlist">
+
+	
+		<li class="alt" id="comment-1846">
+
+<img alt="" 
+src="Processos%20no%20Linux%20-%20Devin_arquivos/c2162a6c692322f1d37d34bd5f0205cd.png"
+ class="avatar avatar-30 photo" width="30" height="30">
+			<div class="commentbody">
+			<strong><cite><a href="http://computacao-em-acao.blogspot.com/" 
+rel="external nofollow" class="url">Ricardo</a></cite></strong>
+						<br>
+
+			<small class="commentmetadata">29 de mai de 2009 em 1:03 pm </small>
+			<p>Muito bom,otimo material.</p>
+<p>Como sou iniciante em linux, esse material me ajudou bastante!!</p>
+<p>Valeu!!</p>
+
+			</div>
+
+
+
+		</li>
+
+	
+	
+		<li id="comment-1892">
+
+<img alt="" 
+src="Processos%20no%20Linux%20-%20Devin_arquivos/8974b90ec20211f8e9637579a7d53777.jpeg"
+ class="avatar avatar-30 photo" width="30" height="30">
+			<div class="commentbody">
+			<strong><cite><a href="http://ticnics.blogspot.com/" rel="external 
+nofollow" class="url">Edson Soares</a></cite></strong>
+						<br>
+
+			<small class="commentmetadata">24 de jun de 2009 em 5:02 am </small>
+			<p>Hugo! Parabéns pelo post!</p>
+<p>Este tutorial tem um conteúdo muito melhor do que vários livros que 
+já vi…</p>
+<p>até hj eu só conhecia kill – 15 e kill -9 rsrs</p>
+<p>agora sim posso monitorar meus processos!</p>
+<p>valeu! Valeu mesmo cara!</p>
+
+			</div>
+
+
+
+		</li>
+
+	
+	
+		<li class="alt" id="comment-2089">
+
+<img alt="" 
+src="Processos%20no%20Linux%20-%20Devin_arquivos/ff089ecc113e47786c2b00cff8104c5d.png"
+ class="avatar avatar-30 photo" width="30" height="30">
+			<div class="commentbody">
+			<strong><cite>Mauricio</cite></strong>
+						<br>
+
+			<small class="commentmetadata">26 de nov de 2009 em 10:13 am </small>
+			<p>Excelente material, aliás o site já está na lista dos Favoritos do
+ Mozilla…</p>
+
+			</div>
+
+
+
+		</li>
+
+	
+	
+		<li id="comment-2099">
+
+<img alt="" 
+src="Processos%20no%20Linux%20-%20Devin_arquivos/f133833c0d122739d6023674a146a6e0.png"
+ class="avatar avatar-30 photo" width="30" height="30">
+			<div class="commentbody">
+			<strong><cite><a href="http://www.eletricamg.com.br/" rel="external 
+nofollow" class="url">rubson engenheiro</a></cite></strong>
+						<br>
+
+			<small class="commentmetadata">08 de dez de 2009 em 7:57 am </small>
+			<p>eu uso linux, tenho dificuldades, mas  tomei contato<br>
+com teoria e pratica de forma transparente e sem compromisso<br>
+como nos procedimentos e programas ligados GNU/Linux, total e plena, sem
+ compromisso realmente livre.<br>
+É a liberdade.</p>
+
+			</div>
+
+
+
+		</li>
+
+	
+	
+	</ol>
+
+ 
+
+
+<h3 id="respond">Deixe uma Resposta</h3>
+
+
+<form action="http://www.devin.com.br/wp-comments-post.php" 
+method="post" id="commentform">
+
+
+<p><input name="author" id="author" size="22" tabindex="1" type="text">
+<label for="author"><small>Nome (required)</small></label></p>
+
+<p><input name="email" id="email" size="22" tabindex="2" type="text">
+<label for="email"><small>E-Mail (não será publicado) (required)</small></label></p>
+
+<p><input name="url" id="url" size="22" tabindex="3" type="text">
+<label for="url"><small>Website</small></label></p>
+
+
+<p><small><strong>XHTML:</strong> Você pode utilizar estas tags: <code>&lt;a
+ href="" title=""&gt; &lt;abbr title=""&gt; &lt;acronym title=""&gt; 
+&lt;b&gt; &lt;blockquote cite=""&gt; &lt;cite&gt; &lt;code&gt; &lt;del 
+datetime=""&gt; &lt;em&gt; &lt;i&gt; &lt;q cite=""&gt; &lt;strike&gt; 
+&lt;strong&gt; </code></small></p>
+
+<p><textarea name="comment" id="comment" cols="100%" rows="10" 
+tabindex="4"></textarea></p>
+
+<p><input name="submit" id="submit" tabindex="5" value="" type="submit">
+<input name="comment_post_ID" value="593" type="hidden">
+</p>
+
+</form>
+
+
+</div> <!-- Closes Comments -->
+
+
+
+<div class="cleared"></div>
+
+</div> <!-- Fecha Main -->
+
+<div class="bottomcurvewhite">
+	<div class="bottomcurvewhiteleft">
+		<div class="bottomcurvewhiteright">
+			<div class="bottomcurvewhitemiddle"></div>
+		</div>
+	</div>
+</div>
+
+
+<div class="topcurve">
+	<div class="topcurveleft">
+		<div class="topcurveright">
+			<div class="topcurvemiddle"></div>
+		</div>
+	</div>
+</div>
+
+<div id="footer">
+<p>&nbsp;</p><div><a href="http://www.devin.com.br/tag/administracao/" 
+class="tag-link-99" title="3 tópicos" style="font-size: 9.35484pt;">administração</a>
+<a href="http://www.devin.com.br/tag/apache/" class="tag-link-51" 
+title="7 tópicos" style="font-size: 12.7419pt;">apache</a>
+<a href="http://www.devin.com.br/tag/apt/" class="tag-link-23" title="2 
+tópicos" style="font-size: 8pt;">apt</a>
+<a href="http://www.devin.com.br/tag/arquivos/" class="tag-link-13" 
+title="2 tópicos" style="font-size: 8pt;">arquivos</a>
+<a href="http://www.devin.com.br/tag/backup/" class="tag-link-28" 
+title="3 tópicos" style="font-size: 9.35484pt;">backup</a>
+<a href="http://www.devin.com.br/tag/banco-de-dados/" 
+class="tag-link-224" title="3 tópicos" style="font-size: 9.35484pt;">banco
+ de dados</a>
+<a href="http://www.devin.com.br/tag/bash/" class="tag-link-152" 
+title="4 tópicos" style="font-size: 10.4839pt;">bash</a>
+<a href="http://www.devin.com.br/tag/certification/" 
+class="tag-link-117" title="3 tópicos" style="font-size: 9.35484pt;">certification</a>
+<a href="http://www.devin.com.br/tag/comandos/" class="tag-link-12" 
+title="13 tópicos" style="font-size: 15.5645pt;">comandos</a>
+<a href="http://www.devin.com.br/tag/configuracao/" class="tag-link-54" 
+title="3 tópicos" style="font-size: 9.35484pt;">configuração</a>
+<a href="http://www.devin.com.br/tag/css/" class="tag-link-209" title="3
+ tópicos" style="font-size: 9.35484pt;">css</a>
+<a href="http://www.devin.com.br/tag/distribuicoes/" class="tag-link-10"
+ title="3 tópicos" style="font-size: 9.35484pt;">distribuições</a>
+<a href="http://www.devin.com.br/tag/dos/" class="tag-link-84" title="2 
+tópicos" style="font-size: 8pt;">dos</a>
+<a href="http://www.devin.com.br/tag/e-mail/" class="tag-link-75" 
+title="3 tópicos" style="font-size: 9.35484pt;">e-mail</a>
+<a href="http://www.devin.com.br/tag/eclipse/" class="tag-link-121" 
+title="2 tópicos" style="font-size: 8pt;">eclipse</a>
+<a href="http://www.devin.com.br/tag/exam/" class="tag-link-123" 
+title="3 tópicos" style="font-size: 9.35484pt;">exam</a>
+<a href="http://www.devin.com.br/tag/htaccess/" class="tag-link-53" 
+title="2 tópicos" style="font-size: 8pt;">htaccess</a>
+<a href="http://www.devin.com.br/tag/html/" class="tag-link-208" 
+title="3 tópicos" style="font-size: 9.35484pt;">html</a>
+<a href="http://www.devin.com.br/tag/internet/" class="tag-link-32" 
+title="5 tópicos" style="font-size: 11.3871pt;">internet</a>
+<a href="http://www.devin.com.br/tag/iptables/" class="tag-link-34" 
+title="2 tópicos" style="font-size: 8pt;">iptables</a>
+<a href="http://www.devin.com.br/tag/kernel/" class="tag-link-55" 
+title="3 tópicos" style="font-size: 9.35484pt;">kernel</a>
+<a href="http://www.devin.com.br/tag/linha-de-comando/" 
+class="tag-link-67" title="4 tópicos" style="font-size: 10.4839pt;">linha
+ de comando</a>
+<a href="http://www.devin.com.br/tag/linux/" class="tag-link-11" 
+title="51 tópicos" style="font-size: 22pt;">linux</a>
+<a href="http://www.devin.com.br/tag/lpi/" class="tag-link-127" title="3
+ tópicos" style="font-size: 9.35484pt;">lpi</a>
+<a href="http://www.devin.com.br/tag/marketing/" class="tag-link-130" 
+title="2 tópicos" style="font-size: 8pt;">marketing</a>
+<a href="http://www.devin.com.br/tag/mod_rewrite/" class="tag-link-175" 
+title="3 tópicos" style="font-size: 9.35484pt;">mod_rewrite</a>
+<a href="http://www.devin.com.br/tag/mysql/" class="tag-link-172" 
+title="3 tópicos" style="font-size: 9.35484pt;">mysql</a>
+<a href="http://www.devin.com.br/tag/pacotes/" class="tag-link-15" 
+title="2 tópicos" style="font-size: 8pt;">pacotes</a>
+<a href="http://www.devin.com.br/tag/particoes/" class="tag-link-62" 
+title="2 tópicos" style="font-size: 8pt;">partições</a>
+<a href="http://www.devin.com.br/tag/php/" class="tag-link-171" title="8
+ tópicos" style="font-size: 13.3065pt;">php</a>
+<a href="http://www.devin.com.br/tag/programacao/" class="tag-link-173" 
+title="3 tópicos" style="font-size: 9.35484pt;">programação</a>
+<a href="http://www.devin.com.br/tag/relatorios/" class="tag-link-88" 
+title="2 tópicos" style="font-size: 8pt;">relatórios</a>
+<a href="http://www.devin.com.br/tag/rpm/" class="tag-link-25" title="3 
+tópicos" style="font-size: 9.35484pt;">rpm</a>
+<a href="http://www.devin.com.br/tag/servidores/" class="tag-link-159" 
+title="3 tópicos" style="font-size: 9.35484pt;">servidores</a>
+<a href="http://www.devin.com.br/tag/shell/" class="tag-link-150" 
+title="4 tópicos" style="font-size: 10.4839pt;">shell</a>
+<a href="http://www.devin.com.br/tag/shell-script/" class="tag-link-151"
+ title="4 tópicos" style="font-size: 10.4839pt;">shell-script</a>
+<a href="http://www.devin.com.br/tag/sistema-de-arquivos/" 
+class="tag-link-90" title="2 tópicos" style="font-size: 8pt;">sistema de
+ arquivos</a>
+<a href="http://www.devin.com.br/tag/ssh/" class="tag-link-48" title="3 
+tópicos" style="font-size: 9.35484pt;">ssh</a>
+<a href="http://www.devin.com.br/tag/texto/" class="tag-link-191" 
+title="3 tópicos" style="font-size: 9.35484pt;">texto</a>
+<a href="http://www.devin.com.br/tag/usuarios/" class="tag-link-64" 
+title="2 tópicos" style="font-size: 8pt;">usuários</a>
+<a href="http://www.devin.com.br/tag/vida/" class="tag-link-139" 
+title="3 tópicos" style="font-size: 9.35484pt;">vida</a>
+<a href="http://www.devin.com.br/tag/web/" class="tag-link-52" title="5 
+tópicos" style="font-size: 11.3871pt;">web</a>
+<a href="http://www.devin.com.br/tag/windows/" class="tag-link-46" 
+title="4 tópicos" style="font-size: 10.4839pt;">windows</a>
+<a href="http://www.devin.com.br/tag/x11/" class="tag-link-49" title="2 
+tópicos" style="font-size: 8pt;">x11</a>
+<a href="http://www.devin.com.br/tag/yahoo/" class="tag-link-140" 
+title="2 tópicos" style="font-size: 8pt;">yahoo</a></div>
+<br>
+<div id="credits">
+<p>Devin - Tema modificado do <a 
+href="http://www.dailyblogtips.com/wordpress-themes/">StudioPress Theme</a></p>
+<p><a href="feed://http//www.devin.com.br/feed/">RSS Completo</a> - <a 
+href="feed://http//www.devin.com.br/comments/feed/">RSS dos Comentários</a></p>
+</div>
+
+<script type="text/javascript">
+/* <![CDATA[ */
+var ratingsL10n = {
+	plugin_url: "http://www.devin.com.br/wp-content/plugins/wp-postratings",
+	ajax_url: "http://www.devin.com.br/wp-content/plugins/wp-postratings/wp-postratings.php",
+	text_wait: "Please rate only 1 post at a time.",
+	image: "stars",
+	image_ext: "gif",
+	max: "5",
+	show_loading: "1",
+	show_fading: "1",
+	custom: "0"
+};
+var ratings_mouseover_image=new Image();ratings_mouseover_image.src=ratingsL10n.plugin_url+"/images/"+ratingsL10n.image+"/rating_over."+ratingsL10n.image_ext;
+/* ]]> */
+</script>
+<script type="text/javascript" src="Processos%20no%20Linux%20-%20Devin_arquivos/postratings-js.js"></script>
+
+<div class="cleared"></div>
+</div> <!-- Closes Footer -->
+
+</div> <!-- Closes Wrapper -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script src="Processos%20no%20Linux%20-%20Devin_arquivos/ga.js" type="text/javascript"></script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-5647977-1");
+pageTracker._trackPageview();
+</script>
+</body></html>

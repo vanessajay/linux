@@ -1,0 +1,1030 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="pt-BR"><head profile="http://www.w3.org/2005/10/profile">
+
+
+<link rel="icon" type="image/png" 
+href="http://img.vivaolinux.com.br/favicon.png">
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Linux: Usando NTPDATE para manter a hora certa do seu Linuxbox 
+[Dica]</title>
+<meta name="description" content="Viva o Linux - A maior comunidade 
+Linux da América Latina. Artigos, dicas, tutoriais, fórum, scripts e 
+muito mais. Ideal para quem busca auto-ajuda em Linux.">
+<meta name="keywords" content="Linux,site sobre linux,comunidade 
+linux,instalar linux,software livre,fórum linux">
+<link rel="stylesheet" 
+href="Usando-NTPDATE-para-manter-a-hora-certa-do-seu-Linuxbox_arquivos/linux025.css"
+ type="text/css">
+<link rel="alternate" type="application/rss+xml" title="RSS Linux" 
+href="http://www.vivaolinux.com.br/index.rdf">
+<meta name="verify-v1" 
+content="QT3PYQU5yGuEhXltPUTz5tRTN/hXmwUDT1wDE1iCfTU=">
+<meta http-equiv="Content-language" content="pt-BR">
+<script src="Usando-NTPDATE-para-manter-a-hora-certa-do-seu-Linuxbox_arquivos/script.jsp" charset="ISO-8859-1" type="text/javascript"></script></head><body>
+
+
+<div id="cabecalho">
+<div id="topoesquerda"><a href="http://www.vivaolinux.com.br/index.php"><img
+ id="logo" 
+src="Usando-NTPDATE-para-manter-a-hora-certa-do-seu-Linuxbox_arquivos/linux-logo-002.jpg"
+ alt="Linux logo" width="125" height="55"></a></div>
+<div id="topodireita">
+<form method="get" action="http://www.google.com.br/custom" 
+target="_top" name="pesquisa" id="pesquisa">
+<input name="domains" value="www.vivaolinux.com.br" type="hidden">
+<input name="sitesearch" value="www.vivaolinux.com.br" type="hidden">
+<input name="client" value="pub-3535276187000580" type="hidden">
+<input name="forid" value="1" type="hidden">
+<input name="ie" value="ISO-8859-1" type="hidden">
+<input name="oe" value="ISO-8859-1" type="hidden">
+<input name="cof" 
+value="GALT:#0066CC;GL:1;DIV:#999999;VLC:336633;AH:center;BGC:FFFFFF;LBGC:FFFFFF;ALC:0066CC;LC:0066CC;T:000000;GFNT:666666;GIMP:666666;LH:45;LW:98;L:http://img.vivaolinux.com.br/imagens/banners/logo_vol_google.jpg;S:http://www.vivaolinux.com.br;LP:1;FORID:1;"
+ type="hidden">
+<input name="hl" value="pt" type="hidden">
+<input name="q" class="inputText" type="text">
+<select name="tipoBusca" class="inputText" id="tipoBusca" style="height:
+ 18px;"> 
+<option selected="selected" value="0">Todo o site</option> 
+<option value="artigos">Artigos</option> 
+<option value="conf">.Conf</option> 
+<option value="comunidade">Comunid.</option> 
+<option value="dicas">Dicas</option> 
+<option value="faq">Perguntas</option> 
+<option value="screenshot">Shots</option> 
+<option value="scripts">Scripts</option> 
+<option value="wallpaper">Walls</option> 
+</select>
+<input name="sa" 
+src="Usando-NTPDATE-para-manter-a-hora-certa-do-seu-Linuxbox_arquivos/linux-busca.gif"
+ onclick="submeter_busca(document.pesquisa)" class="inputButton" 
+alt="Busca Linux" type="image">
+</form>
+	</div>
+	<div id="topocentral"><img id="slogan" 
+src="Usando-NTPDATE-para-manter-a-hora-certa-do-seu-Linuxbox_arquivos/linux-slogan.gif"
+ alt="Linux slogan"></div>
+</div>
+<div id="menu">
+	<div id="menuesquerda"></div>
+	<div id="menudireita">
+		<div id="loginInfo"><a class="destaque" 
+href="http://www.vivaolinux.com.br/testarLogin.php?msg=0">Login</a> 
+&nbsp;&nbsp;|&nbsp;&nbsp; <a class="destaque" 
+href="http://www.vivaolinux.com.br/formCadastro.php">Cadastre-se</a>&nbsp;&nbsp;<a
+ href="http://www.vivaolinux.com.br/index.rdf"><img 
+src="Usando-NTPDATE-para-manter-a-hora-certa-do-seu-Linuxbox_arquivos/linux-rss.jpg"
+ alt="Linux RSS" title="RSS do VOL" width="13" border="0" height="13"></a>&nbsp;<a
+ href="http://www.twitter.com/vivaolinux_"><img 
+src="Usando-NTPDATE-para-manter-a-hora-certa-do-seu-Linuxbox_arquivos/linux-twitter.png"
+ alt="VOL no Twitter" title="VOL no Twitter" width="13" border="0" 
+height="13"></a></div>
+	</div>
+	<div id="menucentral">
+		<div id="navegacao">
+			» <a class="destaque" href="http://www.vivaolinux.com.br/linux/">O 
+que é GNU/Linux</a> &nbsp;&nbsp;|&nbsp;&nbsp; <a class="destaque" 
+href="http://www.vivaolinux.com.br/download-linux/">Download do 
+GNU/Linux</a> &nbsp;&nbsp;|&nbsp;&nbsp; <a class="destaque" 
+href="http://www.vivaolinux.com.br/anuncie/">Anuncie</a> 
+&nbsp;&nbsp;|&nbsp;&nbsp; <a class="destaque" 
+href="http://www.vivaolinux.com.br/falecom/index.php">Fale Conosco</a>
+		</div>
+</div>
+</div>
+
+
+<div id="barratop">Visite também: <a 
+href="http://www.vivaolinux.com.br/verBanner.php?codigo=252" 
+target="_new" class="texttop">Segurança Linux</a>&nbsp;·&nbsp;<a 
+href="http://www.vivaolinux.com.br/verBanner.php?codigo=134" 
+target="_new" class="texttop">BR-Linux.org</a>&nbsp;·&nbsp;<a 
+href="http://www.vivaolinux.com.br/verBanner.php?codigo=135" 
+target="_new" class="texttop">Dicas-L</a>&nbsp;·&nbsp;<a 
+href="http://www.vivaolinux.com.br/verBanner.php?codigo=130" 
+target="_new" class="texttop">NoticiasLinux</a>&nbsp;·&nbsp;<a 
+href="http://www.vivaolinux.com.br/verBanner.php?codigo=133" 
+target="_new" class="texttop">SoftwareLivre.org</a>&nbsp;·&nbsp;<a 
+href="http://www.vivaolinux.com.br/verBanner.php?codigo=131" 
+target="_new" class="texttop">UnderLinux</a>&nbsp;·&nbsp;<a 
+href="http://www.vivaolinux.com.br/verBanner.php?codigo=132" 
+target="_new" class="texttop">BestLinux</a></div>
+
+
+<div id="conteudo">
+
+<!-- inicio do quadro da esquerda -->
+<div id="centroesquerda">
+
+<!-- inicio box menu -->
+<div class="box" style="margin-bottom: 0px;">
+<span class="titulo">» Menu</span>
+<ul class="lista">
+<li><a class="destaquemenu" 
+href="http://www.vivaolinux.com.br/artigos/index.php" title="Artigos 
+sobre Linux">Artigos</a></li> 
+<li><a class="destaquemenu" 
+href="http://www.vivaolinux.com.br/conf/index.php" title="Arquivos de 
+configuração">.Conf</a></li> 
+<li><a class="destaquemenu" 
+href="http://www.vivaolinux.com.br/camisetas/" title="Camisetas Viva o 
+Linux">Camisetas</a></li>
+<li><a class="destaquemenu" 
+href="http://www.vivaolinux.com.br/comunidades/" title="Comunidades 
+sobre Linux">Comunidades</a></li>
+<li><a class="destaquemenu" href="http://www.vivaolinux.com.br/dicas/" 
+title="Dicas sobre Linux">Dicas</a></li>
+<li><a class="destaquemenu" href="http://volcon.org/" title="Eventos do 
+Viva o Linux">Eventos</a></li>
+<li><a class="destaquemenu" 
+href="http://www.vivaolinux.com.br/perguntas/" title="Aprenda Linux">Perguntas</a></li>
+<li><a class="destaquemenu" 
+href="http://www.vivaolinux.com.br/screenshots/" title="Telas do Linux">Screenshots</a></li>
+<li><a class="destaquemenu" href="http://www.vivaolinux.com.br/scripts/"
+ title="Scripts Linux">Scripts</a></li>
+<li><a class="destaquemenu" 
+href="http://www.vivaolinux.com.br/simulado/" title="Simulado Linux">Simulado</a></li>
+<li><a class="destaquemenu" 
+href="http://www.vivaolinux.com.br/wallpapers/" title="Wallpapers para 
+Linux">Wallpapers</a></li>
+</ul>
+</div>
+<!-- fim box menu -->
+
+<!-- inicio google left -->
+
+<div>
+<script type="text/javascript"><!--
+google_ad_client = "pub-3535276187000580";
+/* 160x600 esquerda dica */
+google_ad_slot = "3300236580";
+google_ad_width = 160;
+google_ad_height = 600;
+//-->
+</script>
+<script type="text/javascript" src="Usando-NTPDATE-para-manter-a-hora-certa-do-seu-Linuxbox_arquivos/show_ads.js">
+</script><script src="Usando-NTPDATE-para-manter-a-hora-certa-do-seu-Linuxbox_arquivos/expansion_embed.js"></script><script src="Usando-NTPDATE-para-manter-a-hora-certa-do-seu-Linuxbox_arquivos/test_domain.js"></script><script>google_protectAndRun("ads_core.google_render_ad", google_handleError, google_render_ad);</script><ins
+ style="display: inline-table; border: medium none; height: 600px; 
+margin: 0pt; padding: 0pt; position: relative; visibility: visible; 
+width: 160px;"><ins style="display: block; border: medium none; height: 
+600px; margin: 0pt; padding: 0pt; position: relative; visibility: 
+visible; width: 160px;"><iframe allowtransparency="true" hspace="0" 
+id="google_ads_frame1" marginheight="0" marginwidth="0" 
+name="google_ads_frame" 
+src="Usando-NTPDATE-para-manter-a-hora-certa-do-seu-Linuxbox_arquivos/ads.htm"
+ style="left: 0pt; position: absolute; top: 0pt;" vspace="0" width="160"
+ frameborder="0" height="600" scrolling="no"></iframe></ins></ins>
+</div>
+
+<!-- fim google left -->
+
+<!-- inicio ultimos artigos -->
+<div class="box">
+<span class="titulo">» Últimos artigos</span>
+<div id="boxartigos" class="conteudo">
+<a class="destaque" 
+href="http://www.vivaolinux.com.br/artigo/Trabalhando-com-Java-e-SQL-%28parte-1%29"
+ title="Ler">Trabalhando com Java e SQL (parte 1)</a>
+<a class="destaque" 
+href="http://www.vivaolinux.com.br/artigo/Instalando-o-Virtualbox-da-Sun-Microsystems-no-Ubuntu"
+ title="Ler">Instalando o Virtualbox da Sun Microsystems no Ubuntu</a>
+<a class="destaque" 
+href="http://www.vivaolinux.com.br/artigo/Scanner-de-seguranca-SKIPFISH-do-Google-para-sites"
+ title="Ler">Scanner de segurança SKIPFISH do Google para sites</a>
+<a class="destaque" 
+href="http://www.vivaolinux.com.br/artigo/Programando-uma-Intranet-com-Apache-MySQL-e-Perl-%28parte-1%29"
+ title="Ler">Programando uma Intranet com Apache, MySQL e Perl (parte 1)</a>
+<a class="destaque" 
+href="http://www.vivaolinux.com.br/artigo/A-Revista-Espirito-Livre" 
+title="Ler">A Revista Espírito Livre</a>
+<a class="destaque" 
+href="http://www.vivaolinux.com.br/artigo/Apresentando-o-Linux-Mint-LXDE-Edition"
+ title="Ler">Apresentando o Linux Mint LXDE Edition</a>
+</div>
+</div>
+<!-- fim ultimos artigos -->
+
+<!-- inicio box screenshot -->
+<div class="box">
+<span class="titulo">» Screenshot</span>
+<div class="conteudo">
+<a href="http://www.vivaolinux.com.br/screenshot/Gnome-max-payne-1" 
+class="artigo"><img 
+src="Usando-NTPDATE-para-manter-a-hora-certa-do-seu-Linuxbox_arquivos/1259847325.png"
+ alt="Linux: max payne" width="120" border="0" height="96"></a><br>
+<div style="margin-top: 3px;">Por <a class="destaque" 
+href="http://www.vivaolinux.com.br/perfil/verPerfil.php?login=sabing">sabing</a></div>
+</div>
+</div>
+<!-- fim box screenshot -->
+
+<!-- inicio ultimas dicas -->
+<div class="box">
+<span class="titulo">» Últimas dicas</span>
+<div id="boxdicas" class="conteudo">
+<a class="destaque" 
+href="http://www.vivaolinux.com.br/dica/K3B-em-portugues-no-Slackware-Linux-13"
+ title="Ler">K3B em português no Slackware Linux 13</a>
+<a class="destaque" 
+href="http://www.vivaolinux.com.br/dica/Resolvendo-problema-com-audio-no-Debian-placa-Intel-Corporation-82801I"
+ title="Ler">Resolvendo problema com audio no Debian - placa Intel 
+Corporation 82801I</a>
+<a class="destaque" 
+href="http://www.vivaolinux.com.br/dica/Google-Gadgets-incremente-seu-desktop-com-belos-aplicativos"
+ title="Ler">Google Gadgets - incremente seu desktop com belos 
+aplicativos</a>
+<a class="destaque" 
+href="http://www.vivaolinux.com.br/dica/LiveUSB-OpenSUSE-11.2" 
+title="Ler">LiveUSB OpenSUSE 11.2</a>
+<a class="destaque" 
+href="http://www.vivaolinux.com.br/dica/Instalando-o-IRPF-e-ReceitaNet-2010-no-OpenSUSE-11.2"
+ title="Ler">Instalando o IRPF e ReceitaNet 2010 no OpenSUSE 11.2</a>
+<a class="destaque" 
+href="http://www.vivaolinux.com.br/dica/Melhorando-a-seguranca-em-sites-Joomla"
+ title="Ler">Melhorando a segurança em sites Joomla</a>
+<a class="destaque" 
+href="http://www.vivaolinux.com.br/dica/Traduzindo-o-Drupal-para-o-portugues"
+ title="Ler">Traduzindo o Drupal para o português</a>
+<a class="destaque" 
+href="http://www.vivaolinux.com.br/dica/Alterando-o-visual-das-janelas-do-KDE4-com-o-Aurorae"
+ title="Ler">Alterando o visual das janelas do KDE4 com o Aurorae</a>
+</div>
+</div>
+<!-- fim ultimas dicas -->
+
+<!-- inicio seguranca linux -->
+<div class="box">
+<span class="titulo">» Segurança Linux</span>
+<div id="boxscripts" class="conteudo">
+<a class="destaque" 
+href="http://segurancalinux.com/artigo/Ataque-no-lado-do-cliente-%28Client-side-Attack%29"
+ title="Segurança Linux">[Artigo] Ataque no lado do cliente (Client side
+ Attack)</a>
+<a class="destaque" 
+href="http://segurancalinux.com/dica/Transformando-seu-Debian-Ubuntu-no-Backtrack-4-Final-pwnsauce-RELEASE"
+ title="Segurança Linux">[Dica] Transformando seu Debian/Ubuntu no 
+Backtrack 4 - Final "pwnsauce" RELEASE</a>
+<a class="destaque" 
+href="http://segurancalinux.com/dica/Projeto-OWASP-Broken-Web-Applications"
+ title="Segurança Linux">[Dica] Projeto OWASP Broken Web Applications</a>
+<a class="destaque" 
+href="http://segurancalinux.com/dica/Definicao-de-politicas-para-troca-de-senhas"
+ title="Segurança Linux">[Dica] Definição de políticas para troca de 
+senhas</a>
+<a class="destaque" 
+href="http://segurancalinux.com/dica/Sudo-evitando-mal-uso" 
+title="Segurança Linux">[Dica] Sudo: evitando mal uso</a>
+<a class="destaque" 
+href="http://segurancalinux.com/noticia/Ubuntu-Pentest-Edition" 
+title="Segurança Linux">[Notícia] Ubuntu Pentest Edition </a>
+<a class="destaque" 
+href="http://segurancalinux.com/noticia/Servidores-da-Fundacao-Apache-foram-comprometidos"
+ title="Segurança Linux">[Notícia] Servidores da Fundação Apache foram 
+comprometidos</a>
+</div>
+</div>
+<!-- fim seguranca linux -->
+
+<!-- inicio ultimos scripts -->
+<div class="box">
+<span class="titulo">» Últimos scripts</span>
+<div id="boxscripts" class="conteudo">
+<a class="destaque" 
+href="http://www.vivaolinux.com.br/script/Controle-de-copia-de-arquivos-por-tamanho"
+ title="Ver">[Shell-Script] Controle de cópia de arquivos por tamanho</a>
+<a class="destaque" 
+href="http://www.vivaolinux.com.br/script/Testando-se-a-conexao-com-a-Internet-esta-ativa"
+ title="Ver">[Shell-Script] Testando se a conexão com a Internet está 
+ativa</a>
+<a class="destaque" 
+href="http://www.vivaolinux.com.br/script/zsh-Sattolos-Random-Cyclic-Permutation"
+ title="Ver">[Shell-Script] zsh: Sattolo's Random Cyclic Permutation</a>
+<a class="destaque" 
+href="http://www.vivaolinux.com.br/script/Montando-compartilhamentos-Webdav-no-Linux"
+ title="Ver">[Shell-Script] Montando compartilhamentos Webdav no Linux</a>
+<a class="destaque" 
+href="http://www.vivaolinux.com.br/script/Pedindo-uma-senha-ao-usuario" 
+title="Ver">[C/C++] Pedindo uma senha ao usuário!!!</a>
+</div>
+</div>
+<!-- fim ultimos scripts -->
+</div>
+<!-- fim do quadro da esqueda -->
+
+
+<!-- inicio do quadro da direita -->
+<div id="centrodireita">
+
+<!-- inicio banner -->
+
+<br>
+<div class="textosolto">
+<div class="tresbt"><a 
+href="http://www.vivaolinux.com.br/verBanner.php?codigo=87" 
+style="color: rgb(0, 0, 0) ! important; text-decoration: none;" 
+target="_new">Treinamento Zope Plone</a><br></div>
+<div style="margin-bottom: 8px;"><a 
+href="http://www.vivaolinux.com.br/verBanner.php?codigo=247" 
+target="_blank"><img 
+src="Usando-NTPDATE-para-manter-a-hora-certa-do-seu-Linuxbox_arquivos/banner-hostgator-160x120.gif"
+ width="160" border="0" height="120"></a></div>
+<div style="margin-bottom: 8px;">
+<a href="http://www.vivaolinux.com.br/verBanner.php?codigo=251"><img 
+src="Usando-NTPDATE-para-manter-a-hora-certa-do-seu-Linuxbox_arquivos/banner-filisol-al.jpg"
+ alt="Linux banner" width="160" border="0" height="120"></a></div>
+<div style="margin-bottom: 8px;">
+<a href="http://www.vivaolinux.com.br/verBanner.php?codigo=245"><img 
+src="Usando-NTPDATE-para-manter-a-hora-certa-do-seu-Linuxbox_arquivos/banner-icasol.gif"
+ alt="Linux banner" width="160" border="0" height="100"></a></div> 
+<div style="margin-bottom: 8px;">
+<a href="http://www.vivaolinux.com.br/verBanner.php?codigo=254"><img 
+src="Usando-NTPDATE-para-manter-a-hora-certa-do-seu-Linuxbox_arquivos/banner-linuxtraining02.gif"
+ alt="Linux banner" width="160" border="0" height="100"></a></div>
+<div>
+<a href="http://www.vivaolinux.com.br/verBanner.php?codigo=220"><img 
+src="Usando-NTPDATE-para-manter-a-hora-certa-do-seu-Linuxbox_arquivos/banner-camiseta-root-user.gif"
+ alt="Linux banner" width="160" border="0" height="100"></a></div>
+<div class="tresbt" style="padding: 3px;">[<a 
+href="http://www.vivaolinux.com.br/anuncie/">Como anunciar?</a>]</div>
+</div>
+<br><br>
+
+<!-- fim banner -->
+
+<div class="box">
+<span class="titulo">» Destaques</span>
+<div class="conteudo" id="boxeventos">
+<a class="destaque" 
+href="http://www.vivaolinux.com.br/topico/Classificados-de-empregos-Linux/Oportunidade-Emprego/">Profissional
+ Linux com experiência em redes - Belo Horizonte/MG  (0)</a>
+<a class="destaque" 
+href="http://www.vivaolinux.com.br/topico/Divulgacao-de-eventos/FLISOL-Rib-Preto-SP/">24/04
+ - FLISOL - Rib Preto/SP  (4)</a>
+<a class="destaque" 
+href="http://www.vivaolinux.com.br/topico/Anuncios-de-emprego/Diversas-oportunidades-de-TI-em-Porto-Alegre-RS/">Diversas
+ oportunidades de TI em Porto Alegre &#8211; RS  (0)</a>
+<a class="destaque" 
+href="http://www.vivaolinux.com.br/topico/Anuncios-de-emprego/Vagas-para-Desenvolvedor-Joomla-WordPress-e-PHP-SP/">Vagas
+ para Desenvolvedor Joomla, WordPress e PHP &#8211; SP  (0)</a>
+<a class="destaque" 
+href="http://www.vivaolinux.com.br/topico/Divulgacao-de-eventos/Palestra-Gratuita-Web-Designers-X-Javascript-SP/">Palestra
+ Gratuita &#8211; Web Designers X Javascript &#8211; SP  (0)</a>
+<a class="destaque" 
+href="http://www.vivaolinux.com.br/topico/Divulgacao-de-eventos/Campanha-pelos-Drivers-para-Linux/">Campanha
+ pelos Drivers para Linux  (23)</a>
+<a class="destaque" 
+href="http://www.vivaolinux.com.br/topico/Classificados-de-empregos-Linux/Vaga-para-Suporte-Tecnico/">Vaga
+ para Suporte Técnico - Botafogo / RJ  (0)</a>
+<a class="destaque" 
+href="http://www.vivaolinux.com.br/topico/Divulgacao-de-eventos/Flisol-2010-Maringa/">24/04
+ - Flisol 2010 Maringá  (0)</a>
+<a class="destaque" 
+href="http://www.vivaolinux.com.br/topico/Divulgacao-de-eventos/Flisol-2010-Vitoria-ES/">24/04
+ - Flisol 2010 - Vitória/ES  (5)</a>
+
+</div>
+</div>
+
+
+<div class="box">
+<span class="titulo">» Login</span>
+<div class="conteudo"><div class="padrao">
+<form name="formLogin1" action="/testarLogin.php" method="post">
+<input name="referer" 
+value="/dica/Usando-NTPDATE-para-manter-a-hora-certa-do-seu-Linuxbox?" 
+type="hidden">
+
+<div class="loginBox">
+Login: <input name="formLogin" style="width: 75px;" maxlength="16" 
+class="padrao">
+</div>
+
+<div class="loginBox">
+Senha: <input style="width: 75px;" name="formSenha" maxlength="100" 
+class="padrao" type="password">
+</div>
+
+<div class="centro">
+<input name="imageField2" 
+src="Usando-NTPDATE-para-manter-a-hora-certa-do-seu-Linuxbox_arquivos/botao_enviar.jpg"
+ alt="Linux login" width="36" type="image" border="0" height="15">
+</div>
+
+<br>
+Se você ainda não possui uma conta, <a 
+href="http://www.vivaolinux.com.br/formCadastro.php">clique aqui</a>.
+<br>
+<p align="center"><a 
+href="http://www.vivaolinux.com.br/formLembrarSenha.php">Esqueci minha 
+senha</a></p>
+</form>
+</div>
+
+</div>
+</div>
+
+<div class="box">
+<span class="titulo">» Top 10 usuários</span>
+<div id="boxtop10" class="conteudo">
+<a class="destaque" 
+href="http://www.vivaolinux.com.br/perfil/verPerfil.php?login=fabio" 
+title="Perfil do usuário">5016191: Fábio Berbert de Paula</a>
+<a class="destaque" 
+href="http://www.vivaolinux.com.br/perfil/verPerfil.php?login=cabelo" 
+title="Perfil do usuário">4159043: Alessandro de Oliveira Faria (A.K.A. 
+CABELO)</a>
+<a class="destaque" 
+href="http://www.vivaolinux.com.br/perfil/verPerfil.php?login=acvsilva" 
+title="Perfil do usuário">2070759: Antonio Carlos Vasques da Silva</a>
+<a class="destaque" 
+href="http://www.vivaolinux.com.br/perfil/verPerfil.php?login=jeffestanislau"
+ title="Perfil do usuário">1927463: Jefferson Estanislau da Silva</a>
+<a class="destaque" 
+href="http://www.vivaolinux.com.br/perfil/verPerfil.php?login=percival" 
+title="Perfil do usuário">1828781: Percival F. Jr.</a>
+<a class="destaque" 
+href="http://www.vivaolinux.com.br/perfil/verPerfil.php?login=rychardi" 
+title="Perfil do usuário">1779348: Ricardo Santiago</a>
+<a class="destaque" 
+href="http://www.vivaolinux.com.br/perfil/verPerfil.php?login=davidsonpaulo"
+ title="Perfil do usuário">1752004: Davidson Rodrigues Paulo</a>
+<a class="destaque" 
+href="http://www.vivaolinux.com.br/perfil/verPerfil.php?login=cvs" 
+title="Perfil do usuário">1413815: Thiago Alves</a>
+<a class="destaque" 
+href="http://www.vivaolinux.com.br/perfil/verPerfil.php?login=elgio" 
+title="Perfil do usuário">1412883: Elgio Schlemer</a>
+<a class="destaque" 
+href="http://www.vivaolinux.com.br/perfil/verPerfil.php?login=juliaojunior"
+ title="Perfil do usuário">1363510: Cicero Juliao da Silva Junior</a>
+</div>
+</div>
+
+<div class="textosolto" style="margin-top: 2px; margin-bottom: 2px;"><a 
+href="http://www.vivaolinux.com.br/membros/index.php?papo=on&amp;&amp;submeter=Ok"
+ title="Converse sobre Linux">[0] usuários para <br>Papo Direto</a></div>
+
+<!-- inicio box wallpaper -->
+<div class="box">
+<span class="titulo">» Wallpaper</span>
+<div class="conteudo">
+<a 
+href="http://www.vivaolinux.com.br/wallpaper/3d-tux-%281280x1024%29-ryu"
+ class="artigo"><img 
+src="Usando-NTPDATE-para-manter-a-hora-certa-do-seu-Linuxbox_arquivos/wall-041613.jpg"
+ alt="Linux: 3d tux" width="120" border="0" height="96"></a><br>
+<div style="margin-top: 3px;">Por <a class="destaque" 
+href="http://www.vivaolinux.com.br/perfil/verPerfil.php?login=ryu">ryu</a></div>
+</div>
+</div>
+<!-- fim box wallpaper -->
+
+<div>
+<!-- google 160x90 -->
+<script type="text/javascript"><!--
+google_ad_client = "pub-3535276187000580";
+/* 160x90 home links */
+google_ad_slot = "7244755630";
+google_ad_width = 160;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript" src="Usando-NTPDATE-para-manter-a-hora-certa-do-seu-Linuxbox_arquivos/show_ads.js">
+</script><script>google_protectAndRun("ads_core.google_render_ad", google_handleError, google_render_ad);</script><ins
+ style="display: inline-table; border: medium none; height: 90px; 
+margin: 0pt; padding: 0pt; position: relative; visibility: visible; 
+width: 160px;"><ins style="display: block; border: medium none; height: 
+90px; margin: 0pt; padding: 0pt; position: relative; visibility: 
+visible; width: 160px;"><iframe allowtransparency="true" hspace="0" 
+id="google_ads_frame2" marginheight="0" marginwidth="0" 
+name="google_ads_frame" 
+src="Usando-NTPDATE-para-manter-a-hora-certa-do-seu-Linuxbox_arquivos/ads_002.htm"
+ style="left: 0pt; position: absolute; top: 0pt;" vspace="0" width="160"
+ frameborder="0" height="90" scrolling="no"></iframe></ins></ins>
+<!-- google 160x90 -->
+</div>
+<br>
+
+<div class="box">
+<span class="titulo">» <a href="http://www.vivaolinux.com.br/perguntas/"
+ class="boxLink">Perguntas</a></span>
+<div id="boxperguntas" class="conteudo">
+<a class="destaque" 
+href="http://www.vivaolinux.com.br/topico/Multimidia/Eh-MUDAMIDIA-%28multimidia%29-Desabafo">Eh,
+ MUDAMÌDIA (multimídia) Desabafo  (6)</a>
+<a class="destaque" 
+href="http://www.vivaolinux.com.br/topico/Iniciantes-no-Linux/Problemas-com-mkisofs">Problemas
+ com mkisofs  (1)</a>
+<a class="destaque" 
+href="http://www.vivaolinux.com.br/topico/Iniciantes-no-Linux/Instalar-Chrome-no-INSIGNE">Instalar
+ Chrome no INSIGNE  (45)</a>
+<a class="destaque" 
+href="http://www.vivaolinux.com.br/topico/Servidores-Linux-para-iniciantes/Samba-54">Samba
+  (0)</a>
+<a class="destaque" 
+href="http://www.vivaolinux.com.br/topico/KDE-4/Bug-na-morda-KDE-4">Bug 
+na morda KDE 4  (6)</a>
+<a class="destaque" 
+href="http://www.vivaolinux.com.br/topico/Postfix/postfix-nao-envia-email-fora-da-rede-1">postfix
+ nao envia e-mail dentro para fora da rede  (3)</a>
+<a class="destaque" 
+href="http://www.vivaolinux.com.br/topico/UbuntuBR/Erro-immediate-configuration-%282%29-on-mountall">Erro
+ immediate configuration (2) on mountall  (2)</a>
+<a class="destaque" 
+href="http://www.vivaolinux.com.br/topico/Redes/configurar-a-placa-de-rede-para-gerenciamento-com-o-squid">configurar
+ a placa de rede para gerenciamento com o squid  (3)</a>
+</div>
+</div>
+
+<div class="box">
+<span class="titulo">» .Conf</span>
+<div id="boxconf" class="conteudo">
+<a class="destaque" 
+href="http://www.vivaolinux.com.br/etc/firewall.sh-1">[Iptables] 
+firewall.sh - Script de firewall com abertura da 446 (Banco do Brasil)</a>
+<a class="destaque" 
+href="http://www.vivaolinux.com.br/etc/squid.conf-26">[Squid + Firewall]
+ squid.conf  - Firewall + Proxy Transparente</a>
+<a class="destaque" href="http://www.vivaolinux.com.br/etc/.conkyrc1">[Conky]
+ .conkyrc1 - Conky Ubuntu 9.10 Karmic Koala</a>
+<a class="destaque" href="http://www.vivaolinux.com.br/etc/smb.conf-17">[Samba]
+ smb.conf - Samba autenticando no Windows</a>
+<a class="destaque" href="http://www.vivaolinux.com.br/etc/conkyrc-1">[Conky]
+ conkyrc - Conky colorido e monitorando 3G</a>
+</div>
+</div>
+
+</div>
+<!-- fim do quadro da direita -->
+
+<!-- inicio do quadro central -->
+<div id="central">
+<!-- google_ad_section_start -->
+<script language="Javascript">
+function editar(codigo) {
+   top = window.open('/comentarios/formEditarComentario.php?codigo='+ codigo, 'edit', 'width=350, height=200');
+}
+</script>
+
+<!-- inicio -->
+<div class="boxConteudo">
+<div class="titulo"><h3 class="destaquetitulo">Dica</h3></div>
+
+<div class="breadcrumb"><h4 class="destaquenolink"><a 
+href="http://www.vivaolinux.com.br/index.php" class="destaquemenu">Home</a>
+ » <a class="destaquemenu" 
+href="http://www.vivaolinux.com.br/dicas/index.php">Dicas</a> » <a 
+class="destaquemenu" 
+href="http://www.vivaolinux.com.br/dicas/categoriaIndex.php?codigo=1">Linux</a>
+ » <a class="destaquemenu" 
+href="http://www.vivaolinux.com.br/dicas/verSubCategoria.php?codigo=11">Miscelânea</a>
+ » Visualização de dica</h4></div>
+<div><h5>Usando NTPDATE para manter a hora certa do seu Linuxbox</h5></div>
+
+<div class="conteudo">
+<!-- tabela usuario -->
+<div style="float: left; padding: 3px; text-align: center; margin-right:
+ 5px;">
+<a 
+href="http://www.vivaolinux.com.br/perfil/verPerfil.php?login=Cesar.AR" 
+title="Perfil do usuário"><img 
+src="Usando-NTPDATE-para-manter-a-hora-certa-do-seu-Linuxbox_arquivos/kenny2.jpg"
+ alt="Linux user" width="80" border="0" height="60"></a>
+</div>
+<div class="padraodestaque" style="padding: 3px;">
+Publicado por <a 
+href="http://www.vivaolinux.com.br/perfil/verPerfil.php?login=Cesar.AR" 
+title="Perfil do usuário">Cesar Ramina</a> em 11/09/2006
+<br><br>
+Login: <i>Cesar.AR</i>, 54575 pontos 
+Homepage:  
+<div class="direita">[ Hits: 14748 ]</div>
+
+</div>
+</div>
+</div>
+
+
+<div class="padrao" style="text-align: right;">
++ <a 
+href="http://www.vivaolinux.com.br/addBookmark.php?tipo=dica&amp;codigo=7359"
+ title="Adicionar aos favoritos">Favoritos</a>&nbsp;&nbsp;
+<a href="http://www.vivaolinux.com.br/dicas/impressora.php?codigo=7359"><img
+ 
+src="Usando-NTPDATE-para-manter-a-hora-certa-do-seu-Linuxbox_arquivos/print_ico.gif"
+ alt="Dica Linux tela cheia" width="20" align="absmiddle" border="0" 
+height="18"> Versão para impressora</a>&nbsp;&nbsp;
+<a 
+href="http://www.vivaolinux.com.br/formIndicar.php?tipo=dica&amp;codigo=7359"><img
+ 
+src="Usando-NTPDATE-para-manter-a-hora-certa-do-seu-Linuxbox_arquivos/friend.gif"
+ alt="Indicar Dica Linux" width="20" align="absmiddle" border="0" 
+height="14"> Indicar para um amigo</a>&nbsp;&nbsp;
+<a href="http://www.vivaolinux.com.br/contribuir/dicas/index.php"><img 
+src="Usando-NTPDATE-para-manter-a-hora-certa-do-seu-Linuxbox_arquivos/escrever.png"
+ alt="Escrever dica Linux" width="18" align="absmiddle" border="0" 
+height="18"> Enviar dica</a>&nbsp;&nbsp;
+</div>
+
+
+<div class="dezpx padrao">
+
+
+<br>
+<h1>Usando NTPDATE para manter a hora certa do seu Linuxbox</h1>
+
+
+
+<div class="floatright">
+<script type="text/javascript"><!--
+google_ad_client = "pub-3535276187000580";
+/* 336x280 dica direita h1 */
+google_ad_slot = "8013205355";
+google_ad_width = 336;
+google_ad_height = 280;
+//-->
+</script>
+<script type="text/javascript" src="Usando-NTPDATE-para-manter-a-hora-certa-do-seu-Linuxbox_arquivos/show_ads.js">
+</script><script>google_protectAndRun("ads_core.google_render_ad", google_handleError, google_render_ad);</script><ins
+ style="display: inline-table; border: medium none; height: 280px; 
+margin: 0pt; padding: 0pt; position: relative; visibility: visible; 
+width: 336px;"><ins style="display: block; border: medium none; height: 
+280px; margin: 0pt; padding: 0pt; position: relative; visibility: 
+visible; width: 336px;"><iframe allowtransparency="true" hspace="0" 
+id="google_ads_frame3" marginheight="0" marginwidth="0" 
+name="google_ads_frame" 
+src="Usando-NTPDATE-para-manter-a-hora-certa-do-seu-Linuxbox_arquivos/ads_003.htm"
+ style="left: 0pt; position: absolute; top: 0pt;" vspace="0" width="336"
+ frameborder="0" height="280" scrolling="no"></iframe></ins></ins>
+</div>
+
+<!-- hotwords -->
+<div id="HOTWordsTxt" name="HOTWordsTxt"> 
+<div>
+
+Para quem quer manter a hora certa do seu <i>Linux</i>, há um programa 
+muito simples, ocupa pouca memória e pode rodar tanto no boot como 
+manualmente. É o <i>ntpdate</i>.
+<br><br>
+A cada inicialização ele recolhe informações do servidor de hora e 
+acerta a hora do sistema. Pode também ser usado manualmente para 
+corrigir a hora com o comando:
+<br><br>
+<b># ntpdate -u ip-do-servidor-de-hora-certa</b>
+<br><br>
+E para manter o horário Brasileiro, basta colocar um servidor da Hora 
+Legal Brasileira (Observatório Nacional) no arquivo de configuração.
+<br><br>
+Para isso, depois da instalação (que no caso do <i>Debian</i> é "apt-get
+ install ntpdate"), edite o arquivo <i>/etc/default/ntpdate</i> e 
+substitua o NTPSERVERS para:
+<br><br>
+</div>
+
+<div class="codigo">
+NTPSERVERS="200.20.186.75"
+</div>
+
+<div><br>
+Pronto. Sua hora sempre estará em acordo com o horário oficial 
+Brasileiro. Se na sua instalação você colocou o fuso horário da sua 
+região corretamente, o seu relógio sempre estará acertado, mesmo que 
+mudem os horários de verão.
+<br><br>
+</div>
+</div>
+
+
+</div>
+<!-- hotwords -->
+
+<div>
+
+<div>
+<script type="text/javascript"><!--
+google_ad_client = "pub-3535276187000580";
+/* 468x15 dica */
+google_ad_slot = "6143822333";
+google_ad_width = 468;
+google_ad_height = 15;
+//-->
+</script>
+<script type="text/javascript" src="Usando-NTPDATE-para-manter-a-hora-certa-do-seu-Linuxbox_arquivos/show_ads.js">
+</script><script>google_protectAndRun("ads_core.google_render_ad", google_handleError, google_render_ad);</script><ins
+ style="display: inline-table; border: medium none; height: 15px; 
+margin: 0pt; padding: 0pt; position: relative; visibility: visible; 
+width: 468px;"><ins style="display: block; border: medium none; height: 
+15px; margin: 0pt; padding: 0pt; position: relative; visibility: 
+visible; width: 468px;"><iframe allowtransparency="true" hspace="0" 
+id="google_ads_frame4" marginheight="0" marginwidth="0" 
+name="google_ads_frame" 
+src="Usando-NTPDATE-para-manter-a-hora-certa-do-seu-Linuxbox_arquivos/ads_004.htm"
+ style="left: 0pt; position: absolute; top: 0pt;" vspace="0" width="468"
+ frameborder="0" height="15" scrolling="no"></iframe></ins></ins>
+</div>
+
+</div>
+
+<br>
+<div class="cinza padrao"><b>Outras dicas deste autor</b></div>
+<div class="padrao">
+&nbsp;&nbsp;&nbsp;<img 
+src="Usando-NTPDATE-para-manter-a-hora-certa-do-seu-Linuxbox_arquivos/linux-arrow.gif"
+ alt="Dica Linux recomendada"> <a 
+href="http://www.vivaolinux.com.br/dica/Usando-LANMAP-para-criar-uma-imagem-da-rede-local"
+ title="Leitura recomendada">Usando LANMAP para criar uma imagem da rede
+ local</a><br>
+
+</div>
+<br>
+<div class="cinza"><b>Leitura recomendada </b></div>
+&nbsp;&nbsp;&nbsp;<img 
+src="Usando-NTPDATE-para-manter-a-hora-certa-do-seu-Linuxbox_arquivos/linux-arrow.gif"
+ alt="Dica Linux recomendada"> <a 
+href="http://www.vivaolinux.com.br/dica/Prompt-colorido-+-ls-colorido" 
+title="Leitura recomendada">Prompt colorido + ls colorido</a><br>
+&nbsp;&nbsp;&nbsp;<img 
+src="Usando-NTPDATE-para-manter-a-hora-certa-do-seu-Linuxbox_arquivos/linux-arrow.gif"
+ alt="Dica Linux recomendada"> <a 
+href="http://www.vivaolinux.com.br/dica/Ativando-o-numlock-na-inicializacao-do-X-Debian"
+ title="Leitura recomendada">Ativando o numlock na inicializaçao do X - 
+Debian</a><br>
+&nbsp;&nbsp;&nbsp;<img 
+src="Usando-NTPDATE-para-manter-a-hora-certa-do-seu-Linuxbox_arquivos/linux-arrow.gif"
+ alt="Dica Linux recomendada"> <a 
+href="http://www.vivaolinux.com.br/dica/Sodipodi-Pra-jogar-o-Corel-Ilustrator-no-lixo"
+ title="Leitura recomendada">Sodipodi - Pra jogar o Corel/Ilustrator no 
+lixo</a><br>
+&nbsp;&nbsp;&nbsp;<img 
+src="Usando-NTPDATE-para-manter-a-hora-certa-do-seu-Linuxbox_arquivos/linux-arrow.gif"
+ alt="Dica Linux recomendada"> <a 
+href="http://www.vivaolinux.com.br/dica/Capturar-tela-do-XServer-remotamente"
+ title="Leitura recomendada">Capturar tela do X-Server remotamente</a><br>
+&nbsp;&nbsp;&nbsp;<img 
+src="Usando-NTPDATE-para-manter-a-hora-certa-do-seu-Linuxbox_arquivos/linux-arrow.gif"
+ alt="Dica Linux recomendada"> <a 
+href="http://www.vivaolinux.com.br/dica/Acerte-as-horas-NOW" 
+title="Leitura recomendada">Acerte as horas NOW! </a><br>
+ 
+
+<br>
+<div class="cinza"><b>Comentários</b></div>
+<!-- hotwords -->
+<div id="HOTWordsTxt" name="HOTWordsTxt"> 
+  <div style="background-color: rgb(255, 255, 255);">
+[1] Comentário enviado por <a 
+href="http://www.vivaolinux.com.br/perfil/verPerfil.php?login=ricleite">ricleite</a>
+ em 12/09/2006 - 09:56h:
+<br><br>
+Vou tentar enrriquecer um pouco:<br>
+Para que o relógio de servidores fique sempre atualizado com o ntpdate é
+ importante que os servidotes de NTP (o protocolo de ajuste de hora) 
+estejam online. Isso nem sempre é possível se usarmos o ntpdate sempre 
+com o mesmo ip de um servidor de tempo.<br>
+Para resolver este problema o site ntp.org fornece um alias de dns que 
+retorna aleatoriamente um "pool" de ips de servidores de tempo do mundo 
+todo e também do Brasil:<br>
+<br>
+O comando pra usar o ntpdade usando esse pool de servidores é:<br>
+<br>
+ntpdate pool.ntp.org<br>
+<br>
+E se vc preferir somente servidores brasileiros:<br>
+<br>
+ntpdate br.pool.ntp.org<br>
+<br>
+Isso isto é muito lindo mas pode ainda assim acontecer que justamente o 
+servidor de tempo retornado esteja offiline bem na hora de acertar o 
+tempo e além disso convém que o horário seja sincronizado com o clock de
+ hardware do linux com o comando:<br>
+clock -w<br>
+<br>
+Eu fiz um pequeno script (que pode ser rodado diariamente pelo crontab) 
+que tenta se conectar 5 vezes a servidores de tempo brasileiros e acerta
+ a hora e que resolve a maioria dos problemas:<br>
+<br>
+<br>
+---8&lt;------8&lt;------8&lt;------8&lt;------8&lt;------8&lt;------8&lt;------8&lt;------8&lt;---<br>
+#!/bin/bash<br>
+RETRY_MAX=5<br>
+<br>
+retry=1<br>
+while [ 1 ] ; do<br>
+<br>
+   echo "Tentativa:$retry"<br>
+   ntpdate br.pool.ntp.org<br>
+<br>
+   if [ "$?" -ne "1" ]; then<br>
+     clock -w<br>
+     echo "OK"<br>
+     exit 0<br>
+   fi<br>
+<br>
+   let retry=$retry+1<br>
+   if [ "$retry" -gt "$RETRY_MAX" ] ; then<br>
+      echo "ERRO: Nao foi possivel ajustar a hora na $RETRY_MAX 
+tentativa."<br>
+      echo "Provavelmente sem conexao a internet ou sem DNS server"<br>
+      exit 1<br>
+   fi<br>
+done<br>
+
+<br><br>
+ 
+</div>
+<div style="background-color: rgb(238, 238, 238);">
+[2] Comentário enviado por <a 
+href="http://www.vivaolinux.com.br/perfil/verPerfil.php?login=Cesar.AR">Cesar.AR</a>
+ em 12/09/2006 - 10:14h:
+<br><br>
+Esse problema que você comentou ocorre com servidores ntp do pool de 
+servidores. O servidor que indiquei (200.20.186.75) é do Observatório 
+Nacional, que tem um relógio de césio e funciona 24 horas por dia. 
+Visite <a href="http://pcdsh01.on.br/">http://pcdsh01.on.br/</a> - Hora 
+Legal Brasileira do Observatório Nacional.<br>
+<br>
+Obrigado pela contribuição.
+<br><br>
+ 
+</div>
+<div style="background-color: rgb(255, 255, 255);">
+[3] Comentário enviado por <a 
+href="http://www.vivaolinux.com.br/perfil/verPerfil.php?login=rovaris">rovaris</a>
+ em 20/11/2006 - 11:31h:
+<br><br>
+Fiz tudo certinho e ele sincroniza o relógio do meu Debian com 2 horas a
+ mais que o horário certo.. pq?
+<br><br>
+ 
+</div>
+<div style="background-color: rgb(238, 238, 238);">
+[4] Comentário enviado por <a 
+href="http://www.vivaolinux.com.br/perfil/verPerfil.php?login=valterrezendeeng">valterrezendeeng</a>
+ em 10/10/2007 - 15:03h:
+<br><br>
+Fiz um pouco diferente mas deu certo<br>
+<br>
+Muito Bom<br>
+
+<br><br>
+ 
+</div>
+<div style="background-color: rgb(255, 255, 255);">
+[5] Comentário enviado por <a 
+href="http://www.vivaolinux.com.br/perfil/verPerfil.php?login=lourilucio">lourilucio</a>
+ em 25/01/2010 - 00:01h:
+<br><br>
+Oi pessoal,<br>
+<br>
+Para acertar a hora no Ubuntu precisei fazer duas alterações no script 
+do Ricardo, a primeira foi acrescentar a opção "-u" para ntpdate e a 
+outra foi alterar o comando "clock" para "hwclock", depois foi só 
+adicionar no crontab e correr pro abraço.<br>
+<br>
+Segue o script com os ajustes:<br>
+<br>
+---8&lt;------8&lt;------8&lt;------8&lt;------8&lt;------8&lt;------8&lt;------8&lt;------8&lt;---<br>
+#!/bin/bash<br>
+RETRY_MAX=5<br>
+<br>
+retry=1<br>
+while [ 1 ] ; do<br>
+<br>
+echo "Tentativa:$retry"<br>
+ntpdate -u br.pool.ntp.org<br>
+<br>
+if [ "$?" -ne "1" ]; then<br>
+hwclock -w<br>
+echo "OK"<br>
+exit 0<br>
+fi<br>
+<br>
+let retry=$retry+1<br>
+if [ "$retry" -gt "$RETRY_MAX" ] ; then<br>
+echo "ERRO: Nao foi possivel ajustar a hora na $RETRY_MAX tentativa."<br>
+echo "Provavelmente sem conexao a internet ou sem DNS server"<br>
+exit 1<br>
+fi<br>
+done<br>
+<br>
+---8&lt;------8&lt;------8&lt;------8&lt;------8&lt;------8&lt;------8&lt;------8&lt;------8&lt;---<br>
+<br>
+Valeu galera!
+<br><br>
+ 
+</div>
+
+</div>
+<!-- hotwords -->
+
+<!-- tabela comentario -->
+<br>
+<div class="padrao cinza" style="padding: 5px; border: 1px solid 
+rgb(170, 170, 170);">
+<form action="/comentarios/enviarComentario.php" method="post">
+<input name="tabela" value="dica" type="hidden">
+<input name="codtabela" value="7359" type="hidden">
+
+<b>Contribuir com comentário</b><br>
+
+<div class="centro">
+<div class="tresbt"><textarea name="comentario" readonly="readonly" 
+style="width: 95%;" id="boxcomentario" rows="18" class="padrao"></textarea></div>
+<input value=" Enviar " class="botao" type="submit">&nbsp;&nbsp;
+<input value=" Limpar " class="botao" type="reset">
+<br>
+<font color="#ff0000">Para executar esta ação você precisa estar logado 
+no site, caso
+contrário, tudo o que for digitado será perdido.</font>
+</div>
+</form>
+</div>
+<!-- fim tabela comentario -->
+
+<!-- google_ad_section_end -->
+</div>
+<!-- fim do quadro central -->
+</div>
+
+<!-- inicio do rodape -->
+<div id="rodape">
+	<div id="rodapeesquerda"></div>
+	<div id="rodapedireita"></div>
+	<div id="rodapecentral">
+		<div id="mapa" class="padrao">
+			Contribuir com: [ <a 
+href="http://www.vivaolinux.com.br/contribuir/artigo/index.php">Artigo</a>
+ | <a href="http://www.vivaolinux.com.br/contribuir/conf/index.php">Conf</a>
+ | <a href="http://www.vivaolinux.com.br/contribuir/dicas/index.php">Dica</a>
+ | <a 
+href="http://www.vivaolinux.com.br/comunidades/formTopico.php?codigo=353">Evento</a>
+ | <a 
+href="http://www.vivaolinux.com.br/comunidades/formTopico.php?codigo=232">Oportunidade
+ de trabalho</a> |<a 
+href="http://www.vivaolinux.com.br/contribuir/perguntas/index.php">Pergunta</a>
+ | <a href="http://www.vivaolinux.com.br/contribuir/scripts/index.php">Script</a>
+ | <a 
+href="http://www.vivaolinux.com.br/contribuir/screenshots/index.php">Screenshot</a>
+ | <a href="http://www.vivaolinux.com.br/contribuir/simulado/index.php">Simulado</a>
+ | <a 
+href="http://www.vivaolinux.com.br/contribuir/wallpapers/index.php">Wallpaper</a>
+ ] 
+		</div>
+		<div id="creditos">
+			Responsável pelo site: <a 
+href="http://www.vivaolinux.com.br/%7Efabio" class="destaque" 
+style="color: rgb(255, 255, 255) ! important; font-weight: bold;">Fábio 
+Berbert de Paula</a> - Conteúdo distribuído sob <a 
+href="http://pt.wikipedia.org/wiki/GNU_Free_Documentation_License" 
+class="destaque" style="color: rgb(255, 255, 255) ! important;">licença 
+GNU FDL</a><br>
+
+<div class="floatright" style="text-align: left; margin-top: -20px;">
+Site hospedado por: 
+<div><a href="http://www.vivaolinux.com.br/verBanner.php?codigo=247" 
+target="_blank"><img 
+src="Usando-NTPDATE-para-manter-a-hora-certa-do-seu-Linuxbox_arquivos/hostgator.jpg"
+ width="200" border="0" height="95"></a></div>
+</div>
+
+		</div>
+
+	</div>
+</div>
+
+<div id="rodapecontainer">
+	<div id="rodapebox">
+
+	<div id="volrelease">
+	<h1>Viva o Linux</h1>
+	A maior comunidade Linux da América Latina! Artigos, dicas, tutoriais, 
+fórum, scripts e muito mais. Ideal para quem busca auto-ajuda em Linux.
+	</div>
+
+	<div id="voloptions">
+	<a href="http://www.vivaolinux.com.br/estatisticas.php">Estatísticas do
+ site</a>
+	<a href="http://www.vivaolinux.com.br/equipe/">Equipe de moderadores</a>
+	<a href="http://www.vivaolinux.com.br/faq.php">FAQ: Perguntas 
+freqüentes</a>
+	<a href="http://www.vivaolinux.com.br/membros/">Membros da comunidade</a>
+	</div>
+
+	</div>
+<br><br>
+</div>
+
+<!-- fim do rodape -->
+
+<!-- hotwords -->
+<script src="Usando-NTPDATE-para-manter-a-hora-certa-do-seu-Linuxbox_arquivos/show.jsp"></script>
+<!-- hotwords -->
+
+<script language="Javascript" src="Usando-NTPDATE-para-manter-a-hora-certa-do-seu-Linuxbox_arquivos/funcoes.js"></script>
+<script language="Javascript">
+function altW(e) { if (document.body.clientWidth < 950) { e.style.width = '950px'; }}
+</script>
+<style>
+#conteudo { width: expression(altW(this)); }
+</style>
+
+</body></html>

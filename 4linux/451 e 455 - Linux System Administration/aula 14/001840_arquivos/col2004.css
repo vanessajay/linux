@@ -1,0 +1,64 @@
+body			{font-family: verdana, arial, sans-serif;
+			 background-color: white}
+td			{vertical-align: top}
+a			{color:blue; text-decoration: none}
+
+.title,
+.comments-head	{
+	font-family: verdana, arial, sans-serif;
+	font-size: 12pt;
+	font-weight: bold;
+	color: black;
+}
+.posted,
+.comments-post	{
+	font-family:verdana, arial, sans-serif;
+	font-size: 8pt;
+	color: #888888;
+}
+.comm	{
+	font-family:verdana, arial, sans-serif;
+	font-size: 8pt;
+	color: #333333;
+	margin-bottom:25px;
+	}
+.extended	{
+	font-family:verdana, arial, sans-serif;
+	font-size: x-small;
+	color: #000000;
+	margin-bottom:25px;
+}
+.blogbody,
+.comments-body {
+	font-family: verdana, arial, sans-serif;
+	font-size: 9pt;
+	color:black;
+	font-weight:normal;
+}
+
+.col-esquerda		{font-size: 8pt}
+.col-centro		{font-size: 11pt}
+.col-direita		{font-size: 10pt}
+
+
+
+.boxl			{font-size:8pt;
+			 background-color: #cccccc;
+			 color:black;
+			 width: 100%}
+.boxr			{font-size:10pt;
+			 background-color: #cccccc;
+			 width: 100%}
+.titbox			{font-weight: bold; width=100%; border-bottom: 1px solid}
+
+#rodape {
+  position: absolute;
+  top: -200px; left: 100px;
+  height: 60px; width: 600px;
+}
+#menu {
+	margin-bottom:15px;
+	font-size:8pt;
+	background:#FFF;
+	text-align:center;
+	}

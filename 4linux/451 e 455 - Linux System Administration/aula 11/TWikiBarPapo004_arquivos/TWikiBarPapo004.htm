@@ -1,0 +1,2270 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="pt-br" xmlns="http://www.w3.org/1999/xhtml" lang="pt-br"><head>
+
+
+<title>.:TWikiBarPapo004 &gt; TWikiBar &gt; Aqui temos um _livro livre_ e
+ completo sobre _Shell_:.</title>
+<link rel="shortcut icon" 
+href="http://wiki.softwarelivre.org/pub/TWikiBar/FreeSkinImagens/favicon.ico"
+ type="image/x-icon">
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta name="Keywords" content="brasil, software, livre, liberdade, 
+copyleft, gnu, linux, grupo, bash, shell, Julio, Cezar, Neves, venda, 
+aluguel, casa, Arraial, do, Cabo">
+<meta name="Description" content="Os sedentos do " saber="" livre="" 
+são="" muito="" benvindos.="">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta name="author" content="Julio Cezar Neves">
+<!-- base href="http://wiki.softwarelivre.org/TWikiBar/TWikiBarPapo004" -->
+</head><body>\
+<style type="text/css" media="all">
+
+/* elementos HTML básicos */
+
+html body {
+  line-height:1.55em;
+  font-family: "Bitstream Vera Sans", "Lucida Grande", verdana, lucida, helvetica, sans-serif;
+  background-color: #f8f8f8;
+  margin:0;
+  padding:0;
+  font-size:x-small;
+  voice-family:"\"}\""; 
+  voice-family:inherit;
+  font-size:small;
+}
+
+html>body {
+  font-size:small;   
+}
+
+/* be kind to netscape 4 that doesn't understand inheritance */
+body, p, li, ul, ol, dl, dt, dd, acronym, h1, h2, h3, h4, h5, h6 {
+   background-color:transparent;
+}
+p {
+   margin:1em 0 0 0;
+}
+table {
+   border-collapse: separate;
+   background-color: #000000;
+}
+
+table.destaque {
+   border-collapse: separate;
+   background-color: #ffffcc !important;
+}
+
+#SearchResultsTable table,
+#SearchResultsTable tr,
+#SearchResultsTable td{
+   background-color: #ffffff !important;
+}
+
+strong, b {
+   font-weight:bold;
+}
+hr {
+   color:#9E9E70;
+   background-color:#9E9E70;
+   height:1px;
+   border:none;
+}
+pre, code, tt {
+   font-size:100%;
+   line-height:1.4em;
+   color:#7A4707;
+}
+pre {
+   margin-top:1em;
+   margin-bottom:1em;
+}
+
+/* Text */
+
+h1, h2, h3, h4, h5, h6 {
+   font-family:"Lucida Grande", helvetica, lucida, verdana, sans-serif;
+   line-height:104%;
+   padding:0;
+   margin:1em 0 0.1em 0;
+}
+h1 {
+   font-size:210%;
+   color:#e24628;
+   margin:0 0 0.1em 0;
+}
+h2 {
+   font-size:145%;
+   display:block;
+   background-color:#F3EDE7;
+   color:#900;
+   padding:0.2em 0.7em;
+   margin:1em 0.7em 0.15em 0.7em;
+   height:auto;
+}
+h3 { font-size:140%; color:#900;}
+h4 { font-size:125%; color:#900;}
+h5 { font-size:110%; color:#900;}
+h6 { font-size:95%; color:#900;}
+
+/* Links */
+
+:link:focus,
+:visited:focus,
+:link,
+:visited,
+:link:active,
+:visited:active {
+   text-decoration:none;
+   color:#1e5bbd;
+   background-color:transparent;
+}
+:link:hover,
+:visited:hover {
+   text-decoration:underline;
+   background-color:#b4d5ff;
+   color:#1559B3;
+}
+a:link img,
+a:visited img,
+a:hover img,
+a:active img {
+   background-color:transparent;
+}
+th a:link,
+th a:visited {
+   font-weight:bold;
+}
+
+/* ----------------------------------------
+   Referências à Menu de Contexto
+   Fonte: http://br.mozdev.org/thunderbird/vocesabia/?privacidade 
+          http://br.mozdev.org/images/html/br.css
+---------------------------------------- */
+
+kbd {
+  padding: 0px 1px 0px 1px !important;
+  border-width: 1px 2px 2px 1px !important;
+  border-style: solid !important;
+  background: #faf6f6  !important;
+  color: #000  !important;
+  border-color:  #edd #baa #baa #eed  !important;
+}
+
+/* ----------------------------------------
+   Estilo para tooltip em links
+   Fonte: http://loadaveragezero.com/vnav/labs/CSS/tooltips.php
+---------------------------------------- */
+
+span.tool {
+  position: relative;   /* this is key */
+  cursor: help;
+}
+ 
+span.tool span.tip {
+  display: none;        /* so is this */
+}
+
+/* tooltip will display on :hover event */
+
+span.tool:hover span.tip {
+  display: block;
+  z-index: 100;
+  position: absolute;
+  top: 2.5em;
+  left: 0;
+  width: auto;
+  line-height: 1.2em;
+  padding: 3px 7px 4px 6px;
+  border: 1px solid #336;
+  background-color: #f7f7ee;
+  font-size: 12px;
+  font-weight: normal;
+  color: #000;
+  text-align: left;
+}
+
+#content span.tool:after {
+  padding-left: 2px;            /* eye candy */
+  content: url(http://wiki.softwarelivre.org/pub/TWiki/TWikiDocGraphics/bubble.gif);
+}
+
+/* ----------------------------------------
+   Estilo para caixa div de código code-box 
+   Fonte: http://loadaveragezero.com/vnav/labs/CSS/code.php
+---------------------------------------- */
+
+.code-box {
+  font-family: 'Lucida Console', 'Bitstream Vera Sans Mono', 'Courier New', Monaco, Courier, monospace;
+  width: 100%;
+  border: 1px dashed #aaa8a8;
+  padding: 0.5em 0 0.3em 0.5em;
+  color: #000;
+  overflow: auto;
+  background: #fff url(http://wiki.softwarelivre.org/pub/TWiki/TWikiDocGraphics/hand.gif) no-repeat top right;
+}
+
+/* ----------------------------------------
+   Estilos das Divisões
+---------------------------------------- */
+
+.geral {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.cabecalho { }
+
+.padraogoverno {
+  border:1px solid #FFCC00;
+  background-color: #FFCC00;
+  text-align: center;
+}
+
+.padraocabecalho {
+  border:1px solid #669966; /* verde pálido */
+/*  text-align: center; */
+  background: #FFF url(http://wiki.softwarelivre.org/pub/TWikiBar/FreeSkinImagens/6aEdicao.PNG) right top no-repeat;
+  color: #FFF;
+  min-height: 105px; /* tamanho da logo */
+}
+
+.corpo {
+  position: relative;
+  top:0;
+  left:0;
+}
+
+.lateral {
+  position: absolute;
+  background-color: #FFFAFF; /* rosa claríssimo */
+
+  width: 12.5em; /* 0.5em à mais do menuL */
+
+  z-index:1; /* forçar estar acima dos demais */
+}
+
+.barranavegacao {
+  background-color: #CDCE9C;
+}
+
+.topico {
+  position: relative;
+  padding-left:1em;
+  padding-bottom:1em;
+  margin-left: 13.1em; /* deslocado 1em à direita do menuL */
+  min-height: 20em;
+
+/*  overflow: auto; */
+
+  border:1px solid #000;
+  background-color: #FFF;
+}
+
+.localizacao {
+  margin-left: 13.1em; /* deslocado 1em à direita do menuL */
+  padding-left:1em;
+
+  border:1px solid #E6E6E6; /* cinza claro */
+  background-color: #E6E6E6;
+}
+
+.edicao {
+  margin-left: 13.1em; /* deslocado 1em à direita do menuL */
+  padding-left:1em;
+
+  border:1px solid #EEF6FF;
+  background-color: #EEF6FF; /* azul claríssimo */
+}
+
+.rodape {
+  margin-left: 13.1em; /* deslocado 1em à direita do menuL */
+  padding-left:1em;
+
+  text-align: center;
+
+  border:1px solid #FFFAFF;
+  background-color: #FFFAFF; /* rosa claríssimo */
+}
+
+/* ----------------------------------------
+   Barra de Navegacao através de listas.
+   http://www.maujor.com/tutorial/cssmenu.php
+---------------------------------------- */
+#menuH ul {
+  border:none;
+  margin: 0;
+  padding: 0;
+  text-align:left;
+}
+
+#menuH ul li {
+  list-style: none;
+  margin: 0;
+  display: inline;
+}
+
+#menuH ul li a {
+  height:1px; /* IE5.0 bug */
+/*  padding: 3px 1px; */
+  margin:0;
+/*  border: 1px solid #f00; */
+/*  background: #999; */
+  text-decoration: none;
+}
+
+#menuH ul li a:link, #menuH ul li a:visited {
+/*  color: #fff; */
+}
+
+#menuH ul li a:hover {
+/*  background: #ccc; */
+  color: #F00;
+/* border-color: #000; */
+}
+
+/* ----------------------------------------
+   Menu Construído através de listas. Baseado em:
+   http://www.maujor.com/tutorial/tecmenu.php e
+   http://www.tanfa.co.uk/css/examples/css-dropdown-menus.asp
+---------------------------------------- */
+
+/* Tamanho, Fonte, Cor, Borda do MenuL */
+#menuL {
+  width: 12em;
+  background: #999;
+  font-size: 11px/16px;
+  font-weight: bold;
+}
+
+/* Caixa do Menu OL */
+#menuL ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Caixa dos Itens do Menu UL - Fica dentro da caixa OL */
+#menuL ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Titulo do Menu OL - ordenado */
+#menuL ol li {
+  color: #fff;
+  background: #000;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+/* Items dentro do Menu OL */
+#menuL ol li li {
+  color: #fff;
+  background: #000;
+  text-transform: none;
+  text-align: left;
+}
+
+/* Links dos Menus */
+#menuL ol li li a {
+  display: block;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #ccc #888 #555 #bbb;
+  margin: 0;
+  padding: 2px 3px;
+}
+
+/* Itens do Menu OL - Links */
+#menuL a {
+  color: #000;
+  background: #efefef;
+  text-decoration: none;
+}
+
+/* Itens do Menu OL - Links com o mouse em cima */
+#menuL a:hover {
+  color: #a00;
+  background: #fff;
+}
+
+/* Posicionamento dos Itens - "Mágica" */
+#menuL li {
+  position: relative;
+}
+
+#menuL ol ul ul {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  width: 100%;
+}
+
+/* Magia CSS */
+div#menuL ol ul ul,
+div#menuL ol ul ul ul,
+div#menuL ol ul li:hover ul ul,
+div#menuL ol ul ul li:hover ul ul
+{display: none;}
+
+/* Magia CSS */
+div#menuL ol ul li:hover ul,
+div#menuL ol ul ul li:hover ul,
+div#menuL ol ul ul ul li:hover ul
+{display: block;}
+
+/* Corrige o espaço deixado pelos parágrafos */
+div#menuL p {display:inline;}
+</style>
+
+<!-- Internet Explorer CSS Fixes -->
+<!--[if IE]>
+  <style type="text/css" media="screen">
+    body {  behavior: url(http://wiki.softwarelivre.org/pub/TWikiBar/FreeSkinCSS/csshover.htc); font-size: 100%;} 
+    #menuL ol li { float: left; width: 100%; }
+    #menuL ol li a { height: 1%; }
+  </style>
+<![endif]-->
+
+
+<!--GENERATED_HEADERS--><!-- TABLEPLUGIN_table2 --> <style type="text/css" media="all">
+.foswikiTable#table2 th {background-color:#0000FF;}
+.foswikiTable#table2 th.foswikiSortedCol {background-color:#0000FF;}
+.foswikiTable#table2 th {color:#FFFF00;}
+.foswikiTable#table2 th a:link {color:#FFFF00;}
+.foswikiTable#table2 th a:visited {color:#FFFF00;}
+.foswikiTable#table2 th a:link font {color:#FFFF00;}
+.foswikiTable#table2 th a:visited font {color:#FFFF00;}
+.foswikiTable#table2 th a:hover {color:#0000FF;background-color:#FFFF00;}
+.foswikiTable#table2 th a:hover font {color:#0000FF;background-color:#FFFF00;}
+.foswikiTable#table2 tr.foswikiTableRowdataBg0 td {background-color:#BBBBBB;}
+.foswikiTable#table2 tr.foswikiTableRowdataBg1 td {background-color:#DDDDDD;}
+.foswikiTable#table2 tr.foswikiTableRowdataBg0 td.foswikiSortedCol {background-color:#BBBBBB;}
+.foswikiTable#table2 tr.foswikiTableRowdataBg1 td.foswikiSortedCol {background-color:#DDDDDD;}
+.foswikiTable#table2 td {padding:4px;}
+.foswikiTable#table2 th {padding:4px;}
+</style>
+<!-- TABLEPLUGIN_table6 --> <style type="text/css" media="all">
+.foswikiTable#table6 th {background-color:#0000FF;}
+.foswikiTable#table6 th.foswikiSortedCol {background-color:#0000FF;}
+.foswikiTable#table6 th {color:#FFFF00;}
+.foswikiTable#table6 th a:link {color:#FFFF00;}
+.foswikiTable#table6 th a:visited {color:#FFFF00;}
+.foswikiTable#table6 th a:link font {color:#FFFF00;}
+.foswikiTable#table6 th a:visited font {color:#FFFF00;}
+.foswikiTable#table6 th a:hover {color:#0000FF;background-color:#FFFF00;}
+.foswikiTable#table6 th a:hover font {color:#0000FF;background-color:#FFFF00;}
+.foswikiTable#table6 tr.foswikiTableRowdataBg0 td {background-color:#BBBBBB;}
+.foswikiTable#table6 tr.foswikiTableRowdataBg1 td {background-color:#DDDDDD;}
+.foswikiTable#table6 tr.foswikiTableRowdataBg0 td.foswikiSortedCol {background-color:#BBBBBB;}
+.foswikiTable#table6 tr.foswikiTableRowdataBg1 td.foswikiSortedCol {background-color:#DDDDDD;}
+.foswikiTable#table6 td {padding:4px;}
+.foswikiTable#table6 th {padding:4px;}
+</style>
+<!-- TABLEPLUGIN_table4 --> <style type="text/css" media="all">
+.foswikiTable#table4 th {background-color:#0000FF;}
+.foswikiTable#table4 th.foswikiSortedCol {background-color:#0000FF;}
+.foswikiTable#table4 th {color:#FFFF00;}
+.foswikiTable#table4 th a:link {color:#FFFF00;}
+.foswikiTable#table4 th a:visited {color:#FFFF00;}
+.foswikiTable#table4 th a:link font {color:#FFFF00;}
+.foswikiTable#table4 th a:visited font {color:#FFFF00;}
+.foswikiTable#table4 th a:hover {color:#0000FF;background-color:#FFFF00;}
+.foswikiTable#table4 th a:hover font {color:#0000FF;background-color:#FFFF00;}
+.foswikiTable#table4 tr.foswikiTableRowdataBg0 td {background-color:#BBBBBB;}
+.foswikiTable#table4 tr.foswikiTableRowdataBg1 td {background-color:#DDDDDD;}
+.foswikiTable#table4 tr.foswikiTableRowdataBg0 td.foswikiSortedCol {background-color:#BBBBBB;}
+.foswikiTable#table4 tr.foswikiTableRowdataBg1 td.foswikiSortedCol {background-color:#DDDDDD;}
+.foswikiTable#table4 td {padding:4px;}
+.foswikiTable#table4 th {padding:4px;}
+</style>
+<!-- TABLEPLUGIN_table3 --> <style type="text/css" media="all">
+.foswikiTable#table3 th {background-color:#0000FF;}
+.foswikiTable#table3 th.foswikiSortedCol {background-color:#0000FF;}
+.foswikiTable#table3 th {color:#FFFF00;}
+.foswikiTable#table3 th a:link {color:#FFFF00;}
+.foswikiTable#table3 th a:visited {color:#FFFF00;}
+.foswikiTable#table3 th a:link font {color:#FFFF00;}
+.foswikiTable#table3 th a:visited font {color:#FFFF00;}
+.foswikiTable#table3 th a:hover {color:#0000FF;background-color:#FFFF00;}
+.foswikiTable#table3 th a:hover font {color:#0000FF;background-color:#FFFF00;}
+.foswikiTable#table3 tr.foswikiTableRowdataBg0 td {background-color:#BBBBBB;}
+.foswikiTable#table3 tr.foswikiTableRowdataBg1 td {background-color:#DDDDDD;}
+.foswikiTable#table3 tr.foswikiTableRowdataBg0 td.foswikiSortedCol {background-color:#BBBBBB;}
+.foswikiTable#table3 tr.foswikiTableRowdataBg1 td.foswikiSortedCol {background-color:#DDDDDD;}
+.foswikiTable#table3 td {padding:4px;}
+.foswikiTable#table3 th {padding:4px;}
+</style>
+<!-- TABLEPLUGIN_table8 --> <style type="text/css" media="all">
+.foswikiTable#table8 th {background-color:#0000FF;}
+.foswikiTable#table8 th.foswikiSortedCol {background-color:#0000FF;}
+.foswikiTable#table8 th {color:#FFFF00;}
+.foswikiTable#table8 th a:link {color:#FFFF00;}
+.foswikiTable#table8 th a:visited {color:#FFFF00;}
+.foswikiTable#table8 th a:link font {color:#FFFF00;}
+.foswikiTable#table8 th a:visited font {color:#FFFF00;}
+.foswikiTable#table8 th a:hover {color:#0000FF;background-color:#FFFF00;}
+.foswikiTable#table8 th a:hover font {color:#0000FF;background-color:#FFFF00;}
+.foswikiTable#table8 tr.foswikiTableRowdataBg0 td {background-color:#BBBBBB;}
+.foswikiTable#table8 tr.foswikiTableRowdataBg1 td {background-color:#DDDDDD;}
+.foswikiTable#table8 tr.foswikiTableRowdataBg0 td.foswikiSortedCol {background-color:#BBBBBB;}
+.foswikiTable#table8 tr.foswikiTableRowdataBg1 td.foswikiSortedCol {background-color:#DDDDDD;}
+.foswikiTable#table8 td {padding:4px;}
+.foswikiTable#table8 th {padding:4px;}
+</style>
+<!-- TABLEPLUGIN_table5 --> <style type="text/css" media="all">
+.foswikiTable#table5 th {background-color:#0000FF;}
+.foswikiTable#table5 th.foswikiSortedCol {background-color:#0000FF;}
+.foswikiTable#table5 th {color:#FFFF00;}
+.foswikiTable#table5 th a:link {color:#FFFF00;}
+.foswikiTable#table5 th a:visited {color:#FFFF00;}
+.foswikiTable#table5 th a:link font {color:#FFFF00;}
+.foswikiTable#table5 th a:visited font {color:#FFFF00;}
+.foswikiTable#table5 th a:hover {color:#0000FF;background-color:#FFFF00;}
+.foswikiTable#table5 th a:hover font {color:#0000FF;background-color:#FFFF00;}
+.foswikiTable#table5 tr.foswikiTableRowdataBg0 td {background-color:#BBBBBB;}
+.foswikiTable#table5 tr.foswikiTableRowdataBg1 td {background-color:#DDDDDD;}
+.foswikiTable#table5 tr.foswikiTableRowdataBg0 td.foswikiSortedCol {background-color:#BBBBBB;}
+.foswikiTable#table5 tr.foswikiTableRowdataBg1 td.foswikiSortedCol {background-color:#DDDDDD;}
+.foswikiTable#table5 td {padding:4px;}
+.foswikiTable#table5 th {padding:4px;}
+</style>
+<!-- TABLEPLUGIN_table7 --> <style type="text/css" media="all">
+.foswikiTable#table7 th {background-color:#0000FF;}
+.foswikiTable#table7 th.foswikiSortedCol {background-color:#0000FF;}
+.foswikiTable#table7 th {color:#FFFF00;}
+.foswikiTable#table7 th a:link {color:#FFFF00;}
+.foswikiTable#table7 th a:visited {color:#FFFF00;}
+.foswikiTable#table7 th a:link font {color:#FFFF00;}
+.foswikiTable#table7 th a:visited font {color:#FFFF00;}
+.foswikiTable#table7 th a:hover {color:#0000FF;background-color:#FFFF00;}
+.foswikiTable#table7 th a:hover font {color:#0000FF;background-color:#FFFF00;}
+.foswikiTable#table7 tr.foswikiTableRowdataBg0 td {background-color:#BBBBBB;}
+.foswikiTable#table7 tr.foswikiTableRowdataBg1 td {background-color:#DDDDDD;}
+.foswikiTable#table7 tr.foswikiTableRowdataBg0 td.foswikiSortedCol {background-color:#BBBBBB;}
+.foswikiTable#table7 tr.foswikiTableRowdataBg1 td.foswikiSortedCol {background-color:#DDDDDD;}
+.foswikiTable#table7 td {padding:4px;}
+.foswikiTable#table7 th {padding:4px;}
+</style>
+<!-- TABLEPLUGIN_table1 --> <style type="text/css" media="all">
+.foswikiTable#table1 th {background-color:#0000FF;}
+.foswikiTable#table1 th.foswikiSortedCol {background-color:#0000FF;}
+.foswikiTable#table1 th {color:#FFFF00;}
+.foswikiTable#table1 th a:link {color:#FFFF00;}
+.foswikiTable#table1 th a:visited {color:#FFFF00;}
+.foswikiTable#table1 th a:link font {color:#FFFF00;}
+.foswikiTable#table1 th a:visited font {color:#FFFF00;}
+.foswikiTable#table1 th a:hover {color:#0000FF;background-color:#FFFF00;}
+.foswikiTable#table1 th a:hover font {color:#0000FF;background-color:#FFFF00;}
+.foswikiTable#table1 tr.foswikiTableRowdataBg0 td {background-color:#BBBBBB;}
+.foswikiTable#table1 tr.foswikiTableRowdataBg1 td {background-color:#DDDDDD;}
+.foswikiTable#table1 tr.foswikiTableRowdataBg0 td.foswikiSortedCol {background-color:#BBBBBB;}
+.foswikiTable#table1 tr.foswikiTableRowdataBg1 td.foswikiSortedCol {background-color:#DDDDDD;}
+.foswikiTable#table1 td {padding:4px;}
+.foswikiTable#table1 th {padding:4px;}
+</style>
+<div class="geral">
+<div class="cabecalho">
+	 <div class="padraocabecalho">		
+<h3><a name="Aqui_temos_um_livro_livre_e_comp"></a> Aqui temos um <em>livro
+ livre</em> e completo sobre <em>Shell</em> </h3>
+<h4><a name="Os_sedentos_do_saber_livre_s_o_m"></a> Os sedentos do 
+"saber livre" são muito benvindos. </h4>
+<!-- <span class="foswikiNewLink">SiteSearch<a href="/bin/edit/TWikiBar/SiteSearch?topicparent=TWikiBar.TWikiBarPapo004" rel="nofollow" title="Criar este tópico">?</a></span> Google -->
+<form method="get" action="http://www.google.com/search" target="_blank">
+<input name="ie" value="UTF-8" type="hidden">
+<input name="oe" value="UTF-8" type="hidden">
+<input name="q" size="10" maxlength="255" type="text">
+<input name="btnG" value="Procure comando no Botequim" type="submit">
+<input name="domains" value="wiki.softwarelivre.org" type="hidden">
+<input name="sitesearch" 
+value="twiki.softwarelivre.org/bin/view/TWikiBar" checked="checked" 
+type="hidden">
+</form>
+<!-- <span class="foswikiNewLink">SiteSearch<a href="/bin/edit/TWikiBar/SiteSearch?topicparent=TWikiBar.TWikiBarPapo004" rel="nofollow" title="Criar este tópico">?</a></span> Google -->
+<p>
+	 </p></div>
+	 <div class="barranavegacao">		<div id="menuH"> <ul>
+<li> [ 12 Apr 2010 - 22:00 ] <strong>Links Amigos</strong> 
+</li> <li> <a style="" target="_blank" 
+href="http://br-linux.org/linux/?q=node/2037" title="Linux Levado à 
+Sério (Abrirá em nova Aba)">BR-Linux</a>
+</li> <li> <a style="" target="_blank" 
+href="http://www.vivaolinux.com.br/" title="Viva o Linux (Abrirá em nova
+ Aba)">Viva o Linux</a>
+</li> <li> <a style="" target="_blank" 
+href="http://www.dicas-l.unicamp.br/" title="Dicas-L - Rubens (Abrirá em
+ nova Aba)">Dicas-L</a>
+</li> <li> <a style="" target="_blank" 
+href="http://www.aurelio.net/shell" title="Por que programar tem que ser
+ divertido (Abrirá em nova Aba)">Aurelio</a>
+</li> <li> <a style="" target="_blank" href="http://www.thobias.org/" 
+title=" Thobias login (Abrirá em nova Aba)">Thobias</a>
+</li></ul> 
+</div>
+	 </div>
+  </div>
+  <div class="lateral">	 
+<div id="menuL"> <ol>
+<li> TWiki Básico <ul>
+<li> <a style="" href="http://wiki.softwarelivre.org/TWikiBar/WebHome" 
+class="foswikiCurrentWebHomeLink" title="Ir para a Página Inicial dessa 
+Área!"><img src="TWikiBarPapo004_arquivos/home.gif" alt="HOME" 
+width="16" height="16"> Página Inicial</a>
+</li> <li> <a style="" 
+href="http://wiki.softwarelivre.org/TWikiBar/WebChanges" title="Mostrar 
+as páginas (tópicos) alterados mais recentemente!"><img 
+src="TWikiBarPapo004_arquivos/recentchanges.gif" alt="INDEX" width="16" 
+height="16"> Últimas Alterações</a>
+</li> <li> <a style="" 
+href="http://wiki.softwarelivre.org/TWikiBar/WebIndex" title="Indice 
+Analítico!"><img src="TWikiBarPapo004_arquivos/index.gif" alt="INDEX" 
+width="16" height="16"> Índice</a>
+</li> <li> <a style="" 
+href="http://wiki.softwarelivre.org/TWikiBar/WebSearch" title="Permite 
+que você procure um texto qualquer em todos os tópicos. Se desejar pode 
+utilizar expressões regulares também!"><img 
+src="TWikiBarPapo004_arquivos/searchtopic.gif" alt="SEARCH" width="16" 
+height="16"> Procura</a>
+</li> <li> <a style="" 
+href="http://wiki.softwarelivre.org/TWikiBar/WebStatistics" title="Umas 
+estatísticas geradas pelo próprio TWiki via crontab."><img 
+src="TWikiBarPapo004_arquivos/statistics.gif" alt="STATISTICS" 
+width="16" height="16"> Estatísticas de Uso</a>
+</li> <li> <a style="" 
+href="http://wiki.softwarelivre.org/TWikiBar/WebNotify" title="Permite 
+que você seja informado se alguma página for alterada."><img 
+src="TWikiBarPapo004_arquivos/notify.gif" alt="NOTIFY" width="16" 
+height="16"> Aviso de Atualização</a>
+</li> <li> <a style="" 
+href="http://wiki.softwarelivre.org/TWikiBar/WebMap" title="Mostra um 
+Mapa do Site Gerado Automagicamente.">Mapa do Site</a>
+</li></ul> 
+</li> <li> TWiki Avançado <ul>
+<li> <strong><a style="" 
+href="http://wiki.softwarelivre.org/System/UserRegistration" title="Se 
+você quer contribuir com este site.">Registre-se</a></strong>
+</li> <li> <a style="" 
+href="http://wiki.softwarelivre.org/TWikiBar/WebPreferences" 
+title="Configurações Gerais desta Área.">Configurações Gerais</a>
+</li> <li> <a style="" 
+href="http://wiki.softwarelivre.org/Main/TWikiBarGroup" title="Entre em 
+Contato Conosco">Quem Somos</a>
+</li> <li> <a style="" 
+href="http://wiki.softwarelivre.org/System/TextFormattingRules" 
+title="Dicas de Formatação">Regras de Formatação</a>
+</li> <li> <a style="" 
+href="http://wiki.softwarelivre.org/System/DocumentGraphics" 
+title="Dicas Gráficas">Biblioteca Gráfica</a>
+</li> <li> <a style="" 
+href="http://wiki.softwarelivre.org/System/SmiliesPlugin" title="Use os 
+Smiles Simples.">Carinhas Gráficas</a>
+</li></ul> 
+</li> <li> <a 
+href="http://wiki.softwarelivre.org/TWikiBar/ProjetoGrafico">Projeto 
+Gráfico</a> <ul>
+<li> <a style="" 
+href="http://wiki.softwarelivre.org/TWikiBar/FreeSkinPreTopic" title="O 
+que vem ANTES do Tópico">Pré Tópico</a>
+</li> <li> <a style="" 
+href="http://wiki.softwarelivre.org/TWikiBar/FreeSkinPosTopic" title="O 
+que vem DEPOIS do Tópico">Pós Tópico</a>
+</li> <li> <a style="" 
+href="http://wiki.softwarelivre.org/TWikiBar/FreeSkinMenu" title="Este 
+próprio menu">Menu Lateral</a>
+</li> <li> <a style="" 
+href="http://wiki.softwarelivre.org/TWikiBar/FreeSkinBarraNavegacao" 
+title="Links Interessantes e Recomendados">Menu de Navegação</a>
+</li> <li> <a style="" 
+href="http://wiki.softwarelivre.org/TWikiBar/FreeSkinCSS" 
+title="Definições do CSS utilizado">CSS Utilizado</a>
+</li> <li> <a style="" 
+href="http://wiki.softwarelivre.org/TWikiBar/FreeSkinControlesEdicao" 
+title="Controles de Edição, Anexar, etc">Botões Especiais</a>
+</li> <li> <a style="" 
+href="http://wiki.softwarelivre.org/TWikiBar/FreeSkinVoceEstaAqui" 
+title="Indicador de Onde Estamos dentro da Web">Indica Onde Estamos</a>
+</li> <li> <a style="" 
+href="http://wiki.softwarelivre.org/TWikiBar/FreeSkinPadraoCabecalho" 
+title="Definição do Cabeçalho Padronizado">Cabeçalho Padrão</a>
+</li> <li> <a style="" 
+href="http://wiki.softwarelivre.org/TWikiBar/FreeSkinCopyRight" 
+title="Informações de Copy Right/Left">Copy Right/Left</a>
+</li></ul> 
+</li></ol> 
+</div>
+  </div>
+  <div class="corpo">
+	 <div class="localizacao">		Você está aqui: <a 
+href="http://wiki.softwarelivre.org/TWikiBar/WebHome" 
+class="foswikiCurrentWebHomeLink">TWikiBar</a>  &gt; <a 
+href="http://wiki.softwarelivre.org/TWikiBar/BatePapos">BatePapos</a> 
+&gt; <a href="http://wiki.softwarelivre.org/TWikiBar/TWikiBarPapo004" 
+class="foswikiCurrentTopicLink">TWikiBarPapo004</a>
+	 </div>
+	 <div class="edicao">		Controles: <a style="" 
+href="http://wiki.softwarelivre.org/bin/edit/TWikiBar/TWikiBarPapo004?nocache=Apr13010015&amp;skin=pattern"
+ target="_top" title="Editar este tópico"><img 
+src="TWikiBarPapo004_arquivos/edittopic.gif" alt="EDITAR" width="16" 
+height="16"></a>
+<a style="" 
+href="http://wiki.softwarelivre.org/bin/attach/TWikiBar/TWikiBarPapo004?skin=pattern"
+ target="_top" title="Anexar Imagens ou Arquivos"><img 
+src="TWikiBarPapo004_arquivos/attachfile.gif" alt="ANEXAR" width="16" 
+height="16"></a>
+<a style="" 
+href="http://wiki.softwarelivre.org/TWikiBar/TWikiBarPapo004?raw=on&amp;skin=pattern"
+ target="_top" title="Visualizar o Código Fonte"><img 
+src="TWikiBarPapo004_arquivos/cachetopic.gif" alt="MAIS" width="16" 
+height="16"></a>
+<a style="" 
+href="http://wiki.softwarelivre.org/bin/oops/TWikiBar/TWikiBarPapo004?template=oopsmore&amp;param1=23&amp;param2=23&amp;skin=pattern"
+ target="_top" title="Renomear, Mover, Apagar, etc..."><img 
+src="TWikiBarPapo004_arquivos/tip.gif" alt="MAIS" width="16" height="16"></a>
+<a style="" 
+href="http://wiki.softwarelivre.org/bin/rdiff/TWikiBar/TWikiBarPapo004?skin=pattern"
+ target="_top" title="Ver Todas Alterações"><img 
+src="TWikiBarPapo004_arquivos/recentchanges.gif" alt="ALTERACOES" 
+width="16" height="16"></a>
+<a style="" 
+href="http://wiki.softwarelivre.org/TWikiBar/TWikiBarPapo004?skin=freeprint"
+ target="_top" title="Preparar para Impressão"><img 
+src="TWikiBarPapo004_arquivos/printtopic.gif" alt="IMPRIMIR" width="16" 
+height="16"></a>
+- Última Atualização: [02 Feb 2010 - V.23]
+	 </div>
+	 <div class="topico"><h1><a name="Papo_de_Botequim_Parte_IV"></a> Papo 
+de Botequim Parte IV </h1>
+<p>
+<a name="foswikiTOC"></a></p><div class="foswikiToc"> <ul>
+<li> <a href="#O_Comando_test"> O Comando test</a>
+</li> <li> <a href="#Querida_Encolheram_o_Comando_Con">Querida, 
+Encolheram o Comando Condicional</a>
+</li> <li> <a href="#E_tome_de_test"> E tome de test</a>
+</li> <li> <a href="#Acaso_Casa_com_case">Acaso Casa com case</a>
+</li></ul> 
+</div>
+<p>
+&nbsp;&nbsp;&nbsp;&nbsp; - E aí cara, tentou fazer o exercício que te 
+pedi para revigorar as idéias?
+</p><p>
+&nbsp;&nbsp;&nbsp;&nbsp; - Claro, que sim! Em programação, se você não 
+treinar, não aprende. Você me pediu para fazer um <em>scriptizinho</em> 
+para informar se um determinado usuário, que será passado como parâmetro
+ esta logado (arghh!) ou não. Eu fiz o seguinte:
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);">$ cat logado<font 
+color="#ffffff">
+#!/bin/bash
+# Pesquisa se uma pessoa está logada ou não
+if who | grep $1
+then
+    echo $1 está logado
+else
+    echo $1 não se encontra no pedaço
+fi</font>
+</div>
+<p>
+</p><p>
+&nbsp;&nbsp;&nbsp;&nbsp; - Calma rapaz! Já vi que você chegou cheio de 
+tesão, primeiro vamos pedir os nossos chopes de praxe e depois vamos ao <em>Shell</em>.
+ Chico traz dois chopes, um sem colarinho!
+</p><p>
+&nbsp;&nbsp;&nbsp;&nbsp; - Agora que já molhamos os nossos bicos, vamos 
+dar uma olhadinha na execução do seu bacalho:
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);">$ logado jneves<font 
+color="#ffffff">
+jneves   pts/0        Oct 18 12:02 (10.2.4.144)
+jneves está logado</font>
+</div>
+<p>
+Realmente funcionou. Passei o meu <em>login</em> como parâmetro e ele 
+disse que eu estava logado, porém ele mandou uma linha que eu não pedi. 
+Esta linha é a saída do comando <code>who</code>, e para evitar que isso
+ aconteça é só mandá-la para o buraco negro que a esta altura você já 
+sabe que é o <code>/dev/null</code>. Vejamos então como ficaria:
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);">$ cat logado<font 
+color="#ffffff">
+#!/bin/bash
+# Pesquisa se uma pessoa está logada ou não (versão 2)
+if who | grep $1 &gt; /dev/null
+then
+    echo $1 está logado
+else
+    echo $1 não se encontra no pedaço
+fi</font>
+</div>
+<p>
+Agora vamos aos testes:
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);">$ logado jneves<font 
+color="#ffffff">
+jneves está logado
+$ logado chico
+chico não se encontra no pedaço</font>
+</div>
+<p>
+</p><div style="min-height: 105px; margin: 1em; padding: 1em; border: 
+1px dashed red; background-color: rgb(255, 255, 204);"><img 
+style="float: left; padding: 0px 8px 0px 0px;" 
+src="TWikiBarPapo004_arquivos/pinguim_atencao.gif" alt="Pinguim com 
+placa de atenção">
+Ah, agora sim! Lembre-se desta pegadinha, a maior parte dos comandos tem
+ uma saída padrão e uma saída de erros (o <code>grep</code> é uma das 
+poucos exceções, já que não dá mensagem de erro quando não acha uma 
+cadeia) e é necessário estarmos atentos para redirecioná-las para o 
+buraco negro quando necessário.
+</div>
+<p>
+Bem, agora vamos mudar de assunto: na última vez que nos encontramos 
+aqui no Botequim, eu estava te mostrando os comandos condicionais e, 
+quando já estávamos de goela seca falando sobre o if, você me perguntou 
+como se testa condições. Vejamos então o
+</p><p>
+</p><p>
+</p><h2><a name="O_Comando_test"></a> O Comando test </h2>
+<p>
+</p><p>
+Bem, todos estamos acostumados a usar o <code>if</code> testando 
+condições, e estas são sempre, maior, menor, maior ou igual, menor ou 
+igual, igual e diferente. Bem, em <em>Shell</em> para testar condições, 
+usamos o comando <code>test</code>, só que ele é muito mais poderoso que
+ o que estamos habituados. Primeiramente vou te mostrar as principais 
+opções (existem muitas outras) para testarmos arquivos em disco:
+</p><p>
+</p><center>
+<table id="table1" class="foswikiTable" border="0" cellpadding="4" 
+cellspacing="1" rules="rows">
+	<thead>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 
+foswikiTableRowdataBg0">
+			<th colspan="2" class="foswikiTableCol0 foswikiFirstCol" 
+align="center" bgcolor="#0000ff" valign="top"> <font color="#ffff00">Opções
+ do Comando test para arquivos</font> </th>
+		</tr>
+	</thead>
+	<tfoot>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 
+foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol foswikiLast" 
+bgcolor="#dddddd" valign="top"> &nbsp; <code>-x arq</code> &nbsp; </td>
+			<td class="foswikiTableCol1 foswikiLastCol foswikiLast" 
+bgcolor="#dddddd" valign="top"> &nbsp; <code>arq</code> existe e com 
+direito de execução &nbsp; </td>
+		</tr>
+	</tfoot>
+	<tbody>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 
+foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" bgcolor="#bbbbbb" 
+valign="top"> &nbsp; <strong>Opção</strong> &nbsp; </td>
+			<td class="foswikiTableCol1 foswikiLastCol" bgcolor="#bbbbbb" 
+valign="top"> &nbsp; <strong>Verdadeiro se:</strong> &nbsp; </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 
+foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" bgcolor="#dddddd" 
+valign="top"> &nbsp; <code>-e arq</code> &nbsp; </td>
+			<td class="foswikiTableCol1 foswikiLastCol" bgcolor="#dddddd" 
+valign="top"> &nbsp; <code>arq</code> existe &nbsp; </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 
+foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" bgcolor="#bbbbbb" 
+valign="top"> &nbsp; <code>-s arq</code> &nbsp; </td>
+			<td class="foswikiTableCol1 foswikiLastCol" bgcolor="#bbbbbb" 
+valign="top"> &nbsp; <code>arq</code> existe e tem tamanho maior que 
+zero &nbsp; </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 
+foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" bgcolor="#dddddd" 
+valign="top"> &nbsp; <code>-f arq</code> &nbsp; </td>
+			<td class="foswikiTableCol1 foswikiLastCol" bgcolor="#dddddd" 
+valign="top"> &nbsp; <code>arq</code> existe e é um arquivo regular 
+&nbsp; </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 
+foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" bgcolor="#bbbbbb" 
+valign="top"> &nbsp; <code>-d arq</code> &nbsp; </td>
+			<td class="foswikiTableCol1 foswikiLastCol" bgcolor="#bbbbbb" 
+valign="top"> &nbsp; <code>arq</code> existe e é um diretório; &nbsp; </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 
+foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" bgcolor="#dddddd" 
+valign="top"> &nbsp; <code>-r arq</code> &nbsp; </td>
+			<td class="foswikiTableCol1 foswikiLastCol" bgcolor="#dddddd" 
+valign="top"> &nbsp; <code>arq</code> existe e com direito de leitura 
+&nbsp; </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 
+foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" bgcolor="#bbbbbb" 
+valign="top"> &nbsp; <code>-w arq</code> &nbsp; </td>
+			<td class="foswikiTableCol1 foswikiLastCol" bgcolor="#bbbbbb" 
+valign="top"> &nbsp; <code>arq</code> existe e com direito de escrita 
+&nbsp; </td>
+		</tr>
+	</tbody></table>
+</center>
+<p>
+Veja agora as principais opções para teste de cadeias de caracteres:
+</p><p>
+</p><center>
+<table id="table2" class="foswikiTable" border="0" cellpadding="4" 
+cellspacing="1" rules="rows">
+	<thead>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 
+foswikiTableRowdataBg0">
+			<th colspan="2" class="foswikiTableCol0 foswikiFirstCol" 
+align="center" bgcolor="#0000ff" valign="top"> <font color="#ffff00">Opções
+ do comando test para cadeias de caracteres</font> </th>
+		</tr>
+	</thead>
+	<tfoot>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 
+foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol foswikiLast" 
+align="center" bgcolor="#bbbbbb" valign="top"> &nbsp; <code>c1 = c2</code>
+ &nbsp; </td>
+			<td class="foswikiTableCol1 foswikiLastCol foswikiLast" 
+bgcolor="#bbbbbb" valign="top"> &nbsp;Cadeia <code>c1</code> e <code>c2</code>
+ são idênticas&nbsp; </td>
+		</tr>
+	</tfoot>
+	<tbody>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 
+foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" align="center" 
+bgcolor="#bbbbbb" valign="top"> &nbsp; <strong>Opção</strong> &nbsp; </td>
+			<td class="foswikiTableCol1 foswikiLastCol" bgcolor="#bbbbbb" 
+valign="top"> &nbsp; <strong>Verdadeiro se:</strong> &nbsp; </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 
+foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" align="center" 
+bgcolor="#dddddd" valign="top"> &nbsp; <code>-z cadeia</code> &nbsp; </td>
+			<td class="foswikiTableCol1 foswikiLastCol" bgcolor="#dddddd" 
+valign="top"> &nbsp;Tamanho de <code>cadeia</code> é zero&nbsp; </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 
+foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" align="center" 
+bgcolor="#bbbbbb" valign="top"> &nbsp; <code>-n cadeia</code> &nbsp; </td>
+			<td class="foswikiTableCol1 foswikiLastCol" bgcolor="#bbbbbb" 
+valign="top"> &nbsp;Tamanho de <code>cadeia</code> é maior que 
+zero&nbsp; </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 
+foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" align="center" 
+bgcolor="#dddddd" valign="top"> &nbsp; <code>cadeia</code> &nbsp; </td>
+			<td class="foswikiTableCol1 foswikiLastCol" bgcolor="#dddddd" 
+valign="top"> &nbsp;A cadeia <code>cadeia</code> tem tamanho maior que 
+zero&nbsp; </td>
+		</tr>
+	</tbody></table>
+</center>
+<p>
+E pensa que acabou? Engano seu! Agora é que vem o que você está mais 
+acostumado, ou seja as famosas comparações com numéricos. Veja a tabela:
+</p><p>
+</p><center>
+<table id="table3" class="foswikiTable" border="0" cellpadding="4" 
+cellspacing="1" rules="rows">
+	<thead>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 
+foswikiTableRowdataBg0">
+			<th colspan="3" class="foswikiFirstCol" align="center" 
+bgcolor="#0000ff" valign="top"> <font color="#ffff00">Opções do comando 
+test para números</font> </th>
+		</tr>
+	</thead>
+	<tfoot>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 
+foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol foswikiLast" 
+bgcolor="#bbbbbb" valign="top"> &nbsp; <code>n1 -le n2</code> &nbsp; </td>
+			<td class="foswikiTableCol1 foswikiLast" bgcolor="#bbbbbb" 
+valign="top"> &nbsp; <code>n1</code> é menor ou igual a <code>n2</code> 
+&nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol foswikiLast" 
+bgcolor="#bbbbbb" valign="top"> &nbsp; less or equal &nbsp; </td>
+		</tr>
+	</tfoot>
+	<tbody>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 
+foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" align="center" 
+bgcolor="#bbbbbb" valign="top"> &nbsp; <strong>Opção</strong> &nbsp; </td>
+			<td class="foswikiTableCol1" bgcolor="#bbbbbb" valign="top"> &nbsp; <strong>Verdadeiro
+ se:</strong> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol" bgcolor="#bbbbbb" 
+valign="top"> &nbsp; <strong>Significado</strong> &nbsp; </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 
+foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" bgcolor="#dddddd" 
+valign="top"> &nbsp; <code>n1 -eq n2</code> &nbsp; </td>
+			<td class="foswikiTableCol1" bgcolor="#dddddd" valign="top"> &nbsp; <code>n1</code>
+ e <code>n2</code> são iguais &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol" bgcolor="#dddddd" 
+valign="top"> &nbsp; equal &nbsp; </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 
+foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" bgcolor="#bbbbbb" 
+valign="top"> &nbsp; <code>n1 -ne n2</code> &nbsp; </td>
+			<td class="foswikiTableCol1" bgcolor="#bbbbbb" valign="top"> &nbsp; <code>n1</code>
+ e <code>n2</code> não são iguais &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol" bgcolor="#bbbbbb" 
+valign="top"> &nbsp; not equal &nbsp; </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 
+foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" bgcolor="#dddddd" 
+valign="top"> &nbsp; <code>n1 -gt n2</code> &nbsp; </td>
+			<td class="foswikiTableCol1" bgcolor="#dddddd" valign="top"> &nbsp; <code>n1</code>
+ é maior que <code>n2</code> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol" bgcolor="#dddddd" 
+valign="top"> &nbsp; greater than &nbsp; </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 
+foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" bgcolor="#bbbbbb" 
+valign="top"> &nbsp; <code>n1 -ge n2</code> &nbsp; </td>
+			<td class="foswikiTableCol1" bgcolor="#bbbbbb" valign="top"> &nbsp; <code>n1</code>
+ é maior ou igual a <code>n2</code> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol" bgcolor="#bbbbbb" 
+valign="top"> &nbsp; greater or equal &nbsp; </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 
+foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" bgcolor="#dddddd" 
+valign="top"> &nbsp; <code>n1 -lt n2</code> &nbsp; </td>
+			<td class="foswikiTableCol1" bgcolor="#dddddd" valign="top"> &nbsp; <code>n1</code>
+ é menor que <code>n2</code> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol" bgcolor="#dddddd" 
+valign="top"> &nbsp; less than &nbsp; </td>
+		</tr>
+	</tbody></table>
+</center>
+<p>
+Além de tudo, some-se a estas opções as seguintes facilidades:
+</p><p>
+</p><center>
+<table id="table4" class="foswikiTable" border="0" cellpadding="4" 
+cellspacing="1" rules="rows">
+	<thead>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 
+foswikiTableRowdataBg0">
+			<th colspan="2" class="foswikiTableCol0 foswikiFirstCol" 
+align="center" bgcolor="#0000ff" valign="top"> <font color="#ffff00">Operadores</font>
+ </th>
+		</tr>
+	</thead>
+	<tfoot>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 
+foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol foswikiLast" 
+align="center" bgcolor="#bbbbbb" valign="top"> &nbsp; <code>-o</code> 
+&nbsp; </td>
+			<td class="foswikiTableCol1 foswikiLastCol foswikiLast" 
+align="center" bgcolor="#bbbbbb" valign="top"> &nbsp; <code>OU</code> 
+lógico &nbsp; </td>
+		</tr>
+	</tfoot>
+	<tbody>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 
+foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" align="center" 
+bgcolor="#bbbbbb" valign="top"> &nbsp; <strong>Operador</strong> &nbsp; </td>
+			<td class="foswikiTableCol1 foswikiLastCol" align="center" 
+bgcolor="#bbbbbb" valign="top"> &nbsp; <strong>Finalidade</strong> 
+&nbsp; </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 
+foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" align="center" 
+bgcolor="#dddddd" valign="top"> &nbsp; Parênteses <code>( )</code> 
+&nbsp; </td>
+			<td class="foswikiTableCol1 foswikiLastCol" align="center" 
+bgcolor="#dddddd" valign="top"> &nbsp; Agrupar &nbsp; </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 
+foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" align="center" 
+bgcolor="#bbbbbb" valign="top"> &nbsp; Exclamação <code>!</code> &nbsp; </td>
+			<td class="foswikiTableCol1 foswikiLastCol" align="center" 
+bgcolor="#bbbbbb" valign="top"> &nbsp; Negar &nbsp; </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 
+foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" align="center" 
+bgcolor="#dddddd" valign="top"> &nbsp; <code>-a</code> &nbsp; </td>
+			<td class="foswikiTableCol1 foswikiLastCol" align="center" 
+bgcolor="#dddddd" valign="top"> &nbsp; <code>E</code> lógico  &nbsp; </td>
+		</tr>
+	</tbody></table>
+</center>
+<p>
+Ufa! Como você viu tem coisa prá chuchu, e como eu te disse no início, o
+ nosso <code>if</code> é muito mais poderoso que o dos outros. Vamos ver
+ em uns exemplos como isso tudo funciona, primeiramente testaremos a 
+existência de um diretório:
+</p><p>
+Exemplos:
+</p><p>
+</p><pre>    if  test -d lmb
+    then
+        cd lmb
+    else
+        mkdir lmb
+        cd lmb
+    fi
+</pre>
+<p>
+No exemplo, testei se existia um diretório <code>lmb</code> definido, 
+caso negativo (<code>else</code>), ele seria criado. Já sei, você vai 
+criticar a minha lógica dizendo que o <em>script</em> não está 
+otimizado. Eu sei, mas queria que você o entendesse assim, para então 
+poder usar o ponto-de-espantação (<code>!</code>) como um negador do <code>test</code>.
+ Veja só:
+</p><p>
+</p><pre>    if  test ! -d lmb
+    then
+        mkdir lmb
+    fi
+    cd lmb
+</pre>
+<p>
+Desta forma o diretório <code>lmb</code> seria criado somente se ele 
+ainda não existisse, e esta negativa deve-se ao ponto-de-exclamação (<code>!</code>)
+ precedendo a opção <code>-d</code>. Ao fim da execução deste fragmento 
+de <em>script</em>, o programa estaria com certeza dentro do diretório <code>lmb</code>.
+</p><p>
+Vamos ver dois exemplos para entender a diferença comparação entre 
+números e entre cadeias. 
+</p><p>
+</p><pre>    cad1=1
+    cad2=01
+    if  test $cad1 = $cad2
+    then
+        echo As variáveis são iguais.
+    else
+        echo As variáveis são diferentes.
+    fi
+</pre>
+<p>
+Executando o fragmento de programa acima vem:
+</p><p>
+&nbsp;&nbsp;&nbsp;&nbsp; <code>As variáveis são diferentes.</code>
+</p><p>
+Vamos agora alterá-lo um pouco para que a comparação seja numérica:
+</p><p>
+</p><pre>    cad1=1
+    cad2=01
+    if  test $cad1 -eq $cad2
+    then
+        echo As variáveis são iguais.
+    else
+        echo As variáveis são diferentes.
+    fi
+</pre>
+<p>
+E vamos executá-lo novamente:
+</p><p>
+&nbsp;&nbsp;&nbsp;&nbsp; <code>As variáveis são iguais.</code>
+</p><p>
+Como você viu nas duas execuções obtive resultados diferentes porque a 
+cadeia <code>01</code> é realmente diferente da cadeia <code>1</code>, 
+porém, a coisa muda quando as variáveis são testadas numericamente, já 
+que o número <code>1</code> é igual ao número <code>01</code>.
+</p><p>
+Exemplos:
+</p><p>
+Para mostrar o uso dos conectores <code>-o</code> (<code>OU</code>) e <code>-a</code>
+ (<code>E</code>), veja um exemplo animal feito direto no <em>prompt</em>
+ (me desculpem os zoólogos, mas eu não entendendo nada de reino, filo, 
+classe, ordem, família, gênero e espécie, desta forma o que estou 
+chamando de família ou de gênero tem grande chance de estar incorreto):
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);">$ Familia=felinae
+$ Genero=gato
+$ if  test $Familia = canidea -a $Genero = lobo -o $Familia = felina -a 
+$Genero = leão
+&gt; then
+&gt;     echo Cuidado
+&gt; else
+&gt;     echo Pode passar a mão
+&gt; fi<font color="#ffffff">
+Pode passar a mão</font>
+</div>
+<p>
+Neste exemplo caso o animal fosse da família canídea <code>E</code> (<code>-a</code>)
+ do gênero lobo, <code>OU</code> (<code>-o</code>) da familia felina <code>E</code>
+ (<code>-a</code>) do gênero leão, seria dado um alerta, caso contrário a
+ mensagem seria de incentivo.
+</p><p>
+</p><div style="min-height: 121px; margin: 1em; padding: 1em; border: 
+1px dashed red; background-color: rgb(255, 255, 204);"><img 
+style="float: left; padding: 0px 8px 0px 0px;" 
+src="TWikiBarPapo004_arquivos/pinguim_dica.gif" alt="Pinguim com placa 
+de dica" align="left">
+Os sinais de maior (<code>&gt;</code>) no início das linhas internas ao <code>if</code>
+ são os <em>prompts</em> de continuação (que estão definidos na variável
+ <code>$PS2</code>) e quando o <em>Shell</em> identifica que um comando 
+continuará na linha seguinte, automaticamente ele o coloca até que o 
+comando seja encerrado.
+</div>
+<p>
+Vamos mudar o exemplo para ver se continua funcionando:
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);">$ Familia=felino
+$ Genero=gato
+$ if  test $Familia = felino -o $Familia = canideo -a $Genero = onça -o 
+$Genero = lobo
+&gt; then
+&gt;     echo Cuidado
+&gt; else
+&gt;     echo Pode passar a mão
+&gt; fi<font color="#ffffff">
+Cuidado</font>
+</div>
+<p>
+Obviamente a operação redundou em erro, isto foi porque a opção <code>-a</code>
+ tem precedência sobre a <code>-o</code>, e desta forma o que primeiro 
+foi avaliado foi a expressão:
+</p><p>
+&nbsp;&nbsp;&nbsp;&nbsp; <code>$Familia = canideo -a $Genero = onça</code>
+</p><p>
+Que foi avaliada como falsa, retornando o seguinte:
+</p><p>
+&nbsp;&nbsp;&nbsp;&nbsp; <code>$Familia = felino -o FALSO -o $Genero = 
+lobo</code>
+</p><p>
+Que resolvida vem:
+</p><p>
+&nbsp;&nbsp;&nbsp;&nbsp; <code>VERDADEIRO -o FALSO -o FALSO</code>
+</p><p>
+Como agora todos conectores são <code>-o</code>, e para que uma série de
+ expressões conectadas entre si por diversos <code>OU</code> lógicos 
+seja verdadeira, basta que uma delas seja, a expressão final resultou 
+como <code>VERDADEIRO</code> e o <code>then</code> foi executado de 
+forma errada. Para que isso volte a funcionar façamos o seguinte:
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);">$ if  test \($Familia = felino
+ -o $Familia = canideo\) -a \($Genero = onça -o $Genero = lobo\)
+&gt; then
+&gt;     echo Cuidado
+&gt; else
+&gt;     echo Pode passar a mão
+&gt; fi<font color="#ffffff">
+Pode passar a mão</font>
+</div>
+<p>
+Desta forma, com o uso dos parênteses agrupamos as expressões com o 
+conector <code>-o</code>, priorizando as suas execuções e resultando:
+</p><p>
+&nbsp;&nbsp;&nbsp;&nbsp; <code>VERDADEIRO -a FALSO</code>
+</p><p>
+Para que seja <code>VERDADEIRO</code> o resultado duas expressões 
+ligadas pelo conector <code>-a</code> é necessário que ambas sejam 
+verdadeiras, o que não é o caso do exemplo acima. Assim o resultado 
+final foi <code>FALSO</code> sendo então o <code>else</code> 
+corretamente executado.
+</p><p>
+Se quisermos escolher um CD que tenha faixas de 2 artistas diferentes, 
+nos sentimos tentados a usar um <code>if</code> com o conector <code>-a</code>,
+ mas é sempre bom lembrarmos que o <em>bash</em> nos dá muito recursos, e
+ isso poderia ser feito de forma muito mais simples com um único comando
+ <code>grep</code>, da seguinte maneira:
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);">$ grep Artista1 musicas | grep
+ Artista2
+</div>
+<p>
+Da mesma forma para escolhermos CDs que tenham a participação do <code>Artista1</code>
+ e do <code>Artista2</code>, não é necessário montarmos um if com o 
+conector <code>-o</code>. O <code>egrep</code> (ou <code>grep -E</code>,
+ sendo este mais aconselhável) também resolve isso para nós. Veja como:
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);">$ egrep (Artista1|Artista2) 
+musicas
+</div>
+<p>
+Ou (nesse caso específico) o próprio <code>grep</code> puro e simples 
+poderia nos quebrar o galho:
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);">$ grep Artista[12] musicas
+</div>
+<p>
+No <code>egrep</code> acima, foi usada uma expressão regular, onde a 
+barra vertical (<code>|</code>) trabalha como um <code>OU</code> lógico e
+ os parênteses são usados para limitar a amplitude deste <code>OU</code>.
+ Já no <code>grep</code> da linha seguinte, a palavra <code>Artista</code>
+ deve ser seguida por um dos valores da lista formada pelos colchetes (<code>[
+ ]</code>), isto é, <code>1</code> ou <code>2</code>.
+</p><p>
+&nbsp;&nbsp;&nbsp;&nbsp; - Tá legal, eu aceito o argumento, o <code>if</code>
+ do <em>Shell</em> é muito mais poderoso que os outros caretas, mas cá 
+pra nós, essa construção de <code>if test ...</code> é muito esquisita, é
+ pouco legível.
+</p><p>
+&nbsp;&nbsp;&nbsp;&nbsp; - É você tem razão, eu também não gosto disso e
+ acho que ninguém gosta. Acho que foi por isso, que o <em>Shell</em> 
+incorporou outra sintaxe que substitui o comando <code>test</code>. 
+</p><p>
+Exemplos:
+</p><p>
+Para isso vamos pegar aquele exemplo para fazer uma troca de diretórios,
+ que era assim:
+</p><p>
+</p><pre>    if  test ! -d lmb
+    then
+        mkdir lmb
+    fi
+    cd lmb
+</pre>
+<p>
+e utilizando a nova sintaxe, vamos fazê-lo assim:
+</p><p>
+</p><pre>    if  [ ! -d lmb ]
+    then
+        mkdir lmb
+    fi
+    cd lmb
+</pre>
+<p>
+Ou seja, o comando <code>test</code> pode ser substituído por um par de 
+colchetes (<code>[ ]</code>), separados por espaços em branco dos 
+argumentos, o que aumentará enormemente a legibilidade, pois o comando <code>if</code>
+ irá ficar com a sintaxe semelhante à das outras linguagens e por isso 
+este será o modo que o comando <code>test</code> será usado daqui para a
+ frente.
+</p><p>
+</p><p>
+</p><h2><a name="Querida_Encolheram_o_Comando_Con"></a> Querida, 
+Encolheram o Comando Condicional </h2>
+<p>
+Se você pensa que acabou, está muito enganado. Repare a tabela (tabela 
+verdade) a seguir:
+</p><p>
+</p><center>
+<table id="table5" class="foswikiTable" border="0" cellpadding="4" 
+cellspacing="1" rules="rows">
+	<thead>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 
+foswikiTableRowdataBg0">
+			<th class="foswikiTableCol0 foswikiFirstCol" align="center" 
+bgcolor="#0000ff" valign="top"> <font color="#ffff00">Valores Booleanos</font>
+ </th>
+			<th class="foswikiTableCol1" align="center" bgcolor="#0000ff" 
+valign="top"> <font color="#ffff00">E</font> </th>
+			<th class="foswikiTableCol2 foswikiLastCol" align="center" 
+bgcolor="#0000ff" valign="top"> <font color="#ffff00">OU</font> </th>
+		</tr>
+	</thead>
+	<tfoot>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 
+foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol foswikiLast" 
+align="center" bgcolor="#dddddd" valign="top"> &nbsp;FALSO-FALSO&nbsp; </td>
+			<td class="foswikiTableCol1 foswikiLast" align="center" 
+bgcolor="#dddddd" valign="top"> &nbsp;FALSO&nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol foswikiLast" 
+align="center" bgcolor="#dddddd" valign="top"> &nbsp;FALSO&nbsp; </td>
+		</tr>
+	</tfoot>
+	<tbody>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 
+foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" align="center" 
+bgcolor="#bbbbbb" valign="top"> &nbsp;VERDADEIRO-VERDADEIRO&nbsp; </td>
+			<td class="foswikiTableCol1" align="center" bgcolor="#bbbbbb" 
+valign="top"> &nbsp;VERDADEIRO&nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol" align="center" 
+bgcolor="#bbbbbb" valign="top"> &nbsp;VERDADEIRO&nbsp; </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 
+foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" align="center" 
+bgcolor="#dddddd" valign="top"> &nbsp;VERDADEIRO-FALSO&nbsp; </td>
+			<td class="foswikiTableCol1" align="center" bgcolor="#dddddd" 
+valign="top"> &nbsp;FALSO&nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol" align="center" 
+bgcolor="#dddddd" valign="top"> &nbsp;VERDADEIRO&nbsp; </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 
+foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" align="center" 
+bgcolor="#bbbbbb" valign="top"> &nbsp;FALSO-VERDADEIRO&nbsp; </td>
+			<td class="foswikiTableCol1" align="center" bgcolor="#bbbbbb" 
+valign="top"> &nbsp;FALSO&nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol" align="center" 
+bgcolor="#bbbbbb" valign="top"> &nbsp;VERDADEIRO&nbsp; </td>
+		</tr>
+	</tbody></table>
+</center>
+<p>
+Ou seja, quando o conector é <code>E</code> e a primeira condição é 
+verdadeira, o resultado final pode ser <code>VERDADEIRO</code> ou <code>FALSO</code>,
+ dependendo da segunda condição, já no conector <code>OU</code>, caso a 
+primeira condição seja verdadeira, o resultado sempre será <code>VERDADEIRO</code>
+ e se a primeira for falsa, o resultado dependerá da segunda condição.
+</p><p>
+Ora, os caras que desenvolveram o interpretador não são bobos e estão 
+sempre tentando otimizar ao máximo os algoritmos. Portanto, no caso do 
+conector <code>E</code>, a segunda condição não será avaliada, caso a 
+primeira seja falsa, já que o resultado será sempre <code>FALSO</code>. 
+Já com o <code>OU</code>, a segunda será executada somente caso a 
+primeira seja falsa.
+</p><p>
+Aproveitando disso, criaram uma forma abreviada de fazer testes. 
+Batizaram o conector <code>E</code> de <code>&amp;&amp;</code> e o <code>OU</code>
+ de <code>||</code> e para ver como isso funciona, vamos usá-los como 
+teste no nosso velho exemplo de trocarmos de diretório, que em sua 
+última versão estava assim:
+</p><p>
+</p><pre>    if  [ ! -d lmb ]
+    then
+        mkdir lmb
+    fi
+    cd lmb
+</pre>
+<p>
+Isso também poderia ser escrito da seguinte maneira:
+</p><p>
+</p><pre>    [ ! -d lmb ] &amp;&amp; mkdir lmb
+    cd lmb
+</pre>
+<p>
+Ou ainda retirando a negação (<code>!</code>):
+</p><p>
+</p><pre>    [ -d lmb ] || mkdir lmb
+    cd lmb
+</pre>
+<p>
+No primeiro caso, se o primeiro comando (o <code>test</code> que está 
+representado pelos colchetes) for bem sucedido, isto é, não existir o 
+diretório <code>lmb</code>, o <code>mkdir</code> será efetuado porque a 
+primeira condição era verdadeira e o conector era <code>E</code>.
+</p><p>
+No exemplo seguinte, testamos se o diretório <code>lmb</code> existia 
+(no anterior testamos se ele não existia) e caso isso fosse verdade, o <code>mkdir</code>
+ não seria executado porque o conector era <code>OU</code>.
+Outra forma:
+</p><p>
+&nbsp;&nbsp;&nbsp;&nbsp; <code>cd lmb || mkdir lmb</code>
+</p><p>
+Neste caso, se o <code>cd</code> fosse mal sucedido, seria criado o 
+diretório <code>lmb</code> mas não seria feito o <code>cd</code> para 
+dentro dele. Para executarmos mais de um comando desta forma, é 
+necessário fazermos um grupamento de comandos, e isso se consegue com o 
+uso de chaves (<code>{ }</code>). Veja como seria o correto:
+</p><p>
+</p><pre>    cd lmb ||
+        {
+        mkdir lmb
+        cd lmb
+        }
+</pre>
+<p>
+Ainda não está legal, porque caso o diretório não exista, o <code>cd</code>
+ dará a mensagem de erro correspondente. Então devemos fazer:
+</p><p>
+</p><pre>    cd lmb 2&gt; /dev/null ||
+        {
+        mkdir lmb
+        cd lmb
+        }
+</pre>
+<p>
+Como você viu o comando <code>if</code> nos permitiu fazer um <code>cd</code>
+ seguro de diversas maneiras. É sempre bom lembrarmos que o seguro a que
+ me referi é no tocante ao fato de que ao final da execução você sempre 
+estará dentro de <code>lmb</code>, desde que você tenha permissão entrar
+ em <code>lmb</code>, permissão para criar um diretório em <code>../lmb</code>,
+ haja espaço em disco, ...
+</p><p>
+</p><h2><a name="E_tome_de_test"></a> E tome de test </h2>
+<p>
+Ufa! Você pensa que acabou? Ledo engano! Ainda tem uma forma de <code>test</code>
+ a mais. Essa é legal porque ela te permite usar padrões para 
+comparação. Estes padrões atendem às normas de Geração de Nome de 
+Arquivos (<em>File Name Generation</em>, que são ligeiramente parecidas 
+com as Expressões Regulares, mas não podem ser confundidas com estas).
+A diferença de sintaxe deste para o <code>test</code> que acabamos de 
+ver é que esse trabalha com dois pares de colchete da seguinte forma:
+</p><p>
+<code>[[ expressão ]]</code>
+</p><p>
+Onde <code>expressão</code> é uma das que constam na tabela a seguir:
+</p><p>
+</p><center>
+<table id="table6" class="foswikiTable" border="0" cellpadding="4" 
+cellspacing="1" rules="rows">
+	<thead>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 
+foswikiTableRowdataBg0">
+			<th colspan="2" class="foswikiTableCol0 foswikiFirstCol" 
+align="center" bgcolor="#0000ff" valign="top"> <font color="#ffff00">Expressões
+ Condicionais Para Padrões</font> </th>
+		</tr>
+	</thead>
+	<tfoot>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 
+foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol foswikiLast" 
+bgcolor="#bbbbbb" valign="top"> &nbsp; <code>expr1 ¦¦ expr2</code> 
+&nbsp; </td>
+			<td class="foswikiTableCol1 foswikiLastCol foswikiLast" 
+bgcolor="#bbbbbb" valign="top"> &nbsp; "OU" lógico, verdadeiro se <code>expr1</code>
+ ou <code>expr2</code> for verdadeiro &nbsp; </td>
+		</tr>
+	</tfoot>
+	<tbody>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 
+foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" bgcolor="#bbbbbb" 
+valign="top"> &nbsp; <strong>Expressão</strong> &nbsp; </td>
+			<td class="foswikiTableCol1 foswikiLastCol" bgcolor="#bbbbbb" 
+valign="top"> &nbsp; <strong>Retorna</strong> &nbsp; </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 
+foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" bgcolor="#dddddd" 
+valign="top"> &nbsp; <code>cadeia == padrão</code> <br>  &nbsp; <code>cadeia1
+ = padrao</code> &nbsp; </td>
+			<td class="foswikiTableCol1 foswikiLastCol" bgcolor="#dddddd" 
+valign="top"> &nbsp; Verdadeiro se <code>cadeia1</code> casa com <code>padrão</code>
+ &nbsp; </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 
+foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" bgcolor="#bbbbbb" 
+valign="top"> &nbsp; <code>cadeia1 != padrao</code> &nbsp; </td>
+			<td class="foswikiTableCol1 foswikiLastCol" bgcolor="#bbbbbb" 
+valign="top"> &nbsp; Verdadeiro se <code>cadeia1</code> não casa com <code>padrao</code>.
+ &nbsp; </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 
+foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" bgcolor="#dddddd" 
+valign="top"> &nbsp; <code>cadeia1 &lt; cadeia1</code> &nbsp; </td>
+			<td class="foswikiTableCol1 foswikiLastCol" bgcolor="#dddddd" 
+valign="top"> &nbsp; Verdadeiro se <code>cadeia1</code> vem antes de <code>cadeia1</code>
+ alfabeticamente. &nbsp; </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 
+foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" bgcolor="#bbbbbb" 
+valign="top"> &nbsp; <code>cadeia1 &gt; cadeia1</code> &nbsp; </td>
+			<td class="foswikiTableCol1 foswikiLastCol" bgcolor="#bbbbbb" 
+valign="top"> &nbsp; Verdadeiro se <code>cadeia1</code> vem depois de <code>cadeia1</code>
+ alfabeticamente &nbsp; </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 
+foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" bgcolor="#dddddd" 
+valign="top"> &nbsp; <code>expr1 &amp;&amp; expr2</code> &nbsp; </td>
+			<td class="foswikiTableCol1 foswikiLastCol" bgcolor="#dddddd" 
+valign="top"> &nbsp; "E" lógico, verdadeiro se ambos <code>expr1</code> e
+ <code>expr2</code> são verdadeiros &nbsp; </td>
+		</tr>
+	</tbody></table>
+</center>
+<p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);">$ echo $H<font color="#ffffff">
+13</font>
+$ [[ $H == [0-9] || $H == 1[0-2] ]] || echo Hora inválida<font 
+color="#ffffff">
+Hora inválida</font>
+$H=12
+$ [[ $H == [0-9] || $H == 1[0-2] ]] || echo Hora inválida
+$
+</div>
+<p>
+Neste exemplo, testamos se o conteúdo da variável <code>$H</code> estava
+ compreendido entre zero e nove <code>([0-9])</code> ou <code>(||)</code>
+ se estava entre dez e doze <code>(1[0-2])</code>, dando uma mensagem de
+ erro caso não fosse.
+</p><p>
+Exemplos:
+</p><p>
+Para saber se uma variável tem o tamanho de um e somente um caractere, 
+faça:
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);">$ var=a
+$ [[ $var == ? ]] &amp;&amp; echo var tem um caractere<font 
+color="#ffffff">
+var tem um caractere</font>
+$ var=aa
+$ [[ $var == ? ]] &amp;&amp; echo var tem um caractere
+$
+</div>
+<p>
+Como você pode imaginar, este uso de padrões para comparação, aumenta 
+muito o poderio do comando <code>test</code>.
+No início deste papo, antes do último chope, afirmamos que o comando <code>if</code>
+ do interpretador <em>Shell</em> é mais poderoso que o seu similar em 
+outras linguagens. Agora que conhecemos todo o seu espectro de funções, 
+diga-me: você concorda ou não com esta assertiva?
+</p><p>
+</p><h2><a name="Acaso_Casa_com_case"></a> Acaso Casa com case </h2>
+<p>
+Vejamos um exemplo didático: dependendo do valor da variável <code>$opc</code>
+ o <em>script</em> deverá executar uma uma das opções: inclusão, 
+exclusão, alteração ou fim. Veja como ficaria este fragmento de <em>script</em>:
+</p><p>
+</p><pre>    if  [ $opc -eq 1 ]
+    then
+        inclusao
+    elif [ $opc -eq 2 ]
+    then
+        exclusao
+    elif [ $opc -eq 3 ]
+    then
+        alteracao
+    elif [ $opc -eq 4 ]
+    then
+        exit
+    else
+        echo Digite uma opção entre 1 e 4
+    fi
+</pre>
+<p>
+Neste exemplo você viu o uso do <code>elif</code> com um <code>else if</code>,
+ esta á a sintaxe válida e aceita, mas poderíamos fazer melhor, e isto 
+seria com o comando <code>case</code>, que tem a sintaxe a seguir:
+</p><p>
+</p><pre>    case $var in
+        padrao1) cmd1
+                 cmd2
+                 cmdn ;;
+        padrao2) cmd1
+                 cmd2
+                 cmdn ;;
+        padraon) cmd1
+                 cmd2
+                 cmdn ;;
+    esac
+</pre>
+<p>
+Onde a variável <code>$var</code> é comparada aos padrões <code>padrao1,
+ ..., padraon</code> e caso um deles atenda, o bloco de comandos <code>cmd1,
+ ..., cmdn</code> correspondente é executado até encontrar um duplo 
+ponto-e-vírgula (<code>;;</code>), quando o fluxo do programa se 
+desviará para instrução imediatamente após o <code>esac</code>.
+</p><p>
+Na formação dos padrões, são aceitos os seguintes caracteres:
+</p><p>
+</p><center>
+<table id="table7" class="foswikiTable" border="0" cellpadding="4" 
+cellspacing="1" rules="rows">
+	<thead>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 
+foswikiTableRowdataBg0">
+			<th colspan="2" class="foswikiTableCol0 foswikiFirstCol" 
+align="center" bgcolor="#0000ff" valign="top"> <font color="#ffff00">Caracteres
+ Para Formação de Padrões</font> </th>
+		</tr>
+	</thead>
+	<tfoot>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 
+foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol foswikiLast" 
+align="center" bgcolor="#bbbbbb" valign="top"> <code>¦</code> </td>
+			<td class="foswikiTableCol1 foswikiLastCol foswikiLast" 
+bgcolor="#bbbbbb" valign="top"> &nbsp; <code>OU</code> lógico &nbsp; </td>
+		</tr>
+	</tfoot>
+	<tbody>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 
+foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" bgcolor="#bbbbbb" 
+valign="top"> &nbsp; <strong>Caractere</strong> &nbsp; </td>
+			<td class="foswikiTableCol1 foswikiLastCol" bgcolor="#bbbbbb" 
+valign="top"> &nbsp; <strong>Significado</strong> &nbsp; </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 
+foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" align="center" 
+bgcolor="#dddddd" valign="top"> <code>*</code> </td>
+			<td class="foswikiTableCol1 foswikiLastCol" bgcolor="#dddddd" 
+valign="top"> &nbsp; Qualquer caractere ocorrendo zero ou mais vezes 
+&nbsp; </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 
+foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" align="center" 
+bgcolor="#bbbbbb" valign="top"> <code>?</code> </td>
+			<td class="foswikiTableCol1 foswikiLastCol" bgcolor="#bbbbbb" 
+valign="top"> &nbsp; Qualquer caractere ocorrendo uma vez &nbsp; </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 
+foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" align="center" 
+bgcolor="#dddddd" valign="top"> <code>[...]</code> </td>
+			<td class="foswikiTableCol1 foswikiLastCol" bgcolor="#dddddd" 
+valign="top"> &nbsp; Lista de caracteres &nbsp; </td>
+		</tr>
+	</tbody></table>
+</center>
+<p>
+Para mostrar como fica melhor, vamos repetir o exemplo anterior, só que 
+desta vez usaremos o <code>case</code> e não o <code>if ... elif ... 
+else ... fi</code>.
+</p><p>
+</p><pre>    case $opc in
+        1) inclusao ;;
+        2) exclusao ;;
+        3) alteracao ;;
+        4) exit ;;
+        *) echo Digite uma opção entre 1 e 4
+    esac
+</pre>
+<p>
+Como você deve ter percebido, eu usei o asterisco como a última opção, 
+isto é, se o asterisco atende a qualquer coisa, então ele servirá para 
+qualquer coisa que não esteja no intervalo de 1 a 4. Outra coisa a ser 
+notada é que o duplo ponto-e-vírgula não é necessário antes do <code>esac</code>.
+</p><p>
+Exemplos:
+</p><p>
+Vamos agora fazer um <em>script</em> mais radical. Ele te dará bom dia, 
+boa tarde ou boa noite dependendo da hora que for executado, mas 
+primeiramente veja estes comandos:
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);">$ date<font color="#ffffff">
+Tue Nov  9 19:37:30 BRST 2004</font>
+$ date +%H<font color="#ffffff">
+19</font>
+</div>
+<p>
+O comando <code>date</code> informa a data completa do sistema, mas ele 
+tem diversas opções para seu mascaramento. Neste comando, a formatação 
+começa com um sinal de mais (<code>+</code>) e os caracteres de 
+formatação vêm após um sinal de percentagem (<code>%</code>), assim o <code>%H</code>
+ significa a hora do sistema. Dito isso vamos ao exemplo:
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);">$ cat boasvindas.sh<font 
+color="#ffffff">
+#!/bin/bash
+#  Programa bem educado que
+#  dá bom-dia, boa-tarde ou
+#  boa-noite conforme a hora
+Hora=$(date +%H)
+case $Hora in
+    0? | 1[01]) echo Bom Dia
+                ;;
+    1[2-7]    ) echo Boa Tarde
+                ;;
+    *         ) echo Boa Noite
+                ;;
+esac
+exit</font>
+</div>
+<p>
+Peguei pesado, né? Que nada vamos esmiuçar a resolução caso-a-caso (ou 
+seria case-a-case? <img src="TWikiBarPapo004_arquivos/smile.gif" 
+alt="smile" title="smile" border="0"> )
+</p><p>
+<code>0? | 1[01]</code> - Significa zero seguido de qualquer coisa (<code>?</code>),
+ ou (<code>|</code>) um seguido de zero ou um (<code>[01]</code>) ou 
+seja, esta linha pegou 01, 02, ... 09, 10 e 11;
+</p><p>
+<code>1[2-7]&nbsp;&nbsp;&nbsp;&nbsp;</code> - Significa um seguido da 
+lista de dois a sete, ou seja, esta linha pegou 12, 13, ... 17;
+</p><p>
+<code>*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code> - 
+Significa tudo que não casou com nenhum dos padrões anteriores.
+</p><p>
+O bash 4.0 introduziu duas novas facilidades no comando <code>case</code>.
+ A partir desta versão, existem mais dois terminadores de bloco além do <code>;;</code>,
+ que são:
+</p><p>
+   <code>;;&amp;</code> - Quando um bloco de comandos for encerrado com 
+este terminador, o programa não sairá do <code>case</code>, mas testará 
+os próximos padrões;
+</p><p>
+   <code>;&amp;</code> - Neste caso, o próximo bloco será executado, sem
+ sequer testar o seu padrão.
+</p><p>
+<kbd>Exemplos:</kbd>
+</p><p>
+Suponha que no seu programa possam ocorrer 4 tipos de erro e você 
+resolva representar cada um deles por uma potência de 2, isto é 1, 2, 4 e
+ 8, de forma que a soma dos erros ocorridos gerem um número único para 
+representá-los (é assim que se formam os números binários). Assim, se 
+ocorrem erros dos tipos 1 e 4, será passado 5 (4+1) para o programa, se 
+os erros forem 1, 4 e 8, será passado 13 (8+4+1). Observe a tabela a 
+seguir:
+</p><p>
+</p><center>
+<table id="table8" class="foswikiTable" border="0" cellpadding="4" 
+cellspacing="1" rules="rows">
+	<thead>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 
+foswikiTableRowdataBg0">
+			<th class="foswikiTableCol0 foswikiFirstCol" align="center" 
+bgcolor="#0000ff" valign="top"> <font color="#ffff00">So-</font> </th>
+			<th colspan="4" align="center" bgcolor="#0000ff" valign="top"> <font 
+color="#ffff00">Erros</font> </th>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 
+foswikiTableRowdataBg0">
+			<th class="foswikiTableCol0 foswikiFirstCol" align="center" 
+bgcolor="#0000ff" valign="top"> <font color="#ffff00">ma</font> </th>
+			<th class="foswikiTableCol1" align="center" bgcolor="#0000ff" 
+valign="top"> <font color="#ffff00">8</font> </th>
+			<th class="foswikiTableCol2" align="center" bgcolor="#0000ff" 
+valign="top"> <font color="#ffff00">4</font> </th>
+			<th class="foswikiTableCol3" align="center" bgcolor="#0000ff" 
+valign="top"> <font color="#ffff00">2</font> </th>
+			<th class="foswikiTableCol4 foswikiLastCol" align="center" 
+bgcolor="#0000ff" valign="top"> <font color="#ffff00">1</font> </th>
+		</tr>
+	</thead>
+	<tfoot>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 
+foswikiTableRowdataBg1">
+			<th class="foswikiTableCol0 foswikiFirstCol foswikiLast" 
+align="center" bgcolor="#0000ff" valign="top"> <font color="#ffff00">0</font>
+ </th>
+			<td class="foswikiTableCol1 foswikiLast" bgcolor="#dddddd" 
+valign="top"> &nbsp;  -  &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLast" bgcolor="#dddddd" 
+valign="top"> &nbsp;  -  &nbsp; </td>
+			<td class="foswikiTableCol3 foswikiLast" bgcolor="#dddddd" 
+valign="top"> &nbsp;  -  &nbsp; </td>
+			<td class="foswikiTableCol4 foswikiLastCol foswikiLast" 
+bgcolor="#dddddd" valign="top"> &nbsp;  -  &nbsp; </td>
+		</tr>
+	</tfoot>
+	<tbody>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 
+foswikiTableRowdataBg0">
+			<th class="foswikiTableCol0 foswikiFirstCol" align="center" 
+bgcolor="#0000ff" valign="top"> <font color="#ffff00">15</font> </th>
+			<td class="foswikiTableCol1" bgcolor="#bbbbbb" valign="top"> &nbsp;  <strong>X</strong>
+  &nbsp; </td>
+			<td class="foswikiTableCol2" bgcolor="#bbbbbb" valign="top"> &nbsp;  <strong>X</strong>
+  &nbsp; </td>
+			<td class="foswikiTableCol3" bgcolor="#bbbbbb" valign="top"> &nbsp;  <strong>X</strong>
+  &nbsp; </td>
+			<td class="foswikiTableCol4 foswikiLastCol" bgcolor="#bbbbbb" 
+valign="top"> &nbsp;  <strong>X</strong>  &nbsp; </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 
+foswikiTableRowdataBg1">
+			<th class="foswikiTableCol0 foswikiFirstCol" align="center" 
+bgcolor="#0000ff" valign="top"> <font color="#ffff00">14</font> </th>
+			<td class="foswikiTableCol1" bgcolor="#dddddd" valign="top"> &nbsp;  <strong>X</strong>
+  &nbsp; </td>
+			<td class="foswikiTableCol2" bgcolor="#dddddd" valign="top"> &nbsp;  <strong>X</strong>
+  &nbsp; </td>
+			<td class="foswikiTableCol3" bgcolor="#dddddd" valign="top"> &nbsp;  <strong>X</strong>
+  &nbsp; </td>
+			<td class="foswikiTableCol4 foswikiLastCol" bgcolor="#dddddd" 
+valign="top"> &nbsp;  -  &nbsp; </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 
+foswikiTableRowdataBg0">
+			<th class="foswikiTableCol0 foswikiFirstCol" align="center" 
+bgcolor="#0000ff" valign="top"> <font color="#ffff00">13</font> </th>
+			<td class="foswikiTableCol1" bgcolor="#bbbbbb" valign="top"> &nbsp;  <strong>X</strong>
+  &nbsp; </td>
+			<td class="foswikiTableCol2" bgcolor="#bbbbbb" valign="top"> &nbsp;  <strong>X</strong>
+  &nbsp; </td>
+			<td class="foswikiTableCol3" bgcolor="#bbbbbb" valign="top"> &nbsp;  -
+  &nbsp; </td>
+			<td class="foswikiTableCol4 foswikiLastCol" bgcolor="#bbbbbb" 
+valign="top"> &nbsp;  <strong>X</strong>  &nbsp; </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 
+foswikiTableRowdataBg1">
+			<th class="foswikiTableCol0 foswikiFirstCol" align="center" 
+bgcolor="#0000ff" valign="top"> <font color="#ffff00">12</font> </th>
+			<td class="foswikiTableCol1" bgcolor="#dddddd" valign="top"> &nbsp;  <strong>X</strong>
+  &nbsp; </td>
+			<td class="foswikiTableCol2" bgcolor="#dddddd" valign="top"> &nbsp;  <strong>X</strong>
+  &nbsp; </td>
+			<td class="foswikiTableCol3" bgcolor="#dddddd" valign="top"> &nbsp;  -
+  &nbsp; </td>
+			<td class="foswikiTableCol4 foswikiLastCol" bgcolor="#dddddd" 
+valign="top"> &nbsp;  -  &nbsp; </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 
+foswikiTableRowdataBg0">
+			<th class="foswikiTableCol0 foswikiFirstCol" align="center" 
+bgcolor="#0000ff" valign="top"> <font color="#ffff00">11</font> </th>
+			<td class="foswikiTableCol1" bgcolor="#bbbbbb" valign="top"> &nbsp;  <strong>X</strong>
+  &nbsp; </td>
+			<td class="foswikiTableCol2" bgcolor="#bbbbbb" valign="top"> &nbsp;  -
+  &nbsp; </td>
+			<td class="foswikiTableCol3" bgcolor="#bbbbbb" valign="top"> &nbsp;  <strong>X</strong>
+  &nbsp; </td>
+			<td class="foswikiTableCol4 foswikiLastCol" bgcolor="#bbbbbb" 
+valign="top"> &nbsp;  <strong>X</strong>  &nbsp; </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 
+foswikiTableRowdataBg1">
+			<th class="foswikiTableCol0 foswikiFirstCol" align="center" 
+bgcolor="#0000ff" valign="top"> <font color="#ffff00">10</font> </th>
+			<td class="foswikiTableCol1" bgcolor="#dddddd" valign="top"> &nbsp;  <strong>X</strong>
+  &nbsp; </td>
+			<td class="foswikiTableCol2" bgcolor="#dddddd" valign="top"> &nbsp;  -
+  &nbsp; </td>
+			<td class="foswikiTableCol3" bgcolor="#dddddd" valign="top"> &nbsp;  <strong>X</strong>
+  &nbsp; </td>
+			<td class="foswikiTableCol4 foswikiLastCol" bgcolor="#dddddd" 
+valign="top"> &nbsp;  -  &nbsp; </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 
+foswikiTableRowdataBg0">
+			<th class="foswikiTableCol0 foswikiFirstCol" align="center" 
+bgcolor="#0000ff" valign="top"> <font color="#ffff00">9</font> </th>
+			<td class="foswikiTableCol1" bgcolor="#bbbbbb" valign="top"> &nbsp;  <strong>X</strong>
+  &nbsp; </td>
+			<td class="foswikiTableCol2" bgcolor="#bbbbbb" valign="top"> &nbsp;  -
+  &nbsp; </td>
+			<td class="foswikiTableCol3" bgcolor="#bbbbbb" valign="top"> &nbsp;  -
+  &nbsp; </td>
+			<td class="foswikiTableCol4 foswikiLastCol" bgcolor="#bbbbbb" 
+valign="top"> &nbsp;  -  &nbsp; </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 
+foswikiTableRowdataBg1">
+			<th class="foswikiTableCol0 foswikiFirstCol" align="center" 
+bgcolor="#0000ff" valign="top"> <font color="#ffff00">8</font> </th>
+			<td class="foswikiTableCol1" bgcolor="#dddddd" valign="top"> &nbsp;  <strong>X</strong>
+  &nbsp; </td>
+			<td class="foswikiTableCol2" bgcolor="#dddddd" valign="top"> &nbsp;  -
+  &nbsp; </td>
+			<td class="foswikiTableCol3" bgcolor="#dddddd" valign="top"> &nbsp;  -
+  &nbsp; </td>
+			<td class="foswikiTableCol4 foswikiLastCol" bgcolor="#dddddd" 
+valign="top"> &nbsp;  -  &nbsp; </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 
+foswikiTableRowdataBg0">
+			<th class="foswikiTableCol0 foswikiFirstCol" align="center" 
+bgcolor="#0000ff" valign="top"> <font color="#ffff00">7</font> </th>
+			<td class="foswikiTableCol1" bgcolor="#bbbbbb" valign="top"> &nbsp;  -
+  &nbsp; </td>
+			<td class="foswikiTableCol2" bgcolor="#bbbbbb" valign="top"> &nbsp;  <strong>X</strong>
+  &nbsp; </td>
+			<td class="foswikiTableCol3" bgcolor="#bbbbbb" valign="top"> &nbsp;  <strong>X</strong>
+  &nbsp; </td>
+			<td class="foswikiTableCol4 foswikiLastCol" bgcolor="#bbbbbb" 
+valign="top"> &nbsp;  <strong>X</strong>  &nbsp; </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 
+foswikiTableRowdataBg1">
+			<th class="foswikiTableCol0 foswikiFirstCol" align="center" 
+bgcolor="#0000ff" valign="top"> <font color="#ffff00">6</font> </th>
+			<td class="foswikiTableCol1" bgcolor="#dddddd" valign="top"> &nbsp;  -
+  &nbsp; </td>
+			<td class="foswikiTableCol2" bgcolor="#dddddd" valign="top"> &nbsp;  <strong>X</strong>
+  &nbsp; </td>
+			<td class="foswikiTableCol3" bgcolor="#dddddd" valign="top"> &nbsp;  <strong>X</strong>
+  &nbsp; </td>
+			<td class="foswikiTableCol4 foswikiLastCol" bgcolor="#dddddd" 
+valign="top"> &nbsp;  -  &nbsp; </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 
+foswikiTableRowdataBg0">
+			<th class="foswikiTableCol0 foswikiFirstCol" align="center" 
+bgcolor="#0000ff" valign="top"> <font color="#ffff00">5</font> </th>
+			<td class="foswikiTableCol1" bgcolor="#bbbbbb" valign="top"> &nbsp;  -
+  &nbsp; </td>
+			<td class="foswikiTableCol2" bgcolor="#bbbbbb" valign="top"> &nbsp;  <strong>X</strong>
+  &nbsp; </td>
+			<td class="foswikiTableCol3" bgcolor="#bbbbbb" valign="top"> &nbsp;  -
+  &nbsp; </td>
+			<td class="foswikiTableCol4 foswikiLastCol" bgcolor="#bbbbbb" 
+valign="top"> &nbsp;  <strong>X</strong>  &nbsp; </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 
+foswikiTableRowdataBg1">
+			<th class="foswikiTableCol0 foswikiFirstCol" align="center" 
+bgcolor="#0000ff" valign="top"> <font color="#ffff00">4</font> </th>
+			<td class="foswikiTableCol1" bgcolor="#dddddd" valign="top"> &nbsp;  -
+  &nbsp; </td>
+			<td class="foswikiTableCol2" bgcolor="#dddddd" valign="top"> &nbsp;  <strong>X</strong>
+  &nbsp; </td>
+			<td class="foswikiTableCol3" bgcolor="#dddddd" valign="top"> &nbsp;  -
+  &nbsp; </td>
+			<td class="foswikiTableCol4 foswikiLastCol" bgcolor="#dddddd" 
+valign="top"> &nbsp;  -  &nbsp; </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 
+foswikiTableRowdataBg0">
+			<th class="foswikiTableCol0 foswikiFirstCol" align="center" 
+bgcolor="#0000ff" valign="top"> <font color="#ffff00">3</font> </th>
+			<td class="foswikiTableCol1" bgcolor="#bbbbbb" valign="top"> &nbsp;  -
+  &nbsp; </td>
+			<td class="foswikiTableCol2" bgcolor="#bbbbbb" valign="top"> &nbsp;  -
+  &nbsp; </td>
+			<td class="foswikiTableCol3" bgcolor="#bbbbbb" valign="top"> &nbsp;  <strong>X</strong>
+  &nbsp; </td>
+			<td class="foswikiTableCol4 foswikiLastCol" bgcolor="#bbbbbb" 
+valign="top"> &nbsp;  <strong>X</strong>  &nbsp; </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 
+foswikiTableRowdataBg1">
+			<th class="foswikiTableCol0 foswikiFirstCol" align="center" 
+bgcolor="#0000ff" valign="top"> <font color="#ffff00">2</font> </th>
+			<td class="foswikiTableCol1" bgcolor="#dddddd" valign="top"> &nbsp;  -
+  &nbsp; </td>
+			<td class="foswikiTableCol2" bgcolor="#dddddd" valign="top"> &nbsp;  -
+  &nbsp; </td>
+			<td class="foswikiTableCol3" bgcolor="#dddddd" valign="top"> &nbsp;  <strong>X</strong>
+  &nbsp; </td>
+			<td class="foswikiTableCol4 foswikiLastCol" bgcolor="#dddddd" 
+valign="top"> &nbsp;  -  &nbsp; </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 
+foswikiTableRowdataBg0">
+			<th class="foswikiTableCol0 foswikiFirstCol" align="center" 
+bgcolor="#0000ff" valign="top"> <font color="#ffff00">1</font> </th>
+			<td class="foswikiTableCol1" bgcolor="#bbbbbb" valign="top"> &nbsp;  -
+  &nbsp; </td>
+			<td class="foswikiTableCol2" bgcolor="#bbbbbb" valign="top"> &nbsp;  -
+  &nbsp; </td>
+			<td class="foswikiTableCol3" bgcolor="#bbbbbb" valign="top"> &nbsp;  -
+  &nbsp; </td>
+			<td class="foswikiTableCol4 foswikiLastCol" bgcolor="#bbbbbb" 
+valign="top"> &nbsp;  <strong>X</strong>  &nbsp; </td>
+		</tr>
+	</tbody></table>
+</center>
+<p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);">$ cat case.sh<font 
+color="#ffffff">
+#!/bin/bash 
+#  Recebe um código formado pela soma de 4 tipos 
+#+ de erro e dá as msgs correspondentes. Assim, 
+#+ se houveram erros tipo 4 e 2, o script receberá 6 
+#+ Se os erros foram 1 e 2, será passado 3. Enfim 
+#+ os códigos de erro seguem uma formação binária. 
+</font><p>
+<font color="#ffffff">Bin=$(bc &lt;&lt;&lt; "obase=2; $1")	#  Passa para
+ binário 
+Zeros=0000 
+Len=${#Bin}	#  Pega tamanho de $Bin 
+Bin=${Zeros:$Len}$Bin	#  Preenche com zeros à esquerda 
+#  Poderíamos fazer o mesmo que foi feito acima 
+#+ com um cmd printf, como veremos no capítulo 6 
+case $Bin in  
+    1[01][01][01]) echo Erro tipo 8;;&amp; 
+    [01]1[01][01]) echo Erro tipo 4;;&amp; 
+    [01][01]1[01]) echo Erro tipo 2;;&amp; 
+    [01][01][01]1) echo Erro tipo 1;;&amp; 
+             0000) echo Não há erro;;&amp; 
+                *) echo Binário final: $Bin
+esac</font>
+</p></div>
+<p>
+Repare que todas as opções serão testadas para saber quais são <em>bits</em>
+ ligados (zero=desligado, um=ligado). No final aparece o binário gerado 
+para que você possa comparar com o resultado. Testando:
+</p><p>
+</p><div style="font-family: Courier,&quot;Courier 
+New&quot;,&quot;Lucida Console&quot;,&quot;Bitstream Vera Sans 
+Mono&quot;,Monaco,monospace; white-space: pre; margin: 1em 0.5em; 
+border: 1px none; padding: 1.5em 1em; overflow: auto; font-size: 100%; 
+line-height: 1em; color: yellow; font-weight: bold; background: none 
+no-repeat scroll right top rgb(0, 0, 0);">$ case.sh 5<font 
+color="#ffffff">
+Erro tipo 4 
+Erro tipo 1
+Binário final: 0101</font>
+$ case.sh 13<font color="#ffffff">
+Erro tipo 8 
+Erro tipo 4 
+Erro tipo 1 
+Binário gerado: 1101</font>
+</div>
+<p>
+Veja também este fragmento de código adaptado de <a 
+href="http://tldp.org/LDP/abs/html/bashver4.html" target="_top">http://tldp.org/LDP/abs/html/bashver4.html</a>
+</p><p>
+</p><pre>case "$1" in
+    [[:print:]] )  echo $1 é um caractere imprimível;;&amp;
+    # O terminador ;;&amp; testará o próximo padrão
+    [[:alnum:]] )  echo $1 é um carac. alfa/numérico;;&amp;
+    [[:alpha:]] )  echo $1 é um carac. alfabético   ;;&amp;
+    [[:lower:]] )  echo $1 é uma letra minúscula    ;;&amp;
+    [[:digit:]] )  echo $1 é um caractere numérico  ;&amp;
+    # O terminador ;&amp; executará o próximo bloco...
+    %%%@@@@@    )  echo "************************"  ;;
+#   ^^^^^^^^  ... mesmo com um padrão maluco.
+esac
+</pre>
+<p>
+Sua execução passando 3 resultaria:
+</p><p>
+</p><pre>3 é um caractere imprimível 
+3 é um carac. alfa/numérico 
+3 é um caractere numérico
+********************************
+</pre>
+<p>
+Passando m:
+</p><p>
+</p><pre>m é um caractere imprimível 
+m é um carac. alfa/numérico 
+m é um carac. alfabético
+m é uma letra minúscula
+</pre>
+<p>
+Passando /:
+</p><p>
+</p><pre>/ é um caractere imprimível
+</pre>
+<p>
+&nbsp;&nbsp;&nbsp;&nbsp; - Cara, até agora eu falei muito e bebi pouco. 
+Agora eu vou te passar um exercício para você fazer em casa e me dar a 
+resposta da próxima vez que nos encontrarmos aqui no botequim, tá legal?
+</p><p>
+&nbsp;&nbsp;&nbsp;&nbsp; - Tá, mas antes informe ao pessoal que está 
+acompanhando este curso conosco como eles podem te encontrar para fazer 
+críticas, contar piada, convidar para o chope, curso ou palestra ou até 
+mesmo para falar mal dos políticos.
+</p><p>
+&nbsp;&nbsp;&nbsp;&nbsp; - É fácil, meu e-mail é <a 
+href="mailto:julio.neves@gmail.com?Subject=Duvidas%20Papo%20de%20botequim">julio.neves@gmail.com</a>,
+ mas pare de me embromar que eu não vou esquecer de te passar o <em>script</em>
+ para fazer. É o seguinte: quero que você faça um programa que receberá 
+como parâmetro o nome de um arquivo e que quando executado salvará este 
+arquivo com o nome original seguido de um til (<code>~</code>) e 
+colocará este arquivo dentro do vi (o melhor editor que se tem notícia) 
+para ser editado. Isso é para ter sempre a última cópia boa deste 
+arquivo caso o cara faça alterações indevidas. Obviamente, você fará as 
+críticas necessárias, como verificar se foi passado um parâmetro, se o 
+arquivo passado existe, ... Enfim, o que te der na telha e você achar 
+que deve constar do <em>script</em>. Deu prá entender?
+</p><p>
+&nbsp;&nbsp;&nbsp;&nbsp; - Hum, hum...
+</p><p>
+&nbsp;&nbsp;&nbsp;&nbsp; - Chico! Traz mais um sem colarinho que o cara 
+aqui já está dando para entender! <img 
+src="TWikiBarPapo004_arquivos/smile.gif" alt="smile" title="smile" 
+border="0">
+</p><p>
+Vou aproveitar também para mandar o meu jabá: diga para os amigos que 
+quem estiver afim de fazer um curso porreta de programação em <em>Shell</em>
+ que mande um e-mail para a nossa <a 
+href="mailto:contato@clavis.com.br?Subject=Curso%20de%20Shell%20com%20Julio%20Neves">gerencia
+ de treinamento</a> para informar-se. 
+</p><p>
+Qualquer dúvida ou falta de companhia para um chope ou até para falar 
+mal dos políticos é só mandar um e-mail para <a 
+href="mailto:julioneves@openoffice.org?Subject=D%C3%BAvidas%20Papo%20de%20Botequim">mim</a>.
+  
+</p><p>
+Valeu!
+</p><p>
+-- <a href="http://wiki.softwarelivre.org/Main/EvandroPastor">EvandroPastor</a>
+ - 19 Sep 2005
+	 </p></div><!-- fecha div topico -->
+	 <div class="rodape">		<br>  <a 
+href="http://creativecommons.org/licenses/by-nc-sa/2.0/br/" 
+target="_blank"><img 
+src="TWikiBarPapo004_arquivos/Logo_CC-by-nc-sa_pequeno.png" alt="Licença
+ Creative Commons - Atribuição e Não Comercial" title="Licença Creative 
+Commons - Atribuição e Não Comercial (pequeno)" border="0"></a> (CC) 
+2010 Pelos <a href="http://wiki.softwarelivre.org/Main/TWikiBarGroup">Frequentadores
+ do Bar do Júlio Neves</a>.<br> 
+Todo o conteúdo desta página pode ser utilizado segundo os termos da <a 
+href="http://creativecommons.org/licenses/by-nc-sa/2.0/br/">Creative 
+Commons License</a>: Atribuição-UsoNãoComercial-PermanênciaDaLicença.
+	 </div>
+  </div><!-- fecha div corpo -->
+</div><!-- fecha div geral -->
+</body></html>

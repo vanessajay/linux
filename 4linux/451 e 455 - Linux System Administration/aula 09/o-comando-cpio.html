@@ -1,0 +1,803 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html dir="ltr"><head>
+
+
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<script type="text/javascript">(function() { var a=window;function c(b){this.t={};this.tick=function(d,i,e){e=e?e:(new Date).getTime();this.t[d]=[e,i]};this.tick("start",null,b)}var f=new c;a.jstiming={Timer:c,load:f};try{var g=null;if(a.chrome&&a.chrome.csi)g=Math.floor(a.chrome.csi().pageT);if(g==null)if(a.gtbExternal)g=a.gtbExternal.pageT();if(g==null)if(a.external)g=a.external.pageT;if(g)a.jstiming.pt=g}catch(h){};a.tickAboveFold=function(b){b=b;var d=0;if(b.offsetParent){do d+=b.offsetTop;while(b=b.offsetParent)}b=d;b<=750&&a.jstiming.load.tick("aft")};var j=false;function k(){if(!j){j=true;a.jstiming.load.tick("firstScrollTime")}}a.addEventListener?a.addEventListener("scroll",k,false):a.attachEvent("onscroll",k); })();</script>
+<meta content="true" name="MSSmartTagsPreventParsing">
+<meta content="blogger" name="generator">
+<link href="http://www.blogger.com/favicon.ico" rel="icon" 
+type="image/vnd.microsoft.icon">
+<link 
+href="http://leonardoafonso.blogspot.com/2007/10/o-comando-cpio.html" 
+rel="canonical">
+<link rel="alternate" type="application/atom+xml" title="Leonardo Afonso
+ Amorim - Atom" 
+href="http://leonardoafonso.blogspot.com/feeds/posts/default">
+<link rel="alternate" type="application/rss+xml" title="Leonardo Afonso 
+Amorim - RSS" 
+href="http://leonardoafonso.blogspot.com/feeds/posts/default?alt=rss">
+<link rel="service.post" type="application/atom+xml" title="Leonardo 
+Afonso Amorim - Atom" 
+href="http://www.blogger.com/feeds/7811256878227456264/posts/default">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" 
+href="http://www.blogger.com/rsd.g?blogID=7811256878227456264">
+<link rel="alternate" type="application/atom+xml" title="Leonardo Afonso
+ Amorim - Atom" 
+href="http://leonardoafonso.blogspot.com/feeds/7585459755757433969/comments/default">
+<!--[if IE]> <script> (function() { var html5 = ("abbr,article,aside,audio,canvas,datalist,details," + "figure,footer,header,hgroup,mark,menu,meter,nav,output," + "progress,section,time,video").split(','); for (var i = 0; i < html5.length; i++) { document.createElement(html5[i]); } })(); </script> <![endif]-->
+<title>Leonardo Afonso Amorim: O comando cpio</title>
+<link type="text/css" rel="stylesheet" 
+href="o-comando-cpio_arquivos/119427095-widget_css_bundle.css">
+ <link rel="stylesheet" type="text/css" 
+href="o-comando-cpio_arquivos/authorization.css">
+<style type="text/css">#navbar-iframe { display:block }
+</style>
+
+<style id="page-skin-1" type="text/css"><!--
+/*
+-----------------------------------------------
+Blogger Template Style
+Name:     Denim
+Designer: Darren Delaye
+URL:      www.DarrenDelaye.com
+Date:     11 Jul 2006
+-----------------------------------------------
+*/
+/* Variable definitions
+====================
+<Variable name="bgColor" description="Page Background Color"
+type="color" default="#efefef">
+<Variable name="textColor" description="Text Color"
+type="color" default="#333333">
+<Variable name="linkColor" description="Link Color"
+type="color" default="#336699">
+<Variable name="headerBgColor" description="Page Header Background Color"
+type="color" default="#336699">
+<Variable name="headerTextColor" description="Page Header Text Color"
+type="color" default="#ffffff">
+<Variable name="headerCornersColor" description="Page Header Corners Color"
+type="color" default="#528bc5">
+<Variable name="mainBgColor" description="Main Background Color"
+type="color" default="#ffffff">
+<Variable name="borderColor" description="Border Color"
+type="color" default="#cccccc">
+<Variable name="dateHeaderColor" description="Date Header Color"
+type="color" default="#999999">
+<Variable name="sidebarTitleBgColor" description="Sidebar Title Background Color"
+type="color" default="#ffd595">
+<Variable name="sidebarTitleTextColor" description="Sidebar Title Text Color"
+type="color" default="#333333">
+<Variable name="bodyFont" description="Text Font"
+type="font" default="normal normal 100% Verdana, Arial, Sans-serif;">
+<Variable name="headerFont" description="Page Header Font"
+type="font" default="normal normal 210% Verdana, Arial, Sans-serif;">
+<Variable name="startSide" description="Start side in blog language"
+type="automatic" default="left">
+<Variable name="endSide" description="End side in blog language"
+type="automatic" default="right">
+*/
+body {
+background: #efefef;
+margin: 0;
+padding: 0px;
+font: x-small Verdana, Arial;
+text-align: center;
+color: #333333;
+font-size/* */:/**/small;
+font-size: /**/small;
+}
+a:link {
+color: #336699;
+}
+a:visited {
+color: #336699;
+}
+a img {
+border-width: 0;
+}
+#outer-wrapper {
+font: normal normal 100% Verdana, Arial, Sans-serif;;
+}
+/* Header
+----------------------------------------------- */
+#header-wrapper {
+margin:0;
+padding: 0;
+background-color: #528bc5;
+text-align: left;
+}
+#header {
+width: 760px;
+margin: 0 auto;
+background-color: #336699;
+border: 1px solid #336699;
+color: #ffffff;
+padding: 0;
+font: normal normal 210% Verdana, Arial, Sans-serif;;
+}
+h1.title {
+padding-top: 38px;
+margin: 0 14px .1em;
+line-height: 1.2em;
+font-size: 100%;
+}
+h1.title a, h1.title a:visited {
+color: #ffffff;
+text-decoration: none;
+}
+#header .description {
+display: block;
+margin: 0 14px;
+padding: 0 0 40px;
+line-height: 1.4em;
+font-size: 50%;
+}
+/* Content
+----------------------------------------------- */
+.clear {
+clear: both;
+}
+#content-wrapper {
+width: 760px;
+margin: 0 auto;
+padding: 0 0 15px;
+text-align: left;
+background-color: #ffffff;
+border: 1px solid #cccccc;
+border-top: 0;
+}
+#main-wrapper {
+margin-left: 14px;
+width: 464px;
+float: left;
+background-color: #ffffff;
+display: inline;       /* fix for doubling margin in IE */
+word-wrap: break-word; /* fix for long text breaking sidebar float in IE */
+overflow: hidden;      /* fix for long non-text content breaking IE sidebar float */
+}
+#sidebar-wrapper {
+margin-right: 14px;
+width: 240px;
+float: right;
+background-color: #ffffff;
+display: inline;       /* fix for doubling margin in IE */
+word-wrap: break-word; /* fix for long text breaking sidebar float in IE */
+overflow: hidden;      /* fix for long non-text content breaking IE sidebar float */
+}
+/* Headings
+----------------------------------------------- */
+h2, h3 {
+margin: 0;
+}
+/* Posts
+----------------------------------------------- */
+.date-header {
+margin: 1.5em 0 0;
+font-weight: normal;
+color: #999999;
+font-size: 100%;
+}
+.post {
+margin: 0 0 1.5em;
+padding-bottom: 1.5em;
+}
+.post-title {
+margin: 0;
+padding: 0;
+font-size: 125%;
+font-weight: bold;
+line-height: 1.1em;
+}
+.post-title a, .post-title a:visited, .post-title strong {
+text-decoration: none;
+color: #333333;
+font-weight: bold;
+}
+.post div {
+margin: 0 0 .75em;
+line-height: 1.3em;
+}
+.post-footer {
+margin: -.25em 0 0;
+color: #333333;
+font-size: 87%;
+}
+.post-footer .span {
+margin-right: .3em;
+}
+.post img, table.tr-caption-container {
+padding: 4px;
+border: 1px solid #cccccc;
+}
+.tr-caption-container img {
+border: none;
+padding: 0;
+}
+.post blockquote {
+margin: 1em 20px;
+}
+.post blockquote p {
+margin: .75em 0;
+}
+/* Comments
+----------------------------------------------- */
+#comments h4 {
+margin: 1em 0;
+color: #999999;
+}
+#comments h4 strong {
+font-size: 110%;
+}
+#comments-block {
+margin: 1em 0 1.5em;
+line-height: 1.3em;
+}
+#comments-block dt {
+margin: .5em 0;
+}
+#comments-block dd {
+margin: .25em 0 0;
+}
+#comments-block dd.comment-footer {
+margin: -.25em 0 2em;
+line-height: 1.4em;
+font-size: 78%;
+}
+#comments-block dd p {
+margin: 0 0 .75em;
+}
+.deleted-comment {
+font-style:italic;
+color:gray;
+}
+.feed-links {
+clear: both;
+line-height: 2.5em;
+}
+#blog-pager-newer-link {
+float: left;
+}
+#blog-pager-older-link {
+float: right;
+}
+#blog-pager {
+text-align: center;
+}
+/* Sidebar Content
+----------------------------------------------- */
+.sidebar h2 {
+margin: 1.6em 0 .5em;
+padding: 4px 5px;
+background-color: #ffd595;
+font-size: 100%;
+color: #333333;
+}
+.sidebar ul {
+margin: 0;
+padding: 0;
+list-style: none;
+}
+.sidebar li {
+margin: 0;
+padding-top: 0;
+padding-right: 0;
+padding-bottom: .5em;
+padding-left: 15px;
+text-indent: -15px;
+line-height: 1.5em;
+}
+.sidebar {
+color: #333333;
+line-height:1.3em;
+}
+.sidebar .widget {
+margin-bottom: 1em;
+}
+.sidebar .widget-content {
+margin: 0 5px;
+}
+/* Profile
+----------------------------------------------- */
+.profile-img {
+float: left;
+margin-top: 0;
+margin-right: 5px;
+margin-bottom: 5px;
+margin-left: 0;
+padding: 4px;
+border: 1px solid #cccccc;
+}
+.profile-data {
+margin:0;
+text-transform:uppercase;
+letter-spacing:.1em;
+font-weight: bold;
+line-height: 1.6em;
+font-size: 78%;
+}
+.profile-datablock {
+margin:.5em 0 .5em;
+}
+.profile-textblock {
+margin: 0.5em 0;
+line-height: 1.6em;
+}
+/* Footer
+----------------------------------------------- */
+#footer {
+clear: both;
+text-align: center;
+color: #333333;
+}
+#footer .widget {
+margin:.5em;
+padding-top: 20px;
+font-size: 85%;
+line-height: 1.5em;
+text-align: left;
+}
+
+--></style>
+<script type="text/javascript">
+if (window.jstiming) window.jstiming.load.tick('headEnd');
+</script></head><body>
+<div class="navbar section" id="navbar"><div class="widget Navbar" 
+id="Navbar1"><script type="text/javascript">
+    function setAttributeOnload(object, attribute, val) {
+      if(window.addEventListener) {
+        window.addEventListener("load",
+          function(){ object[attribute] = val; }, false);
+      } else {
+        window.attachEvent('onload', function(){ object[attribute] = val; });
+      }
+    }
+  </script>
+<iframe src="o-comando-cpio_arquivos/navbar.htm" marginwidth="0" 
+marginheight="0" id="navbar-iframe" allowtransparency="true" 
+title="Blogger Navigation and Search" width="100%" frameborder="0" 
+height="30px" scrolling="no"></iframe>
+<div></div></div></div>
+<div id="outer-wrapper"><div id="wrap2">
+<!-- skip links for text browsers -->
+<span id="skiplinks" style="display: none;">
+<a href="#main">skip to main </a> |
+      <a href="#sidebar">skip to sidebar</a>
+</span>
+<div id="header-wrapper">
+<div class="header section" id="header"><div class="widget Header" 
+id="Header1">
+<div id="header-inner">
+<div class="titlewrapper">
+<h1 class="title">
+<a href="http://leonardoafonso.blogspot.com/">Leonardo Afonso Amorim</a>
+</h1>
+</div>
+<div class="descriptionwrapper">
+<p class="description"><span>O objetivo desse blog é expor meu ponto de 
+vista, artigos, tutoriais, dicas em geral, principalmente, em 
+informática.
+
+Desde já deixo claro que não tenho a pretensão de achar que estou com a 
+verdade. Gosto de ler os comentários deixados no blog, mesmo que sejam 
+contrários ao que penso. Clique em <b>comentários</b> ao final de cada 
+texto, se deseja comentar.</span></p>
+</div>
+</div>
+</div></div>
+</div>
+<div id="content-wrapper">
+<div id="crosscol-wrapper" style="text-align: center;">
+<div class="crosscol section" id="crosscol"></div>
+</div>
+<div id="main-wrapper">
+<div class="main section" id="main"><div class="widget Blog" id="Blog1">
+<div class="blog-posts hfeed">
+<!-- google_ad_section_start(name=default) -->
+
+        <div class="date-outer">
+      
+<h2 class="date-header"><span>quarta-feira, 3 de outubro de 2007</span></h2>
+
+        <div class="date-posts">
+      
+<div class="post-outer">
+<div class="post hentry">
+<a name="7585459755757433969"></a>
+<h3 class="post-title entry-title">
+<a href="http://leonardoafonso.blogspot.com/2007/10/o-comando-cpio.html">O
+ comando cpio</a>
+</h3>
+<div class="post-header">
+<div class="post-header-line-1"></div>
+</div>
+<div class="post-body entry-content">
+Para criar um backup, pode-se usar o comando cpio. O cpio recebe uma 
+lista de arquivos a ser agrupados. A lista pode ser feita de várias 
+maneiras, uma delas é com o comando find ou com um arquivo que contenha 
+uma lista dos arquivos. A documentação do cpio é pouco complexa, 
+portanto fiz um tutorial prático mostrando como esse comando é cobrado 
+na prova de certificação da LPI.<br><br> Alguns parâmetros do comando 
+cpio:<br><br> -i extrair backup<br> -o  criar backup<br> -t mostrar uma 
+tabela com o conteúdo do backup<br> -F essa opção especifica o arquivo 
+de backup<br> -d cria diretórios se necessário<br> -c ler ou escrever 
+informações de cabeçalho em caracteres ASCII<br> -v mostrar o que está 
+fazendo em detalhes<br><br> Exemplos práticos:<br><br> Restaurando um 
+arquivo chamando memo.ben de um arquivo cpio chamado backup.cpio:<br> $ 
+cpio -iF backup.cpio memo.ben<br><br> Ilustração de um caso:<br> <br> 
+Crie um diretório chamado testes no seu diretório pessoal:<br> $ mkdir 
+~/testes<br> $ cd ~/testes<br><br> Crie um diretório em testes chamado 
+exemplos:<br> $ mkdir exemplos<br> $ cd exemplos<br><br> Crie dois 
+arquivos vazios:<br> $ touch arq1.txt arq2.txt<br><br> Coloque um 
+conteúdo qualquer no arquivo arq1.txt (abaixo listei o contéudo do 
+diretório pessoal e mandei para o arq1.txt):<br> $ ls ~/ &gt; arq1.txt<br><br>
+ Volte ao diretório ~/testes:<br> $ cd ~/testes<br><br> Vamos fazer um 
+backup dos arquivos arq1.txt e arq2.txt que estão no diretório exemplos:<br>
+ $ find exemplos -name arq* | cpio -o &gt; teste.bin<br><br> Para 
+extrair o backup faça:<br> $ cpio -iF teste.bin<br><br>Atenção: o 
+comando cpio só vai extrair os arquivos caso ele tiver certeza que os 
+arquivos do backup não sejam mais antigos que os que estão no diretório 
+exemplos.<br><br> Gerando uma lista de arquivos que tem a extensão .old 
+no diretório corrente como entrada para o utilitário cpio que vai criar 
+um backup lendo ou escrevendo a informação de cabeçalho em caracteres 
+ASCII (útil quando a máquina de origem e destino do backup são 
+diferentes) em modo detalhado para o dispositivo de disquete:<br> $ find
+ . -name “*.old” | cpio -ocBv &gt; /dev/fd0<br><br> Restaurando do 
+disquete todos os arquivos que possuem em seu nome a palavra “save” 
+(subdiretórios são criados se necessário):<br> $ cpio -icdv “*save*” 
+&lt; /dev/fd0<br><br> Para listar o conteúdo de um arquivo cpio chamado 
+cpio.bin:<br> $ cpio -t &lt; cpio.bin<br>  <br> Vamos supor que você 
+queira criar um arquivo com a lista dos arquivos que terão backup, use 
+um editor de textos qualquer com os arquivos:<br> $ vi lista.txt<br> 
+arq1.txt<br> arq2.txt<br> Salve o arquivo!<br> <br> Gere o backup:<br> $
+ cpio -o &lt; lista.txt &gt; cpio.bin
+<div style="clear: both;"></div>
+</div>
+<div class="post-footer">
+<div class="post-footer-line post-footer-line-1"><span 
+class="post-author vcard">
+Postado por
+<span class="fn">Leonardo Afonso</span>
+</span>
+<span class="post-timestamp">
+às
+<a class="timestamp-link" 
+href="http://leonardoafonso.blogspot.com/2007/10/o-comando-cpio.html" 
+rel="bookmark" title="permanent link"><abbr class="published" 
+title="2007-10-03T13:29:00-07:00">Quarta-feira, Outubro 03, 2007</abbr></a>
+</span>
+<span class="post-comment-link">
+</span>
+<span class="post-icons">
+<span class="item-action">
+<a 
+href="http://www.blogger.com/email-post.g?blogID=7811256878227456264&amp;postID=7585459755757433969"
+ title="Enviar esta postagem">
+<img alt="" class="icon-action" 
+src="o-comando-cpio_arquivos/icon18_email.gif" width="18" height="13">
+</a>
+</span>
+<span class="item-control blog-admin pid-1177981518">
+<a 
+href="http://www.blogger.com/post-edit.g?blogID=7811256878227456264&amp;postID=7585459755757433969"
+ title="Editar postagem">
+<img alt="" class="icon-action" 
+src="o-comando-cpio_arquivos/icon18_edit_allbkg.gif" width="18" 
+height="18">
+</a>
+</span>
+</span>
+</div>
+<div class="post-footer-line post-footer-line-2"><span 
+class="post-labels">
+Marcadores:
+<a href="http://leonardoafonso.blogspot.com/search/label/Linux" 
+rel="tag">Linux</a>
+</span>
+</div>
+<div class="post-footer-line post-footer-line-3"><span 
+class="post-location">
+</span>
+</div>
+</div>
+</div>
+<div class="comments" id="comments">
+<a name="comments"></a>
+<h4>
+0
+comentários:
+        
+</h4>
+<dl class="avatar-comment-indent" id="comments-block">
+</dl>
+<p class="comment-footer">
+<a 
+href="https://www.blogger.com/comment.g?blogID=7811256878227456264&amp;postID=7585459755757433969&amp;isPopup=true"
+ onclick='javascript:window.open(this.href, "bloggerPopup", 
+"toolbar=0,location=0,statusbar=1,menubar=0,scrollbars=yes,width=400,height=450");
+ return false;'>Postar um comentário</a>
+</p>
+<div id="backlinks-container">
+<div id="Blog1_backlinks-container"><a name="links"></a><h4>Links para 
+esta postagem</h4>
+<p class="comment-footer">
+<a class="comment-link" href="http://www.blogger.com/blog-this.g" 
+id="Blog1_backlinks-create-link" target="_blank">Criar um link</a>
+</p>
+</div>
+</div>
+</div>
+</div>
+
+      </div></div>
+    
+<!-- google_ad_section_end -->
+</div>
+<div class="blog-pager" id="blog-pager">
+<span id="blog-pager-newer-link">
+<a class="blog-pager-newer-link" 
+href="http://leonardoafonso.blogspot.com/2007/10/e-tem-pessoa-ainda-que-no-quer-usar-o.html"
+ id="Blog1_blog-pager-newer-link" title="Postagem mais recente">Postagem
+ mais recente</a>
+</span>
+<span id="blog-pager-older-link">
+<a class="blog-pager-older-link" 
+href="http://leonardoafonso.blogspot.com/2007/10/it-leaders.html" 
+id="Blog1_blog-pager-older-link" title="Postagem mais antiga">Postagem 
+mais antiga</a>
+</span>
+<a class="home-link" href="http://leonardoafonso.blogspot.com/">Início</a>
+</div>
+<div class="clear"></div>
+<div class="post-feeds">
+<div class="feed-links">
+Assinar:
+<a class="feed-link" 
+href="http://leonardoafonso.blogspot.com/feeds/7585459755757433969/comments/default"
+ target="_blank" type="application/atom+xml">Postar comentários (Atom)</a>
+</div>
+</div>
+</div></div>
+</div>
+<div id="sidebar-wrapper">
+<div class="sidebar section" id="sidebar"><div class="widget Profile" 
+id="Profile1">
+<h2>Quem sou eu</h2>
+<div class="widget-content">
+<a href="http://www.blogger.com/profile/09191523896144565679"><img 
+alt="Minha foto" class="profile-img" 
+src="o-comando-cpio_arquivos/euepaloma.jpg" width="80" height="60"></a>
+<dl class="profile-datablock">
+<dt class="profile-data">Leonardo Afonso Amorim</dt>
+<dd class="profile-data">Goiânia, Goiás, Brazil</dd>
+<dd class="profile-textblock">Sou uma pessoa que gosta de viver sempre 
+refletindo, buscando o sentido da vida e que procura superar seus 
+limites.
+
+Não somos ninguém a não ser o nosso legado e para mim ética não tem 
+ambigüidade.
+
+Gosto muito de tecnologia, principalmente, computadores. Atualmente sou 
+instrutor de Linux, trabalho com Ensino a distância para uma empresa de 
+São Paulo e sou graduando de Engenharia de Computação pela a 
+Universidade Católica de Goiás.
+
+- Sou certificado LPI nível 1 e nível 2;
+- Responsável pelo site: http://www.escolarecriarte.com.
+
+Tenho como hobbie o aquarismo. Gosto muito da natureza e aprecio locais 
+calmos e com ar puro! Tenho um aquário de 50 litros de água doce e 
+possuo alguns peixes interessantes como cascudo, labeo bicolor etc.</dd>
+</dl>
+<a class="profile-link" 
+href="http://www.blogger.com/profile/09191523896144565679">Visualizar 
+meu perfil completo</a>
+<div class="clear"></div>
+<span class="widget-item-control">
+<span class="item-control blog-admin">
+<a class="quickedit" 
+href="http://www.blogger.com/rearrange?blogID=7811256878227456264&amp;widgetType=Profile&amp;widgetId=Profile1&amp;action=editWidget"
+ onclick='return 
+_WidgetManager._PopupConfig(document.getElementById("Profile1"));' 
+target="configProfile1" title="Editar">
+<img alt="" src="o-comando-cpio_arquivos/icon18_wrench_allbkg.png" 
+width="18" height="18">
+</a>
+</span>
+</span>
+<div class="clear"></div>
+</div>
+</div><div class="widget Label" id="Label1">
+<h2>Seções</h2>
+<div class="widget-content list-label-widget-content">
+<ul>
+<li>
+<a dir="ltr" 
+href="http://leonardoafonso.blogspot.com/search/label/Dicas">Dicas</a>
+<span dir="ltr">(8)</span>
+</li>
+<li>
+<a dir="ltr" 
+href="http://leonardoafonso.blogspot.com/search/label/Diversos">Diversos</a>
+<span dir="ltr">(2)</span>
+</li>
+<li>
+<a dir="ltr" 
+href="http://leonardoafonso.blogspot.com/search/label/Ebook">Ebook</a>
+<span dir="ltr">(1)</span>
+</li>
+<li>
+<a dir="ltr" 
+href="http://leonardoafonso.blogspot.com/search/label/Educa%C3%A7%C3%A3o">Educação</a>
+<span dir="ltr">(5)</span>
+</li>
+<li>
+<a dir="ltr" 
+href="http://leonardoafonso.blogspot.com/search/label/Linux">Linux</a>
+<span dir="ltr">(8)</span>
+</li>
+<li>
+<a dir="ltr" 
+href="http://leonardoafonso.blogspot.com/search/label/Livros">Livros</a>
+<span dir="ltr">(1)</span>
+</li>
+<li>
+<a dir="ltr" 
+href="http://leonardoafonso.blogspot.com/search/label/Notebook">Notebook</a>
+<span dir="ltr">(2)</span>
+</li>
+<li>
+<a dir="ltr" 
+href="http://leonardoafonso.blogspot.com/search/label/Pessoal">Pessoal</a>
+<span dir="ltr">(1)</span>
+</li>
+<li>
+<a dir="ltr" 
+href="http://leonardoafonso.blogspot.com/search/label/Pol%C3%ADtica">Política</a>
+<span dir="ltr">(3)</span>
+</li>
+<li>
+<a dir="ltr" 
+href="http://leonardoafonso.blogspot.com/search/label/Software%20Livre">Software
+ Livre</a>
+<span dir="ltr">(7)</span>
+</li>
+<li>
+<a dir="ltr" 
+href="http://leonardoafonso.blogspot.com/search/label/Tecnologia">Tecnologia</a>
+<span dir="ltr">(8)</span>
+</li>
+<li>
+<a dir="ltr" 
+href="http://leonardoafonso.blogspot.com/search/label/Tutoriais">Tutoriais</a>
+<span dir="ltr">(5)</span>
+</li>
+</ul>
+<div class="clear"></div>
+<span class="widget-item-control">
+<span class="item-control blog-admin">
+<a class="quickedit" 
+href="http://www.blogger.com/rearrange?blogID=7811256878227456264&amp;widgetType=Label&amp;widgetId=Label1&amp;action=editWidget"
+ onclick='return 
+_WidgetManager._PopupConfig(document.getElementById("Label1"));' 
+target="configLabel1" title="Editar">
+<img alt="" src="o-comando-cpio_arquivos/icon18_wrench_allbkg.png" 
+width="18" height="18">
+</a>
+</span>
+</span>
+<div class="clear"></div>
+</div>
+</div><div class="widget LinkList" id="LinkList1">
+<h2>Blogs interessantes</h2>
+<div class="widget-content">
+<ul>
+<li><a href="http://aurelio.wordpress.com/">Aurélio Marinho Jargas</a></li>
+<li><a href="http://christiano.blog.br/">Christiano Anderson</a></li>
+<li><a href="http://www.midstorm.org/%7Efike/weblog/">Fernando Ike</a></li>
+</ul>
+<div class="clear"></div>
+<span class="widget-item-control">
+<span class="item-control blog-admin">
+<a class="quickedit" 
+href="http://www.blogger.com/rearrange?blogID=7811256878227456264&amp;widgetType=LinkList&amp;widgetId=LinkList1&amp;action=editWidget"
+ onclick='return 
+_WidgetManager._PopupConfig(document.getElementById("LinkList1"));' 
+target="configLinkList1" title="Editar">
+<img alt="" src="o-comando-cpio_arquivos/icon18_wrench_allbkg.png" 
+width="18" height="18">
+</a>
+</span>
+</span>
+<div class="clear"></div>
+</div>
+</div><div class="widget BloggerButton" id="BloggerButton1">
+<div class="widget-content">
+<a href="http://www.blogger.com/"><img alt="Powered By Blogger" 
+src="o-comando-cpio_arquivos/blogger-ipower-kahki.gif"></a>
+<div class="clear"></div>
+<span class="widget-item-control">
+<span class="item-control blog-admin">
+<a class="quickedit" 
+href="http://www.blogger.com/rearrange?blogID=7811256878227456264&amp;widgetType=BloggerButton&amp;widgetId=BloggerButton1&amp;action=editWidget"
+ onclick='return 
+_WidgetManager._PopupConfig(document.getElementById("BloggerButton1"));'
+ target="configBloggerButton1" title="Editar">
+<img alt="" src="o-comando-cpio_arquivos/icon18_wrench_allbkg.png" 
+width="18" height="18">
+</a>
+</span>
+</span>
+<div class="clear"></div>
+</div>
+</div><div class="widget AdSense" id="AdSense1">
+<div class="widget-content">
+<script type="text/javascript"><!--
+google_ad_client="pub-1010536749990928";
+google_ad_host="pub-1556223355139109";
+google_ad_host_channel="00000";
+google_ad_width=160;
+google_ad_height=600;
+google_ad_format="160x600_as";
+google_ad_type="text";
+google_color_border="336699";
+google_color_bg="FFFFFF";
+google_color_link="0000FF";
+google_color_url="008000";
+google_color_text="000000";
+//--></script>
+<script type="text/javascript" src="o-comando-cpio_arquivos/show_ads.js">
+</script><script src="o-comando-cpio_arquivos/expansion_embed.js"></script><script src="o-comando-cpio_arquivos/test_domain.js"></script><script>google_protectAndRun("ads_core.google_render_ad", google_handleError, google_render_ad);</script><ins
+ style="display: inline-table; border: medium none; height: 600px; 
+margin: 0pt; padding: 0pt; position: relative; visibility: visible; 
+width: 160px;"><ins style="display: block; border: medium none; height: 
+600px; margin: 0pt; padding: 0pt; position: relative; visibility: 
+visible; width: 160px;"><iframe allowtransparency="true" hspace="0" 
+id="google_ads_frame1" marginheight="0" marginwidth="0" 
+name="google_ads_frame" src="o-comando-cpio_arquivos/ads.htm" 
+style="left: 0pt; position: absolute; top: 0pt;" vspace="0" width="160" 
+frameborder="0" height="600" scrolling="no"></iframe></ins></ins>
+<div class="clear"></div>
+<span class="widget-item-control">
+<span class="item-control blog-admin">
+<a class="quickedit" 
+href="http://www.blogger.com/rearrange?blogID=7811256878227456264&amp;widgetType=AdSense&amp;widgetId=AdSense1&amp;action=editWidget"
+ onclick='return 
+_WidgetManager._PopupConfig(document.getElementById("AdSense1"));' 
+target="configAdSense1" title="Editar">
+<img alt="" src="o-comando-cpio_arquivos/icon18_wrench_allbkg.png" 
+width="18" height="18">
+</a>
+</span>
+</span>
+<div class="clear"></div>
+</div>
+</div></div>
+</div>
+<!-- spacer for skins that want sidebar and main to be the same height-->
+<div class="clear">&nbsp;</div>
+</div>
+<!-- end content-wrapper -->
+<div id="footer-wrapper">
+<div class="footer section" id="footer"></div>
+</div>
+</div></div>
+<!-- end outer-wrapper -->
+<script type="text/javascript">
+if (window.jstiming) window.jstiming.load.tick('widgetJsBefore');
+</script><script type="text/javascript" src="o-comando-cpio_arquivos/585470096-widgets.js"></script>
+<script type="text/javascript">
+_WidgetManager._Init('http://www.blogger.com/rearrange?blogID=7811256878227456264', 'http://leonardoafonso.blogspot.com/2007/10/o-comando-cpio.html','7811256878227456264');
+_WidgetManager._SetPageActionUrl('http://www.blogger.com/display?blogID=7811256878227456264', 'l7B9E9qDayhA8DKrXllvWAN9HoM:1271080639975');
+_WidgetManager._SetDataContext([{'name': 'blog', 'data': {'title': 'Leonardo Afonso Amorim', 'pageType': 'item', 'url': 'http://leonardoafonso.blogspot.com/2007/10/o-comando-cpio.html', 'homepageUrl': 'http://leonardoafonso.blogspot.com/', 'enabledCommentProfileImages': true, 'searchLabel': '', 'searchQuery': '', 'pageName': 'O comando cpio', 'pageTitle': 'Leonardo Afonso Amorim: O comando cpio', 'encoding': 'UTF-8', 'locale': 'pt-BR', 'isPrivate': false, 'languageDirection': 'ltr', 'feedLinks': '\74link rel\75\42alternate\42 type\75\42application/atom+xml\42 title\75\42Leonardo Afonso Amorim - Atom\42 href\75\42http://leonardoafonso.blogspot.com/feeds/posts/default\42 /\76\n\74link rel\75\42alternate\42 type\75\42application/rss+xml\42 title\75\42Leonardo Afonso Amorim - RSS\42 href\75\42http://leonardoafonso.blogspot.com/feeds/posts/default?alt\75rss\42 /\76\n\74link rel\75\42service.post\42 type\75\42application/atom+xml\42 title\75\42Leonardo Afonso Amorim - Atom\42 href\75\42http://www.blogger.com/feeds/7811256878227456264/posts/default\42 /\76\n\74link rel\75\42EditURI\42 type\75\42application/rsd+xml\42 title\75\42RSD\42 href\75\42http://www.blogger.com/rsd.g?blogID\0757811256878227456264\42 /\76\n\74link rel\75\42alternate\42 type\75\42application/atom+xml\42 title\75\42Leonardo Afonso Amorim - Atom\42 href\75\42http://leonardoafonso.blogspot.com/feeds/7585459755757433969/comments/default\42 /\76\n', 'meTag': '', 'openIdOpTag': '', 'latencyHeadScript': '\74script type\75\42text/javascript\42\76(function() { var a\75window;function c(b){this.t\75{};this.tick\75function(d,i,e){e\75e?e:(new Date).getTime();this.t[d]\75[e,i]};this.tick(\42start\42,null,b)}var f\75new c;a.jstiming\75{Timer:c,load:f};try{var g\75null;if(a.chrome\46\46a.chrome.csi)g\75Math.floor(a.chrome.csi().pageT);if(g\75\75null)if(a.gtbExternal)g\75a.gtbExternal.pageT();if(g\75\75null)if(a.external)g\75a.external.pageT;if(g)a.jstiming.pt\75g}catch(h){};a.tickAboveFold\75function(b){b\75b;var d\0750;if(b.offsetParent){do d+\75b.offsetTop;while(b\75b.offsetParent)}b\75d;b\74\075750\46\46a.jstiming.load.tick(\42aft\42)};var j\75false;function k(){if(!j){j\75true;a.jstiming.load.tick(\42firstScrollTime\42)}}a.addEventListener?a.addEventListener(\42scroll\42,k,false):a.attachEvent(\42onscroll\42,k); })();\74/script\076'}}]);
+_WidgetManager._SetSystemMarkup({'layout': {'varName': '', 'template': '\74div class\75\47widget-wrap1\47\76\n\74div class\75\47widget-wrap2\47\76\n\74div class\75\47widget-wrap3\47\76\n\74div class\75\47widget-content\47\76\n\74div class\75\47layout-title\47\76\74data:layout-title\76\74/data:layout-title\76\74/div\76\n\74a class\75\47editlink\47 expr:href\75\47data:widget.quickEditUrl\47 expr:onclick\75\47\46quot;return _WidgetManager._PopupConfig(document.getElementById(\\\46quot;\46quot; +       data:widget.instanceId + \46quot;\\\46quot;));\46quot;\47 target\75\47chooseWidget\47\76\74data:edit-link\76\74/data:edit-link\76\74/a\76\n\74/div\76\n\74/div\76\n\74/div\76\n\74/div\076'}, 'quickedit': {'varName': '', 'template': '\74div class\75\47clear\47\76\74/div\76\n\74span class\75\47widget-item-control\47\76\n\74span class\75\47item-control blog-admin\47\76\n\74a class\75\47quickedit\47 expr:href\75\47data:widget.quickEditUrl\47 expr:onclick\75\47\46quot;return _WidgetManager._PopupConfig(document.getElementById(\\\46quot;\46quot; +       data:widget.instanceId + \46quot;\\\46quot;));\46quot;\47 expr:target\75\47\46quot;config\46quot; + data:widget.instanceId\47 expr:title\75\47data:edit-link\47\76\n\74img alt\75\47\47 height\75\04718\47 src\75\47http://img1.blogblog.com/img/icon18_wrench_allbkg.png\47 width\75\04718\47/\76\n\74/a\76\n\74/span\76\n\74/span\76\n\74div class\75\47clear\47\76\74/div\076'}, 'all-head-content': {'varName': 'page', 'template': '\74meta expr:content\75\47\46quot;text/html; charset\75\46quot; + data:page.encoding\47 http-equiv\75\47Content-Type\47/\76\n\74data:blog.latencyHeadScript\76\74/data:blog.latencyHeadScript\76\n\74meta content\75\47true\47 name\75\47MSSmartTagsPreventParsing\47/\76\n\74meta content\75\47blogger\47 name\75\47generator\47/\76\n\74link href\75\47http://www.blogger.com/favicon.ico\47 rel\75\47icon\47 type\75\47image/vnd.microsoft.icon\47/\76\n\74link expr:href\75\47data:blog.url\47 rel\75\47canonical\47/\76\n\74data:blog.feedLinks\76\74/data:blog.feedLinks\76\n\74data:blog.meTag\76\74/data:blog.meTag\76\n\74data:blog.openIdOpTag\76\74/data:blog.openIdOpTag\76\n\74data:blog.ieCssRetrofitLinks\76\74/data:blog.ieCssRetrofitLinks\076'}});
+_WidgetManager._RegisterWidget('_ProfileView', new _WidgetInfo('Profile1', 'sidebar',{'main': {'varName': '', 'template': '\74b:if cond\75\47data:title !\75 \46quot;\46quot;\47\76\n\74h2\76\74data:title\76\74/data:title\76\74/h2\76\n\74/b:if\76\n\74div class\75\47widget-content\47\76\n\74b:if cond\75\47data:team \75\75 \46quot;true\46quot;\47\76\n\74ul\76\n\74b:loop values\75\47data:authors\47 var\75\47i\47\76\n\74li\76\74a expr:href\75\47data:i.userUrl\47\76\74data:i.display-name\76\74/data:i.display-name\76\74/a\76\74/li\76\n\74/b:loop\76\n\74/ul\76\n\74b:else\76\74/b:else\76\n\74b:if cond\75\47data:photo.url !\75 \46quot;\46quot;\47\76\n\74a expr:href\75\47data:userUrl\47\76\74img class\75\47profile-img\47 expr:alt\75\47data:photo.alt\47 expr:height\75\47data:photo.height\47 expr:src\75\47data:photo.url\47 expr:width\75\47data:photo.width\47/\76\74/a\76\n\74/b:if\76\n\74dl class\75\47profile-datablock\47\76\n\74dt class\75\47profile-data\47\76\74data:displayname\76\74/data:displayname\76\74/dt\76\n\74b:if cond\75\47data:showlocation \75\75 \46quot;true\46quot;\47\76\n\74dd class\75\47profile-data\47\76\74data:location\76\74/data:location\76\74/dd\76\n\74/b:if\76\n\74b:if cond\75\47data:aboutme !\75 \46quot;\46quot;\47\76\74dd class\75\47profile-textblock\47\76\74data:aboutme\76\74/data:aboutme\76\74/dd\76\74/b:if\76\n\74/dl\76\n\74a class\75\47profile-link\47 expr:href\75\47data:userUrl\47\76\74data:viewProfileMsg\76\74/data:viewProfileMsg\76\74/a\76\n\74/b:if\76\n\74b:include name\75\47quickedit\47\76\74/b:include\76\n\74/div\076'}}, document.getElementById('Profile1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_LabelView', new _WidgetInfo('Label1', 'sidebar',{'main': {'varName': '', 'template': '\74b:if cond\75\47data:title\47\76\n\74h2\76\74data:title\76\74/data:title\76\74/h2\76\n\74/b:if\76\n\74div expr:class\75\47\46quot;widget-content \46quot; + data:display + \46quot;-label-widget-content\46quot;\47\76\n\74b:if cond\75\47data:display \75\75 \46quot;list\46quot;\47\76\n\74ul\76\n\74b:loop values\75\47data:labels\47 var\75\47label\47\76\n\74li\76\n\74b:if cond\75\47data:blog.url \75\75 data:label.url\47\76\n\74span expr:dir\75\47data:blog.languageDirection\47\76\74data:label.name\76\74/data:label.name\76\74/span\76\n\74b:else\76\74/b:else\76\n\74a expr:dir\75\47data:blog.languageDirection\47 expr:href\75\47data:label.url\47\76\74data:label.name\76\74/data:label.name\76\74/a\76\n\74/b:if\76\n\74b:if cond\75\47data:showFreqNumbers\47\76\n\74span dir\75\47ltr\47\76(\74data:label.count\76\74/data:label.count\76)\74/span\76\n\74/b:if\76\n\74/li\76\n\74/b:loop\76\n\74/ul\76\n\74b:else\76\74/b:else\76\n\74b:loop values\75\47data:labels\47 var\75\47label\47\76\n\74span expr:class\75\47\46quot;label-size label-size-\46quot; + data:label.cssSize\47\76\n\74b:if cond\75\47data:blog.url \75\75 data:label.url\47\76\n\74span expr:dir\75\47data:blog.languageDirection\47\76\74data:label.name\76\74/data:label.name\76\74/span\76\n\74b:else\76\74/b:else\76\n\74a expr:dir\75\47data:blog.languageDirection\47 expr:href\75\47data:label.url\47\76\74data:label.name\76\74/data:label.name\76\74/a\76\n\74/b:if\76\n\74b:if cond\75\47data:showFreqNumbers\47\76\n\74span class\75\47label-count\47 dir\75\47ltr\47\76(\74data:label.count\76\74/data:label.count\76)\74/span\76\n\74/b:if\76\n\74/span\76\n\74/b:loop\76\n\74/b:if\76\n\74b:include name\75\47quickedit\47\76\74/b:include\76\n\74/div\076'}}, document.getElementById('Label1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_LinkListView', new _WidgetInfo('LinkList1', 'sidebar',{'main': {'varName': '', 'template': '\74b:if cond\75\47data:title\47\76\74h2\76\74data:title\76\74/data:title\76\74/h2\76\74/b:if\76\n\74div class\75\47widget-content\47\76\n\74ul\76\n\74b:loop values\75\47data:links\47 var\75\47link\47\76\n\74li\76\74a expr:href\75\47data:link.target\47\76\74data:link.name\76\74/data:link.name\76\74/a\76\74/li\76\n\74/b:loop\76\n\74/ul\76\n\74b:include name\75\47quickedit\47\76\74/b:include\76\n\74/div\076'}}, document.getElementById('LinkList1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_BloggerButtonView', new _WidgetInfo('BloggerButton1', 'sidebar',{'main': {'varName': '', 'template': '\74div class\75\47widget-content\47\76\n\74a href\75\47http://www.blogger.com\47\76\74img alt\75\47Powered By Blogger\47 expr:src\75\47data:fullButton\47/\76\74/a\76\n\74b:include name\75\47quickedit\47\76\74/b:include\76\n\74/div\076'}}, document.getElementById('BloggerButton1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_AdSenseView', new _WidgetInfo('AdSense1', 'sidebar',{'main': {'varName': '', 'template': '\74div class\75\47widget-content\47\76\n\74data:adCode\76\74/data:adCode\76\n\74b:include name\75\47quickedit\47\76\74/b:include\76\n\74/div\076'}}, document.getElementById('AdSense1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_HeaderView', new _WidgetInfo('Header1', 'header'));
+_WidgetManager._RegisterWidget('_NavbarView', new _WidgetInfo('Navbar1', 'navbar'));
+_WidgetManager._RegisterWidget('_BlogView', new _WidgetInfo('Blog1', 'main',{'main': {'varName': 'top', 'template': '\74div class\75\47blog-posts hfeed\47\76\n\74b:include data\75\47top\47 name\75\47status-message\47\76\74/b:include\76\n\74data:defaultAdStart\76\74/data:defaultAdStart\76\n\74b:loop values\75\47data:posts\47 var\75\47post\47\76\n\74b:if cond\75\47data:post.isDateStart\47\76\n\74b:if cond\75\47data:post.isFirstPost \75\75 \46quot;false\46quot;\47\76\n          \46lt;/div\46gt;\46lt;/div\46gt;\n        \74/b:if\76\n\74/b:if\76\n\74b:if cond\75\47data:post.isDateStart\47\76\n        \46lt;div class\75\46quot;date-outer\46quot;\46gt;\n      \74/b:if\76\n\74b:if cond\75\47data:post.dateHeader\47\76\n\74h2 class\75\47date-header\47\76\74span\76\74data:post.dateHeader\76\74/data:post.dateHeader\76\74/span\76\74/h2\76\n\74/b:if\76\n\74b:if cond\75\47data:post.isDateStart\47\76\n        \46lt;div class\75\46quot;date-posts\46quot;\46gt;\n      \74/b:if\76\n\74div class\75\47post-outer\47\76\n\74b:include data\75\47post\47 name\75\47post\47\76\74/b:include\76\n\74b:if cond\75\47data:blog.pageType \75\75 \46quot;static_page\46quot;\47\76\n\74b:include data\75\47post\47 name\75\47comments\47\76\74/b:include\76\n\74/b:if\76\n\74b:if cond\75\47data:blog.pageType \75\75 \46quot;item\46quot;\47\76\n\74b:include data\75\47post\47 name\75\47comments\47\76\74/b:include\76\n\74/b:if\76\n\74/div\76\n\74b:if cond\75\47data:post.includeAd\47\76\n\74b:if cond\75\47data:post.isFirstPost\47\76\n\74data:defaultAdEnd\76\74/data:defaultAdEnd\76\n\74b:else\76\74/b:else\76\n\74data:adEnd\76\74/data:adEnd\76\n\74/b:if\76\n\74div class\75\47inline-ad\47\76\n\74data:adCode\76\74/data:adCode\76\n\74/div\76\n\74data:adStart\76\74/data:adStart\76\n\74/b:if\76\n\74b:if cond\75\47data:post.trackLatency\47\76\n\74data:post.latencyJs\76\74/data:post.latencyJs\76\n\74/b:if\76\n\74/b:loop\76\n\74b:if cond\75\47data:numPosts !\75 0\47\76\n      \46lt;/div\46gt;\46lt;/div\46gt;\n    \74/b:if\76\n\74data:adEnd\76\74/data:adEnd\76\n\74/div\76\n\74b:include name\75\47nextprev\47\76\74/b:include\76\n\74b:include name\75\47feedLinks\47\76\74/b:include\76\n\74b:if cond\75\47data:top.showStars\47\76\n\74script src\75\47//www.google.com/jsapi\47 type\75\47text/javascript\47\76\74/script\76\n\74script type\75\47text/javascript\47\76\n      google.load(\46quot;annotations\46quot;, \46quot;1\46quot;, {\46quot;locale\46quot;: \46quot;\74data:top.languageCode\76\74/data:top.languageCode\76\46quot;});\n      function initialize() {\n        google.annotations.setApplicationId(\74data:top.blogspotReviews\76\74/data:top.blogspotReviews\76);\n        google.annotations.createAll();\n        google.annotations.fetch();\n      }\n      google.setOnLoadCallback(initialize);\n    \74/script\76\n\74/b:if\076'}, 'nextprev': {'varName': '', 'template': '\74div class\75\47blog-pager\47 id\75\47blog-pager\47\76\n\74b:if cond\75\47data:newerPageUrl\47\76\n\74span id\75\47blog-pager-newer-link\47\76\n\74a class\75\47blog-pager-newer-link\47 expr:href\75\47data:newerPageUrl\47 expr:id\75\47data:widget.instanceId + \46quot;_blog-pager-newer-link\46quot;\47 expr:title\75\47data:newerPageTitle\47\76\74data:newerPageTitle\76\74/data:newerPageTitle\76\74/a\76\n\74/span\76\n\74/b:if\76\n\74b:if cond\75\47data:olderPageUrl\47\76\n\74span id\75\47blog-pager-older-link\47\76\n\74a class\75\47blog-pager-older-link\47 expr:href\75\47data:olderPageUrl\47 expr:id\75\47data:widget.instanceId + \46quot;_blog-pager-older-link\46quot;\47 expr:title\75\47data:olderPageTitle\47\76\74data:olderPageTitle\76\74/data:olderPageTitle\76\74/a\76\n\74/span\76\n\74/b:if\76\n\74a class\75\47home-link\47 expr:href\75\47data:blog.homepageUrl\47\76\74data:homeMsg\76\74/data:homeMsg\76\74/a\76\n\74/div\76\n\74div class\75\47clear\47\76\74/div\076'}, 'post': {'varName': 'post', 'template': '\74div class\75\47post hentry\47\76\n\74a expr:name\75\47data:post.id\47\76\74/a\76\n\74b:if cond\75\47data:post.title\47\76\n\74h3 class\75\47post-title entry-title\47\76\n\74b:if cond\75\47data:post.link\47\76\n\74a expr:href\75\47data:post.link\47\76\74data:post.title\76\74/data:post.title\76\74/a\76\n\74b:else\76\74/b:else\76\n\74b:if cond\75\47data:post.url\47\76\n\74a expr:href\75\47data:post.url\47\76\74data:post.title\76\74/data:post.title\76\74/a\76\n\74b:else\76\74/b:else\76\n\74data:post.title\76\74/data:post.title\76\n\74/b:if\76\n\74/b:if\76\n\74/h3\76\n\74/b:if\76\n\74div class\75\47post-header\47\76\n\74div class\75\47post-header-line-1\47\76\74/div\76\n\74/div\76\n\74div class\75\47post-body entry-content\47\76\n\74data:post.body\76\74/data:post.body\76\n\74div style\75\47clear: both;\47\76\74/div\76\n\74/div\76\n\74b:if cond\75\47data:post.hasJumpLink\47\76\n\74div class\75\47jump-link\47\76\n\74a expr:href\75\47data:post.url + \46quot;#more\46quot;\47 expr:title\75\47data:post.title\47\76\74data:post.jumpText\76\74/data:post.jumpText\76\74/a\76\n\74/div\76\n\74/b:if\76\n\74div class\75\47post-footer\47\76\n\74div class\75\47post-footer-line post-footer-line-1\47\76\74span class\75\47post-author vcard\47\76\n\74b:if cond\75\47data:top.showAuthor\47\76\n\74data:top.authorLabel\76\74/data:top.authorLabel\76\n\74span class\75\47fn\47\76\74data:post.author\76\74/data:post.author\76\74/span\76\n\74/b:if\76\n\74/span\76\n\74span class\75\47post-timestamp\47\76\n\74b:if cond\75\47data:top.showTimestamp\47\76\n\74data:top.timestampLabel\76\74/data:top.timestampLabel\76\n\74b:if cond\75\47data:post.url\47\76\n\74a class\75\47timestamp-link\47 expr:href\75\47data:post.url\47 rel\75\47bookmark\47 title\75\47permanent link\47\76\74abbr class\75\47published\47 expr:title\75\47data:post.timestampISO8601\47\76\74data:post.timestamp\76\74/data:post.timestamp\76\74/abbr\76\74/a\76\n\74/b:if\76\n\74/b:if\76\n\74/span\76\n\74span class\75\47post-comment-link\47\76\n\74b:if cond\75\47data:blog.pageType !\75 \46quot;item\46quot;\47\76\n\74b:if cond\75\47data:blog.pageType !\75 \46quot;static_page\46quot;\47\76\n\74b:if cond\75\47data:post.allowComments\47\76\n\74a class\75\47comment-link\47 expr:href\75\47data:post.addCommentUrl\47 expr:onclick\75\47data:post.addCommentOnclick\47\76\74b:if cond\75\47data:post.numComments \75\75 1\47\0761 \74data:top.commentLabel\76\74/data:top.commentLabel\76\74b:else\76\74/b:else\76\74data:post.numComments\76\74/data:post.numComments\76\n\74data:top.commentLabelPlural\76\74/data:top.commentLabelPlural\76\74/b:if\76\74/a\76\n\74/b:if\76\n\74/b:if\76\n\74/b:if\76\n\74/span\76\n\74span class\75\47post-icons\47\76\n\74b:if cond\75\47data:post.emailPostUrl\47\76\n\74span class\75\47item-action\47\76\n\74a expr:href\75\47data:post.emailPostUrl\47 expr:title\75\47data:top.emailPostMsg\47\76\n\74img alt\75\47\47 class\75\47icon-action\47 height\75\04713\47 src\75\47//www.blogger.com/img/icon18_email.gif\47 width\75\04718\47/\76\n\74/a\76\n\74/span\76\n\74/b:if\76\n\74b:include data\75\47post\47 name\75\47postQuickEdit\47\76\74/b:include\76\n\74/span\76\n\74/div\76\n\74div class\75\47post-footer-line post-footer-line-2\47\76\74span class\75\47post-labels\47\76\n\74b:if cond\75\47data:post.labels\47\76\n\74data:postLabelsLabel\76\74/data:postLabelsLabel\76\n\74b:loop values\75\47data:post.labels\47 var\75\47label\47\76\n\74a expr:href\75\47data:label.url\47 rel\75\47tag\47\76\74data:label.name\76\74/data:label.name\76\74/a\76\74b:if cond\75\47data:label.isLast !\75 \46quot;true\46quot;\47\76,\74/b:if\76\n\74/b:loop\76\n\74/b:if\76\n\74/span\76\n\74/div\76\n\74div class\75\47post-footer-line post-footer-line-3\47\76\74span class\75\47post-location\47\76\n\74b:if cond\75\47data:top.showLocation\47\76\n\74b:if cond\75\47data:post.location\47\76\n\74data:postLocationLabel\76\74/data:postLocationLabel\76\n\74a expr:href\75\47data:post.location.mapsUrl\47 target\75\47_blank\47\76\74data:post.location.name\76\74/data:post.location.name\76\74/a\76\n\74/b:if\76\n\74/b:if\76\n\74/span\76\n\74/div\76\n\74/div\76\n\74/div\076'}, 'postQuickEdit': {'varName': 'post', 'template': '\74b:if cond\75\47data:post.editUrl\47\76\n\74span expr:class\75\47\46quot;item-control \46quot; + data:post.adminClass\47\76\n\74a expr:href\75\47data:post.editUrl\47 expr:title\75\47data:top.editPostMsg\47\76\n\74img alt\75\47\47 class\75\47icon-action\47 height\75\04718\47 src\75\47//www.blogger.com/img/icon18_edit_allbkg.gif\47 width\75\04718\47/\76\n\74/a\76\n\74/span\76\n\74/b:if\076'}, 'commentDeleteIcon': {'varName': 'comment', 'template': '\74span expr:class\75\47\46quot;item-control \46quot; + data:comment.adminClass\47\76\n\74a expr:href\75\47data:comment.deleteUrl\47 expr:title\75\47data:top.deleteCommentMsg\47\76\n\74img src\75\47//www.blogger.com/img/icon_delete13.gif\47/\76\n\74/a\76\n\74/span\076'}, 'backlinkDeleteIcon': {'varName': 'backlink', 'template': '\74span expr:class\75\47\46quot;item-control \46quot; + data:backlink.adminClass\47\76\n\74a expr:href\75\47data:backlink.deleteUrl\47 expr:title\75\47data:top.deleteBacklinkMsg\47\76\n\74img src\75\47//www.blogger.com/img/icon_delete13.gif\47/\76\n\74/a\76\n\74/span\076'}, 'comments': {'varName': 'post', 'template': '\74div class\75\47comments\47 id\75\47comments\47\76\n\74a name\75\47comments\47\76\74/a\76\n\74b:if cond\75\47data:post.allowComments\47\76\n\74h4\76\n\74b:if cond\75\47data:post.numComments \75\75 1\47\76\n          1 \74data:commentLabel\76\74/data:commentLabel\76:\n        \74b:else\76\74/b:else\76\n\74data:post.numComments\76\74/data:post.numComments\76\n\74data:commentLabelPlural\76\74/data:commentLabelPlural\76:\n        \74/b:if\76\n\74/h4\76\n\74b:if cond\75\47data:post.commentPagingRequired\47\76\n\74span class\75\47paging-control-container\47\76\n\74a expr:class\75\47data:post.oldLinkClass\47 expr:href\75\47data:post.oldestLinkUrl\47\76\74data:post.oldestLinkText\76\74/data:post.oldestLinkText\76\74/a\76\n          \46#160;\n          \74a expr:class\75\47data:post.oldLinkClass\47 expr:href\75\47data:post.olderLinkUrl\47\76\74data:post.olderLinkText\76\74/data:post.olderLinkText\76\74/a\76\n          \46#160;\n          \74data:post.commentRangeText\76\74/data:post.commentRangeText\76\n          \46#160;\n          \74a expr:class\75\47data:post.newLinkClass\47 expr:href\75\47data:post.newerLinkUrl\47\76\74data:post.newerLinkText\76\74/data:post.newerLinkText\76\74/a\76\n          \46#160;\n          \74a expr:class\75\47data:post.newLinkClass\47 expr:href\75\47data:post.newestLinkUrl\47\76\74data:post.newestLinkText\76\74/data:post.newestLinkText\76\74/a\76\n\74/span\76\n\74/b:if\76\n\74dl expr:class\75\47data:post.avatarIndentClass\47 id\75\47comments-block\47\76\n\74b:loop values\75\47data:post.comments\47 var\75\47comment\47\76\n\74dt expr:class\75\47\46quot;comment-author \46quot; + data:comment.authorClass\47 expr:id\75\47data:comment.anchorName\47\76\n\74b:if cond\75\47data:comment.favicon\47\76\n\74img expr:src\75\47data:comment.favicon\47 height\75\04716px\47 style\75\47margin-bottom:-2px;\47 width\75\04716px\47/\76\n\74/b:if\76\n\74a expr:name\75\47data:comment.anchorName\47\76\74/a\76\n\74b:if cond\75\47data:blog.enabledCommentProfileImages\47\76\n\74data:comment.authorAvatarImage\76\74/data:comment.authorAvatarImage\76\n\74/b:if\76\n\74b:if cond\75\47data:comment.authorUrl\47\76\n\74a expr:href\75\47data:comment.authorUrl\47 rel\75\47nofollow\47\76\74data:comment.author\76\74/data:comment.author\76\74/a\76\n\74b:else\76\74/b:else\76\n\74data:comment.author\76\74/data:comment.author\76\n\74/b:if\76\n\74data:commentPostedByMsg\76\74/data:commentPostedByMsg\76\n\74/dt\76\n\74dd class\75\47comment-body\47\76\n\74b:if cond\75\47data:comment.isDeleted\47\76\n\74span class\75\47deleted-comment\47\76\74data:comment.body\76\74/data:comment.body\76\74/span\76\n\74b:else\76\74/b:else\76\n\74p\76\74data:comment.body\76\74/data:comment.body\76\74/p\76\n\74/b:if\76\n\74/dd\76\n\74dd class\75\47comment-footer\47\76\n\74span class\75\47comment-timestamp\47\76\n\74a expr:href\75\47data:comment.url\47 title\75\47comment permalink\47\76\n\74data:comment.timestamp\76\74/data:comment.timestamp\76\n\74/a\76\n\74b:include data\75\47comment\47 name\75\47commentDeleteIcon\47\76\74/b:include\76\n\74/span\76\n\74/dd\76\n\74/b:loop\76\n\74/dl\76\n\74b:if cond\75\47data:post.commentPagingRequired\47\76\n\74span class\75\47paging-control-container\47\76\n\74a expr:class\75\47data:post.oldLinkClass\47 expr:href\75\47data:post.oldestLinkUrl\47\76\n\74data:post.oldestLinkText\76\74/data:post.oldestLinkText\76\n\74/a\76\n\74a expr:class\75\47data:post.oldLinkClass\47 expr:href\75\47data:post.olderLinkUrl\47\76\n\74data:post.olderLinkText\76\74/data:post.olderLinkText\76\n\74/a\76\n          \46#160;\n          \74data:post.commentRangeText\76\74/data:post.commentRangeText\76\n          \46#160;\n          \74a expr:class\75\47data:post.newLinkClass\47 expr:href\75\47data:post.newerLinkUrl\47\76\n\74data:post.newerLinkText\76\74/data:post.newerLinkText\76\n\74/a\76\n\74a expr:class\75\47data:post.newLinkClass\47 expr:href\75\47data:post.newestLinkUrl\47\76\n\74data:post.newestLinkText\76\74/data:post.newestLinkText\76\n\74/a\76\n\74/span\76\n\74/b:if\76\n\74p class\75\47comment-footer\47\76\n\74b:if cond\75\47data:post.embedCommentForm\47\76\n\74b:if cond\75\47data:post.allowNewComments\47\76\n\74b:include data\75\47post\47 name\75\47comment-form\47\76\74/b:include\76\n\74b:else\76\74/b:else\76\n\74data:post.noNewCommentsText\76\74/data:post.noNewCommentsText\76\n\74/b:if\76\n\74b:else\76\74/b:else\76\n\74b:if cond\75\47data:post.allowComments\47\76\n\74a expr:href\75\47data:post.addCommentUrl\47 expr:onclick\75\47data:post.addCommentOnclick\47\76\74data:postCommentMsg\76\74/data:postCommentMsg\76\74/a\76\n\74/b:if\76\n\74/b:if\76\n\74/p\76\n\74/b:if\76\n\74div id\75\47backlinks-container\47\76\n\74div expr:id\75\47data:widget.instanceId + \46quot;_backlinks-container\46quot;\47\76\n\74b:if cond\75\47data:post.showBacklinks\47\76\n\74b:include data\75\47post\47 name\75\47backlinks\47\76\74/b:include\76\n\74/b:if\76\n\74/div\76\n\74/div\76\n\74/div\076'}, 'comment-form': {'varName': 'post', 'template': '\74div class\75\47comment-form\47\76\n\74a name\75\47comment-form\47\76\74/a\76\n\74h4 id\75\47comment-post-message\47\76\74data:postCommentMsg\76\74/data:postCommentMsg\76\74/h4\76\n\74p\76\74data:blogCommentMessage\76\74/data:blogCommentMessage\76\74/p\76\n\74data:blogTeamBlogMessage\76\74/data:blogTeamBlogMessage\76\n\74a expr:href\75\47data:post.commentFormIframeSrc\47 id\75\47comment-editor-src\47\76\74/a\76\n\74iframe allowtransparency\75\47true\47 class\75\47blogger-iframe-colorize blogger-comment-from-post\47 frameborder\75\0470\47 height\75\047410\47 id\75\47comment-editor\47 name\75\47comment-editor\47 src\75\47\47 width\75\047100%\47\76\74/iframe\76\n\74data:post.friendConnectJs\76\74/data:post.friendConnectJs\76\n\74data:post.cmtfpIframe\76\74/data:post.cmtfpIframe\76\n\74script type\75\47text/javascript\47\76\n      BLOG_CMT_createIframe(\46#39;\74data:post.appRpcRelayPath\76\74/data:post.appRpcRelayPath\76\46#39;, \46#39;\74data:post.communityId\76\74/data:post.communityId\76\46#39;);\n    \74/script\76\n\74/div\076'}, 'backlinks': {'varName': 'post', 'template': '\74a name\75\47links\47\76\74/a\76\74h4\76\74data:post.backlinksLabel\76\74/data:post.backlinksLabel\76\74/h4\76\n\74b:if cond\75\47data:post.numBacklinks !\75 0\47\76\n\74dl class\75\47comments-block\47 id\75\47comments-block\47\76\n\74b:loop values\75\47data:post.backlinks\47 var\75\47backlink\47\76\n\74div class\75\47collapsed-backlink backlink-control\47\76\n\74dt class\75\47comment-title\47\76\n\74span class\75\47backlink-toggle-zippy\47\76\46#160;\74/span\76\n\74a expr:href\75\47data:backlink.url\47 rel\75\47nofollow\47\76\74data:backlink.title\76\74/data:backlink.title\76\74/a\76\n\74b:include data\75\47backlink\47 name\75\47backlinkDeleteIcon\47\76\74/b:include\76\n\74/dt\76\n\74dd class\75\47comment-body collapseable\47\76\n\74data:backlink.snippet\76\74/data:backlink.snippet\76\n\74/dd\76\n\74dd class\75\47comment-footer collapseable\47\76\n\74span class\75\47comment-author\47\76\74data:post.authorLabel\76\74/data:post.authorLabel\76\n\74data:backlink.author\76\74/data:backlink.author\76\74/span\76\n\74span class\75\47comment-timestamp\47\76\74data:post.timestampLabel\76\74/data:post.timestampLabel\76\n\74data:backlink.timestamp\76\74/data:backlink.timestamp\76\74/span\76\n\74/dd\76\n\74/div\76\n\74/b:loop\76\n\74/dl\76\n\74/b:if\76\n\74p class\75\47comment-footer\47\76\n\74a class\75\47comment-link\47 expr:href\75\47data:post.createLinkUrl\47 expr:id\75\47data:widget.instanceId + \46quot;_backlinks-create-link\46quot;\47 target\75\47_blank\47\76\74data:post.createLinkLabel\76\74/data:post.createLinkLabel\76\74/a\76\n\74/p\076'}, 'feedLinks': {'varName': '', 'template': '\74b:if cond\75\47data:blog.pageType !\75 \46quot;item\46quot;\47\76\n\74b:if cond\75\47data:feedLinks\47\76\n\74div class\75\47blog-feeds\47\76\n\74b:include data\75\47feedLinks\47 name\75\47feedLinksBody\47\76\74/b:include\76\n\74/div\76\n\74/b:if\76\n\74b:else\76\74/b:else\76\n\74div class\75\47post-feeds\47\76\n\74b:loop values\75\47data:posts\47 var\75\47post\47\76\n\74b:if cond\75\47data:post.allowComments\47\76\n\74b:if cond\75\47data:post.feedLinks\47\76\n\74b:include data\75\47post.feedLinks\47 name\75\47feedLinksBody\47\76\74/b:include\76\n\74/b:if\76\n\74/b:if\76\n\74/b:loop\76\n\74/div\76\n\74/b:if\076'}, 'feedLinksBody': {'varName': 'links', 'template': '\74div class\75\47feed-links\47\76\n\74data:feedLinksMsg\76\74/data:feedLinksMsg\76\n\74b:loop values\75\47data:links\47 var\75\47f\47\76\n\74a class\75\47feed-link\47 expr:href\75\47data:f.url\47 expr:type\75\47data:f.mimeType\47 target\75\47_blank\47\76\74data:f.name\76\74/data:f.name\76 (\74data:f.feedType\76\74/data:f.feedType\76)\74/a\76\n\74/b:loop\76\n\74/div\076'}, 'status-message': {'varName': '', 'template': '\74b:if cond\75\47data:navMessage\47\76\n\74div class\75\47status-msg-wrap\47\76\n\74div class\75\47status-msg-body\47\76\n\74data:navMessage\76\74/data:navMessage\76\n\74/div\76\n\74div class\75\47status-msg-border\47\76\n\74div class\75\47status-msg-bg\47\76\n\74div class\75\47status-msg-hidden\47\76\74data:navMessage\76\74/data:navMessage\76\74/div\76\n\74/div\76\n\74/div\76\n\74/div\76\n\74div style\75\47clear: both;\47\76\74/div\76\n\74/b:if\076'}}, document.getElementById('Blog1'), {'showBacklinks': true, 'postId': '7585459755757433969'}, 'displayModeFull'));
+</script>
+</body></html>

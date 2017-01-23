@@ -1,0 +1,15 @@
+document.write('<div class="feedburnerFeedBlock" id="InfowesterNoticias7tseubj3fd2rd0ubirarvnturk">');
+document.write('<ul>');
+document.write('<li><span class="headline"><a href="http://www.infowester.com/noticias/rumores-confirmados-microsoft-anuncia-linha-kin-de-smartphones/">Rumores confirmados: Microsoft anuncia linha KIN de smartphones</a></span>');
+document.write('</li>');
+document.write('<li><span class="headline"><a href="http://www.infowester.com/noticias/canonical-ha-12-milhoes-de-usuarios-do-ubuntu/">Canonical: h\u00E1 12 milh\u00F5es de usu\u00E1rios do Ubuntu</a></span>');
+document.write('</li>');
+document.write('<li><span class="headline"><a href="http://www.infowester.com/noticias/dell-do-brasil-lanca-desktop-de-alto-desempenho-para-o-mercado-corporativo/">Dell do Brasil lan\u00E7a desktop de alto desempenho para o mercado corporativo</a></span>');
+document.write('</li>');
+document.write('<li><span class="headline"><a href="http://www.infowester.com/noticias/panasonic-lanca-no-brasil-a-finissima-camera-lumix-fp1/">Panasonic lan\u00E7a no Brasil a fin\u00EDssima c\u00E2mera Lumix FP1</a></span>');
+document.write('</li>');
+document.write('<li><span class="headline"><a href="http://www.infowester.com/noticias/apple-apresenta-o-iphone-os-4-0-veja-as-principais-novidades/">Apple apresenta o iPhone OS 4.0 \u2013 Veja as principais novidades</a></span>');
+document.write('</li>');
+document.write('</ul>');
+document.write(' <div id="creditfooter"><a href="http://www.feedburner.com" target="_blank"><img src="http://www.feedburner.com/fb/images/buzzboost-pwrd.gif" alt="Headlines by FeedBurner" style="border:0"/></a></div>');
+document.write('</div>');

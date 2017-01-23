@@ -1,0 +1,6 @@
+Agendador de tarefas CRON:
+http://www.infowester.com/linuxcron.php
+
+Agendador de tarefas at:
+http://www.uniriotec.br/~morganna/guia/at.html
+
