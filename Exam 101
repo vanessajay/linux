@@ -1,0 +1,81 @@
+https://www.ibm.com/developerworks/library/l-lpic1-map/index.html#101
+
+
+LPI exam 101 prep: Hardware and architecture       23 - Tópicos
+
+	101.1 Determine and configure hardware settings
+		  Determinar e alterar configurações de Hardware peso: 2
+	101.2 Boot the system
+		  inicialição do sistema peso: 3
+	101.3 Change runlevels / boot targets and shutdown or reboot system
+		  alterando os Runlevels ( niveis de execução ) Desligando e reinicializando o sistema  peso: 3
+
+
+
+
+_______________________________________________________________________________________________________________________________________________________________________________________________________________
+______________________________________________________________________________________________
+
+LPI exam 101 prep: Linux installation and package management
+
+	102.1 Design hard disk layout
+			Design do HD e layout de partições peso: 2
+	102.2 Install a boot manager
+			Instalando um Gerenciador de Boot peso: 2
+	102.3 Manage shared libraries
+			Gerenciamento de bibliotecas compartilhadas peso: 1
+	102.4 Use Debian package management
+			Usando o Gerenciador de pacotes Debian peso: 3
+	102.5 Use RPM and YUM package management
+			Usando o Gerenciador de Pacotes YUM e RPM peso: 3
+
+
+	
+	
+_______________________________________________________________________________________________________________________________________________________________________________________________________________
+______________________________________________________________________________________________
+
+LPI exam 101 prep: GNU and UNIX commands
+
+	103.1 Work on the command line
+		Trabalhando com a Linha de Comando.  Peso: 4
+	103.2 Process text streams using filters
+		Processando Texto Usando Filtros peso: 3
+	103.3 Perform basic file and directory management
+		Gerenciamento Basico de Arquivos peso: 4
+	103.4 Use streams, pipes, and redirects
+		Usando streams, pipes e redirects peso: 4
+	103.5 Create, monitor, and kill processes
+		Criando, monitorando e matando processos peso: 4
+	103.6 Modify process execution priorities
+		modificando a prioridade de execução dos processos peso: 2
+	103.7 Search text files using regular expressions
+		Procurar em arquivos de texto usando Expressões regulares peso: 2
+	103.8 Perform basic file editing operations using vi
+		executando operações de Edição de texto basicas no VI  peso: 3
+
+
+	
+
+_______________________________________________________________________________________________________________________________________________________________________________________________________________
+______________________________________________________________________________________________
+
+LPI exam 101 prep: Devices, Linux filesystems, and FHS
+
+	104.1 Create partitions and filesystems
+		Criando partições e Sistemas de Arquivos peso: 2
+	104.2 Maintain the integrity of filesystems
+		Mantendo a integridade do sistema de arquivos peso: 2
+	104.3 Control mounting and unmounting of filesystems
+		Montando e Desmontando Sistema de Arquivos. Peso: 3
+	104.4 Manage disk quotas
+		Gerenciando Quotas de disco. Peso: 1
+	104.5 Manage file permissions and ownership
+		Gerenciando Permissões de Arquivo e propriedade peso: 3
+	104.6 Create and change hard and symbolic links
+		Criando e modificando hardlinks e softlinks. Peso: 2
+	104.7 Find system files and place files in the correct location
+		Encontrando arquivos de sistemas e colocando no lugar certo. Peso: 2
+	
+
+______________________________________________________________________________________
